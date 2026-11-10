@@ -1,0 +1,17 @@
+# FTP/SFTP 접속 정보 (비밀번호 포함)
+.vscode/sftp.json
+
+# 카페24 주문서(ec_orderform) 폴더 - 모든 위치
+**/ec_orderform/
+
+# OS / 에디터
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 의존성 / 로그
+node_modules/
+*.log
+
+# Playwright MCP 작업 파일(스크린샷·백업 JSON·업로드 이미지)
+.playwright-mcp/

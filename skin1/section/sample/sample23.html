@@ -1,0 +1,811 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<!-- 아래 코드부터 복사하기 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+
+<div id="promotion_box" class="promotion_box">
+    <!-- 기획전 키비주얼 -->
+    <div class="p_keyvisual">
+        <div class="pin">
+            <div class="title outfit">
+                <p class="merry">Merry</p>
+                <p class="loop">Loop</p>
+            </div>
+
+            <div class="img_box">
+                <picture>
+                    <source srcset="/morenvyimg/promotion/261021_MerryLoop/kv_m_v2.webp" media="(max-width: 1024px)">
+                    <img src="/morenvyimg/promotion/261021_MerryLoop/kv_pc.webp" alt="">
+                </picture>
+            </div>
+
+            <canvas class="snow"></canvas>
+            <div class="shadow"></div>
+
+            <div class="txt">
+                <svg class="badge" width="118" height="19" viewBox="0 0 118 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.79055 18.3625L-0.00134548 8.88103L2.10715 8.26017L4.89904 17.7417L2.79055 18.3625ZM8.65941 16.6344L5.86751 7.1529L7.98944 6.52809L10.7813 16.0096L8.65941 16.6344ZM2.88637 14.029L2.34856 12.2025L7.65336 10.6405L8.19118 12.467L2.88637 14.029ZM16.5865 14.8645C15.8572 15.0246 15.1546 15.0451 14.4787 14.9259C13.8118 14.8047 13.1959 14.5672 12.631 14.2135C12.066 13.8597 11.5898 13.41 11.2025 12.8644C10.8131 12.3096 10.5414 11.6813 10.3873 10.9793C10.2312 10.2683 10.2148 9.58387 10.338 8.92616C10.4611 8.26846 10.7016 7.66623 11.0594 7.11947C11.4151 6.5636 11.8714 6.09555 12.4281 5.71533C12.992 5.324 13.6386 5.04828 14.3679 4.88819C15.0881 4.7301 15.7816 4.71164 16.4484 4.83281C17.1223 4.94287 17.7373 5.17578 18.2931 5.53154C18.8561 5.87617 19.3323 6.32587 19.7216 6.88063C20.1089 7.42627 20.3807 8.05462 20.5367 8.76569C20.6908 9.46765 20.7073 10.152 20.5861 10.8189C20.4629 11.4766 20.2235 12.0834 19.8677 12.6392C19.51 13.186 19.0491 13.655 18.4853 14.0464C17.9305 14.4357 17.2976 14.7084 16.5865 14.8645ZM16.1299 12.9151C16.7043 12.789 17.1776 12.5513 17.5501 12.202C17.9316 11.8507 18.1909 11.4211 18.3278 10.9133C18.4628 10.3963 18.4642 9.83698 18.3322 9.2353C18.2321 8.77949 18.0737 8.38427 17.8569 8.04963C17.6381 7.70588 17.3721 7.42984 17.0588 7.2215C16.7435 7.00404 16.3931 6.86597 16.0075 6.80727C15.6291 6.73745 15.2256 6.74957 14.7971 6.84363C14.2228 6.9697 13.7449 7.2084 13.3633 7.55971C12.9889 7.8999 12.7332 8.32392 12.5962 8.83177C12.4573 9.33049 12.4548 9.88525 12.5889 10.496C12.689 10.9519 12.8484 11.3516 13.0672 11.6954C13.286 12.0391 13.5485 12.3207 13.8546 12.5402C14.1679 12.7485 14.5183 12.8866 14.9059 12.9544C15.2935 13.0222 15.7015 13.0091 16.1299 12.9151ZM22.4521 13.4423L20.8473 3.68948L23.0162 3.33263L24.6209 13.0855L22.4521 13.4423ZM24.1236 13.1673L23.8099 11.261L28.6311 10.4677L28.9448 12.3741L24.1236 13.1673ZM29.9042 12.2407L28.5942 2.44392L30.7728 2.15261L32.0828 11.9494L29.9042 12.2407ZM35.1015 11.6267L34.9136 9.70391L37.352 9.46562C37.9465 9.40752 38.4553 9.24058 38.8785 8.96478C39.3008 8.67969 39.6104 8.29776 39.8075 7.81899C40.0045 7.34023 40.0726 6.78966 40.0118 6.16729C39.951 5.54492 39.7734 5.02305 39.479 4.60169C39.1939 4.17941 38.8166 3.8693 38.3472 3.67136C37.887 3.47251 37.3596 3.40213 36.7651 3.46023L34.2571 3.70532L34.0705 1.79641L36.6065 1.5486C37.3496 1.47598 38.0441 1.53001 38.6901 1.71071C39.3444 1.88121 39.9256 2.1667 40.4337 2.56719C40.9501 2.95748 41.3632 3.44227 41.673 4.02155C41.9912 4.59063 42.1857 5.23745 42.2565 5.962C42.3264 6.67726 42.2608 7.34949 42.0597 7.9787C41.8679 8.607 41.5611 9.16214 41.1393 9.64411C40.7175 10.1261 40.2026 10.5187 39.5945 10.8219C38.9958 11.1243 38.3295 11.3113 37.5956 11.383L35.1015 11.6267ZM33.6245 11.7711L32.6632 1.93394L34.8508 1.72016L35.8121 11.5573L33.6245 11.7711ZM42.9491 10.8594L46.3432 0.782674L48.3285 0.678002L52.7215 10.3441L50.4007 10.4665L47.0049 2.43012L47.8018 2.38811L45.2279 10.7392L42.9491 10.8594ZM45.0776 8.95264L44.9833 7.16313L50.3658 6.87933L50.4601 8.66885L45.0776 8.95264ZM55.1092 6.68404L51.2198 0.532755L53.7676 0.49918L56.7593 5.47219L55.1215 5.49377L57.9812 0.443652L60.473 0.410815L56.719 6.66282L55.1092 6.68404ZM54.8917 10.3692L54.8299 5.67963L57.0277 5.65067L57.0895 10.3403L54.8917 10.3692ZM63.5065 10.3546L63.8681 0.477213L66.0646 0.557636L65.703 10.435L63.5065 10.3546ZM65.1993 10.4166L65.27 8.48587L70.1527 8.66465L70.0821 10.5954L65.1993 10.4166ZM71.0964 10.6535L71.7087 0.788474L73.9025 0.92464L73.2902 10.7897L71.0964 10.6535ZM74.8188 10.9133L75.7993 1.07802L77.3596 1.23356L80.631 7.65175L79.8369 7.57259L84.2972 1.92519L85.8714 2.08213L84.8909 11.9174L82.7037 11.6993L83.3162 5.55579L83.6965 5.69219L80.7834 9.36934L79.3345 9.2249L77.2186 5.04639L77.6045 4.98637L76.992 11.1299L74.8188 10.9133ZM86.3738 12.0958L87.7512 2.30823L89.9278 2.61454L88.5504 12.4021L86.3738 12.0958ZM92.4934 13.0642L94.1696 3.46544L96.3348 3.84354L94.6586 13.4423L92.4934 13.0642ZM90.8158 4.68471L91.1458 2.7953L99.4068 4.23786L99.0768 6.12727L90.8158 4.68471ZM98.426 14.1357L100.606 4.49498L102.749 4.97966L100.57 14.6204L98.426 14.1357ZM100.065 14.5061L100.485 12.649L105.769 13.8437L105.349 15.7009L100.065 14.5061ZM100.975 10.4778L101.38 8.68894L106.187 9.77562L105.782 11.5645L100.975 10.4778ZM101.827 6.70891L102.244 4.86543L107.461 6.04473L107.044 7.8882L101.827 6.70891ZM107.637 16.3544L108.18 14.5003L110.531 15.1889C111.104 15.3568 111.639 15.3917 112.134 15.2937C112.632 15.1867 113.062 14.9479 113.424 14.5772C113.785 14.2065 114.054 13.7211 114.229 13.121C114.405 12.5209 114.435 11.9704 114.319 11.4697C114.212 10.9715 113.978 10.543 113.616 10.1842C113.263 9.82806 112.8 9.56602 112.227 9.39813L109.809 8.68983L110.348 6.84915L112.793 7.56532C113.51 7.77518 114.134 8.08444 114.666 8.49309C115.209 8.8954 115.642 9.37711 115.964 9.93822C116.298 10.493 116.5 11.0969 116.571 11.7499C116.654 12.3966 116.593 13.0693 116.389 13.768C116.187 14.4577 115.875 15.0569 115.454 15.5657C115.041 16.077 114.55 16.4776 113.978 16.7674C113.407 17.0573 112.783 17.2294 112.106 17.2839C111.437 17.341 110.749 17.266 110.042 17.0587L107.637 16.3544ZM106.213 15.9373L108.991 6.45171L111.1 7.06951L108.322 16.5551L106.213 15.9373Z" fill="white"></path>
+                </svg>
+                <div class="t01 outfit">Loop Tumbler <span>mini</span><br>Christmas Edition</div>
+                <p class="t02">작은 루프에 찾아온 크리스마스.<br>좋아하는 음료와 함께 즐기는<br>루프 텀블러 미니 시즌 한정 에디션.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 01 -->
+    <div class="p_sec01">
+        <div class="pin">
+            <div class="con">
+                <div class="txt txt01">
+                    <p class="t01 outfit">A Little Christmas,<br>A Little Early</p>
+                    <p class="t02">우리의 크리스마스는 조금 먼저 시작해요.</p>
+                </div>
+
+                <div class="grid">
+                    <ul>
+                        <li><img src="/morenvyimg/promotion/261021_MerryLoop/grid01.webp" alt=""></li>
+                        <li><img src="/morenvyimg/promotion/261021_MerryLoop/grid02.webp" alt=""></li>
+                        <li><img src="/morenvyimg/promotion/261021_MerryLoop/grid03.webp" alt=""></li>
+                        <li><img src="/morenvyimg/promotion/261021_MerryLoop/grid04.webp" alt=""></li>
+                        <li><img src="/morenvyimg/promotion/261021_MerryLoop/grid05.webp" alt=""></li>
+                        <li><img src="/morenvyimg/promotion/261021_MerryLoop/grid06.webp" alt=""></li>
+                        <li><img src="/morenvyimg/promotion/261021_MerryLoop/grid07.webp" alt=""></li>
+                        <li><img src="/morenvyimg/promotion/261021_MerryLoop/grid08.webp" alt=""></li>
+                        <li><img src="/morenvyimg/promotion/261021_MerryLoop/grid09.webp" alt=""></li>
+                    </ul>
+                </div>
+
+                <div class="txt txt02">
+                    <p class="t02">손에 쥐는 순간 먼저 찾아오는 연말 기분.<br>기다리는 날들도 설렘으로 채워봐요.</p>
+                    <a href="/product/detail.html?product_no=471" class="btn_buy">구매하기</a>
+                </div>
+            </div>
+
+            <div class="intro_txt">
+                <p class="t01 outfit">Unwrap<br>the Joy</p>
+                <p class="t02">상자 속 크리스마스를 만나볼까요?</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 02 -->
+    <div class="p_sec02 detail">
+        <div class="thumb fadeEl">
+            <picture class="fadeCh zoomOut">
+                <source srcset="/morenvyimg/promotion/261021_MerryLoop/color_m.webp" media="(max-width: 1024px)">
+                <img src="/morenvyimg/promotion/261021_MerryLoop/color_pc.webp" alt="">
+            </picture>
+        </div>
+
+        <div class="txt">
+            <div class="txt_box fadeEl">
+                <div class="label outfit fadeCh fadeInUp"><span>01</span><i></i><p>Holiday Color</p></div>
+                <p class="t01 fadeCh fadeInUp" style="animation-delay: .1s;">크리스마스 기분은<br>이 작은 루프에서부터</p>
+                <p class="t02 fadeCh fadeInUp" style="animation-delay: .2s;">경쾌한 레드와 눈처럼 부드러운 화이트.<br>익숙한 루프 핸들에 200ml의 아담한 크기,<br>매일 들고 싶은 크리스마스가 완성됐어요.</p>
+                <div class="chip_box fadeCh fadeInUp" style="animation-delay: .3s;">
+                    <div class="chip outfit"><i style="background-color: #C8202B;"></i>Holiday Red</div>
+                    <div class="chip outfit"><i style="background-color: #fff;"></i>Snow White</div>
+                    <div class="chip outfit">200ml</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 03 -->
+    <div class="p_sec03 detail">
+        <div class="thumb fadeEl">
+            <picture class="fadeCh zoomOut">
+                <source srcset="/morenvyimg/promotion/261021_MerryLoop/sleeve_m.webp" media="(max-width: 1024px)">
+                <img src="/morenvyimg/promotion/261021_MerryLoop/sleeve_pc.webp" alt="">
+            </picture>
+        </div>
+
+        <div class="txt">
+            <div class="txt_box fadeEl">
+                <div class="label outfit fadeCh fadeInUp"><span>02</span><i></i><p>Fabric Sleeve</p></div>
+                <p class="t01 fadeCh fadeInUp" style="animation-delay: .1s;">루프도 겨울옷으로<br>갈아입었어요</p>
+                <p class="t02 fadeCh fadeInUp" style="animation-delay: .2s;">크리스마스 패턴을 담은 패브릭 슬리브.<br>작은 몸체를 포근하게 감싸<br>손에 들 때마다 연말 기분을 더해줘요.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 04 -->
+    <div class="p_sec04">
+        <div class="bg_img">
+            <picture>
+                <source srcset="/morenvyimg/promotion/261021_MerryLoop/ginger_bg_m.webp" media="(max-width: 1024px)">
+                <img src="/morenvyimg/promotion/261021_MerryLoop/ginger_bg_pc.webp" alt="">
+            </picture>
+        </div>
+
+        <div class="con">
+            <div class="sub_tit fadeEl">
+                <div class="label outfit fadeCh fadeInUp"><span>03</span><i></i><p>Hello, Ginger Bread Man!</p></div>
+                <p class="t01 fadeCh fadeInUp" style="animation-delay: .1s;">진저브래드맨 오너먼트까지<br>함께 담았어요</p>
+                <p class="t02 fadeCh fadeInUp" style="animation-delay: .2s;">크리스마스 에디션에는<br>세 가지 오너먼트 중 하나가 랜덤으로 들어 있어요.<br>아래 상자를 눌러 어떤 오너먼트가 있는지 만나보세요.</p>
+            </div>
+
+            <div class="gift_wrap fadeEl">
+                <div class="gift_list">
+                    <button type="button" class="gift fadeCh fadeInUp" data-name="산타 모자 진저브래드맨">
+                        <div class="inner">
+                            <div class="card">
+                                <div class="front">
+                                    <svg width="151" height="81" viewBox="0 0 151 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M36.2891 3.76465C45.3177 3.76465 55.2776 7.76733 63.0635 13.0977C66.9275 15.743 70.1031 18.6138 72.2695 21.2871C74.5387 24.0873 75.2939 26.1646 75.2939 27.2939C75.2939 28.4232 74.5388 30.5005 72.2695 33.3008C70.1032 35.9741 66.9275 38.8449 63.0635 41.4902C55.2776 46.8206 45.3177 50.8232 36.2891 50.8232C27.0064 50.8232 18.7465 47.9886 12.8916 43.585C7.03835 39.1825 3.76465 33.3849 3.76465 27.2939C3.76471 21.203 7.0383 15.4054 12.8916 11.0029C18.7465 6.5993 27.0064 3.7647 36.2891 3.76465Z" stroke="#FDF2DC" stroke-width="7.52941"></path>
+                                        <path d="M114.301 3.76465C105.272 3.76465 95.3122 7.76733 87.5264 13.0977C83.6624 15.743 80.4867 18.6138 78.3203 21.2871C76.0511 24.0873 75.296 26.1646 75.2959 27.2939C75.2959 28.4232 76.0511 30.5005 78.3203 33.3008C80.4867 35.9741 83.6624 38.8449 87.5264 41.4902C95.3122 46.8206 105.272 50.8232 114.301 50.8232C123.583 50.8232 131.843 47.9886 137.698 43.585C143.551 39.1825 146.825 33.3849 146.825 27.2939C146.825 21.203 143.552 15.4054 137.698 11.0029C131.843 6.5993 123.583 3.7647 114.301 3.76465Z" stroke="#FDF2DC" stroke-width="7.52941"></path>
+                                        <rect x="68.1523" y="33.1094" width="7.52941" height="55.1986" transform="rotate(-30 68.1523 33.1094)" fill="#FDF2DC"></rect>
+                                        <rect x="76.0977" y="29.5996" width="7.52941" height="54.3132" transform="rotate(30 76.0977 29.5996)" fill="#FDF2DC"></rect>
+                                    </svg>
+                                </div>
+                                <div class="back">
+                                    <img src="/morenvyimg/promotion/261021_MerryLoop/ginger01_v2.webp" alt="">
+                                    <span class="chip outfit">Santa Hat</span>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button type="button" class="gift fadeCh fadeInUp" style="animation-delay: .1s;" data-name="레드 리본 진저브래드맨">
+                        <div class="inner">
+                            <div class="card">
+                                <div class="front">
+                                    <svg width="151" height="81" viewBox="0 0 151 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M36.2891 3.76465C45.3177 3.76465 55.2776 7.76733 63.0635 13.0977C66.9275 15.743 70.1031 18.6138 72.2695 21.2871C74.5387 24.0873 75.2939 26.1646 75.2939 27.2939C75.2939 28.4232 74.5388 30.5005 72.2695 33.3008C70.1032 35.9741 66.9275 38.8449 63.0635 41.4902C55.2776 46.8206 45.3177 50.8232 36.2891 50.8232C27.0064 50.8232 18.7465 47.9886 12.8916 43.585C7.03835 39.1825 3.76465 33.3849 3.76465 27.2939C3.76471 21.203 7.0383 15.4054 12.8916 11.0029C18.7465 6.5993 27.0064 3.7647 36.2891 3.76465Z" stroke="#FDF2DC" stroke-width="7.52941"></path>
+                                        <path d="M114.301 3.76465C105.272 3.76465 95.3122 7.76733 87.5264 13.0977C83.6624 15.743 80.4867 18.6138 78.3203 21.2871C76.0511 24.0873 75.296 26.1646 75.2959 27.2939C75.2959 28.4232 76.0511 30.5005 78.3203 33.3008C80.4867 35.9741 83.6624 38.8449 87.5264 41.4902C95.3122 46.8206 105.272 50.8232 114.301 50.8232C123.583 50.8232 131.843 47.9886 137.698 43.585C143.551 39.1825 146.825 33.3849 146.825 27.2939C146.825 21.203 143.552 15.4054 137.698 11.0029C131.843 6.5993 123.583 3.7647 114.301 3.76465Z" stroke="#FDF2DC" stroke-width="7.52941"></path>
+                                        <rect x="68.1523" y="33.1094" width="7.52941" height="55.1986" transform="rotate(-30 68.1523 33.1094)" fill="#FDF2DC"></rect>
+                                        <rect x="76.0977" y="29.5996" width="7.52941" height="54.3132" transform="rotate(30 76.0977 29.5996)" fill="#FDF2DC"></rect>
+                                    </svg>
+                                </div>
+                                <div class="back">
+                                    <img src="/morenvyimg/promotion/261021_MerryLoop/ginger02_v2.webp" alt="">
+                                    <span class="chip outfit">Red Ribbon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button type="button" class="gift fadeCh fadeInUp" style="animation-delay: .2s;" data-name="홀리 모자 진저브래드맨">
+                        <div class="inner">
+                            <div class="card">
+                                <div class="front">
+                                    <svg width="151" height="81" viewBox="0 0 151 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M36.2891 3.76465C45.3177 3.76465 55.2776 7.76733 63.0635 13.0977C66.9275 15.743 70.1031 18.6138 72.2695 21.2871C74.5387 24.0873 75.2939 26.1646 75.2939 27.2939C75.2939 28.4232 74.5388 30.5005 72.2695 33.3008C70.1032 35.9741 66.9275 38.8449 63.0635 41.4902C55.2776 46.8206 45.3177 50.8232 36.2891 50.8232C27.0064 50.8232 18.7465 47.9886 12.8916 43.585C7.03835 39.1825 3.76465 33.3849 3.76465 27.2939C3.76471 21.203 7.0383 15.4054 12.8916 11.0029C18.7465 6.5993 27.0064 3.7647 36.2891 3.76465Z" stroke="#FDF2DC" stroke-width="7.52941"></path>
+                                        <path d="M114.301 3.76465C105.272 3.76465 95.3122 7.76733 87.5264 13.0977C83.6624 15.743 80.4867 18.6138 78.3203 21.2871C76.0511 24.0873 75.296 26.1646 75.2959 27.2939C75.2959 28.4232 76.0511 30.5005 78.3203 33.3008C80.4867 35.9741 83.6624 38.8449 87.5264 41.4902C95.3122 46.8206 105.272 50.8232 114.301 50.8232C123.583 50.8232 131.843 47.9886 137.698 43.585C143.551 39.1825 146.825 33.3849 146.825 27.2939C146.825 21.203 143.552 15.4054 137.698 11.0029C131.843 6.5993 123.583 3.7647 114.301 3.76465Z" stroke="#FDF2DC" stroke-width="7.52941"></path>
+                                        <rect x="68.1523" y="33.1094" width="7.52941" height="55.1986" transform="rotate(-30 68.1523 33.1094)" fill="#FDF2DC"></rect>
+                                        <rect x="76.0977" y="29.5996" width="7.52941" height="54.3132" transform="rotate(30 76.0977 29.5996)" fill="#FDF2DC"></rect>
+                                    </svg>
+                                </div>
+                                <div class="back">
+                                    <img src="/morenvyimg/promotion/261021_MerryLoop/ginger03.webp" alt="">
+                                    <span class="chip outfit">Holly Hat</span>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="result">
+                    <div class="t01 fadeCh fadeInUp" style="animation-delay: .3s;"><p class="msg">상자 하나를 골라 열어보세요.</p></div>
+                    <p class="t02 fadeCh fadeInUp" style="animation-delay: .4s;"><span class="pc">*진저브레드맨 오너먼트는 3종 중 1종이 랜덤으로 동봉됩니다.</span><span class="mo">* 오너먼트는 3종 중 1종이 랜덤 동봉되며, 종류는 선택할 수 없습니다.</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 05 -->
+    <div class="p_sec05 detail">
+        <div class="thumb fadeEl">
+            <picture class="fadeCh zoomOut">
+                <source srcset="/morenvyimg/promotion/261021_MerryLoop/gift_m.webp" media="(max-width: 1024px)">
+                <img src="/morenvyimg/promotion/261021_MerryLoop/gift_pc.webp" alt="">
+            </picture>
+        </div>
+
+        <div class="txt">
+            <div class="txt_box fadeEl">
+                <div class="label outfit fadeCh fadeInUp"><span>04</span><i></i><p>Ready to Gift</p></div>
+                <p class="t01 fadeCh fadeInUp" style="animation-delay: .1s;">열기 전부터<br>반가운 선물</p>
+                <p class="t02 fadeCh fadeInUp" style="animation-delay: .2s;">작은 창 너머로 빼꼼 보이는 크리스마스.<br>시즌 한정 패키지에 담아<br>좋아하는 사람에게 이 설렘을 건네보세요.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 06 -->
+    <div class="p_sec06 fadeEl">
+        <canvas class="snow"></canvas>
+
+        <p class="t01 fadeCh fadeInUp">기다리는 순간까지 메리 크리스마스</p>
+
+        <div class="time_box outfit fadeCh fadeInUp" style="animation-delay: .1s;">
+            <div class="time"><p class="digit day">00</p><p class="unit_txt">Days</p></div>
+            <div class="colon"><i></i><i></i></div>
+            <div class="time"><p class="digit hour">00</p><p class="unit_txt">Hours</p></div>
+            <div class="colon"><i></i><i></i></div>
+            <div class="time"><p class="digit min">00</p><p class="unit_txt">Mins</p></div>
+            <div class="colon"><i></i><i></i></div>
+            <div class="time"><p class="digit sec">00</p><p class="unit_txt">Secs</p></div>
+        </div>
+
+        <div class="t02 outfit fadeCh fadeInUp" style="animation-delay: .2s;">Loop Tumbler <span>mini</span><br>Christmas Edition</div>
+    </div>
+</div>
+
+<style>
+    /* 공통 */
+    #container #contents {max-width: 100%; width: 100%; padding: 0;}
+    #promotion_box *,
+    #promotion_box *::before,
+    #promotion_box *::after {box-sizing: border-box;}
+    #promotion_box {color: #fff; font-family: "SUIT Variable", sans-serif; word-break: keep-all; overflow-x: clip;}
+    #promotion_box .outfit {font-family: "Outfit", sans-serif;}
+    #promotion_box img {display: block; width: 100%; max-width: none;}
+    #promotion_box .mo {display: none;}
+
+    /* 섹션 공통 */
+    #promotion_box .label {display: flex; align-items: center; gap: clamp(0.4rem, 0.417vw, 0.8rem); font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.5; letter-spacing: -0.01em;}
+    #promotion_box .label span {font-weight: 700; color: #FDF2DC;}
+    #promotion_box .label i {display: block; width: clamp(1.5rem, 1.563vw, 3rem); height: 1px; background-color: #FDF2DC;}
+    #promotion_box .label p {font-weight: 500;}
+
+    #promotion_box .detail {display: flex; align-items: stretch;}
+    #promotion_box .detail .thumb {flex: none; width: 60.417%; aspect-ratio: 1160 / 960; overflow: hidden;}
+    #promotion_box .detail .thumb img {height: 100%; object-fit: cover;}
+    #promotion_box .detail .txt {flex: 1; display: flex; align-items: center; justify-content: center; padding: 0 clamp(5rem, 5.208vw, 10rem);}
+    #promotion_box .detail .txt_box {display: flex; flex-direction: column; align-items: flex-start; width: clamp(25rem, 26.042vw, 50rem);}
+    #promotion_box .detail .t01 {margin-top: clamp(1rem, 1.042vw, 2rem); font-size: clamp(2.88rem, 2.5vw, 4.8rem); line-height: 1.4; font-weight: 700; letter-spacing: -0.03em;}
+    #promotion_box .detail .t02 {margin-top: clamp(1rem, 1.042vw, 2rem); font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.6; font-weight: 400; letter-spacing: -0.03em;}
+
+    #promotion_box .btn_buy {display: inline-flex; align-items: center; justify-content: center; padding: clamp(0.6rem, 0.625vw, 1.2rem) clamp(1.2rem, 1.25vw, 2.4rem); border-radius: 50px; background-color: #CB2026; font-size: clamp(1.32rem, 1.146vw, 2.2rem); line-height: 1.2; font-weight: 600; letter-spacing: -0.01em; color: #fff;}
+
+
+    /* 기획전 키비주얼 */
+    #promotion_box .p_keyvisual .pin {position: relative; height: 100vh; background-color: #020A1C; overflow: hidden;}
+    #promotion_box .p_keyvisual .title {position: absolute; inset: 0; text-align: center; font-size: clamp(19.2rem, 16.667vw, 32rem); line-height: 1; font-weight: 800; letter-spacing: -0.022em; white-space: nowrap;}
+    #promotion_box .p_keyvisual .title p {position: absolute; left: 0; right: 0;}
+    #promotion_box .p_keyvisual .title .merry {top: calc(50% - clamp(16.1rem, 16.771vw, 32.2rem)); color: transparent; -webkit-text-stroke: 1px #FDF2DC;}
+    #promotion_box .p_keyvisual .title .loop {top: calc(50% - clamp(0.1rem, 0.104vw, 0.2rem)); color: #CB2026;}
+    #promotion_box .p_keyvisual .img_box {position: absolute; top: 50%; left: 50%; width: clamp(34rem, 35.417vw, 68rem); height: clamp(17.75rem, 18.49vw, 35.5rem); transform: translate(-50%, -50%); overflow: hidden;}
+    #promotion_box .p_keyvisual .img_box picture,
+    #promotion_box .p_keyvisual .img_box img {width: 100%; height: 100%; object-fit: cover;}
+    #promotion_box .snow {position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;}
+    #promotion_box .p_keyvisual .shadow {position: absolute; inset: 0; pointer-events: none;}
+    #promotion_box .p_keyvisual .shadow::before,
+    #promotion_box .p_keyvisual .shadow::after {content: ""; position: absolute; top: 0; bottom: 0;}
+    #promotion_box .p_keyvisual .shadow::before {left: 0; width: 36.094%; background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));}
+    #promotion_box .p_keyvisual .shadow::after {right: 0; width: 37.344%; background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));}
+    #promotion_box .p_keyvisual .txt .badge {display: none;}
+    #promotion_box .p_keyvisual .txt .t01 {position: absolute; left: clamp(5rem, 5.208vw, 10rem); bottom: clamp(3.1rem, 3.229vw, 6.2rem); font-size: clamp(3.36rem, 2.917vw, 5.6rem); line-height: 1.4; font-weight: 700; letter-spacing: -0.01em;}
+    #promotion_box .p_keyvisual .txt .t01 span {font-weight: 400;}
+    #promotion_box .p_keyvisual .txt .t02 {position: absolute; right: clamp(4.9rem, 5.104vw, 9.8rem); bottom: clamp(3.7rem, 3.854vw, 7.4rem); font-size: clamp(1.56rem, 1.354vw, 2.6rem); line-height: 1.6; font-weight: 400; letter-spacing: -0.03em; text-align: right;}
+
+
+    /* 기획전 섹션 01 */
+    #promotion_box .p_sec01 .pin {position: relative; height: 100vh; background-color: #F4EDE3; overflow: hidden;}
+    #promotion_box .p_sec01 .con {display: flex; align-items: center; justify-content: space-between; gap: clamp(2rem, 2.083vw, 4rem); height: 100%; padding: 0 clamp(5rem, 5.208vw, 10rem);}
+    #promotion_box .p_sec01 .txt {flex: 1; display: flex; flex-direction: column; min-width: 0; color: #1A1A1A;}
+    #promotion_box .p_sec01 .txt01 {align-items: flex-start; gap: clamp(1.5rem, 1.563vw, 3rem);}
+    #promotion_box .p_sec01 .txt02 {align-items: flex-end; gap: clamp(3rem, 3.125vw, 6rem); text-align: right;}
+    #promotion_box .p_sec01 .txt .t01 {font-size: clamp(2.88rem, 2.5vw, 4.8rem); line-height: 1.4; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap;}
+    #promotion_box .p_sec01 .txt .t02 {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.6; font-weight: 400; letter-spacing: -0.03em;}
+    #promotion_box .p_sec01 .grid {position: relative; z-index: 1; flex: none; width: min(clamp(36rem, 37.5vw, 72rem), 78vh); background-color: #331C15;}
+    #promotion_box .p_sec01 .grid ul {display: grid; grid-template-columns: repeat(3, 1fr);}
+    #promotion_box .p_sec01 .grid li {aspect-ratio: 1 / 1; overflow: hidden;}
+    #promotion_box .p_sec01 .grid li img {height: 100%; object-fit: cover;}
+    #promotion_box .p_sec01 .intro_txt {position: absolute; left: clamp(5rem, 5.208vw, 10rem); bottom: clamp(7rem, 7.292vw, 14rem); z-index: 2; display: flex; flex-direction: column; gap: clamp(1.5rem, 1.563vw, 3rem); pointer-events: none;}
+    #promotion_box .p_sec01 .intro_txt .t01 {font-size: clamp(2.88rem, 2.5vw, 4.8rem); line-height: 1.4; font-weight: 700; letter-spacing: -0.01em;}
+    #promotion_box .p_sec01 .intro_txt .t02 {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.6; font-weight: 400; letter-spacing: -0.03em;}
+
+
+    /* 기획전 섹션 02 */
+    #promotion_box .p_sec02 .txt {background-color: #020A1C;}
+    #promotion_box .p_sec02 .chip_box {display: flex; flex-wrap: wrap; gap: clamp(1rem, 1.042vw, 2rem); margin-top: clamp(2rem, 2.083vw, 4rem);}
+    #promotion_box .p_sec02 .chip {display: flex; align-items: center; gap: clamp(0.3rem, 0.313vw, 0.6rem); height: clamp(2rem, 2.083vw, 4rem); padding: 0 clamp(1.2rem, 1.25vw, 2.4rem); border-radius: clamp(1rem, 1.042vw, 2rem); background-color: #173A72; font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1; font-weight: 400; letter-spacing: -0.01em; color: #FDF2DC;}
+    #promotion_box .p_sec02 .chip i {flex: none; width: clamp(0.7rem, 0.729vw, 1.4rem); height: clamp(0.7rem, 0.729vw, 1.4rem); border-radius: 50%;}
+
+
+    /* 기획전 섹션 03 */
+    #promotion_box .p_sec03 {flex-direction: row-reverse;}
+    #promotion_box .p_sec03 .txt {background-color: #1774A1;}
+    #promotion_box .p_sec03 .txt_box {align-items: flex-end; text-align: right;}
+
+
+    /* 기획전 섹션 04 */
+    #promotion_box .p_sec04 {position: relative; overflow: hidden;}
+    #promotion_box .p_sec04 .bg_img {position: absolute; inset: 0;}
+    #promotion_box .p_sec04 .bg_img picture,
+    #promotion_box .p_sec04 .bg_img img {width: 100%; height: 100%; object-fit: cover;}
+    #promotion_box .p_sec04 .con {position: relative; display: flex; flex-direction: column; align-items: center; text-align: center;}
+    #promotion_box .p_sec04 .sub_tit {display: flex; flex-direction: column; align-items: center; gap: clamp(1rem, 1.042vw, 2rem); padding: clamp(5rem, 5.208vw, 10rem) 0 clamp(3rem, 3.125vw, 6rem);}
+    #promotion_box .p_sec04 .sub_tit .t01 {font-size: clamp(2.88rem, 2.5vw, 4.8rem); line-height: 1.4; font-weight: 700; letter-spacing: -0.03em;}
+    #promotion_box .p_sec04 .sub_tit .t02 {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.6; font-weight: 400; letter-spacing: -0.03em;}
+
+    #promotion_box .p_sec04 .gift_wrap {display: flex; flex-direction: column; align-items: center;}
+    #promotion_box .p_sec04 .gift_list {display: flex; gap: clamp(2rem, 2.083vw, 4rem);}
+    #promotion_box .p_sec04 .gift {display: block; width: clamp(14.6rem, 15.208vw, 29.2rem); height: clamp(22.6rem, 23.542vw, 45.2rem); padding: 0; border: 0; background: none; cursor: pointer;}
+    #promotion_box .p_sec04 .gift.on {cursor: default;}
+    #promotion_box .p_sec04 .gift .inner {width: 100%; height: 100%; perspective: 1500px;}
+    #promotion_box .p_sec04 .gift .card {position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .8s ease-in-out;}
+    #promotion_box .p_sec04 .gift.open .card {transform: rotateY(180deg);}
+    #promotion_box .p_sec04 .gift .front,
+    #promotion_box .p_sec04 .gift .back {position: absolute; inset: 0; border: clamp(0.6rem, 0.625vw, 1.2rem) solid #FDF2DC; border-radius: clamp(10rem, 10.417vw, 20rem) clamp(10rem, 10.417vw, 20rem) 0 0; overflow: hidden; -webkit-backface-visibility: hidden; backface-visibility: hidden;}
+    #promotion_box .p_sec04 .gift .front *,
+    #promotion_box .p_sec04 .gift .front::before,
+    #promotion_box .p_sec04 .gift .front::after,
+    #promotion_box .p_sec04 .gift .back * {-webkit-backface-visibility: hidden; backface-visibility: hidden;}
+    #promotion_box .p_sec04 .gift .front {transform: rotateY(0deg); background-color: #C8202B; background-image: repeating-linear-gradient(90deg, #A10B0C 0 11.2%, #C8202B 11.2% 22.15%);}
+    #promotion_box .p_sec04 .gift .front::before,
+    #promotion_box .p_sec04 .gift .front::after {content: ""; position: absolute; background-color: #FDF2DC;}
+    #promotion_box .p_sec04 .gift .front::before {top: 0; bottom: 0; left: 50%; width: clamp(0.375rem, 0.391vw, 0.75rem); transform: translateX(-50%);}
+    #promotion_box .p_sec04 .gift .front::after {top: 49.67%; left: 0; right: 0; height: clamp(0.375rem, 0.391vw, 0.75rem);}
+    #promotion_box .p_sec04 .gift .front svg {position: absolute; top: 44.6%; left: 50%; z-index: 1; width: 56.19%; height: auto; transform: translateX(-50%);}
+    #promotion_box .p_sec04 .gift .back {transform: rotateY(180deg);}
+    #promotion_box .p_sec04 .gift .back img {height: 100%; object-fit: cover;}
+    #promotion_box .p_sec04 .gift .back .chip {position: absolute; left: 50%; bottom: clamp(0.9rem, 0.938vw, 1.8rem); display: flex; align-items: center; height: clamp(2rem, 2.083vw, 4rem); padding: 0 clamp(1.2rem, 1.25vw, 2.4rem); border-radius: clamp(1rem, 1.042vw, 2rem); background-color: #FDF2DC; font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1; font-weight: 500; letter-spacing: -0.01em; color: #1A1A1A; white-space: nowrap; transform: translateX(-50%);}
+    #promotion_box .p_sec04 .gift.shake .inner {animation: giftShake .7s ease-in-out;}
+
+    #promotion_box .p_sec04 .result {display: flex; flex-direction: column; align-items: center; gap: clamp(1rem, 1.042vw, 2rem); padding: clamp(3rem, 3.125vw, 6rem) 0 clamp(5rem, 5.208vw, 10rem);}
+    #promotion_box .p_sec04 .result .t01 {display: flex; flex-direction: column; justify-content: center; height: clamp(4.2rem, 4.375vw, 8.4rem); font-size: clamp(1.8rem, 1.563vw, 3rem); line-height: 1.4; font-weight: 700; letter-spacing: -0.03em;}
+    #promotion_box .p_sec04 .result .t01 .msg span {color: #FBE3B4;}
+    #promotion_box .p_sec04 .result .t02 {font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.6; font-weight: 400; letter-spacing: -0.03em;}
+
+
+    /* 기획전 섹션 05 */
+    #promotion_box .p_sec05 .txt {background-color: #3E2418;}
+
+
+    /* 기획전 섹션 06 */
+    #promotion_box .p_sec06 {position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: clamp(2rem, 2.083vw, 4rem); padding: clamp(5rem, 5.208vw, 10rem) 0; background-color: #020A1C; text-align: center;}
+    #promotion_box .p_sec06 > *:not(.snow) {position: relative;}
+    #promotion_box .p_sec06 .t01 {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1; font-weight: 600; letter-spacing: -0.03em;}
+    #promotion_box .p_sec06 .time_box {display: flex; align-items: flex-start; justify-content: center; gap: clamp(1rem, 1.042vw, 2rem); padding: clamp(2rem, 2.083vw, 4rem) clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .p_sec06 .time {display: flex; flex-direction: column; align-items: center; gap: clamp(0.4rem, 0.417vw, 0.8rem);}
+    #promotion_box .p_sec06 .time .digit {position: relative; display: flex; align-items: center; justify-content: center; width: clamp(5rem, 5.208vw, 10rem); height: clamp(5rem, 5.208vw, 10rem); border-radius: clamp(1.2rem, 1.25vw, 2.4rem); background-color: rgba(255, 255, 255, 0.2); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); font-size: clamp(2.4rem, 2.083vw, 4rem); line-height: 1; font-weight: 700;}
+    #promotion_box .p_sec06 .time .digit::before {content: ""; position: absolute; inset: 0; padding: 1.5px; border-radius: inherit; background: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.1) 35%, rgba(255, 255, 255, 0.1) 65%, rgba(255, 255, 255, 0.45) 100%); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none;}
+    #promotion_box .p_sec06 .time .unit_txt {font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; font-weight: 400;}
+    #promotion_box .p_sec06 .colon {display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(0.4rem, 0.417vw, 0.8rem); width: clamp(1.2rem, 1.25vw, 2.4rem); height: clamp(5rem, 5.208vw, 10rem);}
+    #promotion_box .p_sec06 .colon i {display: block; width: 4px; height: 4px; border-radius: 50%; background-color: #fff;}
+    #promotion_box .p_sec06 .t02 {font-size: clamp(3.12rem, 2.708vw, 5.2rem); line-height: 1.4; font-weight: 700; letter-spacing: -0.01em;}
+    #promotion_box .p_sec06 .t02 span {font-weight: 400;}
+
+
+    /* animation */
+    #promotion_box .fadeEl {animation-play-state: paused !important;}
+    #promotion_box .fadeEl.on {animation-play-state: running !important;}
+    #promotion_box .fadeEl .fadeCh {animation-play-state: paused !important; opacity: 0;}
+    #promotion_box .fadeEl.on .fadeCh {animation-play-state: running !important;}
+
+    #promotion_box .fadeIn {animation: fadeIn 1.2s ease both;}
+    #promotion_box .fadeInUp {animation: fadeInUp 1.2s ease both;}
+    #promotion_box .zoomOut {display: block; height: 100%; animation: zoomOut 2s linear both;}
+
+    @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+        0% {opacity: 0; transform: translateY(20px);}
+        100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes zoomOut {
+        0% {opacity: 1; transform: scale(1.15);}
+        100% {opacity: 1; transform: scale(1);}
+    }
+
+    @keyframes giftShake {
+        0%, 100% {transform: rotate(0);}
+        15% {transform: rotate(-6deg);}
+        30% {transform: rotate(5deg);}
+        45% {transform: rotate(-4deg);}
+        60% {transform: rotate(3deg);}
+        75% {transform: rotate(-2deg);}
+        90% {transform: rotate(1deg);}
+    }
+
+
+    /* 반응형 */
+    @media all and (max-width: 1024px) {
+        /* 공통 */
+        #promotion_box .pc {display: none;}
+        #promotion_box .mo {display: inline;}
+
+        /* 섹션 공통 */
+        #promotion_box .label {gap: clamp(0.68rem, 2.222vw, 1.2rem); font-size: clamp(1.105rem, 3.611vw, 1.95rem);}
+        #promotion_box .label i {width: clamp(2.55rem, 8.333vw, 4.5rem);}
+
+        #promotion_box .detail,
+        #promotion_box .p_sec03 {flex-direction: column;}
+        #promotion_box .detail .thumb {width: 100%; aspect-ratio: 360 / 480;}
+        #promotion_box .detail .txt {display: block; padding: clamp(3.4rem, 11.111vw, 6rem) clamp(1.7rem, 5.556vw, 3rem) clamp(5.1rem, 16.667vw, 9rem);}
+        #promotion_box .detail .txt_box {width: 100%;}
+        #promotion_box .detail .t01 {margin-top: clamp(0.85rem, 2.778vw, 1.5rem); font-size: clamp(2.21rem, 7.222vw, 3.9rem);}
+        #promotion_box .detail .t02 {margin-top: clamp(0.85rem, 2.778vw, 1.5rem); font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+
+        #promotion_box .btn_buy {padding: clamp(0.595rem, 1.944vw, 1.05rem) clamp(1.36rem, 4.444vw, 2.4rem); font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+
+        /* 기획전 키비주얼 */
+        #promotion_box .p_keyvisual .title {display: none;}
+        #promotion_box .p_keyvisual .img_box {width: clamp(17.34rem, 56.667vw, 30.6rem); height: clamp(23.12rem, 75.556vw, 40.8rem);}
+        #promotion_box .p_keyvisual .shadow::before {display: none;}
+        #promotion_box .p_keyvisual .shadow::after {top: auto; left: 0; width: 100%; height: clamp(20.4rem, 66.667vw, 36rem); background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));}
+        #promotion_box .p_keyvisual .txt {position: absolute; left: 0; right: 0; bottom: clamp(3.4rem, 11.111vw, 6rem); display: flex; flex-direction: column; align-items: center; text-align: center;}
+        #promotion_box .p_keyvisual .txt .badge {display: block; width: clamp(10.03rem, 32.778vw, 17.7rem); height: auto; margin-bottom: clamp(0.17rem, 0.556vw, 0.3rem);}
+        #promotion_box .p_keyvisual .txt .t01 {position: static; font-size: clamp(2.72rem, 8.889vw, 4.8rem);}
+        #promotion_box .p_keyvisual .txt .t02 {display: none;}
+
+        /* 기획전 섹션 01 */
+        #promotion_box .p_sec01 .con {flex-direction: column; align-items: stretch; justify-content: center; gap: clamp(2.55rem, 8.333vw, 4.5rem); padding: clamp(2.55rem, 8.333vw, 4.5rem) clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_sec01 .txt {flex: none; width: 100%;}
+        #promotion_box .p_sec01 .txt01 {gap: clamp(0.85rem, 2.778vw, 1.5rem);}
+        #promotion_box .p_sec01 .txt02 {align-items: flex-start; gap: clamp(0.85rem, 2.778vw, 1.5rem); text-align: left;}
+        #promotion_box .p_sec01 .txt .t01 {font-size: clamp(2.21rem, 7.222vw, 3.9rem);}
+        #promotion_box .p_sec01 .txt .t02 {font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec01 .grid {width: min(100%, 55vh, calc(100vh - clamp(28.9rem, 94.444vw, 51rem))); margin: 0 auto;}
+        #promotion_box .p_sec01 .intro_txt {left: 0; right: 0; bottom: 0; gap: clamp(0.85rem, 2.778vw, 1.5rem); padding: 0 clamp(1.7rem, 5.556vw, 3rem) clamp(3.4rem, 11.111vw, 6rem);}
+        #promotion_box .p_sec01 .intro_txt .t01 {font-size: clamp(2.21rem, 7.222vw, 3.9rem);}
+        #promotion_box .p_sec01 .intro_txt .t02 {font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec01 .intro_txt::before {content: ""; position: absolute; left: 0; right: 0; bottom: 0; z-index: -1; height: clamp(24.225rem, 79.167vw, 42.75rem); background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 67.368%);}
+
+        /* 기획전 섹션 02 */
+        #promotion_box .p_sec02 .chip_box {gap: clamp(0.85rem, 2.778vw, 1.5rem); margin-top: clamp(2.55rem, 8.333vw, 4.5rem);}
+        #promotion_box .p_sec02 .chip {gap: clamp(0.51rem, 1.667vw, 0.9rem); height: clamp(2.635rem, 8.611vw, 4.65rem); padding: 0 clamp(1.19rem, 3.889vw, 2.1rem); border-radius: clamp(1.7rem, 5.556vw, 3rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec02 .chip i {width: clamp(1.02rem, 3.333vw, 1.8rem); height: clamp(1.02rem, 3.333vw, 1.8rem);}
+
+        /* 기획전 섹션 03 */
+        #promotion_box .p_sec03 .txt_box {align-items: flex-start; text-align: left;}
+
+        /* 기획전 섹션 04 */
+        #promotion_box .p_sec04 .con {gap: clamp(2.55rem, 8.333vw, 4.5rem); padding: clamp(5.1rem, 16.667vw, 9rem) 0;}
+        #promotion_box .p_sec04 .sub_tit {gap: clamp(0.85rem, 2.778vw, 1.5rem); padding: 0 clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_sec04 .sub_tit .t01 {font-size: clamp(2.21rem, 7.222vw, 3.9rem);}
+        #promotion_box .p_sec04 .sub_tit .t02 {font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec04 .gift_wrap {gap: clamp(2.55rem, 8.333vw, 4.5rem);}
+        #promotion_box .p_sec04 .gift_list {display: grid; grid-template-columns: repeat(2, auto); gap: clamp(1.53rem, 5vw, 2.7rem);}
+        #promotion_box .p_sec04 .gift:first-child {grid-column: 1 / -1; justify-self: center;}
+        #promotion_box .p_sec04 .gift {width: clamp(12.41rem, 40.556vw, 21.9rem); height: clamp(19.21rem, 62.778vw, 33.9rem);}
+        #promotion_box .p_sec04 .gift .front,
+        #promotion_box .p_sec04 .gift .back {border-width: clamp(0.51rem, 1.667vw, 0.9rem); border-radius: clamp(8.5rem, 27.778vw, 15rem) clamp(8.5rem, 27.778vw, 15rem) 0 0;}
+        #promotion_box .p_sec04 .gift .front::before {width: clamp(0.319rem, 1.042vw, 0.563rem);}
+        #promotion_box .p_sec04 .gift .front::after {height: clamp(0.319rem, 1.042vw, 0.563rem);}
+        #promotion_box .p_sec04 .gift .back .chip {bottom: clamp(0.51rem, 1.667vw, 0.9rem); height: clamp(2.04rem, 6.667vw, 3.6rem); padding: 0 clamp(1.19rem, 3.889vw, 2.1rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec04 .result {gap: clamp(0.85rem, 2.778vw, 1.5rem); padding: 0 clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_sec04 .result .t01 {height: clamp(4.76rem, 15.556vw, 8.4rem); font-size: clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_sec04 .result .t02 {font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+
+        /* 기획전 섹션 06 */
+        #promotion_box .p_sec06 {gap: clamp(3.4rem, 11.111vw, 6rem); padding: clamp(5.1rem, 16.667vw, 9rem) clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec06 .t01 {font-size: clamp(1.36rem, 4.444vw, 2.4rem); line-height: 1.25;}
+        #promotion_box .p_sec06 .time_box {gap: 0; width: 100%; max-width: clamp(27.88rem, 91.111vw, 49.2rem); margin-top: clamp(-2.4rem, -4.444vw, -1.36rem); padding: clamp(2.04rem, 6.667vw, 3.6rem) clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec06 .time {gap: clamp(0.68rem, 2.222vw, 1.2rem); width: clamp(4.76rem, 15.556vw, 8.4rem);}
+        #promotion_box .p_sec06 .time .digit {width: clamp(4.76rem, 15.556vw, 8.4rem); height: clamp(4.76rem, 15.556vw, 8.4rem); border-radius: clamp(1.02rem, 3.333vw, 1.8rem); background-color: rgba(255, 255, 255, 0.1); font-size: clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .p_sec06 .time .digit::before {padding: 1px;}
+        #promotion_box .p_sec06 .time .unit_txt {font-size: clamp(1.02rem, 3.333vw, 1.8rem); line-height: 1.333;}
+        #promotion_box .p_sec06 .colon {flex: 1; width: auto; height: clamp(4.76rem, 15.556vw, 8.4rem);}
+        #promotion_box .p_sec06 .t02 {font-size: clamp(2.38rem, 7.778vw, 4.2rem);}
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        gsap.registerPlugin(ScrollTrigger);
+
+
+        /* snow */
+        const random = (min, max) => {
+            if (Number.isInteger(min) && Number.isInteger(max)) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            return Math.random() * (max - min) + min;
+        };
+
+        const Snow = (canvas, count, options) => {
+            const ctx = canvas.getContext('2d');
+            const snowflakes = [];
+
+            const add = item => snowflakes.push(item(canvas));
+
+            const update = () => snowflakes.forEach(el => el.update());
+
+            const resize = () => {
+                ctx.canvas.width = $(canvas).width();
+                ctx.canvas.height = $(canvas).height();
+
+                snowflakes.forEach(el => el.resized());
+            };
+
+            const draw = () => {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                snowflakes.forEach(el => el.draw());
+            };
+
+            const events = () => {
+                $(window).on('resize', resize);
+            };
+
+            let running = false;
+
+            const loop = () => {
+                if (!running) return;
+                draw();
+                update();
+                animFrame(loop);
+            };
+
+            const play = () => {
+                if (running) return;
+                running = true;
+                loop();
+            };
+
+            const stop = () => {
+                running = false;
+            };
+
+            const init = () => {
+                for (let i = 0; i < count; i++) {
+                    add(canvas => SnowItem(canvas, null, options));
+                }
+                events();
+            };
+
+            resize();
+            init();
+
+            return { add, resize, play, stop };
+        };
+
+        const defaultOptions = {
+            color: 'orange',
+            radius: [0.5, 3.0],
+            speed: [1, 3],
+            wind: [-0.5, 3.0]
+        };
+
+        const SnowItem = (canvas, drawFn = null, opts) => {
+            const options = { ...defaultOptions, ...opts };
+            const { radius, speed, wind, color } = options;
+
+            const params = {
+                color,
+                x: random(0, canvas.width),
+                y: random(-canvas.height, 0),
+                radius: random(...radius),
+                speed: random(...speed),
+                wind: random(...wind),
+                isResized: false
+            };
+
+            const ctx = canvas.getContext('2d');
+
+            const updateData = () => {
+                params.x = random(0, canvas.width);
+                params.y = random(-canvas.height, 0);
+            };
+
+            const resized = () => params.isResized = true;
+
+            const drawDefault = () => {
+                ctx.beginPath();
+                ctx.arc(params.x, params.y, params.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = params.color;
+                ctx.fill();
+                ctx.closePath();
+            };
+
+            const draw = drawFn ?
+                () => drawFn(ctx, params) :
+                drawDefault;
+
+            const translate = () => {
+                params.y += params.speed;
+                params.x += params.wind;
+            };
+
+            const onDown = () => {
+                if (params.y < canvas.height) return;
+
+                if (params.isResized) {
+                    updateData();
+                    params.isResized = false;
+                } else {
+                    params.y = 0;
+                    params.x = random(0, canvas.width);
+                }
+            };
+
+            const update = () => {
+                translate();
+                onDown();
+            };
+
+            return {
+                update,
+                resized,
+                draw
+            };
+        };
+
+        const animFrame = window.requestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.msRequestAnimationFrame;
+
+        $('#promotion_box .snow').each(function () {
+            const snow = Snow(this, $(window).innerWidth() <= 1024 ? 120 : 250, { color: 'white' });
+
+            const snowTrigger = ScrollTrigger.create({
+                trigger: $(this).closest('.p_keyvisual, .p_sec06')[0],
+                start: 'top bottom',
+                end: 'bottom top',
+                refreshPriority: -1,
+                onToggle: self => self.isActive ? snow.play() : snow.stop(),
+            });
+
+            if (snowTrigger.isActive) snow.play();
+        });
+
+
+        /* 키비주얼 스크롤 */
+        var $kvImg = $("#promotion_box .p_keyvisual .img_box");
+        var $kvPin = $("#promotion_box .p_keyvisual .pin");
+
+        gsap.set($kvImg, {xPercent: -50, yPercent: -50, x: 0, y: 0});
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: "#promotion_box .p_keyvisual",
+                start: "top top",
+                end: "+=100%",
+                pin: "#promotion_box .p_keyvisual .pin",
+                scrub: true,
+                invalidateOnRefresh: true,
+            },
+        })
+            .to($kvImg, {
+                scale: function () {
+                    return Math.max($kvPin.outerWidth() / $kvImg.outerWidth(), $kvPin.outerHeight() / $kvImg.outerHeight());
+                },
+                ease: "none",
+                duration: 1,
+            })
+            .to({}, {duration: .2});
+
+        gsap.fromTo("#promotion_box .p_keyvisual .txt > *", {autoAlpha: 0, y: 20}, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 1.2,
+            stagger: .1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: "#promotion_box .p_keyvisual",
+                start: "top top",
+                toggleActions: "play none none none",
+            },
+        });
+
+
+        /* 인트로 스크롤 */
+        var $introGrid = $("#promotion_box .p_sec01 .grid");
+        var $introPin = $("#promotion_box .p_sec01 .pin");
+
+        var introStart = function () {
+            var gx = $introGrid[0].offsetLeft + $introGrid.outerWidth() / 2;
+            var gy = $introGrid[0].offsetTop + $introGrid.outerHeight() / 2;
+            var cell = $introGrid.outerWidth() / 3;
+
+            return {
+                x: $introPin.outerWidth() / 2 - gx,
+                y: $introPin.outerHeight() / 2 - gy,
+                scale: Math.max($introPin.outerWidth(), $introPin.outerHeight()) / cell * 1.01,
+            };
+        };
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: "#promotion_box .p_sec01",
+                start: "top top",
+                end: "+=150%",
+                pin: "#promotion_box .p_sec01 .pin",
+                scrub: true,
+                invalidateOnRefresh: true,
+            },
+        })
+            .fromTo($introGrid, {
+                x: function () { return introStart().x; },
+                y: function () { return introStart().y; },
+                scale: function () { return introStart().scale; },
+            }, {x: 0, y: 0, scale: 1, ease: "none", duration: 1}, .2)
+            .to("#promotion_box .p_sec01 .intro_txt", {autoAlpha: 0, duration: .2}, .2)
+            .fromTo("#promotion_box .p_sec01 .txt > *", {autoAlpha: 0, y: 30}, {autoAlpha: 1, y: 0, stagger: .05, duration: .3}, .85)
+            .to({}, {duration: .2});
+
+        gsap.fromTo("#promotion_box .p_sec01 .intro_txt > *", {autoAlpha: 0, y: 20}, {
+            autoAlpha: 1,
+            y: 0,
+            duration: 1.2,
+            stagger: .1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: "#promotion_box .p_sec01",
+                start: "top top",
+                toggleActions: "play none none none",
+            },
+        });
+
+
+        /* 선물 상자 */
+        var openCount = 0;
+
+        $("#promotion_box .p_sec04 .gift").on("click", function () {
+            var $this = $(this);
+
+            if ($this.hasClass("on")) return;
+
+            $this.addClass("on shake");
+
+            setTimeout(function () {
+                $this.removeClass("shake").addClass("open");
+
+                setTimeout(function () {
+                    var name = $this.data("name");
+                    var msg;
+
+                    openCount++;
+
+                    if (openCount === 1) {
+                        msg = "<span>" + name + "을</span> 만났어요!<br>다른 상자도 열어볼까요?";
+                    } else if (openCount === 2) {
+                        msg = "<span>" + name + "을</span> 만났어요!";
+                    } else {
+                        msg = "진저브래드맨을 모두 만났어요.<br><span>Merry Christmas!</span>";
+                    };
+
+                    $("#promotion_box .p_sec04 .result .t01 .msg").html(msg);
+                }, 500);
+            }, 700);
+        });
+
+
+        /* 카운트다운 */
+        var deadline = new Date("2026-12-25T00:00:00+09:00").getTime();
+
+        var timer = function () {
+            var remain = Math.max(deadline - Date.now(), 0);
+            var day = Math.floor(remain / 86400000);
+            var hour = Math.floor(remain / 3600000) % 24;
+            var min = Math.floor(remain / 60000) % 60;
+            var sec = Math.floor(remain / 1000) % 60;
+
+            $("#promotion_box .p_sec06 .day").text(String(day).padStart(2, "0"));
+            $("#promotion_box .p_sec06 .hour").text(String(hour).padStart(2, "0"));
+            $("#promotion_box .p_sec06 .min").text(String(min).padStart(2, "0"));
+            $("#promotion_box .p_sec06 .sec").text(String(sec).padStart(2, "0"));
+        };
+
+        timer();
+        setInterval(timer, 1000);
+
+
+        /* animation */
+        $(window).on("load scroll", function () {
+            $("#promotion_box .fadeEl").each(function () {
+                if (!$(this).hasClass("on") && $(window).scrollTop() + $(window).innerHeight() - 200 >= $(this).offset().top) {
+                    $(this).addClass("on");
+                };
+            });
+        });
+
+        $(window).on("load", function () {
+            ScrollTrigger.refresh();
+        });
+    });
+</script>

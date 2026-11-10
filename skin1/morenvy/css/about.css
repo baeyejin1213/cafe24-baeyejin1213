@@ -1,0 +1,77 @@
+@charset "UTF-8"; /* 250227 하지인 */
+
+/* 회사소개 페이지 전체 너비 사용 */
+#contents {width: 100% !important; max-width: none !important; margin: 0 !important;}
+#footer {margin-top: 0 !important;}
+
+
+/* 회사소개 페이지 영역 태그 */
+#about {width: 100%;-webkit-box-sizing: border-box;box-sizing: border-box;}
+
+/* 배경으로 영역 구분하기 */
+#about .box_wrap {background-color: var(--bg);}
+#about .box_wrap:nth-child(2n) {background-color: var(--white);}
+
+
+/* 배경을 제외하고 안에 요소를 잡아주는 태그 */
+#about .box_wrap .inner {display: -webkit-box;display: -ms-flexbox;display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; height: 760px; max-width: 1690px; margin:0 auto; -webkit-box-sizing: content-box; box-sizing: content-box;}
+#about .box_wrap:nth-child(2n) .inner {-webkit-box-orient: horizontal;-webkit-box-direction: reverse;-ms-flex-direction: row-reverse;flex-direction: row-reverse;}
+
+/* left_box와 right_box 공통 */
+#about .box_wrap .inner > div {-webkit-box-flex: 1;-ms-flex: 1;flex: 1; -webkit-box-flex: 0; -ms-flex: none; flex: none; width: 50%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+/* 이미지 박스 */
+#about .box_wrap .inner > div.left_box {-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+#about .box_wrap:first-child .inner > div.left_box {-webkit-box-align: start;-ms-flex-align: start;align-items: flex-start; padding-top: min(6.036%, 102px);}
+#about .box_wrap:last-child .inner > div.left_box {-webkit-box-align: end;-ms-flex-align: end;align-items: flex-end; padding-bottom: 3.542%;}
+#about .box_wrap .inner > div .img_box {display: -webkit-box;display: -ms-flexbox;display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 100%;}
+#about .box_wrap:first-child .inner > div .img_box {-webkit-box-align: start;-ms-flex-align: start;align-items: flex-start;}
+#about .box_wrap:last-child .inner > div .img_box {-webkit-box-align: end;-ms-flex-align: end;align-items: flex-end;}
+#about .box_wrap .inner > div .img_box svg {width: 100%; height: auto; min-height: -webkit-fit-content; min-height: -moz-fit-content; min-height: fit-content; cursor: pointer;}
+#about .box_wrap .inner > div .img_box svg rect {-webkit-transition: all .4s;-o-transition: all .4s;transition: all .4s;-webkit-transform-origin: center;-ms-transform-origin: center;transform-origin: center;}
+
+/* svg 이미지만 커지게 하기 */
+@media all and (hover:hover) {
+    #about svg:hover rect {
+        scale: 1.1;
+        -webkit-transform-origin: center;
+                -ms-transform-origin: center;
+            transform-origin: center;
+    }
+}
+
+/* 텍스트 박스 */
+#about .box_wrap .inner > div.right_box {padding-left: min(9.468%, 160px);}
+#about .box_wrap:nth-child(2n) .inner > div.right_box {padding-left:0; padding-right: min(9.468%, 160px); -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end;}
+
+/* 텍스트 공통 */
+#about .box_wrap .t01 {font-size: 4.8rem; line-height: 6.4rem; font-weight: 700; color: var(--black);}
+#about .box_wrap .t02 {font-size: 2rem; line-height: 2.8rem; font-weight: 400; color: var(--grey_01); margin-top: 2.4rem;}
+
+
+/* 미디어 쿼리 1280px이 됐을 때 */
+@media all and (max-width:1280px) {
+    #about .box_wrap .inner {height: 660px;}
+    #about .box_wrap .t01 {font-size: 3rem; line-height: 4.4rem;}
+    #about .box_wrap .t02 {font-size: 1.6rem; line-height: 2rem;margin-top: 1.6rem;}
+}
+/* 미디어 쿼리 1024px이 됐을 때 */
+@media all and (max-width:1024px) {
+    #about .box_wrap .inner,
+    #about .box_wrap:nth-child(2n) .inner {-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column; height: auto;}  
+    #about .box_wrap .inner > div {width: 100%; -webkit-box-pack: start !important; -ms-flex-pack: start !important; justify-content: flex-start !important;}
+    #about .box_wrap .inner > div.left_box {-webkit-box-pack: center !important;-ms-flex-pack: center !important;justify-content: center !important;}
+    #about .box_wrap:nth-child(1n+2) .inner .left_box {margin-top: -5rem;}
+    #about .box_wrap .inner > div.right_box {padding: 0 4.448% 22.223% !important; margin: 3.2rem auto 0; max-width: 640px;}
+    #about .box_wrap .inner > div .img_box {max-width: 600px;}
+    #about .box_wrap .t02 {word-break: keep-all;}
+    #about .box_wrap .t02 br {display: none !important;}
+}
+/* 미디어 쿼리 768px이 됐을 때 */
+@media all and (max-width:768px) {
+    #about .box_wrap .inner > div.right_box {-webkit-box-pack: start !important;-ms-flex-pack: start !important;justify-content: flex-start !important;}
+    #about .box_wrap .t01 {font-size: 2.4rem; line-height: 3.2rem;}
+    #about .box_wrap .t02 {font-size: 1.5rem; line-height: 2.4rem;}
+}
+
+

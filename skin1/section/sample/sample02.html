@@ -1,0 +1,255 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--
+    기획전 : 령은 하객룩 "Classic & Modern" (PC)
+    - 디자인 : Figma 령은_하객룩(16:627) > 공홈PC_령은(16:628, 1720) — 반응형 아님, 1720px 고정 (MO 는 /section/sample/sample03.html)
+    - 참고 : roemkr skin-skin21/section/sample65.html — 배경은 섹션 통이미지, 기능이 들어가는 이미지만 따로 position: absolute(px)
+    - 이미지 : /morenvyimg/promotion/261012_ClassicModern/pc/
+    - 빨간 주석 기능
+        · 영상 : 인트로 회색 박스 자리 → 찰나 mp4
+        · 오브젝트 안에 있는 이미지 페이드 교체 → Swiper effect: "fade" (시안 이미지 + 주석 옆 이미지 2장 = 3장)
+        · 이미지 롤링 → Swiper 슬라이드 (3장)
+        · Swiper autoplay 는 해당 영역이 뷰포트에 들어오면 시작
+    - 상품 링크 : 바탕화면 > 유지보수 > 로엠 > 261012 > 령은_맵소스.txt — 배경 이미지에 이미지맵(상대경로)
+-->
+<style>
+    /* 이 페이지만 전체 폭 사용 — 공통 #contents(max-width 1120 + 좌우 패딩) 해제 */
+    #container #contents {max-width: none; padding: 0;}
+
+    #pj_roem {width: 1720px; margin: 0 auto;}
+    #pj_roem > div {position: relative; font-size: 0; line-height: 0;} /* 카페24 가 넣는 공백 문자 줄 높이로 섹션 사이 틈이 생기지 않도록 */
+    #pj_roem img {display: block; max-width: none;}
+    #pj_roem .bg {width: 1720px;}
+    #pj_roem .swiper {position: absolute; overflow: hidden;}
+    #pj_roem .swiper-slide img {width: 100%; height: 100%; object-fit: cover;}
+    #pj_roem .roll {width: 373px; height: 446px;}
+    #pj_roem .mirror {width: 483px; height: 752px;}
+    #pj_roem .mirror .swiper-slide img {object-fit: contain;}
+    /* 찰나 영상 (인트로 회색 박스 자리) */
+    #pj_roem .rm_video {position: absolute; left: 1081px; top: 1023px; width: 402px; height: 714px; overflow: hidden; background-color: #d9d9d9;}
+    #pj_roem .rm_video video {display: block; width: 100%; height: 100%; object-fit: cover;}
+</style>
+
+<div id="pj_roem">
+    <!-- 메인 비주얼 + 인트로 -->
+    <div class="rm_top">
+        <img src="/morenvyimg/promotion/261012_ClassicModern/pc/sec_top.jpg" alt="Classic &amp; Modern 2026 FW CEREMONY LOOK — 인플루언서 령은이 선택한 5가지 하객룩" class="bg">
+        <div class="rm_video">
+            <video src="https://player-api.charlla.io/mp4/y1brn0fg6my" autoplay muted loop playsinline preload="metadata"></video>
+        </div>
+    </div>
+
+    <!-- 룩 01 : Classic Feminine -->
+    <div class="rm_look">
+        <img src="/morenvyimg/promotion/261012_ClassicModern/pc/sec_look1.jpg" alt="Outfit 1 Classic Feminine" class="bg" usemap="#rm_look1">
+        <!-- 이미지 롤링 -->
+        <div class="swiper roll" style="left: 78.99px; top: 427.25px;">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look1_slide01.jpg" alt="Classic Feminine 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look1_slide02.jpg" alt="Classic Feminine 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look1_slide03.jpg" alt="Classic Feminine 착용 컷"></div>
+            </div>
+        </div>
+        <!-- 오브젝트 안 이미지 페이드 교체 -->
+        <div class="swiper mirror" style="left: 1153.74px; top: 130.82px;">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look1_fade01.png" alt="Classic Feminine 전신 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look1_fade02.png" alt="Classic Feminine 전신 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look1_fade03.png" alt="Classic Feminine 전신 착용 컷"></div>
+            </div>
+        </div>
+        <!-- 상품 링크 : 이미지맵 -->
+        <map name="rm_look1">
+            <area shape="rect" coords="503,599,889,659" href="/product/detail.html?product_no=6512" target="_blank" alt="[ Outer ] 유럽수입원단 칼라리스 울자켓">
+            <area shape="rect" coords="503,708,889,768" href="/product/detail.html?product_no=6478" target="_blank" alt="[ Top ] 리본 타이 블라우스">
+            <area shape="rect" coords="503,817,889,877" href="/product/detail.html?product_no=6548" target="_blank" alt="[ Bottom ] H라인 롱 스커트">
+        </map>
+    </div>
+
+    <!-- 룩 02 : Modern Chic -->
+    <div class="rm_look">
+        <img src="/morenvyimg/promotion/261012_ClassicModern/pc/sec_look2.jpg" alt="Outfit 2 Modern Chic" class="bg" usemap="#rm_look2">
+        <!-- 이미지 롤링 -->
+        <div class="swiper roll" style="left: 1265.44px; top: 426.27px;">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look2_slide01.jpg" alt="Modern Chic 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look2_slide02.jpg" alt="Modern Chic 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look2_slide03.jpg" alt="Modern Chic 착용 컷"></div>
+            </div>
+        </div>
+        <!-- 오브젝트 안 이미지 페이드 교체 -->
+        <div class="swiper mirror" style="left: 78.99px; top: 130.82px;">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look2_fade01.png" alt="Modern Chic 전신 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look2_fade02.png" alt="Modern Chic 전신 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look2_fade03.png" alt="Modern Chic 전신 착용 컷"></div>
+            </div>
+        </div>
+        <!-- 상품 링크 : 이미지맵 -->
+        <map name="rm_look2">
+            <area shape="rect" coords="829,598,1215,658" href="/product/detail.html?product_no=6547" target="_blank" alt="[ Outer ] 미디 트위드 자켓">
+            <area shape="rect" coords="829,707,1215,767" href="/product/detail.html?product_no=6453" target="_blank" alt="[ Top ] 메리노울 베이직 터틀넥">
+            <area shape="rect" coords="829,816,1215,876" href="/product/detail.html?product_no=6356" target="_blank" alt="[ Bottom ] 뒷포켓 부츠컷 데님 팬츠">
+        </map>
+    </div>
+
+    <!-- 룩 03 : Quiet Casual -->
+    <div class="rm_look">
+        <img src="/morenvyimg/promotion/261012_ClassicModern/pc/sec_look3.jpg" alt="Outfit 3 Quiet Casual" class="bg" usemap="#rm_look3">
+        <!-- 이미지 롤링 -->
+        <div class="swiper roll" style="left: 78.99px; top: 427.25px;">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look3_slide01.jpg" alt="Quiet Casual 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look3_slide02.jpg" alt="Quiet Casual 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look3_slide03.jpg" alt="Quiet Casual 착용 컷"></div>
+            </div>
+        </div>
+        <!-- 오브젝트 안 이미지 페이드 교체 -->
+        <div class="swiper mirror" style="left: 1153.74px; top: 129.82px;">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look3_fade01.png" alt="Quiet Casual 전신 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look3_fade02.png" alt="Quiet Casual 전신 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look3_fade03.png" alt="Quiet Casual 전신 착용 컷"></div>
+            </div>
+        </div>
+        <!-- 상품 링크 : 이미지맵 -->
+        <map name="rm_look3">
+            <area shape="rect" coords="503,556,889,616" href="/product/detail.html?product_no=6546" target="_blank" alt="[ Outer ] 맥카라 페이크레더 미디 자켓">
+            <area shape="rect" coords="503,665,889,725" href="/product/detail.html?product_no=6492" target="_blank" alt="[ Top ] 울 텐셀 터틀넥 티셔츠">
+            <area shape="rect" coords="503,817,889,877" href="/product/detail.html?product_no=6477" target="_blank" alt="[ Bottom ] 볼륨업 뒷포켓 부츠컷 데님">
+        </map>
+    </div>
+
+    <!-- 룩 04 : Formal Elegance -->
+    <div class="rm_look">
+        <img src="/morenvyimg/promotion/261012_ClassicModern/pc/sec_look4.jpg" alt="Outfit 4 Formal Elegance" class="bg" usemap="#rm_look4">
+        <!-- 이미지 롤링 -->
+        <div class="swiper roll" style="left: 1265.44px; top: 426.27px;">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look4_slide01.jpg" alt="Formal Elegance 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look4_slide02.jpg" alt="Formal Elegance 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look4_slide03.jpg" alt="Formal Elegance 착용 컷"></div>
+            </div>
+        </div>
+        <!-- 오브젝트 안 이미지 페이드 교체 -->
+        <div class="swiper mirror" style="left: 79.99px; top: 129.09px;">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look4_fade01.png" alt="Formal Elegance 전신 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look4_fade02.png" alt="Formal Elegance 전신 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look4_fade03.png" alt="Formal Elegance 전신 착용 컷"></div>
+            </div>
+        </div>
+        <!-- 상품 링크 : 이미지맵 -->
+        <map name="rm_look4">
+            <area shape="rect" coords="829,490,1215,550" href="/product/detail.html?product_no=6510" target="_blank" alt="[ Outer ] 테일러드 카라 더블 롱 코트">
+            <area shape="rect" coords="829,598,1215,658" href="/product/detail.html?product_no=6470" target="_blank" alt="[ Top ] 캐시미어 가디건">
+            <area shape="rect" coords="829,707,1215,767" href="/product/detail.html?product_no=6486" target="_blank" alt="[ Top ] 텐셀 하이넥 긴팔 티셔츠">
+            <area shape="rect" coords="829,816,1215,876" href="/product/detail.html?product_no=6511" target="_blank" alt="[ Bottom ] 울 치마바지">
+        </map>
+    </div>
+
+    <!-- 룩 05 : Balanced Set-up -->
+    <div class="rm_look">
+        <img src="/morenvyimg/promotion/261012_ClassicModern/pc/sec_look5.jpg" alt="Outfit 5 Balanced Set-up" class="bg" usemap="#rm_look5">
+        <!-- 이미지 롤링 -->
+        <div class="swiper roll" style="left: 78.99px; top: 427.25px;">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look5_slide01.jpg" alt="Balanced Set-up 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look5_slide02.jpg" alt="Balanced Set-up 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look5_slide03.jpg" alt="Balanced Set-up 착용 컷"></div>
+            </div>
+        </div>
+        <!-- 오브젝트 안 이미지 페이드 교체 -->
+        <div class="swiper mirror" style="left: 1152.74px; top: 130.82px;">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look5_fade01.png" alt="Balanced Set-up 전신 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look5_fade02.png" alt="Balanced Set-up 전신 착용 컷"></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261012_ClassicModern/pc/look5_fade03.png" alt="Balanced Set-up 전신 착용 컷"></div>
+            </div>
+        </div>
+        <!-- 상품 링크 : 이미지맵 -->
+        <map name="rm_look5">
+            <area shape="rect" coords="503,600,889,660" href="/product/detail.html?product_no=6448" target="_blank" alt="[ Outer ] 유럽수입원단 헤링본 자켓">
+            <area shape="rect" coords="503,709,889,769" href="/product/detail.html?product_no=6491" target="_blank" alt="[ Top ] 텐셀 물결 하이넥 티셔츠">
+            <area shape="rect" coords="503,817,889,877" href="/product/detail.html?product_no=6537" target="_blank" alt="[ Bottom ] 기모 울 쇼츠">
+        </map>
+    </div>
+</div>
+
+<script>
+    /* 카페24 jQuery 는 본문 뒤에서 불러오므로 바닐라 JS + DOMContentLoaded 로 실행 */
+    document.addEventListener("DOMContentLoaded", function () {
+        var wrap = document.getElementById("pj_roem");
+        if (!wrap) return;
+        var hasIo = "IntersectionObserver" in window;
+
+        /* ── 이미지맵 : 이미지가 원본 크기보다 작게 보이면 좌표도 같은 비율로 축소 ── */
+        var resizeMaps = function () {
+            wrap.querySelectorAll("img[usemap]").forEach(function (img) {
+                if (!img.naturalWidth) return;
+                var map = wrap.querySelector('map[name="' + img.getAttribute("usemap").replace("#", "") + '"]');
+                if (!map) return;
+                var ratio = img.clientWidth / img.naturalWidth;
+                map.querySelectorAll("area").forEach(function (area) {
+                    if (!area.getAttribute("data-coords")) area.setAttribute("data-coords", area.getAttribute("coords"));
+                    area.setAttribute("coords", area.getAttribute("data-coords").split(",").map(function (v) { return Math.round(v * ratio); }).join(","));
+                });
+            });
+        };
+        wrap.querySelectorAll("img[usemap]").forEach(function (img) { img.addEventListener("load", resizeMaps); });
+        window.addEventListener("resize", resizeMaps);
+        resizeMaps();
+
+        /* ── 찰나 영상 : 자동재생 (모바일 자동재생 조건 muted + playsinline 을 속성으로도 지정) ── */
+        var video = wrap.querySelector(".rm_video video");
+        video.muted = true;
+        video.setAttribute("playsinline", "");
+        var playVideo = function () {
+            var p = video.play();
+            if (p && p.catch) p.catch(function () { video.setAttribute("controls", ""); }); /* 자동재생이 막히면(저전력 모드 등) 재생 버튼 노출 */
+        };
+        if (hasIo) {
+            new IntersectionObserver(function (entries) {
+                if (entries[0].isIntersecting) playVideo(); else video.pause();
+            }, {threshold: 0.2}).observe(video);
+        } else {
+            playVideo();
+        }
+
+        /* ── Swiper : 이미지 롤링(슬라이드) / 오브젝트 안 이미지 페이드 교체 — 뷰포트에 들어오면 autoplay 시작 ── */
+        if (typeof Swiper === "undefined") return;
+        var swipers = [];
+        wrap.querySelectorAll(".swiper").forEach(function (el, i) {
+            var option = {
+                loop: true,
+                speed: 700,
+                autoplay: {delay: 3000, disableOnInteraction: false},
+            };
+            if (el.classList.contains("mirror")) {
+                option.effect = "fade";
+                option.fadeEffect = {crossFade: false}; /* true 면 전환 중 두 장이 다 반투명 → 배경이 비침 (오브젝트 모양이 같아 이전 컷 위로 덮어도 자연스러움) */
+                option.allowTouchMove = false;
+            }
+            var swiper = new Swiper(el, option);
+            swiper.autoplay.stop(); /* 뷰포트에 들어오기 전엔 정지 */
+            el.setAttribute("data-index", i);
+            swipers.push(swiper);
+        });
+
+        if (hasIo) {
+            var swiperIo = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    var swiper = swipers[e.target.getAttribute("data-index")];
+                    if (e.isIntersecting) {
+                        if (!swiper.autoplay.running) swiper.autoplay.start();
+                    } else if (swiper.autoplay.running) {
+                        swiper.autoplay.stop();
+                    }
+                });
+            }, {threshold: 0.3});
+            wrap.querySelectorAll(".swiper").forEach(function (el) { swiperIo.observe(el); });
+        } else {
+            swipers.forEach(function (swiper) { swiper.autoplay.start(); });
+        }
+    });
+</script>

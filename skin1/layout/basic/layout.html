@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes" />
+
+    <!-- PG크로스브라우징필수내용 -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <!-- // PG크로스브라우징필수내용 -->
+
+    <title></title>
+    <!--@css(/layout/basic/css/common.css)-->
+    <!--@css(/layout/basic/css/layout.css)-->
+    <!--@css(/layout/basic/css/ec-base-ui.css)-->
+    <!--@css(/layout/basic/css/ec-base-button.css)-->
+    <!--@css(/layout/basic/css/ec-base-tab.css)-->
+    <!--@css(/layout/basic/css/ec-base-table.css)-->
+    <!--@css(/layout/basic/css/ec-base-tooltip.css)-->
+    <!--@css(/layout/basic/css/ec-base-help.css)-->
+    <!--@css(/layout/basic/css/ec-base-fold.css)-->
+    <!--@css(/layout/basic/css/ec-base-box.css)-->
+    <!--@css(/layout/basic/css/ec-base-desc.css)-->
+    <!--@css(/layout/basic/css/ec-base-product.css)-->
+    <!--@css(/layout/basic/css/ec-base-prdInfo.css)-->
+    <!--@css(/layout/basic/css/ec-base-paginate.css)-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+
+    <!--@css(/morenvy/css/swiper-bundle.min.css)-->
+    <!--@css(/morenvy/css/mcss.css)-->
+    <!--@css(/morenvy/css/mcommon.css)-->
+
+    <!--@js(/morenvy/js/swiper-bundle.min.js)-->
+    <!--@js(/morenvy/js/jquery.plugin.min.js)-->
+    <!--@js(/morenvy/js/jquery.countdown.min.js)-->
+    <!--@js(/morenvy/js/countdown_start.js)-->
+    <!--@js(/morenvy/js/mcommon.js)-->
+    <!--@js(/morenvy/js/opencate.js)-->
+    <!--@js(/morenvy/js/opencate2.js)-->
+    <!--@js(/morenvy/js/recent.js)-->
+    <!--@js(/layout/basic/js/basic.js)-->
+    <!--@js(/layout/basic/js/layout.js)-->
+    <!--@js(/js/common.js)-->
+</head>
+
+<body>
+    <div id="wrap">
+        <!--@import(/mheader.html)-->
+
+        <!-- 사이드바 -->
+        <!--@import(/layout/basic/sidebar.html)-->
+
+        <div id="container">
+            <div id="contents">
+                <!--@contents-->
+            </div>
+        </div>
+        <!--@import(/mfooter.html)-->
+        <div id="layoutDimmed" class="dimmed"></div>
+    </div>
+    <!-- //wrap -->
+
+    <div class="back_box"></div>
+
+    <div id="progressPaybar" style="display: none">
+        <div id="progressPaybarBackground" class="layerProgress"></div>
+        <div id="progressPaybarView">
+            <div class="box">
+                <h3>현재 결제가 진행중입니다.</h3>
+                <p class="txt">
+                    본 결제 창은 결제완료 후 자동으로 닫히며,결제 진행 중에 본 결제 창을 닫으시면<br />
+                    주문이 되지 않으니 결제 완료 될 때 까지 닫지 마시기 바랍니다.
+                </p>
+                <div class="progressbar"><img src="//img.echosting.cafe24.com/skin/skin/common/img_loading.gif"
+                        alt="loading" loading="lazy" /></div>
+            </div>
+        </div>
+    </div>
+
+    <div module="Layout_multishopShipping">
+        <!--@css(/layout/basic/css/ec-base-layer.css)-->
+        <!--@css(/css/module/layout/multishopShipping.css)-->
+        <!--@js(/js/module/layout/multishopShipping.js)-->
+        <div class="worldshipLayer ec-base-layer typeModal">
+            <div class="header">
+                <h3>WORLD SHIPPING</h3>
+            </div>
+            <div class="content">
+                <p class="desc">PLEASE SELECT THE DESTINATION COUNTRY AND LANGUAGE :</p>
+                <select module="Layout_multishopShippingCountrylist">
+                    <option value="{$country_code}" {$country_default_selected}>SHIPPING TO : {$country_name}</option>
+                    <option value="{$country_code}" {$country_default_selected}>SHIPPING TO : {$country_name}</option>
+                </select>
+                <select module="Layout_multishopShippingLanguagelist">
+                    <option value="{$shop_domain}" {$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
+                    <option value="{$shop_domain}" {$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
+                </select>
+            </div>
+            <div class="ec-base-button">
+                <a href="#none" class="btnSubmitFix sizeM">GO</a>
+            </div>
+            <a href="#none" class="btnClose">닫기</a>
+        </div>
+    </div>
+</body>
+
+</html>

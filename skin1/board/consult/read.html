@@ -1,0 +1,66 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/morenvy/js/board_consult.js)-->
+
+<div class="myshopArea">
+<div  module="board_ReadPackage_9">
+    <!--@css(/css/module/board/readPackage_9.css)-->
+
+    <div module="board_title_9">
+        <div class="titleArea titleArea--myshop">
+            <div module="Layout_MobileAction">
+                <a href="#none" onclick="{$go_back}"><img src="/morenvyimg/blk_arr_d.svg" alt="뒤로가기"></a>
+            </div>
+            <h2>{$board_title}</h2>
+        </div>
+    </div>
+
+    <div module="Board_Read_9">
+        <!--
+            $delete_success_url = /board/consult/list.html
+            $login_page_url = /member/login.html
+        -->
+
+			<div class="qna_list">
+				<ul>
+					<li>
+						<div class="oneline">
+							<div class="txtNum">{$consult}</div>
+							<div class="{$category_display|display}">{$category_name}</div>
+						</div>
+						<div class="titline left txtBreak">{$subject}</div>
+						<div class="dateline"><span>{$writer}</span><span class="{$config.display_ip|display}">(ip:{$ip})</span><span class="" class="{$date_display|display}">{$write_date}</span></div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="ec-base-table gLayoutFixed qna_question">
+				<strong class="qna_textqna">Q.</strong>
+				<div>{$content}{$content_image}</div>
+				<div>{$attach_file}</div>
+			</div>
+
+			<div class="{$display_consult_reply} qna_reply">
+				<div class="qna_reply_tit">
+					<strong class="qna_textqna">A.</strong>
+					<span>{$reply_name}</span><span>{$reply_date}</span>
+				</div>
+				<div class="qna_reply_cont">{$reply_content}</div>
+			</div>
+
+			<div class="ec-base-box typeThinBg gBlank30 {$display_consult_noreply}">
+				<p>빠른시간내에 답변드리겠습니다. 잠시만 기다려 주세요!</p>
+			</div>
+
+			<div class="ec-base-button gBottom gBreak">
+				<span class="gLeft">
+					<a href="{$link_board_list}" class="btnNormalFix sizeM">목록</a>
+					<a href="#none" onclick="{$action_delete}" class="btnNormalFix sizeM {$delete_button_auth|display}">삭제</a>
+					<a href="/board/consult/modify.html{$param_modify}" class="btnNormalFix sizeM {$modify_button_auth|display}"">수정</a>
+				</span>
+				<span class="gRight gBreak {$config.is_admin|display}"><a href="/board/consult/reply.html{$param_reply}" class="btnSubmitFix sizeM {$reply_button_auth|display}">답변</a></span>
+			</div>
+
+    </div>
+</div>
+<!--@import(/myshop/myshop_main.html)-->
+</div>

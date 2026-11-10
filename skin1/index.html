@@ -1,0 +1,566 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/morenvy/css/main.css)-->
+<!--@css(/morenvy/css/mpopup.css)-->
+<!--@js(/morenvy/js/jquery.bpopup.min.js)-->
+<!--@js(/morenvy/js/main.js)-->
+<!--@js(/morenvy/js/main_pop.js)-->
+
+
+
+<!---------------------------------------------------------------------------------------------------------------------------------------
+
+	- 디자인 수정을 하시려면 현재페이지 좌측(←)의 메뉴에서 [전체화면보기 탭] 을 선택하신후 스크롤을 내리셔서 link.html을 클릭해 주세요.
+	- 좌측의 메뉴에서 link.html 페이지를 [★자주쓰는화면]으로 선택하시면 좀더 편안하게 접근이 가능합니다.
+	- link.html 페이지에서 손쉽게 디자인 수정이 가능합니다. (FTP : /sde_design/디자인스킨번호/link.html)
+
+	- https://morenvy.com // 02-812-3881 // 고객센터
+	- https://serviceguide.cafe24.com/ko_KR // 온라인매뉴얼
+	- EMAIL : morenvy@hanmail.net
+
+----------------------------------------------------------------------------------------------------------------------------------------->
+
+<!-- 메인 : 팝업 -->
+<!--
+    앱스토어 - 배너관리자 - [메인 : 팝업] 에서 수정가능합니다
+    배너 1개 = 슬라이드 1장 / 이미지 1 = 팝업 이미지(520x715, 2배 1040x1430 권장) / 링크 1 = 이미지 클릭 시 이동(비우면 클릭 안 됨)
+    배너가 2개 이상이면 자동으로 슬라이드되고 아래에 페이지 점이 표시됩니다.
+-->
+<div class="main_popup">
+	<div class="popup">
+		<div class="swiper swiper_pop morenvy-banner-area" area_id="ee56">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide morenvy-banner">
+					<a href="{#link_1}" target="{#target_1}" class="pop_link">{#imgTag_1}</a>
+				</div>
+			</div>
+			<div class="swiper-pagination swiper-pagination-pop"></div>
+		</div>
+		<div class="btn_close"><!--@import(/morenvyimg/cs_pop_close.svg)--></div>
+		<div class="btn_wrap">
+			<a href="#none" class="notToday">오늘하루 보지않기</a>
+			<a href="#none" class="close">닫기</a>
+		</div>
+	</div>
+</div>
+
+<!-- 메인 01 : 키비주얼 -->
+<!--
+    키비주얼 형태 선택
+    아래 import 경로의 파일명만 바꾸면 키비주얼 형태가 바뀝니다. (파일 위치 : /custom/main/kv/)
+    형태마다 이미지 비율이 달라 배너관리자 영역을 따로 씁니다.
+
+    kv01_full.html   : 01 확장형 - 화면 가득 찬 이미지 위에 흰 글씨, 헤더가 키비주얼 위에 투명하게 겹침 [메인 : 키비주얼 확장형]
+    kv02_banner.html : 02 배너형 - 960x640 둥근 배너가 가운데 정렬로 흐르고, 글씨는 이미지 아래 [메인 : 키비주얼 배너형]
+    kv03_card.html   : 03 카드형 - 480x700 둥근 카드가 여러 장 흐르고, 글씨는 이미지 아래 [메인 : 키비주얼 카드형]
+-->
+<!--@import(/custom/main/kv/kv01_full.html)-->
+
+<!-- 메인 02 : 카테고리 -->
+<!-- 앱스토어 - 배너관리자 - [메인 : 카테고리] 에서 수정가능합니다 -->
+<section class="m_sec02">
+	<div class="morenvy-banner-area swiper swiper01" area_id="394e">
+		<ul class="swiper-wrapper">
+            <li class="swiper-slide morenvy-banner">
+			    <a href="{#link_1}" target="{#target_1}">
+			    	<div class="thumb">{#imgTag_1}</div>
+			    	<span>{#title}</span>
+			    </a>
+            </li>
+		</ul>
+	</div>
+</section>
+
+<!-- 메인 03 : 2단 배너 -->
+<!--
+    모렌비 배너관리자
+    배너영역명 : 메인 : 이벤트 01
+    이미지 1 = PC 이미지 / 이미지 2 = 모바일 이미지
+    타이틀 = 제목 / 텍스트 1 = 설명(줄바꿈 <br>) / 텍스트 2 = 글자색(비우면 흰색, 예: #1a1a1a)
+-->
+<section class="m_sec03">
+    <div class="swiper swiper02 morenvy-banner-area" area_id="e9d6">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide morenvy-banner m_ban">
+                <a href="{#link_1}" target="{#target_1}">
+                    <div class="bg">
+                        <picture>
+                            <source srcset="{#imgSrc_2}" media="(max-width: 767px)">{#imgTag_1}
+                        </picture>
+                    </div>
+
+                    <div class="txt" style="color:{#text_2}">
+                        <h3>{#title}</h3>
+                        <p>{#text_1}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination swiper-pagination02"></div>
+</section>
+
+<!-- 메인 04 : 베스트셀러 -->
+<!--
+    상품진열 형식 선택 : 아래 section 의 prd_xxx 클래스만 바꾸면 됩니다.
+
+    prd_tab      : 탭 진열형 - 탭을 누르면 해당 탭 상품이 5열로 보임 (탭 이름 : /section/m_sec04_tab.html)
+    prd_rolling  : 롤링 진열형 - 385x515 상품 4개가 보이고 1개씩 슬라이드, 순위 숫자 + 페이지 점
+    prd_basic    : 기본 진열형 - 5열 10개씩, [더 보기] 로 10개씩 추가, 순위 숫자
+    prd_timesale : 타임세일 진열형 - 385x515 상품 4열, 타임세일 상품은 이미지 아래 남은 시간 표시
+
+    ※ 탭 진열형이 아니면 첫 번째 tab_content 의 상품만 보입니다.
+    ※ 타임세일(기간할인) 진행 상품은 모든 형식에서 이미지 아래에 남은 시간이 표시됩니다.
+-->
+<section class="m_sec04 m_prd prd_tab">
+	<div class="top">
+		<!-- 메인 04 타이틀 -->
+		<!--@import(/section/m_sec04_title.html)-->
+
+        <div class="swiper_tab swiper">
+            <ul class="prd_tab_menu swiper-wrapper">
+			    <!-- 메인 04 탭 -->
+			    <!--@import(/section/m_sec04_tab.html)-->
+            </ul>
+        </div>
+	</div>
+
+	<div class="bottom">
+		<div class="tab_content selected">
+			<div module="product_listmain_31" class="prdArea main_prd">
+				<div class="ec-base-product">
+					<!--
+						$count = 20
+					-->
+					<ul class="prdList">
+						<!--@import(/product/product_list.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab_content">
+			<div module="product_listmain_32" class="prdArea main_prd">
+				<div class="ec-base-product">
+					<!--
+						$count = 20
+					-->
+					<ul class="prdList">
+						<!--@import(/product/product_list.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab_content">
+			<div module="product_listmain_33" class="prdArea main_prd">
+				<div class="ec-base-product">
+					<!--
+						$count = 20
+					-->
+					<ul class="prdList">
+						<!--@import(/product/product_list.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab_content">
+			<div module="product_listmain_34" class="prdArea main_prd">
+				<div class="ec-base-product">
+					<!--
+						$count = 20
+					-->
+					<ul class="prdList">
+						<!--@import(/product/product_list.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="swiper-pagination swiper-pagination-prd"></div>
+    <button type="button" class="btn_more"><span class="txt">더 보기 (<span class="cur">1</span>/<span class="total">1</span>)</span><img src="/morenvyimg/cs_arr_d.svg" alt=""></button>
+</section>
+
+<!-- 메인 05 : 브랜드 라인업 -->
+<!--
+    모렌비 배너관리자
+    배너영역명 : 메인 : 서비스
+    이미지 1 = 이미지 / 타이틀 = 제목 / 텍스트 1 = 설명 / 링크 1 = 링크
+-->
+<section class="m_sec05">
+	<!-- 메인 05 타이틀 -->
+	<!--@import(/section/m_sec05_title.html)-->
+
+    <div class="swiper swiper03 morenvy-banner-area" area_id="8cb5">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide morenvy-banner">
+                <a href="{#link_1}" target="{#target_1}">
+                    <div class="thumb">{#imgTag_1}</div>
+
+                    <div class="txt">
+                        <h3>{#title}</h3>
+                        <p>{#text_1}</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- 메인 06 : 추천 상품 -->
+<!--
+    상품진열 형식 선택 : 아래 section 의 prd_xxx 클래스만 바꾸면 됩니다.
+
+    prd_tab      : 탭 진열형 - 탭을 누르면 해당 탭 상품이 5열로 보임 (탭 이름 : /section/m_sec06_tab.html)
+    prd_rolling  : 롤링 진열형 - 385x515 상품 4개가 보이고 1개씩 슬라이드, 순위 숫자 + 페이지 점
+    prd_basic    : 기본 진열형 - 5열 10개씩, [더 보기] 로 10개씩 추가, 순위 숫자
+    prd_timesale : 타임세일 진열형 - 385x515 상품 4열, 타임세일 상품은 이미지 아래 남은 시간 표시
+
+    ※ 탭 진열형이 아니면 첫 번째 tab_content 의 상품만 보입니다.
+    ※ 타임세일(기간할인) 진행 상품은 모든 형식에서 이미지 아래에 남은 시간이 표시됩니다.
+-->
+<section class="m_sec06 m_prd prd_tab">
+	<div class="top">
+		<!-- 메인 06 타이틀 -->
+		<!--@import(/section/m_sec06_title.html)-->
+
+        <div class="swiper_tab swiper">
+            <ul class="prd_tab_menu swiper-wrapper">
+			    <!-- 메인 06 탭 -->
+			    <!--@import(/section/m_sec06_tab.html)-->
+            </ul>
+        </div>
+	</div>
+
+	<div class="bottom">
+		<div class="tab_content selected">
+			<div module="product_listmain_35" class="prdArea main_prd">
+				<div class="ec-base-product">
+					<!--
+						$count = 20
+					-->
+					<ul class="prdList">
+						<!--@import(/product/product_list.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab_content">
+			<div module="product_listmain_39" class="prdArea main_prd">
+				<div class="ec-base-product">
+					<!--
+						$count = 20
+					-->
+					<ul class="prdList">
+						<!--@import(/product/product_list.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab_content">
+			<div module="product_listmain_40" class="prdArea main_prd">
+				<div class="ec-base-product">
+					<!--
+						$count = 20
+					-->
+					<ul class="prdList">
+						<!--@import(/product/product_list.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab_content">
+			<div module="product_listmain_41" class="prdArea main_prd">
+				<div class="ec-base-product">
+					<!--
+						$count = 20
+					-->
+					<ul class="prdList">
+						<!--@import(/product/product_list.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="swiper-pagination swiper-pagination-prd"></div>
+    <button type="button" class="btn_more"><span class="txt">더 보기 (<span class="cur">1</span>/<span class="total">1</span>)</span><img src="/morenvyimg/cs_arr_d.svg" alt=""></button>
+</section>
+
+<!-- 메인 07 : 영상 -->
+<!--
+    영상 형태 선택
+    아래 import 경로의 파일명만 바꾸면 영상 영역 형태가 바뀝니다. (파일 위치 : /custom/main/video/)
+    형태마다 배너관리자 영역을 따로 씁니다.
+
+    video01_banner.html : 01 배너형 - 1600x720 썸네일 + 재생 버튼, 누르면 유튜브 영상 재생 [메인 : 영상 배너형]
+    video02_shorts.html : 02 쇼츠형 - 세로 카드 슬라이드, 가운데 카드에서 쇼츠 영상 자동 재생 [메인 : 영상 쇼츠형]
+-->
+<!--@import(/custom/main/video/video02_shorts.html)-->
+
+<!-- 메인 08 : 배너 + 상품 -->
+<!--
+    모렌비 배너관리자
+    배너영역명 : 메인 : 혜택
+    이미지 1 = PC 이미지 / 이미지 2 = 모바일 이미지 / 링크 1 = 링크
+-->
+<section class="m_sec08">
+    <div class="left morenvy-banner-area" area_id="af20">
+        <div class="morenvy-banner m_ban">
+            <a href="{#link_1}" target="{#target_1}">
+                <div class="bg">
+                    <picture>
+                        <source srcset="{#imgSrc_2}" media="(max-width: 767px)">{#imgTag_1}
+                    </picture>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="right">
+        <div module="product_listmain_36" class="prdArea main_prd type_h">
+            <div class="ec-base-product">
+                <!--
+                    $count = 6
+                -->
+                <ul class="prdList">
+                    <!--@import(/product/product_list.html)-->
+                </ul>
+            </div>
+        </div>
+        <div class="scroll_bar"><span></span></div>
+    </div>
+</section>
+
+<!-- 메인 09 : 텍스트 배너 -->
+<section class="m_sec09">
+    <div class="marquee">
+        <ul class="marquee_list">
+            <!-- 메인 09 텍스트 -->
+            <!--@import(/section/m_sec09_txt.html)-->
+        </ul>
+    </div>
+</section>
+
+<!-- 메인 10 : 타임세일 -->
+<!--
+    상품진열 형식 선택 : 아래 section 의 prd_xxx 클래스만 바꾸면 됩니다.
+
+    prd_tab      : 탭 진열형 - 탭을 누르면 해당 탭 상품이 5열로 보임 (탭 이름 : /section/m_sec10_tab.html)
+    prd_rolling  : 롤링 진열형 - 385x515 상품 4개가 보이고 1개씩 슬라이드, 순위 숫자 + 페이지 점
+    prd_basic    : 기본 진열형 - 5열 10개씩, [더 보기] 로 10개씩 추가, 순위 숫자
+    prd_timesale : 타임세일 진열형 - 385x515 상품 4열, 타임세일 상품은 이미지 아래 남은 시간 표시
+
+    ※ 탭 진열형이 아니면 첫 번째 tab_content 의 상품만 보입니다.
+    ※ 타임세일(기간할인) 진행 상품은 모든 형식에서 이미지 아래에 남은 시간이 표시됩니다.
+-->
+<section class="m_sec10 m_prd prd_rolling">
+	<div class="top">
+		<!-- 메인 10 타이틀 -->
+		<!--@import(/section/m_sec10_title.html)-->
+
+        <div class="swiper_tab swiper">
+            <ul class="prd_tab_menu swiper-wrapper">
+			    <!-- 메인 10 탭 -->
+			    <!--@import(/section/m_sec10_tab.html)-->
+            </ul>
+        </div>
+	</div>
+
+	<div class="bottom">
+		<div class="tab_content selected">
+			<div module="product_listmain_37" class="prdArea main_prd">
+				<div class="ec-base-product">
+					<!--
+						$count = 20
+					-->
+					<ul class="prdList">
+						<!--@import(/product/product_list.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab_content">
+			<div module="product_listmain_42" class="prdArea main_prd">
+				<div class="ec-base-product">
+					<!--
+						$count = 20
+					-->
+					<ul class="prdList">
+						<!--@import(/product/product_list.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab_content">
+			<div module="product_listmain_43" class="prdArea main_prd">
+				<div class="ec-base-product">
+					<!--
+						$count = 20
+					-->
+					<ul class="prdList">
+						<!--@import(/product/product_list.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab_content">
+			<div module="product_listmain_44" class="prdArea main_prd">
+				<div class="ec-base-product">
+					<!--
+						$count = 20
+					-->
+					<ul class="prdList">
+						<!--@import(/product/product_list.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="swiper-pagination swiper-pagination-prd"></div>
+    <button type="button" class="btn_more"><span class="txt">더 보기 (<span class="cur">1</span>/<span class="total">1</span>)</span><img src="/morenvyimg/cs_arr_d.svg" alt=""></button>
+</section>
+
+<!-- 메인 11 : 이벤트 배너 -->
+<!--
+    이벤트 배너 형태 선택
+    아래 import 경로의 파일명만 바꾸면 이벤트 배너 형태가 바뀝니다. (파일 위치 : /custom/main/event/)
+    형태마다 배너관리자 영역을 따로 씁니다.
+
+    event01_banner.html : 01 배너형 - 화면 가득 찬 배너(배경 고정) 위에 흰 글씨 + 버튼 [메인 : 이벤트 배너형]
+    event02_slide.html  : 02 슬라이드형 - 타이틀 + 800x800 배너 슬라이드, 가운데 배너의 글씨만 보임 [메인 : 이벤트 슬라이드형]
+-->
+<!--@import(/custom/main/event/event02_slide.html)-->
+
+<!-- 메인 12 : 스포트라이트 -->
+<!--
+    모렌비 배너관리자
+    배너영역명 : 메인 : 스포트라이트
+    이미지 1 = 이미지(정사각형) / 링크 1 = 링크
+    배너 1개마다 상품이 2개씩 순서대로 묶여 진열됩니다. (배너 1 = 상품 1·2, 배너 2 = 상품 3·4 ...)
+
+    배치 선택 : 아래 section 의 sp_col 부분만 바꾸면 됩니다.
+    sp_col : 상하형 - 배너 아래에 상품 2개, 3묶음이 가로로 나란히
+    sp_row : 좌우형 - 배너 오른쪽에 상품 2개, 묶음이 가로로 슬라이드
+-->
+<section class="m_sec12 sp_col">
+	<!-- 메인 12 타이틀 -->
+	<!--@import(/section/m_sec12_title.html)-->
+
+    <div class="spot_ban morenvy-banner-area" area_id="efbf">
+        <div class="morenvy-banner m_ban">
+            <a href="{#link_1}" target="{#target_1}">
+                <div class="bg">{#imgTag_1}</div>
+            </a>
+        </div>
+    </div>
+
+	<div module="product_listmain_38" class="prdArea main_prd type_h">
+        <div class="ec-base-product">
+            <!--
+                $count = 6
+            -->
+            <ul class="prdList">
+                <!--@import(/product/product_list.html)-->
+            </ul>
+        </div>
+	</div>
+</section>
+
+<!-- 메인 13 : 리뷰 -->
+<section class="m_sec13" module="board_list_4">
+	<!-- 메인 13 타이틀 -->
+    <!--@import(/section/m_sec13_title.html)-->
+
+	<div class="review_area">
+		<div class="swiper swiper04">
+			<!--
+				$count = 8
+				$main_list = yes
+				$login_page_url = /member/login.html
+				$deny_access_url = /index.html
+			-->
+			<ul class="swiper-wrapper">
+				<li class="swiper-slide">
+					<a href="/board/product/read.html{$param_read}" class="thumb"><img src="{$img_src|replace:gallery/,/}" onerror="this.src='{$product_img_src}'" alt=""></a>
+
+					<div class="contents">
+						<a href="/board/product/read.html{$param_read}" class="txt">{$content}</a>
+
+						<div class="info">
+							<span class="writer">{$writer}</span>
+							<div class="etc">
+								<span class="date">{$write_date}</span>
+								<span class="hit"><img src="/morenvyimg/cs_eye.svg" alt="조회수">{$hit}</span>
+							</div>
+						</div>
+
+						<a href="/product/detail.html{$param_product}" class="prd">
+					    	<div class="prd_img"><img src="{$product_img_src}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_medium.gif'" alt=""></div>
+						    <div class="prd_info">
+								<span class="prd_name">{$product_name}</span>
+						    	<div class="stars point{$point_count}"><i></i><i></i><i></i><i></i><i></i></div>
+						    </div>
+						</a>
+					</div>
+				</li>
+
+				<li class="swiper-slide">
+					<a href="/board/product/read.html{$param_read}" class="thumb"><img src="{$img_src|replace:gallery/,/}" onerror="this.src='{$product_img_src}'" alt=""></a>
+
+					<div class="contents">
+						<a href="/board/product/read.html{$param_read}" class="txt">{$content}</a>
+
+						<div class="info">
+							<span class="writer">{$writer}</span>
+							<div class="etc">
+								<span class="date">{$write_date}</span>
+								<span class="hit"><img src="/morenvyimg/cs_eye.svg" alt="조회수">{$hit}</span>
+							</div>
+						</div>
+
+						<a href="/product/detail.html{$param_product}" class="prd">
+					    	<div class="prd_img"><img src="{$product_img_src}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_medium.gif'" alt=""></div>
+						    <div class="prd_info">
+								<span class="prd_name">{$product_name}</span>
+						    	<div class="stars point{$point_count}"><i></i><i></i><i></i><i></i><i></i></div>
+						    </div>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="swiper-pagination swiper-pagination04"></div>
+	</div>
+</section>
+
+<!-- 메인 14 : 인스타그램 -->
+<!--
+    모렌비 배너관리자
+    배너영역명 : 메인 : 인스타그램
+    이미지 1 = 이미지(정사각형) / 링크 1 = 게시물 링크
+-->
+<section class="m_sec14">
+	<!-- 메인 14 타이틀 -->
+	<!--@import(/section/m_sec14_title.html)-->
+
+    <div class="swiper swiper05 morenvy-banner-area" area_id="219e">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide morenvy-banner">
+                <a href="{#link_1}" target="{#target_1}">{#imgTag_1}</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
+<!--@define(cmc_log)-->

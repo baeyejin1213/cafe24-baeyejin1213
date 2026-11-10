@@ -1,0 +1,68 @@
+<!-- 사이드 메뉴 (좌측 전체메뉴) : 모바일 메뉴 버튼 · 전체메뉴 헤더(header05) 햄버거 버튼으로 열림 -->
+<aside id="aside" module="layout_slidePackage">
+    <!--@css(/morenvy/css/morenvy_slide.css)-->
+    <!--@js(/morenvy/js/m_aside.js)-->
+
+    <div class="side_dim"></div>
+
+    <nav>
+        <!-- 사이드바 : 상단 -->
+        <div class="side_top">
+            <!-- 사이드바 : 로그인 -->
+            <div class="side_login">
+                <div module="Layout_statelogoff">
+                    <p><a href="/member/login.html">로그인</a> 해주세요.</p>
+                    <div class="line"></div>
+                    <a href="/member/join.html">회원가입</a>
+                </div>
+                <div module="Layout_statelogon">
+                    <a href="/myshop/index.html">마이페이지</a>
+                    <div class="line"></div>
+                    <a href="{$action_logout}">로그아웃</a>
+                </div>
+            </div>
+
+            <!-- 사이드바 : 아이콘 -->
+            <ul class="side_icon">
+                <li class="side_search"><a href="#none"><!--@import(/morenvyimg/cs_side_search.svg)--></a></li>
+                <li class="side_close"><a href="#none"><!--@import(/morenvyimg/cs_side_close.svg)--></a></li>
+            </ul>
+        </div>
+
+        <!-- 사이드바 : 중간 -->
+        <div class="side_middle" module="Layout_category">
+            <!-- 사이드바 : 카테고리 (화살표를 누르면 중분류 → 소분류 → 상세분류가 펼쳐짐) -->
+            <ul class="side_cate">
+                <!-- 사이드바 : 자동 카테고리 -->
+                <li><a href="{$link_product_list}" class="cate" cate="{$param}">{$name_or_img_tag}<span class="open"></span></a></li>
+                <li><a href="{$link_product_list}" class="cate" cate="{$param}">{$name_or_img_tag}<span class="open"></span></a></li>
+
+                <!-- 사이드바 : 이벤트 (상단 이벤트와 같은 파일) -->
+                <li class="noChild">
+                    <!--@import(/section/h_community.html)-->
+                </li>
+
+                <li>
+                    <!-- 사이드바 : 커뮤니티 텍스트 수정 -->
+                    <!--@import(/section/side_community.html)-->
+
+                    <!-- 사이드바 : 자동 카테고리 - 커뮤니티 -->
+                    <div class="depth2" module="Layout_BoardInfo">
+                        <ul>
+                            <li class="noChild"><a href="{$board_list_url}">{$board_name}</a>{$board_adult_icon}</li>
+                            <li class="noChild"><a href="{$board_list_url}">{$board_name}</a>{$board_adult_icon}</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 사이드바 : 하단 -->
+        <div class="side_bottom">
+            <ul>
+                <!-- 사이드바 : 메뉴 수정 -->
+                <!--@import(/section/side_menu.html)-->
+            </ul>
+        </div>
+    </nav>
+</aside>

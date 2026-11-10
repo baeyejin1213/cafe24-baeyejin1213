@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* 사이드바 (좌측 전체메뉴) */
+#aside {position: fixed; top: 0; left: 0; z-index: 2000; width: 100%; height: 100%; visibility: hidden; transition: visibility 0s 0.4s;}
+body.side #aside {visibility: visible; transition: none;}
+#aside .side_dim {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); opacity: 0; transition: opacity 0.4s;}
+body.side #aside .side_dim {opacity: 1;}
+#aside nav {position: absolute; top: 0; left: 0; width: 44rem; max-width: 100%; height: 100%; padding: 0 3.2rem 4rem; box-sizing: border-box; overflow-y: auto; scrollbar-width: none; background-color: var(--white); transform: translateX(-100%); transition: transform 0.4s; font-family: "SUIT Variable", "Pretendard Variable", sans-serif;}
+body.side #aside nav {transform: translateX(0);}
+#aside a {font-family: inherit;}
+
+
+/* 사이드바 : 상단 */
+#aside .side_top {position: sticky; top: 0; z-index: 1; display: flex; justify-content: space-between; align-items: center; height: 7.2rem; background-color: var(--white);}
+#aside .side_top .side_login .xans-layout {display: flex; align-items: center; gap: 1.2rem;}
+#aside .side_top .side_login p,
+#aside .side_top .side_login a {font-size: 1.4rem; line-height: 2.4rem; color: var(--black01); white-space: nowrap;}
+#aside .side_top .side_login p a {text-decoration: underline;}
+#aside .side_top .side_login .line {width: 1px; height: 1rem; background-color: #CCC;}
+#aside .side_top .side_icon {display: flex; align-items: center; gap: 1.6rem;}
+#aside .side_top .side_icon a,
+#aside .side_top .side_icon svg {display: block; width: 2.4rem; height: 2.4rem;}
+
+
+/* 사이드바 : 중간 (카테고리) */
+#aside .side_middle {margin-top: .8rem;}
+#aside .side_cate > li {border-bottom: 1px solid #E9E9E9;}
+#aside .side_cate > li > a {display: flex; align-items: center; justify-content: space-between; height: 7.2rem; font-size: 1.8rem; line-height: 2.4rem; color: var(--black01);}
+#aside .side_cate li .open {display: none; flex-shrink: 0; width: 2.4rem; height: 2.4rem; background: url(/morenvyimg/cs_side_arr.svg) no-repeat center / contain; cursor: pointer; transition: transform 0.3s;}
+#aside .side_cate li:not(.noChild) > a > .open {display: block;}
+#aside .side_cate li.selected > a > .open {transform: rotate(180deg);}
+#aside .side_cate li > div {display: none;}
+#aside .side_cate .depth2 {padding-bottom: 2rem;}
+#aside .side_cate .depth2 li > a {display: flex; align-items: center; justify-content: space-between; gap: .8rem; padding: .6rem 0; font-size: 1.5rem; line-height: 2.4rem; color: #555; word-break: keep-all;}
+#aside .side_cate .depth2 li .open {width: 2rem; height: 2rem;}
+#aside .side_cate .depth2 li.selected > a {color: var(--black01);}
+#aside .side_cate .depth3,
+#aside .side_cate .depth4 {padding: .2rem 0 .6rem 1.2rem;}
+#aside .side_cate .depth3 li > a {font-size: 1.4rem; color: #777;}
+#aside .side_cate .depth4 li > a {font-size: 1.3rem; color: #8A8A8A;}
+
+
+/* 사이드바 : 하단 */
+#aside .side_bottom {margin-top: 4rem;}
+#aside .side_bottom ul {display: flex; flex-direction: column; align-items: flex-start; gap: 1.6rem;}
+#aside .side_bottom li a {font-size: 1.6rem; line-height: 2.4rem; color: #8A8A8A;}
+
+
+/* 반응형 */
+@media all and (max-width: 767px) {
+    #aside nav {width: 100%; padding: 0 2rem 4rem;}
+    #aside .side_top {height: 5.6rem;}
+    #aside .side_cate > li > a {height: 6rem; font-size: 1.6rem;}
+    #aside .side_bottom {margin-top: 3.2rem;}
+    #aside .side_bottom li a {font-size: 1.4rem;}
+}

@@ -1,0 +1,31 @@
+<!--
+    키비주얼 : 01 확장형 - 화면 가득 찬 이미지 위에 흰 글씨, 헤더가 키비주얼 위에 투명하게 겹침
+    앱스토어 - 배너관리자 - [메인 : 키비주얼 확장형] 에서 수정가능합니다
+    이미지 1 = PC 배경(1920x1080) / 이미지 2 = 모바일 배경
+    텍스트 2 = 대제목(줄바꿈 <br>) / 텍스트 3 = 설명(줄바꿈 <br>, 비우면 숨김)
+    타이틀 = 버튼명(비우면 숨김) / 링크 1 = 버튼 링크
+-->
+<section class="m_sec01 main_visual kv_full">
+    <div class="swiper swiper_visual morenvy-banner-area" area_id="f143">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide morenvy-banner">
+                <div class="bg">
+                    <picture>
+                        <source srcset="{#imgSrc_2}" media="(max-width: 767px)">{#imgTag_1}
+                    </picture>
+                </div>
+
+                <div class="txt">
+                    <h2>{#text_2}</h2>
+                    <p>{#text_3}</p>
+                    <a href="{#link_1}" target="{#target_1}" class="btn_line">{#title}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--@import(/custom/main/kv/common/navi.html)-->
+
+    <!-- 모바일 : 페이지 표시 (현재 / 전체) -->
+    <div class="kv_fraction"><span class="cur">1</span><span>/</span><span class="total">1</span></div>
+</section>

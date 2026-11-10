@@ -1,0 +1,65 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!-- 테스트 스킨 확인용 (복사 제외) -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400&display=swap">
+<link rel="stylesheet" href="https://use.typekit.net/nbw0biw.css">
+<style>
+    #container #contents {max-width: 1840px; padding: 0 40px; margin: 0 auto; box-sizing: content-box;}
+
+    @media (max-width: 1024px) {
+        div#container #contents {width: calc(100% - 32px); padding: 0; box-sizing: border-box;}
+    }
+</style>
+
+<div id="morenvy-catedeco">
+    <!-- 아래부터 복사 -->
+    <div class="keyvisual">
+        <div class="bg">
+            <div class="pc_only"><img src="/morenvyimg/promotion/261105_BrooksBrothersEastlogue/plp_bg_pc.webp" alt=""></div>
+            <div class="mo_only"><img src="/morenvyimg/promotion/261105_BrooksBrothersEastlogue/plp_bg_mo.webp" alt=""></div>
+        </div>
+
+        <div class="txt">
+            <div class="pc_only"><img src="/morenvyimg/promotion/261105_BrooksBrothersEastlogue/plp_title_pc.svg" alt="BROOKS BROTHERS × EASTLOGUE"></div>
+            <div class="mo_only"><img src="/morenvyimg/promotion/261105_BrooksBrothersEastlogue/plp_title_mo.svg" alt="BROOKS BROTHERS × EASTLOGUE"></div>
+            <div class="t01">—  THE THIRD COLLABORATION  —</div>
+            <div class="t02">
+                <span>브룩스브라더스와 이스트로그의 세 번째 협업.</span>
+                <span>아메리칸 클래식에 밀리터리의 실용성을 더했습니다.</span>
+                <span>깊이 있는 네이비와 상징적인 그래픽,</span>
+                <span>새로운 실루엣으로 풀어낸 아우터웨어와 액세서리를 <br class="mo_only">만나보세요.</span>
+            </div>
+        </div>
+    </div>
+    <style>
+        /* 공통 */
+        #morenvy-catedeco .pc_only {display: flex;}
+        #morenvy-catedeco .mo_only {display: none;}
+
+        /* 분류 상단 */
+        #morenvy-catedeco .keyvisual {position: relative;}
+        #morenvy-catedeco .bg {width: 100%;}
+        #morenvy-catedeco div img {width: 100%;}
+        #morenvy-catedeco .txt .pc_only {flex: none; width: 502px; max-width: 90%; margin: 0 auto;}
+
+        #morenvy-catedeco .txt {display: flex; flex-direction: column; justify-content: center; align-items: center; width: 50%; height: 100%; padding-top: 1.685%; position: absolute; left: 0; top: 0; z-index: 3; box-sizing: border-box; word-break: keep-all;}
+        #morenvy-catedeco .txt .t01 {font-family: var(--font-eng, "proxima-nova"), sans-serif; font-weight: 600; font-size: 14px; line-height: 1.5; letter-spacing: .14em; text-align: center; color: #d88a2e; white-space: pre; margin-top: 20px;}
+        #morenvy-catedeco .txt .t02 {font-family: var(--font-kor, "Gothic A1"), sans-serif; font-weight: 400; font-size: 14px; line-height: 1.5; letter-spacing: -.03em; text-align: center; color: #fff; margin-top: 20px;}
+        #morenvy-catedeco .txt .t02 span {display: block;}
+
+        @media (max-width: 1024px) {
+            /* 공통 */
+            #morenvy-catedeco .pc_only {display: none;}
+            #morenvy-catedeco .mo_only {display: flex;}
+            #morenvy-catedeco br.mo_only {display: inline;}
+
+            /* 분류 상단 */
+            #morenvy-catedeco {margin-left: -16px; margin-right: -16px;}
+            #morenvy-catedeco .txt {width: 100%; height: auto; padding-top: 0; top: auto; bottom: 40px;}
+            #morenvy-catedeco .txt .mo_only {flex: none; width: 88.889vw; max-width: 460px; margin: 0 auto;}
+            #morenvy-catedeco .txt .t01 {font-size: clamp(11px, 3.333vw, 16px); letter-spacing: .1em; margin-top: 13px;}
+            #morenvy-catedeco .txt .t02 {font-size: clamp(11px, 3.333vw, 16px); color: #f5f5f5; margin-top: 13px;}
+        }
+    </style>
+    <!-- 복사 끝 -->
+</div>

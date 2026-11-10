@@ -1,0 +1,45 @@
+<!-- 상단 : 검색창 (형태는 mheader.html 의 #schType 클래스로 선택) -->
+<div class="search_box" module="Layout_SearchHeader">
+    <!--
+        $product_page=/product/detail.html
+        $category_page=/product/list.html
+    -->
+    <div class="search_area">
+        <!-- 검색창 : 타이틀 (우측형 · 전체형) -->
+        <div class="sch_title">
+            <h2>Search</h2>
+            <a href="#none" class="sch_close sch_x"><!--@import(/morenvyimg/blk_close.svg)--></a>
+        </div>
+
+        <!-- 검색창 : 입력 -->
+        <div class="top">
+            <!-- 검색창 : 문구 수정 -->
+            <!--@import(/section/h_search.html)-->
+                <legend>검색</legend>
+                {$form.keyword}<input type="image" src="/morenvyimg/cs_sch_submit.svg" alt="검색" onclick="{$action_search_submit}" />
+            </fieldset>
+        </div>
+
+        <!-- 검색창 : 인기 · 최근 검색어 (상단형 · 우측형) -->
+        <div class="bottom">
+            <div class="bottom_inner">
+                <div class="hot_keyword">
+                    <h3>인기 검색어</h3>
+                    <ul class="keyword_list" module="search_hotkeyword">
+                        <li><a href="{$hot_keyword_url}">{$hot_keyword_name}</a></li>
+                        <li><a href="{$hot_keyword_url}">{$hot_keyword_name}</a></li>
+                    </ul>
+                </div>
+                <div class="recent_keyword">
+                    <h3>최근 검색어<span>전체삭제</span></h3>
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 검색창 : 닫기 (상단형 · 전체형) -->
+        <div class="sch_foot">
+            <a href="#none" class="sch_close">닫기</a>
+        </div>
+    </div>
+</div><!-- //search_box -->

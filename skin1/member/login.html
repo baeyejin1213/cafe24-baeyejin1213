@@ -1,0 +1,108 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<div class="path">
+    <span>현재 위치</span>
+    <ol>
+        <li><a href="/">홈</a></li>
+        <li title="현재 위치"><strong>로그인</strong></li>
+    </ol>
+</div>
+
+<div class="login_wrap">
+    <div class="left">
+        <div class="login_inner">
+            <div class="titleArea login_title">
+                <h2>로그인</h2>
+                <div module="Layout_MobileAction">
+                    <a href="#none" onclick="{$go_back}"><img src="/morenvyimg/blk_arr_d.svg" alt="뒤로가기">뒤로가기</a>
+                </div>
+            </div>
+
+            <div module="member_login" id="{$member_login_module_id}" class="login">
+                <!--@css(/css/module/member/login.css)-->
+                <!--@js(/js/module/member/login.js)-->
+                <!--
+                    $defaultReturnUrl = /index.html
+                    $forbidIpUrl = member/adminFail.html
+                -->
+                <ul class="log_menu">
+                    <li><a href="/member/login.html" class="active">기존 회원</a></li>
+                    <li><a href="/member/login.html?noMemberOrder&returnUrl=%2Fmyshop%2Forder%2Flist.html">비회원 주문조회</a></li>
+                </ul>
+
+                <fieldset class="form">
+                    <legend>회원로그인</legend>
+
+                    <label class="id ePlaceholder" title="{$login_id_type_text}">{$form.member_id}</label>
+                    <label class="password ePlaceholder" title="비밀번호">{$form.member_passwd}</label>
+
+                    <div class="option">
+                        <span class="auto">{$form.use_login_keeping}</span>
+                        <span class="save">{$form.check_save_id}</span>
+                        <span class="ssl"><img src="/morenvyimg/login_safe.svg" alt="보안접속"><em>보안접속</em></span>
+                        <span class="setIpSecurity">
+                            <span class="{$display_useloginkeeping_ip|display}">IP보안</span>
+                            {$form.is_use_login_keeping_ip}
+                        </span>
+                    </div>
+
+                    <div class="login__button">
+                        <a href="#none" class="btnSubmit gFull sizeL" onclick="{$action_func_login}">
+                            <span class="txt">로그인</span>
+                        </a>
+                        <a href="#none" class="btnKakao {$display_kakao|display}" onclick="{$kakao_func_login}"><!--@import(/morenvyimg/login_kakao_icon.svg)-->카카오로 시작하기</a>
+                        <a href="{$returnUrl}" onclick="{$action_nomember_order}" class="btnNormal gFull sizeL {$display_nomember|display}">
+                            <span class="txt">비회원 구매</span>
+                        </a>
+                        <div class="{$display_nomember|display}">비회원의 경우, 해당버튼을 통해 주문이 가능합니다.</div>
+                    </div>
+
+                    <ul class="wrap_find">
+                        <li><a href="/member/id/find_id.html">아이디 찾기</a></li>
+                        <li class="line"></li>
+                        <li><a href="/member/passwd/find_passwd_info.html">비밀번호 찾기</a></li>
+                    </ul>
+
+                    <div class="login__util">
+                        <div>아직 회원이 아니신가요?</div>
+                        <a href="/member/join.html">회원 가입하기</a>
+                    </div>
+
+                    <div class="login__sns">
+                        <div class="sns_h">SNS 간편 로그인</div>
+                        <div class="wrap_sns_log">
+                            <a href="#none" class="btnNaver {$display_naver|display}" onclick="{$naver_func_login}">네이버 로그인</a>
+                            <a href="#none" class="btnFacebook {$display_facebook|display}" onclick="{$facebook_func_login}">페이스북 로그인</a>
+                            <a href="#none" class="btnApple {$display_apple|display}" onclick="{$apple_func_login}">애플 로그인</a>
+                            <a href="#none" class="btnGoogle {$display_google|display}" onclick="{$google_func_login}">구글 로그인</a>
+                            <a href="#none" class="btnLine {$display_line|display}" onclick="{$line_func_login}">라인 로그인</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div module="MyShop_OrderHistoryNologin" id="order_history_nologin_id" class="login">
+                <!--@css(/css/module/myshop/orderHistoryNologin.css)-->
+                <!--
+                    $orderDetailUrl = /myshop/order/list.html
+                -->
+                <div class="txt_nonmem_check">비회원 주문조회</div>
+                <div class="txtInfo typeDot">비회원의 경우, 주문시의 주문번호로 주문조회가 가능합니다.</div>
+                <div class="form">
+                    {$form.order_name}
+                    {$form.order_id}
+                    {$form.order_password}
+                    <div class="login__button">
+                        <button type="submit" class="btnSubmit gFull sizeL">
+                            <span class="txt">비회원 주문조회</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="login__util">
+                    <div>아직 회원이 아니신가요?</div>
+                    <a href="/member/join.html">회원 가입하기</a>
+                </div>
+            </div>
+        </div><!-- //login_inner -->
+    </div>
+</div><!-- //login_wrap -->

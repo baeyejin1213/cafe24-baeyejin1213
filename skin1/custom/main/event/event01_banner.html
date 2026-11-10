@@ -1,0 +1,23 @@
+<!--
+    이벤트 배너 : 01 배너형 - 화면 가득 찬 배너(배경 고정) 위에 흰 글씨 + 버튼
+    앱스토어 - 배너관리자 - [메인 : 이벤트 배너형] 에서 수정가능합니다
+    이미지 1 = PC 이미지(1920x640) / 이미지 2 = 모바일 이미지
+    타이틀 = 제목(줄바꿈 <br>) / 텍스트 1 = 설명(줄바꿈 <br>) / 텍스트 2 = 버튼명(비우면 숨김) / 링크 1 = 링크
+-->
+<section class="m_sec11 ev_banner morenvy-banner-area" area_id="1ecf">
+	<div class="m_ban morenvy-banner">
+        <a href="{#link_1}" target="{#target_1}">
+            <div class="bg">
+                <picture>
+                    <source srcset="{#imgSrc_2}" media="(max-width: 767px)">{#imgTag_1}
+                </picture>
+            </div>
+
+            <div class="txt">
+                <h2>{#title}</h2>
+                <p>{#text_1}</p>
+                <span class="btn_line">{#text_2}</span>
+            </div>
+        </a>
+	</div>
+</section>

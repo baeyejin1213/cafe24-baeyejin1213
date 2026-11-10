@@ -1,0 +1,54 @@
+<div id="topBanner" role="banner">
+	<div class="desc">25,000원 이상 구매시 무료배송 / 신규가입 시 <br class="RTMB">3,000원 즉시 사용가능 쿠폰 증정</div>
+	<button type="button" class="btnClose"><i aria-hidden="true" class="icon icoClose white"></i>닫기</button>
+</div>
+<header id="header">
+	<div class="inner">
+		<div class="topArea">
+			<h1 module="Layout_LogoTop" class="topArea__logo">
+				<!--@css(/css/module/layout/logotop.css)-->
+				<a href="/index.html"><img src="{$logo}" alt="{$mall_name}" /></a>
+			</h1>
+
+			<div class="topArea__statelogon RW">
+				<!--@css(/css/module/layout/statelogoff.css)-->
+				<div module="Layout_statelogoff">
+					<a href="/member/agreement.html">Join</a>
+					<a href="/member/login.html">Login</a>
+					<a href="/myshop/order/list.html">Order</a>
+					<a href="/order/basket.html">Cart <span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
+				</div>
+				<div module="Layout_stateLogon">
+					<a href="{$action_logout}">Logout</a>
+					<a href="/myshop/order/list.html">Order</a>
+					<a href="/order/basket.html">Cart <span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
+				</div>
+			</div>
+		</div>
+		<div class="navigation">
+			<button type="button" class="btnNav eNavFold"><i aria-hidden="true" class="icon icoNav"></i>네비게이션</button>
+			<div module="Layout_category" class="navigation__category RW">
+				<!--@css(/css/module/layout/category.css)-->
+				<ul>
+					<li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+					<li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+					<li><a href="{$link_product_list}">{$name_or_img_tag}</a></li>
+				</ul>
+			</div>
+			<div class="navigation__util">
+				<button type="button" class="menu btnSearch eSearch">
+					<!--@import(/svg/icon-search.html)-->
+					검색
+				</button>
+				<a href="/myshop/index.html" class="menu RW">
+					<!--@import(/svg/icon-user.html)-->
+					마이쇼핑
+				</a>
+				<a href="/myshop/wish_list.html" class="menu RW">
+					<!--@import(/svg/icon-heart.html)-->
+					관심상품
+				</a>
+			</div>
+		</div>
+	</div>
+</header>

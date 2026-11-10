@@ -1,0 +1,48 @@
+<div module="coupon_productdetailajax">
+    <!--
+        $coupon_down_result_url = /coupon/coupon_down_result.html
+    -->
+    <div class="coupon_btn">
+        <div class="txt">쿠폰받기</div><!--@import(/morenvyimg/coupon_download.svg)-->
+    </div>
+
+    <div id="coupon_pop">
+        <!--@css(/css/module/coupon/productDetailAjax.css)-->
+        <div class="title">
+            <h3>쿠폰 받기</h3>
+            <div class="bClose"><!--@import(/morenvyimg/detail_close.svg)--></div>
+        </div>
+        <div class="couponSkinArea">
+            <!--
+				진열 방식에따라 아래의 ul class 변경
+				1열 : ul class="grid1"
+				2열 : ul class="grid2"
+				3열 : ul class="grid3"
+			-->
+            <ul class="grid1">
+                <li>
+                    <div class="coupon {$background_class}">
+                        <div class="detail" {$call_coupon_detail}>
+                            <strong class="title">{$coupon_name}</strong>
+                            <p class="discount">{$coupon_content}</p>
+                            <p class="period">{$coupon_period}</p>
+                        </div>
+                        <div class="button"><a href="{$coupon_issue_url}"><!--@import(/morenvyimg/coupon.svg)-->다운받기</a></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="coupon {$background_class}">
+                        <div class="detail" {$call_coupon_detail}>
+                            <strong class="title">{$coupon_name}</strong>
+                            <p class="discount">{$coupon_content}</p>
+                            <p class="period">{$coupon_period}</p>
+                        </div>
+                        <div class="button"><a href="{$coupon_issue_url}"><!--@import(/morenvyimg/coupon.svg)-->다운받기</a></div>
+                    </div>
+                </li>
+            </ul>
+
+            <a href="#none" id="btn_all_coupondown" class="btnNormal">전체 쿠폰 받기</a>
+        </div>
+    </div>
+</div>

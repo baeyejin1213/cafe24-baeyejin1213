@@ -1,0 +1,32 @@
+<!-- 상단 : 영역 03 -->
+<div class="h_sec03">
+    <!-- 상단 : 메뉴 -->
+    <ul class="h_menu">
+        <li class="search"><a href="#none"><span class="ico_search"><!--@import(/morenvyimg/cs_search.svg)--></span><span class="ico_close"><!--@import(/morenvyimg/blk_close.svg)--></span></a></li>
+        <li class="pc_only my" module="Layout_statelogoff">
+            <a href="/member/login.html"><span class="ico_user"><!--@import(/morenvyimg/cs_user.svg)--></span></a>
+            <div class="login_menu">
+                <ul>
+                    <li><a href="/member/login.html">로그인</a></li>
+                    <li><a href="/member/join.html">회원가입</a></li>
+                    <li><a href="/myshop/index.html">마이페이지</a></li>
+                    <li><a href="/myshop/order/list.html">주문조회</a></li>
+                    <li><a href="/product/recent_view_product.html">최근 본 상품</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="pc_only my" module="Layout_statelogon">
+            <a href="/myshop/index.html"><span class="ico_user"><!--@import(/morenvyimg/cs_user.svg)--></span></a>
+            <div class="login_menu">
+                <ul>
+                    <li><a href="{$action_logout}">로그아웃</a></li>
+                    <li><a href="/myshop/index.html">마이페이지</a></li>
+                    <li><a href="/myshop/order/list.html">주문조회</a></li>
+                    <li><a href="/product/recent_view_product.html">최근 본 상품</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="basket"><a href="/order/basket.html"><!--@import(/morenvyimg/cs_bag.svg)--><div module="Layout_orderBasketcount"><span>{$basket_count}</span></div></a></li>
+        <li class="m_only all_cate"><a href="#none"><!--@import(/morenvyimg/all_cate.svg)--></a></li>
+    </ul>
+</div>

@@ -1,0 +1,19 @@
+<!--
+    영상 : 01 배너형 - 1600x720 썸네일 + 재생 버튼, 누르면 그 자리에서 유튜브 영상 재생
+    앱스토어 - 배너관리자 - [메인 : 영상 배너형] 에서 수정가능합니다
+    이미지 1 = PC 썸네일(1600x720) / 이미지 2 = 모바일 썸네일 / 동영상 URL 1 = 유튜브 주소(또는 mp4)
+    동영상이 없으면 재생 버튼 클릭 시 링크 1로 이동합니다.
+-->
+<section class="m_sec07 vd_banner morenvy-banner-area" area_id="728b">
+    <div class="morenvy-banner m_ban">
+        <a href="{#link_1}" target="{#target_1}" class="video_thumb">
+            <div class="bg">
+                <picture>
+                    <source srcset="{#imgSrc_2}" media="(max-width: 767px)">{#imgTag_1}
+                </picture>
+            </div>
+            <span class="btn_play"><img src="/morenvyimg/cs_play.svg" alt="영상 재생"></span>
+        </a>
+        <div class="video">{#video_1}</div>
+    </div>
+</section>

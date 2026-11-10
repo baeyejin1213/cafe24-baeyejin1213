@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/* 팝업 배경 */
+.main_popup {width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 9999; background-color: rgba(0, 0, 0, 0.3); display: flex; align-items: center; justify-content: center; visibility: hidden; opacity: 0; transition: opacity 0.6s, visibility 0.6s;}
+.main_popup.on {visibility: visible; opacity: 1;}
+.main_popup.on .popup.up {transform: translateY(0); opacity: 1;}
+
+
+/* 팝업 컨텐츠 : 520 x 715 이미지 슬라이드 + 하단 버튼 */
+.main_popup .popup {position: relative; width: 52rem; max-width: calc(100% - 4rem); border-radius: 2.4rem; overflow: hidden; background-color: var(--white); transform: translateY(4rem); transition: transform 0.6s ease, opacity 0.6s ease; opacity: 0;}
+
+/* 팝업 이미지 슬라이드 */
+.main_popup .swiper_pop {position: relative; overflow: hidden;}
+.main_popup .swiper_pop .swiper-slide {aspect-ratio: 520 / 715; background-color: #2F2F2F;}
+.main_popup .swiper_pop .pop_link {display: block; width: 100%; height: 100%;}
+.main_popup .swiper_pop .swiper-slide img {width: 100%; height: 100%; object-fit: cover;}
+
+/* 페이지 점 : 활성 = 흰 원, 비활성 = 흰 테두리 */
+.main_popup .swiper-pagination-pop {position: absolute; left: 0; bottom: 1.6rem !important; z-index: 2; display: flex; justify-content: center; gap: 1.6rem; width: 100%; line-height: 0;}
+.main_popup .swiper-pagination-pop .swiper-pagination-bullet {width: .8rem; height: .8rem; margin: 0 !important; border: 2px solid var(--white); border-radius: 50%; box-sizing: border-box; background: transparent; opacity: 1;}
+.main_popup .swiper-pagination-pop .swiper-pagination-bullet-active {background-color: var(--white);}
+.main_popup .swiper-pagination-pop.swiper-pagination-lock {display: none;}
+
+/* 닫기(X) */
+.main_popup .popup .btn_close {position: absolute; top: 1.6rem; right: 1.6rem; z-index: 3; width: 2.4rem; height: 2.4rem; cursor: pointer;}
+.main_popup .popup .btn_close svg {width: 100%; height: 100%;}
+
+/* 하단 버튼 : 오늘하루 보지않기 / 닫기 */
+.main_popup .popup .btn_wrap {display: flex; background-color: var(--white);}
+.main_popup .popup .btn_wrap > a {flex: 1; display: flex; align-items: center; justify-content: center; height: 4.8rem; padding: 0 .8rem; font-family: "SUIT Variable", "Pretendard Variable", sans-serif; font-size: 1.4rem; line-height: 2.4rem; color: var(--black01);}
+
+
+/* 반응형 767px */
+@media all and (max-width: 767px) {
+    .main_popup .popup {width: 32rem; border-radius: 1.6rem;}
+    .main_popup .popup .btn_close {top: 1.2rem; right: 1.2rem;}
+    .main_popup .swiper-pagination-pop {bottom: 1.2rem !important;}
+    .main_popup .popup .btn_wrap > a {height: 4.4rem; font-size: 1.3rem;}
+}

@@ -1,0 +1,40 @@
+<!--
+    상단 : 헤더 스타일 선택
+    아래 import 경로의 파일명만 바꾸면 헤더 스타일이 바뀝니다. (파일 위치 : /custom/header/)
+
+    header01_center.html       : 01 중앙메뉴 - 키비주얼 위 투명, 흰색 텍스트
+    header02_left.html         : 02 좌측메뉴 - 키비주얼 위 투명, 흰색 텍스트
+    header03_center_split.html : 03 분리형 중앙메뉴 - 키비주얼과 분리, 흰 배경
+    header04_left_split.html   : 04 분리형 좌측메뉴 - 키비주얼과 분리, 흰 배경
+    header05_allmenu.html      : 05 좌측 전체메뉴 - 키비주얼 위 투명, 햄버거 버튼
+    header06_center_black.html : 06 중앙메뉴 검정 - 키비주얼 위 투명, 검정 텍스트
+    header07_left_black.html   : 07 좌측메뉴 검정 - 키비주얼 위 투명, 검정 텍스트
+
+    공통 영역(텍스트 배너, 로고, 카테고리, 아이콘 메뉴, 검색창)은 /custom/header/common/ 에서 수정합니다.
+    ※ "키비주얼 위 투명"은 메인 키비주얼이 확장형(kv_full)일 때만 적용되고, 배너형·카드형에서는 흰 배경 헤더로 보입니다. (키비주얼 형태는 index.html 에서 선택)
+-->
+<!--@import(/custom/header/header05_allmenu.html)-->
+
+<!--
+    상단 : 카테고리 펼침 스타일 선택
+    아래 class 값만 바꾸면 헤더 카테고리에 마우스를 올렸을 때 펼쳐지는 방식이 바뀝니다.
+
+    gnb_basic : 기본 중분류 - 올린 대분류의 중분류가 펼쳐지고, 중분류 → 소분류 → 상세분류 순서로 오른쪽에 이어서 펼쳐짐
+    gnb_all   : 전체메뉴 중분류 - 어느 대분류에 올려도 전체 카테고리(중분류·소분류·상세분류)가 헤더 아래에 한 번에 펼쳐짐
+
+    ※ header05_allmenu(좌측 전체메뉴)는 상단 카테고리가 없어 적용되지 않으며, 햄버거 버튼으로 사이드 메뉴(/layout/basic/sidebar.html)가 열립니다.
+-->
+<div id="gnbType" class="gnb_basic" hidden></div>
+
+<!--
+    상단 : 검색창 형태 선택
+    아래 class 값만 바꾸면 헤더 검색 아이콘을 눌렀을 때 열리는 검색창 형태가 바뀝니다.
+
+    sch_top   : 상단메뉴 형태 - 헤더 아래로 펼쳐짐 (입력창 + 인기·최근 검색어 + 닫기), 헤더 검색 아이콘이 X로 바뀜
+    sch_right : 우측메뉴 형태 - 오른쪽에서 440px 패널이 열림 (Search 타이틀 + 입력창 + 인기·최근 검색어)
+    sch_full  : 전체메뉴 형태 - 화면 전체가 어두워지고 가운데에 검색창만 표시 (Search 타이틀 + 입력창 + 닫기 버튼)
+
+    ※ 모바일(767px 이하)에서 sch_top · sch_right 는 화면 전체 흰 패널로 열립니다.
+    ※ 검색창 내용은 /custom/header/common/search.html 에서 수정합니다.
+-->
+<div id="schType" class="sch_top" hidden></div>

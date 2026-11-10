@@ -1,0 +1,202 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--
+    기획전 : Autumn Hours Specials
+    - 디자인 : Figma PC(3:39, 1920) / MO(3:91, 360) — 767px 이하 모바일, 768px 이상 PC 레이아웃
+    - 기획서(2:99) : 스크롤 시 콘텐츠 페이드 인 / 찰나 플레이어 영상 배경(PC·MO 영상 분리) / 카운트다운 2026-09-23 10:00 ~ 2026-09-27 23:59:59
+    - 폰트 : Proxima Nova(유료) → Figtree(스킨 기본 폰트), FreightDisp Pro(유료) → Cormorant Garamond, Beau Rivage·Gothic A1 은 원본 그대로(무료)
+-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Cormorant+Garamond:wght@500&family=Gothic+A1:wght@400;500&display=swap">
+
+<style>
+    /* 이 페이지만 전체 폭 사용 — 공통 #contents(max-width 1120 + 좌우 패딩) 해제 */
+    #container #contents {max-width: none; padding: 0;}
+
+    #project_wrap {
+        --pj-cream: #f6eed8;
+        --pj-gold-text: #eadebd;
+        --pj-brown: #4c2108;
+        --pj-gray: #696969;
+        --pj-track: #dbd1b7;
+        --pj-gold: #b28315;
+        --pj-en: "Figtree", "Pretendard Variable", sans-serif;
+        --pj-ko: "Gothic A1", "Pretendard Variable", sans-serif;
+        --pj-serif: "Cormorant Garamond", "Times New Roman", serif;
+        --pj-script: "Beau Rivage", cursive;
+        overflow: hidden;
+        background-color: var(--pj-cream);
+    }
+    #project_wrap * {box-sizing: border-box;}
+    #project_wrap p, #project_wrap h2 {margin: 0;}
+
+    /* ── 메인 비주얼 : 찰나 영상 배경 ── */
+    #project_wrap .pj_visual {position: relative; height: 640px; overflow: hidden; background: #6b4a2a url(/morenvyimg/pj_autumn_poster.jpg) center / cover no-repeat;}
+    #project_wrap .pj_video video {position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: none;}
+    #project_wrap .pj_video video.is-on {display: block;}
+    #project_wrap .pj_glow {position: absolute; left: 50%; top: calc(50% - 0.5px); transform: translate(-50%, -50%); width: 436px; height: 491px; font-size: 0; line-height: 0; pointer-events: none;}
+    #project_wrap .pj_glow img {display: block; width: 436px; height: 491px; max-width: none;}
+    #project_wrap .pj_glow .m_only {display: none;}
+
+    #project_wrap .pj_txt {
+        position: absolute; left: calc(50% - 0.5px); top: 50%; transform: translate(-50%, -50%);
+        display: flex; flex-direction: column; align-items: center; gap: 20px;
+        color: var(--pj-gold-text); text-align: center; white-space: nowrap;
+        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.25));
+    }
+    #project_wrap .pj_txt .details {display: flex; flex-direction: column; align-items: center; gap: 12px;}
+    #project_wrap .pj_txt .pj_discount {font-family: var(--pj-en); font-weight: 700; font-size: 32px; line-height: 1; letter-spacing: -0.32px; color: var(--pj-gold-text);}
+    #project_wrap .pj_txt h2 {font-family: var(--pj-serif); font-weight: 500; font-size: 100px; line-height: 100px; letter-spacing: -2px; color: var(--pj-gold-text);}
+    #project_wrap .pj_txt h2 .line {display: block; height: 100px;} /* 필기체 A 가 줄 높이를 키우지 않게 줄마다 높이 고정 */
+    #project_wrap .pj_txt h2 .script {font-family: var(--pj-script); font-weight: 400; letter-spacing: 0;}
+    #project_wrap .pj_txt .sub {font-family: var(--pj-ko); font-size: 18px; line-height: 1; letter-spacing: -0.36px; color: var(--pj-gold-text);}
+
+    /* ── 프로모션 설명 + 카운트다운 ── */
+    #project_wrap .pj_count {display: flex; flex-direction: column; align-items: center; gap: 60px; padding: 80px 20px;}
+    #project_wrap .pj_count .desc_box {display: flex; flex-direction: column; align-items: center; gap: 20px; width: 100%; max-width: 560px; font-family: var(--pj-ko); text-align: center;}
+    #project_wrap .pj_count .desc {font-size: 18px; line-height: 28px; color: var(--pj-brown);}
+    #project_wrap .pj_count .note {font-size: 16px; line-height: 20px; color: var(--pj-gray);}
+    #project_wrap .timer_box {display: flex; flex-direction: column; gap: 16px; width: 100%; max-width: 560px; font-family: var(--pj-en); color: var(--pj-brown);}
+    #project_wrap .timer_box .dates {display: flex; justify-content: space-between; font-size: 16px; line-height: 24px; letter-spacing: 0.8px;}
+    #project_wrap .timer_box .bar {position: relative; height: 12px; border-radius: 12px; background-color: var(--pj-track); overflow: hidden;}
+    #project_wrap .timer_box .bar span {position: absolute; left: 0; top: 0; height: 100%; width: 0; background: linear-gradient(to right, var(--pj-gold), rgba(178, 131, 21, 0)); transition: width 1.2s ease;}
+    #project_wrap .timer_box .time {font-size: 18px; line-height: 28px; font-variant-numeric: tabular-nums;}
+    @media screen and (min-width: 768px) {
+        #project_wrap .timer_box {height: 92px;} /* Figma 카운트다운 영역 높이(텍스트가 4px 넘침) */
+    }
+
+    /* ── 스크롤 페이드 인 (기획서 : 페이지 공통) ── */
+    #project_wrap .fade {opacity: 0; transform: translateY(30px); transition: opacity 0.9s ease, transform 0.9s ease; transition-delay: var(--d, 0s);}
+    #project_wrap .fade.is-in {opacity: 1; transform: none;}
+    #project_wrap .pj_txt.fade {transform: translate(-50%, calc(-50% + 30px));}
+    #project_wrap .pj_txt.fade.is-in {transform: translate(-50%, -50%);}
+    @media (prefers-reduced-motion: reduce) {
+        #project_wrap .fade, #project_wrap .timer_box .bar span {transition: none;}
+    }
+
+    /* ── 모바일 (Figma MO 360) ── */
+    @media screen and (max-width: 767px) {
+        #project_wrap .pj_visual {height: 540px;}
+        #project_wrap .pj_glow {width: 264px; height: 297px;}
+        #project_wrap .pj_glow .pc_only {display: none;}
+        #project_wrap .pj_glow .m_only {display: block; width: 264px; height: 297px;}
+        #project_wrap .pj_txt {top: calc(50% + 0.5px);}
+        #project_wrap .pj_txt .pj_discount {font-size: 18px; letter-spacing: -0.18px;}
+        #project_wrap .pj_txt h2 {font-size: 56px; line-height: 58px; letter-spacing: -1.12px;}
+        #project_wrap .pj_txt h2 .line {height: 58px;}
+        #project_wrap .pj_txt .sub {font-size: 14px; letter-spacing: -0.28px;}
+
+        #project_wrap .pj_count {gap: 36px; padding: 40px 20px;}
+        #project_wrap .pj_count .desc_box {gap: 8px;}
+        #project_wrap .pj_count .desc {font-weight: 500; font-size: 13px; line-height: 20px;}
+        #project_wrap .pj_count .note {font-size: 11px; line-height: 20px;}
+        #project_wrap .timer_box .dates {font-size: 12px; line-height: 16px; letter-spacing: 0.6px;}
+        #project_wrap .timer_box .time {font-size: 14px; line-height: 20px;}
+    }
+</style>
+
+<div id="project_wrap">
+    <!-- 메인 비주얼 -->
+    <section class="pj_visual">
+        <!-- 찰나 플레이어 : PC / MO 영상 (화면 폭에 맞는 영상만 src 를 넣어 재생) -->
+        <div class="pj_video">
+            <video class="pc" data-src="https://player-api.charlla.io/mp4/n835w552hqb" autoplay muted loop playsinline></video>
+            <video class="mo" data-src="https://player-api.charlla.io/mp4/d23n76gcv7e" autoplay muted loop playsinline></video>
+        </div>
+        <div class="pj_glow" aria-hidden="true">
+            <img src="/morenvyimg/pj_glow_pc.svg" alt="" width="436" height="491" class="pc_only">
+            <img src="/morenvyimg/pj_glow_mo.svg" alt="" width="264" height="297" class="m_only">
+        </div>
+        <div class="pj_txt fade">
+            <div class="details">
+                <p class="pj_discount">UP TO 60%</p>
+                <h2><span class="line"><span class="script">A</span>utumn</span><span class="line">Hours</span><span class="line">Specials</span></h2>
+            </div>
+            <p class="sub">연휴 사이, 가을을 고르는 시간</p>
+        </div>
+    </section>
+
+    <!-- 프로모션 설명 + 카운트다운 -->
+    <section class="pj_count">
+        <div class="desc_box">
+            <p class="desc fade">추석 연휴,<br>깊어가는 계절에 어울리는 클래식을 준비했습니다.<br>브룩스브라더스의 셀렉트 스타일을<br>한정된 시간 동안 특별한 가격으로 만나보세요.</p>
+            <p class="note fade" style="--d: .15s;">· 본 프로모션 적용 상품은 추가 쿠폰 사용이 불가합니다</p>
+        </div>
+        <div class="timer_box fade" style="--d: .3s;">
+            <div class="dates">
+                <p>9.23(Wed)</p>
+                <p>9.27(Sun)</p>
+            </div>
+            <div class="bar"><span></span></div>
+            <p class="time"><span class="days">00</span> : <span class="hours">00</span> : <span class="mins">00</span> : <span class="secs">00</span> left</p>
+        </div>
+    </section>
+</div>
+
+<script>
+    /* jQuery 는 카페24가 본문 뒤(optimizer.php)에서 불러오므로, 본문 파싱이 끝난 뒤(DOMContentLoaded) 실행 */
+    document.addEventListener("DOMContentLoaded", function () {
+        /* 찰나 영상 : 767px 이하 MO / 이상 PC — 보이는 영상만 내려받아 재생 */
+        var mq = window.matchMedia("(max-width: 767px)");
+        var setVideo = function () {
+            var on = mq.matches ? "mo" : "pc";
+            jQuery("#project_wrap .pj_video video").each(function () {
+                var v = this;
+                if (jQuery(v).hasClass(on)) {
+                    if (!v.getAttribute("src")) v.setAttribute("src", v.getAttribute("data-src"));
+                    jQuery(v).addClass("is-on");
+                    var p = v.play();
+                    if (p && p.catch) p.catch(function () {});
+                } else {
+                    v.pause();
+                    jQuery(v).removeClass("is-on");
+                }
+            });
+        };
+        setVideo();
+        if (mq.addEventListener) mq.addEventListener("change", setVideo); else mq.addListener(setVideo);
+
+        /* 스크롤 페이드 인 */
+        var fades = document.querySelectorAll("#project_wrap .fade");
+        if ("IntersectionObserver" in window) {
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) {
+                        e.target.classList.add("is-in");
+                        io.unobserve(e.target);
+                    }
+                });
+            }, {threshold: 0.2});
+            fades.forEach(function (el) { io.observe(el); });
+        } else {
+            jQuery(fades).addClass("is-in");
+        }
+
+        /* 카운트다운 타이머 */
+        var timer = function () {
+            /* 현재 시간 */
+            const nowTime = new Date().getTime();
+            /* 시작 · 종료 시간 (한국 시간) */
+            const startTime = new Date("2026-09-10T10:00:00+09:00").getTime();
+            const deadline = new Date("2026-10-10T23:59:59+09:00").getTime();
+            const remain = deadline - nowTime;
+
+            if (remain > 0) {
+                /* 남은 날 / 시간 / 분 / 초 */
+                jQuery("#project_wrap .timer_box .days").text(String(Math.floor(remain / 86400000)).padStart(2, 0));
+                jQuery("#project_wrap .timer_box .hours").text(String(Math.floor((remain % 86400000) / 3600000)).padStart(2, 0));
+                jQuery("#project_wrap .timer_box .mins").text(String(Math.floor((remain % 3600000) / 60000)).padStart(2, 0));
+                jQuery("#project_wrap .timer_box .secs").text(String(Math.floor((remain % 60000) / 1000)).padStart(2, 0));
+            } else {
+                jQuery("#project_wrap .timer_box .time > span").text("00");
+            }
+
+            /* 진행 막대 : 기간 중 경과 비율 */
+            var rate = (nowTime - startTime) / (deadline - startTime);
+            rate = Math.min(Math.max(rate, 0), 1);
+            jQuery("#project_wrap .timer_box .bar span").css("width", (rate * 100) + "%");
+        };
+
+        timer();
+        setInterval(timer, 1000);
+    });
+</script>

@@ -1,0 +1,190 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/morenvy/js/board.js)-->
+
+<style>
+    #container #contents {overflow: hidden;}
+</style>
+
+<div module="Board_ListPackage_3">
+    <!--@css(/css/module/board/listPackage.css)-->
+    <div module="board_title_3">
+        <div class="path">
+            <span>현재 위치</span>
+            <ol>
+                <li><a href="/">홈</a></li>
+                <li><a href="#">게시판</a></li>
+                <li title="현재 위치"><strong>{$board_name}</strong></li>
+            </ol>
+        </div>
+
+        <div class="titleArea">
+            <div module="Layout_MobileAction">
+                <a href="#none" onclick="{$go_back}"><img src="/morenvyimg/blk_arr_d.svg" alt="뒤로가기"></a>
+            </div>
+            <h2>{$board_title} {$board_adult_icon}</h2>
+            <p>{$board_info}</p>
+        </div>
+        <p class="imgArea">{$board_top_image}</p>
+    </div>
+
+    <div module="Layout_BoardInfo" class="ec-base-tab typeMenu gScroll">
+        <ul class="menu">
+            <li><a href="{$board_list_url}" class="button">{$board_name}</a></li>
+            <li><a href="{$board_list_url}" class="button">{$board_name}</a></li>
+        </ul>
+    </div>
+
+    <div class="boardSort">
+        <span module="board_category_3">{$form.board_category}</span>
+        <span module="board_ReplySort_3">{$reply_sort}</span>
+    </div>
+
+    <!-- 커스텀 셀렉박스 -->
+    <div class="swiper swiper_board_cate">
+        <ul class="board_cate_wrap swiper-wrapper"></ul>
+    </div>
+    <!-- 커스텀 셀렉박스 -->
+
+    <div class="ec-base-table typeList">
+        <table border="1">
+            <caption>게시판 목록</caption>
+            <tbody module="board_notice_3" class="center">
+                <!--
+                    $count = 2
+                    $login_page_url = /member/login.html
+                    $deny_access_url = /index.html
+                -->
+                <tr class="{$block_target_class}">
+                    <td>
+                        <div class="num">
+                            {$checkbox}
+                            <span class="qna">{$category_name}</span>
+                        </div>
+                        <div class="con_wrap">
+                            <div class="tit">{$subject}<!--@import(/morenvyimg/blk_arr_d.svg)--></div>
+                            <div class="con">{$content}</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="{$block_target_class}">
+                    <td>
+                        <div class="num">
+                            {$checkbox}
+                            <span class="qna">{$category_name}</span>
+                        </div>
+                        <div class="con_wrap">
+                            <div class="tit">{$subject}<!--@import(/morenvyimg/blk_arr_d.svg)--></div>
+                            <div class="con">{$content}</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody module="board_fixed_3" class="center">
+               <!--
+                    $count = 2
+                    $login_page_url = /member/login.html
+                    $deny_access_url = /index.html
+                -->
+                <tr class="{$block_target_class}">
+                    <td>
+                        <div class="num">
+                            {$checkbox}
+                            <span class="qna">{$category_name}</span>
+                        </div>
+                        <div class="con_wrap">
+                            <div class="tit">{$subject}<!--@import(/morenvyimg/blk_arr_d.svg)--></div>
+                            <div class="con">{$content}</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="{$block_target_class}">
+                    <td>
+                        <div class="num">
+                            {$checkbox}
+                            <span class="qna">{$category_name}</span>
+                        </div>
+                        <div class="con_wrap">
+                            <div class="tit">{$subject}<!--@import(/morenvyimg/blk_arr_d.svg)--></div>
+                            <div class="con">{$content}</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody module="board_list_3" class="center">
+                <!--
+                    $count = 10
+                    $login_page_url = /member/login.html
+                    $deny_access_url = /index.html
+                -->
+                <tr class="{$block_target_class}">
+                    <td>
+                        <div class="num">
+                            {$checkbox}
+                            <span class="qna">{$category_name}</span>
+                        </div>
+                        <div class="con_wrap">
+                            <div class="tit">{$subject}<!--@import(/morenvyimg/blk_arr_d.svg)--></div>
+                            <div class="con">{$content}</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="{$block_target_class}">
+                    <td>
+                        <div class="num">
+                            {$checkbox}
+                            <span class="qna">{$category_name}</span>
+                        </div>
+                        <div class="con_wrap">
+                            <div class="tit">{$subject}<!--@import(/morenvyimg/blk_arr_d.svg)--></div>
+                            <div class="con">{$content}</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="message {$empty_display|display}" module="board_empty_3"><!--@import(/morenvyimg/board_noResult.svg)-->{$empty_message}</p>
+    </div>
+    <div module="board_ButtonList_3" class="ec-base-button gBottom {$write_display|display}">
+        <span class="gRight">
+            <a href="/board/free/write.html{$param_write}" class="btnSubmitFix sizeM {$write_display|display}">글쓰기</a>
+        </span>
+    </div>
+</div>
+
+<div module="board_paging_3" class="ec-base-paginate typeList">
+    <a href="{$param_prev}" class="prev">이전 페이지</a>
+    <ol>
+        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+    </ol>
+    <a href="{$param_next}" class="next">다음 페이지</a>
+</div>
+
+<div module="board_search_3">
+    <!--@css(/css/module/board/search.css)-->
+    <fieldset class="boardSearch">
+        <legend>게시물 검색</legend>
+        <div class="form">{$form.search_date} {$form.search_key} {$form.search} <a href="#none" class="btnNormal"
+                onclick="{$action_search}">찾기</a></div>
+    </fieldset>
+</div>
+
+<!-- Admin only -->
+<div class="board_move">
+    <div  module="board_catemove_3" class="board-list">
+        <!--@css(/css/module/board/catemove.css)-->
+        <span class="gColumn">{$board_catemove_selectbox}</span>
+        <span class="gColumn"><a href="#none" class="btnNormal sizeS" onclick="{$action_category_move}">{$category_move}</a></span>
+    </div>
+
+    <div  module="board_function_3" class="board-list">
+        <!--@css(/css/module/board/function.css)-->
+        <span class="gColumn">{$board_function_selectbox}</span>
+        <span class="gColumn">
+            <a href="#none" class="btnNormal sizeS" onclick="{$action_article_move}">{$article_move}</a>
+            <a href="#none" class="btnNormal sizeS" onclick="{$action_article_copy}">{$article_copy}</a>
+        </span>
+        <span class="ec-base-help">{$board_function_help|replace:*,}</span>
+    </div>
+</div>
+<!-- // Admin only -->

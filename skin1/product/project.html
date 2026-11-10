@@ -1,0 +1,153 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/morenvy/js/mproject.js)-->
+
+<div module="Project_Package">
+    <!--@css(/css/module/product/project_package.css)-->
+    <div class="path" module="project_head">
+        <span>현재 위치</span>
+        <ol>
+            <li><a href="/">홈</a></li>
+            <li title="현재 위치">기획전</li>
+        </ol>
+    </div>
+
+    <div class="title" module="product_headcategory">
+        <h2>{$title_text_or_image}</h2>
+        <div module="Layout_MobileAction">
+            <a href="#none" onclick="{$go_back}"><img src="/morenvyimg/blk_arr_d.svg" alt="뒤로가기"></a>
+        </div>
+    </div>
+
+  
+
+    <div module="product_headcategory" class="product_top_image">{$top_image1_tag}{$top_image2_tag}{$top_image3_tag}
+    </div>
+
+    <div class="fixTab">
+        <div class="ec-base-tab typeMenu swiper swiper_project">
+            <ul class="menuCategory menu swiper-wrapper">
+                <li module="product_projectcategory" style="display:{$display};" class="swiper-slide">
+                    <a href="#{$cate_id}" class="button">{$category_name} <span class="count m_off {$product_count_display|display}">({$product_count})</span></a>
+                </li>
+                <div class="bar_under"></div>
+            </ul>
+        </div>
+    </div>
+
+    <div module="project_list">
+        <!--
+            $basket_result = /product/add_basket.html
+            $basket_option = /product/basket_option.html
+        -->
+        <h3 id="{$cate_id}">{$category_name}</h3>
+
+        <div module="project_productlist" class="ec-base-product">
+            <ul class="prdList">
+                <li id="anchorBoxId_{$product_no}">
+                    <div class="box">
+                        <div class="thumbnail">
+                            <div class="num"></div>
+                            <div class="prdImg">
+                                <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
+                                    <img src="/morenvyimg/dummy.png" ec-data-src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" loading="lazy" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
+
+                                    <span module="product_Imagestyle">
+                                        <span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span>
+                                    </span>
+                                </a>
+                            </div>
+
+                            <div class="wish {$list_wish_icon|display}">{$list_wish_icon}</div>
+
+                            <div class="soldout {$soldout_icon|display}">Sold Out</div>
+
+                            <div class="color_list {$colorchip_display|display}"></div>
+
+                            <div class="icon">{$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$soldout_icon}</div>
+
+                            <div class="button">
+                                <div class="likeButton {$disp_likeprd_class}">LIKE :<button type="button">{$disp_likeprd_icon} {$disp_likeprd_count}</button></div>
+                                <div class="cart {$basket_icon|display}">CART<img src="" class="cart_icon">{$basket_icon}</div>
+                            </div>
+
+                            <div class="timesale_box_shell">
+                                <div class="timesale_box"></div>
+                            </div>
+                        </div>
+
+                        <div class="description" ec-data-custom="{$product_custom}" ec-data-price="{$product_price}">
+                            <div class="name">
+                                <a href="{$link_product_detail}" class="{$product_name_display|display}"><span
+                                        class="title {$product_name_title_display|display}">{$product_name_title} :</span>
+                                    {$product_name}</a>
+                            </div>
+                            <ul module="project_ListItem" class="spec">
+                                <div class="sale_box"></div>
+                                <li class="{$item_display|display}" rel="{$item_title|striptag}">
+                                    <strong class="title {$item_title_display|display}">{$item_title} :</strong> <span
+                                        class="m_item">{$item_content}</span>
+                                </li>
+                                <li class="{$item_display|display}" rel="{$item_title|striptag}">
+                                    <strong class="title {$item_title_display|display}">{$item_title} :</strong> <span
+                                        class="m_item">{$item_content}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li id="anchorBoxId_{$product_no}">
+                    <div class="box">
+                        <div class="thumbnail">
+                            <div class="num"></div>
+                            <div class="prdImg">
+                                <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}">
+                                    <img src="/morenvyimg/dummy.png" ec-data-src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" loading="lazy" /><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span>
+
+                                    <span module="product_Imagestyle">
+                                        <span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span>
+                                    </span>
+                                </a>
+                            </div>
+
+                            <div class="wish {$list_wish_icon|display}">{$list_wish_icon}</div>
+
+                            <div class="soldout {$soldout_icon|display}">Sold Out</div>
+
+                            <div class="color_list {$colorchip_display|display}"></div>
+
+                            <div class="icon">{$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons} {$rental_icon} {$soldout_icon}</div>
+
+                            <div class="button">
+                                <div class="likeButton {$disp_likeprd_class}">LIKE :<button type="button">{$disp_likeprd_icon} {$disp_likeprd_count}</button></div>
+                                <div class="cart {$basket_icon|display}">CART<img src="" class="cart_icon">{$basket_icon}</div>
+                            </div>
+
+                            <div class="timesale_box_shell">
+                                <div class="timesale_box"></div>
+                            </div>
+                        </div>
+
+                        <div class="description" ec-data-custom="{$product_custom}" ec-data-price="{$product_price}">
+                            <div class="name">
+                                <a href="{$link_product_detail}" class="{$product_name_display|display}"><span
+                                        class="title {$product_name_title_display|display}">{$product_name_title} :</span>
+                                    {$product_name}</a>
+                            </div>
+                            <ul module="project_ListItem" class="spec">
+                                <div class="sale_box"></div>
+                                <li class="{$item_display|display}" rel="{$item_title|striptag}">
+                                    <strong class="title {$item_title_display|display}">{$item_title} :</strong> <span
+                                        class="m_item">{$item_content}</span>
+                                </li>
+                                <li class="{$item_display|display}" rel="{$item_title|striptag}">
+                                    <strong class="title {$item_title_display|display}">{$item_title} :</strong> <span
+                                        class="m_item">{$item_content}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

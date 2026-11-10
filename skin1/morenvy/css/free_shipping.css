@@ -1,0 +1,13 @@
+/* 무료배송 프로그레스바 */
+.free_shipping {display: none; margin-top: 3.2rem;}
+.free_shipping.on {display: block;}
+.free_shipping .txt {font-size: 1.4rem; line-height: 2rem; font-weight: 500; text-align: center; color: var(--black01);}
+.free_shipping .txt span {color: #DE2C2C;}
+.free_shipping .txt02,
+.free_shipping.is_free .txt01 {display: none;}
+.free_shipping.is_free .txt02 {display: block;}
+.free_shipping .ship_bar {height: .4rem; margin-top: 1.6rem; border-radius: .4rem; background-color: #EDEDED; overflow: hidden;}
+.free_shipping .ship_bar span {display: block; width: 0; height: 100%; border-radius: .4rem; background: linear-gradient(90deg, #F9C46F, #FF1414); transition: width .3s;}
+.free_shipping .ship_info {display: flex; justify-content: space-between; margin-top: 1.2rem; font-size: 1.2rem; line-height: 1.8rem; color: #8A8A8A;}
+.free_shipping .ship_info b {font-weight: 500; color: #DE2C2C;}
+.free_shipping .delivery_price {display: none;}

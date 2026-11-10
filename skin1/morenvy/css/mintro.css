@@ -1,0 +1,32 @@
+body {opacity: 1 !important;}
+
+
+/* 회원전용 인트로 */
+.intro .alert .txtEm {}
+.intro .alert .inner {max-width: 400px; width: 80%;}
+.xans-member-login .login {max-width: 400px; width: 80%; text-align: center; padding-bottom: 60px;}
+.xans-member-login .login__util {background-color: #fff;}
+
+
+
+/* 성인전용 인트로 */
+.intro h1 {display: none;}
+.xans-member-adulthead.intro .alert .inner {display: flex; flex-direction: column; justify-content: center; width: 80%; max-width: 767px; box-sizing: border-box; padding-bottom: 63px; background-position: left center;}
+.xans-member-adulthead.intro .alert .inner .advice {margin-top: 0;}
+
+
+
+
+
+@media all and (max-width:1680px) {
+}
+
+
+@media all and (max-width:1024px) {
+	/* 성인전용 인트로 */
+	.xans-member-adulthead.intro .alert .inner {max-width: 400px; padding: 250px 0 63px; background-position: center 33px; background-size: 60%;}
+	.intro .alert .inner {text-align: center;}
+}
+
+@media all and (max-width:767px) {
+}

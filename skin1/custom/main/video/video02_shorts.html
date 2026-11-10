@@ -1,0 +1,21 @@
+<!--
+    영상 : 02 쇼츠형 - 세로 카드가 흐르고, 가운데(활성) 카드만 크게 보이면서 쇼츠 영상이 자동 재생(음소거)
+    앱스토어 - 배너관리자 - [메인 : 영상 쇼츠형] 에서 수정가능합니다
+    배너 1개 = 카드 1장 / 이미지 1 = 썸네일(405x720, 2배 810x1440 권장) / 동영상 URL 1 = 유튜브 쇼츠 주소
+    가운데가 아닌 카드는 썸네일만 보이고, 가운데로 오면 썸네일이 사라지고 영상이 재생됩니다.
+    타이틀 수정 : /section/m_sec07_title.html
+-->
+<section class="m_sec07 vd_shorts">
+    <!--@import(/section/m_sec07_title.html)-->
+
+    <div class="swiper swiper_shorts morenvy-banner-area" area_id="8c69">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide morenvy-banner">
+                <div class="card">
+                    <div class="thumb">{#imgTag_1}</div>
+                    <div class="video">{#video_1}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

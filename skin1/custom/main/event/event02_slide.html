@@ -1,0 +1,23 @@
+<!--
+    이벤트 배너 : 02 슬라이드형 - 타이틀 + 800x800 배너가 가운데 정렬로 흐르고, 가운데(활성) 배너의 글씨만 보임
+    앱스토어 - 배너관리자 - [메인 : 이벤트 슬라이드형] 에서 수정가능합니다
+    이미지 1 = 이미지(800x800, 2배 1600x1600 권장) / 링크 1 = 이미지 클릭 시 이동(비우면 클릭 안 됨)
+    텍스트 1 = 제목(줄바꿈 <br>) / 텍스트 2 = 설명(줄바꿈 <br>, 비우면 숨김)
+    타이틀 수정 : /section/m_sec11_title.html
+-->
+<section class="m_sec11 ev_slide">
+    <!--@import(/section/m_sec11_title.html)-->
+
+    <div class="swiper swiper_event morenvy-banner-area" area_id="2e7f">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide morenvy-banner">
+                <a href="{#link_1}" target="{#target_1}" class="thumb">{#imgTag_1}</a>
+
+                <div class="txt">
+                    <h3>{#text_1}</h3>
+                    <p>{#text_2}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,547 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<!--
+    기획전 : The Sweater Edit
+    - 이미지 : /morenvyimg/promotion/261002_TheSweaterEdit/
+    - 디자인 : Figma #PC(9:3042, 1920) / #MO(9:2267, 360) — 브라우저 너비 1024px 이하 모바일, 1025px 이상 PC 레이아웃
+    - 참고 프레임 : #쿠폰_유의사항(PC 9:2996 / MO 9:2951) 쿠폰 종료·유의사항 펼침, 룩 섹션 옆 프레임 = 롤링 두 번째 이미지 + 텍스트 이동 후 위치
+    - 기획서(9:3664)
+        · 페이지 공통 : 스크롤 시 콘텐츠 페이드 인
+        · 쿠폰 클릭 시 다운로드 (미로그인 : 알럿 → 로그인 → 프로모션 페이지 복귀) / 쿠폰 번호 6086342964400000591
+        · 2026-10-15 23:00:00 까지 남은 일자 카운트 다운 (D-n), 종료 후 '프로모션 종료' 상태
+        · 룩 섹션 : 스크롤 시 텍스트 위치 이동(position: sticky) + 이미지 2장 페이드인/아웃 롤링(Swiper fade, 뷰포트 진입 시 autoplay)
+        · '기획전 상품 진열 시스템 모듈 영역' 은 작업 제외 (.sw_prd 자리만 둠)
+    - 폰트 : Proxima Nova(유료) → Figtree(스킨 기본 폰트), FreightDisp Pro(유료) → Cormorant Garamond, Gothic A1 은 원본 그대로(무료)
+-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Gothic+A1:wght@400&display=swap">
+
+<style>
+    /* 이 페이지만 전체 폭 사용 — 공통 #contents(max-width 1120 + 좌우 패딩) 해제 */
+    #container #contents {max-width: none; padding: 0;}
+
+    #pj_sweater {
+        overflow-x: clip; /* hidden 은 position: sticky 를 깨뜨리므로 clip 사용 */
+        background-color: #fff;
+        color: #fff;
+        word-break: keep-all;
+    }
+    #pj_sweater * {box-sizing: border-box;}
+    #pj_sweater p, #pj_sweater h2, #pj_sweater ul {margin: 0; padding: 0;}
+    #pj_sweater ul {list-style: none;}
+    #pj_sweater button {font: inherit; color: inherit;}
+    #pj_sweater picture, #pj_sweater picture img {display: block; width: 100%; height: 100%;}
+    #pj_sweater picture img {object-fit: cover;}
+    #pj_sweater .serif {font-family: "Cormorant Garamond", "Times New Roman", serif; font-weight: 500;}
+    #pj_sweater .serif i {font-style: italic;}
+    #pj_sweater .br_mo {display: none;}
+
+    /* ── 메인 비주얼 ── */
+    #pj_sweater .sw_hero {position: relative; height: 56.25vw; overflow: hidden;} /* 1920 * 1080 */
+    #pj_sweater .sw_hero picture {position: absolute; inset: 0;}
+    #pj_sweater .sw_hero .dim {position: absolute; left: 0; right: 0; bottom: 0; height: 50%; background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));}
+    #pj_sweater .sw_hero .txt {position: absolute; left: clamp(32px, 6.25vw, 120px); bottom: clamp(40px, 6.25vw, 120px); display: flex; flex-direction: column; gap: clamp(32px, 3.333vw, 64px); white-space: nowrap;}
+    #pj_sweater .sw_hero .season {font-family: "Figtree", "Pretendard Variable", sans-serif; font-weight: 500; font-size: 16px; line-height: 1.2; letter-spacing: -0.16px;}
+    #pj_sweater .sw_hero h2 {font-size: clamp(44px, 4.167vw, 80px); line-height: 1.2; letter-spacing: -0.02em;}
+    #pj_sweater .sw_hero .desc {font-family: "Gothic A1", "Pretendard Variable", sans-serif; font-size: 18px; line-height: 1.6; letter-spacing: -0.18px;}
+
+    /* ── 인트로 ── */
+    #pj_sweater .sw_intro {position: relative; display: flex; align-items: center; justify-content: center; height: 41.667vw; overflow: hidden;} /* 1920 * 800 */
+    #pj_sweater .sw_intro picture {position: absolute; inset: 0;}
+    #pj_sweater .sw_intro::after {content: ""; position: absolute; inset: 0; background-color: rgba(0, 0, 0, 0.4);}
+    #pj_sweater .sw_intro .txt {position: relative; z-index: 1; font-family: "Gothic A1", "Pretendard Variable", sans-serif; font-size: 18px; line-height: 1.8; letter-spacing: -0.54px; text-align: center;}
+
+    /* ── 쿠폰 ── */
+    #pj_sweater .sw_coupon {display: flex; justify-content: center; padding: 120px 20px; background-color: #414651;}
+    #pj_sweater .sw_coupon .inner {display: flex; flex-direction: column; align-items: center; gap: 40px; width: 500px; max-width: 100%;}
+    #pj_sweater .sw_coupon .dates {display: flex; align-items: center; gap: 12px; height: 28px; padding: 0 12px; border-radius: 4px; background-color: rgba(255, 255, 255, 0.1); font-family: "Figtree", "Pretendard Variable", sans-serif; font-weight: 500; font-size: 16px; line-height: 1.2; letter-spacing: -0.16px; white-space: nowrap;}
+    #pj_sweater .sw_coupon .dates .dash {display: block; width: 8px; height: 1px; background-color: currentColor;}
+    #pj_sweater .sw_coupon .info {display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center;}
+    #pj_sweater .sw_coupon .heading {display: flex; flex-direction: column; gap: 12px;}
+    #pj_sweater .sw_coupon h2 {font-size: 48px; line-height: 1.2;}
+    #pj_sweater .sw_coupon h2 .num {font-family: "Times New Roman", Times, serif; font-weight: 400;}
+    #pj_sweater .sw_coupon .sub {font-family: "Figtree", "Pretendard Variable", sans-serif; font-size: 24px; line-height: 1.2;}
+    #pj_sweater .sw_coupon .desc {font-family: "Gothic A1", "Pretendard Variable", sans-serif; font-size: 18px; line-height: 1.6; letter-spacing: -0.36px;}
+    #pj_sweater .sw_coupon .detail {display: flex; flex-direction: column; align-items: center; gap: 40px;}
+
+    /* 쿠폰 카드 (@PC_BB_Coupons / BB_Coupons) */
+    #pj_sweater .coupon_btn {display: flex; padding: 0; border: 0; background: none; color: #414651; text-align: left; cursor: pointer;}
+    #pj_sweater .coupon_btn .left,
+    #pj_sweater .coupon_btn .right {background-color: #fff; transition: background-color 0.3s;}
+    #pj_sweater .coupon_btn .left {display: flex; flex-direction: column; justify-content: center; gap: 4px; width: 400px; height: 104px; padding: 0 24px; border-radius: 6px 12px 12px 6px; font-family: "Figtree", "Pretendard Variable", sans-serif; line-height: 1.2; white-space: nowrap;}
+    #pj_sweater .coupon_btn .off {font-weight: 600; font-size: 24px; letter-spacing: -0.48px;}
+    #pj_sweater .coupon_btn .dday {font-size: 20px; letter-spacing: -0.4px; opacity: 0.6;}
+    #pj_sweater .coupon_btn .right {display: flex; align-items: center; justify-content: center; width: 100px; height: 104px; border-radius: 12px 6px 6px 12px;}
+    #pj_sweater .coupon_btn .right svg {display: block; width: 30px; height: 24px; transition: transform 0.3s;}
+    #pj_sweater .coupon_btn:hover .right svg {transform: translateY(2px);}
+    #pj_sweater .coupon_btn:focus-visible {outline: 2px solid #fff; outline-offset: 4px;}
+    /* 프로모션 종료 */
+    #pj_sweater .coupon_btn.is-end {cursor: default;}
+    #pj_sweater .coupon_btn.is-end .left,
+    #pj_sweater .coupon_btn.is-end .right {background-color: #b2b2b2;}
+    #pj_sweater .coupon_btn.is-end:hover .right svg {transform: none;}
+
+    /* 유의사항 */
+    #pj_sweater .notice_btn {display: flex; align-items: center; gap: 6px; padding: 0; border: 0; background: none; font-family: "Gothic A1", "Pretendard Variable", sans-serif; font-size: 16px; line-height: 1.4; letter-spacing: -0.32px; cursor: pointer;}
+    #pj_sweater .notice_btn .ico {position: relative; width: 10px; height: 10px;}
+    #pj_sweater .notice_btn .ico::before,
+    #pj_sweater .notice_btn .ico::after {content: ""; position: absolute; left: 50%; top: 50%; background-color: currentColor; transform: translate(-50%, -50%); transition: opacity 0.3s;}
+    #pj_sweater .notice_btn .ico::before {width: 100%; height: 1px;}
+    #pj_sweater .notice_btn .ico::after {width: 1px; height: 100%;}
+    #pj_sweater .notice_btn[aria-expanded="true"] .ico::after {opacity: 0;}
+    #pj_sweater .notice {display: grid; grid-template-rows: 0fr; width: 100%; margin-top: -40px; transition: grid-template-rows 0.4s ease, margin-top 0.4s ease;}
+    #pj_sweater .notice.is-open {grid-template-rows: 1fr; margin-top: 0;}
+    #pj_sweater .notice > ul {display: flex; flex-direction: column; gap: 10px; min-height: 0; overflow: hidden; opacity: 0.7; font-family: "Gothic A1", "Pretendard Variable", sans-serif; font-size: 16px; line-height: 1.4; letter-spacing: -0.32px;}
+    #pj_sweater .notice li {position: relative; padding-left: 16px;}
+    #pj_sweater .notice li::before {content: ""; position: absolute; left: 4px; top: calc(0.7em - 1.5px); width: 3px; height: 3px; border-radius: 50%; background-color: currentColor;}
+
+    /* ── 룩 섹션 : 텍스트 스티키(position: sticky) + 이미지 롤링 ── */
+    #pj_sweater .sw_look .visual {position: relative; height: 56.25vw; overflow: clip;} /* 1920 * 1080 / hidden 은 내부 sticky 를 깨뜨리므로 clip */
+    #pj_sweater .sw_look .sw_slide {position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%;} /* Swiper fade / 기본 z-index: 1 이 텍스트를 덮지 않도록 0 */
+    #pj_sweater .sw_look .sw_slide .swiper-slide {height: 100%;}
+    #pj_sweater .sw_look .dim {position: absolute; left: 0; right: 0; bottom: 0; height: 50%; background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));}
+    /*
+        텍스트 스티키 : 처음엔 이미지 세로 중앙에 있다가, 이미지가 올라가는 동안 화면 중앙에 붙어 있고
+        이미지 하단 여백(PC 100px / 1080 기준)에 닿으면 이미지와 함께 올라감 → 이미지 기준으로 중앙에서 하단으로 이동
+    */
+    #pj_sweater .sw_look .txt_area {position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 5.208vw clamp(40px, 8.854vw, 170px);}
+    #pj_sweater .sw_look .txt {position: sticky; top: calc(50vh - 100px); width: 640px; max-width: 100%;} /* 100px = 텍스트 높이의 절반 정도 */
+    #pj_sweater .sw_look .txt_in {display: flex; flex-direction: column; align-items: flex-start; gap: clamp(32px, 2.917vw, 56px);}
+    #pj_sweater .sw_look .head {display: flex; flex-direction: column; align-items: flex-start; gap: 24px;}
+    #pj_sweater .sw_look .badge {display: flex; align-items: center; height: 28px; padding: 0 12px; border-radius: 4px; background-color: rgba(245, 245, 245, 0.1); font-family: "Figtree", "Pretendard Variable", sans-serif; font-weight: 500; font-size: 16px; line-height: 1.2; letter-spacing: -0.16px; color: #f5f5f5; white-space: nowrap;}
+    #pj_sweater .sw_look h2 {font-size: clamp(40px, 3.333vw, 64px); line-height: 1.2; white-space: nowrap;}
+    #pj_sweater .sw_look .desc {font-family: "Gothic A1", "Pretendard Variable", sans-serif; font-size: clamp(15px, 0.9375vw, 18px); line-height: 1.6; letter-spacing: -0.02em;}
+    /* 기획전 상품 진열 시스템 모듈 영역 (작업 제외) */
+    #pj_sweater .sw_prd {position: relative; z-index: 1; background-color: #fff; color: #000;}
+
+    /* ── 스크롤 페이드 인 (기획서 : 페이지 공통) ── */
+    #pj_sweater .fade {opacity: 0; transform: translateY(30px); transition: opacity 0.9s ease, transform 0.9s ease;}
+    #pj_sweater .fade.is-in {opacity: 1; transform: none;}
+    @media (prefers-reduced-motion: reduce) {
+        #pj_sweater .fade, #pj_sweater .notice {transition: none;}
+    }
+
+    /* ── 모바일 (Figma MO 360) ── */
+    @media screen and (max-width: 1024px) {
+        #pj_sweater .br_pc {display: none;}
+        #pj_sweater .br_mo {display: inline;}
+
+        #pj_sweater .sw_hero {height: 155.556vw;} /* 360 * 560 */
+        #pj_sweater .sw_hero .dim {height: 60%; background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));}
+        #pj_sweater .sw_hero .txt {left: 20px; bottom: 40px; gap: 32px;}
+        #pj_sweater .sw_hero .season {font-size: 14px; line-height: 1.5; letter-spacing: -0.14px;}
+        #pj_sweater .sw_hero h2 {font-size: 38px; letter-spacing: -0.76px;}
+        #pj_sweater .sw_hero .desc {font-size: 14px; line-height: 1.5; letter-spacing: -0.14px;}
+
+        #pj_sweater .sw_intro {height: 100vw;} /* 360 * 360 */
+        #pj_sweater .sw_intro .txt {padding: 0 20px; font-size: 13px; letter-spacing: -0.26px; color: #f5f5f5;}
+
+        #pj_sweater .sw_coupon {padding: 64px 20px;}
+        #pj_sweater .sw_coupon .inner {gap: 32px; width: 320px;}
+        #pj_sweater .sw_coupon .dates {gap: 8px; height: auto; padding: 4px 8px; font-weight: 600; font-size: 12px; letter-spacing: -0.12px;}
+        #pj_sweater .sw_coupon .info {gap: 16px;}
+        #pj_sweater .sw_coupon .heading {gap: 6px;}
+        #pj_sweater .sw_coupon h2 {font-size: 30px;}
+        #pj_sweater .sw_coupon .sub {font-size: 18px;}
+        #pj_sweater .sw_coupon .desc {font-size: 13px; line-height: 1.5; letter-spacing: -0.26px;}
+        #pj_sweater .sw_coupon .detail {gap: 24px; width: 100%;}
+        #pj_sweater .coupon_btn {width: 100%;}
+        #pj_sweater .coupon_btn .left {flex: 1; width: auto; height: 88px; margin-right: -1px; padding: 0 18px; border-radius: 4px 8px 8px 4px;}
+        #pj_sweater .coupon_btn .off {font-size: 22px; letter-spacing: -0.44px;}
+        #pj_sweater .coupon_btn .dday {font-size: 14px; letter-spacing: -0.28px;}
+        #pj_sweater .coupon_btn .right {width: 71px; height: 88px; border-radius: 8px 4px 4px 8px;}
+        #pj_sweater .coupon_btn .right svg {width: 20px; height: 16px;}
+        #pj_sweater .notice_btn {font-size: 12px; letter-spacing: -0.24px;}
+        #pj_sweater .notice_btn .ico {width: 7px; height: 7px;}
+        #pj_sweater .notice {margin-top: -32px;}
+        #pj_sweater .notice > ul {gap: 6px; font-size: 12px; letter-spacing: -0.24px;}
+        #pj_sweater .notice li {padding-left: 14px;}
+
+        #pj_sweater .sw_look .visual {height: 128.056vw;} /* 360 * 461 */
+        #pj_sweater .sw_look .dim {height: 56.4%; background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)); }
+        #pj_sweater .sw_look .txt_area {padding: 26px 20px;} /* 하단 여백 26px (461 기준) */
+        #pj_sweater .sw_look .txt {top: calc(50vh - 60px); width: auto;}
+        #pj_sweater .sw_look .txt_in {gap: 24px;}
+        #pj_sweater .sw_look .head {gap: 16px;}
+        #pj_sweater .sw_look .badge {height: auto; padding: 4px 8px; font-size: 12px; letter-spacing: -0.12px;}
+        #pj_sweater .sw_look h2 {font-size: 30px; letter-spacing: -0.6px; color: #f5f5f5;}
+        #pj_sweater .sw_look .desc {font-size: 13px; line-height: 1.8; letter-spacing: -0.26px; color: #f5f5f5;}
+    }
+</style>
+
+<div id="pj_sweater">
+    <!-- 로그인 상태 확인용 (로그인 시에만 카페24가 출력) -->
+    <span module="Layout_stateLogon" class="sw_logon" hidden></span>
+
+    <!-- 메인 비주얼 -->
+    <section class="sw_hero">
+        <picture>
+            <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/hero_mo.jpg">
+            <img src="/morenvyimg/promotion/261002_TheSweaterEdit/hero_pc.jpg" alt="그레이 브이넥 스웨터와 블루 로고 스웨터를 입은 남녀 모델">
+        </picture>
+        <div class="dim" aria-hidden="true"></div>
+        <div class="txt fade">
+            <p class="season">2026 Fall / Winter</p>
+            <h2 class="serif"><i>The</i> Sweater Edit</h2>
+            <p class="desc">헤리티지의 감각과 오늘의 취향<br>니트웨어로 완성한 클래식</p>
+        </div>
+    </section>
+
+    <!-- 인트로 -->
+    <section class="sw_intro">
+        <picture>
+            <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/intro_mo.jpg">
+            <img src="/morenvyimg/promotion/261002_TheSweaterEdit/intro_pc.jpg" alt="" loading="lazy">
+        </picture>
+        <p class="txt fade">단정한 솔리드부터 입체적인 짜임과 <br class="br_mo">감각적인 모티프까지.<br>브룩스브라더스가 제안하는 <br class="br_mo">다채로운 스웨터 컬렉션.</p>
+    </section>
+
+    <!-- 쿠폰 -->
+    <section class="sw_coupon">
+        <div class="inner">
+            <p class="dates fade"><span>10.2 (Fri)</span><span class="dash" aria-hidden="true"></span><span>10.15 (Thu)</span></p>
+            <div class="info fade" style="transition-delay: .1s;">
+                <div class="heading">
+                    <h2 class="serif"><span class="num">10%</span> Coupon</h2>
+                    <p class="sub">For Selected Sweaters</p>
+                </div>
+                <p class="desc">오래도록 즐길 스웨터를 <br>10% 쿠폰 혜택과 함께 만나보세요.</p>
+            </div>
+            <div class="detail fade" style="transition-delay: .2s;">
+                <button type="button" class="coupon_btn" aria-label="10% 쿠폰 다운로드">
+                    <span class="left">
+                        <span class="off">10% OFF</span>
+                        <span class="dday">D-13</span>
+                    </span>
+                    <span class="right">
+                        <svg viewBox="0 0 30 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 1v14.5M9.5 10l5.5 5.5 5.5-5.5M1 14v9h28v-9"/></svg>
+                    </span>
+                </button>
+                <button type="button" class="notice_btn" aria-expanded="false" aria-controls="sw_notice">유의사항 <span class="ico" aria-hidden="true"></span></button>
+            </div>
+            <div class="notice" id="sw_notice">
+                <ul>
+                    <li>사용기간 : 10.2-10.15</li>
+                    <li>적용 상품 : 하단 [10% Coupon Offer] 진열 상품</li>
+                    <li>발행된 쿠폰은 마이 쇼핑 &gt; 쿠폰에서 확인 가능합니다.</li>
+                    <li>주문 취소와 상품의 품절 및 반품 시 사용한 쿠폰의 유효기간이 만료된 경우 재발급되지 않습니다.</li>
+                    <li>기간내 미사용 시 자동 소멸되며 재발급되지 않습니다.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 룩 01 -->
+    <section class="sw_look">
+        <div class="visual">
+            <div class="sw_slide swiper">
+                <div class="swiper-wrapper">
+                    <picture class="swiper-slide">
+                        <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/look1_mo_1.jpg">
+                        <img src="/morenvyimg/promotion/261002_TheSweaterEdit/look1_pc_1.jpg" alt="그레이 브이넥 스웨터에 베이지 치노를 매치한 모델" loading="lazy">
+                    </picture>
+                    <picture class="swiper-slide">
+                        <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/look1_mo_2.jpg">
+                        <img src="/morenvyimg/promotion/261002_TheSweaterEdit/look1_pc_2.jpg" alt="그레이 브이넥 스웨터를 입은 모델 상반신" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+            <div class="dim" aria-hidden="true"></div>
+            <div class="txt_area">
+                <div class="txt">
+                    <div class="txt_in fade">
+                        <div class="head">
+                            <p class="badge">10% Coupon Selection</p>
+                            <h2 class="serif"><i>A</i> Knitwear Invitation</h2>
+                        </div>
+                        <p class="desc">부드러운 촉감과 깊이 있는 짜임으로 채우는 일상. <br>단정하고 여유로운 니트웨어 스타일.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 기획전 상품 진열 시스템 모듈 영역 (작업 제외) -->
+        <div class="sw_prd"></div>
+    </section>
+
+    <!-- 룩 02 -->
+    <section class="sw_look">
+        <div class="visual">
+            <div class="sw_slide swiper">
+                <div class="swiper-wrapper">
+                    <picture class="swiper-slide">
+                        <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/look2_mo_1.jpg">
+                        <img src="/morenvyimg/promotion/261002_TheSweaterEdit/look2_pc_1.jpg" alt="아이보리 크루넥 스웨터를 입고 앉아 있는 모델" loading="lazy">
+                    </picture>
+                    <picture class="swiper-slide">
+                        <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/look2_mo_2.jpg">
+                        <img src="/morenvyimg/promotion/261002_TheSweaterEdit/look2_pc_2.jpg" alt="아이보리 크루넥 스웨터에 카키 팬츠를 매치한 모델" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+            <div class="dim" aria-hidden="true"></div>
+            <div class="txt_area">
+                <div class="txt">
+                    <div class="txt_in fade">
+                        <div class="head">
+                            <h2 class="serif">Everyday Classics</h2>
+                        </div>
+                        <p class="desc">취향에 따라 고르는 컬러와 간결한 실루엣. <br>셔츠 위에도, 재킷 안에도 자연스럽게 어우러지는 <br class="br_mo">솔리드 스웨터.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 기획전 상품 진열 시스템 모듈 영역 (작업 제외) -->
+        <div class="sw_prd"></div>
+    </section>
+
+    <!-- 룩 03 -->
+    <section class="sw_look">
+        <div class="visual">
+            <div class="sw_slide swiper">
+                <div class="swiper-wrapper">
+                    <picture class="swiper-slide">
+                        <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/look3_mo_1.jpg">
+                        <img src="/morenvyimg/promotion/261002_TheSweaterEdit/look3_pc_1.jpg" alt="네이비 케이블 니트 집업을 입은 모델" loading="lazy">
+                    </picture>
+                    <picture class="swiper-slide">
+                        <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/look3_mo_2.jpg">
+                        <img src="/morenvyimg/promotion/261002_TheSweaterEdit/look3_pc_2.jpg" alt="네이비 니트에 버건디 팬츠를 입고 소파에 앉은 모델" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+            <div class="dim" aria-hidden="true"></div>
+            <div class="txt_area">
+                <div class="txt">
+                    <div class="txt_in fade">
+                        <div class="head">
+                            <h2 class="serif">Rich <i>in</i> Texture</h2>
+                        </div>
+                        <p class="desc">입체적인 케이블과 풍성한 피셔맨 조직. <br>클래식에 깊이를 더하는 니트의 표정.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 기획전 상품 진열 시스템 모듈 영역 (작업 제외) -->
+        <div class="sw_prd"></div>
+    </section>
+
+    <!-- 룩 04 -->
+    <section class="sw_look">
+        <div class="visual">
+            <div class="sw_slide swiper">
+                <div class="swiper-wrapper">
+                    <picture class="swiper-slide">
+                        <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/look4_mo_1.jpg">
+                        <img src="/morenvyimg/promotion/261002_TheSweaterEdit/look4_pc_1.jpg" alt="네이비 하프집업 니트를 입은 모델" loading="lazy">
+                    </picture>
+                    <picture class="swiper-slide">
+                        <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/look4_mo_2.jpg">
+                        <img src="/morenvyimg/promotion/261002_TheSweaterEdit/look4_pc_2.jpg" alt="네이비 하프집업 니트에 베이지 팬츠를 입고 앉은 모델" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+            <div class="dim" aria-hidden="true"></div>
+            <div class="txt_area">
+                <div class="txt">
+                    <div class="txt_in fade">
+                        <div class="head">
+                            <h2 class="serif"><i>The</i> Art <i>of</i> Layering</h2>
+                        </div>
+                        <p class="desc">셔츠 위에 가볍게 걸치거나 칼라를 살짝 드러내거나. <br>입는 방식에 따라 달라지는 가디건과 집업의 매력.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 기획전 상품 진열 시스템 모듈 영역 (작업 제외) -->
+        <div class="sw_prd"></div>
+    </section>
+
+    <!-- 룩 05 -->
+    <section class="sw_look">
+        <div class="visual">
+            <div class="sw_slide swiper">
+                <div class="swiper-wrapper">
+                    <picture class="swiper-slide">
+                        <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/look5_mo_1.jpg">
+                        <img src="/morenvyimg/promotion/261002_TheSweaterEdit/look5_pc_1.jpg" alt="블루 페어아일 스웨터를 입은 모델" loading="lazy">
+                    </picture>
+                    <picture class="swiper-slide">
+                        <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/look5_mo_2.jpg">
+                        <img src="/morenvyimg/promotion/261002_TheSweaterEdit/look5_pc_2.jpg" alt="블루 페어아일 스웨터를 입은 모델 상반신" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+            <div class="dim" aria-hidden="true"></div>
+            <div class="txt_area">
+                <div class="txt">
+                    <div class="txt_in fade">
+                        <div class="head">
+                            <h2 class="serif">Character <i>in</i> Knit</h2>
+                        </div>
+                        <p class="desc">페어아일과 스트라이프, 레터링과 인타샤. <br>익숙한 옷차림에 개성을 더하는 패턴과 모티프.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 기획전 상품 진열 시스템 모듈 영역 (작업 제외) -->
+        <div class="sw_prd"></div>
+    </section>
+
+    <!-- 룩 06 -->
+    <section class="sw_look">
+        <div class="visual">
+            <div class="sw_slide swiper">
+                <div class="swiper-wrapper">
+                    <picture class="swiper-slide">
+                        <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/look6_mo_1.jpg">
+                        <img src="/morenvyimg/promotion/261002_TheSweaterEdit/look6_pc_1.jpg" alt="블루 레터링 스웨터를 입은 여성 모델" loading="lazy">
+                    </picture>
+                    <picture class="swiper-slide">
+                        <source media="(max-width: 1024px)" srcset="/morenvyimg/promotion/261002_TheSweaterEdit/look6_mo_2.jpg">
+                        <img src="/morenvyimg/promotion/261002_TheSweaterEdit/look6_pc_2.jpg" alt="블루 레터링 스웨터에 데님을 매치한 여성 모델" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+            <div class="dim" aria-hidden="true"></div>
+            <div class="txt_area">
+                <div class="txt">
+                    <div class="txt_in fade">
+                        <div class="head">
+                            <h2 class="serif"><i>The</i> Women’s Edit</h2>
+                        </div>
+                        <p class="desc">섬세한 케이블과 단정한 가디건, 경쾌한 컬러와 모티프. <br>일상에 우아함과 개성을 더하는 니트웨어.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 기획전 상품 진열 시스템 모듈 영역 (작업 제외) -->
+        <div class="sw_prd"></div>
+    </section>
+</div>
+
+<script>
+    /* 카페24 jQuery 는 본문 뒤에서 불러오므로 바닐라 JS + DOMContentLoaded 로 실행 */
+    document.addEventListener("DOMContentLoaded", function () {
+        var wrap = document.getElementById("pj_sweater");
+        if (!wrap) return;
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* ── 스크롤 페이드 인 : 요소가 뷰포트 아래로 내려갔다가 다시 올라올 때마다 반복 ── */
+        var fades = wrap.querySelectorAll(".fade");
+        if ("IntersectionObserver" in window) {
+            var fadeIo = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) {
+                        e.target.classList.add("is-in");
+                    } else if (e.boundingClientRect.top > 0) {
+                        /* 뷰포트 아래쪽으로 벗어났을 때만 초기화 (위로 지나간 요소는 유지) */
+                        e.target.classList.remove("is-in");
+                    }
+                });
+            }, {threshold: 0.2});
+            fades.forEach(function (el) { fadeIo.observe(el); });
+        } else {
+            fades.forEach(function (el) { el.classList.add("is-in"); });
+        }
+
+        /* ── 쿠폰 ── */
+        var COUPON_NO = "6086342964400000591";
+        var startTime = new Date("2026-10-02T00:00:00+09:00").getTime();
+        var deadline = new Date("2026-10-15T23:00:00+09:00").getTime();
+        var couponBtn = wrap.querySelector(".coupon_btn");
+        var dday = couponBtn.querySelector(".dday");
+
+        /* 한국 날짜 기준 일수 (D-day 계산용) */
+        var kstDay = function (t) { return Math.floor((t + 9 * 3600000) / 86400000); };
+
+        var setCoupon = function () {
+            var now = Date.now();
+            if (now >= deadline) {
+                couponBtn.classList.add("is-end");
+                couponBtn.setAttribute("aria-disabled", "true");
+                couponBtn.setAttribute("aria-label", "10% 쿠폰 프로모션 종료");
+                dday.textContent = "프로모션 종료";
+                return true;
+            }
+            var d = kstDay(deadline) - kstDay(now);
+            dday.textContent = d > 0 ? "D-" + d : "D-DAY";
+            return false;
+        };
+        if (!setCoupon()) {
+            var couponTimer = setInterval(function () {
+                if (setCoupon()) clearInterval(couponTimer);
+            }, 60000);
+        }
+
+        /* 로그인 여부 : Layout_stateLogon 모듈은 로그인 시에만 출력됨 */
+        var isLogin = function () {
+            var logon = document.querySelector(".xans-layout-statelogon");
+            if (logon && !logon.classList.contains("displaynone")) return true;
+            return !!(window.CAPP_ASYNC_METHODS && window.CAPP_ASYNC_METHODS.IS_LOGIN === true);
+        };
+
+        couponBtn.addEventListener("click", function () {
+            if (couponBtn.classList.contains("is-end")) return;
+            var here = location.pathname + location.search;
+            if (Date.now() < startTime) {
+                alert("쿠폰은 10.2 (Fri)부터 다운로드하실 수 있습니다.");
+                return;
+            }
+            if (!isLogin()) {
+                alert("로그인 후 쿠폰을 다운로드하실 수 있습니다.");
+                location.href = "/member/login.html?returnUrl=" + encodeURIComponent(here);
+                return;
+            }
+            location.href = "/exec/front/newcoupon/IssueDownload?coupon_no=" + COUPON_NO + "&opener_url=" + encodeURIComponent(here);
+        });
+
+        /* ── 유의사항 토글 ── */
+        var noticeBtn = wrap.querySelector(".notice_btn");
+        var notice = document.getElementById("sw_notice");
+        noticeBtn.addEventListener("click", function () {
+            var open = noticeBtn.getAttribute("aria-expanded") !== "true";
+            noticeBtn.setAttribute("aria-expanded", String(open));
+            notice.classList.toggle("is-open", open);
+        });
+
+        /* ── 룩 섹션 : 텍스트 이동은 CSS position: sticky 로 처리 (JS 없음) ── */
+
+        /* ── 룩 섹션 : 이미지 2장 페이드 인/아웃 롤링 (Swiper fade) — 뷰포트에 들어오면 autoplay 시작 ── */
+        if (typeof Swiper === "undefined") return;
+        var slideEls = wrap.querySelectorAll(".sw_slide");
+        var swipers = [];
+
+        slideEls.forEach(function (el, i) {
+            var swiper = new Swiper(el, {
+                effect: "fade",
+                fadeEffect: {crossFade: false}, /* true 면 전환 중 두 장이 모두 반투명해져 배경이 비침 */
+                speed: 1200,
+                loop: true,
+                allowTouchMove: false,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+            });
+            swiper.autoplay.stop(); /* 뷰포트에 들어오기 전엔 정지 */
+            el.setAttribute("data-index", i);
+            swipers.push(swiper);
+        });
+
+        if (reduce) return;
+        if ("IntersectionObserver" in window) {
+            var slideIo = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    var swiper = swipers[e.target.getAttribute("data-index")];
+                    if (e.isIntersecting) {
+                        if (!swiper.autoplay.running) swiper.autoplay.start();
+                    } else if (swiper.autoplay.running) {
+                        swiper.autoplay.stop();
+                    }
+                });
+            }, {threshold: 0.3});
+            slideEls.forEach(function (el) { slideIo.observe(el); });
+        } else {
+            swipers.forEach(function (swiper) { swiper.autoplay.start(); });
+        }
+    });
+</script>

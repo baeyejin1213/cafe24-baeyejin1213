@@ -1,0 +1,522 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/dist/wow.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<!-- 아래 코드부터 복사하기 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+
+<div id="promotion_box" class="promotion_box">
+    <!-- 기획전 키비주얼 -->
+    <div class="p_keyvisual">
+        <div class="visual_wrap">
+            <div class="txt_box wow" data-wow-offset="100">
+                <h2 class="outfit">
+                    <span>Berry</span>
+                    <span style="animation-delay: 0.1s;">Good</span>
+                    <span style="animation-delay: 0.2s;">News.</span>
+                </h2>
+                <p style="animation-delay: 0.3s;">잘 익은 베리 한 알을 닮은 새 컬러, <b>베리핑크.</b><br>손에 쥐는 순간 하루가 톡, 상큼해져요.</p>
+            </div>
+
+            <div class="visual_img wow animate__animated animate__fadeIn" data-wow-delay="0.3s">
+                <picture>
+                    <source srcset="/morenvyimg/promotion/261019_BerryGoodNews/hero_m.webp" media="(max-width: 1024px)">
+                    <img src="/morenvyimg/promotion/261019_BerryGoodNews/hero_pc.webp" alt="">
+                </picture>
+            </div>
+        </div>
+
+        <div class="gift_box wow" data-wow-offset="300">
+            <div class="gift">
+                <div class="thumb">
+                    <picture>
+                        <source srcset="/morenvyimg/promotion/261019_BerryGoodNews/gift_m_v2.webp" media="(max-width: 1024px)">
+                        <img src="/morenvyimg/promotion/261019_BerryGoodNews/gift_pc_v2.webp" alt="">
+                    </picture>
+                </div>
+
+                <div class="txt">
+                    <div class="top">
+                        <span class="badge outfit">Gift</span>
+                        <span>선착순 증정 · 소진 시 종료</span>
+                    </div>
+                    <p>실결제 금액 5만원 이상 구매 시 <br class="mo"><b>치키 랜덤 키링 증정</b></p>
+                    <span class="sub">나의 루프에 사랑스러운 포인트 하나. 함께 달고 나가기 좋은 키링을 준비했어요.</span>
+                </div>
+            </div>
+
+            <div class="notice">
+                <div class="notice_toggle" style="animation-delay: 0.1s;">
+                    <span>유의사항
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 10.625H15V9.375H5V10.625Z" fill="#6A6A6A"></path>
+                            <path d="M9.375 5V15H10.625V5H9.375Z" fill="#6A6A6A"></path>
+                        </svg>
+                    </span>
+                    <span>유의사항
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 10.625H15V9.375H5V10.625Z" fill="#6A6A6A"></path>
+                        </svg>
+                    </span>
+                </div>
+
+                <ul>
+                    <li>루프 텀블러 멀티 600ml (베리핑크) 1개 구매 시 랜덤 키링 1개가 증정됩니다.</li>
+                    <li>사은품은 주문서 및 주문 내역에 별도로 표시되지 않으며, 상품 배송 시 함께 동봉됩니다.</li>
+                    <li>사은품 증정 대상 주문의 경우, 주문서 페이지에서 선택할 수 있으며, 사은품을 체크해주셔야 정상 참여가 진행됩니다.</li>
+                    <li>사은품은 한정 수량으로, 조기 소진 시 별도의 사전 안내 없이 이벤트가 종료될 수 있습니다.</li>
+                    <li>사은품은 교환 및 환불이 불가하며, 주문 건 반품 시 사은품도 함께 반품해주셔야 합니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 01 -->
+    <div class="p_sec01">
+        <div class="flow_track">
+            <div class="flow_group outfit">
+                <span>JUST HOLD THE LOOP</span><i></i>
+                <span>NEW BERRY PINK</span><i></i>
+                <span>LOOP TUMBLER MULTI 600ml</span><i></i>
+                <span>JUST HOLD THE LOOP</span><i></i>
+                <span>NEW BERRY PINK</span><i></i>
+                <span>LOOP TUMBLER MULTI 600ml</span><i></i>
+            </div>
+            <div class="flow_group outfit">
+                <span>JUST HOLD THE LOOP</span><i></i>
+                <span>NEW BERRY PINK</span><i></i>
+                <span>LOOP TUMBLER MULTI 600ml</span><i></i>
+                <span>JUST HOLD THE LOOP</span><i></i>
+                <span>NEW BERRY PINK</span><i></i>
+                <span>LOOP TUMBLER MULTI 600ml</span><i></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 02 -->
+    <div class="p_sec02">
+        <div class="sec_title wow" data-wow-offset="300">
+            <span class="outfit">Meet Berry Pink</span>
+            <h2 style="animation-delay: 0.1s;">톡 터지는 새 컬러,<br>베리핑크.</h2>
+            <p style="animation-delay: 0.2s;">짙게 익은 베리의 핑크를 바디에, <br class="mo">맑은 하늘빛 라이트블루를 슬리브에 담았어요.<br>서로 다른 두 컬러가 만나 <br class="mo">더 선명하게, 더 산뜻하게 빛나요.</p>
+            <a href="/product/detail.html?product_no=472" class="btn_buy" style="animation-delay: 0.3s;">구매하기</a>
+        </div>
+
+        <div class="slide_wrap wow" data-wow-offset="300">
+            <div class="swiper swiper01">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261019_BerryGoodNews/sec03_slide01.webp" alt=""></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261019_BerryGoodNews/sec03_slide02.webp" alt=""></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261019_BerryGoodNews/sec03_slide03.webp" alt=""></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261019_BerryGoodNews/sec03_slide04.webp" alt=""></div>
+                    <div class="swiper-slide"><img src="/morenvyimg/promotion/261019_BerryGoodNews/sec03_slide05.webp" alt=""></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 03 -->
+    <div class="p_sec03">
+        <div class="sec_bg wow animate__animated animate__fadeIn" data-wow-offset="300">
+            <picture>
+                <source srcset="/morenvyimg/promotion/261019_BerryGoodNews/sec04_m.webp" media="(max-width: 1024px)">
+                <img src="/morenvyimg/promotion/261019_BerryGoodNews/sec04_pc.webp" alt="">
+            </picture>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 04 -->
+    <div class="p_sec04">
+        <div class="sec_title wow" data-wow-offset="300">
+            <span class="outfit">All Colors</span>
+            <h2 style="animation-delay: 0.1s;">새로운 베리핑크부터<br>스테디 컬러까지,<br>한눈에 골라보세요.</h2>
+        </div>
+
+        <div class="prd_list wow" data-wow-offset="300">
+            <a href="/product/detail.html?product_no=472" class="prd prd_main">
+                <div class="thumb">
+                    <img src="/morenvyimg/promotion/261019_BerryGoodNews/prd_berrypink.webp" alt="">
+                    <span class="badge outfit">new</span>
+                </div>
+                <div class="info">
+                    <div class="txt">
+                        <p class="name"><i style="background-color: #E6386E;"></i>베리 핑크</p>
+                        <p class="price outfit"><span class="per">18%</span><span class="now">37,000</span><del>45,000</del></p>
+                    </div>
+                    <div class="arrow">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="80" height="80" rx="40" fill="white"></rect>
+                            <path d="M25 38.5949H52.1709V41.4124H25V38.5949Z" fill="#E6386E"></path>
+                            <path d="M39.8689 55L37.8704 53.0189L50.9623 40L37.8704 27.0216L39.8689 25L55 40L39.8689 55Z" fill="#E6386E"></path>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/product/detail.html?product_no=410" class="prd" style="animation-delay: 0.1s;">
+                <div class="thumb" style="background-color: #E3E7E8;"><img src="/morenvyimg/promotion/261019_BerryGoodNews/prd_lightblue.webp" alt=""></div>
+                <div class="txt">
+                    <p class="name"><i style="background-color: #B3C7E1;"></i>라이트블루</p>
+                    <p class="price outfit"><span class="per">18%</span><span class="now">37,000</span><del>45,000</del></p>
+                </div>
+            </a>
+
+            <a href="/product/detail.html?product_no=100" class="prd" style="animation-delay: 0.2s;">
+                <div class="thumb" style="background-color: #F2E4E4;"><img src="/morenvyimg/promotion/261019_BerryGoodNews/prd_pink.webp" alt=""></div>
+                <div class="txt">
+                    <p class="name"><i style="background-color: #EBB2CB;"></i>핑크</p>
+                    <p class="price outfit"><span class="per">18%</span><span class="now">37,000</span><del>45,000</del></p>
+                </div>
+            </a>
+
+            <a href="/product/detail.html?product_no=101" class="prd" style="animation-delay: 0.1s;">
+                <div class="thumb" style="background-color: #E9E6E1;"><img src="/morenvyimg/promotion/261019_BerryGoodNews/prd_lightgray.webp" alt=""></div>
+                <div class="txt">
+                    <p class="name"><i style="background-color: #CBCDCB;"></i>라이트그레이</p>
+                    <p class="price outfit"><span class="per">18%</span><span class="now">37,000</span><del>45,000</del></p>
+                </div>
+            </a>
+
+            <a href="/product/detail.html?product_no=99" class="prd" style="animation-delay: 0.2s;">
+                <div class="thumb" style="background-color: #E7ECE3;"><img src="/morenvyimg/promotion/261019_BerryGoodNews/prd_mint.webp" alt=""></div>
+                <div class="txt">
+                    <p class="name"><i style="background-color: #A8C8B8;"></i>민트</p>
+                    <p class="price outfit"><span class="per">18%</span><span class="now">37,000</span><del>45,000</del></p>
+                </div>
+            </a>
+
+            <a href="/product/detail.html?product_no=408" class="prd prd_apple" style="animation-delay: 0.3s;">
+                <div class="thumb" style="background-color: #EBECD5;"><img src="/morenvyimg/promotion/261019_BerryGoodNews/prd_apple.webp" alt=""></div>
+                <div class="txt">
+                    <p class="name"><i style="background-color: #D5E79B;"></i>애플그린</p>
+                    <p class="price outfit"><span class="per">18%</span><span class="now">37,000</span><del>45,000</del></p>
+                </div>
+            </a>
+
+            <a href="/product/detail.html?product_no=468" class="prd" style="animation-delay: 0.1s;">
+                <div class="thumb" style="background-color: #F2F0DB;"><img src="/morenvyimg/promotion/261019_BerryGoodNews/prd_lemon.webp" alt=""></div>
+                <div class="txt">
+                    <p class="name"><i style="background-color: #FFF8B8;"></i>레몬크림</p>
+                    <p class="price outfit"><span class="per">18%</span><span class="now">37,000</span><del>45,000</del></p>
+                </div>
+            </a>
+
+            <a href="/product/detail.html?product_no=407" class="prd" style="animation-delay: 0.2s;">
+                <div class="thumb" style="background-color: #F0E9D9;"><img src="/morenvyimg/promotion/261019_BerryGoodNews/prd_butter.webp" alt=""></div>
+                <div class="txt">
+                    <p class="name"><i style="background-color: #DCCFA6;"></i>버터크림</p>
+                    <p class="price outfit"><span class="per">18%</span><span class="now">37,000</span><del>45,000</del></p>
+                </div>
+            </a>
+
+            <a href="/tumggu.html?ifdotrk_campaign=iframe" class="prd prd_custom" style="animation-delay: 0.4s;">
+                <div class="color">
+                    <i style="background-color: #E6386E;"></i>
+                    <i style="background-color: #B3C7E1;"></i>
+                    <i style="background-color: #EBB2CB;"></i>
+                    <i style="background-color: #CBCDCB;"></i>
+                    <i style="background-color: #A8C8B8;"></i>
+                    <i style="background-color: #D5E79B;"></i>
+                    <i style="background-color: #FFF8B8;"></i>
+                    <i style="background-color: #DCCFA6;"></i>
+                </div>
+                <div class="txt">
+                    <p>나만의 텀블러<br>만들어 보기</p>
+                    <div class="arrow">
+                        <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="56" height="56" rx="28" fill="white"></rect>
+                            <path d="M18 27.0632H36.1139V28.9416H18V27.0632Z" fill="#1A1A1A"></path>
+                            <path d="M27.9126 38L26.5803 36.6792L35.3082 28L26.5803 19.3477L27.9126 18L38 28L27.9126 38Z" fill="#1A1A1A"></path>
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* 공통 */
+    #container #contents {max-width: 100%; width: 100%; padding: 0;}
+    #promotion_box {color: #1A1A1A; font-family: "SUIT Variable", sans-serif; word-break: keep-all; overflow-x: clip;}
+    #promotion_box .outfit {font-family: "Outfit", sans-serif;}
+    #promotion_box img {display: block; width: 100%; max-width: none;}
+    #promotion_box br.mo {display: none;}
+
+    #promotion_box .sec_title {display: flex; flex-direction: column; align-items: center; text-align: center;}
+    #promotion_box .sec_title > span {font-size: clamp(1.4rem, 1.25vw, 2.4rem); line-height: 150%; font-weight: 600; color: #F15C86;}
+    #promotion_box .sec_title h2 {margin-top: clamp(1rem, 1.042vw, 2rem); font-size: clamp(2.9rem, 2.5vw, 4.8rem); line-height: 150%; font-weight: 800; color: #1A1A1A;}
+    #promotion_box .sec_title p {margin-top: clamp(1rem, 1.042vw, 2rem); font-size: clamp(1.4rem, 1.25vw, 2.4rem); line-height: 160%; font-weight: 400;}
+
+
+    /* 기획전 키비주얼 */
+    #promotion_box .p_keyvisual {padding: clamp(5rem, 5.208vw, 10rem) 0; border-top: 1px solid #EDEDED; display: flex; flex-direction: column; align-items: center; gap: clamp(3rem, 3.125vw, 6rem);}
+    #promotion_box .p_keyvisual .visual_wrap {display: flex; justify-content: center; align-items: flex-start; gap: clamp(4rem, 7.292vw, 14rem); width: 78.906vw; max-width: 151.5rem;}
+    #promotion_box .p_keyvisual .txt_box {flex: none; display: flex; flex-direction: column; gap: clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .p_keyvisual .txt_box h2 span {display: block; font-size: clamp(7.2rem, 6.25vw, 12rem); line-height: 110%; font-weight: 700; letter-spacing: 1.2px;}
+    #promotion_box .p_keyvisual .txt_box h2 span:first-child {color: #F15C86;}
+    #promotion_box .p_keyvisual .txt_box p {font-size: clamp(1.4rem, 1.25vw, 2.4rem); line-height: 150%; font-weight: 400; white-space: nowrap;}
+    #promotion_box .p_keyvisual .txt_box p b {font-weight: 700;}
+    #promotion_box .p_keyvisual .visual_img {flex: 0 1 50vw; max-width: 96rem; border-radius: clamp(1.2rem, 1.25vw, 2.4rem); overflow: hidden;}
+
+    #promotion_box .p_keyvisual .gift_box {display: grid; grid-template-columns: 100%; width: 78.906vw; max-width: 151.5rem;}
+    #promotion_box .p_keyvisual .gift {grid-area: 1 / 1; display: flex; gap: clamp(2rem, 2.083vw, 4rem); min-height: clamp(7.8rem, 8.125vw, 15.6rem); padding-right: clamp(9rem, 9.375vw, 18rem); border: 1px solid rgba(0, 0, 0, .2); border-radius: clamp(0.5rem, 0.521vw, 1rem); overflow: hidden;}
+    #promotion_box .p_keyvisual .gift .thumb {flex: none; width: clamp(17.2rem, 17.917vw, 34.4rem); background-color: #ECECEC;}
+    #promotion_box .p_keyvisual .gift .thumb img {height: 100%; object-fit: cover;}
+    #promotion_box .p_keyvisual .gift .txt {display: flex; flex-direction: column; align-self: center; padding: clamp(0.5rem, 0.521vw, 1rem) 0;}
+    #promotion_box .p_keyvisual .gift .txt .top {display: flex; align-items: center; gap: clamp(0.6rem, 0.625vw, 1.2rem); margin-bottom: clamp(0.6rem, 0.625vw, 1.2rem);}
+    #promotion_box .p_keyvisual .gift .txt .top span {font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 150%; font-weight: 400; letter-spacing: -0.176px; color: #666;}
+    #promotion_box .p_keyvisual .gift .txt .top .badge {display: flex; align-items: center; height: clamp(1.9rem, 1.354vw, 2.6rem); padding: 0 clamp(0.6rem, 0.625vw, 1.2rem); border-radius: 100px; background-color: #1A1A1A; font-size: clamp(1.2rem, 0.729vw, 1.4rem); font-weight: 600; letter-spacing: -0.154px; color: #fff; text-transform: uppercase;}
+    #promotion_box .p_keyvisual .gift .txt p {font-size: clamp(1.4rem, 1.25vw, 2.4rem); line-height: 150%; font-weight: 400; letter-spacing: -0.72px;}
+    #promotion_box .p_keyvisual .gift .txt p b {font-weight: 700;}
+    #promotion_box .p_keyvisual .gift .txt .sub {margin-top: 2px; font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 150%; font-weight: 400; letter-spacing: -0.6px;}
+
+    #promotion_box .p_keyvisual .notice {display: contents;}
+    #promotion_box .p_keyvisual .notice .notice_toggle {grid-area: 1 / 1; justify-self: end; align-self: center; margin-right: clamp(2.5rem, 2.604vw, 5rem); cursor: pointer;}
+    #promotion_box .p_keyvisual .notice .notice_toggle span {display: flex; align-items: center; gap: clamp(0.4rem, 0.313vw, 0.6rem); border-bottom: 1px solid #6A6A6A; font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 140%; font-weight: 400; letter-spacing: -0.2px; color: #6A6A6A;}
+    #promotion_box .p_keyvisual .notice .notice_toggle span:last-of-type,
+    #promotion_box .p_keyvisual .notice .notice_toggle.on span:first-of-type {display: none;}
+    #promotion_box .p_keyvisual .notice .notice_toggle.on span:last-of-type {display: flex;}
+    #promotion_box .p_keyvisual .notice .notice_toggle svg {width: clamp(1.4rem, 1.042vw, 2rem); height: clamp(1.4rem, 1.042vw, 2rem);}
+    #promotion_box .p_keyvisual .notice ul {grid-area: 2 / 1; display: none; padding: clamp(2rem, 2.083vw, 4rem) 0 0 clamp(18.8rem, 19.583vw, 37.6rem);}
+    #promotion_box .p_keyvisual .notice ul li {position: relative; padding-left: clamp(1.2rem, 1.25vw, 2.4rem); font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 140%; font-weight: 400; letter-spacing: -0.48px; color: #9A9A9A;}
+    #promotion_box .p_keyvisual .notice ul li + li {margin-top: clamp(0.3rem, 0.313vw, 0.6rem);}
+    #promotion_box .p_keyvisual .notice ul li::before {content: "•"; position: absolute; top: 0; left: clamp(0.4rem, 0.417vw, 0.8rem);}
+
+    #promotion_box .p_keyvisual .txt_box.animated > *,
+    #promotion_box .p_keyvisual .txt_box.animated h2 span,
+    #promotion_box .p_keyvisual .gift_box.animated .gift,
+    #promotion_box .p_keyvisual .gift_box.animated .notice_toggle {animation: fadeInUp 1s ease both;}
+    #promotion_box .p_keyvisual .txt_box.animated h2 {animation: none;}
+
+
+    /* 기획전 섹션 01 */
+    #promotion_box .p_sec01 {overflow: hidden; border-top: 2px solid rgba(26, 26, 26, .2); border-bottom: 2px solid rgba(26, 26, 26, .2); padding: clamp(1.2rem, 1.25vw, 2.4rem) 0;}
+    #promotion_box .p_sec01 .flow_track {display: flex; width: max-content; animation: flowLoop 40s linear infinite;}
+    #promotion_box .p_sec01 .flow_group {display: flex; align-items: center; gap: clamp(3rem, 3.125vw, 6rem); padding-right: clamp(3rem, 3.125vw, 6rem);}
+    #promotion_box .p_sec01 .flow_group span {font-size: clamp(2.4rem, 2.083vw, 4rem); line-height: 150%; font-weight: 700; letter-spacing: -0.44px; white-space: nowrap;}
+    #promotion_box .p_sec01 .flow_group i {flex: none; width: clamp(2rem, 2.083vw, 4rem); aspect-ratio: 40 / 19; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 19'%3E%3Cpath d='M40 9.5C40.0002 11.3789 39.4327 13.2156 38.3692 14.7779C37.3057 16.3402 35.794 17.5578 34.0252 18.2769C32.2565 18.9959 30.3102 19.184 28.4326 18.8174C26.5549 18.4508 24.8302 17.5459 23.4766 16.2173L23.3975 16.1334L13.7412 5.43291C12.9248 4.64638 11.8899 4.11402 10.7664 3.90262C9.64285 3.69123 8.48071 3.81021 7.42582 4.24465C6.37092 4.67909 5.47028 5.40963 4.8369 6.34459C4.20352 7.27954 3.86563 8.37727 3.86563 9.5C3.86563 10.6227 4.20352 11.7205 4.8369 12.6554C5.47028 13.5904 6.37092 14.3209 7.42582 14.7553C8.48071 15.1898 9.64285 15.3088 10.7664 15.0974C11.8899 14.886 12.9248 14.3536 13.7412 13.5671L14.2381 13.0162C14.4066 12.8291 14.611 12.6763 14.8397 12.5668C15.0683 12.4572 15.3167 12.3929 15.5707 12.3775C15.8247 12.3622 16.0793 12.396 16.3199 12.4772C16.5605 12.5584 16.7825 12.6853 16.9732 12.8507C17.1638 13.0161 17.3194 13.2167 17.4311 13.4411C17.5427 13.6655 17.6082 13.9093 17.6239 14.1586C17.6396 14.4078 17.605 14.6577 17.5223 14.8938C17.4396 15.13 17.3103 15.3478 17.1417 15.5349L16.6013 16.1334L16.5223 16.2173C15.1686 17.5456 13.444 18.4501 11.5665 18.8165C9.68905 19.1828 7.74304 18.9946 5.97455 18.2756C4.20606 17.5567 2.69453 16.3392 1.63107 14.7771C0.567614 13.2151 0 11.3786 0 9.5C0 7.62137 0.567614 5.78493 1.63107 4.22288C2.69453 2.66084 4.20606 1.44335 5.97455 0.724354C7.74304 0.00536026 9.68905 -0.182843 11.5665 0.183542C13.444 0.549927 15.1686 1.45445 16.5223 2.78272L16.6013 2.86663L26.2576 13.5671C27.074 14.3536 28.1089 14.886 29.2324 15.0974C30.356 15.3088 31.5181 15.1898 32.573 14.7553C33.6279 14.3209 34.5286 13.5904 35.1619 12.6554C35.7953 11.7205 36.1332 10.6227 36.1332 9.5C36.1332 8.37727 35.7953 7.27954 35.1619 6.34459C34.5286 5.40963 33.6279 4.67909 32.573 4.24465C31.5181 3.81021 30.356 3.69123 29.2324 3.90262C28.1089 4.11402 27.074 4.64638 26.2576 5.43291L25.7608 5.98384C25.5922 6.17095 25.3878 6.32366 25.1592 6.43323C24.9305 6.54281 24.6821 6.60712 24.4281 6.62248C24.1742 6.63784 23.9196 6.60396 23.679 6.52277C23.4383 6.44158 23.2163 6.31466 23.0257 6.14928C22.835 5.98389 22.6794 5.78327 22.5678 5.55887C22.4561 5.33447 22.3906 5.09068 22.3749 4.84143C22.3593 4.59218 22.3938 4.34234 22.4765 4.10618C22.5593 3.87002 22.6886 3.65217 22.8571 3.46506L23.3975 2.86663L23.4766 2.78272C24.8302 1.45406 26.5549 0.549194 28.4326 0.182584C30.3102 -0.184025 32.2565 0.00408546 34.0252 0.723125C35.794 1.44217 37.3057 2.65983 38.3692 4.22212C39.4327 5.78441 40.0002 7.62114 40 9.5Z' fill='%231A1A1A'/%3E%3C/svg%3E") no-repeat center / 100% 100%;}
+
+
+    /* 기획전 섹션 02 */
+    #promotion_box .p_sec02 {padding: clamp(6rem, 6.25vw, 12rem) 0; display: flex; flex-direction: column; align-items: center; gap: clamp(4rem, 4.167vw, 8rem); overflow: hidden;}
+    #promotion_box .p_sec02 .sec_title .btn_buy {display: flex; align-items: center; height: clamp(3.3rem, 3.438vw, 6.6rem); margin-top: clamp(2rem, 2.083vw, 4rem); padding: 0 clamp(2rem, 2.083vw, 4rem); border-radius: 100px; background-color: #1A1A1A; font-size: clamp(1.4rem, 1.25vw, 2.4rem); line-height: 140%; font-weight: 700; color: #fff;}
+    #promotion_box .p_sec02 .slide_wrap {width: 100%;}
+    #promotion_box .p_sec02 .swiper01 {overflow: visible;}
+    #promotion_box .p_sec02 .swiper01 .swiper-slide {width: clamp(27.3rem, 28.438vw, 54.6rem); aspect-ratio: 546 / 820; border-radius: clamp(1.2rem, 1.25vw, 2.4rem); overflow: hidden; background-color: #F5F5F5;}
+    #promotion_box .p_sec02 .swiper01 .swiper-slide img {height: 100%; object-fit: cover;}
+    #promotion_box .p_sec02 .swiper-pagination {position: static; display: flex; justify-content: center; gap: clamp(0.8rem, 0.833vw, 1.6rem); margin-top: clamp(2rem, 2.083vw, 4rem);}
+    #promotion_box .p_sec02 .swiper-pagination .swiper-pagination-bullet {width: clamp(0.8rem, 0.833vw, 1.6rem); height: clamp(0.8rem, 0.833vw, 1.6rem); margin: 0; border-radius: 10px; background-color: #1A1A1A; opacity: .2; transition: width .3s, opacity .3s;}
+    #promotion_box .p_sec02 .swiper-pagination .swiper-pagination-bullet-active {width: clamp(3.2rem, 3.333vw, 6.4rem); opacity: 1;}
+
+    #promotion_box .p_sec02 .sec_title.animated > *,
+    #promotion_box .p_sec02 .slide_wrap.animated {animation: fadeInUp 1s ease both;}
+
+
+    /* 기획전 섹션 03 */
+    #promotion_box .p_sec03 .sec_bg img {object-fit: cover;}
+
+
+    /* 기획전 섹션 04 */
+    #promotion_box .p_sec04 {padding: clamp(6rem, 6.25vw, 12rem) 0; display: flex; flex-direction: column; align-items: center; gap: clamp(4rem, 4.167vw, 8rem);}
+    #promotion_box .p_sec04 .prd_list {display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1.2rem, 1.25vw, 2.4rem); width: 76.667vw; max-width: 147.2rem;}
+    #promotion_box .p_sec04 .prd {display: flex; flex-direction: column; gap: clamp(1.2rem, 1.25vw, 2.4rem); padding: clamp(1.2rem, 1.25vw, 2.4rem); border-radius: clamp(1.2rem, 1.25vw, 2.4rem); background-color: #F5F5F5; overflow: hidden;}
+    #promotion_box .p_sec04 .prd .thumb {position: relative; border-radius: clamp(0.6rem, 0.625vw, 1.2rem); overflow: hidden; aspect-ratio: 1 / 1;}
+    #promotion_box .p_sec04 .prd .thumb img {height: 100%; object-fit: cover;}
+    #promotion_box .p_sec04 .prd .name {display: flex; align-items: center; gap: clamp(0.7rem, 0.729vw, 1.4rem); font-size: clamp(1.4rem, 1.25vw, 2.4rem); line-height: 130%; font-weight: 600; letter-spacing: -0.264px; white-space: nowrap;}
+    #promotion_box .p_sec04 .prd .name i {flex: none; width: clamp(1.1rem, 1.146vw, 2.2rem); height: clamp(1.1rem, 1.146vw, 2.2rem); border-radius: 50%;}
+    #promotion_box .p_sec04 .prd .price {display: flex; align-items: center; gap: clamp(0.4rem, 0.417vw, 0.8rem); padding-bottom: clamp(0.3rem, 0.313vw, 0.6rem); font-size: clamp(1.4rem, 1.25vw, 2.4rem); line-height: 130%; font-weight: 500; white-space: nowrap;}
+    #promotion_box .p_sec04 .prd .price .per {margin-right: clamp(0.2rem, 0.208vw, 0.4rem); color: #EF4DA2;}
+    #promotion_box .p_sec04 .prd .price del {font-size: clamp(1.2rem, 1.042vw, 2rem); font-weight: 400; color: #BABABA;}
+
+    #promotion_box .p_sec04 .prd_main {grid-column: 1 / 3; grid-row: 1 / 3; justify-content: space-between; gap: clamp(2rem, 2.083vw, 4rem); background-color: #E6386E;}
+    #promotion_box .p_sec04 .prd_main .badge {position: absolute; top: clamp(1rem, 1.042vw, 2rem); left: clamp(1rem, 1.042vw, 2rem); padding: clamp(0.6rem, 0.625vw, 1.2rem) clamp(0.9rem, 0.938vw, 1.8rem); border-radius: 58px; background-color: #fff; font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 100%; font-weight: 600; color: #E6386E; text-transform: uppercase;}
+    #promotion_box .p_sec04 .prd_main .info {display: flex; align-items: center; justify-content: space-between; gap: clamp(1rem, 1.042vw, 2rem); padding-bottom: clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .p_sec04 .prd_main .name {gap: clamp(1rem, 1.042vw, 2rem); font-size: clamp(1.7rem, 1.458vw, 2.8rem); letter-spacing: -0.308px; color: #fff;}
+    #promotion_box .p_sec04 .prd_main .name i {width: clamp(1.4rem, 1.458vw, 2.8rem); height: clamp(1.4rem, 1.458vw, 2.8rem); border: 2px solid #fff;}
+    #promotion_box .p_sec04 .prd_main .price {gap: clamp(0.8rem, 0.833vw, 1.6rem); margin-top: clamp(0.6rem, 0.625vw, 1.2rem); padding: 0 2px; font-size: clamp(1.7rem, 1.458vw, 2.8rem);}
+    #promotion_box .p_sec04 .prd_main .price .per {margin-right: 0; color: #fff;}
+    #promotion_box .p_sec04 .prd_main .price .now {color: #fff;}
+    #promotion_box .p_sec04 .prd_main .price del {font-size: clamp(1.6rem, 1.354vw, 2.6rem);}
+    #promotion_box .p_sec04 .prd_main .arrow {flex: none; width: clamp(4rem, 4.167vw, 8rem);}
+    #promotion_box .p_sec04 .prd_main .arrow svg {display: block; width: 100%; height: auto;}
+
+    #promotion_box .p_sec04 .prd_apple {order: 1;}
+    #promotion_box .p_sec04 .prd_custom {order: 2; justify-content: space-between; padding: clamp(1.5rem, 1.563vw, 3rem) clamp(1.2rem, 1.25vw, 2.4rem); background-color: #1A1A1A;}
+    #promotion_box .p_sec04 .prd_custom .color {display: flex; gap: clamp(0.4rem, 0.417vw, 0.8rem);}
+    #promotion_box .p_sec04 .prd_custom .color i {flex: 1; aspect-ratio: 1 / 1; border-radius: 50%;}
+    #promotion_box .p_sec04 .prd_custom .txt {display: flex; flex-direction: column; gap: clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .p_sec04 .prd_custom .txt p {font-size: clamp(2.2rem, 1.875vw, 3.6rem); line-height: 150%; font-weight: 700; color: #fff;}
+    #promotion_box .p_sec04 .prd_custom .arrow svg {display: block; width: clamp(2.8rem, 2.917vw, 5.6rem); height: auto;}
+
+    #promotion_box .p_sec04 .sec_title.animated > *,
+    #promotion_box .p_sec04 .prd_list.animated .prd {animation: fadeInUp 1s ease both;}
+
+
+    /* 반응형 */
+    @media all and (max-width: 1024px) {
+        /* 공통 */
+        #promotion_box br.mo {display: inline;}
+
+        #promotion_box .sec_title > span {font-size: clamp(1.4rem, 4.444vw, 2.4rem); letter-spacing: -0.176px;}
+        #promotion_box .sec_title h2 {margin-top: clamp(1.4rem, 4.444vw, 2.4rem); font-size: clamp(2.2rem, 7.222vw, 3.9rem); letter-spacing: -0.286px;}
+        #promotion_box .sec_title p {margin-top: clamp(1.7rem, 5.556vw, 3rem); font-size: clamp(1.4rem, 4.444vw, 2.4rem); letter-spacing: -0.176px; color: #000;}
+
+
+        /* 기획전 키비주얼 */
+        #promotion_box .p_keyvisual {padding: clamp(2.6rem, 8.333vw, 4.5rem) clamp(1.7rem, 5.556vw, 3rem) clamp(3.4rem, 11.111vw, 6rem); border-top: none; align-items: stretch; gap: clamp(2.2rem, 7.222vw, 3.9rem);}
+        #promotion_box .p_keyvisual .visual_wrap {flex-direction: column; gap: clamp(2.2rem, 7.222vw, 3.9rem); width: 100%; max-width: none;}
+        #promotion_box .p_keyvisual .txt_box {gap: clamp(1.4rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_keyvisual .txt_box h2 span {font-size: clamp(5.4rem, 17.778vw, 9.6rem); letter-spacing: 0.64px;}
+        #promotion_box .p_keyvisual .txt_box p {font-size: clamp(1.4rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_keyvisual .visual_img {flex: none; width: 100%; max-width: none; border-radius: clamp(1rem, 3.333vw, 1.8rem);}
+
+        #promotion_box .p_keyvisual .gift_box {width: 100%; max-width: none;}
+        #promotion_box .p_keyvisual .gift {gap: clamp(1.2rem, 3.889vw, 2.1rem); min-height: clamp(8.5rem, 27.778vw, 15rem); padding-right: 0; border: 0.5px solid rgba(26, 26, 26, .2); border-radius: clamp(1rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_keyvisual .gift .thumb {width: clamp(8.5rem, 27.778vw, 15rem);}
+        #promotion_box .p_keyvisual .gift .txt {padding: clamp(0.5rem, 1.667vw, 0.9rem) clamp(0.9rem, 2.778vw, 1.5rem) clamp(0.5rem, 1.667vw, 0.9rem) 0;}
+        #promotion_box .p_keyvisual .gift .txt .top {gap: clamp(0.5rem, 1.667vw, 0.9rem); margin-bottom: clamp(0.3rem, 1.111vw, 0.6rem);}
+        #promotion_box .p_keyvisual .gift .txt .top span {font-size: clamp(1rem, 3.333vw, 1.8rem); letter-spacing: -0.132px;}
+        #promotion_box .p_keyvisual .gift .txt .top .badge {height: clamp(1.6rem, 5.278vw, 2.9rem); padding: 0 clamp(0.5rem, 1.667vw, 0.9rem); font-size: clamp(0.9rem, 2.778vw, 1.5rem); letter-spacing: -0.11px;}
+        #promotion_box .p_keyvisual .gift .txt p {font-size: clamp(1.2rem, 3.889vw, 2.1rem); line-height: 160%; letter-spacing: -0.42px;}
+        #promotion_box .p_keyvisual .gift .txt .sub {display: none;}
+
+        #promotion_box .p_keyvisual .notice .notice_toggle {grid-area: 2 / 1; justify-self: center; margin: clamp(1.7rem, 5.556vw, 3rem) 0 0;}
+        #promotion_box .p_keyvisual .notice .notice_toggle span {gap: clamp(0.5rem, 1.667vw, 0.9rem); font-size: clamp(1rem, 3.333vw, 1.8rem); letter-spacing: -0.36px;}
+        #promotion_box .p_keyvisual .notice .notice_toggle svg {width: clamp(1.4rem, 4.444vw, 2.4rem); height: clamp(1.4rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_keyvisual .notice ul {grid-area: 3 / 1; padding: clamp(1.7rem, 5.556vw, 3rem) 0 0;}
+        #promotion_box .p_keyvisual .notice ul li {padding-left: clamp(1.5rem, 5vw, 2.7rem); font-size: clamp(1rem, 3.333vw, 1.8rem); letter-spacing: -0.36px;}
+        #promotion_box .p_keyvisual .notice ul li + li {margin-top: clamp(0.5rem, 1.667vw, 0.9rem);}
+        #promotion_box .p_keyvisual .notice ul li::before {left: clamp(0.5rem, 1.667vw, 0.9rem);}
+
+
+        /* 기획전 섹션 01 */
+        #promotion_box .p_sec01 {border-width: 1px; padding: clamp(0.9rem, 2.778vw, 1.5rem) 0;}
+        #promotion_box .p_sec01 .flow_track {animation-duration: 20s;}
+        #promotion_box .p_sec01 .flow_group {gap: clamp(0.9rem, 2.778vw, 1.5rem); padding-right: clamp(0.9rem, 2.778vw, 1.5rem);}
+        #promotion_box .p_sec01 .flow_group span {font-size: clamp(2rem, 6.667vw, 3.6rem); letter-spacing: -0.264px;}
+        #promotion_box .p_sec01 .flow_group i {width: clamp(1.3rem, 4.306vw, 2.3rem);}
+
+
+        /* 기획전 섹션 02 */
+        #promotion_box .p_sec02 {padding: clamp(5.1rem, 16.667vw, 9rem) 0 clamp(3.9rem, 12.778vw, 6.9rem); gap: clamp(3.9rem, 12.778vw, 6.9rem);}
+        #promotion_box .p_sec02 .sec_title .btn_buy {height: auto; margin-top: clamp(1.7rem, 5.556vw, 3rem); padding: clamp(0.6rem, 1.944vw, 1.1rem) clamp(2rem, 6.667vw, 3.6rem); font-size: clamp(1.2rem, 3.889vw, 2.1rem); line-height: 160%; letter-spacing: -0.154px;}
+        #promotion_box .p_sec02 .swiper01 .swiper-slide {width: min(91.111vw, 49.2rem); aspect-ratio: 328 / 480; border-radius: clamp(1rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec02 .swiper-pagination {gap: clamp(0.3rem, 1.111vw, 0.6rem); margin-top: clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_sec02 .swiper-pagination .swiper-pagination-bullet {width: clamp(0.7rem, 2.222vw, 1.2rem); height: clamp(0.7rem, 2.222vw, 1.2rem);}
+        #promotion_box .p_sec02 .swiper-pagination .swiper-pagination-bullet-active {width: clamp(2rem, 6.667vw, 3.6rem);}
+
+
+        /* 기획전 섹션 04 */
+        #promotion_box .p_sec04 {padding: clamp(5.1rem, 16.667vw, 9rem) clamp(1.7rem, 5.556vw, 3rem); gap: clamp(3.9rem, 12.778vw, 6.9rem);}
+        #promotion_box .p_sec04 .prd_list {grid-template-columns: repeat(2, 1fr); gap: clamp(1rem, 3.333vw, 1.8rem) clamp(0.9rem, 2.778vw, 1.5rem); width: 100%; max-width: none;}
+        #promotion_box .p_sec04 .prd {gap: clamp(0.9rem, 2.778vw, 1.5rem); padding: clamp(0.9rem, 2.778vw, 1.5rem) clamp(0.9rem, 2.778vw, 1.5rem) clamp(0.4rem, 1.389vw, 0.8rem); border-radius: clamp(1rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec04 .prd .thumb {border-radius: clamp(0.5rem, 1.667vw, 0.9rem);}
+        #promotion_box .p_sec04 .prd .name {gap: clamp(0.6rem, 1.944vw, 1.1rem); font-size: clamp(1.2rem, 3.889vw, 2.1rem); line-height: 150%; letter-spacing: -0.154px;}
+        #promotion_box .p_sec04 .prd .name i {width: clamp(1.3rem, 4.167vw, 2.3rem); height: clamp(1.3rem, 4.167vw, 2.3rem);}
+        #promotion_box .p_sec04 .prd .price {gap: clamp(0.3rem, 1.111vw, 0.6rem); padding-bottom: clamp(0.7rem, 2.222vw, 1.2rem); font-size: clamp(1.2rem, 3.889vw, 2.1rem); line-height: 142.86%;}
+        #promotion_box .p_sec04 .prd .price .per {margin-right: 0;}
+        #promotion_box .p_sec04 .prd .price del {font-size: clamp(1rem, 3.333vw, 1.8rem);}
+
+        #promotion_box .p_sec04 .prd_main {grid-column: 1 / 3; grid-row: auto; gap: clamp(1.7rem, 5.556vw, 3rem); margin-bottom: clamp(0.7rem, 2.222vw, 1.2rem); padding: clamp(0.9rem, 2.778vw, 1.5rem) clamp(0.9rem, 2.778vw, 1.5rem) clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_sec04 .prd_main .badge {top: clamp(0.9rem, 2.778vw, 1.5rem); left: clamp(0.9rem, 2.778vw, 1.5rem); padding: clamp(0.7rem, 2.222vw, 1.2rem) clamp(1rem, 3.333vw, 1.8rem); font-size: clamp(1.2rem, 3.889vw, 2.1rem); line-height: 100%;}
+        #promotion_box .p_sec04 .prd_main .info {gap: clamp(0.9rem, 2.778vw, 1.5rem); padding: 0;}
+        #promotion_box .p_sec04 .prd_main .name {gap: clamp(0.9rem, 2.778vw, 1.5rem); font-size: clamp(1.7rem, 5.556vw, 3rem); font-weight: 500; letter-spacing: -0.22px;}
+        #promotion_box .p_sec04 .prd_main .name i {width: clamp(1.7rem, 5.556vw, 3rem); height: clamp(1.7rem, 5.556vw, 3rem); border-width: 1px;}
+        #promotion_box .p_sec04 .prd_main .price {gap: clamp(0.5rem, 1.667vw, 0.9rem); margin-top: clamp(0.5rem, 1.667vw, 0.9rem); padding: 0 0 clamp(0.7rem, 2.222vw, 1.2rem) 2px; font-size: clamp(1.4rem, 4.444vw, 2.4rem); line-height: 125%;}
+        #promotion_box .p_sec04 .prd_main .price del {font-size: clamp(1.4rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec04 .prd_main .arrow {width: clamp(4.3rem, 13.889vw, 7.5rem);}
+
+        #promotion_box .p_sec04 .prd_apple,
+        #promotion_box .p_sec04 .prd_custom {order: 0;}
+        #promotion_box .p_sec04 .prd_custom {padding: clamp(2rem, 6.667vw, 3.6rem) clamp(1.4rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec04 .prd_custom .color {flex-wrap: wrap; gap: clamp(0.9rem, 2.778vw, 1.5rem) clamp(0.4rem, 1.25vw, 0.7rem);}
+        #promotion_box .p_sec04 .prd_custom .color i {flex: none; width: clamp(1.8rem, 5.833vw, 3.2rem); height: clamp(1.8rem, 5.833vw, 3.2rem);}
+        #promotion_box .p_sec04 .prd_custom .txt {gap: clamp(0.9rem, 2.778vw, 1.5rem);}
+        #promotion_box .p_sec04 .prd_custom .txt p {font-size: clamp(1.5rem, 5vw, 2.7rem);}
+        #promotion_box .p_sec04 .prd_custom .arrow svg {width: clamp(2.6rem, 8.333vw, 4.5rem);}
+    }
+
+
+    /* animation */
+    .wow {visibility: hidden;}
+
+    @keyframes fadeInUp {
+        0% {opacity: 0; transform: translateY(20px);}
+        100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes flowLoop {
+        0% {transform: translateX(0);}
+        100% {transform: translateX(-50%);}
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        new WOW().init();
+
+
+        /* 유의사항 */
+        $("#promotion_box .p_keyvisual .notice_toggle").on("click", function () {
+            $(this).toggleClass("on");
+
+            if ($(this).next("ul").css("display") == "none") {
+                $(this).next("ul").slideDown();
+            } else {
+                $(this).next("ul").slideUp();
+            };
+        });
+
+
+        /* swiper */
+        var slideGap = function () {
+            var w = $(window).innerWidth();
+
+            if (w > 1024) {
+                return Math.min(Math.max(w * 24 / 1920, 12), 24);
+            } else {
+                return Math.min(Math.max(w * 20 / 360, 17), 30);
+            };
+        };
+
+        var swiper01 = new Swiper(".swiper01", {
+            slidesPerView: "auto",
+            centeredSlides: true,
+            spaceBetween: slideGap(),
+            loop: true,
+            loopedSlides: 5,
+            speed: 800,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: "#promotion_box .p_sec02 .swiper-pagination",
+                clickable: true,
+            },
+        });
+
+
+        /* 반응형 */
+        if ($(window).innerWidth() <= 1024) {
+            $("#promotion_box [data-wow-offset='300']").attr("data-wow-offset", "200");
+        };
+
+        $(window).on("resize", function () {
+            if ($(window).innerWidth() <= 1024) {
+                $("#promotion_box [data-wow-offset='300']").attr("data-wow-offset", "200");
+            };
+
+            swiper01.params.spaceBetween = slideGap();
+            swiper01.update();
+        });
+    });
+</script>

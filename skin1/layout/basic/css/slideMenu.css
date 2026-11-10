@@ -1,0 +1,259 @@
+body {
+    position: relative;
+}
+body.expand {
+    overflow-x: hidden;
+}
+body.expand #aside {
+    visibility: visible;
+    overflow-x: hidden;
+}
+
+#header #aside {
+    display: none;
+    z-index: 1001;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    overflow: auto;
+    overflow-x: hidden;
+    min-width: 225px;
+    width: 100%;
+    height: calc(100vh - 100%);
+    background-color: #fff;
+    border-top: 1px solid var(--line01);
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+#header #aside::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+#header #aside a {
+    display: block;
+}
+
+#header #aside .navigation_member {
+    padding: 1.6rem 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--line01);
+}
+#header #aside .navigation_member .navigation_state {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+    width: 92%;
+}
+#header #aside .navigation_member .navigation_state a {
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+    color: var(--black);
+    display: block;
+    white-space: nowrap;
+    padding: 0;
+}
+#header #aside .navigation-menu {
+    padding: 2.4rem 0 0;
+}
+#header #aside .navigation-menu > ul li {
+    position: relative;
+    margin: 0;
+    padding-bottom: 2.4rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.4rem;
+    cursor: pointer;
+}
+#header #aside .navigation-menu > ul li a {
+    color: var(--black);
+}
+#header #aside .navigation-menu > ul li a:first-child {
+    padding-left: 4%;
+}
+#header #aside .navigation-menu li > .cateBtn {
+    position: absolute;
+    top: 0;
+    right: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: url('/morenvyimg/svg/arrow.svg') no-repeat center;
+    transform: rotate(-90deg);
+}
+#header #aside .navigation-menu li > .cateBtn.on {
+    transform: rotate(90deg);
+}
+/* 서브메뉴 */
+#header #aside .navigation-menu li > ul {
+    display: none;
+    margin-top: 1.2rem;
+    width: 100%;
+    background: var(--sub01);
+}
+#header #aside .navigation-menu li > ul a {
+    color: var(--gray03);
+}
+#header #aside .navigation-menu li > ul ul {
+    background: #f1f1f1;
+}
+#header #aside .navigation-menu li.on > ul {
+    display: block;
+}
+#header #aside .navigation-menu > ul > li > ul li {
+    padding: 1.2rem 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2rem;
+}
+#header #aside .navigation-menu #slideCateList {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid var(--line01);
+}
+#header #aside .navigation-menu li > ul .cateBtn {
+    top: 1.2rem;
+}
+/* 보드 카테고리 */
+#header #aside .navigation-menu .board_category {
+    padding-top: 2.4rem;
+}
+
+/********************* Mobile *********************/
+@media all and (max-width: 767px) {
+    body.expand {
+        left: 292px;
+        position: fixed;
+    }
+    #aside {
+        left: -292px;
+        width: 292px;
+    }
+    #aside .btnClose {
+        top: 25px;
+        right: 17px;
+        width: 18px;
+        height: 18px;
+    }
+    #aside .btnClose .icon {
+        width: 23px;
+        height: 23px;
+        margin: -2px 0 0 -2px;
+    }
+    #aside .btnClose .icon:before {
+        right: 11px;
+        height: 23px;
+    }
+    #aside .btnClose .icon:after {
+        top: 11px;
+        width: 23px;
+    }
+    .navigation-menu__member {
+        padding: 79px 0 30px 16px;
+    }
+    .navigation-menu__member a {
+        margin: 0 10px 0 0;
+        font-size: 14px;
+    }
+    .navigation-menu__board,
+    .navigation-menu__category,
+    .navigation-menu__project {
+        padding: 13px 0 30px 16px;
+    }
+    .navigation-menu__board .menu a {
+        display: block;
+        padding: 15px 0;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .navigation-menu__category .view,
+    .navigation-menu__project .view {
+        display: block;
+        padding: 15px 0;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .navigation-menu .menu {
+        margin: 2px 0;
+    }
+}
+
+/********************* Mobile / Tablet *********************/
+@media all and (max-width: 1024px) {
+    .navigation-menu__member .count {
+        display: inline-block;
+        min-width: 24px;
+        padding: 3px 4px 3px;
+        font-size: 13px;
+        text-align: center;
+        border: 1px solid #000;
+        border-radius: 20px;
+        box-sizing: border-box;
+    }
+}
+
+/********************* Tablet *********************/
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    #aside {
+        left: -458px;
+        width: 458px;
+    }
+}
+
+/********************* Tablet / PC *********************/
+@media all and (min-width: 768px) {
+    #aside .btnClose {
+        top: 40px;
+        right: 50px;
+        width: 25px;
+        height: 25px;
+    }
+    #aside .btnClose .icon {
+        width: 30px;
+        height: 30px;
+        margin: -2px 0 0 -2px;
+    }
+    #aside .btnClose .icon:before {
+        right: 15px;
+        height: 30px;
+    }
+    #aside .btnClose .icon:after {
+        top: 15px;
+        width: 30px;
+    }
+    .navigation-menu__member {
+        padding: 95px 0 39px 50px;
+    }
+    .navigation-menu__member a {
+        margin: 0 18px 0 0;
+        font-size: 18px;
+    }
+    .navigation-menu .menu {
+        margin: 2px 0;
+    }
+    .navigation-menu__category,
+    .navigation-menu__project {
+        padding: 23px 38px 25px 50px;
+    }
+    .navigation-menu__category .view,
+    .navigation-menu__project .view {
+        display: block;
+        padding: 15px 0;
+        font-size: 18px;
+        text-decoration: none;
+    }
+    .navigation-menu__board {
+        padding: 23px 50px 25px;
+    }
+    .navigation-menu__board .menu a {
+        display: block;
+        padding: 15px 0;
+        font-size: 18px;
+        text-decoration: none;
+    }
+}
+

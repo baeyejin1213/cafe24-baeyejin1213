@@ -1,0 +1,1124 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- 아래 코드부터 복사하기 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+
+<span module="Layout_stateLogon" class="sw_logon" hidden></span>
+
+<div id="promotion_box" class="promotion_box">
+    <!-- 기획전 키비주얼 -->
+    <div class="p_keyvisual">
+        <div class="inner">
+            <div class="txt">
+                <p class="date">11.02 (Mon) — 11.19 (Thu)</p>
+                <h2 class="title outfit">Good Luck,<br>Good <span class="under">Lunch<svg viewBox="0 0 274 20" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M5.00004 14.5653C51.4825 15.6396 88.6955 5.00003 136.521 4.9999C184.347 4.99981 234.565 15.6396 268.043 14.565" stroke="#268337" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>.</h2>
+                <p class="t01">든든한 한 끼, 잠깐의 쉼, 그리고 작은 행운.<br>차곡차곡 준비해 온 하루에 레고트가 함께할게요.</p>
+            </div>
+
+            <div class="visual">
+                <div class="swiper swiper01">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <picture>
+                                <source srcset="/morenvyimg/promotion/261029_GoodLuckGoodLunch/kv01_m.webp" media="(max-width: 1024px)">
+                                <img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/kv01_pc.webp" alt="책상에 걸린 가방과 레고트 텀블러, 도시락">
+                            </picture>
+                        </div>
+                        <div class="swiper-slide">
+                            <picture>
+                                <source srcset="/morenvyimg/promotion/261029_GoodLuckGoodLunch/kv02_m.webp" media="(max-width: 1024px)">
+                                <img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/kv02_pc.webp" alt="책상 위 레고트 텀블러와 런치박스">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p_bar outfit">
+        <div class="track">
+            <div class="group">
+                <span>Good Luck, Good Lunch</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span class="mo">11.02 - 11.19</span><svg class="mo" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>New In : On the Go Cutlery</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Lucky Charm For You</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Lunch Deal up to 40%</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Good Luck, Good Lunch</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span class="mo">11.02 - 11.19</span><svg class="mo" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>New In : On the Go Cutlery</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Lucky Charm For You</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Lunch Deal up to 40%</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Good Luck, Good Lunch</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span class="mo">11.02 - 11.19</span><svg class="mo" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>New In : On the Go Cutlery</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Lucky Charm For You</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Lunch Deal up to 40%</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+            </div>
+            <div class="group" aria-hidden="true">
+                <span>Good Luck, Good Lunch</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span class="mo">11.02 - 11.19</span><svg class="mo" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>New In : On the Go Cutlery</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Lucky Charm For You</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Lunch Deal up to 40%</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Good Luck, Good Lunch</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span class="mo">11.02 - 11.19</span><svg class="mo" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>New In : On the Go Cutlery</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Lucky Charm For You</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Lunch Deal up to 40%</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Good Luck, Good Lunch</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span class="mo">11.02 - 11.19</span><svg class="mo" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>New In : On the Go Cutlery</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Lucky Charm For You</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+                <span>Lunch Deal up to 40%</span><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.933 20L8.68486 12.1588L2.28288 16.4764L0 12.0596L7.24566 9.42928L1.24069 4.76427L4.76427 1.24069L9.42928 7.24566L12.0596 0L16.5261 2.28288L12.1588 8.68486L20 8.933L19.206 13.8462L11.7122 11.6625L13.8958 19.206L8.933 20Z" fill="#F4DD60"></path></svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 01 -->
+    <div class="p_sec01">
+        <div class="sec_tit fadeEl">
+            <p class="label outfit fadeCh fadeInUp">Coupon</p>
+            <h3 class="tit outfit fadeCh fadeInUp" style="animation-delay: .1s;">Lucky Clover</h3>
+            <p class="desc fadeCh fadeInUp" style="animation-delay: .2s;">마음이 가는 클로버 잎을 하나 떼어보세요.<br>응원 메시지와 10% 쿠폰이 기다리고 있어요.</p>
+        </div>
+
+        <div class="clover_wrap fadeEl">
+            <div class="board fadeCh fadeInUp">
+                <div class="clover_box">
+                    <p class="guide">네잎클로버의 잎을 하나 떼어보세요</p>
+                    <svg class="clover" viewBox="0 0 314 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M156.837 156.836C164.679 222.185 196.047 287.534 185.591 365.953" stroke="#3A9B4C" stroke-width="8.03793" stroke-linecap="round"></path>
+                        <g class="leaf" data-leaf="tl" tabindex="0" role="button" aria-label="왼쪽 위 잎 떼기">
+                            <path d="M153.141 153.14C130.961 142.05 69.9655 173.472 44.0886 129.111C29.3018 99.5378 58.8754 73.6609 84.7523 84.751C73.6622 58.8741 99.5391 29.3005 129.113 44.0873C173.473 69.9642 142.051 130.96 153.141 153.14Z" fill="#4DB35E"></path>
+                            <path d="M147.596 147.597L97.6904 97.6914" stroke="#8DD49A" stroke-width="2.67931" stroke-linecap="round"></path>
+                        </g>
+                        <g class="leaf" data-leaf="tr" tabindex="0" role="button" aria-label="오른쪽 위 잎 떼기">
+                            <path d="M160.534 153.143C171.625 130.963 140.203 69.9671 184.563 44.0902C214.137 29.3034 240.014 58.877 228.923 84.7539C254.8 73.6638 284.374 99.5407 269.587 129.114C243.71 173.475 182.715 142.053 160.534 153.143Z" fill="#4DB35E"></path>
+                            <path d="M166.079 147.597L215.985 97.6914" stroke="#8DD49A" stroke-width="2.67931" stroke-linecap="round"></path>
+                        </g>
+                        <g class="leaf" data-leaf="br" tabindex="0" role="button" aria-label="오른쪽 아래 잎 떼기">
+                            <path d="M160.534 160.536C182.714 171.626 243.71 140.204 269.587 184.564C284.374 214.138 254.8 240.015 228.923 228.925C240.013 254.802 214.136 284.375 184.563 269.588C140.202 243.712 171.624 182.716 160.534 160.536Z" fill="#4DB35E"></path>
+                            <path d="M166.079 166.079L215.985 215.984" stroke="#8DD49A" stroke-width="2.67931" stroke-linecap="round"></path>
+                        </g>
+                        <g class="leaf" data-leaf="bl" tabindex="0" role="button" aria-label="왼쪽 아래 잎 떼기">
+                            <path d="M153.141 160.533C142.051 182.713 173.473 243.709 129.112 269.586C99.5389 284.372 73.662 254.799 84.7521 228.922C58.8752 240.012 29.3016 214.135 44.0884 184.561C69.9653 140.201 130.961 171.623 153.141 160.533Z" fill="#4DB35E"></path>
+                            <path d="M147.596 166.079L97.6904 215.984" stroke="#8DD49A" stroke-width="2.67931" stroke-linecap="round"></path>
+                        </g>
+                        <path d="M156.838 169.909C164.056 169.909 169.908 164.058 169.908 156.839C169.908 149.621 164.056 143.77 156.838 143.77C149.619 143.77 143.768 149.621 143.768 156.839C143.768 164.058 149.619 169.909 156.838 169.909Z" fill="#3A9B4C"></path>
+                    </svg>
+                    <div class="confetti" aria-hidden="true"></div>
+                    <p class="toast" role="status">10% 쿠폰이 열렸어요</p>
+                </div>
+
+                <div class="clover_info">
+                    <div class="head">
+                        <p class="t01">작은 행운을 드려요.</p>
+                        <span class="state">Locked</span>
+                    </div>
+                    <p class="t02">네잎클로버 잎을 선택하면<br>쿠폰 다운로드 버튼이 열려요.</p>
+
+                    <a href="/exec/front/newcoupon/IssueDownload?coupon_no=6086584182500001092&is_popup=T" target="_blank" class="coupon" aria-disabled="true">
+                        <span class="left">
+                            <span class="name">Lucky Coupon</span>
+                            <span class="rate_box">
+                                <strong class="rate outfit">10%</strong>
+                                <span class="cond">3만원 이상 구매 시</span>
+                            </span>
+                        </span>
+                        <span class="down">
+                            <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.5463 18.5155V23.203C25.5463 23.8246 25.2994 24.4208 24.8598 24.8603C24.4203 25.2998 23.8242 25.5468 23.2025 25.5468H6.7963C6.1747 25.5468 5.57856 25.2998 5.13902 24.8603C4.69948 24.4208 4.45255 23.8246 4.45255 23.203V18.5155" stroke="white" stroke-width="1.38286" stroke-linecap="round" stroke-linejoin="round"></path><path d="M9.1429 12.6561L15.0023 18.5155L20.8616 12.6561" stroke="white" stroke-width="1.38286" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14.9984 18.5155V4.45296" stroke="white" stroke-width="1.38286" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="notice fadeCh fadeInUp" style="animation-delay: .1s;">
+                <button type="button" class="notice_toggle">
+                    <span>유의사항</span>
+                    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.625H15V9.375H5V10.625Z" fill="#1E1E1E"></path><path d="M9.375 5V15H10.625V5H9.375Z" fill="#1E1E1E"></path></svg>
+                    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.625H15V9.375H5V10.625Z" fill="#1E1E1E"></path></svg>
+                </button>
+                <ul>
+                    <li><span></span>사용 기간 : 11.2 - 11.19</li>
+                    <li><span></span>적용 상품 : 하단 진열 상품</li>
+                    <li><span></span>쿠폰은 ID당 1회 발급 가능합니다.</li>
+                    <li><span></span>발행된 쿠폰은 마이 쇼핑 &gt; 쿠폰에서 확인 가능합니다.</li>
+                    <li><span></span>주문 취소와 상품의 품절 및 반품 시 사용한 쿠폰의 유효기간이 만료된 경우 재발급되지 않습니다.</li>
+                    <li><span></span>기간내 미사용 시 자동 소멸되며 재발급되지 않습니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 02 -->
+    <div class="p_sec02">
+        <div class="sec_tit fadeEl">
+            <p class="label outfit fadeCh fadeInUp">Benefits</p>
+            <h3 class="tit outfit fadeCh fadeInUp" style="animation-delay: .1s;">And Two More Luck</h3>
+            <p class="desc fadeCh fadeInUp" style="animation-delay: .2s;">응원은 아직 더 있어요.<br>가방에 달아둘 행운부터 든든한 점심 준비까지.</p>
+        </div>
+
+        <div class="benefit fadeEl">
+            <div class="card charm fadeCh fadeInUp">
+                <div class="txt">
+                    <span class="no">01</span>
+                    <p class="name outfit">Lucky Charm</p>
+                    <p class="t01">기획전 상품을 구매하면<br class="mo"> 치키 행운키링을 드려요.<br>매일 메는 가방에 달아<br class="mo"> 수능 날까지 함께해요.</p>
+                    <p class="t02">(한정 수량 / 소진 시 종료)</p>
+                </div>
+                <img class="keyring" src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/charm.webp" alt="치키 행운키링">
+            </div>
+
+            <div class="card lunch fadeCh fadeInUp" style="animation-delay: .1s;">
+                <picture class="deal">
+                    <source srcset="/morenvyimg/promotion/261029_GoodLuckGoodLunch/lunch_m.webp" media="(max-width: 1024px)">
+                    <img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/lunch_pc.webp" alt="레고트 텀블러, 커트러리, 런치박스">
+                </picture>
+                <div class="txt">
+                    <span class="no">02</span>
+                    <p class="name outfit">Lunch Deal<br>Up To 40%</p>
+                    <p class="t01">좋아하는 반찬을 담을<br class="mo"> 런치박스부터 텀블러까지.<br>든든한 한 끼를 위한 준비를<br class="mo"> 특별한 혜택으로 만나보세요.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="notice fadeEl">
+            <div class="fadeCh fadeInUp">
+                <button type="button" class="notice_toggle">
+                    <span>유의사항</span>
+                    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.625H15V9.375H5V10.625Z" fill="#1E1E1E"></path><path d="M9.375 5V15H10.625V5H9.375Z" fill="#1E1E1E"></path></svg>
+                    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.625H15V9.375H5V10.625Z" fill="#1E1E1E"></path></svg>
+                </button>
+                <ul>
+                    <li><span></span>사은품 조기 품절 시 사전 공지 없이 이벤트가 종료될 수 있습니다.</li>
+                    <li><span></span>사은품 증정 대상 주문의 경우, 주문서 페이지에서 선택할 수 있으며, 사은품을 체크해주셔야 정상 참여가 진행됩니다.</li>
+                    <li><span></span>사은품이 표시되지 않는다면 증정 대상이 아니거나 재고가 소진된 상태이므로 참고 부탁드립니다.</li>
+                    <li><span></span>사은품은 교환 및 환불이 불가하며, 주문 건 반품 시 사은품도 함께 반품해주셔야 합니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 03 -->
+    <div class="p_sec03">
+        <div class="inner fadeEl">
+            <div class="top fadeCh fadeInUp">
+                <span class="label outfit">New In</span>
+                <h3 class="tit outfit">On The Go <br class="mo"><span class="cutlery">Cutlery</span></h3>
+                <p class="sub">온더고 커트러리 세트</p>
+                <p class="desc">숟가락, 젓가락, 포크를<br class="mo"> 실리콘 케이스 하나에 담았어요.<br>좋아하는 컬러를 골라 가방에 걸고,<br> 어디서든 나만의 한 끼를 즐겨보세요.</p>
+                <ul class="spec">
+                    <li><span class="outfit">3-Piece Set</span><span>숟가락 · 젓가락<br class="mo"> · 포크 구성</span></li>
+                    <li><span class="outfit">Stainless&amp; Silicone</span><span>스테인리스 304 커트러리<br class="mo"> · 실리콘 케이스</span></li>
+                    <li><span class="outfit">Carry Strap</span><span>가방에 걸어<br class="mo"> 간편하게</span></li>
+                </ul>
+            </div>
+
+            <div class="opt fadeCh fadeInUp" style="animation-delay: .1s;">
+                <p class="outfit">Color</p>
+                <div class="swatch">
+                    <button type="button" class="on" data-idx="0" data-color="#1E1E1E" data-href="/product/detail.html?product_no=583" aria-label="전체 컬러"><span class="all"><i style="background-color: #D6E54A;"></i><i style="background-color: #B9A3E3;"></i><i style="background-color: #F1557C;"></i><i style="background-color: #2E8BD8;"></i></span></button>
+                    <button type="button" data-idx="1" data-color="#B9A3E3" data-href="/product/detail.html?product_no=583" aria-label="라벤더"><span style="background-color: #B9A3E3;"></span></button>
+                    <button type="button" data-idx="2" data-color="#2E8BD8" data-href="/product/detail.html?product_no=584" aria-label="블루"><span style="background-color: #2E8BD8;"></span></button>
+                    <button type="button" data-idx="3" data-color="#F1557A" data-href="/product/detail.html?product_no=585" aria-label="핑크"><span style="background-color: #F1557A;"></span></button>
+                    <button type="button" data-idx="4" data-color="#D6E54A" data-href="/product/detail.html?product_no=586" aria-label="라임"><span style="background-color: #D6E54A;"></span></button>
+                </div>
+            </div>
+
+            <div class="img fadeCh fadeIn" style="animation-delay: .1s;">
+                <img class="on" src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/cutlery00.webp" alt="온더고 커트러리 세트 전체 컬러">
+                <img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/cutlery01.webp" alt="온더고 커트러리 라벤더">
+                <img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/cutlery02.webp" alt="온더고 커트러리 블루">
+                <img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/cutlery03.webp" alt="온더고 커트러리 핑크">
+                <img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/cutlery04.webp" alt="온더고 커트러리 라임">
+            </div>
+
+            <div class="buy fadeCh fadeInUp" style="animation-delay: .2s;">
+                <p class="price_box outfit"><strong>20%</strong><span class="sale">20,000원</span><del>25,000</del></p>
+                <a href="/product/detail.html?product_no=583" class="btn_shop outfit">Shop Now<svg viewBox="0 0 6 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.7 0.7L5.2 5.5L0.7 10.3" stroke="#fff" stroke-width="1.4"></path></svg></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 04 -->
+    <div class="p_sec04 sec_wrap">
+        <div class="sec_tit fadeEl">
+            <p class="label outfit fadeCh fadeInUp">Product Key Point</p>
+            <h3 class="tit outfit fadeCh fadeInUp" style="animation-delay: .1s;">Pack It, Hook It,<br>Take It Anywhere.</h3>
+        </div>
+
+        <div class="tab outfit fadeEl">
+            <div class="fadeCh fadeInUp">
+                <button type="button" class="on">01</button>
+                <button type="button">02</button>
+                <button type="button">03</button>
+                <button type="button">04</button>
+            </div>
+        </div>
+
+        <div class="point_wrap fadeEl">
+            <div class="swiper swiper02 fadeCh fadeIn">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="img"><img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/point01.webp" alt="온더고 커트러리 숟가락, 젓가락, 포크 구성"></div>
+                            <div class="txt">
+                                <p class="head outfit"><span class="key_no">01</span><span class="name">ALL IN ONE</span></p>
+                                <div class="body">
+                                    <p class="sub">한 끼에 필요한 세 가지를 하나로</p>
+                                    <p class="desc">숟가락, 젓가락, 포크를 하나의 세트로 구성해 한식부터 양식, 일식까지 다양한 메뉴에 활용할 수 있어요. 도시락, 피크닉, 캠핑, 오피스 어디서든 간편하게 챙길 수 있고, 일회용품 대신 반복해서 쓰는 실용적인 데일리 아이템이에요.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="img"><img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/point02.webp" alt="스테인리스 304 숟가락"></div>
+                            <div class="txt">
+                                <p class="head outfit"><span class="key_no">02</span><span class="name">Everyday Materials</span></p>
+                                <div class="body">
+                                    <p class="sub">매일 꺼내 쓰기 좋은 소재</p>
+                                    <p class="desc">입에 닿는 커트러리는 내구성이 좋은 스테인리스 304로, 밴딩과 케이스는 유연한 실리콘으로 만들었어요. 사용 후 세척해 다시 챙기는 나만의 데일리 커트러리.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="img"><img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/point03.webp" alt="실리콘 밴딩을 끼운 포크"></div>
+                            <div class="txt">
+                                <p class="head outfit"><span class="key_no">03</span><span class="name">Hold Together</span></p>
+                                <div class="body">
+                                    <p class="sub">흔들림은 줄이고, 가지런하게</p>
+                                    <p class="desc">실리콘 밴딩이 커트러리를 한데 잡아 이동 중 서로 부딪히는 소음을 줄여줘요. 케이스의 사이드 포켓은 꺼낼 때는 편하게, 담았을 때는 쉽게 빠지지 않도록 잡아줍니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="img"><img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/point04.webp" alt="가방에 건 커트러리 케이스"></div>
+                            <div class="txt">
+                                <p class="head outfit"><span class="key_no">04</span><span class="name">Hook &amp; Go</span></p>
+                                <div class="body">
+                                    <p class="sub">가방에 걸어 나만의 포인트로</p>
+                                    <p class="desc">스트랩을 홀에 끼워 당기면 간편하게 연결돼요. 가방이나 런치백에 걸어 손쉽게 휴대해보세요. LEGODT 레터링 모양의 체결 돌기와 컬러가 작은 액세서리처럼 일상에 즐거움을 더해요.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 05 -->
+    <div class="p_sec05 sec_wrap">
+        <div class="wide fadeEl">
+            <picture class="fadeCh fadeIn">
+                <source srcset="/morenvyimg/promotion/261029_GoodLuckGoodLunch/wide01_m.webp" media="(max-width: 1024px)">
+                <img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/wide01_pc_v2.webp" alt="커트러리와 도시락이 놓인 책상">
+            </picture>
+        </div>
+
+        <div class="cont fadeEl">
+            <div class="txt fadeCh fadeInUp">
+                <span class="label outfit" style="background-color: #F4DD60;">Lunchware Up To 31%</span>
+                <h3 class="tit outfit">Packed With Care</h3>
+                <p class="desc">익숙한 반찬과 좋아하는 맛으로 채운 도시락.<br>런치박스부터 푸드자, 커트러리, 런치백까지<br>수능 날의 점심을 함께 준비해요.</p>
+            </div>
+            <div class="photo fadeCh fadeInUp" style="animation-delay: .1s;">
+                <div class="swiper swiper03">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/lunch01.webp" alt="사물함 위 텀블러와 런치박스"></div>
+                        <div class="swiper-slide"><img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/lunch02_v2.webp" alt="사물함 안 푸드자와 노트"></div>
+                    </div>
+                </div>
+                <div class="pagination pagination03"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 06 -->
+    <div class="p_sec06 sec_wrap">
+        <div class="wide fadeEl">
+            <picture class="fadeCh fadeIn">
+                <source srcset="/morenvyimg/promotion/261029_GoodLuckGoodLunch/wide02_m.webp" media="(max-width: 1024px)">
+                <img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/wide02_pc_v2.webp" alt="사물함 속 가방에 담긴 레고트 텀블러">
+            </picture>
+        </div>
+
+        <div class="cont fadeEl">
+            <div class="txt fadeCh fadeInUp">
+                <span class="label outfit" style="background-color: #D7C6E6;">Tumbler Up TO 40%</span>
+                <h3 class="tit outfit">Stay Fresh</h3>
+                <p class="desc">문제와 문제 사이, 잠깐의 쉬는 시간.<br>좋아하는 컬러의 텀블러로 수분을 채우고<br>다시 시작할 순간을 산뜻하게 맞이해요.</p>
+            </div>
+            <div class="photo fadeCh fadeInUp" style="animation-delay: .1s;">
+                <div class="swiper swiper04">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/fresh01.webp" alt="책 위에 놓인 라벤더 텀블러"></div>
+                        <div class="swiper-slide"><img src="/morenvyimg/promotion/261029_GoodLuckGoodLunch/fresh02.webp" alt="책 위에 놓인 민트 텀블러"></div>
+                    </div>
+                </div>
+                <div class="pagination pagination04"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* 공통 */
+    #container #contents {max-width: 100%; width: 100%; padding: 0;}
+    #promotion_box *,
+    #promotion_box *::before,
+    #promotion_box *::after {box-sizing: border-box;}
+    #promotion_box {color: #1E1E1E; font-family: "SUIT Variable", sans-serif; word-break: keep-all; overflow-x: clip;}
+    #promotion_box .outfit {font-family: "Outfit", "SUIT Variable", sans-serif;}
+    #promotion_box p, #promotion_box h2, #promotion_box h3 {margin: 0;}
+    #promotion_box img {display: block; width: 100%; max-width: none;}
+    #promotion_box picture {display: block; height: auto; overflow: visible;}
+    #promotion_box button {margin: 0; padding: 0; border: 0; background: none; font-family: inherit; color: inherit; cursor: pointer;}
+    #promotion_box ul {margin: 0; padding: 0; list-style: none;}
+    #promotion_box .mo {display: none;}
+    #promotion_box .swiper {width: 100%; margin: 0; padding: 0; overflow: hidden;}
+
+    /* 기획전 상품 진열 모듈 */
+    .xans-project-package .xans-project-list {max-width: none; margin: 0; padding: 0;}
+    .xans-project-package .xans-project-list h3 {padding: 0; font-size: inherit; line-height: inherit; font-weight: inherit; color: inherit; text-align: inherit;}
+    .xans-project-package .xans-project-list h3 span {display: block; z-index: auto;}
+    .xans-project-package .xans-project-list .xans-project-productlist {max-width: 168rem; margin: 0 auto; padding: 0 2.5%;}
+
+    /* 유의사항 */
+    #promotion_box .notice {display: flex; flex-direction: column; align-items: center;}
+    #promotion_box .notice > div {display: flex; flex-direction: column; align-items: center;}
+    #promotion_box .notice_toggle {display: flex; align-items: center; gap: clamp(0.2rem, 0.208vw, 0.4rem); font-size: clamp(1.2rem, 0.938vw, 1.8rem); line-height: 1.4; font-weight: 400;}
+    #promotion_box .notice_toggle svg {width: clamp(1rem, 1.042vw, 2rem); height: clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .notice_toggle svg:last-of-type,
+    #promotion_box .notice_toggle.on svg:first-of-type {display: none;}
+    #promotion_box .notice_toggle.on svg:last-of-type {display: block;}
+    #promotion_box .notice ul {display: none; width: clamp(32rem, 33.333vw, 64rem); margin-top: clamp(0.8rem, 0.833vw, 1.6rem);}
+    #promotion_box .notice ul li {display: flex; font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; font-weight: 400; letter-spacing: -0.01em; color: #797979;}
+    #promotion_box .notice ul li + li {margin-top: clamp(0.2rem, 0.208vw, 0.4rem);}
+    #promotion_box .notice ul li span {display: flex; align-items: center; justify-content: center; flex: none; width: clamp(0.8rem, 0.833vw, 1.6rem); height: 1.5em;}
+    #promotion_box .notice ul li span::before {content: ""; display: block; width: 3px; height: 3px; border-radius: 100%; background-color: #797979;}
+
+    /* 섹션 공통 */
+    #promotion_box .sec_tit {display: flex; flex-direction: column; align-items: center; gap: clamp(0.8rem, 0.833vw, 1.6rem); text-align: center;}
+    #promotion_box .sec_tit .label {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.5; font-weight: 700; letter-spacing: -0.01em; color: #268337;}
+    #promotion_box .sec_tit .tit {font-size: clamp(2.88rem, 2.5vw, 4.8rem); line-height: 1.5; font-weight: 700; letter-spacing: -0.02em;}
+    #promotion_box .sec_tit .desc {margin-top: clamp(0.4rem, 0.417vw, 0.8rem); font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.5; font-weight: 400; letter-spacing: -0.01em;}
+
+
+    /* 기획전 키비주얼 */
+    #promotion_box .p_keyvisual {padding: clamp(6rem, 6.25vw, 12rem) 0; background-color: #FFFCF8;}
+    #promotion_box .p_keyvisual .inner {display: flex; align-items: center; justify-content: space-between; gap: clamp(2rem, 2.083vw, 4rem); width: 85.417vw; max-width: 164rem; margin: 0 auto;}
+    #promotion_box .p_keyvisual .txt {display: flex; flex-direction: column; gap: clamp(2rem, 2.083vw, 4rem); flex: 1; min-width: 0;}
+    #promotion_box .p_keyvisual .txt > * {animation: fadeInUp 1.2s ease both;}
+    #promotion_box .p_keyvisual .date {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.5; font-weight: 800; letter-spacing: -0.01em; color: #268337;}
+    #promotion_box .p_keyvisual .title {font-size: clamp(4.8rem, 5vw, 9.6rem); line-height: 1.2; font-weight: 800; letter-spacing: -0.02em; white-space: nowrap; animation-delay: .1s;}
+    #promotion_box .p_keyvisual .title .under {position: relative; display: inline-block;}
+    #promotion_box .p_keyvisual .title .under svg {position: absolute; left: 0; top: 76%; width: 104%; height: 0.21em; overflow: visible;}
+    #promotion_box .p_keyvisual .t01 {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.5; font-weight: 400; letter-spacing: -0.01em; animation-delay: .2s;}
+    #promotion_box .p_keyvisual .visual {flex: none; width: clamp(48.8rem, 50.833vw, 97.6rem);}
+    #promotion_box .p_keyvisual .swiper-wrapper {display: flex; gap: clamp(0.8rem, 0.833vw, 1.6rem);}
+    #promotion_box .p_keyvisual .swiper-slide {flex: 1; width: auto; aspect-ratio: 480 / 640; border-radius: clamp(1.2rem, 1.25vw, 2.4rem); overflow: hidden; background-color: #F3F3F3;}
+    #promotion_box .p_keyvisual .swiper-slide picture,
+    #promotion_box .p_keyvisual .swiper-slide img {height: 100%;}
+    #promotion_box .p_keyvisual .swiper-slide img {object-fit: cover; animation: zoomOut 2s ease-out both;}
+
+    #promotion_box .p_bar {overflow: hidden; background-color: #1E1E1E; color: #fff;}
+    #promotion_box .p_bar .track {display: flex; width: max-content; animation: barFlow 40s linear infinite;}
+    #promotion_box .p_bar .group {display: flex; align-items: center; gap: clamp(2.4rem, 2.5vw, 4.8rem); padding: clamp(0.85rem, 0.885vw, 1.7rem) clamp(2.4rem, 2.5vw, 4.8rem) clamp(0.85rem, 0.885vw, 1.7rem) 0; font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.5; font-weight: 500; letter-spacing: -0.01em; white-space: nowrap;}
+    #promotion_box .p_bar .group svg {flex: none; width: clamp(1rem, 1.042vw, 2rem); height: clamp(1rem, 1.042vw, 2rem);}
+
+
+    /* 기획전 섹션 01 */
+    #promotion_box .p_sec01 {display: flex; flex-direction: column; align-items: center; gap: clamp(5rem, 5.208vw, 10rem); padding: clamp(2rem, 2.083vw, 4rem) 0 clamp(5rem, 5.208vw, 10rem); background-color: #F3F3F3;}
+    #promotion_box .p_sec01 .clover_wrap {display: flex; flex-direction: column; align-items: center; gap: clamp(3.2rem, 3.333vw, 6.4rem); width: 66.667vw; max-width: 128rem;}
+    #promotion_box .p_sec01 .board {display: flex; align-items: center; justify-content: space-between; gap: clamp(2rem, 2.083vw, 4rem); width: 100%; padding: clamp(5rem, 5.208vw, 10rem); border: 1px solid #DDD; border-radius: clamp(1.2rem, 1.25vw, 2.4rem); background-color: #fff;}
+    #promotion_box .p_sec01 .clover_box {position: relative; flex: none; width: clamp(24rem, 25vw, 48rem); aspect-ratio: 1 / 1; border-radius: clamp(1.2rem, 1.25vw, 2.4rem); background-color: #E9F9EC; overflow: hidden; user-select: none; -webkit-user-select: none;}
+    #promotion_box .p_sec01 .guide {position: absolute; top: 6.458%; left: 50%; z-index: 2; transform: translateX(-50%); padding: clamp(0.6rem, 0.625vw, 1.2rem) clamp(1.2rem, 1.25vw, 2.4rem); border-radius: 100px; background: linear-gradient(to right, #83C95D 0%, #268337 33%, #268337 100%); font-size: clamp(1.2rem, 0.938vw, 1.8rem); line-height: 1.5; font-weight: 600; letter-spacing: 0.01em; color: #fff; white-space: nowrap;}
+    #promotion_box .p_sec01 .clover {position: absolute; top: 14.583%; left: 17.292%; width: 65.417%; height: auto; overflow: visible; touch-action: none;}
+    #promotion_box .p_sec01 .leaf {cursor: pointer; outline: none; transform-box: fill-box; transform-origin: center; touch-action: none; transition: filter .2s;}
+    #promotion_box .p_sec01 .leaf.off {pointer-events: none;}
+    #promotion_box .p_sec01 .leaf:focus-visible {filter: drop-shadow(0 0 4px #268337);}
+    #promotion_box .p_sec01 .leaf path {transform-box: view-box; transform-origin: 156.838px 156.839px;}
+    #promotion_box .p_sec01 .leaf.wiggle:not(.drag) path {animation: leafWiggle 1s infinite;}
+    #promotion_box .p_sec01 .confetti {position: absolute; inset: 0; pointer-events: none;}
+    #promotion_box .p_sec01 .confetti i {position: absolute; display: block; width: clamp(0.5rem, 0.521vw, 1rem); height: clamp(0.3rem, 0.313vw, 0.6rem); border-radius: 2px;}
+    #promotion_box .p_sec01 .toast {position: absolute; left: 50%; bottom: clamp(1.2rem, 1.25vw, 2.4rem); z-index: 2; padding: clamp(0.5rem, 0.521vw, 1rem) clamp(1rem, 1.042vw, 2rem); border-radius: 100px; background-color: rgba(30, 30, 30, .85); font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; font-weight: 500; color: #fff; white-space: nowrap; opacity: 0; transform: translate(-50%, 10px); transition: opacity .4s, transform .4s; pointer-events: none;}
+    #promotion_box .p_sec01 .toast.on {opacity: 1; transform: translate(-50%, 0);}
+    #promotion_box .p_sec01 .clover_info {flex: none; width: clamp(24rem, 25vw, 48rem);}
+    #promotion_box .p_sec01 .head {display: flex; align-items: center; justify-content: space-between; gap: clamp(2.4rem, 2.5vw, 4.8rem);}
+    #promotion_box .p_sec01 .t01 {font-size: clamp(2.16rem, 1.875vw, 3.6rem); line-height: 1.5; font-weight: 700; letter-spacing: -0.02em;}
+    #promotion_box .p_sec01 .t01.en {font-family: "Outfit", "SUIT Variable", sans-serif; font-weight: 600; letter-spacing: -0.01em;}
+    #promotion_box .p_sec01 .t02 {margin-top: clamp(0.4rem, 0.417vw, 0.8rem); font-size:clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.5; font-weight: 400; letter-spacing: -0.01em;}
+    #promotion_box .p_sec01 .state {flex: none; padding: clamp(0.4rem, 0.417vw, 0.8rem) clamp(1.2rem, 1.25vw, 2.4rem); border-radius: 100px; background-color: #AEAEAE; font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; font-weight: 600; letter-spacing: 0.01em; color: #fff; transition: background-color .4s;}
+    #promotion_box .p_sec01 .coupon {position: relative; display: flex; height: clamp(9.9rem, 10.313vw, 19.8rem); margin-top: clamp(2rem, 2.083vw, 4rem); padding-left: clamp(1.2rem, 1.25vw, 2.4rem); border-radius: clamp(1.2rem, 1.25vw, 2.4rem); background-color: #AEAEAE; color: #fff; text-decoration: none; cursor: default; transition: background-color .4s;}
+    #promotion_box .p_sec01 .coupon::before,
+    #promotion_box .p_sec01 .coupon::after {content: ""; position: absolute; left: 81.25%; width: clamp(0.6rem, 0.625vw, 1.2rem); height: clamp(0.3rem, 0.313vw, 0.6rem); background-color: #F3F3F3; transform: translateX(-50%);}
+    #promotion_box .p_sec01 .coupon::before {top: 0; border-radius: 0 0 100px 100px;}
+    #promotion_box .p_sec01 .coupon::after {bottom: 0; border-radius: 100px 100px 0 0;}
+    #promotion_box .p_sec01 .coupon .left {display: flex; flex-direction: column; justify-content: space-between; flex: 1; padding: clamp(1rem, 1.042vw, 2rem) 0;}
+    #promotion_box .p_sec01 .coupon .name {font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; font-weight: 400;}
+    #promotion_box .p_sec01 .coupon .rate_box {display: flex; flex-direction: column; gap: clamp(0.35rem, 0.365vw, 0.7rem);}
+    #promotion_box .p_sec01 .coupon .rate {font-size: clamp(2.4rem, 2.083vw, 4rem); line-height: 1.4; font-weight: 400;}
+    #promotion_box .p_sec01 .coupon .cond {font-size: clamp(1.2rem, 0.729vw, 1.4rem); line-height: 1.43; font-weight: 400;}
+    #promotion_box .p_sec01 .coupon .down {display: flex; align-items: center; justify-content: center; flex: none; width: 17.5%;}
+    #promotion_box .p_sec01 .coupon .down svg {width: clamp(1.5rem, 1.563vw, 3rem); height: clamp(1.5rem, 1.563vw, 3rem); opacity: 0; transition: opacity .4s;}
+    #promotion_box .p_sec01 .clover_info.open .state,
+    #promotion_box .p_sec01 .clover_info.open .coupon {background-color: #268337;}
+    #promotion_box .p_sec01 .clover_info.open .coupon {cursor: pointer;}
+    #promotion_box .p_sec01 .clover_info.open .coupon .down svg {opacity: 1;}
+
+
+    /* 기획전 섹션 02 */
+    #promotion_box .p_sec02 {display: flex; flex-direction: column; align-items: center; padding: clamp(5rem, 5.208vw, 10rem) 0; background-color: #F3F3F3;}
+    #promotion_box .p_sec02 .benefit {display: flex; gap: clamp(2rem, 2.083vw, 4rem); width: 66.667vw; max-width: 128rem; margin-top: clamp(5rem, 5.208vw, 10rem);}
+    #promotion_box .p_sec02 .card {position: relative; flex: 1; aspect-ratio: 620 / 412; padding: clamp(4.1rem, 4.271vw, 8.2rem) clamp(2rem, 2.083vw, 4rem); border: 1px solid #DDD; border-radius: clamp(1.2rem, 1.25vw, 2.4rem); background-color: #fff; overflow: hidden;}
+    #promotion_box .p_sec02 .txt {position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: clamp(1.2rem, 1.25vw, 2.4rem); max-width: clamp(17.05rem, 17.76vw, 34.1rem);}
+    #promotion_box .p_sec02 .no {padding: clamp(0.2rem, 0.208vw, 0.4rem) clamp(1rem, 1.042vw, 2rem); border-radius: 100px; background-color: #1E1E1E; font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; font-weight: 600; letter-spacing: 0.01em; color: #fff;}
+    #promotion_box .p_sec02 .name {font-size: clamp(2.16rem, 1.875vw, 3.6rem); line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; color: #268337;}
+    #promotion_box .p_sec02 .lunch .name {color: #F1557A;}
+    #promotion_box .p_sec02 .t01 {font-size: clamp(1.2rem, 0.938vw, 1.8rem); line-height: 1.5; font-weight: 500; letter-spacing: -0.01em;}
+    #promotion_box .p_sec02 .t02 {font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; font-weight: 500; letter-spacing: -0.01em; color: #797979;}
+    #promotion_box .p_sec02 .keyring {position: absolute; left: 64.839%; top: 15.291%; width: 25.323%; transform-origin: 50% 3%; animation: keyringSwing 2.4s ease-in-out infinite;}
+    #promotion_box .p_sec02 .deal {position: absolute; inset: 0;}
+    #promotion_box .p_sec02 .deal img {height: 100%; object-fit: cover;}
+    #promotion_box .p_sec02 .notice {margin-top: clamp(3.2rem, 3.333vw, 6.4rem);}
+
+
+    /* 기획전 섹션 03 */
+    #promotion_box .p_sec03 {padding: clamp(5rem, 5.208vw, 10rem) 0;}
+    #promotion_box .p_sec03 .inner {display: grid; grid-template-columns: 44.595% 48.649%; grid-template-areas: "top img" "opt img" "buy img"; grid-template-rows: auto 1fr auto; justify-content: space-between; row-gap: clamp(2rem, 2.083vw, 4rem); width: 77.083vw; max-width: 148rem; margin: 0 auto;}
+    #promotion_box .p_sec03 .top {grid-area: top; display: flex; flex-direction: column; align-items: center; text-align: center;}
+    #promotion_box .p_sec03 .label {padding: clamp(0.4rem, 0.417vw, 0.8rem) clamp(1.2rem, 1.25vw, 2.4rem); border-radius: 100px; background-color: #268337; font-size: clamp(1.2rem, 0.938vw, 1.8rem); line-height: 1.5; font-weight: 600; letter-spacing: 0.01em; color: #fff;}
+    #promotion_box .p_sec03 .tit {margin-top: clamp(1.2rem, 1.25vw, 2.4rem); font-size: clamp(2.88rem, 2.5vw, 4.8rem); line-height: 1.2; font-weight: 700; letter-spacing: -0.02em;}
+    #promotion_box .p_sec03 .tit .cutlery {transition: color .4s;}
+    #promotion_box .p_sec03 .sub {margin-top: clamp(2rem, 2.083vw, 4rem); font-size: clamp(2.16rem, 1.875vw, 3.6rem); line-height: 1.5; font-weight: 600; letter-spacing: -0.01em;}
+    #promotion_box .p_sec03 .desc {margin-top: clamp(1.2rem, 1.25vw, 2.4rem); font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.5; font-weight: 400; letter-spacing: -0.01em;}
+    #promotion_box .p_sec03 .spec {display: flex; flex-direction: column; gap: clamp(0.8rem, 0.833vw, 1.6rem); width: 100%; margin-top: clamp(3.2rem, 3.333vw, 6.4rem); text-align: left;}
+    #promotion_box .p_sec03 .spec li {display: flex; align-items: center; justify-content: space-between; gap: clamp(1.2rem, 1.25vw, 2.4rem); min-height: clamp(3.2rem, 3.333vw, 6.4rem); padding: 0 clamp(1.2rem, 1.25vw, 2.4rem); border-radius: clamp(1.2rem, 1.25vw, 2.4rem); background-color: #F3F3F3;}
+    #promotion_box .p_sec03 .spec li span:first-child {flex: none; font-size: clamp(1.2rem, 0.938vw, 1.8rem); line-height: 1.5; font-weight: 600; letter-spacing: -0.01em;}
+    #promotion_box .p_sec03 .spec li span:last-child {font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; font-weight: 400; letter-spacing: -0.01em; text-align: right;}
+    #promotion_box .p_sec03 .opt {grid-area: opt; align-self: end; display: flex; align-items: center; justify-content: space-between; gap: clamp(1.2rem, 1.25vw, 2.4rem);}
+    #promotion_box .p_sec03 .opt p {font-size: clamp(1.2rem, 0.938vw, 1.8rem); line-height: 1.5; font-weight: 600; letter-spacing: -0.01em;}
+    #promotion_box .p_sec03 .swatch {display: flex; gap: clamp(0.4rem, 0.417vw, 0.8rem);}
+    #promotion_box .p_sec03 .swatch button {display: flex; align-items: center; justify-content: center; width: clamp(2.4rem, 2.5vw, 4.8rem); height: clamp(2.4rem, 2.5vw, 4.8rem); border-radius: 100%; box-shadow: inset 0 0 0 2px transparent; transition: box-shadow .3s;}
+    #promotion_box .p_sec03 .swatch button.on {box-shadow: inset 0 0 0 2px #1E1E1E;}
+    #promotion_box .p_sec03 .swatch button > span {display: block; width: clamp(2rem, 2.083vw, 4rem); height: clamp(2rem, 2.083vw, 4rem); border-radius: 100%; overflow: hidden;}
+    #promotion_box .p_sec03 .swatch .all {display: grid; grid-template-columns: 1fr 1fr;}
+    #promotion_box .p_sec03 .swatch .all i {display: block;}
+    #promotion_box .p_sec03 .img {grid-area: img; position: relative; aspect-ratio: 720 / 878; border-radius: clamp(1.2rem, 1.25vw, 2.4rem); overflow: hidden; background-color: #F3F3F3;}
+    #promotion_box .p_sec03 .img img {position: absolute; inset: 0; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.05); transition: opacity .6s ease, transform 1.2s ease;}
+    #promotion_box .p_sec03 .img img.on {opacity: 1; transform: scale(1);}
+    #promotion_box .p_sec03 .buy {grid-area: buy; display: flex; align-items: center; justify-content: space-between; gap: clamp(1.2rem, 1.25vw, 2.4rem);}
+    #promotion_box .p_sec03 .price_box {display: flex; align-items: center; gap: clamp(0.4rem, 0.417vw, 0.8rem); font-size: clamp(2.16rem, 1.875vw, 3.6rem); line-height: 1.5; white-space: nowrap;}
+    #promotion_box .p_sec03 .price_box strong {font-weight: 700; color: #268337;}
+    #promotion_box .p_sec03 .price_box .sale {font-weight: 600;}
+    #promotion_box .p_sec03 .price_box del {margin-left: clamp(-0.4rem, -0.208vw, -0.2rem); font-size: clamp(1.44rem, 1.25vw, 2.4rem); font-weight: 400; color: #BABABA;}
+    #promotion_box .p_sec03 .btn_shop {display: flex; align-items: center; gap: clamp(0.6rem, 0.625vw, 1.2rem); padding: clamp(0.4rem, 0.417vw, 0.8rem) clamp(2rem, 2.083vw, 4rem); border-radius: 100px; background-color: #1E1E1E; font-size: clamp(1.2rem, 0.938vw, 1.8rem); line-height: 1.5; font-weight: 600; letter-spacing: 0.01em; color: #fff; text-decoration: none; white-space: nowrap;}
+    #promotion_box .p_sec03 .btn_shop svg {width: clamp(0.3rem, 0.313vw, 0.6rem); height: clamp(0.55rem, 0.573vw, 1.1rem);}
+
+
+    /* 기획전 공통 (상품 진열 모듈 포함 섹션) */
+    #promotion_box .sec_wrap {padding: clamp(5rem, 5.208vw, 10rem) 0;}
+
+
+    /* 기획전 섹션 04 */
+    #promotion_box .p_sec04 {display: flex; flex-direction: column; align-items: center; padding: clamp(5rem, 5.208vw, 10rem) 0 clamp(3.2rem, 3.333vw, 6.4rem);}
+    #promotion_box .p_sec04 .sec_tit {gap: clamp(1.2rem, 1.25vw, 2.4rem);}
+    #promotion_box .p_sec04 .sec_tit .label {font-weight: 500;}
+    #promotion_box .p_sec04 .sec_tit .tit {line-height: 1.2;}
+    #promotion_box .p_sec04 .tab {width: clamp(36rem, 37.5vw, 72rem); margin-top: clamp(3.2rem, 3.333vw, 6.4rem);}
+    #promotion_box .p_sec04 .tab > div {display: flex; gap: clamp(0.6rem, 0.625vw, 1.2rem);}
+    #promotion_box .p_sec04 .tab button {flex: 1; padding-bottom: clamp(0.4rem, 0.417vw, 0.8rem); border-bottom: 3px solid #D9D9D9; font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; font-weight: 600; letter-spacing: 0.01em; color: #D9D9D9; text-align: left; transition: color .3s, border-color .3s;}
+    #promotion_box .p_sec04 .tab button.on {border-color: #268337; color: #1E1E1E;}
+    #promotion_box .p_sec04 .point_wrap {width: 77.083vw; max-width: 148rem; margin-top: clamp(3.2rem, 3.333vw, 6.4rem);}
+    #promotion_box .p_sec04 .swiper-slide {height: auto;}
+    #promotion_box .p_sec04 .card {display: flex; height: 100%; border-radius: clamp(1.2rem, 1.25vw, 2.4rem); overflow: hidden; background-color: #F3F3F3;}
+    #promotion_box .p_sec04 .card .img {flex: none; width: 48.649%; aspect-ratio: 720 / 615; background-color: #F3FAE9; opacity: 0;}
+    #promotion_box .p_sec04 .card .img img {height: 100%; object-fit: cover;}
+    #promotion_box .p_sec04 .card .txt {display: flex; flex-direction: column; justify-content: space-between; gap: clamp(1.2rem, 1.25vw, 2.4rem); flex: 1; padding: clamp(2rem, 2.083vw, 4rem) clamp(2rem, 2.083vw, 4rem) clamp(3.2rem, 3.333vw, 6.4rem);}
+    #promotion_box .p_sec04 .card .txt > * {opacity: 0;}
+    #promotion_box .p_sec04 .card.reveal .img {animation: fadeIn .7s ease both;}
+    #promotion_box .p_sec04 .card.reveal .txt > * {animation: fadeInUp .7s ease both;}
+    #promotion_box .p_sec04 .card.reveal .txt .head {animation-delay: .15s;}
+    #promotion_box .p_sec04 .card.reveal .txt .body {animation-delay: .25s;}
+    #promotion_box .p_sec04 .card .head {display: flex; flex-direction: column; gap: clamp(0.6rem, 0.625vw, 1.2rem); font-weight: 600; letter-spacing: 0.01em;}
+    #promotion_box .p_sec04 .card .key_no {font-size: clamp(2.4rem, 2.083vw, 4rem); line-height: 1.5; color: #268337;}
+    #promotion_box .p_sec04 .card .name {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.5;}
+    #promotion_box .p_sec04 .card .body {display: flex; flex-direction: column; gap: clamp(1.2rem, 1.25vw, 2.4rem);}
+    #promotion_box .p_sec04 .card .sub {font-size: clamp(1.92rem, 1.667vw, 3.2rem); line-height: 1.5; font-weight: 600; letter-spacing: -0.01em;}
+    #promotion_box .p_sec04 .card .desc {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.5; font-weight: 500; letter-spacing: -0.01em; color: #797979;}
+
+
+    /* 기획전 섹션 05·06 */
+    #promotion_box .sec_wrap .wide {aspect-ratio: 1920 / 750; overflow: hidden; background-color: #F3F3F3;}
+    #promotion_box .sec_wrap .wide picture {height: 100%;}
+    #promotion_box .sec_wrap .wide img {object-fit: cover; will-change: transform;}
+    #promotion_box .sec_wrap .cont {display: flex; align-items: center; margin-top: clamp(5rem, 5.208vw, 10rem); padding: 0 2.083vw;}
+    #promotion_box .p_sec06 .cont {flex-direction: row-reverse;}
+    #promotion_box .sec_wrap .cont .txt {display: flex; flex-direction: column; align-items: center; gap: clamp(0.8rem, 0.833vw, 1.6rem); flex: 1; text-align: center;}
+    #promotion_box .sec_wrap .cont .label {padding: clamp(0.4rem, 0.417vw, 0.8rem) clamp(1.2rem, 1.25vw, 2.4rem); border-radius: 100px; font-size: clamp(1.2rem, 0.938vw, 1.8rem); line-height: 1.5; font-weight: 600; letter-spacing: 0.01em;}
+    #promotion_box .sec_wrap .cont .tit {font-size: clamp(2.88rem, 2.5vw, 4.8rem); line-height: 1.5; font-weight: 700; letter-spacing: -0.02em;}
+    #promotion_box .sec_wrap .cont .desc {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.5; font-weight: 400; letter-spacing: -0.01em;}
+    #promotion_box .sec_wrap .cont .photo {flex: none; width: 47.917vw;}
+    #promotion_box .sec_wrap .cont .swiper-wrapper {display: flex; gap: clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .sec_wrap .cont .swiper-slide {flex: 1; width: auto; aspect-ratio: 450 / 577; border-radius: clamp(1.2rem, 1.25vw, 2.4rem); overflow: hidden;}
+    #promotion_box .sec_wrap .cont .swiper-slide img {height: 100%; object-fit: cover;}
+    #promotion_box .sec_wrap .cont .pagination {display: none;}
+
+
+    /* animation */
+    #promotion_box .fadeEl {animation-play-state: paused !important;}
+    #promotion_box .fadeEl.on {animation-play-state: running !important;}
+    #promotion_box .fadeEl .fadeCh {animation-play-state: paused !important; opacity: 0;}
+    #promotion_box .fadeEl.on .fadeCh {animation-play-state: running !important;}
+
+    #promotion_box .fadeIn {animation: fadeIn 1.2s ease both;}
+    #promotion_box .fadeInUp {animation: fadeInUp 1.2s ease both;}
+
+    @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+        0% {opacity: 0; transform: translateY(20px);}
+        100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes zoomOut {
+        0% {transform: scale(1.1);}
+        100% {transform: scale(1);}
+    }
+
+    @keyframes barFlow {
+        0% {transform: translateX(0);}
+        100% {transform: translateX(-50%);}
+    }
+
+    @keyframes keyringSwing {
+        0%, 100% {transform: rotate(-5deg);}
+        50% {transform: rotate(5deg);}
+    }
+
+    @keyframes leafWiggle {
+        0% {transform: rotate(0); animation-timing-function: cubic-bezier(.61, 1, .88, 1);}
+        25% {transform: rotate(-6deg); animation-timing-function: cubic-bezier(.37, 0, .63, 1);}
+        75% {transform: rotate(6deg); animation-timing-function: cubic-bezier(.12, 0, .39, 0);}
+        100% {transform: rotate(0);}
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        #promotion_box .p_bar .track,
+        #promotion_box .p_sec02 .keyring,
+        #promotion_box .p_keyvisual .swiper-slide img,
+        #promotion_box .p_sec01 .leaf path {animation: none !important;}
+        #promotion_box .sec_wrap .wide img {height: 100%;}
+    }
+
+
+    /* 반응형 */
+    @media all and (max-width: 1024px) {
+        /* 공통 */
+        #promotion_box .pc {display: none;}
+        #promotion_box .mo {display: block;}
+        #promotion_box span.mo,
+        #promotion_box br.mo {display: inline;}
+        #promotion_box svg.mo {display: block;}
+
+        /* 기획전 상품 진열 모듈 */
+        .xans-project-package .xans-project-list {margin: 0;}
+        .xans-project-package .xans-project-list .xans-project-productlist {max-width: none; margin: 0 4%; padding: 0;}
+
+        /* 유의사항 */
+        #promotion_box .notice_toggle {gap: clamp(0.34rem, 1.111vw, 0.6rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .notice_toggle svg {width: clamp(1.19rem, 3.889vw, 2.1rem); height: clamp(1.19rem, 3.889vw, 2.1rem);}
+        #promotion_box .notice ul {width: 100%; margin-top: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .notice ul li {font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .notice ul li + li {margin-top: clamp(0.34rem, 1.111vw, 0.6rem);}
+        #promotion_box .notice ul li span {width: clamp(1.02rem, 3.333vw, 1.8rem);}
+
+        /* 섹션 공통 */
+        #promotion_box .sec_tit {gap: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .sec_tit .label {font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .sec_tit .tit {font-size: clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .sec_tit .desc {margin-top: 0; font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+
+        /* 기획전 키비주얼 */
+        #promotion_box .p_keyvisual {padding: 0; background-color: #F3F3F3;}
+        #promotion_box .p_keyvisual .inner {flex-direction: column; gap: 0; width: 100%; max-width: none;}
+        #promotion_box .p_keyvisual .txt {align-items: center; gap: clamp(2.04rem, 6.667vw, 3.6rem); flex: none; width: 100%; padding: clamp(3.4rem, 11.111vw, 6rem) clamp(1.36rem, 4.444vw, 2.4rem); text-align: center;}
+        #promotion_box .p_keyvisual .date {font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_keyvisual .title {font-size: clamp(3.4rem, 11.111vw, 6rem);}
+        #promotion_box .p_keyvisual .title .under svg {top: 78%; height: 0.15em;}
+        #promotion_box .p_keyvisual .t01 {margin-top: clamp(-1.2rem, -2.222vw, -0.68rem); font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_keyvisual .visual {order: -1; width: 100%;}
+        #promotion_box .p_keyvisual .swiper-wrapper {gap: 0;}
+        #promotion_box .p_keyvisual .swiper-slide {flex: none; width: 100%; aspect-ratio: 360 / 480; border-radius: 0;}
+        #promotion_box .p_keyvisual .swiper-slide img {animation: none; transform: scale(1.1); transition: transform 3.6s ease-out;}
+        #promotion_box .p_keyvisual .swiper-slide-active img {transform: scale(1);}
+
+        #promotion_box .p_bar .group {gap: clamp(2.04rem, 6.667vw, 3.6rem); padding: clamp(1.02rem, 3.333vw, 1.8rem) clamp(2.04rem, 6.667vw, 3.6rem) clamp(1.02rem, 3.333vw, 1.8rem) 0; font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_bar .group svg {width: clamp(1.19rem, 3.889vw, 2.1rem); height: clamp(1.19rem, 3.889vw, 2.1rem);}
+
+        /* 기획전 섹션 01 */
+        #promotion_box .p_sec01 {gap: clamp(2.04rem, 6.667vw, 3.6rem); padding: clamp(3.4rem, 11.111vw, 6rem) clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec01 .clover_wrap {gap: clamp(2.04rem, 6.667vw, 3.6rem); width: 100%; max-width: none;}
+        #promotion_box .p_sec01 .board {flex-direction: column; gap: clamp(3.4rem, 11.111vw, 6rem); padding: 0; border: 0; border-radius: 0; background-color: transparent;}
+        #promotion_box .p_sec01 .clover_box {width: 100%; border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec01 .guide {padding: clamp(0.68rem, 2.222vw, 1.2rem) clamp(1.7rem, 5.556vw, 3rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec01 .confetti i {width: clamp(0.595rem, 1.944vw, 1.05rem); height: clamp(0.34rem, 1.111vw, 0.6rem);}
+        #promotion_box .p_sec01 .toast {bottom: clamp(1.36rem, 4.444vw, 2.4rem); padding: clamp(0.68rem, 2.222vw, 1.2rem) clamp(1.36rem, 4.444vw, 2.4rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec01 .clover_info {width: 100%; padding: 0 clamp(1.19rem, 3.889vw, 2.1rem);}
+        #promotion_box .p_sec01 .head {gap: clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .p_sec01 .t01 {font-size: clamp(1.53rem, 5vw, 2.7rem);}
+        #promotion_box .p_sec01 .t02 {margin-top: clamp(0.68rem, 2.222vw, 1.2rem); font-size:clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec01 .state {padding: clamp(0.34rem, 1.111vw, 0.6rem) clamp(1.36rem, 4.444vw, 2.4rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec01 .coupon {height: clamp(10.54rem, 34.444vw, 18.6rem); margin-top: clamp(2.04rem, 6.667vw, 3.6rem); padding-left: clamp(2.04rem, 6.667vw, 3.6rem); border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec01 .coupon::before,
+        #promotion_box .p_sec01 .coupon::after {left: 76.667%; width: clamp(1.02rem, 3.333vw, 1.8rem); height: clamp(0.51rem, 1.667vw, 0.9rem);}
+        #promotion_box .p_sec01 .coupon .left {padding: clamp(1.19rem, 3.889vw, 2.1rem) 0;}
+        #promotion_box .p_sec01 .coupon .name {font-size: clamp(1.19rem, 3.889vw, 2.1rem); line-height: 1.43;}
+        #promotion_box .p_sec01 .coupon .rate_box {gap: clamp(0.51rem, 1.667vw, 0.9rem);}
+        #promotion_box .p_sec01 .coupon .rate {font-size: clamp(2.72rem, 8.889vw, 4.8rem); line-height: 1.25;}
+        #promotion_box .p_sec01 .coupon .cond {font-size: clamp(1.02rem, 3.333vw, 1.8rem); line-height: 1.5;}
+        #promotion_box .p_sec01 .coupon .down {width: 23.333%;}
+        #promotion_box .p_sec01 .coupon .down svg {width: clamp(2.04rem, 6.667vw, 3.6rem); height: clamp(2.04rem, 6.667vw, 3.6rem);}
+
+        /* 기획전 섹션 02 */
+        #promotion_box .p_sec02 {padding: clamp(3.4rem, 11.111vw, 6rem) clamp(1.36rem, 4.444vw, 2.4rem) clamp(5.44rem, 17.778vw, 9.6rem);}
+        #promotion_box .p_sec02 .benefit {flex-direction: column; gap: clamp(2.04rem, 6.667vw, 3.6rem); width: 100%; max-width: none; margin-top: clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .p_sec02 .card {flex: none; aspect-ratio: 328 / 280; padding: clamp(3.23rem, 10.556vw, 5.7rem) clamp(2.72rem, 8.889vw, 4.8rem); border: 0; border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec02 .txt {gap: clamp(1.36rem, 4.444vw, 2.4rem); max-width: none;}
+        #promotion_box .p_sec02 .no {padding: clamp(0.34rem, 1.111vw, 0.6rem) clamp(1.36rem, 4.444vw, 2.4rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec02 .name {font-size: clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .p_sec02 .t01 {font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+        #promotion_box .p_sec02 .t02 {font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec02 .keyring {left: 54.878%; top: 17.857%; width: 30.183%;}
+        #promotion_box .p_sec02 .notice {margin-top: clamp(2.04rem, 6.667vw, 3.6rem);}
+
+        /* 기획전 섹션 03 */
+        #promotion_box .p_sec03 {padding: clamp(5.44rem, 17.778vw, 9.6rem) clamp(1.36rem, 4.444vw, 2.4rem) clamp(2.72rem, 8.889vw, 4.8rem);}
+        #promotion_box .p_sec03 .inner {grid-template-columns: 100%; grid-template-areas: "top" "opt" "img" "buy"; grid-template-rows: auto; row-gap: clamp(2.04rem, 6.667vw, 3.6rem); width: 100%; max-width: none;}
+        #promotion_box .p_sec03 .label {padding: clamp(0.425rem, 1.389vw, 0.75rem) clamp(1.19rem, 3.889vw, 2.1rem); font-size: clamp(1.19rem, 3.889vw, 2.1rem); line-height: 1.2;}
+        #promotion_box .p_sec03 .tit {margin-top: clamp(1.02rem, 3.333vw, 1.8rem); font-size: clamp(3.06rem, 10vw, 5.4rem);}
+        #promotion_box .p_sec03 .sub {margin-top: clamp(2.04rem, 6.667vw, 3.6rem); font-size: clamp(1.53rem, 5vw, 2.7rem);}
+        #promotion_box .p_sec03 .desc {margin-top: clamp(1.36rem, 4.444vw, 2.4rem); font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec03 .spec {gap: clamp(0.68rem, 2.222vw, 1.2rem); margin-top: clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .p_sec03 .spec li {gap: clamp(2.04rem, 6.667vw, 3.6rem); min-height: clamp(4.76rem, 15.556vw, 8.4rem); padding: 0 clamp(1.36rem, 4.444vw, 2.4rem); border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec03 .spec li span:first-child {font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+        #promotion_box .p_sec03 .spec li span:last-child {font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec03 .opt {gap: clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .p_sec03 .opt p {font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+        #promotion_box .p_sec03 .swatch {gap: clamp(0.68rem, 2.222vw, 1.2rem);}
+        #promotion_box .p_sec03 .swatch button {width: clamp(3.4rem, 11.111vw, 6rem); height: clamp(3.4rem, 11.111vw, 6rem);}
+        #promotion_box .p_sec03 .swatch button > span {width: clamp(2.72rem, 8.889vw, 4.8rem); height: clamp(2.72rem, 8.889vw, 4.8rem);}
+        #promotion_box .p_sec03 .img {aspect-ratio: 328 / 400; border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec03 .buy {flex-direction: column; justify-content: center; gap: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec03 .price_box {gap: clamp(0.68rem, 2.222vw, 1.2rem); font-size: clamp(1.53rem, 5vw, 2.7rem); line-height: 1.11;}
+        #promotion_box .p_sec03 .price_box del {margin-left: clamp(-0.6rem, -1.111vw, -0.34rem); font-size: clamp(1.53rem, 5vw, 2.7rem);}
+        #promotion_box .p_sec03 .btn_shop {gap: clamp(1.02rem, 3.333vw, 1.8rem); padding: clamp(0.595rem, 1.944vw, 1.05rem) clamp(1.19rem, 3.889vw, 2.1rem); font-size: clamp(1.19rem, 3.889vw, 2.1rem); line-height: 1;}
+        #promotion_box .p_sec03 .btn_shop svg {width: clamp(0.34rem, 1.111vw, 0.6rem); height: clamp(0.68rem, 2.222vw, 1.2rem);}
+
+        /* 기획전 공통 (상품 진열 모듈 포함 섹션) */
+        #promotion_box .sec_wrap {padding: clamp(5.44rem, 17.778vw, 9.6rem) 0 clamp(3.4rem, 11.111vw, 6rem);}
+
+        /* 기획전 섹션 04 */
+        #promotion_box .p_sec04 {padding: clamp(2.72rem, 8.889vw, 4.8rem) clamp(1.36rem, 4.444vw, 2.4rem) clamp(3.4rem, 11.111vw, 6rem);}
+        #promotion_box .p_sec04 .sec_tit {gap: clamp(0.68rem, 2.222vw, 1.2rem);}
+        #promotion_box .p_sec04 .sec_tit .tit {line-height: 1.5;}
+        #promotion_box .p_sec04 .tab {width: 100%; margin-top: clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .p_sec04 .tab > div {gap: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec04 .tab button {padding-bottom: clamp(0.68rem, 2.222vw, 1.2rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec04 .point_wrap {width: 100%; max-width: none; margin-top: clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .p_sec04 .swiper {width: auto; margin: 0 clamp(-2.4rem, -4.444vw, -1.36rem); padding: 0 clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec04 .card {flex-direction: column; border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec04 .card .img {width: 100%; aspect-ratio: 328 / 280;}
+        #promotion_box .p_sec04 .card .txt {justify-content: flex-start; gap: clamp(0.68rem, 2.222vw, 1.2rem); padding: clamp(1.36rem, 4.444vw, 2.4rem) clamp(1.36rem, 4.444vw, 2.4rem) clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .p_sec04 .card .head {flex-direction: row; align-items: center; gap: clamp(0.68rem, 2.222vw, 1.2rem);}
+        #promotion_box .p_sec04 .card .key_no {font-size: clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .p_sec04 .card .name {font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec04 .card .body {gap: clamp(0.68rem, 2.222vw, 1.2rem);}
+        #promotion_box .p_sec04 .card .sub {font-size: clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_sec04 .card .desc {font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+
+        /* 기획전 섹션 05·06 */
+        #promotion_box .sec_wrap .wide {aspect-ratio: 360 / 460;}
+        #promotion_box .sec_wrap .wide img {height: 120%;}
+        #promotion_box .sec_wrap .cont {flex-direction: column; align-items: stretch; gap: clamp(3.4rem, 11.111vw, 6rem); margin-top: clamp(3.4rem, 11.111vw, 6rem); padding: 0 clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .sec_wrap .cont .txt {gap: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .sec_wrap .cont .label {padding: clamp(0.425rem, 1.389vw, 0.75rem) clamp(1.19rem, 3.889vw, 2.1rem); font-size: clamp(1.19rem, 3.889vw, 2.1rem); line-height: 1.2;}
+        #promotion_box .sec_wrap .cont .tit {font-size: clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .sec_wrap .cont .desc {font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .sec_wrap .cont .photo {width: 100%;}
+        #promotion_box .sec_wrap .cont .swiper {width: auto; margin: 0 clamp(-3.6rem, -6.667vw, -2.04rem); padding: 0 clamp(2.04rem, 6.667vw, 3.6rem);}
+        #promotion_box .sec_wrap .cont .swiper-wrapper {gap: 0;}
+        #promotion_box .sec_wrap .cont .swiper-slide {flex: none; width: 100%; aspect-ratio: 312 / 400; border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .sec_wrap .cont .pagination {display: flex; justify-content: center; gap: clamp(0.34rem, 1.111vw, 0.6rem); margin-top: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .sec_wrap .cont .pagination .swiper-pagination-bullet {display: block; width: clamp(1.02rem, 3.333vw, 1.8rem); height: clamp(0.85rem, 2.778vw, 1.5rem); margin: 0; border-radius: 100px; background-color: #1E1E1E; opacity: .2; transition: width .3s, opacity .3s;}
+        #promotion_box .sec_wrap .cont .pagination .swiper-pagination-bullet-active {width: clamp(3.23rem, 10.556vw, 5.7rem); opacity: 1;}
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        var isMo = function () { return window.matchMedia("(max-width: 1024px)").matches; };
+        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
+        /* 유의사항 */
+        $("#promotion_box .notice_toggle").on("click", function () {
+            $(this).toggleClass("on");
+            $(this).next("ul").stop().slideToggle();
+        });
+
+
+        /* 네잎클로버 쿠폰 */
+        var COUPON_KEY = "legodt_lucky_clover";
+        var leafData = {
+            tr: {title: "Lucky Pick!", msg: "오늘의 선택에 작은 행운이 따라오길.", dir: [1, -1]},
+            br: {title: "You’ve Got This!", msg: "차곡차곡 쌓아온 실력을 보여줄 시간.", dir: [1, 1]},
+            bl: {title: "Take It Easy", msg: "숨 한 번 고르고, 한 문제씩 차근차근.", dir: [-1, 1]},
+            tl: {title: "Your Day To Shine", msg: "준비해 온 너의 하루가 반짝이길.", dir: [-1, -1]}
+        };
+        var confettiColor = ["#4DB35E", "#83C95D", "#F4DD60", "#F1557A", "#2E8BD8", "#B9A3E3"];
+        var $clover = $("#promotion_box .p_sec01 .clover_box");
+        var $info = $("#promotion_box .p_sec01 .clover_info");
+        var $coupon = $info.find(".coupon");
+        var clover = {off: [], last: "", down: false};
+
+        try {
+            var saved = JSON.parse(sessionStorage.getItem(COUPON_KEY));
+            if (saved && $.isArray(saved.off)) clover = saved;
+        } catch (e) {};
+
+        var cloverSave = function () {
+            try { sessionStorage.setItem(COUPON_KEY, JSON.stringify(clover)); } catch (e) {};
+        };
+
+        var isLogin = function () {
+            var logon = document.querySelector(".xans-layout-statelogon");
+            if (logon && !logon.classList.contains("displaynone")) return true;
+            return !!(window.CAPP_ASYNC_METHODS && window.CAPP_ASYNC_METHODS.IS_LOGIN === true);
+        };
+
+        var cloverRender = function () {
+            var open = clover.off.length > 0;
+            var data = leafData[clover.last];
+
+            $info.toggleClass("open", open);
+            $coupon.attr("aria-disabled", open ? "false" : "true");
+            $info.find(".state").text(open ? "Unlocked" : "Locked");
+
+            if (open && data) {
+                $info.find(".t01").addClass("en").text(data.title);
+                $info.find(".t02").html(data.msg + "<br>" + (clover.down ? "쿠폰은 이미 받았어요. 응원은 한 번 더!" : "쿠폰의 다운로드 아이콘을 눌러 받아가세요."));
+            };
+
+            if (clover.off.length === 4) $clover.find(".guide").text("네 잎 모두 떼었어요. 행운 가득!");
+        };
+
+        var toastTimer = null;
+        var toastShow = function () {
+            var $toast = $clover.find(".toast");
+            clearTimeout(toastTimer);
+            $toast.addClass("on");
+            toastTimer = setTimeout(function () { $toast.removeClass("on"); }, 2000);
+        };
+
+        var confettiBurst = function (x, y) {
+            if (reduceMotion) return;
+
+            var $layer = $clover.find(".confetti");
+            for (var i = 0; i < 18; i++) {
+                var $p = $("<i></i>").css({left: x, top: y, backgroundColor: confettiColor[i % confettiColor.length]});
+                var angle = Math.random() * Math.PI * 2;
+                var dist = 50 + Math.random() * 90;
+                var rot = Math.random() * 720 - 360;
+                $layer.append($p);
+                $p[0].animate([
+                    {transform: "translate(-50%, -50%) rotate(0)", opacity: 1},
+                    {transform: "translate(calc(-50% + " + Math.cos(angle) * dist + "px), calc(-50% + " + (Math.sin(angle) * dist + 40) + "px)) rotate(" + rot + "deg)", opacity: 0}
+                ], {duration: 900 + Math.random() * 400, easing: "cubic-bezier(.2, .7, .4, 1)", fill: "forwards"}).onfinish = (function (el) {
+                    return function () { el.remove(); };
+                })($p[0]);
+            };
+        };
+
+        var leafOff = function (leaf, dx, dy) {
+            var key = $(leaf).data("leaf");
+            if ($.inArray(key, clover.off) > -1) return;
+
+            var dir = leafData[key].dir;
+            var first = clover.off.length === 0;
+            var boxRect = $clover[0].getBoundingClientRect();
+            var leafRect = leaf.getBoundingClientRect();
+
+            clover.off.push(key);
+            clover.last = key;
+            cloverSave();
+            $(leaf).addClass("off").removeClass("wiggle").attr({"tabindex": "-1", "aria-hidden": "true"});
+
+            leaf.animate([
+                {transform: "translate(" + dx + "px, " + dy + "px) rotate(0)", opacity: 1},
+                {transform: "translate(" + (dx + dir[0] * 120) + "px, " + (dy + dir[1] * 60 + 160) + "px) rotate(" + (dir[0] * 75) + "deg)", opacity: 0}
+            ], {duration: reduceMotion ? 1 : 900, easing: "cubic-bezier(.45, 0, .7, .5)", fill: "forwards"});
+
+            confettiBurst(leafRect.left - boxRect.left + leafRect.width / 2, leafRect.top - boxRect.top + leafRect.height / 2);
+            if (first) toastShow();
+            cloverRender();
+        };
+
+        // 이전에 뗀 잎 복원 (로그인 후 돌아왔을 때)
+        $.each(clover.off, function (i, key) {
+            $clover.find('.leaf[data-leaf="' + key + '"]').addClass("off").attr({"tabindex": "-1", "aria-hidden": "true"}).css("opacity", 0);
+        });
+        cloverRender();
+
+        var drag = null;
+        $clover.find(".leaf").on("pointerdown", function (e) {
+            if ($(this).hasClass("off")) return;
+            drag = {el: this, id: e.originalEvent.pointerId, x: e.clientX, y: e.clientY, dx: 0, dy: 0, k: 314 / $clover.find(".clover")[0].getBoundingClientRect().width};
+            $(this).addClass("drag");
+            try { this.setPointerCapture(drag.id); } catch (err) {};
+        });
+        $clover.find(".leaf").on("pointermove", function (e) {
+            if (!drag || drag.el !== this) return;
+            drag.dx = (e.clientX - drag.x) * drag.k;
+            drag.dy = (e.clientY - drag.y) * drag.k;
+            this.style.transform = "translate(" + drag.dx + "px, " + drag.dy + "px)";
+        });
+        $clover.find(".leaf").on("pointerup", function (e) {
+            if (!drag || drag.el !== this) return;
+            var d = drag;
+            drag = null;
+            $(this).removeClass("drag");
+            this.style.transform = "";
+            leafOff(this, d.dx, d.dy);
+        });
+        $clover.find(".leaf").on("pointercancel", function () {
+            if (!drag || drag.el !== this) return;
+            drag = null;
+            $(this).removeClass("drag");
+            this.style.transform = "";
+        });
+        // 모바일 : 잎을 끄는 동안 페이지 스크롤(touchmove) 막기
+        $clover.find(".leaf").each(function () {
+            this.addEventListener("touchmove", function (e) {
+                if (e.cancelable) e.preventDefault();
+            }, {passive: false});
+        });
+        /* 잎 흔들림 : 마우스를 떼도 한 바퀴 끝까지 재생 후 멈춤 */
+        if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
+            $clover.find(".leaf").on("mouseenter", function () {
+                if ($(this).hasClass("off")) return;
+                $(this).data("hover", true).addClass("wiggle");
+            }).on("mouseleave", function () {
+                $(this).data("hover", false);
+            }).on("animationiteration", function (e) {
+                if (e.originalEvent.animationName === "leafWiggle" && !$(this).data("hover")) $(this).removeClass("wiggle");
+            });
+        };
+        $clover.find(".leaf").on("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                leafOff(this, 0, 0);
+            };
+        });
+
+        $coupon.on("click", function (e) {
+            if (!$info.hasClass("open")) {
+                e.preventDefault();
+                return;
+            };
+
+            if (!isLogin()) {
+                e.preventDefault();
+                alert("로그인 후 쿠폰을 다운로드하실 수 있습니다.");
+                location.href = "/member/login.html?returnUrl=" + encodeURIComponent(location.pathname + location.search);
+                return;
+            };
+
+            clover.down = true;
+            cloverSave();
+            cloverRender();
+        });
+
+
+        /* 컬러 스와치 */
+        var $sec03 = $("#promotion_box .p_sec03");
+        $sec03.find(".swatch button").on("click", function () {
+            var $btn = $(this);
+
+            $btn.addClass("on").siblings().removeClass("on");
+            $sec03.find(".img img").removeClass("on").eq($btn.data("idx")).addClass("on");
+            $sec03.find(".tit .cutlery").css("color", $btn.data("color"));
+            $sec03.find(".btn_shop").attr("href", $btn.data("href"));
+        });
+
+
+        /* swiper */
+        var swiper01 = null;
+        var swiper02 = null;
+        var swiper03 = null;
+        var swiper04 = null;
+        var swiperMo = null;
+
+        var slideGap = function (pc, mo) {
+            var w = window.innerWidth;
+
+            return isMo() ? Math.min(Math.max(w * mo / 360, mo * 0.85), mo * 1.5) : Math.min(Math.max(w * pc / 1920, pc * 0.5), pc);
+        };
+
+        // MO 슬라이드 간격 = 조상 요소 좌우 패딩값
+        var padGap = function (el) {
+            return parseFloat($(el).css("padding-left")) || 0;
+        };
+        var pointGap = function () {
+            return isMo() ? padGap("#promotion_box .p_sec04") : slideGap(24, 16);
+        };
+
+        var swiperInView = function (swiper, el) {
+            swiper.autoplay.stop();
+            if (reduceMotion) return;
+            if (!("IntersectionObserver" in window)) { swiper.autoplay.start(); return; };
+
+            new IntersectionObserver(function (entries) {
+                $.each(entries, function (i, entry) {
+                    if (entry.isIntersecting) { if (!swiper.autoplay.running) swiper.autoplay.start(); }
+                    else swiper.autoplay.stop();
+                });
+            }, {threshold: 0.3}).observe(el);
+        };
+
+        var pointReveal = function () {
+            if (!$("#promotion_box .p_sec04 .point_wrap").hasClass("on")) return;
+            if (!swiper02) { $("#promotion_box .p_sec04 .card").addClass("reveal"); return; };
+
+            // 넘길 때마다 이미지 → 텍스트 리빌 다시 재생
+            var $card = $(swiper02.slides).eq(swiper02.activeIndex).find(".card");
+            $card.removeClass("reveal");
+            void $card[0].offsetWidth;
+            $card.addClass("reveal");
+        };
+
+        var swiperCreator = function () {
+            if (typeof Swiper === "undefined") return;
+
+            if (!swiper02) {
+                swiper02 = new Swiper("#promotion_box .swiper02", {
+                    slidesPerView: 1,
+                    spaceBetween: pointGap(),
+                    speed: 600,
+                    on: {
+                        slideChange: function () {
+                            $("#promotion_box .p_sec04 .tab button").removeClass("on").eq(this.activeIndex).addClass("on");
+                            pointReveal();
+                        },
+                        slideChangeTransitionEnd: function () {
+                            // 화면에서 빠진 카드는 리빌 초기화 (다시 넘어왔을 때 재생)
+                            $(this.slides).not($(this.slides).eq(this.activeIndex)).find(".card").removeClass("reveal");
+                        }
+                    }
+                });
+            } else {
+                swiper02.params.spaceBetween = pointGap();
+                swiper02.update();
+            };
+
+            if (swiperMo === isMo()) {
+                $.each([swiper03, swiper04], function (i, s) {
+                    if (!s) return;
+                    s.params.spaceBetween = padGap($(s.el).closest(".cont"));
+                    s.update();
+                });
+                return;
+            };
+            swiperMo = isMo();
+
+            $.each([swiper01, swiper03, swiper04], function (i, s) {
+                if (s) s.destroy(true, true);
+            });
+            swiper01 = swiper03 = swiper04 = null;
+
+            if (!swiperMo) return;
+
+            // 키비주얼 : 이미지 2장 3초 자동 롤링 (MO)
+            swiper01 = new Swiper("#promotion_box .swiper01", {
+                loop: true,
+                speed: 800,
+                autoplay: {delay: 3000, disableOnInteraction: false},
+            });
+            swiperInView(swiper01, $("#promotion_box .p_keyvisual")[0]);
+
+            swiper03 = new Swiper("#promotion_box .swiper03", {
+                spaceBetween: padGap("#promotion_box .p_sec05 .cont"),
+                speed: 600,
+                pagination: {el: "#promotion_box .pagination03", clickable: true},
+            });
+
+            swiper04 = new Swiper("#promotion_box .swiper04", {
+                spaceBetween: padGap("#promotion_box .p_sec06 .cont"),
+                speed: 600,
+                pagination: {el: "#promotion_box .pagination04", clickable: true},
+            });
+        };
+
+        swiperCreator();
+        $(window).on("resize", swiperCreator);
+
+        $("#promotion_box .p_sec04 .tab button").on("click", function () {
+            if (swiper02) swiper02.slideTo($(this).index());
+        });
+
+
+        /* 패럴렉스 */
+        var $wide = $("#promotion_box .sec_wrap .wide");
+        var parallaxTick = false;
+        var parallax = function () {
+            var vh = window.innerHeight;
+
+            parallaxTick = false;
+            $wide.each(function () {
+                var rect = this.getBoundingClientRect();
+                if (rect.bottom < 0 || rect.top > vh) return;
+
+                var img = $(this).find("img")[0];
+                var p = Math.min(Math.max((vh - rect.top) / (vh + rect.height), 0), 1);
+                img.style.transform = "translate3d(0, " + (-(img.offsetHeight - rect.height) * (1 - p)) + "px, 0)";
+            });
+        };
+
+        if (!reduceMotion) {
+            $(window).on("load scroll resize", function () {
+                if (parallaxTick) return;
+                parallaxTick = true;
+                requestAnimationFrame(parallax);
+            });
+            parallax();
+        };
+
+
+        /* animation */
+        $(window).on("load scroll", function () {
+            var offset = isMo() ? 200 : 300;
+
+            $("#promotion_box .fadeEl").each(function () {
+                if (!$(this).hasClass("on") && $(window).scrollTop() + $(window).innerHeight() - offset >= $(this).offset().top) {
+                    $(this).addClass("on");
+                    if ($(this).hasClass("point_wrap")) pointReveal();
+                };
+            });
+        });
+    });
+</script>

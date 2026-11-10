@@ -1,0 +1,134 @@
+@charset "utf-8";
+/*
+    메인 히어로 슬라이드 (flybaby.berlin mu-slideshow 이식)
+    - 배너관리자 영역: 메인 : 히어로 슬라이드 (index.html의 .fb-hero-track area_id)
+    - 이 파일은 index.html에서만 로드된다(메인 전용 — index.html 인라인 <style>은 카페24가 잘라내므로 외부 파일로).
+    - 레퍼런스 폰트 Fold → General Sans 대체. 크기/자간은 화면 폭 기준 보정값(레퍼런스값 → 우리값):
+        대제목  41/44 → 38.5/44 ls .47 (<1000)   62/62.4 → 58.3/62.4 ls .7 (>=1000)
+        뱃지    16/23 → 14.8/23 ls .55
+        설명    14/24 → 12.9/24 ls .46 (<1000)   16/23 → 14.8/23 ls .55 (>=1000)
+        버튼    14 ls1.7 → 13.7 ls 2.2 (<1000)   16 ls1.7 → 15.36 ls 2.47 (>=1000)
+*/
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap');
+
+/* 전체 폭: 메인의 #contents는 이미 화면 폭(main.css) — 섹션 공통 규칙 #contents > section(max-width 112rem, 패딩, 상단 여백 12rem)만 해제 */
+#contents > section.fb-hero { max-width: none; padding: 0; margin: 0; overflow: hidden; }
+
+.fb-hero {
+    --fb-hero-gutter: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    min-height: 736px;
+    color: #fff;
+    background: #ebebeb;
+    font-family: "General Sans", "Pretendard Variable", sans-serif;
+}
+@media screen and (min-width: 700px) { .fb-hero { --fb-hero-gutter: 32px; } }
+@media screen and (min-width: 1000px) and (max-width: 1470px) { .fb-hero { min-height: 640px; } }
+@media screen and (min-width: 1471px) { .fb-hero { min-height: 800px; } }
+
+.fb-hero-track { position: absolute; inset: 0; }
+
+/* 슬라이드: .is-active 크로스페이드 */
+.fb-hero .fb-hero-slide {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;
+    opacity: 0; visibility: hidden; transition: opacity .6s ease;
+}
+.fb-hero .fb-hero-slide.is-active { opacity: 1; visibility: visible; z-index: 1; }
+
+/* 미디어: 이미지(PC/모바일) 위에 영상. 스크림은 그 위, 텍스트는 맨 위 */
+.fb-hero-media { position: absolute; inset: 0; z-index: 0; }
+.fb-hero-media img,
+.fb-hero-media video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.fb-hero-media .m_iframe_box { position: absolute; inset: 0; }
+.fb-hero-media--mo { display: none; }
+.fb-hero-slide[data-img="mo"] .fb-hero-media--pc { display: none; }
+.fb-hero-slide[data-img="mo"] .fb-hero-media--mo { display: block; }
+.fb-hero-video { position: absolute; inset: 0; z-index: 1; display: none; }
+.fb-hero-slide[data-video="pc"] .fb-hero-video--pc,
+.fb-hero-slide[data-video="mo"] .fb-hero-video--mo { display: block; }
+/* 서버가 <video style="width:100%;height:100%;aspect-ratio:16/9"> 인라인 스타일을 붙인다 → 화면을 꽉 채우도록 덮어쓴다 */
+.fb-hero-video video { position: absolute; inset: 0; width: 100% !important; height: 100% !important; aspect-ratio: auto !important; object-fit: cover; opacity: 0; transition: opacity .4s ease; }
+.fb-hero-video video.is-ready { opacity: 1; }
+.fb-hero .fb-hero-slide::after {
+    content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0) 55%);
+}
+
+/* 텍스트 */
+.fb-hero-content {
+    position: relative; z-index: 2;
+    display: flex; flex-direction: column; align-items: flex-start; gap: 32px;
+    width: 100%; box-sizing: border-box;
+    padding: 64px var(--fb-hero-gutter) 68px;
+}
+.fb-hero-badge, .fb-hero-title, .fb-hero-desc { margin: 0; color: #fff; text-transform: none; }
+.fb-hero-badge {
+    display: inline-flex; align-items: center; padding: 6px 14px; border-radius: 999px;
+    background: rgba(255,255,255,.1); -webkit-backdrop-filter: blur(65px); backdrop-filter: blur(65px);
+    font-weight: 400; font-size: 14.8px; line-height: 23px; letter-spacing: .55px;
+}
+.fb-hero-badge:empty, .fb-hero-desc:empty { display: none; }
+.fb-hero-text { display: flex; flex-direction: column; gap: 16px; max-width: 480px; }
+.fb-hero .fb-hero-title { font-weight: 500; font-size: 38.5px; line-height: 44px; letter-spacing: .47px; }
+.fb-hero .fb-hero-desc { font-weight: 400; font-size: 12.9px; line-height: 24px; letter-spacing: .46px; }
+.fb-hero a.fb-hero-btn {
+    box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center;
+    width: 100%; height: 50px; padding: 0 32px; border-radius: 999px;
+    background: #fff; color: #1c1c1c; text-decoration: none; text-transform: uppercase; font-family: inherit;
+    font-weight: 500; font-size: 13.7px; line-height: 1; letter-spacing: 2.2px;
+}
+.fb-hero a.fb-hero-btn:empty { display: none; }
+
+/* 컨트롤: 진행 막대(bullet) + 재생/일시정지 */
+.fb-hero-controls {
+    position: absolute; z-index: 2; right: var(--fb-hero-gutter); bottom: 22px;
+    display: flex; align-items: center; gap: 6px;
+}
+.fb-hero-bullets {
+    display: flex; align-items: center; gap: 3px; padding: 6px; border-radius: 999px;
+    background: rgba(255,255,255,.2); -webkit-backdrop-filter: blur(50px); backdrop-filter: blur(50px);
+}
+.fb-hero-bullet {
+    position: relative; flex-shrink: 0; width: 6px; height: 6px; padding: 0; border: 0; border-radius: 999px;
+    background: none; cursor: pointer; transition: width .2s ease; -webkit-appearance: none; appearance: none;
+}
+.fb-hero-bullet span { position: absolute; inset: 0; border-radius: inherit; }
+.fb-hero-bullet .track { background: rgba(255,255,255,.3); opacity: 0; }
+.fb-hero-bullet .fill { width: 100%; background: #fff; }
+.fb-hero-bullet.is-active { width: 46px; }
+.fb-hero-bullet.is-active .track { opacity: 1; }
+.fb-hero-bullet.is-active .fill { width: var(--fb-hero-progress, 0%); }
+.fb-hero-playpause {
+    display: inline-flex; flex-shrink: 0; align-items: center; justify-content: center;
+    width: 24px; height: 24px; padding: 0; border: 0; border-radius: 999px;
+    background: transparent; -webkit-backdrop-filter: blur(50px); backdrop-filter: blur(50px);
+    color: #fff; cursor: pointer; -webkit-appearance: none; appearance: none;
+}
+.fb-hero-playpause svg { display: block; width: 12px; height: 12px; }
+.fb-hero-playpause .icon-play { display: none; }
+.fb-hero-playpause.is-paused .icon-pause { display: none; }
+.fb-hero-playpause.is-paused .icon-play { display: block; }
+
+/* 배너가 채워지기 전(원문 {#…} 노출 방지): JS가 살아 있을 때만 숨긴다 */
+.mb-js .fb-hero:not(.is-ready) .fb-hero-track,
+.mb-js .fb-hero:not(.is-ready) .fb-hero-controls { visibility: hidden; }
+.fb-hero-controls[hidden] { display: none; }
+
+@media screen and (min-width: 1000px) {
+    .fb-hero-content { padding: 64px 48px; max-width: 720px; }
+    .fb-hero-text { max-width: 621px; }
+    .fb-hero .fb-hero-title { font-size: 58.3px; line-height: 62.4px; letter-spacing: .7px; }
+    .fb-hero .fb-hero-desc { font-size: 14.8px; line-height: 23px; letter-spacing: .55px; }
+    .fb-hero a.fb-hero-btn { width: auto; font-size: 15.36px; letter-spacing: 2.47px; }
+    .fb-hero-controls { right: 48px; bottom: 48px; gap: 8px; }
+    .fb-hero-bullets { gap: 4px; padding: 8px; }
+    .fb-hero-bullet { width: 8px; height: 8px; }
+    .fb-hero-bullet.is-active { width: 60px; }
+    .fb-hero-playpause { width: 32px; height: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .fb-hero .fb-hero-slide, .fb-hero-video video { transition: none; }
+}

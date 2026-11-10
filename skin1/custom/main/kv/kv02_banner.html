@@ -1,0 +1,25 @@
+<!--
+    키비주얼 : 02 배너형 - 가로 960x640 둥근 배너가 가운데 정렬로 흐르고, 글씨는 이미지 아래 (헤더는 흰 배경)
+    앱스토어 - 배너관리자 - [메인 : 키비주얼 배너형] 에서 수정가능합니다
+    이미지 1 = 이미지(960x640, 2배 1920x1280 권장) / 링크 1 = 이미지 클릭 시 이동(비우면 클릭 안 됨)
+    텍스트 1 = 대제목(줄바꿈 <br>) / 텍스트 2 = 설명(줄바꿈 <br>, 비우면 숨김)
+-->
+<section class="m_sec01 main_visual kv_banner">
+    <div class="swiper swiper_visual morenvy-banner-area" area_id="9d04">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide morenvy-banner">
+                <div class="bg">
+                    <a href="{#link_1}" target="{#target_1}" class="kv_link"></a>
+                    {#imgTag_1}
+                </div>
+
+                <div class="txt">
+                    <h2>{#text_1}</h2>
+                    <p>{#text_2}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--@import(/custom/main/kv/common/navi.html)-->
+</section>
