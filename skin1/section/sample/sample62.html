@@ -1,0 +1,513 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- 여기부터 복사 -->
+
+<div class="project_box">
+    <!-- 기획전 섹션 01 -->
+    <div class="p_sec01">
+        <video src="https://player-api.charlla.io/mp4/e8t4oea6l6i" autoplay muted loop playsinline></video>
+    </div>
+
+    <!-- 네비 -->
+    <div class="p_tab">
+        <div class="tab_in">
+            <ul>
+                <li class="on"><a href="#" data-target=".p_sec02">선착순 30% 쿠폰</a></li>
+                <li><a href="#" data-target=".p_sec03">장바구니 쿠폰팩</a></li>
+                <li><a href="#" data-target=".p_sec04">아우터 에디션</a></li>
+                <li><a href="#" data-target=".p_sec05">카테고리 특가</a></li>
+                <li><a href="#" data-target=".p_sec06">역시즌특가</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 02 -->
+    <div class="p_sec02">
+        <div class="bg">
+            <img src="/web/upload/project/project_261111/m/coupon.webp" alt="선착순 쿠폰 매일 오전 10시 스페셜 혜택 선착순 쿠폰 20% 최대 10만원 30명 한정">
+            <a href="#" class="coupon coupon_day" title="선착순 쿠폰 다운로드"></a>
+        </div>
+
+        <div class="notice">
+            <button type="button" class="notice_toggle"><span>+</span> 유의사항</button>
+            <ul>
+                <li>다운로드기간 : 매일 오전 10:00 ~11:00</li>
+                <li>사용기간 : 발급 당일 10:00 ~ 다음날 9:59분까지</li>
+                <li>ID당 1회 발급 가능합니다.</li>
+                <li>쿠폰 적용 가능 상품은 수시로 변경되며, 일부 품목은 적용이 제외될 수 있습니다.</li>
+                <li>쿠폰은 환불 시 사용 기간 내에 한해 원복되며, 다른 쿠폰과 함께 사용할 수 없습니다.</li>
+                <li>환불 시 사유에 관계없이, 할인 금액을 제외한 실제 결제 금액만 환불됩니다.</li>
+                <li>쿠폰은 회원에 한해 다운로드 가능합니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 03 -->
+    <div class="p_sec03">
+        <div class="bg">
+            <img src="/web/upload/project/project_261111/m/cart.webp" alt="장바구니 쿠폰팩 담을수록 혜택이 커지는 블프 혜택 30만원 이상 구매 시 30,000원, 15만원 이상 구매 시 15,000원, 10만원 이상 구매 시 10,000원, 7만원 이상 구매 시 7,000원">
+            <a href="/exec/front/newcoupon/IssueDownload?coupon_no=6086737591500003317&is_popup=T" class="coupon cart01" title="30,000원 쿠폰 다운로드"></a>
+            <a href="/exec/front/newcoupon/IssueDownload?coupon_no=6086737587100003316&is_popup=T" class="coupon cart02" title="15,000원 쿠폰 다운로드"></a>
+            <a href="/exec/front/newcoupon/IssueDownload?coupon_no=6086737581900003315&is_popup=T" class="coupon cart03" title="10,000원 쿠폰 다운로드"></a>
+            <a href="/exec/front/newcoupon/IssueDownload?coupon_no=6086737576900003314&is_popup=T" class="coupon cart04" title="7,000원 쿠폰 다운로드"></a>
+            <a href="/exec/front/newcoupon/IssueDownload?coupon_no=6086737591500003317,6086737587100003316,6086737581900003315,6086737576900003314&is_popup=T" class="coupon cart_all" title="쿠폰팩 한번에 다운받기"></a>
+        </div>
+
+        <div class="notice">
+            <button type="button" class="notice_toggle"><span>+</span> 유의사항</button>
+            <ul>
+                <li>쿠폰 발급 및 사용 기간은 2026년 11월 16일 10:00시부터<br>2026년 11월 23일 09:59시까지 적용됩니다.</li>
+                <li>ID당 1회 발급 가능합니다.</li>
+                <li>7만원 이상 7천원,10만원 이상 구매 시 1만원, 15만원 이상 구매 시 1만 5천원, 30만원 이상 구매시 3만원 적용 가능합니다.</li>
+                <li>쿠폰 적용 가능 상품은 수시로 변경되며, 일부 품목은 적용이 제외될 수 있습니다.</li>
+                <li>쿠폰은 환불 시 사용 기간 내에 한해 원복되며, 다른 쿠폰과 함께 사용할 수 없습니다.</li>
+                <li>환불 시 사유에 관계없이, 할인 금액을 제외한 실제 결제 금액만 환불됩니다.</li>
+                <li>쿠폰은 할인 적용 후 결제 금액 기준으로 적용됩니다.</li>
+                <li>쿠폰은 회원에 한해 다운로드 가능합니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 04 -->
+    <div class="p_sec04">
+        <div class="bg"><img src="/web/upload/project/project_261111/m/outer_bg.webp" alt="아우터 에디션 지금 가장 필요한 아우터 큐레이션"></div>
+
+        <div class="tab_box">
+            <ul class="tab">
+                <li class="on"><button type="button">코트</button></li>
+                <li><button type="button">점퍼 / 패딩</button></li>
+                <li><button type="button">트위드 / 재킷</button></li>
+                <li><button type="button">무스탕 / 퍼</button></li>
+                <li><button type="button">가디건</button></li>
+            </ul>
+        </div>
+
+        <div class="panel_wrap">
+            <div class="panel on">
+                <img src="/web/upload/project/project_261111/m/outer_01.webp" alt="벨티드 맥코트, 카라 미디코트, 부클 하프 코트, 부클 하이넥 미디코트">
+                <a href="https://roem.com/product/detail.html?product_no=6441" class="prd prd01" title="벨티드 맥코트"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6442" class="prd prd02" title="카라 미디코트"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6519" class="prd prd03" title="부클 하프 코트"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6568" class="prd prd04" title="부클 하이넥 미디코트"></a>
+                <a href="https://roem.com/category/%EC%95%84%EC%9A%B0%ED%84%B0/27/" class="btn" title="아우터 에디션 보러가기"></a>
+            </div>
+            <div class="panel">
+                <img src="/web/upload/project/project_261111/m/outer_02.webp" alt="벨티드 숏 다운, 하이넥 후드 숏다운, 더플 미디 다운, 하이넥 숏패딩">
+                <a href="https://roem.com/product/detail.html?product_no=6552" class="prd prd01" title="벨티드 숏 다운"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6579" class="prd prd02" title="하이넥 후드 숏다운"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6578" class="prd prd03" title="더플 미디 다운"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6611" class="prd prd04" title="하이넥 숏패딩"></a>
+                <a href="https://roem.com/category/%EC%95%84%EC%9A%B0%ED%84%B0/27/" class="btn" title="아우터 에디션 보러가기"></a>
+            </div>
+            <div class="panel">
+                <img src="/web/upload/project/project_261111/m/outer_03.webp" alt="헤어리 세미오버핏 울 자켓, 미디 카라 울 자켓, 헤링본 테일러드 자켓, 칼라리스 울 자켓">
+                <a href="https://roem.com/product/detail.html?product_no=6529" class="prd prd01" title="헤어리 세미오버핏 울 자켓"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6576" class="prd prd02" title="미디 카라 울 자켓"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6448" class="prd prd03" title="헤링본 테일러드 자켓"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6584" class="prd prd04" title="칼라리스 울 자켓"></a>
+                <a href="https://roem.com/category/%EC%95%84%EC%9A%B0%ED%84%B0/27/" class="btn" title="아우터 에디션 보러가기"></a>
+            </div>
+            <div class="panel">
+                <img src="/web/upload/project/project_261111/m/outer_04.webp" alt="하이넥 숏 퍼자켓, 미디 카라 무스탕, 리버시블 미디 무스탕, 하이넥 카라 무스탕">
+                <a href="https://roem.com/product/detail.html?product_no=6541" class="prd prd01" title="하이넥 숏 퍼자켓"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6536" class="prd prd02" title="미디 카라 무스탕"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6553" class="prd prd03" title="리버시블 미디 무스탕"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6554" class="prd prd04" title="하이넥 카라 무스탕"></a>
+                <a href="https://roem.com/category/%EC%95%84%EC%9A%B0%ED%84%B0/27/" class="btn" title="아우터 에디션 보러가기"></a>
+            </div>
+            <div class="panel">
+                <img src="/web/upload/project/project_261111/m/outer_05.webp" alt="캐시미어 가디건, 아가일 가디건, 우븐매칭 케이블 가디건, 라운드넥 케이블 가디건">
+                <a href="https://roem.com/product/detail.html?product_no=6470" class="prd prd01" title="캐시미어 가디건"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6473" class="prd prd02" title="아가일 가디건"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6472" class="prd prd03" title="우븐매칭 케이블 가디건"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6372" class="prd prd04" title="라운드넥 케이블 가디건"></a>
+                <a href="https://roem.com/category/%EC%95%84%EC%9A%B0%ED%84%B0/27/" class="btn" title="아우터 에디션 보러가기"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 05 -->
+    <div class="p_sec05">
+        <div class="bg"><img src="/web/upload/project/project_261111/m/deal_bg.webp" alt="카테고리 특가 오전 10시 오픈, 지금 꼭 사야 할 베스트 라인업"></div>
+
+        <p class="count"><span class="label">종료까지</span> <span class="time">00:00:00</span></p>
+
+        <div class="tab_box">
+            <ul class="tab">
+                <li><button type="button"><span class="date">11.16(월) - 17(화)</span> <b>아우터</b></button></li>
+                <li><button type="button"><span class="date">11.18(수)</span> <b>상의 / 원피스</b></button></li>
+                <li><button type="button"><span class="date">11.19(목)</span> <b>하의</b></button></li>
+                <li><button type="button"><span class="date">11.20(금) - 22(일)</span> <b class="point">앵콜베스트</b></button></li>
+            </ul>
+        </div>
+
+        <div class="panel_wrap">
+            <div class="panel" data-start="2026-11-16T10:00:00+09:00" data-end="2026-11-18T10:00:00+09:00">
+                <img class="on" src="/web/upload/project/project_261111/m/deal_outer_on_v2.webp" alt="테일러드 카라 더블 롱 코트, 하이넥 카라 무스탕, 헤어리 세미오버핏 울 자켓, 미디 카라 울 자켓 아우터 보러가기">
+                <img class="soon" src="/web/upload/project/project_261111/m/deal_outer_soon_v2.webp" alt="아우터 특가 11.16(월) 오전 10시 오픈">
+                <img class="end" src="/web/upload/project/project_261111/m/deal_outer_end_v2.webp" alt="아우터 특가 종료">
+                <a href="https://roem.com/product/detail.html?product_no=6510" class="prd prd01" title="테일러드 카라 더블 롱 코트"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6554" class="prd prd02" title="하이넥 카라 무스탕"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6529" class="prd prd03" title="헤어리 세미오버핏 울 자켓"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6576" class="prd prd04" title="미디 카라 울 자켓"></a>
+                <a href="https://roem.com/product/project.html?cate_no=5930" class="btn" title="아우터 보러가기"></a>
+            </div>
+            <div class="panel" data-start="2026-11-18T10:00:00+09:00" data-end="2026-11-19T10:00:00+09:00">
+                <img class="on" src="/web/upload/project/project_261111/m/deal_top_on.webp" alt="다이아 조직 풀오버, 자켓형 2IN1 롱 원피스, 캐시미어 가디건, 앞 리본 디테일 가디건 상의+원피스 보러가기">
+                <img class="soon" src="/web/upload/project/project_261111/m/deal_top_soon.webp" alt="상의 / 원피스 특가 11.18(수) 오전 10시 오픈">
+                <img class="end" src="/web/upload/project/project_261111/m/deal_top_end.webp" alt="상의 / 원피스 특가 종료">
+                <a href="https://roem.com/product/detail.html?product_no=6505" class="prd prd01" title="다이아 조직 풀오버"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6418" class="prd prd02" title="자켓형 2IN1 롱 원피스"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6470" class="prd prd03" title="캐시미어 가디건"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6499" class="prd prd04" title="앞 리본 디테일 가디건"></a>
+                <a href="https://roem.com/product/project.html?cate_no=5931" class="btn" title="상의+원피스 보러가기"></a>
+            </div>
+            <div class="panel" data-start="2026-11-19T10:00:00+09:00" data-end="2026-11-20T10:00:00+09:00">
+                <img class="on" src="/web/upload/project/project_261111/m/deal_bottom_on.webp" alt="스트라이프 와이드 데님 팬츠, (숏ver) 와이드 데님 팬츠, 슬릿 디테일 울 미니 스커트, 기모 울 쇼츠 하의 보러가기">
+                <img class="soon" src="/web/upload/project/project_261111/m/deal_bottom_soon.webp" alt="하의 특가 11.19(목) 오전 10시 오픈">
+                <img class="end" src="/web/upload/project/project_261111/m/deal_bottom_end.webp" alt="하의 특가 종료">
+                <a href="https://roem.com/product/detail.html?product_no=6398" class="prd prd01" title="스트라이프 와이드 데님 팬츠"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6400" class="prd prd02" title="(숏ver) 와이드 데님 팬츠"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6508" class="prd prd03" title="슬릿 디테일 울 미니 스커트"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6537" class="prd prd04" title="기모 울 쇼츠"></a>
+                <a href="https://roem.com/product/project.html?cate_no=5932" class="btn" title="하의 보러가기"></a>
+            </div>
+            <div class="panel" data-start="2026-11-20T10:00:00+09:00" data-end="2026-11-23T10:00:00+09:00">
+                <img class="on" src="/web/upload/project/project_261111/m/deal_encore_on.webp" alt="부클 하이넥 미디코트, 테일러드 카라 더블 롱 코트, 헤링본 테일러드자켓, 자켓형 2IN1 롱 원피스 앵콜베스트 보러가기">
+                <img class="soon" src="/web/upload/project/project_261111/m/deal_encore_soon.webp" alt="앵콜베스트 특가 11.20(금) 오전 10시 오픈">
+                <img class="end" src="/web/upload/project/project_261111/m/deal_encore_end.webp" alt="앵콜베스트 특가 종료">
+                <a href="https://roem.com/product/detail.html?product_no=6568" class="prd prd01" title="부클 하이넥 미디코트"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6510" class="prd prd02" title="테일러드 카라 더블 롱 코트"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6448" class="prd prd03" title="(유럽수입원단) 헤링본 테일러드자켓"></a>
+                <a href="https://roem.com/product/detail.html?product_no=6418" class="prd prd04" title="자켓형 2IN1 롱 원피스"></a>
+                <a href="https://roem.com/product/project.html?cate_no=5933" class="btn" title="앵콜베스트 보러가기"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 06 -->
+    <div class="p_sec06">
+        <div class="bg"><img src="/web/upload/project/project_261111/m/offseason.webp" alt="역시즌 특가 한정 수량으로 만나는 압도적 혜택 꼬임 캡소매 풀오버, 오프숄더 반팔 풀오버, 반팔 랩 원피스, 반팔 2in1 미니 원피스"></div>
+        <a href="https://roem.com/product/detail.html?product_no=6316" class="prd prd01" title="꼬임 캡소매 풀오버"></a>
+        <a href="https://roem.com/product/detail.html?product_no=6309" class="prd prd02" title="오프숄더 반팔 풀오버"></a>
+        <a href="https://roem.com/product/detail.html?product_no=6336" class="prd prd03" title="반팔 랩 원피스"></a>
+        <a href="https://roem.com/product/detail.html?product_no=6281" class="prd prd04" title="반팔 2in1 미니 원피스"></a>
+        <a href="https://roem.com/product/project.html?cate_no=5935" class="btn" title="혜택 상품 보러가기"></a>
+    </div>
+
+    <!-- 기획전 섹션 07 -->
+    <div class="p_sec07">
+        <a href="https://roem.com/myshop/membership.html"><img src="/web/upload/project/project_261111/m/bar01.webp" alt="신규회원 웰컴 혜택 바로가기"></a>
+        <img src="/web/upload/project/project_261111/m/bar02.webp" alt="시크릿 코드 입력 시 3천원 자동 할인 카카오톡 [로엠] 플러스 친구 맺고 전달되는 시크릿 코드를 확인해보세요.">
+    </div>
+</div>
+
+<style>
+    /* 공통 */
+    #container #contents {max-width: none; padding: 0;}
+    .project_box {width: 100%; background-color: #131b1e; font-family: "Pretendard", "Pretendard Variable", sans-serif; word-break: keep-all;}
+    .project_box * {box-sizing: border-box;}
+    .project_box > div {position: relative; font-size: 0; line-height: 0;}
+    .project_box img {display: block; width: 100%; max-width: none;}
+    .project_box a, .project_box a:hover {text-decoration: none;}
+    .project_box button {padding: 0; border: 0; background: none; font-family: inherit; cursor: pointer;}
+    .project_box ul {margin: 0; padding: 0; list-style: none;}
+    .project_box .bg {position: relative;}
+    .project_box .coupon, .project_box .prd, .project_box .btn {position: absolute; display: block;}
+
+    /* 유의사항 */
+    .project_box .notice {padding: 0 4.583vw 8.333vw; text-align: center;}
+    .project_box .notice_toggle {font-size: 2.778vw; font-weight: 700; line-height: 4.167vw; letter-spacing: -0.02em; color: #818181;}
+    .project_box .notice ul {display: none; padding-top: 2.639vw;}
+    .project_box .notice li {font-size: 2.778vw; line-height: 4.167vw; letter-spacing: -0.02em; color: #818181;}
+    .project_box .notice li::before {content: "•"; margin-right: 1.389vw;}
+
+    /* 기획전 섹션 01 */
+    .project_box .p_sec01 {aspect-ratio: 720 / 1280; background: url("/web/upload/project/project_261111/m/kv.webp") center / cover no-repeat;}
+    .project_box .p_sec01 video {display: block; width: 100%; height: 100%; object-fit: cover;}
+
+    /* 네비 */
+    .project_box .p_tab {height: 16.25vw;}
+    .project_box .p_tab .tab_in {top: 0; left: 0; right: 0; z-index: 99; height: 16.25vw; overflow-x: auto; background-color: #fff; scrollbar-width: none; transition: top 0.3s;}
+    .project_box .p_tab .tab_in::-webkit-scrollbar {display: none;}
+    .project_box .p_tab .tab_in.fix {position: fixed;}
+    .project_box .p_tab ul {display: flex; gap: 12.5vw; width: max-content; height: 100%; padding: 0 4.583vw;}
+    .project_box .p_tab a {position: relative; display: block; height: 100%; padding-top: 5.833vw; font-size: 4.167vw; line-height: 4.861vw; letter-spacing: -0.02em; white-space: nowrap; color: rgba(0, 0, 0, 0.5);}
+    .project_box .p_tab li.on a {font-weight: 700; color: #000;}
+    .project_box .p_tab li.on a::after {content: ""; position: absolute; top: 11.944vw; left: 0; right: 0; height: 0.278vw; background-color: #000;}
+
+    /* 기획전 섹션 02 */
+    .project_box .p_sec02 .coupon_day {top: 56.496%; left: 4.514%; width: 90.972%; height: 31.594%;}
+
+    /* 기획전 섹션 03 */
+    .project_box .p_sec03 .coupon {left: 4.514%; width: 90.972%; height: 12.569%;}
+    .project_box .p_sec03 .cart01 {top: 22.552%;}
+    .project_box .p_sec03 .cart02 {top: 37.548%;}
+    .project_box .p_sec03 .cart03 {top: 52.544%;}
+    .project_box .p_sec03 .cart04 {top: 67.541%;}
+    .project_box .p_sec03 .cart_all {top: 85.904%; height: 9.397%;}
+
+    /* 탭 */
+    .project_box .tab_box {position: absolute; left: 0; right: 0; overflow-x: auto; scrollbar-width: none;}
+    .project_box .tab_box::-webkit-scrollbar {display: none;}
+    .project_box .tab {display: flex; gap: 3.75vw; width: max-content; padding: 0 4.543vw;}
+    .project_box .tab button {display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 0 4.167vw; border: 1px solid #808080; border-radius: 1.389vw; font-size: 4.167vw; line-height: 4.861vw; letter-spacing: -0.02em; white-space: nowrap; color: #fff;}
+    .project_box .tab li.on button {border-color: #fff; background-color: #fff; font-weight: 700; color: #000;}
+    .project_box .panel_wrap {position: absolute; left: 0; width: 100%;}
+    .project_box .panel {display: none; position: relative;}
+    .project_box .panel.on {display: block;}
+
+    /* 기획전 섹션 04 */
+    .project_box .p_sec04 .tab_box {top: 17.412%;}
+    .project_box .p_sec04 .tab button {height: 10.694vw;}
+    .project_box .p_sec04 .panel_wrap {top: 26.080%;}
+    .project_box .p_sec04 .prd {width: 44.306%; height: 39.414%;}
+    .project_box .p_sec04 .prd01 {top: 0.029%; left: 4.583%;}
+    .project_box .p_sec04 .prd02 {top: 0.029%; left: 51.25%;}
+    .project_box .p_sec04 .prd03 {top: 43.620%; left: 4.583%;}
+    .project_box .p_sec04 .prd04 {top: 43.620%; left: 51.25%;}
+    .project_box .p_sec04 .btn {top: 89.547%; left: 4.682%; width: 90.972%; height: 10.441%;}
+
+    /* 기획전 섹션 05 */
+    .project_box .p_sec05 .count {position: absolute; top: 14.569%; left: 0; right: 0; margin: 0; font-size: 4.861vw; font-weight: 700; line-height: 3.472vw; letter-spacing: -0.02em; text-align: center; color: #c993e8;}
+    .project_box .p_sec05 .tab_box {top: 19.166%;}
+    .project_box .p_sec05 .tab button {height: 17.778vw;}
+    .project_box .p_sec05 .tab .date {font-weight: 400; color: rgba(255, 255, 255, 0.5);}
+    .project_box .p_sec05 .tab b {font-weight: 400;}
+    .project_box .p_sec05 .tab li.on .date {color: rgba(0, 0, 0, 0.5);}
+    .project_box .p_sec05 .tab li.on b {font-weight: 700;}
+    .project_box .p_sec05 .tab .point {position: relative; color: #c993e8;}
+    .project_box .p_sec05 .tab .point::after {content: ""; position: absolute; top: -0.16em; right: -0.36em; width: 0.2em; height: 0.2em; border-radius: 50%; background-color: #c993e8;}
+    .project_box .p_sec05 .panel_wrap {top: 29.423%;}
+    .project_box .p_sec05 .panel img {display: none;}
+    .project_box .p_sec05 .panel.is_on img.on, .project_box .p_sec05 .panel.is_soon img.soon, .project_box .p_sec05 .panel.is_end img.end {display: block;}
+    .project_box .p_sec05 .panel:not(.is_on) a {display: none;}
+    .project_box .p_sec05 .prd {width: 44.306%; height: 40.287%;}
+    .project_box .p_sec05 .prd01 {top: 0.028%; left: 4.543%;}
+    .project_box .p_sec05 .prd02 {top: 0.028%; left: 51.269%;}
+    .project_box .p_sec05 .prd03 {top: 44.136%; left: 4.543%;}
+    .project_box .p_sec05 .prd04 {top: 44.136%; left: 51.269%;}
+    .project_box .p_sec05 .btn {top: 90.418%; left: 4.682%; width: 90.972%; height: 9.554%;}
+
+    /* 기획전 섹션 06 */
+    .project_box .p_sec06 .prd {width: 44.306%; height: 30.835%;}
+    .project_box .p_sec06 .prd01 {top: 17.279%; left: 4.447%;}
+    .project_box .p_sec06 .prd02 {top: 17.279%; left: 51.174%;}
+    .project_box .p_sec06 .prd03 {top: 51.038%; left: 4.447%;}
+    .project_box .p_sec06 .prd04 {top: 51.038%; left: 51.174%;}
+    .project_box .p_sec06 .btn {top: 86.463%; left: 4.586%; width: 90.972%; height: 7.313%;}
+</style>
+
+<script>
+    $(document).ready(function () {
+        const day = 24 * 60 * 60 * 1000;
+
+        /* 가로 스크롤 영역에서 선택된 항목이 보이게 */
+        function scrollToOn($box, $li) {
+            if (!$li.length) return;
+            const left = $li[0].offsetLeft - ($box.innerWidth() - $li.outerWidth()) / 2;
+            $box.stop().animate({scrollLeft: Math.max(0, left)}, 300);
+        };
+
+        /* 쿠폰 */
+        const dayStart = new Date("2026-11-16T10:00:00+09:00").getTime();
+        const dayCoupon = ["6086702915600003306", "6086703138300003308", "6086703144300003309", "6086703171800003310", "6086703185800003311", "6086703193700003312", "6086703197500003313"];
+
+        function setDayCoupon() {
+            const index = Math.min(Math.max(0, Math.floor((Date.now() - dayStart) / day)), dayCoupon.length - 1);
+            $(".project_box .coupon_day").attr("href", "/exec/front/newcoupon/IssueDownload?coupon_no=" + dayCoupon[index] + "&is_popup=T");
+        };
+        setDayCoupon();
+
+        function loginState() {
+            if ($(".xans-layout-statelogon").length) return true;
+            if ($(".xans-layout-statelogoff").length) return false;
+            return null;
+        };
+
+        $(".project_box .coupon").on("click", function (e) {
+            e.preventDefault();
+            if ($(this).hasClass("coupon_day")) setDayCoupon();
+            if (loginState() === false) {
+                alert("로그인 후 쿠폰을 다운로드하실 수 있습니다.");
+                location.href = "/member/login.html?returnUrl=" + encodeURIComponent(location.pathname + location.search);
+                return;
+            };
+            window.open($(this).attr("href"));
+        });
+
+        /* 유의사항 */
+        $(".project_box .notice_toggle").on("click", function () {
+            const $ul = $(this).next("ul");
+            $(this).find("span").text($ul.is(":visible") ? "+" : "−");
+            $ul.stop().slideToggle(300);
+        });
+
+        /* 아우터 에디션 */
+        $(".project_box .p_sec04 .tab button").on("click", function () {
+            const index = $(this).parent().index();
+            $(".project_box .p_sec04 .tab li").removeClass("on").eq(index).addClass("on");
+            $(".project_box .p_sec04 .panel").removeClass("on").eq(index).addClass("on");
+            scrollToOn($(".project_box .p_sec04 .tab_box"), $(this).parent());
+        });
+
+        /* 카테고리 특가 */
+        const $deal = $(".project_box .p_sec05");
+        const $dealPanel = $deal.find(".panel");
+        const $dealTab = $deal.find(".tab li");
+        let dealUser = false;
+
+        function dealTime(index) {
+            const $panel = $dealPanel.eq(index);
+            return {
+                start: new Date($panel.data("start")).getTime(),
+                end: new Date($panel.data("end")).getTime()
+            };
+        };
+
+        function dealCurrent(now) {
+            let current = 0;
+            $dealPanel.each(function (i) {
+                if (now >= dealTime(i).start) current = i;
+            });
+            return current;
+        };
+
+        function showDeal(index) {
+            if ($dealTab.eq(index).hasClass("on")) return;
+            $dealTab.removeClass("on").eq(index).addClass("on");
+            $dealPanel.removeClass("on").eq(index).addClass("on");
+            scrollToOn($deal.find(".tab_box"), $dealTab.eq(index));
+        };
+
+        function pad(n) {
+            return String(n).padStart(2, "0");
+        };
+
+        function dealTimer() {
+            const now = Date.now();
+            const current = dealCurrent(now);
+            const time = dealTime(current);
+
+            $dealPanel.each(function (i) {
+                const t = dealTime(i);
+                const state = now < t.start ? "is_soon" : now < t.end ? "is_on" : "is_end";
+                if (!$(this).hasClass(state)) $(this).removeClass("is_soon is_on is_end").addClass(state);
+            });
+
+            if (!dealUser) showDeal(current);
+
+            const before = now < time.start;
+            const gap = Math.max(0, (before ? time.start : time.end) - now);
+            const sec = Math.floor(gap / 1000);
+            $deal.find(".label").text(before ? "오픈까지" : "종료까지");
+            $deal.find(".time").text(pad(Math.floor(sec / 3600)) + ":" + pad(Math.floor(sec % 3600 / 60)) + ":" + pad(sec % 60));
+        };
+
+        $dealTab.find("button").on("click", function () {
+            dealUser = true;
+            showDeal($(this).parent().index());
+        });
+
+        dealTimer();
+        setInterval(dealTimer, 1000);
+
+        /* 네비 */
+        const $tab = $(".project_box .p_tab");
+        const $tabIn = $tab.find(".tab_in");
+        const $tabLi = $tabIn.find("li");
+        const headerSelector = "#mheader .h_fix_area, #mheader .h_sec01, #header";
+        const menuSelector = ".xans-project-package .menuCategory";
+
+        /* 헤더 박스 밖으로 나온 자식 줄(로엠 MO 상단 메뉴)까지 포함한 아래 끝 */
+        function boxBottom(el) {
+            let bottom = el.getBoundingClientRect().bottom;
+            $(el).children().each(function () {
+                if (this.offsetHeight) bottom = Math.max(bottom, this.getBoundingClientRect().bottom);
+            });
+            return bottom;
+        };
+
+        function headerHeight() {
+            let bottom = 0;
+            $(headerSelector).each(function () {
+                const pos = $(this).css("position");
+                if (pos !== "fixed" && pos !== "sticky") return;
+                bottom = Math.max(bottom, boxBottom(this));
+            });
+            return Math.max(0, bottom);
+        };
+
+        /* 스크롤하면 고정될 헤더 높이 */
+        function headerSize() {
+            let height = 0;
+            $("#mheader .h_fix_area, #mheader .h_sec01").each(function () {
+                height = Math.max(height, boxBottom(this) - this.getBoundingClientRect().top);
+            });
+            return height || headerHeight();
+        };
+
+        function fixedTop() {
+            let top = headerHeight();
+            $(menuSelector).each(function () {
+                if (!this.offsetHeight) return;
+                const pos = $(this).css("position");
+                if (pos !== "fixed" && pos !== "sticky") return;
+                const rect = this.getBoundingClientRect();
+                if (pos === "sticky" && rect.top > parseFloat($(this).css("top")) + 1) return;
+                top = Math.max(top, rect.bottom);
+            });
+            return top;
+        };
+
+        function menuHeightAt(targetTop) {
+            let height = 0;
+            $(menuSelector).each(function () {
+                if (!this.offsetHeight) return;
+                const $package = $(this).closest(".xans-project-package");
+                if (targetTop >= $package.offset().top + $package.outerHeight() - this.offsetHeight) height = Math.max(height, this.offsetHeight);
+            });
+            return height;
+        };
+
+        function setTab() {
+            const topH = fixedTop();
+            const fix = $tab[0].getBoundingClientRect().top <= topH;
+            $tabIn.toggleClass("fix", fix).css("top", fix ? topH : "");
+            const line = topH + $tabIn.outerHeight() + 2;
+            let current = 0;
+            $tabLi.each(function (i) {
+                const $target = $(".project_box " + $(this).find("a").data("target"));
+                if ($target.length && $target[0].getBoundingClientRect().top <= line) current = i;
+            });
+            if (!$tabLi.eq(current).hasClass("on")) {
+                $tabLi.removeClass("on").eq(current).addClass("on");
+                scrollToOn($tabIn, $tabLi.eq(current));
+            };
+        };
+
+        /* 로엠 헤더가 같은 스크롤에서 고정되므로 다음 프레임에 한 번 더 계산 */
+        function setTabLater() {
+            setTab();
+            requestAnimationFrame(setTab);
+        };
+
+        $(window).on("scroll resize load", setTabLater);
+        $("#mheader, " + headerSelector).each(function () {
+            new MutationObserver(setTab).observe(this, {attributes: true, attributeFilter: ["class"]});
+        });
+        setTab();
+
+        $tabLi.find("a").on("click", function (e) {
+            e.preventDefault();
+            const $target = $(".project_box " + $(this).data("target"));
+            if (!$target.length) return;
+            const targetTop = $target.offset().top;
+            $("html, body").stop().animate({
+                scrollTop: targetTop - headerSize() - menuHeightAt(targetTop) - $tabIn.outerHeight()
+            }, 600);
+        });
+    });
+</script>
