@@ -1,0 +1,1017 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- 여기부터 복사 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@500&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+
+<div id="pj_bomtoon" class="bt_wrap">
+    <h1 class="bt_sr">2027 봄툰 시즌그리팅 — Next Headliner</h1>
+
+    <!-- 기획전 섹션 01 : 인트로 영상 -->
+    <section class="bt_intro" id="bt_intro" aria-label="NEXT HEADLINER 타이틀 영상">
+        <div class="bt_intro_frame">
+            <div class="bt_intro_media">
+                <video src="https://player-api.charlla.io/mp4/f16hdyhh1i5" autoplay muted playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" aria-hidden="true"></video>
+            </div>
+        </div>
+        <button type="button" class="bt_skip">Skip ↓</button>
+    </section>
+
+    <div class="bt_dropzone" id="bt_dropzone" aria-hidden="true"></div>
+
+    <!-- 기획전 섹션 02 : 메인 비주얼 -->
+    <section class="bt_stage" id="bt_stage" aria-label="Next-Headliner 메인 비주얼: 무대 조명 아래 연주하는 밴드 실루엣">
+        <div class="bt_scene">
+            <div class="bt_beat">
+                <div class="bt_layer bt_bg"><img src="/morenvyimg/2027_bomtoonSG/main_bg.webp" alt=""></div>
+                <div class="bt_layer bt_members">
+                    <img src="/morenvyimg/2027_bomtoonSG/main_members.webp" alt="">
+                    <img class="bt_glow" src="/morenvyimg/2027_bomtoonSG/main_members.webp" alt="">
+                </div>
+                <div class="bt_layer bt_logo">
+                    <img class="bt_lg_next" src="/morenvyimg/2027_bomtoonSG/main_logo_next.webp" alt="" width="580" height="247">
+                    <img class="bt_lg_head" src="/morenvyimg/2027_bomtoonSG/main_logo_head.webp" alt="" width="965" height="242">
+                </div>
+                <div class="bt_slice bt_r" aria-hidden="true"></div>
+                <div class="bt_slice bt_c" aria-hidden="true"></div>
+                <div class="bt_slice bt_k" aria-hidden="true"></div>
+            </div>
+        </div>
+        <canvas class="bt_dust" id="bt_dust" aria-hidden="true"></canvas>
+        <div class="bt_fx bt_scan" aria-hidden="true"></div>
+        <div class="bt_fx bt_roll" aria-hidden="true"></div>
+        <div class="bt_fx bt_vignette" aria-hidden="true"></div>
+        <div class="bt_fx bt_dim" aria-hidden="true"></div>
+        <div class="bt_fx bt_enter" aria-hidden="true"></div>
+    </section>
+
+    <!-- 기획전 섹션 03 : 라인업 -->
+    <div class="bt_content bt_lineup_sec" id="bt_lineup">
+        <div class="bt_seam" id="bt_seam" aria-hidden="true"></div>
+        <div class="bt_lineup">
+            <img src="/morenvyimg/2027_bomtoonSG/lineup.webp" alt="세 밴드 라인업: WHOOSH SHUCKS, CTRL+RAGE Mayhem, 솔방울 NINE TO SIX" loading="lazy" width="1440" height="6357">
+            <div class="bt_lslice bt_r" aria-hidden="true"></div>
+            <div class="bt_lslice bt_c" aria-hidden="true"></div>
+            <div class="bt_lslice bt_k" aria-hidden="true"></div>
+            <div class="bt_gzone" data-y0="1940" data-y1="2200" style="top: 30.5175%; height: 4.09%;" aria-hidden="true"></div>
+            <div class="bt_gzone" data-y0="4020" data-y1="4390" style="top: 63.2374%; height: 5.8204%;" aria-hidden="true"></div>
+            <div class="bt_gzone" data-y0="6200" data-y1="6357" style="top: 97.5303%; height: 2.4697%;" aria-hidden="true"></div>
+            <div class="bt_unit" data-unit="WHOOSH SHUCKS">
+                <button type="button" class="bt_cell" data-x="55" data-y="662" data-w="323" data-h="981" style="left: 3.8194%; top: 10.4137%; width: 22.4306%; height: 15.4318%;" aria-label="목연 · 키보드 (미혹의 경계)"></button>
+                <button type="button" class="bt_cell" data-x="392" data-y="662" data-w="323" data-h="981" style="left: 27.2222%; top: 10.4137%; width: 22.4306%; height: 15.4318%;" aria-label="선의 · 드럼, 코러스 (선의의 폭력)"></button>
+                <button type="button" class="bt_cell" data-x="729" data-y="662" data-w="323" data-h="981" style="left: 50.625%; top: 10.4137%; width: 22.4306%; height: 15.4318%;" aria-label="태영 · 베이스 (스테이지 비하인드)"></button>
+                <button type="button" class="bt_cell" data-x="1066" data-y="662" data-w="323" data-h="981" style="left: 74.0278%; top: 10.4137%; width: 22.4306%; height: 15.4318%;" aria-label="윤원 · 보컬, 기타 (월요일의 구원자)"></button>
+            </div>
+            <div class="bt_unit" data-unit="CTRL+RAGE Mayhem">
+                <button type="button" class="bt_cell" data-x="55" data-y="2860" data-w="323" data-h="981" style="left: 3.8194%; top: 44.9898%; width: 22.4306%; height: 15.4318%;" aria-label="재희 · 드럼, 코러스 (디렉터스 컷)"></button>
+                <button type="button" class="bt_cell" data-x="392" data-y="2860" data-w="323" data-h="981" style="left: 27.2222%; top: 44.9898%; width: 22.4306%; height: 15.4318%;" aria-label="슈라카 · 베이스, 코러스 (백야의 꽃길)"></button>
+                <button type="button" class="bt_cell" data-x="729" data-y="2860" data-w="323" data-h="981" style="left: 50.625%; top: 44.9898%; width: 22.4306%; height: 15.4318%;" aria-label="마티아 · 리드기타, 코러스 (올리앤더 온 더 문)"></button>
+                <button type="button" class="bt_cell" data-x="1066" data-y="2860" data-w="323" data-h="981" style="left: 74.0278%; top: 44.9898%; width: 22.4306%; height: 15.4318%;" aria-label="평화 · 보컬, 리듬기타 (주의 평화)"></button>
+            </div>
+            <div class="bt_unit" data-unit="솔방울 NINE TO SIX">
+                <button type="button" class="bt_cell" data-x="55" data-y="5053" data-w="323" data-h="981" style="left: 3.8194%; top: 79.4872%; width: 22.4306%; height: 15.4318%;" aria-label="아드리안 · 신디사이저 (BBB)"></button>
+                <button type="button" class="bt_cell" data-x="392" data-y="5053" data-w="323" data-h="981" style="left: 27.2222%; top: 79.4872%; width: 22.4306%; height: 15.4318%;" aria-label="수아 · 보컬, 기타 (너는 나의 세상)"></button>
+                <button type="button" class="bt_cell" data-x="729" data-y="5053" data-w="323" data-h="981" style="left: 50.625%; top: 79.4872%; width: 22.4306%; height: 15.4318%;" aria-label="안화 · 드럼, 코러스 (입 앞의 파수꾼)"></button>
+                <button type="button" class="bt_cell" data-x="1066" data-y="5053" data-w="323" data-h="981" style="left: 74.0278%; top: 79.4872%; width: 22.4306%; height: 15.4318%;" aria-label="연 · 베이스 (홍실퀘스트)"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 04 : 구성품 소개 -->
+    <section class="bt_content bt_comp_sec" aria-label="구성품 소개">
+        <div class="bt_comp" id="bt_comp">
+            <img class="bt_base" src="/morenvyimg/2027_bomtoonSG/comp_bg.webp" alt="Package Details 구성품: PACKAGE BOX 패키지 박스, CALENDAR 달력, SLOGAN 슬로건, LYRIC CARDS 가사지 3종, UNIT PICK (NFC) + PICK HOLDER 피크 3종 (NFC) + 피크 홀더, MEMBER PHOTOCARDS 멤버 포토카드 12종, PROFILE PHOTOCARDS (AR) 프로필 포토카드 12종 (AR), COUPLE POLAROID SNAP PACK 커플 폴라로이드 스냅팩 12종" width="1440" height="2676" loading="lazy">
+            <div class="bt_it bt_it_box" tabindex="0" style="left: 26.5972%; top: 16.4051%; width: 14.5139%; height: 5.4933%;" aria-label="PACKAGE BOX · 패키지 박스">
+                <img src="/morenvyimg/2027_bomtoonSG/comp/text_box_v2.webp" alt=""><i class="bt_tint"></i><span class="bt_hit" style="clip-path: polygon(94.3% 4.8%, 99.5% 23.8%, 98.6% 32.7%, 65.1% 76.2%, 24.9% 98.0%, 16.3% 99.3%, 10.0% 94.6%, 0.0% 55.1%, 2.9% 43.5%, 85.2% 0.7%, 90.4% 0.7%);"></span>
+            </div>
+            <div class="bt_it bt_it_cal" tabindex="0" style="left: 29.9306%; top: 21.6368%; width: 11.4583%; height: 4.9327%;" aria-label="CALENDAR · 달력">
+                <img src="/morenvyimg/2027_bomtoonSG/comp/text_cal_v2.webp" alt=""><i class="bt_tint"></i><span class="bt_hit" style="clip-path: polygon(93.3% 6.8%, 99.4% 25.0%, 95.8% 37.9%, 44.8% 88.6%, 22.4% 99.2%, 12.1% 93.2%, 0.0% 55.3%, 0.6% 40.9%, 6.1% 33.3%, 78.2% 0.8%, 86.1% 0.8%);"></span>
+            </div>
+            <div class="bt_it bt_it_slogan" tabindex="0" style="left: 32.9861%; top: 26.6816%; width: 9.2361%; height: 4.559%;" aria-label="SLOGAN · 슬로건">
+                <img src="/morenvyimg/2027_bomtoonSG/comp/text_slogan_v2.webp" alt=""><i class="bt_tint"></i><span class="bt_hit" style="clip-path: polygon(88.7% 2.5%, 99.2% 34.4%, 73.7% 77.9%, 30.1% 98.4%, 19.5% 96.7%, 11.3% 83.6%, 0.0% 49.2%, 1.5% 34.4%, 9.8% 27.0%, 75.2% 0.8%);"></span>
+            </div>
+            <div class="bt_it bt_it_lyric" tabindex="0" style="left: 36.0417%; top: 30.5306%; width: 13.5417%; height: 5.2691%;" aria-label="LYRIC CARDS · 가사지 3종">
+                <img src="/morenvyimg/2027_bomtoonSG/comp/text_lyric_v2.webp" alt=""><i class="bt_tint"></i><span class="bt_hit" style="clip-path: polygon(95.9% 7.1%, 99.5% 19.1%, 97.9% 33.3%, 66.2% 78.0%, 27.2% 97.9%, 17.4% 99.3%, 10.8% 94.3%, 0.0% 53.9%, 3.1% 41.8%, 83.1% 0.7%, 90.8% 1.4%);"></span>
+            </div>
+            <div class="bt_it bt_it_pick" tabindex="0" style="left: 39.1667%; top: 32.0254%; width: 29.5833%; height: 8.3707%;" aria-label="UNIT PICK (NFC) + PICK HOLDER · 피크 3종 (NFC) + 피크 홀더">
+                <img src="/morenvyimg/2027_bomtoonSG/comp/text_pick_v2.webp" alt=""><i class="bt_tint"></i><span class="bt_hit" style="clip-path: polygon(97.9% 5.4%, 99.8% 14.7%, 98.4% 22.3%, 63.8% 62.5%, 12.9% 98.2%, 7.7% 99.6%, 4.7% 96.4%, 0.0% 70.5%, 1.4% 62.9%, 46.2% 29.9%, 88.3% 2.2%, 93.4% 0.0%);"></span>
+            </div>
+            <div class="bt_it bt_it_member" tabindex="0" style="left: 42.3611%; top: 38.154%; width: 22.0139%; height: 7.0254%;" aria-label="MEMBER PHOTOCARDS · 멤버 포토카드 12종">
+                <img src="/morenvyimg/2027_bomtoonSG/comp/text_member_v2.webp" alt=""><i class="bt_tint"></i><span class="bt_hit" style="clip-path: polygon(97.5% 5.3%, 99.7% 14.4%, 98.7% 25.0%, 61.5% 69.1%, 13.6% 98.9%, 8.8% 97.9%, 5.7% 91.5%, 0.0% 63.8%, 1.9% 54.8%, 89.6% 0.5%, 94.3% 1.1%);"></span>
+            </div>
+            <div class="bt_it bt_it_profile" tabindex="0" style="left: 45.6944%; top: 42.1525%; width: 25.8333%; height: 7.8849%;" aria-label="PROFILE PHOTOCARDS (AR) · 프로필 포토카드 12종 (AR)">
+                <img src="/morenvyimg/2027_bomtoonSG/comp/text_profile_v2.webp" alt=""><i class="bt_tint"></i><span class="bt_hit" style="clip-path: polygon(97.8% 6.6%, 99.7% 16.6%, 98.9% 25.1%, 69.6% 61.1%, 10.8% 99.1%, 7.5% 99.1%, 5.4% 96.2%, 0.0% 67.8%, 1.6% 59.7%, 90.6% 0.5%, 94.1% 0.5%);"></span>
+            </div>
+            <div class="bt_it bt_it_couple" tabindex="0" style="left: 48.9583%; top: 46.4873%; width: 28.1944%; height: 8.1839%;" aria-label="COUPLE POLAROID SNAP PACK · 커플 폴라로이드 스냅팩 12종">
+                <img src="/morenvyimg/2027_bomtoonSG/comp/text_couple_v2.webp" alt=""><i class="bt_tint"></i><span class="bt_hit" style="clip-path: polygon(97.0% 3.2%, 99.8% 16.0%, 99.3% 21.5%, 66.5% 61.6%, 14.0% 97.7%, 7.9% 99.5%, 4.7% 96.3%, 0.0% 74.4%, 0.2% 65.8%, 2.5% 61.2%, 92.1% 0.5%, 95.1% 0.5%);"></span>
+            </div>
+            <div class="bt_cslice bt_r" aria-hidden="true"></div>
+            <div class="bt_cslice bt_c" aria-hidden="true"></div>
+            <div class="bt_cslice bt_k" aria-hidden="true"></div>
+            <div class="bt_czone" data-y0="0" data-y1="300" style="top: 0; height: 11.2108%;" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <!-- 기획전 섹션 05 : 음원 미리 듣기 -->
+    <section class="bt_content bt_listen" aria-labelledby="bt_listen_title">
+        <div class="bt_inner">
+            <header class="bt_head">
+                <span class="bt_eyebrow">Listen</span>
+                <h2 id="bt_listen_title">Pre-listen</h2>
+                <span class="bt_head_ko">음원 미리 듣기</span>
+            </header>
+            <div class="bt_tracks">
+                <article class="bt_track bt_whoosh" data-src="https://lezhinofficial.mycafe24.com/audio/whoosh_Shucks.mp3">
+                    <figure class="bt_cover"><img src="/morenvyimg/2027_bomtoonSG/cover_whoosh.webp" alt="WHOOSH 앨범 커버 SHUCKS" width="360" height="360" loading="lazy"></figure>
+                    <button type="button" class="bt_play" aria-label="Shucks 음원 재생"></button>
+                    <div class="bt_track_body">
+                        <div class="bt_track_top"><span class="bt_track_name">Shucks</span><span class="bt_track_sub">WHOOSH</span></div>
+                        <div class="bt_bar_row"><span class="bt_t_cur">0:00</span><div class="bt_bar" role="slider" tabindex="0" aria-label="WHOOSH 재생 위치" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="bt_bar_fill"></span><span class="bt_knob"></span></div><span class="bt_t_remain">-:--</span></div>
+                    </div>
+                </article>
+                <article class="bt_track bt_ctrl" data-src="https://lezhinofficial.mycafe24.com/audio/ctrl-rage_Mayhem.mp3">
+                    <figure class="bt_cover"><img src="/morenvyimg/2027_bomtoonSG/cover_ctrl.webp" alt="CTRL+RAGE 앨범 커버 MAYHEM" width="360" height="360" loading="lazy"></figure>
+                    <button type="button" class="bt_play" aria-label="Mayhem 음원 재생"></button>
+                    <div class="bt_track_body">
+                        <div class="bt_track_top"><span class="bt_track_name">Mayhem</span><span class="bt_track_sub">CTRL+RAGE</span></div>
+                        <div class="bt_bar_row"><span class="bt_t_cur">0:00</span><div class="bt_bar" role="slider" tabindex="0" aria-label="CTRL+RAGE 재생 위치" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="bt_bar_fill"></span><span class="bt_knob"></span></div><span class="bt_t_remain">-:--</span></div>
+                    </div>
+                </article>
+                <article class="bt_track bt_sol" data-src="https://lezhinofficial.mycafe24.com/audio/pinecone-band_Nine-to-Six.mp3">
+                    <figure class="bt_cover"><img src="/morenvyimg/2027_bomtoonSG/cover_sol.webp" alt="솔방울 앨범 커버 9 TO 6" width="360" height="360" loading="lazy"></figure>
+                    <button type="button" class="bt_play" aria-label="Nine to Six 음원 재생"></button>
+                    <div class="bt_track_body">
+                        <div class="bt_track_top"><span class="bt_track_name">Nine to Six</span><span class="bt_track_sub">솔방울</span></div>
+                        <div class="bt_bar_row"><span class="bt_t_cur">0:00</span><div class="bt_bar" role="slider" tabindex="0" aria-label="솔방울 재생 위치" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="bt_bar_fill"></span><span class="bt_knob"></span></div><span class="bt_t_remain">-:--</span></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 유의사항 -->
+    <section class="bt_content bt_notice" aria-labelledby="bt_notice_title">
+        <div class="bt_inner">
+            <h2 id="bt_notice_title">Notice</h2>
+            <div class="bt_nt_group">
+                <h3>[구매]</h3>
+                <ul>
+                    <li>시즌 그리팅은 한정 상품으로 조기품절될 수 있으며, 품절 시 상품 구매가 불가합니다.</li>
+                    <li>ID당 최대 7개까지 구매 가능합니다.</li>
+                    <li>결제는 네이버 페이만 가능합니다.</li>
+                    <li>결제 단계에서 이탈할 경우 결제 진행이 원활하게 이루어지지 않을 수 있습니다.</li>
+                    <li>부당 이득을 위한 악용 사례로 의심되는 경우 주문이 취소될 수 있습니다.</li>
+                </ul>
+            </div>
+            <div class="bt_nt_group">
+                <h3>[배송]</h3>
+                <ul>
+                    <li>국내 배송만 가능하며, 해외 배송은 불가합니다.</li>
+                    <li>시즌 그리팅은 현재 생산 중에 있으며, 12월에 순차적으로 배송될 예정입니다.</li>
+                    <li>배송지 변경을 원하실 경우 12월 4일 (목) 12:00 정오까지<br class="bt_pc"> [내 정보]-[주문 내역]-[주문 상세]-[배송지 정보]에서 수정해주세요.</li>
+                </ul>
+            </div>
+            <div class="bt_nt_group">
+                <h3>[주문 취소 및 교환/반품]</h3>
+                <ul>
+                    <li>주문 취소 및 반품을 원하시는 경우, [고객지원] - [결제/환불]로 문의해주세요.</li>
+                    <li>해당 상품은 상품의 분실 및 누락 방지를 위해 출고 전 바코드 스캔 및 출고 영상 녹화를 진행하고 있습니다. 상품 누락 발생 시, 출고 영상을 확인하여 처리해 드립니다.</li>
+                    <li>교환 및 반품은 배송 완료 후 7일 이내에 가능합니다.</li>
+                    <li>단, 해당 상품의 내용과 다르게 배송된 경우 배송 완료 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내 철회 가능합니다.</li>
+                    <li>교환 및 반품 시 모든 구성품이 반송되어야 하며, 구성품이 누락될 경우 추가 발송을 요청드릴 수 있습니다. (추가 운임비 주문자 부담)</li>
+                    <li>지류 제품의 경우 (스냅팩, 포토카드 등) 소재 특성 상 공정 과정에서 스크래치와 흠집, 점, 이염, 뒷묻음 등이 있을 수 있습니다.</li>
+                    <li>대량 생산으로 인한 다소의 칼선 밀림, 재단 밀림, 작은 점, 먼지 등이 있을 수 있습니다.</li>
+                    <li>빛 반사로 확인되는 미세한 스크래치, 찍힘 등이 있을 수 있습니다.</li>
+                    <li>슬로건은 제작 공정 상 상품마다 외곽 마감이 조금씩 다를 수 있습니다.</li>
+                    <li>OPP 봉투는 제품을 보호하기 위한 포장재로, 배송 과정 중 뜯어짐이 발생할 수 있습니다.</li>
+                    <li>시즌 그리팅 수령 후 상품 구매자의 책임으로 상품이 멸실되거나 훼손된 경우 반품이 불가합니다.</li>
+                    <li>구매대행으로 인해 구매한 상품을 교환 및 반품 가능일이 지나 수령한 경우는 상품에 하자가 발생하였더라도 교환 및 환불이 어렵습니다.</li>
+                </ul>
+            </div>
+            <div class="bt_nt_group">
+                <h3>[시즌 그리팅]</h3>
+                <ul>
+                    <li>인물과 작품의 순서에는 의도가 없습니다.</li>
+                    <li>모니터의 색감에 따라 실제 색감이 다를 수 있습니다.</li>
+                    <li>사이즈 측정 방식에 따라 약간의 오차가 발생할 수 있습니다.</li>
+                    <li>인쇄 시 제품마다 색상 편차가 있을 수 있습니다.</li>
+                </ul>
+            </div>
+            <div class="bt_nt_group">
+                <h3>[구성품 사이즈]</h3>
+                <ul>
+                    <li>패키지 박스 : 1개 [290*240*60mm]</li>
+                    <li>달력 : 1개, [전체 사이즈 233*215mm / 일러스트 면 158*215mm / 달력면 75*215mm]</li>
+                    <li>슬로건 : 1개 [1100*400mm]</li>
+                    <li>가사지 : 3종, [107*120mm]</li>
+                    <li>피크 (NFC) + 피크 홀더 : 피크 3종, 홀더 1개, [26*30mm / 57*110mm]</li>
+                    <li>멤버 포토카드 : 12종 [55*85mm]</li>
+                    <li>프로필 포토카드 : 12종 [55*85mm]</li>
+                    <li>커플 폴라로이드 스냅팩 : 12종 [73*115mm]</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <p class="bt_foot">2027 BOMTOON SEASON&#39;S GREETINGS</p>
+
+    <!-- 피크 낙하 -->
+    <div class="bt_picks" id="bt_picks" aria-hidden="true" hidden>
+        <div class="bt_pick" data-x="18" data-d="0"><img src="/morenvyimg/2027_bomtoonSG/pick_whoosh_front.webp" alt=""><img class="bt_back" src="/morenvyimg/2027_bomtoonSG/pick_whoosh_back.webp" alt=""></div>
+        <div class="bt_pick" data-x="52" data-d="0.14"><img src="/morenvyimg/2027_bomtoonSG/pick_ctrl_front.webp" alt=""><img class="bt_back" src="/morenvyimg/2027_bomtoonSG/pick_ctrl_back.webp" alt=""></div>
+        <div class="bt_pick" data-x="82" data-d="0.07"><img src="/morenvyimg/2027_bomtoonSG/pick_sol_front.webp" alt=""><img class="bt_back" src="/morenvyimg/2027_bomtoonSG/pick_sol_back.webp" alt=""></div>
+    </div>
+
+    <!-- 구매 버튼 : 구매 페이지 URL 확정 후 href 교체 -->
+    <nav class="bt_buy is_hidden" aria-label="구매하기">
+        <a class="bt_buy_btn" href="#" aria-label="구매하기 (KR)"><span><span class="bt_ko">구매하기</span><small>(KR)</small></span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" aria-hidden="true"><path d="M2.5 9.5l7-7M3.8 2.5h5.7v5.7"/></svg></a>
+        <a class="bt_buy_btn" href="#" lang="en" aria-label="Buy now (Global)"><span>BUY NOW<small>(GLOBAL)</small></span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="square" aria-hidden="true"><path d="M2.5 9.5l7-7M3.8 2.5h5.7v5.7"/></svg></a>
+    </nav>
+
+    <div class="bt_soon" id="bt_soon" role="dialog" aria-modal="true" aria-labelledby="bt_soon_title" hidden>
+        <div class="bt_soon_box">
+            <h2 id="bt_soon_title">COMING SOON</h2>
+            <p>11.27 12:00PM OPEN</p>
+            <button type="button" id="bt_soon_ok">확인</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* 공통 */
+    body {margin: 0; padding: 0;}
+    #container #contents {width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; min-height: 0;}
+    body #container {overflow: visible; overflow: clip;}
+    #container #contents .xans-layout-mobileaction {display: none !important;}
+    #pj_bomtoon {position: relative; width: 100%; overflow-x: clip; background: #000; color: #f4f1ff; font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 14px; line-height: normal; word-break: keep-all; -webkit-text-size-adjust: 100%;}
+    #pj_bomtoon *, #pj_bomtoon *::before, #pj_bomtoon *::after {box-sizing: border-box;}
+    #pj_bomtoon img, #pj_bomtoon video, #pj_bomtoon canvas {max-width: none;}
+    #pj_bomtoon h1, #pj_bomtoon h2, #pj_bomtoon h3, #pj_bomtoon p, #pj_bomtoon ul, #pj_bomtoon li, #pj_bomtoon figure {margin: 0; padding: 0;}
+    #pj_bomtoon li {list-style: none;}
+    #pj_bomtoon a, #pj_bomtoon a:hover {text-decoration: none;}
+    #pj_bomtoon button {margin: 0; padding: 0; border: 0; background: none; font-family: inherit; color: inherit; cursor: pointer; overflow: visible;}
+    #pj_bomtoon [hidden] {display: none !important;}
+    #pj_bomtoon .bt_sr {position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;}
+    #pj_bomtoon .bt_pc {display: inline;}
+
+    /* 기획전 섹션 01 : 인트로 영상 */
+    #pj_bomtoon .bt_intro {position: relative; z-index: 0; width: 100%; height: max(560px, 100vh); height: max(560px, 100svh); background: #000;}
+    #pj_bomtoon .bt_intro_frame {position: absolute; inset: 0; overflow: hidden; background: #000; will-change: transform, opacity;}
+    #pj_bomtoon .bt_intro_media {position: absolute; inset: 0; background: url("/morenvyimg/2027_bomtoonSG/intro_poster.webp") 50% 50% / cover no-repeat;}
+    #pj_bomtoon .bt_intro.is_anim .bt_intro_media {background-image: url("/morenvyimg/2027_bomtoonSG/intro_anim.webp");}
+    #pj_bomtoon .bt_intro.is_anim video {display: none;}
+    #pj_bomtoon .bt_intro video {position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover;}
+    #pj_bomtoon .bt_intro video::-webkit-media-controls-start-playback-button {display: none !important; -webkit-appearance: none;}
+    #pj_bomtoon .bt_intro.is_glitch .bt_intro_media {animation: bt_intro_glitch .55s steps(1) 1;}
+    #pj_bomtoon .bt_skip {position: absolute; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(70px, 8vw, 96px)); transform: translateX(-50%); padding: 6px 4px; font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: .3em; color: #fff; opacity: .8; text-transform: uppercase;}
+    #pj_bomtoon .bt_skip:focus-visible {outline: 2px solid #fff; outline-offset: 2px;}
+    #pj_bomtoon .bt_dropzone {position: relative; z-index: 1; height: max(110vh, 700px); background: #000;}
+
+    /* 기획전 섹션 02 : 메인 비주얼 */
+    #pj_bomtoon .bt_stage {position: sticky; top: 0; z-index: 1; width: 100%; height: min(max(560px, 100vh), 62.5vw); height: min(max(560px, 100svh), 62.5vw); overflow: hidden; isolation: isolate; background: #12081f;}
+    #pj_bomtoon .bt_scene {position: absolute; inset: 0; transform-origin: 50% 40%;}
+    #pj_bomtoon .bt_beat {position: absolute; inset: 0; animation: bt_beat 1s cubic-bezier(.2, .7, .3, 1) infinite;}
+    #pj_bomtoon .bt_layer {position: absolute; inset: -1.5%;}
+    #pj_bomtoon .bt_layer > img {position: absolute; left: 0; top: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;}
+    #pj_bomtoon .bt_layer.bt_bg {z-index: 0;}
+    #pj_bomtoon .bt_layer.bt_members {z-index: 1; transform-origin: 50% 100%;}
+    #pj_bomtoon .bt_layer.bt_logo {z-index: 2;}
+    #pj_bomtoon .bt_layer.bt_logo > img {height: auto; object-fit: fill;}
+    #pj_bomtoon .bt_layer.bt_logo > .bt_lg_next {left: 2.4%; top: 3.5%; width: 30.21%;}
+    #pj_bomtoon .bt_layer.bt_logo > .bt_lg_head {left: auto; top: auto; right: 1.56%; bottom: 2.17%; width: 50.26%;}
+    #pj_bomtoon .bt_members .bt_glow {filter: brightness(2.2) saturate(1.6); mix-blend-mode: screen; opacity: 0; animation: bt_rim 1s ease-out infinite;}
+    #pj_bomtoon .bt_slice {position: absolute; inset: 0; z-index: 3; opacity: 0; pointer-events: none; will-change: clip-path, transform;}
+    #pj_bomtoon .bt_slice.bt_r {mix-blend-mode: screen; filter: sepia(1) saturate(5) hue-rotate(-50deg) brightness(.8);}
+    #pj_bomtoon .bt_slice.bt_c {mix-blend-mode: screen; filter: sepia(1) saturate(5) hue-rotate(140deg) brightness(.75);}
+    #pj_bomtoon .bt_slice.bt_k {filter: contrast(1.15) brightness(1.08);}
+    #pj_bomtoon .bt_dust {position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;}
+    #pj_bomtoon .bt_fx {position: absolute; inset: 0; pointer-events: none;}
+    #pj_bomtoon .bt_fx.bt_scan {background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, .22) 0 1px, transparent 1px 3px); mix-blend-mode: multiply;}
+    #pj_bomtoon .bt_fx.bt_roll {bottom: auto; height: 30%; background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, .06) 48%, rgba(255, 255, 255, .12) 50%, rgba(255, 255, 255, .06) 52%, transparent 100%); mix-blend-mode: screen; animation: bt_roll 6.5s linear infinite;}
+    #pj_bomtoon .bt_fx.bt_vignette {background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgba(5, 2, 15, .55) 100%);}
+    #pj_bomtoon .bt_fx.bt_dim {background: #000; opacity: 0;}
+    #pj_bomtoon .bt_fx.bt_enter {background: #000; opacity: 1;}
+
+    /* 기획전 섹션 03 : 라인업 */
+    #pj_bomtoon .bt_content {position: relative; z-index: 2; background: #000; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));}
+    #pj_bomtoon .bt_seam {position: absolute; left: 0; right: 0; top: 0; z-index: 3; height: clamp(10px, 1.6vw, 22px); opacity: 0; pointer-events: none; mix-blend-mode: screen;
+        background:
+            linear-gradient(90deg, transparent 0 8%, #ff2a6d 8% 22%, transparent 22% 41%, #2de2e6 41% 47%, transparent 47% 63%, #fff 63% 66%, transparent 66% 80%, #ff2a6d 80% 91%, transparent 91%) 0 0 / 100% 40% no-repeat,
+            linear-gradient(90deg, transparent 0 14%, #2de2e6 14% 30%, transparent 30% 52%, #ff2a6d 52% 70%, transparent 70%) 0 100% / 100% 35% no-repeat;}
+    #pj_bomtoon .bt_seam.is_flash {animation: bt_seam .38s steps(1) 1;}
+    #pj_bomtoon .bt_lineup {position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; aspect-ratio: 1440 / 6357; overflow: hidden;}
+    #pj_bomtoon .bt_lineup > img {display: block; width: 100%; height: 100%;}
+    #pj_bomtoon .bt_lslice {position: absolute; inset: 0; background: url("/morenvyimg/2027_bomtoonSG/lineup.webp") 0 0 / 100% 100% no-repeat; opacity: 0; pointer-events: none; will-change: clip-path, transform;}
+    #pj_bomtoon .bt_lslice.bt_r, #pj_bomtoon .bt_cslice.bt_r {mix-blend-mode: screen; filter: sepia(1) saturate(6) hue-rotate(-50deg) brightness(.9);}
+    #pj_bomtoon .bt_lslice.bt_c, #pj_bomtoon .bt_cslice.bt_c {mix-blend-mode: screen; filter: sepia(1) saturate(6) hue-rotate(140deg) brightness(.85);}
+    #pj_bomtoon .bt_lslice.bt_k, #pj_bomtoon .bt_cslice.bt_k {filter: contrast(1.25) brightness(1.1);}
+    #pj_bomtoon .bt_gzone, #pj_bomtoon .bt_czone {position: absolute; left: 0; right: 0; pointer-events: none;}
+    #pj_bomtoon .bt_cell {position: absolute; -webkit-tap-highlight-color: transparent;}
+    #pj_bomtoon .bt_cell::before {content: ""; position: absolute; inset: 0; -webkit-backdrop-filter: blur(7px) brightness(.72) saturate(.7); backdrop-filter: blur(7px) brightness(.72) saturate(.7); opacity: 0; transition: opacity .28s ease;}
+    #pj_bomtoon .bt_cell:focus-visible {outline: 3px solid #f4f1ff; outline-offset: 2px;}
+    #pj_bomtoon .bt_unit:has(.bt_cell:hover) .bt_cell:not(:hover)::before,
+    #pj_bomtoon .bt_unit:has(.bt_cell:focus-visible) .bt_cell:not(:focus-visible)::before,
+    #pj_bomtoon .bt_unit.has_active .bt_cell:not(.is_active)::before {opacity: 1;}
+
+    /* 기획전 섹션 04 : 구성품 소개 */
+    #pj_bomtoon .bt_comp {position: relative; width: 100%; max-width: 1440px; margin: 0 auto; aspect-ratio: 1440 / 2676; overflow: hidden;}
+    #pj_bomtoon .bt_comp > .bt_base {display: block; width: 100%; height: 100%;}
+    #pj_bomtoon .bt_it {position: absolute; overflow: visible; outline: none; pointer-events: none;}
+    #pj_bomtoon .bt_it img {position: absolute; inset: 0; width: 100%; height: 100%; opacity: 1; transition: opacity .25s ease; pointer-events: none;}
+    #pj_bomtoon .bt_it .bt_tint {position: absolute; inset: -10%; z-index: 2; background: #5cc8e6; opacity: 0; pointer-events: none; transform-origin: 18.33% 66.67%; transition: opacity .2s ease, transform .3s cubic-bezier(.2, .8, .3, 1.2);
+        -webkit-mask-position: center; mask-position: center; -webkit-mask-size: 83.3333% 83.3333%; mask-size: 83.3333% 83.3333%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;}
+    #pj_bomtoon .bt_it_box .bt_tint {-webkit-mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_box.webp"); mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_box.webp");}
+    #pj_bomtoon .bt_it_cal .bt_tint {-webkit-mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_cal.webp"); mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_cal.webp");}
+    #pj_bomtoon .bt_it_slogan .bt_tint {-webkit-mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_slogan.webp"); mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_slogan.webp");}
+    #pj_bomtoon .bt_it_lyric .bt_tint {-webkit-mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_lyric.webp"); mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_lyric.webp");}
+    #pj_bomtoon .bt_it_pick .bt_tint {-webkit-mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_pick.webp"); mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_pick.webp");}
+    #pj_bomtoon .bt_it_member .bt_tint {-webkit-mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_member.webp"); mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_member.webp");}
+    #pj_bomtoon .bt_it_profile .bt_tint {-webkit-mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_profile.webp"); mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_profile.webp");}
+    #pj_bomtoon .bt_it_couple .bt_tint {-webkit-mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_couple.webp"); mask-image: url("/morenvyimg/2027_bomtoonSG/comp/mask_couple.webp");}
+    #pj_bomtoon .bt_it .bt_hit {position: absolute; inset: 0; pointer-events: auto; cursor: pointer;}
+    #pj_bomtoon .bt_it:has(.bt_hit:hover), #pj_bomtoon .bt_it:focus-visible, #pj_bomtoon .bt_it.is_active {z-index: 5;}
+    #pj_bomtoon .bt_it:has(.bt_hit:hover) .bt_tint, #pj_bomtoon .bt_it:focus-visible .bt_tint, #pj_bomtoon .bt_it.is_active .bt_tint {opacity: 1; transform: scale(1.14);}
+    #pj_bomtoon .bt_it:has(.bt_hit:hover) img, #pj_bomtoon .bt_it:focus-visible img, #pj_bomtoon .bt_it.is_active img {opacity: 0;}
+    #pj_bomtoon .bt_comp:has(.bt_hit:hover) .bt_it:not(:has(.bt_hit:hover)) img,
+    #pj_bomtoon .bt_comp:has(.bt_it:focus-visible) .bt_it:not(:focus-visible) img,
+    #pj_bomtoon .bt_comp.has_active .bt_it:not(.is_active) img {opacity: .4;}
+    #pj_bomtoon .bt_cslice {position: absolute; inset: 0; z-index: 3; background: url("/morenvyimg/2027_bomtoonSG/comp_full.webp") 0 0 / 100% 100% no-repeat; opacity: 0; pointer-events: none; will-change: clip-path, transform;}
+
+    /* 기획전 섹션 05 : 음원 미리 듣기 */
+    #pj_bomtoon .bt_listen {padding-top: clamp(72px, 9vw, 140px);}
+    #pj_bomtoon .bt_inner {max-width: 1080px; margin: 0 auto;}
+    #pj_bomtoon .bt_head {display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: clamp(32px, 4vw, 56px); text-align: center;}
+    #pj_bomtoon .bt_eyebrow {font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: .32em; color: #9a93b5; text-transform: uppercase;}
+    #pj_bomtoon .bt_head h2 {font-family: "Anton", "Arial Narrow", Impact, sans-serif; font-weight: 400; font-size: clamp(40px, 6.4vw, 84px); line-height: .95; letter-spacing: .01em; text-transform: uppercase; color: #f4f1ff;}
+    #pj_bomtoon .bt_head_ko {font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; font-size: 15px; font-weight: 500; color: #9a93b5;}
+    #pj_bomtoon .bt_tracks {display: grid; gap: 14px;}
+    #pj_bomtoon .bt_track {position: relative; display: grid; grid-template-columns: auto auto minmax(0, 1fr); align-items: center; gap: clamp(14px, 2.4vw, 28px); padding: clamp(16px, 2.4vw, 26px) clamp(16px, 3vw, 36px); border-radius: 6px; overflow: hidden;}
+    #pj_bomtoon .bt_track::before {content: ""; position: absolute; inset: 0; opacity: 0; transition: opacity .4s; pointer-events: none;}
+    #pj_bomtoon .bt_track.is_playing::before {opacity: 1;}
+    #pj_bomtoon .bt_track.bt_whoosh {background: #121b22; border: 1px solid rgba(92, 200, 230, .3);}
+    #pj_bomtoon .bt_track.bt_whoosh::before {background: linear-gradient(90deg, rgba(92, 200, 230, .22), transparent 60%);}
+    #pj_bomtoon .bt_track.bt_ctrl {background: #210e13; border: 1px solid rgba(255, 59, 63, .3);}
+    #pj_bomtoon .bt_track.bt_ctrl::before {background: linear-gradient(90deg, rgba(255, 59, 63, .22), transparent 60%);}
+    #pj_bomtoon .bt_track.bt_sol {background: #201d0f; border: 1px solid rgba(245, 225, 10, .3);}
+    #pj_bomtoon .bt_track.bt_sol::before {background: linear-gradient(90deg, rgba(245, 225, 10, .22), transparent 60%);}
+    #pj_bomtoon .bt_cover {position: relative; flex: none; width: clamp(84px, 11vw, 132px); aspect-ratio: 1; box-shadow: 0 12px 30px -10px rgba(0, 0, 0, .8); transition: transform .3s ease;}
+    #pj_bomtoon .bt_cover img {display: block; width: 100%; height: 100%; object-fit: cover;}
+    #pj_bomtoon .bt_cover::after {content: ""; position: absolute; inset: 0; opacity: 0; transition: opacity .3s; pointer-events: none;}
+    #pj_bomtoon .bt_whoosh .bt_cover::after {box-shadow: -3px 0 0 #5cc8e6, 3px 0 0 #5cc8e6, 0 0 18px rgba(92, 200, 230, .45);}
+    #pj_bomtoon .bt_ctrl .bt_cover::after {box-shadow: -3px 0 0 #ff3b3f, 3px 0 0 #ff3b3f, 0 0 18px rgba(255, 59, 63, .45);}
+    #pj_bomtoon .bt_sol .bt_cover::after {box-shadow: -3px 0 0 #f5e10a, 3px 0 0 #f5e10a, 0 0 18px rgba(245, 225, 10, .45);}
+    #pj_bomtoon .bt_track.is_playing .bt_cover {transform: rotate(-2deg) scale(1.03);}
+    #pj_bomtoon .bt_track.is_playing .bt_cover::after {opacity: .85;}
+    #pj_bomtoon .bt_play {position: relative; display: grid; place-items: center; width: clamp(56px, 6vw, 72px); aspect-ratio: 1; border-radius: 50%; color: #0b0a10; transition: transform .15s ease;}
+    #pj_bomtoon .bt_whoosh .bt_play {background: #5cc8e6;}
+    #pj_bomtoon .bt_ctrl .bt_play {background: #ff3b3f;}
+    #pj_bomtoon .bt_sol .bt_play {background: #f5e10a;}
+    #pj_bomtoon .bt_play:hover {transform: scale(1.05);}
+    #pj_bomtoon .bt_play:active {transform: scale(.97);}
+    #pj_bomtoon .bt_play:focus-visible {outline: 2px solid #f4f1ff; outline-offset: 4px;}
+    #pj_bomtoon .bt_play > svg {width: 52%; height: 52%; overflow: visible;}
+    #pj_bomtoon .bt_play .bt_wave {opacity: .35; transition: opacity .2s;}
+    #pj_bomtoon .bt_track.is_playing .bt_play .bt_wave {opacity: 1; animation: bt_wave 1s ease-in-out infinite;}
+    #pj_bomtoon .bt_track.is_playing .bt_play .bt_wave.bt_w2 {animation-delay: .18s;}
+    #pj_bomtoon .bt_play .bt_glyph {position: absolute; right: -3px; bottom: -3px; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #f4f1ff; color: #0b0a10; box-shadow: 0 0 0 3px #0b0a0f;}
+    #pj_bomtoon .bt_play .bt_glyph svg {width: 11px; height: 11px;}
+    #pj_bomtoon .bt_play .bt_i_pause {display: none;}
+    #pj_bomtoon .bt_track.is_playing .bt_i_pause {display: block;}
+    #pj_bomtoon .bt_track.is_playing .bt_i_play {display: none;}
+    #pj_bomtoon .bt_track_body {position: relative; display: flex; flex-direction: column; gap: 10px; min-width: 0;}
+    #pj_bomtoon .bt_track_top {display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px;}
+    #pj_bomtoon .bt_track_name {font-family: "Anton", "Arial Narrow", Impact, sans-serif; font-size: clamp(24px, 3vw, 34px); line-height: 1; letter-spacing: .02em; text-transform: uppercase;}
+    #pj_bomtoon .bt_whoosh .bt_track_name {color: #5cc8e6;}
+    #pj_bomtoon .bt_ctrl .bt_track_name {color: #ff3b3f;}
+    #pj_bomtoon .bt_sol .bt_track_name {color: #f5e10a;}
+    #pj_bomtoon .bt_track_sub {font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; font-size: 13px; color: #9a93b5;}
+    #pj_bomtoon .bt_bar_row {display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; font-family: "IBM Plex Mono", ui-monospace, Menlo, monospace; font-size: 12px; color: #9a93b5; font-variant-numeric: tabular-nums;}
+    #pj_bomtoon .bt_bar {position: relative; height: 18px; cursor: pointer; touch-action: none;}
+    #pj_bomtoon .bt_bar::before {content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 4px; margin-top: -2px; border-radius: 2px; background: rgba(255, 255, 255, .14);}
+    #pj_bomtoon .bt_bar_fill {position: absolute; left: 0; top: 50%; width: 0; height: 4px; margin-top: -2px; border-radius: 2px;}
+    #pj_bomtoon .bt_whoosh .bt_bar_fill {background: #5cc8e6;}
+    #pj_bomtoon .bt_ctrl .bt_bar_fill {background: #ff3b3f;}
+    #pj_bomtoon .bt_sol .bt_bar_fill {background: #f5e10a;}
+    #pj_bomtoon .bt_knob {position: absolute; left: 0; top: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: #f4f1ff; opacity: 0; transition: opacity .2s;}
+    #pj_bomtoon .bt_track.is_playing .bt_knob, #pj_bomtoon .bt_bar:hover .bt_knob, #pj_bomtoon .bt_bar:focus-visible .bt_knob {opacity: 1;}
+    #pj_bomtoon .bt_bar:focus-visible {outline: 2px solid #f4f1ff; outline-offset: 2px; border-radius: 4px;}
+    #pj_bomtoon .bt_t_cur {min-width: 4ch;}
+    #pj_bomtoon .bt_t_remain {min-width: 4.5ch; text-align: right; color: #f4f1ff;}
+
+    /* 유의사항 */
+    #pj_bomtoon .bt_notice {padding-top: clamp(100px, 12vw, 200px); padding-bottom: clamp(60px, 8vw, 120px); color: #f4f4f4;}
+    #pj_bomtoon .bt_notice h2 {padding-bottom: clamp(18px, 2vw, 28px); border-bottom: 1.5px solid #f4f4f4; font-family: "Anton", "Arial Narrow", Impact, sans-serif; font-weight: 400; font-size: clamp(36px, 3.8vw, 54px); line-height: 1; letter-spacing: -.005em; color: #f4f4f4;}
+    #pj_bomtoon .bt_nt_group {margin-top: clamp(28px, 3vw, 40px);}
+    #pj_bomtoon .bt_nt_group h3 {margin-bottom: 8px; font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; font-weight: 700; font-size: clamp(14px, 1.05vw, 15px); color: #f4f4f4;}
+    #pj_bomtoon .bt_nt_group ul {display: grid; gap: 3px;}
+    #pj_bomtoon .bt_nt_group li {position: relative; max-width: 62em; padding-left: 1.1em; font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; font-weight: 400; font-size: clamp(13px, .95vw, 14px); line-height: 1.7; color: #d6d6d6;}
+    #pj_bomtoon .bt_nt_group li::before {content: "•"; position: absolute; left: .1em; top: 0;}
+    #pj_bomtoon .bt_foot {position: relative; z-index: 2; padding: 48px 16px calc(120px + env(safe-area-inset-bottom, 0px)); background: #000; text-align: center; color: #9a93b5; font-size: 11px; letter-spacing: .2em;}
+
+    /* 피크 낙하 */
+    #pj_bomtoon .bt_picks {position: fixed; inset: 0; z-index: 40; overflow: hidden; pointer-events: none; perspective: 1200px;}
+    #pj_bomtoon .bt_pick {position: absolute; top: 0; width: clamp(90px, 11vw, 190px); aspect-ratio: 480 / 552; margin-left: calc(clamp(90px, 11vw, 190px) / -2); transform-style: preserve-3d; will-change: transform;}
+    #pj_bomtoon .bt_pick img {position: absolute; inset: 0; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, .85)) drop-shadow(0 0 14px rgba(255, 255, 255, .4)) drop-shadow(0 16px 20px rgba(0, 0, 0, .6));}
+    #pj_bomtoon .bt_pick img.bt_back {transform: rotateY(180deg);}
+
+    /* 구매 버튼 */
+    #pj_bomtoon .bt_buy {position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(14px, 2vw, 24px)); z-index: 50; display: flex; gap: 8px; width: max-content; max-width: calc(100% - 32px); transform: translateX(-50%); transition: opacity .5s ease, transform .5s cubic-bezier(.2, .8, .3, 1), visibility 0s linear 0s;}
+    #pj_bomtoon .bt_buy.is_hidden {opacity: 0; transform: translate(-50%, 24px); pointer-events: none; visibility: hidden; transition: opacity .3s ease, transform .3s ease, visibility 0s linear .3s;}
+    #pj_bomtoon .bt_buy_btn {display: inline-flex; align-items: center; gap: .3em; padding: 11px 20px; border-radius: 999px; background: #0a0910; color: #fff; white-space: nowrap; font-family: "Helvetica Neue", Helvetica, Arial, "Noto Sans KR", sans-serif; font-weight: 500; font-size: clamp(12px, 1vw, 14px); line-height: normal; letter-spacing: .02em; text-transform: uppercase; box-shadow: 0 6px 20px rgba(0, 0, 0, .45), 0 0 0 1px rgba(255, 255, 255, .18); transition: background-color .2s ease, transform .2s ease;}
+    #pj_bomtoon .bt_buy_btn svg {flex: none; width: .85em; height: .85em; transition: transform .2s ease;}
+    #pj_bomtoon .bt_buy_btn:hover {background: #222; color: #fff; transform: translateY(-1px);}
+    #pj_bomtoon .bt_buy_btn:hover svg {transform: translate(2px, -2px);}
+    #pj_bomtoon .bt_buy_btn:focus-visible {outline: 2px solid #fff; outline-offset: 3px;}
+    #pj_bomtoon .bt_buy_btn small {margin-left: .15em; font-size: .72em; font-weight: 400; opacity: .75; letter-spacing: .04em;}
+    #pj_bomtoon .bt_buy_btn .bt_ko {font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; font-weight: 700; letter-spacing: 0;}
+
+    /* 오픈 예정 팝업 */
+    #pj_bomtoon .bt_soon {position: fixed; inset: 0; z-index: 1100; display: grid; place-items: center; padding: 16px; background: rgba(0, 0, 0, .6); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);}
+    #pj_bomtoon .bt_soon_box {width: calc(100vw - 48px); max-width: 340px; padding: 34px 24px 22px; border-radius: 14px; background: #0a0910; border: 1px solid rgba(255, 255, 255, .18); box-shadow: 0 20px 60px rgba(0, 0, 0, .6); text-align: center; color: #fff;}
+    #pj_bomtoon .bt_soon_box h2 {font-family: "Anton", "Arial Narrow", Impact, sans-serif; font-weight: 400; font-size: 34px; line-height: 1; letter-spacing: .02em; color: #fff;}
+    #pj_bomtoon .bt_soon_box p {margin-top: 12px; font-family: "Helvetica Neue", Helvetica, Arial, "Noto Sans KR", sans-serif; font-size: 15px; font-weight: 500; letter-spacing: .04em; color: #d6d6d6; font-variant-numeric: tabular-nums;}
+    #pj_bomtoon .bt_soon_box button {width: 100%; margin-top: 26px; padding: 12px; border-radius: 999px; background: #fff; color: #0a0910; font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif; font-weight: 700; font-size: 14px;}
+    #pj_bomtoon .bt_soon_box button:hover {background: #e6e6e6;}
+    #pj_bomtoon .bt_soon_box button:focus-visible {outline: 2px solid #fff; outline-offset: 3px;}
+
+    /* animation */
+    @keyframes bt_intro_glitch {
+        0% {clip-path: inset(0 0 58% 0); transform: translateX(-3%);}
+        20% {clip-path: inset(30% 0 0 0); transform: translateX(4%); filter: hue-rotate(160deg) saturate(2);}
+        40% {clip-path: inset(10% 0 45% 0); transform: translateX(-6%); filter: none;}
+        60% {clip-path: inset(62% 0 8% 0); transform: translateX(2%);}
+        80% {clip-path: inset(20% 0 70% 0); transform: translateX(-2%); filter: hue-rotate(-60deg) saturate(3);}
+        100% {clip-path: none; transform: none; filter: none;}
+    }
+    @keyframes bt_seam {0% {opacity: 1; transform: translateX(-3%);} 25% {opacity: .2; transform: translateX(4%);} 50% {opacity: .9; transform: translateX(-1%) scaleY(1.6);} 75% {opacity: .4; transform: translateX(2%);} 100% {opacity: 0;}}
+    @keyframes bt_beat {0% {transform: scale(1.012);} 60%, 100% {transform: scale(1);}}
+    @keyframes bt_rim {0% {opacity: .55;} 70%, 100% {opacity: 0;}}
+    @keyframes bt_roll {from {transform: translateY(-100%);} to {transform: translateY(340%);}}
+    @keyframes bt_wave {0%, 100% {opacity: 1;} 50% {opacity: .25;}}
+
+    /* 반응형 : 세로 화면(휴대폰·세로 태블릿)은 인트로 영상을 화면 가운데에, 메인 비주얼은 4:5 */
+    @media (max-aspect-ratio: 1/1) {
+        #pj_bomtoon .bt_intro {height: 100vh; height: 100svh; min-height: 0;}
+        #pj_bomtoon .bt_intro_media {top: 50%; bottom: auto; height: auto; aspect-ratio: 1920 / 864; transform: translateY(-50%); background-size: 100% 100%;}
+        #pj_bomtoon .bt_intro.is_glitch .bt_intro_media {animation: none;}
+        #pj_bomtoon .bt_intro.is_glitch video {animation: bt_intro_glitch .55s steps(1) 1;}
+        #pj_bomtoon .bt_skip {bottom: calc(env(safe-area-inset-bottom, 0px) + 96px);}
+        #pj_bomtoon .bt_stage {height: auto; aspect-ratio: 4 / 5;}
+    }
+    @media screen and (max-width: 1024px) {
+        #pj_bomtoon .bt_pc {display: none;}
+    }
+    @media (max-width: 560px) {
+        #pj_bomtoon .bt_cover {width: 72px;}
+        #pj_bomtoon .bt_play {width: 52px;}
+        #pj_bomtoon .bt_play .bt_glyph {width: 20px; height: 20px;}
+        #pj_bomtoon .bt_track {row-gap: 14px;}
+        #pj_bomtoon .bt_track_body {grid-column: 1 / -1;}
+    }
+    @media (max-width: 400px) {
+        #pj_bomtoon .bt_buy_btn {padding: 10px 14px;}
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #pj_bomtoon .bt_beat, #pj_bomtoon .bt_members .bt_glow, #pj_bomtoon .bt_track.is_playing .bt_play .bt_wave {animation: none;}
+        #pj_bomtoon .bt_fx.bt_roll, #pj_bomtoon .bt_picks {display: none;}
+        #pj_bomtoon .bt_fx.bt_enter {opacity: 0;}
+        #pj_bomtoon .bt_cell::before, #pj_bomtoon .bt_it img {transition: none;}
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        var root = document.getElementById("pj_bomtoon");
+        if (!root) return;
+
+        const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+        const rand = (a, b) => a + Math.random() * (b - a);
+        const clamp = v => Math.min(1, Math.max(0, v));
+        /* 같은 값이면 다시 쓰지 않음 */
+        const setStyle = (el, prop, v) => { const key = "_bt_" + prop; if (el[key] !== v) { el[key] = v; el.style[prop] = v; } };
+
+        const stage = document.getElementById("bt_stage");
+        const scene = stage.querySelector(".bt_scene");
+        const beat = stage.querySelector(".bt_beat");
+        const dimFx = stage.querySelector(".bt_dim");
+        const enterFx = stage.querySelector(".bt_enter");
+        const lineupSec = document.getElementById("bt_lineup");
+        let sp = 0, running = false, dustVisible = false;
+
+        /* 고정 헤더 높이(스크롤 시 고정되는 쇼핑몰 헤더에 메인 비주얼이 가리지 않게) */
+        let headerOff = 0;
+        function measureHeader() {
+            const hd = document.getElementById("header");
+            if (!hd) { headerOff = 0; return; }
+            const pos = getComputedStyle(hd).position;
+            headerOff = (pos === "fixed" || pos === "sticky") ? Math.max(0, Math.round(hd.getBoundingClientRect().bottom)) : 0;
+        }
+
+        /* 약한 글리치 */
+        const slices = [...stage.querySelectorAll(".bt_slice")];
+        const srcLayers = [...beat.querySelectorAll(":scope > .bt_layer")];
+        slices.forEach(s => srcLayers.forEach(l => {
+            const c = l.cloneNode(true);
+            c.querySelectorAll(".bt_glow").forEach(n => n.remove());
+            s.appendChild(c);
+        }));
+        function gFrame(pw) {
+            slices.forEach((s, i) => {
+                if (Math.random() < 0.4) { s.style.opacity = 0; return; }
+                const top = rand(0, 95), h = rand(0.8, i === 2 ? 3 : 6) * pw;
+                s.style.clipPath = "inset(" + top + "% 0 " + Math.max(0, 100 - top - h) + "% 0)";
+                s.style.transform = "translate3d(" + (rand(-10, 10) * pw) + "px, 0, 0)";
+                s.style.opacity = i === 2 ? 0.85 : Math.min(.95, rand(.3, .55) * pw);
+            });
+        }
+        function gBurst(pw, steps) {
+            pw = pw || 1;
+            if (document.hidden || sp >= 1) return;
+            let n = steps || Math.round(rand(2, 4));
+            const tick = () => {
+                if (n-- > 0) { gFrame(pw); setTimeout(tick, rand(50, 90)); }
+                else slices.forEach(s => s.style.opacity = 0);
+            };
+            tick();
+        }
+
+        /* 레이어 시차 : 배경은 느리게, 로고는 중간, 멤버는 마우스에 가장 크게 */
+        const LAYER = {bg: {d: 6, sd: 1}, logo: {d: 14, sd: .45}, members: {d: 18, sd: 0}};
+        const layers = [...stage.querySelectorAll(".bt_layer")].map(el => ({
+            el: el,
+            t: el.classList.contains("bt_bg") ? "bg" : el.classList.contains("bt_logo") ? "logo" : "members"
+        }));
+        function applyLayers(mx, my, sy, mscale) {
+            layers.forEach(L => {
+                const c = LAYER[L.t];
+                const s = L.t === "bg" ? 1.08 : L.t === "members" ? mscale : 1;
+                setStyle(L.el, "transform", "translate3d(" + (-mx * c.d).toFixed(2) + "px, " + (-my * c.d + sy * c.sd).toFixed(2) + "px, 0) scale(" + s.toFixed(4) + ")");
+            });
+        }
+
+        /* 인트로 : 영상 전체 화면 → 다 보면 메인 비주얼로 자동 스크롤 / 다시 올리면 재생 */
+        const intro = document.getElementById("bt_intro");
+        const introFrame = intro.querySelector(".bt_intro_frame");
+        const iv = intro.querySelector("video");
+        let firstDone = false, introVisible = true, useImg = false;
+        iv.muted = true; iv.defaultMuted = true; iv.setAttribute("muted", "");
+        /* 자동재생이 막힌 기기(아이폰 저전력 모드, 일부 앱 내 브라우저)는 움직이는 WebP로 대체 */
+        function toAnimImage() {
+            if (useImg) return;
+            useImg = true;
+            iv.pause();
+            intro.classList.add("is_anim");
+            if (!firstDone) setTimeout(() => { if (!firstDone) finishFirst(); }, 4500);
+        }
+        const play = () => {
+            if (useImg) return;
+            iv.muted = true;
+            const p = iv.play();
+            if (p) p.catch(err => { if (err && err.name === "NotAllowedError") toAnimImage(); });
+        };
+        /* 영상 데이터가 있는데도 멈춰 있으면 자동재생 차단으로 판단 */
+        setTimeout(() => { if (iv.paused && iv.readyState >= 2 && iv.currentTime === 0) toAnimImage(); }, 1500);
+
+        const introPassed = () => -intro.getBoundingClientRect().top;
+        function toMain(full) {
+            intro.classList.remove("is_glitch"); void intro.offsetWidth; intro.classList.add("is_glitch");
+            setTimeout(() => {
+                const target = (full ? stage : document.getElementById("bt_dropzone")).getBoundingClientRect().top + scrollY;
+                if (reduce) { scrollTo(0, target); return; }
+                const from = scrollY, dist = target - from, dur = full ? 3600 : 900, t0 = performance.now();
+                let cancel = false;
+                const stop = () => { cancel = true; };
+                addEventListener("wheel", stop, {once: true, passive: true});
+                addEventListener("touchstart", stop, {once: true, passive: true});
+                (function step(now) {
+                    if (cancel) return;
+                    const t = Math.min(1, (now - t0) / dur), e = t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+                    scrollTo(0, from + dist * e);
+                    if (t < 1) requestAnimationFrame(step); else if (full) gBurst(2.2, 6);
+                })(t0);
+            }, 450);
+        }
+
+        /* 구매 버튼 : 인트로가 끝나거나(건너뛰기 포함) 라인업까지 스크롤하면 표시 */
+        const buyBar = root.querySelector(".bt_buy");
+        const showBuy = () => buyBar.classList.remove("is_hidden");
+        if ("IntersectionObserver" in window) {
+            new IntersectionObserver(entries => { const e = entries[0]; if (e.isIntersecting || e.boundingClientRect.top < 0) showBuy(); }, {rootMargin: "0px 0px -25% 0px"}).observe(lineupSec);
+        } else showBuy();
+        function finishFirst() {
+            showBuy();
+            if (firstDone) return;
+            firstDone = true;
+            iv.loop = true;
+            if (introPassed() < intro.offsetHeight * 0.3) toMain(true);
+        }
+        iv.addEventListener("ended", () => { if (!firstDone) finishFirst(); });
+        intro.querySelector(".bt_skip").addEventListener("click", () => { showBuy(); firstDone = true; iv.loop = true; toMain(true); });
+        play();
+        iv.addEventListener("canplay", () => { if (introVisible) play(); }, {once: true});
+        /* 재생이 끝내 시작되지 않으면 6초 뒤 전환 */
+        setTimeout(() => { if (!firstDone && iv.paused && !useImg) finishFirst(); }, 6000);
+        if ("IntersectionObserver" in window) {
+            new IntersectionObserver(entries => {
+                const was = introVisible;
+                introVisible = entries[0].isIntersecting;
+                if (introVisible && !was) { if (firstDone) iv.currentTime = 0; play(); }
+                if (!introVisible) iv.pause();
+            }, {threshold: 0.35}).observe(intro);
+        }
+        document.addEventListener("visibilitychange", () => { if (!document.hidden && introVisible) play(); });
+        /* 스크롤 내리면 영상이 작아지며 멀어지고, 올리면 다시 커짐 */
+        if (!reduce) {
+            let ticking = false;
+            const sizeIntro = () => {
+                ticking = false;
+                const ip = clamp(introPassed() / intro.offsetHeight);
+                setStyle(introFrame, "transform", "translateY(" + (ip * 100).toFixed(2) + "%) scale(" + (1 - ip * .3).toFixed(4) + ")");
+                setStyle(introFrame, "borderRadius", (ip * 28).toFixed(1) + "px");
+                setStyle(introFrame, "opacity", (1 - ip * .35).toFixed(3));
+            };
+            addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(sizeIntro); } }, {passive: true});
+            sizeIntro();
+        }
+
+        (function gLoop() { if (reduce) return; setTimeout(() => { gBurst(); gLoop(); }, rand(5000, 9000)); })();
+
+        /* 메인 비주얼 고정 : 라인업이 위로 올라와 덮음 */
+        const isPortrait = matchMedia("(max-aspect-ratio: 1/1)");
+        function applySticky() {
+            measureHeader();
+            const vh = innerHeight;
+            if (!isPortrait.matches) setStyle(stage, "height", Math.round(Math.min(Math.max(560, vh - headerOff), innerWidth * .625)) + "px");
+            else setStyle(stage, "height", "");
+            setStyle(stage, "top", Math.min(headerOff, vh - stage.offsetHeight) + "px");
+        }
+        applySticky();
+        addEventListener("resize", applySticky);
+        let stickyTick = false;
+        addEventListener("scroll", () => { if (!stickyTick) { stickyTick = true; requestAnimationFrame(() => { stickyTick = false; applySticky(); }); } }, {passive: true});
+
+        /* 마우스 시차 + 스크롤 전환 */
+        const target = {x: 0, y: 0}, cur = {x: 0, y: 0};
+        const seam = document.getElementById("bt_seam");
+        let lastSide = null, seamBusy = 0, raf = 0;
+        function seamGlitch() {
+            const now = performance.now();
+            if (now - seamBusy < 600) return;
+            seamBusy = now;
+            seam.classList.remove("is_flash"); void seam.offsetWidth; seam.classList.add("is_flash");
+            gBurst(2.4, 4);
+        }
+        if (finePointer && !reduce) {
+            stage.addEventListener("pointermove", e => {
+                const r = stage.getBoundingClientRect();
+                target.x = ((e.clientX - r.left) / r.width - .5) * 2;
+                target.y = ((e.clientY - r.top) / r.height - .5) * 2;
+            });
+            stage.addEventListener("pointerleave", () => { target.x = target.y = 0; });
+        }
+        function loop() {
+            cur.x += (target.x - cur.x) * 0.06;
+            cur.y += (target.y - cur.y) * 0.06;
+            const k = stage.clientWidth / 1440;
+            const vh = innerHeight, h = stage.offsetHeight;
+            const ct = lineupSec.getBoundingClientRect().top;
+            const top = ct - h;
+            const pOut = clamp(-top / h);
+            const pAll = clamp((vh - top) / (vh + h));
+            sp = pOut;
+            setStyle(scene, "transform", "scale(" + (1 + sp * .08).toFixed(4) + ")");
+            setStyle(dimFx, "opacity", (sp * .7).toFixed(3));
+            applyLayers(cur.x * k, cur.y * k, (pAll - 0.5) * 110 * k, 1 + clamp((pAll - 0.3) / 0.6) * 0.09);
+            /* 경계 글리치 : 라인업 윗선이 화면 65% 지점을 지날 때 */
+            const side = ct < vh * 0.65;
+            if (lastSide !== null && side !== lastSide) seamGlitch();
+            lastSide = side;
+            const want = pOut < 1 && dustVisible;
+            if (want && !running) { running = true; cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); }
+            else if (!want) running = false;
+            requestAnimationFrame(loop);
+        }
+        if (!reduce) requestAnimationFrame(loop);
+        else applyLayers(0, 0, 0, 1);
+
+        /* 화이트 더스트 */
+        const cvs = document.getElementById("bt_dust");
+        const ctx = cvs.getContext("2d");
+        let W = 0, H = 0, parts = [];
+        function make(anywhere) {
+            const z = Math.random();
+            return {x: Math.random() * W, y: anywhere ? Math.random() * H : H + 10, z: z,
+                r: 0.5 + z * z * 3.2, vy: -(0.06 + z * 0.22), vx: rand(-0.08, 0.08),
+                ph: Math.random() * Math.PI * 2, sw: rand(0.002, 0.006), a: 0.18 + Math.random() * 0.55, soft: z > 0.7};
+        }
+        function resize() {
+            const r = stage.getBoundingClientRect();
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            W = r.width; H = r.height;
+            cvs.width = Math.round(W * dpr); cvs.height = Math.round(H * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            const count = Math.round(Math.min(140, Math.max(45, W * H / 14000)));
+            parts = Array.from({length: count}, () => make(true));
+        }
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            for (const p of parts) {
+                p.ph += p.sw; p.x += p.vx + Math.sin(p.ph) * 0.18; p.y += p.vy;
+                if (p.y < -10 || p.x < -10 || p.x > W + 10) Object.assign(p, make(false), {x: Math.random() * W});
+                const x = p.x - cur.x * p.z * 30, y = p.y - cur.y * p.z * 20;
+                const alpha = p.a * (0.65 + 0.35 * Math.sin(p.ph * 3));
+                if (p.soft) {
+                    const g = ctx.createRadialGradient(x, y, 0, x, y, p.r * 2.4);
+                    g.addColorStop(0, "rgba(255,255,255," + (alpha * 0.7) + ")"); g.addColorStop(1, "rgba(255,255,255,0)");
+                    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, p.r * 2.4, 0, Math.PI * 2); ctx.fill();
+                } else {
+                    ctx.fillStyle = "rgba(255,255,255," + alpha + ")"; ctx.beginPath(); ctx.arc(x, y, p.r, 0, Math.PI * 2); ctx.fill();
+                }
+            }
+            if (running) raf = requestAnimationFrame(draw);
+        }
+        resize();
+        if ("ResizeObserver" in window) new ResizeObserver(() => { resize(); applySticky(); }).observe(stage);
+        if (reduce) draw();
+        else if ("IntersectionObserver" in window) {
+            new IntersectionObserver(entries => {
+                dustVisible = entries[0].isIntersecting; running = dustVisible; cancelAnimationFrame(raf);
+                if (running) raf = requestAnimationFrame(draw);
+            }).observe(stage);
+        }
+
+        /* 라인업 글리치 밴드 */
+        const lineup = root.querySelector(".bt_lineup");
+        const lslices = [...lineup.querySelectorAll(".bt_lslice")];
+        const zones = [...lineup.querySelectorAll(".bt_gzone")].map(z => ({
+            el: z, y0: +z.dataset.y0 / 6357 * 100, y1: +z.dataset.y1 / 6357 * 100, visible: false, busy: false, timer: 0
+        }));
+        function zoneFrame(z) {
+            lslices.forEach((s, i) => {
+                if (Math.random() < 0.25) { s.style.opacity = 0; return; }
+                const span = z.y1 - z.y0, h = span * rand(0.06, i === 2 ? 0.18 : 0.35), top = z.y0 + rand(0, span - h);
+                s.style.clipPath = "inset(" + top + "% 0 " + (100 - top - h) + "% 0)";
+                s.style.transform = "translate3d(" + rand(-4, 4).toFixed(2) + "%, 0, 0)";
+                s.style.opacity = i === 2 ? 1 : rand(.55, .95);
+            });
+        }
+        function zoneBurst(z) {
+            if (z.busy || reduce || document.hidden || zones.some(o => o.busy)) return;
+            z.busy = true;
+            let n = Math.round(rand(4, 9));
+            const tick = () => {
+                if (n-- > 0) { zoneFrame(z); setTimeout(tick, rand(40, 90)); }
+                else { lslices.forEach(s => s.style.opacity = 0); z.busy = false; }
+            };
+            tick();
+        }
+        function zoneLoop(z) {
+            clearTimeout(z.timer);
+            if (!z.visible) return;
+            z.timer = setTimeout(() => { zoneBurst(z); zoneLoop(z); }, rand(1600, 4200));
+        }
+        if (!reduce && "IntersectionObserver" in window) {
+            const io = new IntersectionObserver(entries => entries.forEach(e => {
+                const z = zones.find(o => o.el === e.target);
+                const was = z.visible; z.visible = e.isIntersecting;
+                if (z.visible && !was) { setTimeout(() => zoneBurst(z), 150); zoneLoop(z); }
+                if (!z.visible) clearTimeout(z.timer);
+            }), {threshold: 0.4});
+            zones.forEach(z => io.observe(z.el));
+
+            /* 캐릭터 칸에 마우스를 올리면(모바일은 탭) 그 칸 안에서만 짧게 지직임 */
+            let cellTimer = 0;
+            function cellBurst(cell) {
+                const L = cell.dataset.x / 1440 * 100, T = cell.dataset.y / 6357 * 100, Wd = cell.dataset.w / 1440 * 100, Hd = cell.dataset.h / 6357 * 100;
+                clearTimeout(cellTimer);
+                zones.forEach(z => z.busy = true);
+                let n = Math.round(rand(4, 7));
+                const tick = () => {
+                    if (n-- > 0) {
+                        lslices.forEach((s, i) => {
+                            if (Math.random() < 0.25) { s.style.opacity = 0; return; }
+                            const h = Hd * rand(0.05, i === 2 ? 0.12 : 0.22), top = T + rand(0, Hd - h);
+                            s.style.clipPath = "inset(" + top + "% " + (100 - L - Wd) + "% " + (100 - top - h) + "% " + L + "%)";
+                            s.style.transform = "translate3d(" + rand(-1.6, 1.6).toFixed(2) + "%, 0, 0)";
+                            s.style.opacity = i === 2 ? 1 : rand(.6, .95);
+                        });
+                        cellTimer = setTimeout(tick, rand(45, 85));
+                    } else {
+                        lslices.forEach(s => s.style.opacity = 0);
+                        zones.forEach(z => z.busy = false);
+                    }
+                };
+                tick();
+            }
+            lineup.querySelectorAll(".bt_cell").forEach(c => {
+                if (finePointer) c.addEventListener("pointerenter", () => cellBurst(c));
+                c.addEventListener("pointerdown", e => { if (e.pointerType !== "mouse") cellBurst(c); });
+            });
+            let last = 0;
+            lineup.addEventListener("pointermove", e => {
+                const now = performance.now();
+                if (now - last < 700) return;
+                const r = lineup.getBoundingClientRect();
+                const y = (e.clientY - r.top) / r.height * 100;
+                const z = zones.find(o => y >= o.y0 && y <= o.y1);
+                if (z) { last = now; zoneBurst(z); }
+            });
+        }
+
+        /* 라인업 : 터치 기기 탭 토글 */
+        const clearActive = () => {
+            root.querySelectorAll(".bt_cell.is_active").forEach(c => c.classList.remove("is_active"));
+            root.querySelectorAll(".bt_unit.has_active").forEach(u => u.classList.remove("has_active"));
+        };
+        root.querySelectorAll(".bt_unit").forEach(unit => {
+            unit.addEventListener("pointerup", e => {
+                if (e.pointerType === "mouse") return;
+                const cell = e.target.closest(".bt_cell");
+                if (!cell) return;
+                const already = cell.classList.contains("is_active");
+                clearActive();
+                if (!already) { cell.classList.add("is_active"); unit.classList.add("has_active"); }
+            });
+        });
+        document.addEventListener("click", e => { if (!e.target.closest("#pj_bomtoon .bt_cell")) clearActive(); });
+
+        /* 구매 버튼 : 오픈 전(href="#")에는 COMING SOON 팝업, 구매 링크 확정 후 href만 바꾸면 바로 이동 */
+        const soon = document.getElementById("bt_soon"), soonOk = document.getElementById("bt_soon_ok");
+        let lastBtn = null;
+        const closeSoon = () => { soon.hidden = true; if (lastBtn) lastBtn.focus(); };
+        root.querySelectorAll(".bt_buy_btn").forEach(b => b.addEventListener("click", e => {
+            if (b.getAttribute("href") !== "#") return;
+            e.preventDefault(); lastBtn = b; soon.hidden = false; soonOk.focus();
+        }));
+        soonOk.addEventListener("click", closeSoon);
+        soon.addEventListener("click", e => { if (e.target === soon) closeSoon(); });
+        addEventListener("keydown", e => { if (e.key === "Escape" && !soon.hidden) closeSoon(); });
+
+        /* 피크 낙하 : 인트로 → 메인 비주얼 사이 검은 구간에서 스크롤에 맞춰 회전하며 떨어짐 */
+        (() => {
+            const box = document.getElementById("bt_picks");
+            const dz = document.getElementById("bt_dropzone");
+            if (reduce) { box.hidden = true; return; }
+            const ps = [...box.querySelectorAll(".bt_pick")].map((el, i) => ({el: el, x: +el.dataset.x, d: +el.dataset.d,
+                spin: [540, -620, 480][i], flip: [900, 720, 1080][i], sway: [6, -5, 4][i]}));
+            const ease = t => t * t * (3 - 2 * t);
+            let praf = 0;
+            function update() {
+                praf = 0;
+                const vh = innerHeight, top = dz.getBoundingClientRect().top;
+                const p = (vh * 0.6 - top) / (dz.offsetHeight + vh * 0.95);
+                setStyle(enterFx, "opacity", clamp(stage.getBoundingClientRect().top / vh).toFixed(3));
+                const on = p > 0 && p < 1.05;
+                box.hidden = !on;
+                if (!on) { if (p <= 0) setStyle(enterFx, "opacity", "1"); return; }
+                for (const k of ps) {
+                    const t = clamp((p - k.d) / 0.8), e = ease(t);
+                    const y = -30 + e * 150;
+                    const x = k.x + Math.sin(t * Math.PI * 2) * k.sway;
+                    k.el.style.left = x + "vw";
+                    k.el.style.transform = "translateY(" + y + "vh) rotateZ(" + (e * k.spin).toFixed(1) + "deg) rotateY(" + (e * k.flip).toFixed(1) + "deg) rotateX(" + (Math.sin(t * Math.PI) * 25).toFixed(1) + "deg)";
+                }
+            }
+            addEventListener("scroll", () => { if (!praf) praf = requestAnimationFrame(update); }, {passive: true});
+            addEventListener("resize", update);
+            update();
+        })();
+
+        /* 구성품 : 호버(모바일 탭) 강조 + 위쪽 글리치 */
+        (() => {
+            const comp = document.getElementById("bt_comp");
+            if (!comp) return;
+            const its = [...comp.querySelectorAll(".bt_it")];
+            /* 유닛 컬러(파랑·빨강·노랑) 중 직전 색과 겹치지 않게 랜덤 */
+            const UNIT = ["#5cc8e6", "#ff3b3f", "#f5e10a"];
+            let lastC = -1;
+            const pickColor = it => { let k; do { k = Math.floor(Math.random() * 3); } while (k === lastC); lastC = k; it.querySelector(".bt_tint").style.backgroundColor = UNIT[k]; };
+            its.forEach(it => {
+                it.querySelector(".bt_hit").addEventListener("pointerenter", () => pickColor(it));
+                it.addEventListener("focus", () => pickColor(it));
+                it.addEventListener("pointerup", e => {
+                    if (e.pointerType === "mouse") return;
+                    const was = it.classList.contains("is_active");
+                    its.forEach(o => o.classList.remove("is_active"));
+                    comp.classList.toggle("has_active", !was);
+                    if (!was) { pickColor(it); it.classList.add("is_active"); }
+                });
+            });
+            document.addEventListener("click", e => { if (!e.target.closest("#bt_comp .bt_it")) { its.forEach(o => o.classList.remove("is_active")); comp.classList.remove("has_active"); } });
+            if (reduce || !("IntersectionObserver" in window)) return;
+            const sl = [...comp.querySelectorAll(".bt_cslice")];
+            const zs = [...comp.querySelectorAll(".bt_czone")].map(z => ({el: z, y0: +z.dataset.y0 / 26.76, y1: +z.dataset.y1 / 26.76, vis: false, t: 0}));
+            let busy = false;
+            function burst(z) {
+                if (busy || document.hidden) return;
+                busy = true;
+                let n = Math.round(rand(4, 9));
+                const tick = () => {
+                    if (n-- > 0) {
+                        sl.forEach((s, i) => {
+                            if (Math.random() < .25) { s.style.opacity = 0; return; }
+                            const span = z.y1 - z.y0, h = span * rand(.06, i === 2 ? .18 : .35), top = z.y0 + rand(0, span - h);
+                            s.style.clipPath = "inset(" + top + "% 0 " + (100 - top - h) + "% 0)";
+                            s.style.transform = "translate3d(" + rand(-4, 4).toFixed(2) + "%, 0, 0)";
+                            s.style.opacity = i === 2 ? 1 : rand(.55, .95);
+                        });
+                        setTimeout(tick, rand(40, 90));
+                    } else { sl.forEach(s => s.style.opacity = 0); busy = false; }
+                };
+                tick();
+            }
+            const cLoop = z => { clearTimeout(z.t); if (z.vis) z.t = setTimeout(() => { burst(z); cLoop(z); }, rand(1600, 4200)); };
+            const io = new IntersectionObserver(es => es.forEach(e => {
+                const z = zs.find(o => o.el === e.target);
+                const was = z.vis; z.vis = e.isIntersecting;
+                if (z.vis && !was) { setTimeout(() => burst(z), 150); cLoop(z); }
+                if (!z.vis) clearTimeout(z.t);
+            }), {threshold: .4});
+            zs.forEach(z => io.observe(z.el));
+            let last = 0;
+            comp.addEventListener("pointermove", e => {
+                const now = performance.now();
+                if (now - last < 700) return;
+                const r = comp.getBoundingClientRect(), y = (e.clientY - r.top) / r.height * 100;
+                const z = zs.find(o => y >= o.y0 && y <= o.y1);
+                if (z) { last = now; burst(z); }
+            });
+        })();
+
+        /* 음원 미리 듣기 */
+        const SPEAKER = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path class="bt_wave bt_w1" d="M15.5 9a4.2 4.2 0 0 1 0 6"/><path class="bt_wave bt_w2" d="M18.3 6.4a8 8 0 0 1 0 11.2"/></svg>'
+            + '<span class="bt_glyph" aria-hidden="true"><svg class="bt_i_play" viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg><svg class="bt_i_pause" viewBox="0 0 12 12"><path d="M2.5 1.5h2.6v9H2.5zM6.9 1.5h2.6v9H6.9z" fill="currentColor"/></svg></span>';
+        const fmt = s => { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); };
+        const players = [...root.querySelectorAll(".bt_track")].map(el => {
+            const audio = new Audio();
+            audio.preload = "metadata";
+            audio.src = el.dataset.src;
+            const btn = el.querySelector(".bt_play"), bar = el.querySelector(".bt_bar"), fill = el.querySelector(".bt_bar_fill"), knob = el.querySelector(".bt_knob");
+            const curT = el.querySelector(".bt_t_cur"), rem = el.querySelector(".bt_t_remain");
+            const name = el.querySelector(".bt_track_name").textContent;
+            btn.innerHTML = SPEAKER;
+            const render = () => {
+                const d = audio.duration || 0, t = audio.currentTime || 0, p = d ? t / d * 100 : 0;
+                fill.style.width = p + "%"; knob.style.left = p + "%";
+                curT.textContent = fmt(t);
+                rem.textContent = d ? "-" + fmt(d - t) : "-:--";
+                bar.setAttribute("aria-valuenow", Math.round(p)); bar.setAttribute("aria-valuetext", fmt(t) + " / " + fmt(d));
+            };
+            const setState = playing => {
+                el.classList.toggle("is_playing", playing);
+                btn.setAttribute("aria-label", name + " 음원 " + (playing ? "일시정지" : "재생"));
+            };
+            const reload = () => { audio.src = el.dataset.src + (el.dataset.src.indexOf("?") < 0 ? "?" : "&") + "r=" + Date.now(); audio.load(); };
+            audio.addEventListener("error", () => { if (!audio.dataset.retried) { audio.dataset.retried = 1; reload(); } });
+            audio.addEventListener("loadedmetadata", render);
+            audio.addEventListener("timeupdate", render);
+            audio.addEventListener("play", () => setState(true));
+            audio.addEventListener("pause", () => setState(false));
+            audio.addEventListener("ended", () => { audio.currentTime = 0; render(); });
+            /* 재생·정지할 때 볼륨을 부드럽게 (iOS는 볼륨 조절이 막혀 있어 바로 재생·정지) */
+            let fadeId = 0;
+            const fadeTo = (v, ms, done) => {
+                cancelAnimationFrame(fadeId);
+                const from = audio.volume, t0 = performance.now();
+                const step = now => {
+                    const t = Math.min(1, (now - t0) / ms);
+                    audio.volume = from + (v - from) * t;
+                    if (t < 1) fadeId = requestAnimationFrame(step); else if (done) done();
+                };
+                fadeId = requestAnimationFrame(step);
+            };
+            const softPause = () => { if (!audio.paused) fadeTo(0, 350, () => audio.pause()); };
+            btn.addEventListener("click", () => {
+                if (audio.paused) {
+                    players.forEach(p => p.audio !== audio && p.softPause());
+                    audio.volume = 0;
+                    audio.play().catch(() => { reload(); audio.play().catch(() => {}); });
+                    fadeTo(1, 500);
+                } else softPause();
+            });
+            const seekTo = clientX => {
+                const r = bar.getBoundingClientRect(), d = audio.duration;
+                if (!d) return;
+                audio.currentTime = clamp((clientX - r.left) / r.width) * d;
+                render();
+            };
+            bar.addEventListener("pointerdown", e => {
+                bar.setPointerCapture(e.pointerId); seekTo(e.clientX);
+                const mv = ev => seekTo(ev.clientX);
+                const up = () => { bar.removeEventListener("pointermove", mv); bar.removeEventListener("pointerup", up); };
+                bar.addEventListener("pointermove", mv); bar.addEventListener("pointerup", up);
+            });
+            bar.addEventListener("keydown", e => {
+                if (!audio.duration) return;
+                if (e.key === "ArrowRight") { audio.currentTime = Math.min(audio.duration, audio.currentTime + 5); e.preventDefault(); }
+                if (e.key === "ArrowLeft") { audio.currentTime = Math.max(0, audio.currentTime - 5); e.preventDefault(); }
+                render();
+            });
+            return {audio: audio, softPause: softPause};
+        });
+    });
+</script>
