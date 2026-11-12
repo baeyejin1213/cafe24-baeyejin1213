@@ -221,9 +221,9 @@
 
     <!-- 피크 낙하 -->
     <div class="bt_picks" id="bt_picks" aria-hidden="true" hidden>
-        <div class="bt_pick" data-x="18" data-d="0"><img src="/morenvyimg/2027_bomtoonSG/pick_whoosh_front.webp" alt=""><img class="bt_back" src="/morenvyimg/2027_bomtoonSG/pick_whoosh_back.webp" alt=""></div>
-        <div class="bt_pick" data-x="52" data-d="0.14"><img src="/morenvyimg/2027_bomtoonSG/pick_ctrl_front.webp" alt=""><img class="bt_back" src="/morenvyimg/2027_bomtoonSG/pick_ctrl_back.webp" alt=""></div>
-        <div class="bt_pick" data-x="82" data-d="0.07"><img src="/morenvyimg/2027_bomtoonSG/pick_sol_front.webp" alt=""><img class="bt_back" src="/morenvyimg/2027_bomtoonSG/pick_sol_back.webp" alt=""></div>
+        <div class="bt_pick" data-x="18" data-d="0"><img src="/morenvyimg/2027_bomtoonSG/pick_whoosh_front_v2.webp" alt=""><img class="bt_back" src="/morenvyimg/2027_bomtoonSG/pick_whoosh_back_v2.webp" alt=""></div>
+        <div class="bt_pick" data-x="52" data-d="0.14"><img src="/morenvyimg/2027_bomtoonSG/pick_ctrl_front_v2.webp" alt=""><img class="bt_back" src="/morenvyimg/2027_bomtoonSG/pick_ctrl_back_v2.webp" alt=""></div>
+        <div class="bt_pick" data-x="82" data-d="0.07"><img src="/morenvyimg/2027_bomtoonSG/pick_sol_front_v2.webp" alt=""><img class="bt_back" src="/morenvyimg/2027_bomtoonSG/pick_sol_back_v2.webp" alt=""></div>
     </div>
 
     <!-- 구매 버튼 : 구매 페이지 URL 확정 후 href 교체 -->
@@ -260,7 +260,8 @@
 
     /* 기획전 섹션 01 : 인트로 영상 */
     #pj_bomtoon .bt_intro {position: relative; z-index: 0; width: 100%; height: max(560px, 100vh); height: max(560px, 100svh); background: #000;}
-    #pj_bomtoon .bt_intro_frame {position: absolute; inset: 0; overflow: hidden; background: #000; will-change: transform, opacity;}
+    #pj_bomtoon .bt_intro_frame {position: absolute; inset: 0; overflow: hidden; background: #000; will-change: transform, opacity; transition: border-radius .4s ease;}
+    #pj_bomtoon .bt_intro.is_away .bt_intro_frame {border-radius: 28px;}
     #pj_bomtoon .bt_intro_media {position: absolute; inset: 0; background: url("/morenvyimg/2027_bomtoonSG/intro_poster.webp") 50% 50% / cover no-repeat;}
     #pj_bomtoon .bt_intro.is_anim .bt_intro_media {background-image: url("/morenvyimg/2027_bomtoonSG/intro_anim.webp");}
     #pj_bomtoon .bt_intro.is_anim video {display: none;}
@@ -284,7 +285,7 @@
     #pj_bomtoon .bt_layer.bt_logo > .bt_lg_next {left: 2.4%; top: 3.5%; width: 30.21%;}
     #pj_bomtoon .bt_layer.bt_logo > .bt_lg_head {left: auto; top: auto; right: 1.56%; bottom: 2.17%; width: 50.26%;}
     #pj_bomtoon .bt_members .bt_glow {filter: brightness(2.2) saturate(1.6); mix-blend-mode: screen; opacity: 0; animation: bt_rim 1s ease-out infinite;}
-    #pj_bomtoon .bt_slice {position: absolute; inset: 0; z-index: 3; opacity: 0; pointer-events: none; will-change: clip-path, transform;}
+    #pj_bomtoon .bt_slice {position: absolute; inset: 0; z-index: 3; opacity: 0; pointer-events: none; display: none;}
     #pj_bomtoon .bt_slice.bt_r {mix-blend-mode: screen; filter: sepia(1) saturate(5) hue-rotate(-50deg) brightness(.8);}
     #pj_bomtoon .bt_slice.bt_c {mix-blend-mode: screen; filter: sepia(1) saturate(5) hue-rotate(140deg) brightness(.75);}
     #pj_bomtoon .bt_slice.bt_k {filter: contrast(1.15) brightness(1.08);}
@@ -305,7 +306,7 @@
     #pj_bomtoon .bt_seam.is_flash {animation: bt_seam .38s steps(1) 1;}
     #pj_bomtoon .bt_lineup {position: relative; z-index: 1; max-width: 1440px; margin: 0 auto; aspect-ratio: 1440 / 6357; overflow: hidden;}
     #pj_bomtoon .bt_lineup > img {display: block; width: 100%; height: 100%;}
-    #pj_bomtoon .bt_lslice {position: absolute; inset: 0; background: url("/morenvyimg/2027_bomtoonSG/lineup.webp") 0 0 / 100% 100% no-repeat; opacity: 0; pointer-events: none; will-change: clip-path, transform;}
+    #pj_bomtoon .bt_lslice {position: absolute; inset: 0; background: url("/morenvyimg/2027_bomtoonSG/lineup.webp") 0 0 / 100% 100% no-repeat; opacity: 0; pointer-events: none; display: none;}
     #pj_bomtoon .bt_lslice.bt_r, #pj_bomtoon .bt_cslice.bt_r {mix-blend-mode: screen; filter: sepia(1) saturate(6) hue-rotate(-50deg) brightness(.9);}
     #pj_bomtoon .bt_lslice.bt_c, #pj_bomtoon .bt_cslice.bt_c {mix-blend-mode: screen; filter: sepia(1) saturate(6) hue-rotate(140deg) brightness(.85);}
     #pj_bomtoon .bt_lslice.bt_k, #pj_bomtoon .bt_cslice.bt_k {filter: contrast(1.25) brightness(1.1);}
@@ -339,7 +340,7 @@
     #pj_bomtoon .bt_comp:has(.bt_hit:hover) .bt_it:not(:has(.bt_hit:hover)) img,
     #pj_bomtoon .bt_comp:has(.bt_it:focus-visible) .bt_it:not(:focus-visible) img,
     #pj_bomtoon .bt_comp.has_active .bt_it:not(.is_active) img {opacity: .4;}
-    #pj_bomtoon .bt_cslice {position: absolute; inset: 0; z-index: 3; background: url("/morenvyimg/2027_bomtoonSG/comp_full.webp") 0 0 / 100% 100% no-repeat; opacity: 0; pointer-events: none; will-change: clip-path, transform;}
+    #pj_bomtoon .bt_cslice {position: absolute; inset: 0; z-index: 3; background: url("/morenvyimg/2027_bomtoonSG/comp_full.webp") 0 0 / 100% 100% no-repeat; opacity: 0; pointer-events: none; display: none;}
 
     /* 기획전 섹션 05 : 음원 미리 듣기 */
     #pj_bomtoon .bt_listen {padding-top: clamp(72px, 9vw, 140px);}
@@ -414,8 +415,9 @@
 
     /* 피크 낙하 */
     #pj_bomtoon .bt_picks {position: fixed; inset: 0; z-index: 40; overflow: hidden; pointer-events: none; perspective: 1200px;}
-    #pj_bomtoon .bt_pick {position: absolute; top: 0; width: clamp(90px, 11vw, 190px); aspect-ratio: 480 / 552; margin-left: calc(clamp(90px, 11vw, 190px) / -2); transform-style: preserve-3d; will-change: transform;}
-    #pj_bomtoon .bt_pick img {position: absolute; inset: 0; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, .85)) drop-shadow(0 0 14px rgba(255, 255, 255, .4)) drop-shadow(0 16px 20px rgba(0, 0, 0, .6));}
+    #pj_bomtoon .bt_pick {position: absolute; left: 0; top: 0; width: clamp(90px, 11vw, 190px); aspect-ratio: 480 / 552; margin-left: calc(clamp(90px, 11vw, 190px) / -2); transform-style: preserve-3d; will-change: transform;}
+    /* 테두리 빛·글로우·그림자는 이미지에 미리 넣음(688×788 = 피크 480×552 + 여백 좌우 104, 위 76, 아래 160) */
+    #pj_bomtoon .bt_pick img {position: absolute; left: -21.6667%; top: -13.7681%; width: 143.3333%; height: 142.7536%; -webkit-backface-visibility: hidden; backface-visibility: hidden;}
     #pj_bomtoon .bt_pick img.bt_back {transform: rotateY(180deg);}
 
     /* 구매 버튼 */
@@ -494,6 +496,8 @@
         const clamp = v => Math.min(1, Math.max(0, v));
         /* 같은 값이면 다시 쓰지 않음 */
         const setStyle = (el, prop, v) => { const key = "_bt_" + prop; if (el[key] !== v) { el[key] = v; el.style[prop] = v; } };
+        /* 글리치 띠는 쉬는 동안 display: none (화면 크기 레이어를 늘 들고 있지 않게) */
+        const hideSlices = list => list.forEach(s => { s.style.opacity = 0; s.style.display = "none"; });
 
         const stage = document.getElementById("bt_stage");
         const scene = stage.querySelector(".bt_scene");
@@ -522,6 +526,7 @@
         }));
         function gFrame(pw) {
             slices.forEach((s, i) => {
+                s.style.display = "block";
                 if (Math.random() < 0.4) { s.style.opacity = 0; return; }
                 const top = rand(0, 95), h = rand(0.8, i === 2 ? 3 : 6) * pw;
                 s.style.clipPath = "inset(" + top + "% 0 " + Math.max(0, 100 - top - h) + "% 0)";
@@ -535,7 +540,7 @@
             let n = steps || Math.round(rand(2, 4));
             const tick = () => {
                 if (n-- > 0) { gFrame(pw); setTimeout(tick, rand(50, 90)); }
-                else slices.forEach(s => s.style.opacity = 0);
+                else hideSlices(slices);
             };
             tick();
         }
@@ -632,7 +637,7 @@
                 ticking = false;
                 const ip = clamp(introPassed() / intro.offsetHeight);
                 setStyle(introFrame, "transform", "translateY(" + (ip * 100).toFixed(2) + "%) scale(" + (1 - ip * .3).toFixed(4) + ")");
-                setStyle(introFrame, "borderRadius", (ip * 28).toFixed(1) + "px");
+                intro.classList.toggle("is_away", ip > 0.01);
                 setStyle(introFrame, "opacity", (1 - ip * .35).toFixed(3));
             };
             addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(sizeIntro); } }, {passive: true});
@@ -718,6 +723,19 @@
             const count = Math.round(Math.min(140, Math.max(45, W * H / 14000)));
             parts = Array.from({length: count}, () => make(true));
         }
+        /* 먼지 모양을 한 번만 그려 두고 매 프레임 drawImage로 찍음(프레임마다 그라데이션을 새로 만들지 않게) */
+        const sprite = (soft) => {
+            const c = document.createElement("canvas"), g = c.getContext("2d");
+            c.width = c.height = 64;
+            if (soft) {
+                const rg = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+                rg.addColorStop(0, "rgba(255,255,255,1)"); rg.addColorStop(1, "rgba(255,255,255,0)");
+                g.fillStyle = rg;
+            } else g.fillStyle = "#fff";
+            g.beginPath(); g.arc(32, 32, 32, 0, Math.PI * 2); g.fill();
+            return c;
+        };
+        const softDot = sprite(true), hardDot = sprite(false);
         function draw() {
             ctx.clearRect(0, 0, W, H);
             for (const p of parts) {
@@ -725,14 +743,11 @@
                 if (p.y < -10 || p.x < -10 || p.x > W + 10) Object.assign(p, make(false), {x: Math.random() * W});
                 const x = p.x - cur.x * p.z * 30, y = p.y - cur.y * p.z * 20;
                 const alpha = p.a * (0.65 + 0.35 * Math.sin(p.ph * 3));
-                if (p.soft) {
-                    const g = ctx.createRadialGradient(x, y, 0, x, y, p.r * 2.4);
-                    g.addColorStop(0, "rgba(255,255,255," + (alpha * 0.7) + ")"); g.addColorStop(1, "rgba(255,255,255,0)");
-                    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, p.r * 2.4, 0, Math.PI * 2); ctx.fill();
-                } else {
-                    ctx.fillStyle = "rgba(255,255,255," + alpha + ")"; ctx.beginPath(); ctx.arc(x, y, p.r, 0, Math.PI * 2); ctx.fill();
-                }
+                const R = p.soft ? p.r * 2.4 : p.r;
+                ctx.globalAlpha = p.soft ? alpha * 0.7 : alpha;
+                ctx.drawImage(p.soft ? softDot : hardDot, x - R, y - R, R * 2, R * 2);
             }
+            ctx.globalAlpha = 1;
             if (running) raf = requestAnimationFrame(draw);
         }
         resize();
@@ -753,6 +768,7 @@
         }));
         function zoneFrame(z) {
             lslices.forEach((s, i) => {
+                s.style.display = "block";
                 if (Math.random() < 0.25) { s.style.opacity = 0; return; }
                 const span = z.y1 - z.y0, h = span * rand(0.06, i === 2 ? 0.18 : 0.35), top = z.y0 + rand(0, span - h);
                 s.style.clipPath = "inset(" + top + "% 0 " + (100 - top - h) + "% 0)";
@@ -766,7 +782,7 @@
             let n = Math.round(rand(4, 9));
             const tick = () => {
                 if (n-- > 0) { zoneFrame(z); setTimeout(tick, rand(40, 90)); }
-                else { lslices.forEach(s => s.style.opacity = 0); z.busy = false; }
+                else { hideSlices(lslices); z.busy = false; }
             };
             tick();
         }
@@ -794,6 +810,7 @@
                 const tick = () => {
                     if (n-- > 0) {
                         lslices.forEach((s, i) => {
+                            s.style.display = "block";
                             if (Math.random() < 0.25) { s.style.opacity = 0; return; }
                             const h = Hd * rand(0.05, i === 2 ? 0.12 : 0.22), top = T + rand(0, Hd - h);
                             s.style.clipPath = "inset(" + top + "% " + (100 - L - Wd) + "% " + (100 - top - h) + "% " + L + "%)";
@@ -802,7 +819,7 @@
                         });
                         cellTimer = setTimeout(tick, rand(45, 85));
                     } else {
-                        lslices.forEach(s => s.style.opacity = 0);
+                        hideSlices(lslices);
                         zones.forEach(z => z.busy = false);
                     }
                 };
@@ -873,8 +890,7 @@
                     const t = clamp((p - k.d) / 0.8), e = ease(t);
                     const y = -30 + e * 150;
                     const x = k.x + Math.sin(t * Math.PI * 2) * k.sway;
-                    k.el.style.left = x + "vw";
-                    k.el.style.transform = "translateY(" + y + "vh) rotateZ(" + (e * k.spin).toFixed(1) + "deg) rotateY(" + (e * k.flip).toFixed(1) + "deg) rotateX(" + (Math.sin(t * Math.PI) * 25).toFixed(1) + "deg)";
+                    k.el.style.transform = "translate3d(" + x.toFixed(2) + "vw, " + y.toFixed(2) + "vh, 0) rotateZ(" + (e * k.spin).toFixed(1) + "deg) rotateY(" + (e * k.flip).toFixed(1) + "deg) rotateX(" + (Math.sin(t * Math.PI) * 25).toFixed(1) + "deg)";
                 }
             }
             addEventListener("scroll", () => { if (!praf) praf = requestAnimationFrame(update); }, {passive: true});
@@ -914,6 +930,7 @@
                 const tick = () => {
                     if (n-- > 0) {
                         sl.forEach((s, i) => {
+                            s.style.display = "block";
                             if (Math.random() < .25) { s.style.opacity = 0; return; }
                             const span = z.y1 - z.y0, h = span * rand(.06, i === 2 ? .18 : .35), top = z.y0 + rand(0, span - h);
                             s.style.clipPath = "inset(" + top + "% 0 " + (100 - top - h) + "% 0)";
@@ -921,7 +938,7 @@
                             s.style.opacity = i === 2 ? 1 : rand(.55, .95);
                         });
                         setTimeout(tick, rand(40, 90));
-                    } else { sl.forEach(s => s.style.opacity = 0); busy = false; }
+                    } else { hideSlices(sl); busy = false; }
                 };
                 tick();
             }
