@@ -70,8 +70,8 @@
             </ul>
             </div>
             <div class="timer">
-                <p class="t01">종료까지</p>
-                <p class="t02">남은 시간  <span class="time">00 : 00 : 00</span></p>
+                <p class="t01"><span class="end">종료까지</span><span class="open"></span></p>
+                <p class="t02"><span class="end">남은 시간  <span class="time">00 : 00 : 00</span></span><span class="open">오픈 예정</span></p>
             </div>
             <div class="prd_box on">
                 <div module="product_listnormal" class="ec-base-product">
@@ -353,6 +353,9 @@
     #project_wrap .timer .t01 {color: #fff;}
     #project_wrap .timer .t02 {color: #ff7929;}
     #project_wrap .timer .time {font-variant-numeric: tabular-nums;}
+    #project_wrap .timer .open,
+    #project_wrap .timer.ready .end {display: none;}
+    #project_wrap .timer.ready .open {display: inline;}
 
     /* 섹션 04 클리어런스 */
     #project_wrap .sec04 {padding-top: 120px;}
@@ -482,10 +485,30 @@
             setTimer();
         };
 
+        /* 시작 전 날짜 문구 "11/13(금) 오전 10시" — data-start를 한국 시간으로 읽음 */
+        function openText(start) {
+            var d = new Date(start + 9 * 3600000);
+            var h = d.getUTCHours();
+            var md = [d.getUTCMonth() + 1, d.getUTCDate()].map(function (n) {
+                return String(n).padStart(2, "0");
+            });
+
+            return md.join("/") + "(" + "일월화수목금토".charAt(d.getUTCDay()) + ") " + (h < 12 ? "오전 " : "오후 ") + (h % 12 || 12) + "시";
+        };
+
         function setTimer() {
             var time = relayTime($relayTab.index($relayTab.filter(".on")));
             var now = Date.now();
-            var remain = now < time.start ? time.end - time.start + 1000 : Math.max(0, time.end - now);
+            var $timer = $relay.find(".timer");
+
+            if (now < time.start) {
+                $timer.addClass("ready").find(".t01 .open").text(openText(time.start));
+                return;
+            };
+
+            $timer.removeClass("ready");
+
+            var remain = Math.max(0, time.end - now);
             var sec = Math.ceil(remain / 1000);
             var num = [Math.floor(sec / 3600), Math.floor(sec % 3600 / 60), sec % 60].map(function (n) {
                 return String(n).padStart(2, "0");
