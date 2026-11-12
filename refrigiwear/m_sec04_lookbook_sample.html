@@ -1,0 +1,530 @@
+<!--
+================================================================================
+ 메인 04 : STYLED BY REFRIGIWEAR (룩북)
+ 원본 : https://refrigiwear1954.com/en  #shopify-section-template--29569219985735__1790851058f255842a
+
+ 넣을 곳
+   [1]   HTML → /index.html          <section class="m_sec04 section-padding"> 안
+                                     - 타이틀 <div class="main_title">...</div> 은 그대로 두고
+                                     - 상품진열 <div module="product_listmain_2" ...>...</div> 를 [1]로 교체
+   [2-1] CSS  → /morenvy/css/main.css  "메인 03 : banner 종료" 블록 바로 아래
+   [2-2] CSS  → /morenvy/css/main.css  @media all and (max-width:1024px) { } 안 (지금 비어 있는 블록)
+   [3]   JS   → /morenvy/js/main.js    맨 끝 "}); // 시작 코드 블럭 종료" 바로 위
+
+ 배너관리자 (배너 1개 = 룩 1장)
+   - 영역 ID : ecd5 (이미 만든 영역)
+   - 이미지 1       = 룩 이미지 (권장 1280×2280)
+   - 타이틀         = 핫스팟 1
+   - 텍스트 1~3     = 핫스팟 2~4
+     핫스팟 한 칸 = "상품번호|가로%|세로%"   예) 101|63.8|59.0
+     (점이 3개면 텍스트 3은 비워 둡니다.)
+   - 상품명·가격·썸네일은 상품번호로 상세페이지에서 읽어 옵니다.
+================================================================================
+-->
+
+
+<!-- ======================= [1] HTML : /index.html ======================= -->
+        <!-- 메인 04 룩북 : 모렌비 배너관리자 (이미지 1 = 룩 이미지 / 타이틀·텍스트 1~3 = 핫스팟 "상품번호|가로%|세로%") -->
+        <div class="look-swiper swiper">
+            <div class="morenvy-banner-area swiper-wrapper" area_id="ecd5">
+                <div class="morenvy-banner swiper-slide">
+                    <div class="img">{#imgTag_1}</div>
+                    <ul class="spot_data">
+                        <li>{#title}</li>
+                        <li>{#text_1}</li>
+                        <li>{#text_2}</li>
+                        <li>{#text_3}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!-- ===================== // [1] HTML ===================== -->
+
+
+<style>
+/* ======================= [2-1] CSS : main.css "메인 03 : banner 종료" 아래 ======================= */
+
+/* -------------------------------
+    메인 04 : STYLED BY REFRIGIWEAR
+------------------------------- */
+main > .m_sec04 .look-swiper{margin-top:3rem;overflow:hidden;}
+main > .m_sec04 .morenvy-banner .img{position:relative;aspect-ratio:640 / 1140;background:var(--grey09);overflow:hidden;cursor:pointer;}
+main > .m_sec04 .morenvy-banner .img img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;}
+main > .m_sec04 .spot_data{display:none;}
+
+/* 메인 04 : 핫스팟 */
+main > .m_sec04 .spot,
+.look_layer .spot{position:absolute;z-index:2;width:1.8rem;height:1.8rem;margin:-0.9rem 0 0 -0.9rem;padding:0;border:0;border-radius:50%;background:var(--yellow);font-size:0;cursor:pointer;}
+
+/* 메인 04 : 툴팁 (PC 호버) */
+.look_tip{position:fixed;top:0;left:0;z-index:10010;display:flex;width:29rem;height:10rem;background:var(--white);border-radius:0.4rem;box-shadow:0 0.2rem 1.2rem rgba(0,0,0,.12);color:var(--black00);opacity:0;visibility:hidden;transition:opacity .2s, visibility .2s;}
+.look_tip.on{opacity:1;visibility:visible;}
+.look_tip:after{content:"";position:absolute;top:100%;left:var(--arrow, 50%);margin-left:-0.7rem;border:0.7rem solid transparent;border-top-color:var(--white);}
+.look_tip.down:after{top:auto;bottom:100%;border-top-color:transparent;border-bottom-color:var(--white);}
+.look_tip .thumb{flex:none;width:8.5rem;height:100%;background:var(--grey09);border-radius:0.4rem 0 0 0.4rem;overflow:hidden;}
+.look_tip .thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.look_tip .txt{flex:1;min-width:0;padding:1.2rem 1rem;}
+.look_tip .name{display:block;font-size:1.4rem;font-weight:400;line-height:1.5;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.look_tip .price{display:block;margin-top:0.2rem;font-size:1.3rem;line-height:1.5;}
+.look_tip del,
+.look_layer del{margin-right:0.4rem;color:var(--grey16);}
+
+/* 메인 04 : 라이트박스 */
+html.look_open,
+html.look_open body{overflow:hidden;}
+.look_layer{display:none;position:fixed;top:0;left:0;z-index:10000;width:100%;height:100%;}
+.look_layer.on{display:block;}
+.look_layer button{padding:0;border:0;background:none;font-size:0;cursor:pointer;}
+.look_layer .dim{position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);}
+.look_layer .count{position:absolute;top:2rem;left:2rem;z-index:3;font-size:1.3rem;letter-spacing:.1em;color:var(--white);}
+.look_layer .btn_close{position:absolute;top:0.6rem;right:1rem;z-index:3;width:4.4rem;height:4.4rem;}
+.look_layer .btn_close:before,
+.look_layer .btn_close:after{content:"";position:absolute;top:50%;left:50%;width:2.4rem;height:0.3rem;margin:-0.15rem 0 0 -1.2rem;background:var(--white);}
+.look_layer .btn_close:before{transform:rotate(45deg);}
+.look_layer .btn_close:after{transform:rotate(-45deg);}
+.look_layer .btn_prev,
+.look_layer .btn_next{position:absolute;top:50%;z-index:3;width:4.4rem;height:6.4rem;margin-top:-3.2rem;}
+.look_layer .btn_prev{left:0.6rem;}
+.look_layer .btn_next{right:0.6rem;}
+.look_layer .btn_prev:before,
+.look_layer .btn_next:before{content:"";position:absolute;top:50%;left:50%;width:1.8rem;height:1.8rem;margin-top:-0.9rem;border:solid var(--white);border-width:0.3rem 0.3rem 0 0;}
+.look_layer .btn_prev:before{margin-left:-0.5rem;transform:rotate(-135deg);}
+.look_layer .btn_next:before{margin-left:-1.3rem;transform:rotate(45deg);}
+.look_layer.single .btn_prev,
+.look_layer.single .btn_next{display:none;}
+
+.look_layer .layer_box{position:absolute;top:2rem;bottom:2rem;left:0;z-index:2;width:100%;display:flex;justify-content:center;pointer-events:none;}
+.look_layer .layer_box > .img{position:relative;flex:none;height:100%;aspect-ratio:640 / 1140;background:var(--black01);pointer-events:auto;}
+.look_layer .layer_box > .img > img{width:100%;height:100%;object-fit:cover;display:block;}
+.look_layer .layer_box > .img .btn_shop{display:none;}
+.look_layer .prd{flex:none;width:38rem;height:100%;padding:8rem 5rem;background:var(--white);overflow-y:auto;pointer-events:auto;}
+.look_layer .prd_head{display:none;}
+.look_layer .prd_list li{display:flex;gap:2rem;margin-bottom:1.4rem;}
+.look_layer .prd_list .thumb{flex:none;display:block;width:9rem;height:10.6rem;background:var(--grey09);overflow:hidden;}
+.look_layer .prd_list .thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+.look_layer .prd_list .name{display:block;font-size:1.4rem;font-weight:700;line-height:1.4;text-transform:uppercase;color:var(--black00);}
+.look_layer .prd_list .price{margin-top:0.6rem;font-size:1.4rem;line-height:1.4;}
+.look_layer .prd_list .btn_more{display:inline-block;margin-top:0.8rem;padding:0.7rem 1.3rem;background:var(--black00);font-size:1.2rem;font-weight:500;line-height:2.2rem;text-transform:uppercase;color:var(--white);transition:all 0.5s;}
+.look_layer .prd_list .btn_more:hover{background:var(--yellow);color:var(--black00);}
+.look_layer .prd_list li.loading .thumb{animation:lookBlink 1s infinite alternate;}
+@keyframes lookBlink{from{opacity:1;} to{opacity:.4;}}
+
+/* -------------------------------
+    메인 04 : STYLED BY REFRIGIWEAR 종료
+------------------------------- */
+/* ===================== // [2-1] ===================== */
+
+
+/* ======================= [2-2] CSS : @media all and (max-width:1024px) { } 안 ======================= */
+    /* 메인 04 : 룩북 */
+    main > .m_sec04 .spot,
+    .look_layer .spot{width:1.3rem;height:1.3rem;margin:-0.65rem 0 0 -0.65rem;}
+
+    .look_layer .layer_box{top:0;bottom:0;align-items:center;}
+    .look_layer .layer_box > .img{width:min(calc(100vw - 4rem), calc((100vh - 10rem) * 640 / 1140));height:auto;}
+    .look_layer .layer_box > .img .btn_shop{display:block;position:absolute;bottom:2rem;left:50%;z-index:3;padding:0.4rem 1rem;border-radius:0.4rem;background:rgba(0,0,0,.6);font-size:1.5rem;line-height:1.4;color:var(--white);white-space:nowrap;transform:translateX(-50%);}
+    .look_layer .prd{position:fixed;bottom:0;left:0;z-index:5;width:100%;height:auto;max-height:70vh;padding:0 2rem 3rem;transform:translateY(100%);transition:transform .3s;}
+    .look_layer .prd.show{transform:translateY(0);}
+    .look_layer .prd_head{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding:1.8rem 0 1.4rem;border-bottom:1px solid var(--grey01);background:var(--white);font-size:1.5rem;font-weight:700;}
+    .look_layer .prd_head .btn_prd_close{position:relative;width:3rem;height:3rem;}
+    .look_layer .prd_head .btn_prd_close:before,
+    .look_layer .prd_head .btn_prd_close:after{content:"";position:absolute;top:50%;left:50%;width:1.8rem;height:0.2rem;margin:-0.1rem 0 0 -0.9rem;background:var(--black00);}
+    .look_layer .prd_head .btn_prd_close:before{transform:rotate(45deg);}
+    .look_layer .prd_head .btn_prd_close:after{transform:rotate(-45deg);}
+/* ===================== // [2-2] ===================== */
+</style>
+
+
+<script>
+/* ======================= [3] JS : main.js "}); // 시작 코드 블럭 종료" 바로 위 ======================= */
+
+    /* 메인 04 : STYLED BY REFRIGIWEAR 룩북 */
+    (function ($) {
+        var $sec = $('main > .m_sec04');
+        var $area = $sec.find('.morenvy-banner-area');
+
+        if (!$area.length) return;
+
+        // 툴팁(PC 호버)·라이트박스 : swiper overflow에 잘리지 않게 body에 만듦
+        var $tip = $(
+            '<a href="#" class="look_tip">' +
+                '<span class="thumb"><img alt=""></span>' +
+                '<span class="txt"><strong class="name"></strong><span class="price"></span></span>' +
+            '</a>'
+        ).appendTo('body');
+
+        var $layer = $(
+            '<div class="look_layer">' +
+                '<div class="dim"></div>' +
+                '<span class="count"></span>' +
+                '<button type="button" class="btn_close">닫기</button>' +
+                '<button type="button" class="btn_prev">이전</button>' +
+                '<button type="button" class="btn_next">다음</button>' +
+                '<div class="layer_box">' +
+                    '<div class="img">' +
+                        '<img alt="">' +
+                        '<button type="button" class="btn_shop">SHOP THE LOOK</button>' +
+                    '</div>' +
+                    '<div class="prd">' +
+                        '<div class="prd_head">' +
+                            '<strong>SHOP THE LOOK</strong>' +
+                            '<button type="button" class="btn_prd_close">닫기</button>' +
+                        '</div>' +
+                        '<ul class="prd_list"></ul>' +
+                    '</div>' +
+                '</div>' +
+            '</div>'
+        ).appendTo('body');
+        var $layerImg = $layer.find('.layer_box > .img');
+        var $layerPrd = $layer.find('.prd');
+        var $prdList = $layer.find('.prd_list');
+
+        var pcQuery = window.matchMedia('(min-width:1025px) and (hover:hover)');
+        var title = $.trim($sec.find('.main_title h2').text());
+        var looks = [];
+        var prdCache = {};
+        var lookSwiper = null;
+        var current = 0;
+        var tipNo = null;
+        var tipTimer = null;
+
+        function isPc() {
+            return pcQuery.matches;
+        }
+
+        // 미리보기 스킨에서는 카페24가 이 주소 앞에 /skin-skin1 을 자동으로 붙여 줌 (직접 붙이면 두 번 겹침)
+        function productUrl(no) {
+            return '/product/detail.html?product_no=' + no;
+        }
+
+        function priceHtml(prd) {
+            if (!prd.sale) return '';
+
+            var won = function (n) { return Number(n).toLocaleString('ko-KR') + '원'; };
+
+            return (prd.price > prd.sale ? '<del>' + won(prd.price) + '</del>' : '') + won(prd.sale);
+        }
+
+        /* 상품 정보 : 상세페이지 메타(og:title, og:image, product:price) */
+        function getProduct(no) {
+            if (prdCache[no]) return prdCache[no];
+
+            prdCache[no] = fetch(productUrl(no), { credentials: 'same-origin' })
+                .then(function (res) { return res.text(); })
+                .then(function (html) {
+                    var doc = new DOMParser().parseFromString(html, 'text/html');
+                    var meta = function (name) {
+                        var el = doc.querySelector('meta[property="' + name + '"]');
+                        return el ? el.getAttribute('content') : '';
+                    };
+                    var name = meta('og:title');
+                    var site = meta('og:site_name');
+
+                    // og:title = "상품명 - 사이트명"
+                    if (site && name.slice(-(site.length + 3)) === ' - ' + site) {
+                        name = name.slice(0, -(site.length + 3));
+                    }
+
+                    if (!name) return null;
+
+                    var price = +meta('product:price:amount') || 0;
+
+                    return {
+                        no: no,
+                        name: name,
+                        img: meta('og:image'),
+                        price: price,
+                        sale: +meta('product:sale_price:amount') || price,
+                        url: productUrl(no)
+                    };
+                })
+                .catch(function () { return null; });
+
+            return prdCache[no];
+        }
+
+        /* 핫스팟 그리기 */
+        function drawSpots($box, spots, onTap) {
+            $box.find('.spot').remove();
+
+            $.each(spots, function (i, spot) {
+                var $spot = $('<button type="button" class="spot">상품 보기</button>')
+                    .css({ left: spot.x + '%', top: spot.y + '%' });
+
+                $spot.on('mouseenter', function () {
+                    if (isPc()) showTip(this, spot.no);
+                });
+                $spot.on('mouseleave', function () {
+                    hideTip(150);
+                });
+                $spot.on('click', function (e) {
+                    e.stopPropagation();
+
+                    if (isPc()) {
+                        location.href = productUrl(spot.no);
+                    } else if (onTap) {
+                        onTap(this, spot.no);
+                    }
+                });
+
+                $box.append($spot);
+            });
+        }
+
+        /* 툴팁 (PC 호버) */
+        function showTip(spotEl, no) {
+            clearTimeout(tipTimer);
+            tipNo = no;
+
+            getProduct(no).then(function (prd) {
+                if (tipNo !== no || !prd) return;
+
+                var rect = spotEl.getBoundingClientRect();
+                var w = $tip.outerWidth();
+                var h = $tip.outerHeight();
+                var center = rect.left + rect.width / 2;
+                var left = Math.max(10, Math.min(center - w / 2, window.innerWidth - w - 10));
+                var top = rect.top - h - 12;
+                var down = top < 10;
+
+                if (down) top = rect.bottom + 12;
+
+                $tip.attr('href', prd.url);
+                $tip.find('.thumb img').attr({ src: prd.img, alt: prd.name });
+                $tip.find('.name').text(prd.name);
+                $tip.find('.price').html(priceHtml(prd));
+                $tip.css({ left: left + 'px', top: top + 'px' });
+                $tip[0].style.setProperty('--arrow', (center - left) + 'px');
+                $tip.toggleClass('down', down).addClass('on');
+            });
+        }
+
+        function hideTip(delay) {
+            clearTimeout(tipTimer);
+
+            tipTimer = setTimeout(function () {
+                tipNo = null;
+                $tip.removeClass('on');
+            }, delay || 0);
+        }
+
+        $tip.on('mouseenter', function () { clearTimeout(tipTimer); });
+        $tip.on('mouseleave', function () { hideTip(150); });
+        $(window).on('scroll', function () { hideTip(0); });
+
+        /* 라이트박스 */
+        function togglePrd(show) {
+            $layerPrd.toggleClass('show', !!show);
+        }
+
+        function renderLayer() {
+            var look = looks[current];
+            var nos = [];
+            var index = current;
+
+            hideTip(0);
+            togglePrd(false);
+
+            $layerImg.children('img').attr({ src: look.src, alt: look.alt });
+            $layer.find('.count').text((current + 1) + ' / ' + looks.length);
+            // 모바일 : 라이트박스 안 점을 누르면 툴팁 (같은 점을 다시 누르면 닫힘)
+            drawSpots($layerImg, look.spots, function (spotEl, no) {
+                if ($tip.hasClass('on') && tipNo === no) {
+                    hideTip(0);
+                } else {
+                    showTip(spotEl, no);
+                }
+            });
+
+            // 같은 상품번호는 목록에 한 번만
+            $.each(look.spots, function (i, spot) {
+                if ($.inArray(spot.no, nos) < 0) nos.push(spot.no);
+            });
+
+            $prdList.html($.map(nos, function () {
+                return '<li class="loading"><span class="thumb"></span><div class="txt"></div></li>';
+            }).join(''));
+            $layerPrd.scrollTop(0);
+
+            $.each(nos, function (i, no) {
+                getProduct(no).then(function (prd) {
+                    if (index !== current) return;
+
+                    var $li = $prdList.children().eq(i);
+
+                    if (!prd) {
+                        $li.hide();
+                        return;
+                    }
+
+                    $li.removeClass('loading').html(
+                        '<a href="' + prd.url + '" class="thumb"><img src="' + prd.img + '" alt=""></a>' +
+                        '<div class="txt">' +
+                            '<a href="' + prd.url + '" class="name"></a>' +
+                            '<p class="price">' + priceHtml(prd) + '</p>' +
+                            '<a href="' + prd.url + '" class="btn_more">SHOP NOW</a>' +
+                        '</div>'
+                    );
+                    $li.find('.name').text(prd.name);
+                });
+            });
+        }
+
+        function openLayer(i) {
+            current = i;
+            $layer.toggleClass('single', looks.length < 2);
+            renderLayer();
+            $layer.addClass('on');
+            $('html').addClass('look_open');
+        }
+
+        function closeLayer() {
+            hideTip(0);
+            togglePrd(false);
+            $layer.removeClass('on');
+            $('html').removeClass('look_open');
+        }
+
+        function moveLayer(dir) {
+            current = (current + dir + looks.length) % looks.length;
+            renderLayer();
+        }
+
+        $layer.find('.btn_close').on('click', closeLayer);
+        $layer.find('.btn_prev').on('click', function () { moveLayer(-1); });
+        $layer.find('.btn_next').on('click', function () { moveLayer(1); });
+        $layer.find('.btn_shop').on('click', function (e) {
+            e.stopPropagation();
+            hideTip(0);
+            togglePrd(true);
+        });
+        // 이미지 다른 곳을 누르면 툴팁 닫힘
+        $layerImg.on('click', function () { hideTip(0); });
+        $layer.find('.btn_prd_close').on('click', function () { togglePrd(false); });
+        $layer.find('.dim').on('click', function () {
+            if ($layerPrd.hasClass('show')) {
+                togglePrd(false);
+            } else {
+                closeLayer();
+            }
+        });
+
+        $(document).on('keydown', function (e) {
+            if (!$layer.hasClass('on')) return;
+
+            if (e.key === 'Escape') closeLayer();
+            if (e.key === 'ArrowLeft' && looks.length > 1) moveLayer(-1);
+            if (e.key === 'ArrowRight' && looks.length > 1) moveLayer(1);
+        });
+
+        // 모바일 : 좌우로 밀어 넘기기
+        var touchX = null;
+
+        $layerImg.on('touchstart', function (e) {
+            touchX = e.originalEvent.touches[0].clientX;
+        });
+        $layerImg.on('touchend', function (e) {
+            if (touchX === null || looks.length < 2) return;
+
+            var dx = e.originalEvent.changedTouches[0].clientX - touchX;
+
+            touchX = null;
+
+            if (Math.abs(dx) > 50) moveLayer(dx < 0 ? 1 : -1);
+        });
+
+        /* 배너관리자 출력 읽기 → 핫스팟·Swiper */
+        function initLook() {
+            $area.find('.morenvy-banner').each(function () {
+                var $banner = $(this);
+                var $img = $banner.find('.img img');
+
+                if (!$img.length) {
+                    $banner.remove();
+                    return;
+                }
+
+                var spots = [];
+                var index = looks.length;
+
+                // 타이틀·텍스트 1~3 = "상품번호|가로%|세로%" (비었거나 형식이 다르면 건너뜀)
+                $banner.find('.spot_data li').each(function () {
+                    var val = $.trim($(this).text()).split('|');
+                    var no = parseInt(val[0], 10);
+                    var x = parseFloat(val[1]);
+                    var y = parseFloat(val[2]);
+
+                    if (val.length < 3 || !no || isNaN(x) || isNaN(y)) return;
+
+                    spots.push({ no: no, x: x, y: y });
+                });
+
+                $img.attr('alt', title + ' ' + (index + 1));
+                looks.push({ src: $img[0].currentSrc || $img.attr('src'), alt: $img.attr('alt'), spots: spots });
+
+                drawSpots($banner.find('.img'), spots, function () { openLayer(index); });
+
+                $banner.find('.img').on('click', function () {
+                    // 드래그 끝에 열리지 않게
+                    if (lookSwiper && lookSwiper.allowClick === false) return;
+
+                    openLayer(index);
+                });
+            });
+
+            if (!looks.length) {
+                $sec.hide();
+                return;
+            }
+
+            lookSwiper = new Swiper($sec.find('.look-swiper')[0], {
+                /*
+                 * 767px 이하 기본 옵션
+                 */
+                slidesPerView: 2,
+                spaceBetween: 8,
+                speed: 500,
+                watchOverflow: true,
+                observer: true,
+                observeParents: true,
+
+                breakpoints: {
+                    /*
+                     * 768px 이상
+                     */
+                    768: {
+                        slidesPerView: 4,
+                        spaceBetween: 16
+                    }
+                }
+            });
+
+            // 섹션이 보이기 직전에 상품 정보 미리 읽기
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    if (!entries[0].isIntersecting) return;
+
+                    $.each(looks, function (i, look) {
+                        $.each(look.spots, function (j, spot) { getProduct(spot.no); });
+                    });
+                    observer.disconnect();
+                }, { rootMargin: '400px 0px' });
+
+                observer.observe($sec[0]);
+            }
+        }
+
+        // 배너관리자가 늦게 채우므로 init + 이미지가 들어올 때까지 기다림(최대 10초)
+        var waitCount = 0;
+        var waitTimer = setInterval(function () {
+            waitCount++;
+
+            if (($area.hasClass('init') && $area.find('.img img').length) || waitCount > 50) {
+                clearInterval(waitTimer);
+                initLook();
+            }
+        }, 200);
+    })(jQuery);
+
+/* ===================== // [3] JS ===================== */
+</script>
