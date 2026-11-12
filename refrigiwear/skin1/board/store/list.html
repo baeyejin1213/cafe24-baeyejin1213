@@ -1,0 +1,86 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/morenvy/css/store.css)-->
+<!--@js(/morenvy/js/store.js)-->
+
+<!--
+    매장안내 (board/store/list.html)
+    - 게시판 하나 = 매장 목록. 글 하나 = 매장 하나.
+    - 글 제목 : 매장명■주소■주소2■영업시간■전화번호   (■로 구분, 안 쓰는 칸은 none 또는 비움)
+                예) 롯데 본점■서울특별시 중구 남대문로 81, 7F■none■none■02-772-3720
+    - 글 분류 : 백화점 / 아울렛 / 직영점 … (게시판 분류 = 위 셀렉트 박스)
+    - 글 본문 : 구글 지도 > 공유 > 지도 퍼가기 의 <iframe ...> 코드를 글자로 붙여넣기
+                (본문이 비어 있으면 주소로 지도를 띄움)
+    - 접속 주소 : /board/store/list.html?board_no=게시판번호
+-->
+
+<div module="board_listpackage_3001" class="store_list">
+    <div module="board_title_3">
+        <div class="path">
+            <span>현재 위치</span>
+            <ol>
+                <li><a href="/">HOME</a></li>
+                <li title="현재 위치">{$board_name}</li>
+            </ol>
+        </div>
+        <h2 class="store_titleArea">{$board_name}</h2>
+    </div>
+
+    <div class="wrap_store_map">
+        <div class="left">
+            <div class="store_search_box">
+                <div module="board_category_3001">{$form.board_category}</div>
+                <div module="board_search_3001" class="store_search_area">
+                    <span class="displaynone">{$form.search_date} {$form.search_key}</span>
+                    <label class="store_search_txt" title="매장명 또는 주소를 입력해 주세요.">{$form.search}</label>
+                    <a href="#none" class="store_search_btn" onclick="{$action_search}" aria-label="검색">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10.5" cy="10.5" r="6.5" stroke="#000" stroke-width="1.5"/><path d="M20 20L15.43 15.43" stroke="#000" stroke-width="1.5"/></svg>
+                    </a>
+                </div>
+            </div>
+            <!-- //store_search_box -->
+
+            <div class="store_table">
+                <ul module="board_list_3001" id="store_list" class="store_list_li">
+                    <!--
+                        $count = 100
+                    -->
+                    <span class="store_data displaynone">{$subject}</span>
+                    <li class="txt00">{$category_name}</li>
+                    <li class="txt01" id="store_area"></li>
+                    <li class="txt02" id="store_address"></li>
+                    <li class="txt03" id="store_address02"></li>
+                    <li class="txt05" id="store_time"></li>
+                    <li class="txt04" id="store_phone"></li>
+                    <li class="icon_map">
+                        <a href="#none" class="store_map_icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.5"/></svg></a>
+                        <span class="store_map_data displaynone">{$content}</span>
+                    </li>
+                </ul>
+                <ul module="board_list_3001" id="store_list" class="store_list_li">
+                    <span class="store_data displaynone">{$subject}</span>
+                    <li class="txt00">{$category_name}</li>
+                    <li class="txt01" id="store_area"></li>
+                    <li class="txt02" id="store_address"></li>
+                    <li class="txt03" id="store_address02"></li>
+                    <li class="txt05" id="store_time"></li>
+                    <li class="txt04" id="store_phone"></li>
+                    <li class="icon_map">
+                        <a href="#none" class="store_map_icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.5"/></svg></a>
+                        <span class="store_map_data displaynone">{$content}</span>
+                    </li>
+                </ul>
+                <p module="board_empty_3001" class="store_empty {$empty_display|display}">{$empty_message}</p>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="google_map_box"><span id="google_map_address"></span></div>
+        </div>
+    </div>
+
+    <div module="board_buttonlist_3001" class="ec-base-button gBottom {$write_display|display}">
+        <span class="gRight">
+            <a href="/board/store/write.html{$param_write}" class="btnSubmitFix sizeM {$write_display|display}">등록하기</a>
+        </span>
+    </div>
+</div>
