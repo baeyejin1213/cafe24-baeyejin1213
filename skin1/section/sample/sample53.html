@@ -522,13 +522,38 @@
             selectRelay($relayTab.index($(this).closest("li")));
         });
 
+        /* 기간 끝난 날짜 탭·진열 삭제 (모두 끝나면 마지막 날짜는 남김) */
+        function removeEnded() {
+            var now = Date.now();
+            var $box = $relay.find(".prd_box");
+            var $ended = $relayTab.filter(function (i) {
+                return i < $relayTab.length - 1 && now >= relayTime(i).end + 1000;
+            });
+
+            if (!$ended.length) return false;
+
+            if ($ended.filter(".on").length) relayUser = false;
+
+            $ended.each(function () {
+                $box.eq($relayTab.index(this)).remove();
+            }).remove();
+
+            $relayTab = $relay.find(".date_tab li");
+            swiper_date.update();
+            if (relayUser) swiper_date.slideTo($relayTab.index($relayTab.filter(".on")));
+
+            return true;
+        };
+
+        removeEnded();
         relayNow = relayIndex();
         selectRelay(relayNow);
 
         setInterval(function () {
+            var removed = removeEnded();
             var index = relayIndex();
 
-            if (index !== relayNow) {
+            if (index !== relayNow || removed) {
                 relayNow = index;
                 if (!relayUser) selectRelay(index);
             };
