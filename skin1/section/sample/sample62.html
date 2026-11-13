@@ -229,10 +229,9 @@
     .project_box .p_sec01 video {display: block; width: 100%; height: 100%; object-fit: cover;}
 
     /* 네비 */
-    .project_box .p_tab {height: 16.25vw;}
-    .project_box .p_tab .tab_in {top: 0; left: 0; right: 0; z-index: 99; height: 16.25vw; overflow-x: auto; background-color: #fff; scrollbar-width: none; user-select: none; transition: top 0.3s;}
+    .project_box .p_tab {position: sticky; top: 0; z-index: 99; height: 16.25vw; transition: top 0.3s;}
+    .project_box .p_tab .tab_in {height: 16.25vw; overflow-x: auto; background-color: #fff; scrollbar-width: none; user-select: none;}
     .project_box .p_tab .tab_in::-webkit-scrollbar {display: none;}
-    .project_box .p_tab .tab_in.fix {position: fixed;}
     .project_box .p_tab ul {display: flex; gap: 12.5vw; width: max-content; height: 100%; padding: 0 4.583vw;}
     .project_box .p_tab a {position: relative; display: block; height: 100%; padding-top: 5.833vw; font-size: 4.167vw; line-height: 4.861vw; letter-spacing: -0.02em; white-space: nowrap; color: rgba(0, 0, 0, 0.5);}
     .project_box .p_tab li.on a {font-weight: 700; color: #000;}
@@ -533,8 +532,7 @@
 
         function setTab() {
             const topH = fixedTop();
-            const fix = $tab[0].getBoundingClientRect().top <= topH;
-            $tabIn.toggleClass("fix", fix).css("top", fix ? topH : "");
+            $tab.css("top", topH);
             const line = topH + $tabIn.outerHeight() + 2;
             let current = 0;
             $tabLi.each(function (i) {
