@@ -1,39 +1,37 @@
 @charset "UTF-8";
 
-/* 팝업 배경 */
-.main_popup {width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 9999;-webkit-backdrop-filter: blur(20px);backdrop-filter: blur(20px);background-color: rgba(26, 32, 44, 0.3); display: flex; align-items: center; justify-content: center; visibility: hidden; opacity: 0; transition: 1s;}
+/* 메인 : 팝업 (PC 오른쪽 아래 / 모바일 하단 시트) */
+.main_popup {position: fixed; right: 4rem; bottom: 4rem; z-index: 9999; visibility: hidden; opacity: 0; transition: opacity .6s, visibility .6s;}
 .main_popup.on {visibility: visible; opacity: 1;}
+.main_popup .popup {width: 32rem; overflow: hidden; background-color: #fff; font-family: var(--font-kr); box-shadow: 0 .8rem 3.2rem rgba(0,0,0,.12); transform: translateY(4rem); opacity: 0; transition: transform .6s ease, opacity .6s ease;}
 .main_popup.on .popup.up {transform: translateY(0); opacity: 1;}
 
+.main_popup .popup_swiper {position: relative; height: 40.4rem;}
+.main_popup .swiper-wrapper,
+.main_popup .swiper-slide,
+.main_popup .swiper-slide > a {height: 100%;}
+.main_popup .swiper-slide > a {position: relative; display: block; overflow: hidden;}
+.main_popup .img {position: absolute; inset: 0;}
+.main_popup .img img {display: block; width: 100%; height: 100%; object-fit: cover;}
+.main_popup .txt {position: absolute; left: 0; top: 0; z-index: 1; display: flex; flex-direction: column; gap: .8rem; padding: 4rem 2.4rem; color: #fff;}
+.main_popup .txt strong {font-size: 2.4rem; line-height: 3.2rem; font-weight: 500; word-break: keep-all;}
+.main_popup .txt em {font-style: normal; font-size: 1.3rem; line-height: 2rem;}
 
-/* 팝업 컨텐츠 */
-.main_popup .popup {width: 40rem; overflow: hidden; transform: translateY(4rem); transition: .6s ease; opacity: 0;}
+.main_popup .pop_count {position: absolute; right: 1.6rem; bottom: 1.6rem; z-index: 2; display: flex; align-items: center; gap: .2rem; padding: .1rem 1.2rem; border-radius: 10rem; background-color: rgba(255,255,255,.2); font-family: var(--font-en); font-size: 1.1rem; line-height: 1.8rem; color: #fff;}
+.main_popup .pop_count i {font-style: normal;}
+.main_popup .pop_count.hide {display: none;}
 
-/* 팝업 상단 */
-.main_popup .popup .top {width: 100%; position: relative;}
-.main_popup .popup .top .swiper-slide{}
-.main_popup .popup .top .swiper-slide a{position: relative;display: block;}
-.main_popup .popup .top .swiper-slide .img{display: block;width:100%;}
-.main_popup .popup .top .swiper-slide .img img{display: block;width:100%;}
-
-
-
-.main_popup .popup .top .swiper-slide .txt {position: absolute; padding:2.4rem 2rem; width:100%; left:0; bottom:0; background: linear-gradient(180deg, rgba(26, 32, 44, 0) 0%, rgba(26, 32, 44, 0.4) 100%);}
-.main_popup .popup .top .swiper-slide .txt h2{font-size: 1.6rem; font-weight: 700; line-height: 2.4rem; margin-bottom: 0.4rem;}
-.main_popup .popup .top .swiper-slide .txt p{font-size: 1.4rem; font-weight: 400; line-height: 2.0rem;}
-.main_popup .popup .top .swiper-pagination{position: absolute;width:auto;left:initial;bottom:initial;top:1.6rem;right:1.6rem;font-size: 1.2rem;font-weight: normal;line-height: 1.33;color: #fff;display: flex;gap:0.4rem;}
-
-
-/* 팝업 하단 */
-.main_popup .popup .bottom {padding: 1.2rem 2rem; width: 100%; box-sizing: border-box; background-color: var(--white);}
-.main_popup .popup .bottom .btn_wrap {display: flex; justify-content: space-between;}
-.main_popup .popup .bottom .btn_wrap > a {font-size: 1.4rem; font-weight: normal; line-height: 2.0rem; color: var(--grey06);}
-.main_popup .popup .bottom .btn_wrap .btn_close {font-size: 1.4rem; line-height: 2.0rem; color: var(--black01);}
+.main_popup .pop_btn {display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.6rem; background-color: #fff;}
+.main_popup .pop_btn a,
+.main_popup .pop_btn button {padding: 0; font-size: 1.3rem; line-height: 2rem; color: #999; cursor: pointer;}
+.main_popup .pop_btn button {color: #000;}
 
 
-/* 반응형 767px */
 @media all and (max-width: 767px) {
-    .main_popup{align-items: flex-end;}
-    .main_popup .popup {width: 100%;}
-    .main_popup .popup .bottom .txt p {font-size: 1.5rem; line-height: 2rem;}
+    .main_popup {left: 0; right: 0; bottom: 0;}
+    .main_popup .popup {width: 100%; border-radius: 1.6rem 1.6rem 0 0; box-shadow: 0 -.4rem 2.4rem rgba(0,0,0,.12);}
+    .main_popup .popup_swiper {height: 20rem;}
+    .main_popup .txt {padding: 4rem 2rem 2rem;}
+    .main_popup .pop_count {right: 2rem; bottom: 2rem; gap: .4rem; padding: .4rem 1.2rem; border: 1px solid #fff; background: none; font-size: 1.2rem; line-height: 1.6rem;}
+    .main_popup .pop_count .cur {font-weight: 500;}
 }

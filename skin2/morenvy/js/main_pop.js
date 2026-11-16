@@ -1,42 +1,39 @@
-jQuery(document).ready(function () {
-    /* notToday_pop 쿠키가 없으면 팝업 출력 */
-    if (!getCookiefss("notToday_pop")) {
-        setTimeout(function () {
-            jQuery(".main_popup").addClass("on");
-        }, 500);
+/* 메인 : 팝업 */
+jQuery(function ($) {
+    var $pop = $('.main_popup');
+    if (!$pop.length || getCookiefss('notToday_pop')) return;
 
-        setTimeout(function () {
-            jQuery(".main_popup .popup").addClass("up");
-        }, 1000);
-    };
+    var tries = 0;
+    (function check() {
+        var $area = $pop.find('.popup_swiper');
+        var ready = $area.hasClass('init') || $area.find('.morenvy-banner img').length;
+        if (!ready && tries++ < 30) return setTimeout(check, 200);
 
-    var swiper_visual = new Swiper(".popup-swiper", {
-        observer: true,
-        observerParents: true,
-        watchOverflow: true,
-        slidesPerView: 1,
-        spaceBetween: -0.5,
-        loop: true,
-        autoplay: {
-            delay: 7000,
-            disableOnInteraction: false,
-        },
-        speed: 1000,
-        pagination: {
-            el: ".popup-swiper .swiper-pagination",
-            type: "fraction",
-        },
-    });
+        var total = $area.find('.swiper-slide').length;
+        if (!total) return;
+        var mo = window.innerWidth < 768;
+        function num(n) { return mo && n < 10 ? '0' + n : String(n); }
+        var $count = $pop.find('.pop_count');
+        $count.find('.total').text(num(total));
+        if (total < 2) $count.addClass('hide');
 
+        new Swiper($area[0], {
+            loop: total > 1,
+            speed: 800,
+            autoplay: total > 1 ? {delay: 5000, disableOnInteraction: false} : false,
+            on: {slideChange: function () { $count.find('.cur').text(num(this.realIndex + 1)); }}
+        });
+        $count.find('.cur').text(num(1));
 
-    /* 팝업 닫기 */
-    jQuery(".main_popup .popup .btn_close").on("click", function () {
-        jQuery(this).parents(".main_popup").hide();
-    });
+        $pop.addClass('on');
+        setTimeout(function () { $pop.find('.popup').addClass('up'); }, 100);
+    })();
 
-    /* 하루 동안 보지 않기 */
-    jQuery(".main_popup .popup .notToday").on("click", function () {
-        jQuery(this).parents(".main_popup").hide();
-        setCookieCpa("notToday_pop", "yes", 1);
+    /* 닫기 / 오늘 하루 보지 않기 */
+    $pop.on('click', '.btn_close', function () { $pop.removeClass('on'); });
+    $pop.on('click', '.notToday', function (e) {
+        e.preventDefault();
+        $pop.removeClass('on');
+        setCookieCpa('notToday_pop', 'yes', 1);
     });
 });

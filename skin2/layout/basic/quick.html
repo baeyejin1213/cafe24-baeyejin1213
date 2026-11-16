@@ -1,38 +1,19 @@
 <!-- 하단 : 고정 영역 -->
 <div class="f_fixed">
-    <!-- 하단 고정 아이콘 -->
-    <!-- 
-        우측 하단 고정 아이콘을 사용하지 않으시려면,
-        <div id="quick" class=""> 의 class="" 큰따옴표 안에 m_off를 작성하세요!
-
-        ex) <div id="quick" class="m_off">
-    -->
-    <div id="quick" class="">
-        <!-- 수정 금지 -->
-        <!-- 하단 : 최근 본 상품 -->
-        <div module="Layout_productRecent">
-            <ul>
-                <li class="{$disp_recent|display}">
-                    <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="{$name}.." /></a>
-                </li>
-                <li class="{$disp_recent|display}">
-                    <a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="{$name}.." /></a>
-                </li>
-            </ul>
-        </div>
-
-        <a href="#none" class="upBtn"><!--@import(/morenvyimg/blk_arr_u.svg)-->화면 최상단으로 이동하기</a>
-        <!-- 수정 금지 -->
+    <!-- 하단 : 퀵 메뉴 (PC) -->
+    <div id="quick">
+        <a href="/product/recent_view_product.html" class="q_recent" title="최근 본 상품"><!--@import(/morenvyimg/q_recent.svg)--></a>
+        <a href="#none" class="upBtn" title="맨 위로"><!--@import(/morenvyimg/q_top.svg)--></a>
     </div>
 
-    <!-- 하단 : 고정 메뉴 -->
-    <div class="f_nav m_only">
+    <!-- 하단 : 고정 메뉴 (모바일) -->
+    <div class="f_nav">
         <ul>
-            <li class="all_cate"><a href="#none"><!--@import(/morenvyimg/all_cate.svg)--></a></li>
-            <li><a href="/product/recent_view_product.html"><!--@import(/morenvyimg/ft_nav_recent.svg)--></a></li>
-            <li><a href="/"><!--@import(/morenvyimg/ft_nav_home.svg)--></a></li>
-            <li><a href="/myshop/wish_list.html"><!--@import(/morenvyimg/ft_nav_wish.svg)--></a></li>
-            <li><a href="/myshop/index.html"><!--@import(/morenvyimg/ft_nav_my.svg)--></a></li>
+            <li><button type="button" class="side_open" title="전체메뉴"><span class="lines"><i></i><i></i><i></i></span></button></li>
+            <li><a href="/product/recent_view_product.html" title="최근 본 상품"><!--@import(/morenvyimg/fx_recent.svg)--></a></li>
+            <li><a href="/" title="홈"><!--@import(/morenvyimg/fx_home.svg)--></a></li>
+            <li><a href="/myshop/wish_list.html" title="관심상품"><!--@import(/morenvyimg/fx_heart.svg)--></a></li>
+            <li><a href="/myshop/index.html" title="마이페이지"><!--@import(/morenvyimg/fx_my.svg)--></a></li>
         </ul>
     </div>
 </div>

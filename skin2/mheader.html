@@ -1,13 +1,5 @@
-<!--
-    에이가구(a GaGu) 헤더 — 스타일 morenvy/css/mcss.css (맨 아래 "에이가구" 부분), 동작 morenvy/js/mcommon.js (맨 아래)
-    - 메인에서는 키비주얼 위 투명 헤더(흰 글씨), 스크롤하거나 메뉴를 열면 흰 헤더로 바뀝니다.
-    - 가운데 메뉴의 대분류는 [상품 > 분류 관리]의 메인분류가 자동으로 나옵니다(표시함인 분류만).
-      마우스를 올리면 그 분류의 중분류·소분류가 아래로 펼쳐집니다(메가메뉴).
-    - BRAND · EVENT 같은 직접 링크는 /section/h_add_menu.html 에서 수정합니다.
--->
-
 <!-- 상단 : 텍스트 띠배너 -->
-<!-- 앱스토어 - 배너관리자 - [상단 : 텍스트 띠배너] 에서 수정가능합니다 (타이틀 = 문구, 링크 1 = 이동 주소) -->
+<!-- 앱스토어 - 배너관리자 - [상단 : 텍스트 띠배너] 에서 수정가능합니다 -->
 <div class="txt_ban2 morenvy-banner-area" area_id="cf00">
 	<div class="morenvy-banner inner">
 		<a href="{#link_1}"><span>{#title}</span></a>
@@ -16,10 +8,10 @@
 </div>
 
 
-<header id="header" class="gg_header">
+<header id="header" class="h_type01">
 	<div class="h_inner">
 		<!-- 상단 : 로고 -->
-		<!-- 앱스토어 - 배너관리자 - [상단 : 로고] 에서 수정가능합니다 (타이틀 = 로고 문구 "a GaGu") -->
+		<!-- 앱스토어 - 배너관리자 - [상단 : 로고] 에서 수정가능합니다 -->
 		<div class="h_logo morenvy-banner-area" area_id="8626">
 			<div class="morenvy-banner">
 				<a href="{#link_1}">{#title}</a>
@@ -34,7 +26,7 @@
 			</ul>
 			<span class="bar"></span>
 			<ul class="h_add">
-				<!-- 상단 : 추가 메뉴 (BRAND · EVENT) 수정 -->
+				<!-- 상단 : 추가 메뉴 -->
 				<!--@import(/section/h_add_menu.html)-->
 			</ul>
 		</nav>
@@ -49,13 +41,13 @@
 		</ul>
 	</div>
 
-	<!-- 상단 : 메가메뉴 (mcommon.js 가 분류 데이터로 채웁니다) -->
+	<!-- 상단 : 메가메뉴 -->
 	<div class="h_mega"></div>
 </header>
 
 
 <!-- 상단 : 검색 (오른쪽 사이드) -->
-<div class="search_box gg_search" module="Layout_SearchHeader">
+<div class="search_box type01" module="Layout_SearchHeader">
 	<!--
 		$product_page=/product/detail.html
 		$category_page=/product/list.html
@@ -88,14 +80,14 @@
 </div>
 
 <!-- 검색 : 최근 본 상품 -->
-<div class="gg_sch_recent">
+<div class="sch_recent">
 	<h3>최근 본 상품<a href="/product/recent_view_product.html">전체보기</a></h3>
-	<div module="Layout_productRecent">
-		<ul>
-			<li class="{$disp_recent|display}"><a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="{$name}" /></a></li>
-			<li class="{$disp_recent|display}"><a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="{$name}" /></a></li>
+	<div module="Layout_productRecent" class="swiper">
+		<ul class="swiper-wrapper">
+			<li class="swiper-slide {$disp_recent|display}"><a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="{$name}" /></a></li>
+			<li class="swiper-slide {$disp_recent|display}"><a href="/product/detail.html{$param}"><img src="{$recent_img}" alt="{$name}" /></a></li>
 		</ul>
 	</div>
 </div>
 
-<div class="gg_dim"></div>
+<div class="h_dim"></div>

@@ -1,10 +1,6 @@
-<!--
-	에이가구 메인 상품 카드 (index.html 의 메인진열이 import) — 스타일 morenvy/css/main.css
-	- 아이콘(N·H 등)은 [상품 > 상품 아이콘], 빠른배송 스티커는 [이미지 스타일 아이콘]에서 등록한 이미지가 나옵니다.
-	- 상품요약정보 · 판매가 · 할인판매가는 [상품정보 표시설정]에서 켠 항목이 나오고, 할인율은 mcommon.js(cal_percent)가 계산합니다.
--->
+<!-- ※ 메인 상품진열 리스트 공통소스 -->
 <li id="anchorBoxId_{$product_no}" class="swiper-slide">
-	<div class="gg_prd">
+	<div class="prd_box">
 		<div class="thumb">
 			<a href="{$link_product_detail}" class="img">
 				<img src="/morenvyimg/dummy.png" ec-data-src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" loading="lazy">
@@ -29,7 +25,7 @@
 </li>
 
 <li id="anchorBoxId_{$product_no}" class="swiper-slide">
-	<div class="gg_prd">
+	<div class="prd_box">
 		<div class="thumb">
 			<a href="{$link_product_detail}" class="img">
 				<img src="/morenvyimg/dummy.png" ec-data-src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" loading="lazy">

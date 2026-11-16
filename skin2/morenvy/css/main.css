@@ -1,214 +1,217 @@
 @charset "UTF-8";
-/* -------------------------------------------------------------------
-    에이가구(a GaGu) 메인 — index.html 에서만 불러온다 (예전 패션형 메인 스타일을 대체)
-    피그마 : AI 작업 / PC_메인 524:11206 (1920), M_메인 524:17058 (360)
-------------------------------------------------------------------- */
-
+/* -------------------------------
+    메인
+------------------------------- */
 /* 메인 공통 */
-#container #contents:has(> .gg_main),
+#container #contents:has(> .main_wrap),
 body.is_main #container #contents {max-width: none !important; margin: 0 auto; padding: 0 !important;}
-.gg_main {font-family: var(--gg-font); color: var(--gg-black); overflow: hidden; word-break: keep-all;}
-.gg_main h2,
-.gg_main p {margin: 0;}
-.gg_main a {color: inherit;}
-.gg_main img {display: block; max-width: none;}
-.gg_main .gg_sec {margin-top: 16rem;}
-.gg_main > section:last-child {margin-bottom: 16rem;}
+.main_wrap {font-family: var(--font-kr); color: var(--c-black); overflow: hidden; word-break: keep-all;}
+.main_wrap h2,
+.main_wrap p {margin: 0;}
+.main_wrap a {color: inherit;}
+.main_wrap img {display: block; max-width: none;}
+.main_wrap .m_sec {margin-top: 16rem;}
+.main_wrap > section:last-child {margin-bottom: 16rem;}
 
 /* 섹션 타이틀 */
-.gg_title {display: flex; flex-direction: column; align-items: center; margin-bottom: 4rem; text-align: center;}
-.gg_title h2 {font-family: var(--gg-en); font-weight: 700; font-size: 3.6rem; line-height: 4.8rem; letter-spacing: .036rem; text-transform: capitalize; color: var(--gg-black);}
+.m_title {display: flex; flex-direction: column; align-items: center; margin-bottom: 4rem; text-align: center;}
+.m_title h2 {font-family: var(--font-en); font-weight: 700; font-size: 3.6rem; line-height: 4.8rem; letter-spacing: .036rem; text-transform: capitalize; color: var(--c-black);}
 
 /* More Detail 버튼 */
-.gg_btn {display: inline-flex; align-items: center; justify-content: space-between; gap: 1.2rem; width: 19.7rem; padding: 1.6rem 2.4rem; border: 1px solid var(--gg-black); font-family: var(--gg-en); font-weight: 500; font-size: 1.6rem; line-height: 2.4rem; color: var(--gg-black);}
-.gg_btn em {font-style: normal;}
+.more_btn {display: inline-flex; align-items: center; justify-content: space-between; gap: 1.2rem; width: 19.7rem; padding: 1.6rem 2.4rem; border: 1px solid var(--c-black); font-family: var(--font-en); font-weight: 500; font-size: 1.6rem; line-height: 2.4rem; color: var(--c-black);}
+.more_btn em {display: block; font-style: normal; transition: transform .3s;}
+.more_btn {transition: background-color .3s, border-color .3s, color .3s;}
+.more_btn:hover {background-color: var(--c-black); border-color: var(--c-black); color: #fff;}
+.more_btn:hover em {transform: rotate(90deg);}
 
 /* 01 / 03 페이지 표시 */
-.gg_count {display: inline-flex; align-items: center; gap: 1.2rem; padding: .8rem 2.4rem; border: 1px solid #fff; border-radius: 10rem; font-family: var(--gg-en); font-size: 1.6rem; line-height: 2.4rem; color: #fff;}
-.gg_count .cur {font-weight: 500;}
-.gg_count .total {font-weight: 400;}
-.gg_count i {display: block; width: 1px; height: 1.2rem; background-color: #fff; transform: rotate(30deg);}
+.count_box {display: inline-flex; align-items: center; gap: 1.2rem; padding: .8rem 2.4rem; border: 1px solid #fff; border-radius: 10rem; font-family: var(--font-en); font-size: 1.6rem; line-height: 2.4rem; color: #fff;}
+.count_box .cur {font-weight: 500;}
+.count_box .total {font-weight: 400;}
+.count_box i {display: block; width: 1px; height: 1.2rem; background-color: #fff; transform: rotate(30deg);}
 
 
 /* -------------------------------
     공통 : 상품 카드 (product/product_list2.html)
 ------------------------------- */
-.gg_prd_slide {padding: 0 4rem; overflow: hidden;}
-.gg_prd_slide .prdList {display: flex; margin: 0; padding: 0; border: 0;}
-.gg_prd_slide .prdList > li {flex-shrink: 0; width: 40rem; height: auto; margin: 0; border: 0;}
-.gg_prd .thumb {position: relative; aspect-ratio: 1 / 1; overflow: hidden; background-color: var(--gg-bg);}
-.gg_prd .thumb .img {display: block; width: 100%; height: 100%;}
-.gg_prd .thumb .img > img {width: 100%; height: 100%; object-fit: cover;}
-.gg_prd .thumb .prdIcon {position: absolute; inset: 1.6rem; background-repeat: no-repeat; background-size: 5.8rem auto; pointer-events: none;}
-.gg_prd .thumb .wish {position: absolute; top: 1.6rem; right: 1.6rem; z-index: 2; width: 2.4rem; height: 2.4rem; background: url(/morenvyimg/heart.svg) no-repeat center / contain;}
-.gg_prd .thumb .wish:has(img[icon_status="on"]) {background-image: url(/morenvyimg/heart_on.svg);}
-.gg_prd .thumb .wish img {width: 100%; height: 100%; opacity: 0; cursor: pointer;}
-.gg_prd .thumb .soldout {position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; background-color: rgba(255,255,255,.6); font-family: var(--gg-en); font-size: 1.4rem; font-weight: 600; letter-spacing: .1em; pointer-events: none;}
-.gg_prd .thumb .soldout.displaynone {display: none;}
+.main_wrap .prd_slide.swiper {padding: 0 4rem; overflow: hidden;}
+.prd_slide .prdList {display: flex; margin: 0; padding: 0; border: 0;}
+.prd_slide .prdList > li {flex-shrink: 0; width: 40rem; height: auto; margin: 0; border: 0;}
+.prd_box .thumb {position: relative; aspect-ratio: 1 / 1; overflow: hidden; background-color: var(--c-bg);}
+.prd_box .thumb .img {display: block; width: 100%; height: 100%;}
+.prd_box .thumb .img > img {width: 100%; height: 100%; object-fit: cover;}
+.prd_box .thumb .prdIcon {position: absolute; inset: 1.6rem; background-repeat: no-repeat; background-size: 5.8rem auto; pointer-events: none;}
+.prd_box .thumb .wish {position: absolute; top: 1.6rem; right: 1.6rem; z-index: 2; width: 2.4rem; height: 2.4rem; background: url(/morenvyimg/heart.svg) no-repeat center / contain;}
+.prd_box .thumb .wish:has(img[icon_status="on"]) {background-image: url(/morenvyimg/heart_on.svg);}
+.prd_box .thumb .wish img {width: 100%; height: 100%; opacity: 0; cursor: pointer;}
+.prd_box .thumb .soldout {position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; background-color: rgba(255,255,255,.6); font-family: var(--font-en); font-size: 1.4rem; font-weight: 600; letter-spacing: .1em; pointer-events: none;}
+.prd_box .thumb .soldout.displaynone {display: none;}
 
-.gg_prd .info {display: flex; flex-direction: column; gap: .6rem; margin-top: 1.6rem;}
-.gg_prd .info .icon {display: flex; align-items: center; gap: 0; margin: 0;}
-.gg_prd .info .icon:not(:has(img)) {display: none;}
-.gg_prd .info .icon img {height: 1.6rem; width: auto;}
-.gg_prd .info .name a,
-.gg_prd .info .name a span {display: block; overflow: hidden; font-family: var(--gg-font) !important; font-size: 1.4rem !important; line-height: 2rem; font-weight: 400 !important; color: var(--gg-black) !important; white-space: nowrap; text-overflow: ellipsis;}
-.gg_prd .info .spec {display: flex; flex-wrap: wrap; align-items: center; gap: .6rem .8rem; margin: 0;}
-.gg_prd .info .spec li {margin: 0; line-height: 2rem;}
-.gg_prd .info .spec li .title {display: none;}
-.gg_prd .info .spec li[rel="상품요약정보"],
-.gg_prd .info .spec li[rel="상품 요약설명"],
-.gg_prd .info .spec li[rel="상품간략설명"] {order: -1; width: 100%; overflow: hidden;}
-.gg_prd .info .spec li[rel="상품요약정보"] span,
-.gg_prd .info .spec li[rel="상품 요약설명"] span,
-.gg_prd .info .spec li[rel="상품간략설명"] span {display: block; overflow: hidden; font-family: var(--gg-font) !important; font-size: 1.3rem !important; line-height: 2rem; font-weight: 400 !important; color: var(--gg-grey) !important; white-space: nowrap; text-overflow: ellipsis;}
-.gg_prd .info .spec .sale_box {font-family: var(--gg-en); font-size: 1.4rem; line-height: 2rem; font-weight: 600; color: var(--gg-point);}
-.gg_prd .info .spec .sale_box:empty {display: none !important;}
-.gg_prd .info .spec li[rel="판매가"] span,
-.gg_prd .info .spec li[rel="할인판매가"] span {font-family: var(--gg-en) !important; font-size: 1.4rem !important; line-height: 2rem; font-weight: 600 !important; color: var(--gg-black) !important;}
-.gg_prd .info .spec li[rel="판매가"] #span_product_tax_type_text {display: none;}
-.gg_prd .info .spec li[rel="소비자가"],
-.gg_prd .info .spec li[rel="브랜드"],
-.gg_prd .info .spec li[rel="할인 기간"],
-.gg_prd .info .spec li.through {display: none !important;}
+.prd_box .info {display: flex; flex-direction: column; gap: .6rem; margin-top: 1.6rem;}
+.prd_box .info .icon {display: flex; align-items: center; gap: 0; margin: 0;}
+.prd_box .info .icon:not(:has(img)) {display: none;}
+.prd_box .info .icon img {height: 1.6rem; width: auto;}
+.prd_box .info .name a,
+.prd_box .info .name a span {display: block; overflow: hidden; font-family: var(--font-kr) !important; font-size: 1.4rem !important; line-height: 2rem; font-weight: 400 !important; color: var(--c-black) !important; white-space: nowrap; text-overflow: ellipsis;}
+.prd_box .info .spec {display: flex; flex-wrap: wrap; align-items: center; gap: .6rem .8rem; margin: 0;}
+.prd_box .info .spec li {margin: 0; line-height: 2rem;}
+.prd_box .info .spec li .title {display: none;}
+.prd_box .info .spec li[rel="상품요약정보"],
+.prd_box .info .spec li[rel="상품 요약설명"],
+.prd_box .info .spec li[rel="상품간략설명"] {order: -1; width: 100%; overflow: hidden;}
+.prd_box .info .spec li[rel="상품요약정보"] span,
+.prd_box .info .spec li[rel="상품 요약설명"] span,
+.prd_box .info .spec li[rel="상품간략설명"] span {display: block; overflow: hidden; font-family: var(--font-kr) !important; font-size: 1.3rem !important; line-height: 2rem; font-weight: 400 !important; color: var(--c-grey) !important; white-space: nowrap; text-overflow: ellipsis;}
+.prd_box .info .spec .sale_box {font-family: var(--font-en); font-size: 1.4rem; line-height: 2rem; font-weight: 600; color: var(--c-point);}
+.prd_box .info .spec .sale_box:empty {display: none !important;}
+.prd_box .info .spec li[rel="판매가"] span,
+.prd_box .info .spec li[rel="할인판매가"] span {font-family: var(--font-en) !important; font-size: 1.4rem !important; line-height: 2rem; font-weight: 600 !important; color: var(--c-black) !important;}
+.prd_box .info .spec li[rel="판매가"] #span_product_tax_type_text {display: none;}
+.prd_box .info .spec li[rel="소비자가"],
+.prd_box .info .spec li[rel="브랜드"],
+.prd_box .info .spec li[rel="할인 기간"],
+.prd_box .info .spec li.through {display: none !important;}
 
 
 /* -------------------------------
     01 : 키비주얼
 ------------------------------- */
-.gg_kv {position: relative; height: 56.25vw; min-height: 60rem; max-height: 108rem; overflow: hidden; background-color: #000;}
-.gg_kv::before {content: ""; position: absolute; left: 0; top: 0; z-index: 2; width: 100%; height: 24rem; background: linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.1) 50%, rgba(0,0,0,0)); pointer-events: none;}
-.gg_kv .gg_kv_swiper,
-.gg_kv .swiper-wrapper,
-.gg_kv .swiper-slide,
-.gg_kv .swiper-slide > a {height: 100%;}
-.gg_kv .swiper-slide > a {position: relative; display: block;}
-.gg_kv .bg {position: absolute; inset: 0;}
-.gg_kv .bg img {width: 100%; height: 100%; object-fit: cover;}
-.gg_kv .txt {position: absolute; left: 50%; bottom: 16.8rem; z-index: 3; width: calc(100% - 8rem); transform: translateX(-50%); text-align: center; color: #fff;}
-.gg_kv .txt h2 {font-family: var(--gg-en); font-weight: 700; font-size: 5rem; line-height: 6.4rem; letter-spacing: .05rem; text-transform: capitalize;}
-.gg_kv .txt p {margin-top: 2.4rem; font-size: 2rem; line-height: 2.8rem; font-weight: 500;}
-.gg_kv .kv_count {position: absolute; left: 50%; bottom: 6.4rem; z-index: 3; transform: translateX(-50%);}
-.gg_kv .kv_btn {position: absolute; top: 50%; z-index: 3; display: flex; width: 6.4rem; height: 6.4rem; padding: 0; transform: translateY(-50%); color: #fff; cursor: pointer;}
-.gg_kv .kv_btn.prev {left: 4rem;}
-.gg_kv .kv_btn.next {right: 4rem;}
-.gg_kv .kv_btn.next svg {transform: rotate(180deg);}
-.gg_kv .kv_btn svg {display: block; width: 6.4rem; height: 6.4rem;}
+.m_sec01 {position: relative; height: 56.25vw; min-height: 60rem; max-height: 108rem; overflow: hidden; background-color: #000;}
+.m_sec01::before {content: ""; position: absolute; left: 0; top: 0; z-index: 2; width: 100%; height: 24rem; background: linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.1) 50%, rgba(0,0,0,0)); pointer-events: none;}
+.m_sec01 .kv_swiper,
+.m_sec01 .swiper-wrapper,
+.m_sec01 .swiper-slide,
+.m_sec01 .swiper-slide > a {height: 100%;}
+.m_sec01 .swiper-slide > a {position: relative; display: block;}
+.m_sec01 .bg {position: absolute; inset: 0;}
+.m_sec01 .bg img {width: 100%; height: 100%; object-fit: cover;}
+.m_sec01 .txt {position: absolute; left: 50%; bottom: 16.8rem; z-index: 3; width: calc(100% - 8rem); transform: translateX(-50%); text-align: center; color: #fff;}
+.m_sec01 .txt h2 {font-family: var(--font-en); font-weight: 700; font-size: 5rem; line-height: 6.4rem; letter-spacing: .05rem; text-transform: capitalize;}
+.m_sec01 .txt p {margin-top: 2.4rem; font-size: 2rem; line-height: 2.8rem; font-weight: 500;}
+.m_sec01 .kv_count {position: absolute; left: 50%; bottom: 6.4rem; z-index: 3; transform: translateX(-50%);}
+.m_sec01 .kv_btn {position: absolute; top: 50%; z-index: 3; display: flex; width: 6.4rem; height: 6.4rem; padding: 0; transform: translateY(-50%); color: #fff; cursor: pointer;}
+.m_sec01 .kv_btn.prev {left: 4rem;}
+.m_sec01 .kv_btn.next {right: 4rem;}
+.m_sec01 .kv_btn.next svg {transform: rotate(180deg);}
+.m_sec01 .kv_btn svg {display: block; width: 6.4rem; height: 6.4rem;}
 
 
 /* -------------------------------
     02 : 카테고리 아이콘
 ------------------------------- */
-.gg_cate {margin-top: 12rem; padding: 0 4rem;}
-.gg_cate_list {display: flex; justify-content: center; gap: 2.6rem;}  /* 배너가 적으면 가운데로 모임 */
-.gg_cate_list .morenvy-banner {flex: 0 1 16rem; min-width: 0;}
-.gg_cate_list a {display: flex; flex-direction: column; align-items: center; gap: 1.6rem;}
-.gg_cate_list .ico {display: block; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 25%; background-color: #f9f9f9;}
-.gg_cate_list .ico img {width: 100%; height: 100%; object-fit: cover; mix-blend-mode: darken;}
-.gg_cate_list .name {font-size: 1.8rem; line-height: 2.4rem; white-space: nowrap;}
+.m_sec02 {margin-top: 12rem; padding: 0 4rem;}
+.cate_list {display: flex; justify-content: center; gap: 2.6rem;}  /* 배너가 적으면 가운데로 모임 */
+.cate_list .morenvy-banner {flex: 0 1 16rem; min-width: 0;}
+.cate_list a {display: flex; flex-direction: column; align-items: center; gap: 1.6rem;}
+.cate_list .ico {display: block; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 25%; background-color: #f9f9f9;}
+.cate_list .ico img {width: 100%; height: 100%; object-fit: cover; mix-blend-mode: darken;}
+.cate_list .name {font-size: 1.8rem; line-height: 2.4rem; white-space: nowrap;}
 
 
 /* -------------------------------
     03 : Weekly Best (탭 상품)
 ------------------------------- */
-.gg_tabprd .gg_tab {display: flex; gap: 2.4rem; margin-top: 2.4rem;}
-.gg_tabprd .gg_tab button {padding: 0; font-family: var(--gg-font); font-size: 1.8rem; line-height: 2.4rem; color: var(--gg-grey); cursor: pointer; transition: color .2s;}
-.gg_tabprd .gg_tab li.on button,
-.gg_tabprd .gg_tab button:hover {color: var(--gg-black);}
-.gg_tabprd .gg_panel {display: none;}
-.gg_tabprd .gg_panel.on {display: block;}
+.m_sec03 .tab_menu {display: flex; gap: 2.4rem; margin-top: 2.4rem;}
+.m_sec03 .tab_menu button {padding: 0; font-family: var(--font-kr); font-size: 1.8rem; line-height: 2.4rem; color: var(--c-grey); cursor: pointer; transition: color .2s;}
+.m_sec03 .tab_menu li.on button,
+.m_sec03 .tab_menu button:hover {color: var(--c-black);}
+.m_sec03 .tab_panel {display: none;}
+.m_sec03 .tab_panel.on {display: block;}
 
 
 /* -------------------------------
     04 : 배너 + 상품
 ------------------------------- */
-.gg_bnprd {display: flex; gap: 8rem; max-width: 176rem; margin-left: auto; margin-right: auto; padding: 0 4rem;}
-.gg_bnprd .col {flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4rem; overflow: hidden;}
-.gg_bnprd .bn,
-.gg_bnprd .bn .morenvy-banner {display: contents;}
-.gg_bnprd .img {display: block; aspect-ratio: 1 / 1; overflow: hidden; background-color: #f5f5f5;}
-.gg_bnprd .img picture,
-.gg_bnprd .img img {width: 100%; height: 100%; object-fit: cover;}
-.gg_bnprd .txt h2 {font-family: var(--gg-en); font-weight: 700; font-size: 3.6rem; line-height: 4.8rem; letter-spacing: .036rem; text-transform: capitalize;}
-.gg_bnprd .txt p {margin-top: 1.6rem; font-size: 1.6rem; line-height: 2.4rem; color: var(--gg-grey);}
-.gg_bnprd .txt .gg_btn {margin-top: 4rem;}
-.gg_bnprd .gg_prd_slide {padding: 0;}
-.gg_bnprd .gg_prd_slide .prdList > li {width: 34rem;}
-.gg_bnprd .col02 .txt {order: 1;}
-.gg_bnprd .col02 .gg_prd_slide {order: 2;}
-.gg_bnprd .col02 .img {order: 3;}
+.m_sec04 {display: flex; gap: 8rem; max-width: 176rem; margin-left: auto; margin-right: auto; padding: 0 4rem;}
+.m_sec04 .col {flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 4rem; overflow: hidden;}
+.m_sec04 .bn,
+.m_sec04 .bn .morenvy-banner {display: contents;}
+.m_sec04 .img {display: block; aspect-ratio: 1 / 1; overflow: hidden; background-color: #f5f5f5;}
+.m_sec04 .img picture,
+.m_sec04 .img img {width: 100%; height: 100%; object-fit: cover;}
+.m_sec04 .txt h2 {font-family: var(--font-en); font-weight: 700; font-size: 3.6rem; line-height: 4.8rem; letter-spacing: .036rem; text-transform: capitalize;}
+.m_sec04 .txt p {margin-top: 1.6rem; font-size: 1.6rem; line-height: 2.4rem; color: var(--c-grey);}
+.m_sec04 .txt .more_btn {margin-top: 4rem;}
+.main_wrap .m_sec04 .prd_slide.swiper {width: 100%; margin: 0; padding: 0;}  /* swiper 기본 margin:auto 때문에 상품 줄 길이만큼 늘어나 끌리지 않던 문제 */
+.m_sec04 .prd_slide .prdList > li {width: 34rem;}
+.m_sec04 .col02 .txt {order: 1;}
+.m_sec04 .col02 .prd_slide {order: 2;}
+.m_sec04 .col02 .img {order: 3;}
 
 
 /* -------------------------------
     05 : 롱배너
 ------------------------------- */
-.gg_long a {position: relative; display: block; height: 33.333vw; min-height: 40rem; max-height: 64rem; overflow: hidden; background-color: #f5f5f5;}
-.gg_long .bg {position: absolute; inset: 0;}
-.gg_long .bg img {width: 100%; height: 100%; object-fit: cover;}
-.gg_long .txt {position: absolute; left: 50%; top: 50%; z-index: 1; display: flex; flex-direction: column; align-items: center; width: calc(100% - 8rem); transform: translate(-50%, -50%); text-align: center; color: #fff;}
-.gg_long .txt h2 {font-family: var(--gg-en); font-weight: 700; font-size: 5rem; line-height: 6.4rem; letter-spacing: .05rem; text-transform: capitalize;}
-.gg_long .txt p {margin-top: 2.4rem; font-size: 2rem; line-height: 2.8rem; font-weight: 500;}
-.gg_long .gg_btn {width: auto; margin-top: 6.4rem; padding: .8rem 2.4rem; border-color: currentColor; color: inherit;}
+.m_sec05 a {position: relative; display: block; height: 33.333vw; min-height: 40rem; max-height: 64rem; overflow: hidden; background-color: #f5f5f5;}
+.m_sec05 .bg {position: absolute; inset: 0;}
+.m_sec05 .bg img {width: 100%; height: 100%; object-fit: cover;}
+.m_sec05 .txt {position: absolute; left: 50%; top: 50%; z-index: 1; display: flex; flex-direction: column; align-items: center; width: calc(100% - 8rem); transform: translate(-50%, -50%); text-align: center; color: #fff;}
+.m_sec05 .txt h2 {font-family: var(--font-en); font-weight: 700; font-size: 5rem; line-height: 6.4rem; letter-spacing: .05rem; text-transform: capitalize;}
+.m_sec05 .txt p {margin-top: 2.4rem; font-size: 2rem; line-height: 2.8rem; font-weight: 500;}
+.m_sec05 .more_btn {width: auto; margin-top: 6.4rem; padding: .8rem 2.4rem; border-color: currentColor; color: inherit;}
+.m_sec05 .more_btn:hover,
+.m_sec07 .left .more_btn:hover {background-color: #fff; border-color: #fff; color: var(--c-black);}
 
 
 /* -------------------------------
     06 : Hot Deal
 ------------------------------- */
-.gg_hotdeal .gg_title {gap: .8rem;}
-.gg_hotdeal .gg_timer {font-family: var(--gg-en); font-weight: 700; font-size: 6.4rem; line-height: 8rem; letter-spacing: .64rem; color: var(--gg-black); font-variant-numeric: tabular-nums;}
+.m_sec06 .m_title {gap: .8rem;}
+.m_sec06 .deal_timer {font-family: var(--font-en); font-weight: 700; font-size: 6.4rem; line-height: 8rem; letter-spacing: .64rem; color: var(--c-black);}
 
 
 /* -------------------------------
     07 : 2단 배너
 ------------------------------- */
-.gg_two {display: flex;}
-.gg_two .left {flex: 0 0 50%; min-width: 0;}
-.gg_two .left a {position: relative; display: block; height: 62.5vw; max-height: 120rem; overflow: hidden; background-color: #f5f5f5;}
-.gg_two .left .bg {position: absolute; inset: 0;}
-.gg_two .left .bg img {width: 100%; height: 100%; object-fit: cover;}
-.gg_two .left .txt {position: absolute; left: 8rem; right: 4rem; bottom: 6.4rem; z-index: 1; color: #fff;}
-.gg_two .left .txt h2 {font-family: var(--gg-en); font-weight: 700; font-size: 5rem; line-height: 6.4rem; letter-spacing: .05rem; text-transform: capitalize;}
-.gg_two .left .txt p {margin-top: 2.4rem; font-size: 2rem; line-height: 2.8rem; font-weight: 500;}
-.gg_two .left .gg_btn {width: auto; gap: 2.4rem; margin-top: 6.4rem; padding: .8rem 2.4rem; border-color: currentColor; font-size: 1.4rem; color: inherit;}
+.m_sec07 {display: flex;}
+.m_sec07 .left {flex: 0 0 50%; min-width: 0;}
+.m_sec07 .left a {position: relative; display: block; height: 62.5vw; max-height: 120rem; overflow: hidden; background-color: #f5f5f5;}
+.m_sec07 .left .bg {position: absolute; inset: 0;}
+.m_sec07 .left .bg img {width: 100%; height: 100%; object-fit: cover;}
+.m_sec07 .left .txt {position: absolute; left: 8rem; right: 4rem; bottom: 6.4rem; z-index: 1; color: #fff;}
+.m_sec07 .left .txt h2 {font-family: var(--font-en); font-weight: 700; font-size: 5rem; line-height: 6.4rem; letter-spacing: .05rem; text-transform: capitalize;}
+.m_sec07 .left .txt p {margin-top: 2.4rem; font-size: 2rem; line-height: 2.8rem; font-weight: 500;}
+.m_sec07 .left .more_btn {width: auto; gap: 2.4rem; margin-top: 6.4rem; padding: .8rem 2.4rem; border-color: currentColor; font-size: 1.4rem; color: inherit;}
 
-.gg_two .right {position: relative; flex: 0 0 50%; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4rem; overflow: hidden; background-color: #000;}
-.gg_two .right .blur {position: absolute; inset: -4rem; background: no-repeat center / cover; filter: blur(20px); opacity: .8; transition: background-image .6s;}
-.gg_two .gg_two_swiper {position: relative; z-index: 1; width: 64rem; max-width: calc(100% - 8rem); margin: 0;}
-.gg_two .gg_two_swiper a {display: flex; flex-direction: column; align-items: center; gap: 4rem; color: #fff;}
-.gg_two .gg_two_swiper .img {display: block; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background-color: var(--gg-bg);}
-.gg_two .gg_two_swiper .img img {width: 100%; height: 100%; object-fit: cover;}
-.gg_two .gg_two_swiper .txt {display: flex; flex-direction: column; align-items: center; gap: 1.6rem; text-align: center;}
-.gg_two .gg_two_swiper strong {font-family: var(--gg-en); font-weight: 700; font-size: 3.6rem; line-height: 4.8rem; letter-spacing: .036rem; text-transform: capitalize;}
-.gg_two .gg_two_swiper em {font-style: normal; font-size: 1.6rem; line-height: 2.4rem;}
-.gg_two .two_count {position: relative; z-index: 1;}
+.m_sec07 .right {position: relative; flex: 0 0 50%; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4rem; overflow: hidden; background-color: #000;}
+.m_sec07 .right .blur {position: absolute; inset: -4rem; background: no-repeat center / cover; filter: blur(20px); opacity: .8; transition: background-image .6s;}
+.m_sec07 .two_swiper {position: relative; z-index: 1; width: 64rem; max-width: calc(100% - 8rem); margin: 0;}
+.m_sec07 .two_swiper a {display: flex; flex-direction: column; align-items: center; gap: 4rem; color: #fff;}
+.m_sec07 .two_swiper .img {display: block; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; background-color: var(--c-bg);}
+.m_sec07 .two_swiper .img img {width: 100%; height: 100%; object-fit: cover;}
+.m_sec07 .two_swiper .txt {display: flex; flex-direction: column; align-items: center; gap: 1.6rem; text-align: center;}
+.m_sec07 .two_swiper strong {font-family: var(--font-en); font-weight: 700; font-size: 3.6rem; line-height: 4.8rem; letter-spacing: .036rem; text-transform: capitalize;}
+.m_sec07 .two_swiper em {font-style: normal; font-size: 1.6rem; line-height: 2.4rem;}
+.m_sec07 .two_count {position: relative; z-index: 1;}
 
 
 /* -------------------------------
     08 : Promotion
 ------------------------------- */
-.gg_promo_list {display: flex; gap: 3.2rem; padding: 0 4rem;}
-.gg_promo_list .morenvy-banner {flex: 1 1 0; min-width: 0;}
-.gg_promo_list a {position: relative; display: block; aspect-ratio: 592 / 800; overflow: hidden; background-color: #d9d9d9;}
-.gg_promo_list .img {position: absolute; inset: 0;}
-.gg_promo_list .img img {width: 100%; height: 100%; object-fit: cover;}
-.gg_promo_list .img::after {content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 50%; background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.1));}
-.gg_promo_list .txt {position: absolute; left: 0; bottom: 0; z-index: 1; display: flex; flex-direction: column; width: 100%; padding: 0 4rem 4rem; color: #fff;}
-.gg_promo_list strong {font-family: var(--gg-en); font-weight: 700; font-size: 3.6rem; line-height: 4.8rem; letter-spacing: .036rem; text-transform: capitalize;}
-.gg_promo_list .txt > em {margin-top: 1.6rem; font-style: normal; font-size: 1.6rem; line-height: 2.4rem;}
-.gg_promo_list .gg_btn {width: 100%; margin-top: 4rem; border-color: currentColor; color: inherit;}
+.main_wrap .promo_list.swiper {padding: 0 4rem;}
+.promo_list .swiper-slide {height: auto;}
+.promo_list a {position: relative; display: block; aspect-ratio: 592 / 800; overflow: hidden; background-color: #d9d9d9;}
+.promo_list .img {position: absolute; inset: 0;}
+.promo_list .img img {width: 100%; height: 100%; object-fit: cover;}
+.promo_list .img::after {content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 50%; background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.1));}
+.promo_list .txt {position: absolute; left: 0; bottom: 0; z-index: 1; display: flex; flex-direction: column; width: 100%; padding: 0 4rem 4rem; color: #fff;}
+.promo_list strong {font-family: var(--font-en); font-weight: 700; font-size: 3.6rem; line-height: 4.8rem; letter-spacing: .036rem; text-transform: capitalize;}
+.promo_list .txt > em {margin-top: 1.6rem; font-style: normal; font-size: 1.6rem; line-height: 2.4rem;}
+.promo_list .more_btn {width: 100%; margin-top: 4rem; border-color: currentColor; color: inherit;}
+.promo_list .more_btn:hover {background-color: #fff; border-color: #fff; color: var(--c-black);}
 
 
 /* -------------------------------
     반응형 : 1280px (작은 PC)
 ------------------------------- */
 @media all and (max-width:1280px) {
-    .gg_kv .txt h2,
-    .gg_long .txt h2,
-    .gg_two .left .txt h2 {font-size: 4rem; line-height: 5.2rem;}
-    .gg_bnprd {gap: 4rem;}
-    .gg_promo_list {gap: 1.6rem;}
-    .gg_promo_list .txt {padding: 0 2.4rem 2.4rem;}
-    .gg_promo_list strong,
-    .gg_two .gg_two_swiper strong {font-size: 2.8rem; line-height: 3.6rem;}
+    .m_sec01 .txt h2,
+    .m_sec05 .txt h2,
+    .m_sec07 .left .txt h2 {font-size: 4rem; line-height: 5.2rem;}
+    .m_sec04 {gap: 4rem;}
+    .promo_list .txt {padding: 0 2.4rem 2.4rem;}
+    .promo_list strong,
+    .m_sec07 .two_swiper strong {font-size: 2.8rem; line-height: 3.6rem;}
 }
 
 
@@ -216,102 +219,102 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
     반응형 : 767px (모바일, 시안 360)
 ------------------------------- */
 @media all and (max-width:767px) {
-    .gg_main .gg_sec {margin-top: 6.4rem;}
-    .gg_main > section:last-child {margin-bottom: 4rem;}
+    .main_wrap .m_sec {margin-top: 6.4rem;}
+    .main_wrap > section:last-child {margin-bottom: 4rem;}
 
-    .gg_title {align-items: flex-start; margin-bottom: 2.4rem; padding: 0 2rem; text-align: left;}
-    .gg_title h2 {font-size: 2.4rem; line-height: 2.8rem; letter-spacing: .024rem;}
-    .gg_btn {width: 100%; padding: 1.2rem 1.6rem; font-size: 1.4rem; line-height: 2rem;}
-    .gg_count {gap: .4rem; padding: .4rem 1.2rem; font-size: 1.2rem; line-height: 1.6rem;}
-    .gg_count i {height: .8rem;}
+    .m_title {align-items: flex-start; margin-bottom: 2.4rem; padding: 0 2rem; text-align: left;}
+    .m_title h2 {font-size: 2.4rem; line-height: 2.8rem; letter-spacing: .024rem;}
+    .more_btn {width: 100%; padding: 1.2rem 1.6rem; font-size: 1.4rem; line-height: 2rem;}
+    .count_box {gap: .4rem; padding: .4rem 1.2rem; font-size: 1.2rem; line-height: 1.6rem;}
+    .count_box i {height: .8rem;}
 
     /* 카드 */
-    .gg_prd_slide {padding: 0 2rem;}
-    .gg_prd_slide .prdList > li {width: 20rem;}
-    .gg_prd .thumb .prdIcon {inset: .8rem; background-size: 4rem auto;}
-    .gg_prd .thumb .wish {top: 1.2rem; right: 1.2rem; width: 2rem; height: 2rem;}
-    .gg_prd .info .name a,
-    .gg_prd .info .name a span {font-size: 1.3rem !important; line-height: 1.8rem;}
-    .gg_prd .info .spec li {line-height: 1.8rem;}
-    .gg_prd .info .spec li[rel="상품요약정보"] span,
-    .gg_prd .info .spec li[rel="상품 요약설명"] span,
-    .gg_prd .info .spec li[rel="상품간략설명"] span {display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; font-size: 1.2rem !important; line-height: 1.6rem;}
-    .gg_prd .info .spec .sale_box,
-    .gg_prd .info .spec li[rel="판매가"] span,
-    .gg_prd .info .spec li[rel="할인판매가"] span {font-size: 1.3rem !important; line-height: 1.8rem;}
+    .main_wrap .prd_slide.swiper {padding: 0 2rem;}
+    .prd_slide .prdList > li {width: 20rem;}
+    .prd_box .thumb .prdIcon {inset: .8rem; background-size: 4rem auto;}
+    .prd_box .thumb .wish {top: 1.2rem; right: 1.2rem; width: 2rem; height: 2rem;}
+    .prd_box .info .name a,
+    .prd_box .info .name a span {font-size: 1.3rem !important; line-height: 1.8rem;}
+    .prd_box .info .spec li {line-height: 1.8rem;}
+    .prd_box .info .spec li[rel="상품요약정보"] span,
+    .prd_box .info .spec li[rel="상품 요약설명"] span,
+    .prd_box .info .spec li[rel="상품간략설명"] span {display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; font-size: 1.2rem !important; line-height: 1.6rem;}
+    .prd_box .info .spec .sale_box,
+    .prd_box .info .spec li[rel="판매가"] span,
+    .prd_box .info .spec li[rel="할인판매가"] span {font-size: 1.3rem !important; line-height: 1.8rem;}
 
     /* 01 키비주얼 */
-    .gg_kv {height: 166.67vw; min-height: 0; max-height: 100svh;}
-    .gg_kv::before {height: 8rem;}
-    .gg_kv::after {content: ""; position: absolute; left: 0; bottom: 0; z-index: 2; width: 100%; height: 24rem; background: linear-gradient(to top, rgba(0,0,0,.2), rgba(0,0,0,.1) 50%, rgba(0,0,0,0)); pointer-events: none;}
-    .gg_kv .txt {left: 2rem; bottom: 4rem; width: calc(100% - 12rem); transform: none; text-align: left;}
-    .gg_kv .txt h2 {max-width: 20rem; font-size: 2.4rem; line-height: 3.6rem; letter-spacing: .024rem;}
-    .gg_kv .txt p {max-width: 19rem; margin-top: 1.6rem; font-size: 1.4rem; line-height: 2rem; font-weight: 400;}
-    .gg_kv .kv_count {left: auto; right: 2rem; bottom: 4rem; transform: none;}
-    .gg_kv .kv_btn {display: none;}
+    .m_sec01 {height: 166.67vw; min-height: 0; max-height: 100svh;}
+    .m_sec01::before {height: 8rem;}
+    .m_sec01::after {content: ""; position: absolute; left: 0; bottom: 0; z-index: 2; width: 100%; height: 24rem; background: linear-gradient(to top, rgba(0,0,0,.2), rgba(0,0,0,.1) 50%, rgba(0,0,0,0)); pointer-events: none;}
+    .m_sec01 .txt {left: 2rem; bottom: 4rem; width: calc(100% - 12rem); transform: none; text-align: left;}
+    .m_sec01 .txt h2 {max-width: 20rem; font-size: 2.4rem; line-height: 3.6rem; letter-spacing: .024rem;}
+    .m_sec01 .txt p {max-width: 19rem; margin-top: 1.6rem; font-size: 1.4rem; line-height: 2rem; font-weight: 400;}
+    .m_sec01 .kv_count {left: auto; right: 2rem; bottom: 4rem; transform: none;}
+    .m_sec01 .kv_btn {display: none;}
 
     /* 02 카테고리 */
-    .gg_cate {margin-top: 4rem; padding: 0;}
-    .gg_cate_list {justify-content: flex-start; gap: 1.2rem; padding: 0 2rem; overflow-x: auto; scrollbar-width: none;}
-    .gg_cate_list::-webkit-scrollbar {display: none;}
-    .gg_cate_list .morenvy-banner {flex: 0 0 8rem;}
-    .gg_cate_list .morenvy-banner:first-child {margin-left: auto;}  /* 넘치면 왼쪽부터 가로 스크롤, 적으면 가운데 */
-    .gg_cate_list .morenvy-banner:last-child {margin-right: auto;}
-    .gg_cate_list a {gap: 1.2rem;}
-    .gg_cate_list .ico {border-radius: 2rem;}
-    .gg_cate_list .name {font-size: 1.3rem; line-height: 2rem;}
+    .m_sec02 {margin-top: 4rem; padding: 0;}
+    .cate_list {justify-content: flex-start; gap: 1.2rem; padding: 0 2rem; overflow-x: auto; scrollbar-width: none;}
+    .cate_list::-webkit-scrollbar {display: none;}
+    .cate_list .morenvy-banner {flex: 0 0 8rem;}
+    .cate_list .morenvy-banner:first-child {margin-left: auto;}  /* 넘치면 왼쪽부터 가로 스크롤, 적으면 가운데 */
+    .cate_list .morenvy-banner:last-child {margin-right: auto;}
+    .cate_list a {gap: 1.2rem;}
+    .cate_list .ico {border-radius: 2rem;}
+    .cate_list .name {font-size: 1.3rem; line-height: 2rem;}
 
     /* 03 Weekly Best */
-    .gg_tabprd .gg_tab {gap: 1.2rem; margin-top: 1.6rem;}
-    .gg_tabprd .gg_tab button {font-size: 1.5rem; line-height: 2rem;}
+    .m_sec03 .tab_menu {gap: 1.2rem; margin-top: 1.6rem;}
+    .m_sec03 .tab_menu button {font-size: 1.5rem; line-height: 2rem;}
 
     /* 04 배너 + 상품 */
-    .gg_bnprd {flex-direction: column; gap: 6.4rem; padding: 0 2rem;}
-    .gg_bnprd .col {gap: 0; overflow: visible;}
-    .gg_bnprd .col .img {order: 1; margin-bottom: 2.4rem;}
-    .gg_bnprd .col .txt {order: 2; margin-bottom: 4rem;}
-    .gg_bnprd .col .gg_prd_slide {order: 3; overflow: visible;}
-    .gg_bnprd .txt h2 {font-size: 2.4rem; line-height: 3.6rem; letter-spacing: .024rem;}
-    .gg_bnprd .txt p {font-size: 1.4rem; line-height: 2rem;}
-    .gg_bnprd .txt .gg_btn {margin-top: 2.4rem;}
-    .gg_bnprd .gg_prd_slide .prdList > li {width: 14rem;}
+    .m_sec04 {flex-direction: column; gap: 6.4rem; padding: 0 2rem;}
+    .m_sec04 .col {gap: 0; overflow: visible;}
+    .m_sec04 .col .img {order: 1; margin-bottom: 2.4rem;}
+    .m_sec04 .col .txt {order: 2; margin-bottom: 4rem;}
+    .main_wrap .m_sec04 .col .prd_slide.swiper {order: 3; overflow: visible;}
+    .m_sec04 .txt h2 {font-size: 2.4rem; line-height: 3.6rem; letter-spacing: .024rem;}
+    .m_sec04 .txt p {font-size: 1.4rem; line-height: 2rem;}
+    .m_sec04 .txt .more_btn {margin-top: 2.4rem;}
+    .m_sec04 .prd_slide .prdList > li {width: 14rem;}
 
     /* 05 롱배너 */
-    .gg_long a {height: 133.33vw; min-height: 0; max-height: none;}
-    .gg_long .txt {left: 2rem; top: auto; bottom: 4rem; align-items: flex-start; width: calc(100% - 4rem); transform: none; text-align: left;}
-    .gg_long .txt h2 {max-width: 22rem; font-size: 2.4rem; line-height: 3.6rem; letter-spacing: .024rem;}
-    .gg_long .txt p {max-width: 20rem; margin-top: .8rem; font-size: 1.4rem; line-height: 2rem; font-weight: 400;}
-    .gg_long .gg_btn {margin-top: 2.4rem; padding: 1.2rem 2.4rem; width: auto;}
-    .gg_long .gg_btn em,
-    .gg_two .left .gg_btn em {font-size: 1.6rem;}
+    .m_sec05 a {height: 133.33vw; min-height: 0; max-height: none;}
+    .m_sec05 .txt {left: 2rem; top: auto; bottom: 4rem; align-items: flex-start; width: calc(100% - 4rem); transform: none; text-align: left;}
+    .m_sec05 .txt h2 {max-width: 22rem; font-size: 2.4rem; line-height: 3.6rem; letter-spacing: .024rem;}
+    .m_sec05 .txt p {max-width: 20rem; margin-top: .8rem; font-size: 1.4rem; line-height: 2rem; font-weight: 400;}
+    .m_sec05 .more_btn {margin-top: 2.4rem; padding: 1.2rem 2.4rem; width: auto;}
+    .m_sec05 .more_btn em,
+    .m_sec07 .left .more_btn em {font-size: 1.6rem;}
 
     /* 06 Hot Deal */
-    .gg_hotdeal .gg_title {gap: 1.6rem;}
-    .gg_hotdeal .gg_timer {font-size: 3.2rem; line-height: 4rem; letter-spacing: .32rem;}
+    .m_sec06 .m_title {gap: 1.6rem;}
+    .m_sec06 .deal_timer {font-size: 3.6rem; line-height: 4rem; letter-spacing: .36rem;}
 
     /* 07 2단 배너 */
-    .gg_two {flex-direction: column;}
-    .gg_two .left a {height: 125vw; max-height: none;}
-    .gg_two .left .txt {left: 2rem; right: 2rem; bottom: 4rem;}
-    .gg_two .left .txt h2 {max-width: 22rem; font-size: 2.4rem; line-height: 3.6rem; letter-spacing: .024rem;}
-    .gg_two .left .txt p {max-width: 24rem; margin-top: 1.6rem; font-size: 1.4rem; line-height: 2rem;}
-    .gg_two .left .gg_btn {gap: 1.2rem; margin-top: 2.4rem; padding: 1.2rem 2.4rem; width: auto;}
-    .gg_two .right {gap: 2.4rem; padding: 2rem 0 4rem;}
-    .gg_two .right .blur {filter: blur(30px); opacity: .4;}
-    .gg_two .gg_two_swiper {width: calc(100% - 4rem); max-width: none;}
-    .gg_two .gg_two_swiper a {gap: 2.4rem;}
-    .gg_two .gg_two_swiper .txt {gap: .8rem;}
-    .gg_two .gg_two_swiper strong {font-size: 2rem; line-height: 3.2rem; letter-spacing: .02rem;}
-    .gg_two .gg_two_swiper em {font-size: 1.2rem; line-height: 1.6rem;}
+    .m_sec07 {flex-direction: column;}
+    .m_sec07 .left a {height: 125vw; max-height: none;}
+    .m_sec07 .left .txt {left: 2rem; right: 2rem; bottom: 4rem;}
+    .m_sec07 .left .txt h2 {max-width: 22rem; font-size: 2.4rem; line-height: 3.6rem; letter-spacing: .024rem;}
+    .m_sec07 .left .txt p {max-width: 24rem; margin-top: 1.6rem; font-size: 1.4rem; line-height: 2rem;}
+    .m_sec07 .left .more_btn {gap: 1.2rem; margin-top: 2.4rem; padding: 1.2rem 2.4rem; width: auto;}
+    .m_sec07 .right {gap: 2.4rem; padding: 2rem 0 4rem;}
+    .m_sec07 .right .blur {filter: blur(30px); opacity: .4;}
+    .m_sec07 .two_swiper {width: calc(100% - 4rem); max-width: none;}
+    .m_sec07 .two_swiper a {gap: 2.4rem;}
+    .m_sec07 .two_swiper .txt {gap: .8rem;}
+    .m_sec07 .two_swiper strong {font-size: 2rem; line-height: 3.2rem; letter-spacing: .02rem;}
+    .m_sec07 .two_swiper em {font-size: 1.2rem; line-height: 1.6rem;}
 
     /* 08 Promotion */
-    .gg_promo_list {gap: 1.6rem; padding: 0 2rem; overflow-x: auto; scrollbar-width: none;}
-    .gg_promo_list::-webkit-scrollbar {display: none;}
-    .gg_promo_list .morenvy-banner {flex: 0 0 30rem;}
-    .gg_promo_list a {aspect-ratio: auto; overflow: visible; background: none;}
-    .gg_promo_list .img {position: relative; display: block; height: 40.5rem; overflow: hidden; background-color: #d9d9d9;}
-    .gg_promo_list .txt {position: static; margin-top: 1.6rem; padding: 0; color: var(--gg-black) !important;}  /* 모바일은 글자가 사진 아래라 배너관리자 글자색(텍스트 2) 대신 검정 */
-    .gg_promo_list strong {font-size: 2rem; line-height: 3.2rem; letter-spacing: .02rem;}
-    .gg_promo_list .txt > em {font-size: 1.2rem; line-height: 1.6rem; color: var(--gg-grey);}
-    .gg_promo_list .gg_btn {margin-top: 2.4rem; border-color: var(--gg-black); color: var(--gg-black);}
+    .main_wrap .promo_list.swiper {padding: 0 2rem;}
+    .promo_list .swiper-slide {width: 30rem;}
+    .promo_list a {aspect-ratio: auto; overflow: visible; background: none;}
+    .promo_list .img {position: relative; display: block; height: 40.5rem; overflow: hidden; background-color: #d9d9d9;}
+    .promo_list .txt {position: static; margin-top: 1.6rem; padding: 0; color: var(--c-black) !important;}  /* 모바일은 글자가 사진 아래라 배너관리자 글자색(텍스트 2) 대신 검정 */
+    .promo_list strong {font-size: 2rem; line-height: 3.2rem; letter-spacing: .02rem;}
+    .promo_list .txt > em {font-size: 1.2rem; line-height: 1.6rem; color: var(--c-grey);}
+    .promo_list .more_btn {margin-top: 2.4rem; border-color: var(--c-black); color: var(--c-black);}
+    .promo_list .more_btn:hover {background-color: var(--c-black); border-color: var(--c-black); color: #fff;}
 }

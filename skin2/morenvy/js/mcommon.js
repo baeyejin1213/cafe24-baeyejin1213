@@ -94,57 +94,6 @@ jQuery(document).ready(function () {
     jQuery("#footer .f_sec02 .company .com_regno_btn").text(comRegno);
 
 
-    /* 하단 : 고정 */
-    if (jQuery(this).scrollTop() + jQuery(this).innerHeight() - 66 >= jQuery("#footer").offset().top - 120) {
-        if (jQuery(this).innerWidth() >= 768) {
-            jQuery(".f_fixed").css({position: "absolute", bottom: jQuery("#footer").innerHeight() + 120});
-            jQuery(".f_fixed").children("#quick").removeClass("on");
-        };
-    } else {
-        jQuery(".f_fixed").css({position: "", bottom: ""});
-        jQuery(".f_fixed").children("#quick").addClass("on");
-    };
-
-    let startY = 0;
-    jQuery(window).on("scroll", function () {
-        if (jQuery(this).scrollTop() + jQuery(this).innerHeight() - 66 >= jQuery("#footer").offset().top - 120) {
-            if (jQuery(this).innerWidth() >= 768) {
-                jQuery(".f_fixed").css({position: "absolute", bottom: jQuery("#footer").innerHeight() + 120});
-                jQuery(".f_fixed").children("#quick").removeClass("on");
-            };
-        } else {
-            jQuery(".f_fixed").css({position: "", bottom: ""});
-            jQuery(".f_fixed").children("#quick").addClass("on");
-        };
-
-        let endY = jQuery(this).scrollTop();
-        if (jQuery(this).innerWidth() <= 767) {
-            if (endY > startY) {
-                jQuery(".f_fixed").addClass("down");
-            } else {
-                jQuery(".f_fixed").removeClass("down");
-            };
-
-            if (endY + jQuery(this).innerHeight() === jQuery(document).innerHeight()) {
-                jQuery(".f_fixed").removeClass("down");
-            };
-
-            startY = endY <= 0 ? 0 : endY;
-        };
-    });
-
-
-    /* 하단 : 고정 메뉴 */
-    jQuery(".f_fixed .f_nav .all_cate").on("click", function () {
-        jQuery("body").addClass("side");
-    });
-
-
-    /* 하단 : 고정 아이콘 */
-    jQuery(".f_fixed #quick > a").on("click", function () {
-        jQuery("html, body").animate({scrollTop: 0}, 600);
-    });
-
     /* ----------------------------------------------------
 
         하단 : 종료
@@ -478,20 +427,15 @@ function getCookieM(name) {
 }
 
 
-/* -------------------------------------------------------------------
-    에이가구(a GaGu) 공통 동작
-    - 메인 투명 헤더 / 스크롤 시 흰 헤더
-    - PC 메가메뉴 (분류 데이터 /exec/front/Product/SubCategory)
-    - 검색 패널, 모바일 전체메뉴, 푸터 사업자 정보 접기, 패밀리사이트, 모바일 하단바
-------------------------------------------------------------------- */
+/* 상단 · 하단 공통 */
 jQuery(function ($) {
 
     var $body = $('body');
-    var $header = $('#header.gg_header');
+    var $header = $('#header.h_type01');
     if (!$header.length) return;
 
-    /* 메인 여부 : 메인(index.html)에만 .gg_main 이 있다 */
-    if ($('#contents .gg_main').length) $body.addClass('is_main');
+    /* 메인 여부 : 메인(index.html)에만 .main_wrap 이 있다 */
+    if ($('#contents .main_wrap').length) $body.addClass('is_main');
 
 
     /* ① 스크롤하면 흰 헤더 */
@@ -593,7 +537,7 @@ jQuery(function ($) {
 
     /* 모바일 전체메뉴 : 왼쪽 대분류 / 오른쪽 중분류(+소분류 펼침) */
     function buildSide(byParent, link) {
-        var $side = $('#gg_side');
+        var $side = $('#aside_menu');
         if (!$side.length) return;
         var $d1 = $side.find('.d1'), $d2 = $side.find('.d2');
         var first = -1;
@@ -641,14 +585,19 @@ jQuery(function ($) {
     function sideOpen() { $body.addClass('sideOn'); }
     function sideClose() { $body.removeClass('sideOn'); }
     $header.on('click', '.h_util .menu a', function (e) { e.preventDefault(); sideOpen(); });
-    $(document).on('click', '.gg_fixbar .side_open', sideOpen);
-    $(document).on('click', '#gg_side .side_close', sideClose);
+    $(document).on('click', '.f_nav .side_open', sideOpen);
+    $(document).on('click', '#aside_menu .side_close', sideClose);
 
 
     /* ③ 검색 패널 */
+    var recentSwiper = null;
     function searchOpen() {
         $('#searchBarForm').addClass('active');
         $body.addClass('searchOn');
+        var $recent = $('.sch_recent .swiper');  /* 최근 본 상품 : 마우스로 끌어서 넘김 */
+        if (!recentSwiper && $recent.length && window.Swiper) {
+            recentSwiper = new Swiper($recent[0], {slidesPerView: 'auto', spaceBetween: 12, freeMode: true, grabCursor: true, observer: true, observeParents: true});
+        }
         setTimeout(function () { $('#searchBarForm #keyword').trigger('focus'); }, 400);
     }
     function searchClose() {
@@ -656,23 +605,23 @@ jQuery(function ($) {
         $body.removeClass('searchOn');
     }
     $header.on('click', '.h_util .search a', function (e) { e.preventDefault(); searchOpen(); });
-    $(document).on('click', '.gg_search .sch_close', searchClose);
-    $(document).on('click', '.gg_dim', function () { searchClose(); sideClose(); });
+    $(document).on('click', '.search_box.type01 .sch_close', searchClose);
+    $(document).on('click', '.h_dim', function () { searchClose(); sideClose(); });
     $(document).on('keydown', function (e) { if (e.key === 'Escape') { searchClose(); sideClose(); } });
 
 
-    /* ④ 푸터 : 사업자 정보 접기 · 패밀리사이트 */
+    /* ④ 푸터 : 사업자 정보 접기 */
     $(document).on('click', '#footer .f_biz_btn', function () { $(this).closest('.f_info_wrap').toggleClass('close'); });
-    $(document).on('click', '#footer .f_family > button', function () { $(this).parent().toggleClass('open'); });
-    $(document).on('click', function (e) { if (!$(e.target).closest('#footer .f_family').length) $('#footer .f_family').removeClass('open'); });
 
 
-    /* ⑤ 모바일 하단바 : 내릴 때 숨김, 올리거나 맨 아래면 표시 */
+    /* ⑤ 퀵 메뉴(PC) : 조금 내리면 표시, 맨 위로 / 모바일 하단바 : 내릴 때 숨김 */
+    $(document).on('click', '#quick .upBtn', function (e) { e.preventDefault(); $('html, body').animate({scrollTop: 0}, 600); });
     var lastY = window.pageYOffset;
     $(window).on('scroll', function () {
         var y = window.pageYOffset;
         var atBottom = y + window.innerHeight >= document.documentElement.scrollHeight - 4;
-        $('.gg_fixbar').toggleClass('down', y > lastY && y > 56 && !atBottom);
+        $('.f_nav').toggleClass('down', y > lastY && y > 56 && !atBottom);
+        $('#quick').toggleClass('on', y > 200);
         lastY = y;
     });
 });
