@@ -2,20 +2,26 @@
 <!--@css(/morenvy/css/main.css)-->
 <!--@css(/morenvy/css/mpopup.css)-->
 <!--@js(/morenvy/js/jquery.bpopup.min.js)-->
-<!--@js(/morenvy/js/main.js)-->
 <!--@js(/morenvy/js/main_pop.js)-->
-<!--@js(/morenvy/js/lenis.min.js)-->
-<!--@js(/morenvy/js/product_hover.js)-->
+<!--@js(/morenvy/js/main.js)-->
 
 <!---------------------------------------------------------------------------------------------------------------------------------------
 
-	- 디자인 수정을 하시려면 현재페이지 좌측(←)의 메뉴에서 [전체화면보기 탭] 을 선택하신후 스크롤을 내리셔서 link.html을 클릭해 주세요.
-	- 좌측의 메뉴에서 link.html 페이지를 [★자주쓰는화면]으로 선택하시면 좀더 편안하게 접근이 가능합니다.
-	- link.html 페이지에서 손쉽게 디자인 수정이 가능합니다. (FTP : /sde_design/디자인스킨번호/link.html)
+	에이가구(a GaGu) 메인 — 스타일 morenvy/css/main.css, 동작 morenvy/js/main.js
+	피그마 : AI 작업 / PC_메인 524:11206, M_메인 524:17058
 
-	- https://morenvy.com // 02-812-3881 // 고객센터
-	- https://serviceguide.cafe24.com/ko_KR // 온라인매뉴얼
-	- EMAIL : morenvy@hanmail.net
+	섹션 순서와 관리 위치
+	  팝업          배너관리자 [메인 : 팝업] bb12
+	  01 키비주얼    배너관리자 [메인 : 키비주얼] c185
+	  02 카테고리    배너관리자 [메인 : 카테고리 아이콘] ★새 영역 — 만든 뒤 area_id 를 바꿔 주세요
+	  03 Weekly Best 메인진열 2~6번(탭 01~05) / 타이틀·탭 이름 /section/m_sec03_title.html
+	  04 배너 + 상품  배너관리자 [메인 : 배너 상품 01·02] ★새 영역 2개 + 메인진열 7·8번
+	  05 롱배너      배너관리자 [메인 : 컬렉션 배너] dc60
+	  06 Hot Deal    메인진열 9번 / 오늘 자정까지 남은 시간이 카운트다운됩니다
+	  07 2단 배너    왼쪽 [메인 : 카테고리 배너 02] c8f5 / 오른쪽 슬라이드 [메인 : 카테고리 배너 01] b217
+	  08 Promotion   배너관리자 [메인 : 프로모션 배너] 430b (3개)
+
+	배너 공통 필드 : 이미지 1 = PC, 이미지 2 = 모바일, 타이틀 = 제목, 텍스트 1 = 설명, 링크 1 = 이동 주소
 
 ----------------------------------------------------------------------------------------------------------------------------------------->
 
@@ -52,189 +58,264 @@
 	</div>
 </div>
 
-<!-- 메인 01 : 키비주얼 -->
-<!-- 앱스토어 - 배너관리자 - [메인 : 키비주얼] 에서 수정가능합니다 -->
-<section class="main_visual">
-    <div class="swiper_wrap">
-        <div class="swiper swiper_visual morenvy-banner-area" area_id="c185">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide morenvy-banner m_ban">
-                    <a href="{#link_1}" target="{#target_1}">
-                        <div class="bg">
-                            <picture>
-                                <source srcset="{#imgSrc_2}" media="(max-width: 1024px)">
-                                {#imgTag_1}
-                            </picture>
-                        </div>
-                        <!-- 원본 텍스트 데이터 (스크립트로 가져오기 위해 숨김 처리됨) -->
-                        <div class="txt origin_txt">
-                            <h2>{#title}</h2>
-                            <p>{#text_1}</p>
-                            <button type="button">{#text_2}</button>
-                            <span class="slide_link">{#link_1}</span>
-                            <span class="slide_target">{#target_1}</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
 
-            <div class="fixed_txt_box">
-                <div class="swiper-pagination swiper-pagination-visual"></div>
-                <a href="#" class="fixed_link">
-                    <div class="txt">
-                        <h2 class="fixed_title"></h2>
-                        <p class="fixed_desc"></p>
-                        <button type="button" class="fixed_btn"></button>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="swiper_btn_wrap swiper_btn_wrap_visual pc_only">
-            <div class="swiper-button swiper-button-prev swiper-button-prev-main"><!--@import(/morenvyimg/icon/wh_arr_l.svg)--></div>
-            <div class="swiper-button swiper-button-next swiper-button-next-main"><!--@import(/morenvyimg/icon/wh_arr_l.svg)--></div>
-        </div>
-    </div>
-</section>
+<div class="gg_main">
 
-<!-- 메인 02 : 2단 배너 -->
-<!-- 앱스토어 - 배너관리자 - [메인 : 카테고리 배너 01] 에서 수정가능합니다 -->
-<section class="m_sec02">
-	<div class="box">
-		<div class="morenvy-banner-area" area_id="b217">
-			<div class="morenvy-banner">
-				<a href="{#link_1}" target="{#target_1}">
-					<picture>
-							<source srcset="{#imgSrc_2}" media="(max-width: 1024px)">{#imgTag_1}
-							<button type="button" style="color: {#text_1}">{#title}</button>
-					</picture>
-				</a>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="m_sec03">
-<div class="box1">
-		<div class="left">
-			<!--
-				모렌비 배너관리자
-				배너영역명 : 메인 : 카테고리 배너 02
-			-->
-			<div class="morenvy-banner-area" area_id="c8f5">
-				<div class="morenvy-banner">
+	<!-- 메인 01 : 키비주얼 -->
+	<!-- 앱스토어 - 배너관리자 - [메인 : 키비주얼] : 이미지 1 PC 1920×1080 / 이미지 2 모바일 720×1200 / 타이틀 / 텍스트 1 설명 / 링크 1 -->
+	<section class="gg_kv">
+		<div class="swiper gg_kv_swiper morenvy-banner-area" area_id="c185">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide morenvy-banner">
 					<a href="{#link_1}" target="{#target_1}">
-					<picture>
-						<source srcset="{#imgSrc_2}" media="(max-width: 1024px)">{#imgTag_1}
-						<button type="button" style="color: {#text_1}">{#title}</button>
-					</picture>
+						<picture class="bg">
+							<source srcset="{#imgSrc_2}" media="(max-width: 767px)">
+							{#imgTag_1}
+						</picture>
+						<div class="txt">
+							<h2>{#title}</h2>
+							<p>{#text_1}</p>
+						</div>
 					</a>
 				</div>
 			</div>
 		</div>
-		<div class="right">
-			<div class="top_flash_deal_bar">
-				<!-- 메인 03 타이틀 -->
-				<!--@import(/section/m_sec03_title.html)-->
-				<div class="main_timesale_box_shell">
-					<div class="main_timesale_box"></div>
+		<div class="gg_count kv_count"><span class="cur">01</span><i></i><span class="total">01</span></div>
+		<button type="button" class="kv_btn prev" title="이전"><!--@import(/morenvyimg/kv_arr.svg)--></button>
+		<button type="button" class="kv_btn next" title="다음"><!--@import(/morenvyimg/kv_arr.svg)--></button>
+	</section>
+
+
+	<!-- 메인 02 : 카테고리 아이콘 -->
+	<!-- 앱스토어 - 배너관리자 - [메인 : 카테고리 아이콘] : 이미지 1 = 아이콘(320×320, 배경 투명 또는 #f9f9f9) / 타이틀 = 이름 / 링크 1 = 분류 주소 -->
+	<!-- ★ 배너관리자에서 영역을 만든 뒤 아래 area_id 를 새 ID 로 바꿔 주세요 -->
+	<section class="gg_cate">
+		<div class="gg_cate_list morenvy-banner-area" area_id="NEW1">
+			<div class="morenvy-banner">
+				<a href="{#link_1}" target="{#target_1}">
+					<span class="ico">{#imgTag_1}</span>
+					<span class="name">{#title}</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- 메인 03 : Weekly Best (탭 상품) -->
+	<section class="gg_sec gg_tabprd">
+		<div class="gg_title">
+			<!-- 메인 03 : 타이틀 · 탭 이름 -->
+			<!--@import(/section/m_sec03_title.html)-->
+		</div>
+		<div class="gg_tab_cont">
+			<div class="gg_panel on">
+				<div module="product_listmain_1" class="gg_prd_slide swiper">
+					<!--
+						$count = 10
+					-->
+					<ul class="prdList swiper-wrapper">
+						<!--@import(/product/product_list2.html)-->
+					</ul>
 				</div>
 			</div>
-			<div class="slide-box">
-				<div module="product_listmain_1" class="prdArea prdBest2">
-					<div class="ec-base-product swiper single-swiper">
-						<!--
-                            $count = 4
-                        -->
-						<ul class="prdList swiper-wrapper">
-							<!--@import(/product/product_list2.html)-->
-						</ul>
+			<div class="gg_panel">
+				<div module="product_listmain_2" class="gg_prd_slide swiper">
+					<!--
+						$count = 10
+					-->
+					<ul class="prdList swiper-wrapper">
+						<!--@import(/product/product_list2.html)-->
+					</ul>
+				</div>
+			</div>
+			<div class="gg_panel">
+				<div module="product_listmain_3" class="gg_prd_slide swiper">
+					<!--
+						$count = 10
+					-->
+					<ul class="prdList swiper-wrapper">
+						<!--@import(/product/product_list2.html)-->
+					</ul>
+				</div>
+			</div>
+			<div class="gg_panel">
+				<div module="product_listmain_4" class="gg_prd_slide swiper">
+					<!--
+						$count = 10
+					-->
+					<ul class="prdList swiper-wrapper">
+						<!--@import(/product/product_list2.html)-->
+					</ul>
+				</div>
+			</div>
+			<div class="gg_panel">
+				<div module="product_listmain_5" class="gg_prd_slide swiper">
+					<!--
+						$count = 10
+					-->
+					<ul class="prdList swiper-wrapper">
+						<!--@import(/product/product_list2.html)-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- 메인 04 : 배너 + 상품 (왼쪽 01 · 오른쪽 02) -->
+	<!-- 앱스토어 - 배너관리자 - [메인 : 배너 상품 01] / [메인 : 배너 상품 02] : 이미지 1 PC 1600×1600 / 이미지 2 모바일 640×640 / 타이틀 / 텍스트 1 설명 / 링크 1 -->
+	<!-- ★ 배너관리자에서 영역 2개를 만든 뒤 아래 area_id 를 새 ID 로 바꿔 주세요 -->
+	<section class="gg_sec gg_bnprd">
+		<div class="col col01">
+			<div class="bn morenvy-banner-area" area_id="NEW2">
+				<div class="morenvy-banner">
+					<a href="{#link_1}" target="{#target_1}" class="img">
+						<picture>
+							<source srcset="{#imgSrc_2}" media="(max-width: 767px)">
+							{#imgTag_1}
+						</picture>
+					</a>
+					<div class="txt">
+						<h2>{#title}</h2>
+						<p>{#text_1}</p>
+						<a href="{#link_1}" target="{#target_1}" class="gg_btn">More Detail<em>+</em></a>
 					</div>
 				</div>
 			</div>
-			<div class="swiper-pagination swiper-pagination-single"></div>
-			<div class="swiper_btn_wrap swiper_btn_wrap_single pc_only">
-				<div class="swiper-button swiper-button-prev swiper-button-prev-single"><!--@import(/morenvyimg/icon/wh_arr_l.svg)--></div>
-				<div class="swiper-button swiper-button-next swiper-button-next-single"><!--@import(/morenvyimg/icon/wh_arr_l.svg)--></div>
+			<div module="product_listmain_6" class="gg_prd_slide swiper">
+				<!--
+					$count = 10
+				-->
+				<ul class="prdList swiper-wrapper">
+					<!--@import(/product/product_list2.html)-->
+				</ul>
 			</div>
 		</div>
-	</div>
-</section>
-
-<!-- 메인 04 : New Arrivals -->
-<section class="m_sec04">
-	<!-- 메인 04 타이틀 -->
-	<!--@import(/section/m_sec04_title.html)-->
-	<div module="product_listmain_2" class="prdArea scroll_product">
-		<div class="ec-base-product ">
-			<!--
-                $count = 4
-            -->
-			<ul class="prdList">
-				<!--@import(/product/product_list.html)-->
-			</ul>
-		</div>
-	</div>
-</section>
-
-<!-- 메인 05 : 컬렉션 배너 -->
-<section class="m_sec05">
-	<div class="morenvy-banner-area" area_id="dc60">
-			<div class="morenvy-banner">
-				<a href="{#link_1}" target="{#target_1}">
-					<picture>
-							<source srcset="{#imgSrc_2}" media="(max-width: 1024px)">{#imgTag_1}
-							<button type="button">{#title}</button>
-					</picture>
-				</a>
-				<div class="txt">{#text_1}</div>
+		<div class="col col02">
+			<div class="bn morenvy-banner-area" area_id="NEW3">
+				<div class="morenvy-banner">
+					<a href="{#link_1}" target="{#target_1}" class="img">
+						<picture>
+							<source srcset="{#imgSrc_2}" media="(max-width: 767px)">
+							{#imgTag_1}
+						</picture>
+					</a>
+					<div class="txt">
+						<h2>{#title}</h2>
+						<p>{#text_1}</p>
+						<a href="{#link_1}" target="{#target_1}" class="gg_btn">More Detail<em>+</em></a>
+					</div>
+				</div>
+			</div>
+			<div module="product_listmain_7" class="gg_prd_slide swiper">
+				<!--
+					$count = 10
+				-->
+				<ul class="prdList swiper-wrapper">
+					<!--@import(/product/product_list2.html)-->
+				</ul>
 			</div>
 		</div>
-</section>
+	</section>
 
-<!-- 메인 06 : Best Sellers -->
-<section class="m_sec06">
-	<!-- 메인 06 타이틀 -->
-	<!--@import(/section/m_sec06_title.html)-->
-	<div module="product_listmain_3" class="prdArea scroll_product">
-		<div class="ec-base-product">
-			<!--
-                $count = 4
-            -->
-			<ul class="prdList">
-				<!--@import(/product/product_list.html)-->
-			</ul>
-		</div>
-	</div>
-</section>
 
-<!-- 메인 07 : 컬렉션 배너 -->
-<section class="m_sec07">
-	<div class="morenvy-banner-area" area_id="430b">
+	<!-- 메인 05 : 롱배너 -->
+	<!-- 앱스토어 - 배너관리자 - [메인 : 컬렉션 배너] : 이미지 1 PC 1920×640 / 이미지 2 모바일 720×960 / 타이틀 / 텍스트 1 설명 / 링크 1 -->
+	<section class="gg_sec gg_long">
+		<div class="morenvy-banner-area" area_id="dc60">
 			<div class="morenvy-banner">
 				<a href="{#link_1}" target="{#target_1}">
-					<picture>
-							<source srcset="{#imgSrc_2}" media="(max-width: 1024px)">{#imgTag_1}
-							<button type="button">{#title}</button>
+					<picture class="bg">
+						<source srcset="{#imgSrc_2}" media="(max-width: 767px)">
+						{#imgTag_1}
 					</picture>
+					<div class="txt">
+						<h2>{#title}</h2>
+						<p>{#text_1}</p>
+						<span class="gg_btn">More Detail<em>+</em></span>
+					</div>
 				</a>
 			</div>
 		</div>
-</section>
+	</section>
 
-<!-- 메인 08 : 진열03 -->
-<section class="m_sec08">
-	<!-- 메인 08 타이틀 -->
-	<!--@import(/section/m_sec08_title.html)-->
-	<div module="product_listmain_4" class="prdArea scroll_product">
-		<div class="ec-base-product">
+
+	<!-- 메인 06 : Hot Deal -->
+	<section class="gg_sec gg_hotdeal">
+		<div class="gg_title">
+			<!--@import(/section/m_sec06_title.html)-->
+			<p class="gg_timer">00:00:00</p>
+		</div>
+		<div module="product_listmain_8" class="gg_prd_slide swiper">
 			<!--
-                $count = 4
-            -->
-			<ul class="prdList">
-				<!--@import(/product/product_list.html)-->
+				$count = 10
+			-->
+			<ul class="prdList swiper-wrapper">
+				<!--@import(/product/product_list2.html)-->
 			</ul>
 		</div>
-	</div>
-</section>
+	</section>
+
+
+	<!-- 메인 07 : 2단 배너 -->
+	<section class="gg_sec gg_two">
+		<!-- 왼쪽 : 배너관리자 [메인 : 카테고리 배너 02] : 이미지 1 PC 1920×2400 / 이미지 2 모바일 720×900 / 타이틀 / 텍스트 1 / 링크 1 -->
+		<div class="left morenvy-banner-area" area_id="c8f5">
+			<div class="morenvy-banner">
+				<a href="{#link_1}" target="{#target_1}">
+					<picture class="bg">
+						<source srcset="{#imgSrc_2}" media="(max-width: 767px)">
+						{#imgTag_1}
+					</picture>
+					<div class="txt">
+						<h2>{#title}</h2>
+						<p>{#text_1}</p>
+						<span class="gg_btn">More Detail<em>+</em></span>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!-- 오른쪽 슬라이드 : 배너관리자 [메인 : 카테고리 배너 01] : 이미지 1 (1280×1280) / 타이틀 / 텍스트 1 / 링크 1 -->
+		<div class="right">
+			<div class="blur"></div>
+			<div class="swiper gg_two_swiper morenvy-banner-area" area_id="b217">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide morenvy-banner">
+						<a href="{#link_1}" target="{#target_1}">
+							<span class="img">{#imgTag_1}</span>
+							<span class="txt">
+								<strong>{#title}</strong>
+								<em>{#text_1}</em>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="gg_count two_count"><span class="cur">01</span><i></i><span class="total">01</span></div>
+		</div>
+	</section>
+
+
+	<!-- 메인 08 : Promotion -->
+	<!-- 앱스토어 - 배너관리자 - [메인 : 프로모션 배너] : 3개 / 이미지 1 (1184×1600) / 타이틀 / 텍스트 1 / 링크 1 -->
+	<section class="gg_sec gg_promo">
+		<div class="gg_title">
+			<!--@import(/section/m_sec08_title.html)-->
+		</div>
+		<div class="gg_promo_list morenvy-banner-area" area_id="430b">
+			<div class="morenvy-banner">
+				<a href="{#link_1}" target="{#target_1}">
+					<span class="img">{#imgTag_1}</span>
+					<span class="txt">
+						<strong>{#title}</strong>
+						<em>{#text_1}</em>
+						<span class="gg_btn">More Detail<em>+</em></span>
+					</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+</div>
 
 <!--@define(cmc_log)-->

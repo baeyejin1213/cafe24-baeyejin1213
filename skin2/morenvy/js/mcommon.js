@@ -486,3 +486,203 @@ function getCookieM(name) {
     }
     return unescape(lims.substring(index, endstr));
 }
+
+
+/* -------------------------------------------------------------------
+    에이가구(a GaGu) 공통 동작
+    - 메인 투명 헤더 / 스크롤 시 흰 헤더
+    - PC 메가메뉴 (분류 데이터 /exec/front/Product/SubCategory)
+    - 검색 패널, 모바일 전체메뉴, 푸터 사업자 정보 접기, 패밀리사이트, 모바일 하단바
+------------------------------------------------------------------- */
+jQuery(function ($) {
+
+    var $body = $('body');
+    var $header = $('#header.gg_header');
+    if (!$header.length) return;
+
+    /* 메인 여부 : 메인(index.html)에만 .gg_main 이 있다 */
+    if ($('#contents .gg_main').length) $body.addClass('is_main');
+
+
+    /* ① 스크롤하면 흰 헤더 */
+    var megaOpen = false;
+    function setWhite() {
+        $header.toggleClass('h_white', megaOpen || window.pageYOffset > 10);
+    }
+    $(window).on('scroll', setWhite);
+    setWhite();
+
+
+    /* ② 분류 데이터 → 메가메뉴 · 모바일 전체메뉴 */
+    function cateNo(href) {
+        var m = String(href || '').match(/cate_no=(\d+)/) || String(href || '').match(/\/category\/[^/]*\/(\d+)\//) || String(href || '').match(/\/(\d+)\/?(?:\?|$)/);
+        return m ? m[1] : '';
+    }
+    var curCate = cateNo(location.href);
+
+    $.ajax({url: '/exec/front/Product/SubCategory', dataType: 'json'}).done(function (list) {
+        var byParent = {}, byNo = {};
+        $.each(list || [], function (i, c) {
+            (byParent[c.parent_cate_no] = byParent[c.parent_cate_no] || []).push(c);
+            byNo[c.cate_no] = c;
+        });
+        function link(c) {
+            return c.link_product_list || ('/product/list.html?cate_no=' + c.cate_no);
+        }
+        function isUnder(no, top) { // no 가 top 분류 아래에 있는지
+            var guard = 0;
+            while (no && byNo[no] && guard++ < 10) {
+                if (String(no) === String(top)) return true;
+                no = byNo[no].parent_cate_no;
+            }
+            return String(no) === String(top);
+        }
+
+        buildMega(byParent, link, isUnder);
+        buildSide(byParent, link);
+    }).fail(function () {
+        buildSide({}, function () { return '#none'; });
+    });
+
+
+    /* PC 메가메뉴 */
+    function buildMega(byParent, link, isUnder) {
+        var $mega = $header.find('.h_mega');
+        $header.find('.h_cate > li').each(function (i) {
+            var $li = $(this);
+            var no = cateNo($li.children('a').attr('cate')) || cateNo($li.children('a').attr('href'));
+            $li.attr('data-cate', no);
+            if (curCate && isUnder(curCate, no)) $li.addClass('on');
+
+            var kids = byParent[no];
+            if (!kids || !kids.length) return;
+            var html = '<div class="panel" data-cate="' + no + '">';
+            $.each(kids, function (k, c2) {
+                html += '<div class="col"><a href="' + link(c2) + '">' + c2.name + '</a>';
+                var gkids = byParent[c2.cate_no];
+                if (gkids && gkids.length) {
+                    html += '<ul>';
+                    $.each(gkids, function (g, c3) { html += '<li><a href="' + link(c3) + '">' + c3.name + '</a></li>'; });
+                    html += '</ul>';
+                }
+                html += '</div>';
+            });
+            html += '</div>';
+            $mega.append(html);
+            $li.addClass('has_sub');
+        });
+
+        var closeTimer;
+        function open(no) {
+            clearTimeout(closeTimer);
+            var $panel = $mega.children('.panel[data-cate="' + no + '"]');
+            $mega.children('.panel').removeClass('on');
+            if ($panel.length) {
+                $panel.addClass('on');
+                $mega.addClass('open');
+                megaOpen = true;
+            } else {
+                $mega.removeClass('open');
+                megaOpen = false;
+            }
+            setWhite();
+        }
+        function close() {
+            closeTimer = setTimeout(function () {
+                $mega.removeClass('open').children('.panel').removeClass('on');
+                megaOpen = false;
+                setWhite();
+            }, 120);
+        }
+        $header.on('mouseenter', '.h_cate > li', function () { open($(this).attr('data-cate')); });
+        $header.on('mouseenter', '.h_add > li, .h_logo, .h_util', function () { open(''); });
+        $header.on('mouseenter', '.h_mega', function () { clearTimeout(closeTimer); });
+        $header.on('mouseleave', function () { close(); });
+    }
+
+
+    /* 모바일 전체메뉴 : 왼쪽 대분류 / 오른쪽 중분류(+소분류 펼침) */
+    function buildSide(byParent, link) {
+        var $side = $('#gg_side');
+        if (!$side.length) return;
+        var $d1 = $side.find('.d1'), $d2 = $side.find('.d2');
+        var first = -1;
+        var items = [];
+        $header.find('.h_cate > li > a, .h_add > li > a').each(function () {
+            items.push({name: $.trim($(this).text()), href: $(this).attr('href'), no: cateNo($(this).attr('cate')) || cateNo($(this).attr('href'))});
+        });
+
+        $.each(items, function (i, it) {
+            var en = /^[A-Z0-9\s&]+$/.test(it.name) ? ' en' : '';
+            var kids = it.no ? byParent[it.no] : null;
+            if (kids && kids.length) {
+                if (first < 0) first = i;
+                $d1.append('<li data-idx="' + i + '"><button type="button" class="row' + en + '">' + it.name + '<i></i></button></li>');
+                var html = '<ul data-idx="' + i + '">';
+                $.each(kids, function (k, c2) {
+                    var gkids = byParent[c2.cate_no];
+                    if (gkids && gkids.length) {
+                        html += '<li><button type="button" class="row">' + c2.name + '<i></i></button><div class="d3">';
+                        $.each(gkids, function (g, c3) { html += '<a href="' + link(c3) + '">' + c3.name + '</a>'; });
+                        html += '</div></li>';
+                    } else {
+                        html += '<li><a href="' + link(c2) + '" class="row">' + c2.name + '</a></li>';
+                    }
+                });
+                $d2.append(html + '</ul>');
+            } else {
+                $d1.append('<li><a href="' + it.href + '" class="row' + en + '">' + it.name + '</a></li>');
+            }
+        });
+
+        function select(idx) {
+            $d1.children('li').removeClass('on').filter('[data-idx="' + idx + '"]').addClass('on');
+            $d2.children('ul').removeClass('on').filter('[data-idx="' + idx + '"]').addClass('on');
+            $d2.scrollTop(0);
+        }
+        if (first > -1) select(first);
+        $d1.on('click', 'button.row', function () { select($(this).parent().attr('data-idx')); });
+        $d2.on('click', 'button.row', function () {
+            var $li = $(this).parent();
+            $li.toggleClass('open on').siblings().removeClass('open on');
+        });
+    }
+
+    function sideOpen() { $body.addClass('sideOn'); }
+    function sideClose() { $body.removeClass('sideOn'); }
+    $header.on('click', '.h_util .menu a', function (e) { e.preventDefault(); sideOpen(); });
+    $(document).on('click', '.gg_fixbar .side_open', sideOpen);
+    $(document).on('click', '#gg_side .side_close', sideClose);
+
+
+    /* ③ 검색 패널 */
+    function searchOpen() {
+        $('#searchBarForm').addClass('active');
+        $body.addClass('searchOn');
+        setTimeout(function () { $('#searchBarForm #keyword').trigger('focus'); }, 400);
+    }
+    function searchClose() {
+        $('#searchBarForm').removeClass('active');
+        $body.removeClass('searchOn');
+    }
+    $header.on('click', '.h_util .search a', function (e) { e.preventDefault(); searchOpen(); });
+    $(document).on('click', '.gg_search .sch_close', searchClose);
+    $(document).on('click', '.gg_dim', function () { searchClose(); sideClose(); });
+    $(document).on('keydown', function (e) { if (e.key === 'Escape') { searchClose(); sideClose(); } });
+
+
+    /* ④ 푸터 : 사업자 정보 접기 · 패밀리사이트 */
+    $(document).on('click', '#footer .f_biz_btn', function () { $(this).closest('.f_info_wrap').toggleClass('close'); });
+    $(document).on('click', '#footer .f_family > button', function () { $(this).parent().toggleClass('open'); });
+    $(document).on('click', function (e) { if (!$(e.target).closest('#footer .f_family').length) $('#footer .f_family').removeClass('open'); });
+
+
+    /* ⑤ 모바일 하단바 : 내릴 때 숨김, 올리거나 맨 아래면 표시 */
+    var lastY = window.pageYOffset;
+    $(window).on('scroll', function () {
+        var y = window.pageYOffset;
+        var atBottom = y + window.innerHeight >= document.documentElement.scrollHeight - 4;
+        $('.gg_fixbar').toggleClass('down', y > lastY && y > 56 && !atBottom);
+        lastY = y;
+    });
+});
