@@ -1,0 +1,101 @@
+<!-- 하단 -->
+<div class="footer-wrap">
+    <footer id="footer" module="Layout_footer">
+        <div class="f_inner">
+
+            <!-- 왼쪽 영역 : 로고 + 정보 + 메뉴 + 저작권 -->
+            <div class="f_sec f_left">
+                <div class="f_top">
+					<div class="f_logo_text morenvy-banner-area" area_id="d049">
+						<!-- 하단 : 로고 -->
+						<div class="morenvy-banner">
+							<a href="{#link_1}">{#title}</a>
+						</div>
+					</div>
+                    <div class="f_info">
+                        <div class="pc_only">
+                            <ul class="company">
+                                <li><p>{$company_name}</p><p>대표자 <span>{$president_name}</span></p></li>
+                                <li><p>사업자등록번호 <span>{$company_regno}</span><span class="com_regno_btn">{$biz_no_link}</span></p><p>통신판매업 <span>{$network_regno}</span></p></li>
+                                <li><p>대표번호 <span>{$phone}</span></p><p>팩스 <span>{$fax}</span></p><p>주소 <span>{$mall_zipcode} {$mall_addr1} {$mall_addr2}</span></p></li>
+                                <li><p>개인정보 책임관리자 <span>{$cpo_name} ({$cpo_email})</span></p></li>
+                            </ul>
+                        </div>
+                        <div class="m_only">
+                            <ul class="company">
+                                <li><p>{$company_name}</p><p>대표자 <span>{$president_name}</span></p></li>
+                                <li><p>사업자등록번호 <span>{$company_regno}</span><span class="com_regno_btn">{$biz_no_link}</span></p></li>
+                                <li><p>통신판매업 <span>{$network_regno}</span></p></li>
+                                <li><p>대표번호 <span>{$phone}</span></p><p>팩스 <span>{$fax}</span></p></li>
+                                <li><p>주소 <span>{$mall_zipcode} {$mall_addr1} {$mall_addr2}</span></p></li>
+                                <li><p>개인정보 책임관리자 <span>{$cpo_name} ({$cpo_email})</span></p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="f_bottom">
+                    <div class="terms">
+                        <ul>
+							<!-- 하단 : 회사소개 및 개인정보처리방침 -->
+                            <!--@import(/section/f_terms.html)-->
+                        </ul>
+                    </div>
+                    <div class="copy">COPYRIGHT. {$mall_name} 2026 All rights reserved. designed by Morenvy.</div>
+                </div>
+            </div>
+
+            <!-- 하단 : 메뉴 + sns -->
+            <div class="f_sec f_mid">
+                <div class="f_top">
+                    <ul class="f_menu_list">
+						<!-- 하단 : 메뉴 -->
+						<!--@import(/section/f_menu.html)-->
+                    </ul>
+                </div>
+                <div class="f_bottom">
+                    <ul class="sns_links">
+						<!-- 하단 : sns -->
+						<!--@import(/section/f_sns.html)-->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 하단 : 회원 메뉴 -->
+            <div class="f_sec f_right">
+                <div class="f_top">
+                    <ul class="f_menu_list">
+                        <li module="Layout_statelogoff"><a href="/member/login.html">로그인</a></li>
+                        <li module="Layout_statelogoff"><a href="/member/join.html">회원가입</a></li>
+						<li module="Layout_statelogon"><a href="{$action_logout}">로그아웃</a></li>
+						<li module="Layout_statelogon"><a href="/myshop/index.html">마이페이지</a></li>
+                        <li><a href="/myshop/order/list.html">주문/배송조회</a></li>
+                        <li><a href="/myshop/wish_list.html">위시리스트</a></li>
+                    </ul>
+                </div>
+                <div class="f_bottom"></div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+
+
+
+<!-- 모렌비 배너관리자 - 스킨명 : [모렌비] 반응형 에이가구-->
+<script src="//ecudemo413595.cafe24.com/web/upload/appfiles/gSOPn7dNJxAp8cu31kDDtD/cc6babb82cbc52fbacf16c6cb2e26f33.js"></script>
+<script type="text/javascript">
+    load_Morenvy_BannerManagerScript( false,
+        "//ecudemo413595.cafe24.com/web/upload/appfiles/gSOPn7dNJxAp8cu31kDDtD/73d71e3595a58c536d95c5a3e7eeea5e.js" );
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var buttons = document.querySelectorAll('.com_regno_btn a');
+
+        buttons.forEach(function (btn) {
+            btn.textContent = btn.textContent.replace(/\[|\]/g, '');
+        });
+    });
+</script>

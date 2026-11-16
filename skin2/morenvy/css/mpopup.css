@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/* 팝업 배경 */
+.main_popup {width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 9999;-webkit-backdrop-filter: blur(20px);backdrop-filter: blur(20px);background-color: rgba(26, 32, 44, 0.3); display: flex; align-items: center; justify-content: center; visibility: hidden; opacity: 0; transition: 1s;}
+.main_popup.on {visibility: visible; opacity: 1;}
+.main_popup.on .popup.up {transform: translateY(0); opacity: 1;}
+
+
+/* 팝업 컨텐츠 */
+.main_popup .popup {width: 40rem; overflow: hidden; transform: translateY(4rem); transition: .6s ease; opacity: 0;}
+
+/* 팝업 상단 */
+.main_popup .popup .top {width: 100%; position: relative;}
+.main_popup .popup .top .swiper-slide{}
+.main_popup .popup .top .swiper-slide a{position: relative;display: block;}
+.main_popup .popup .top .swiper-slide .img{display: block;width:100%;}
+.main_popup .popup .top .swiper-slide .img img{display: block;width:100%;}
+
+
+
+.main_popup .popup .top .swiper-slide .txt {position: absolute; padding:2.4rem 2rem; width:100%; left:0; bottom:0; background: linear-gradient(180deg, rgba(26, 32, 44, 0) 0%, rgba(26, 32, 44, 0.4) 100%);}
+.main_popup .popup .top .swiper-slide .txt h2{font-size: 1.6rem; font-weight: 700; line-height: 2.4rem; margin-bottom: 0.4rem;}
+.main_popup .popup .top .swiper-slide .txt p{font-size: 1.4rem; font-weight: 400; line-height: 2.0rem;}
+.main_popup .popup .top .swiper-pagination{position: absolute;width:auto;left:initial;bottom:initial;top:1.6rem;right:1.6rem;font-size: 1.2rem;font-weight: normal;line-height: 1.33;color: #fff;display: flex;gap:0.4rem;}
+
+
+/* 팝업 하단 */
+.main_popup .popup .bottom {padding: 1.2rem 2rem; width: 100%; box-sizing: border-box; background-color: var(--white);}
+.main_popup .popup .bottom .btn_wrap {display: flex; justify-content: space-between;}
+.main_popup .popup .bottom .btn_wrap > a {font-size: 1.4rem; font-weight: normal; line-height: 2.0rem; color: var(--grey06);}
+.main_popup .popup .bottom .btn_wrap .btn_close {font-size: 1.4rem; line-height: 2.0rem; color: var(--black01);}
+
+
+/* 반응형 767px */
+@media all and (max-width: 767px) {
+    .main_popup{align-items: flex-end;}
+    .main_popup .popup {width: 100%;}
+    .main_popup .popup .bottom .txt p {font-size: 1.5rem; line-height: 2rem;}
+}

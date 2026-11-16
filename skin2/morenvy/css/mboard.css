@@ -1,0 +1,13 @@
+/* 쇼케이스 게시판 스타일 */
+#contents .xans-board-listpackage-8 {margin-bottom:0;}
+#contents .xans-board-listpackage-8 .xans-board-list-8 ul {width: auto; margin: 0px -6px 0;}
+#contents .xans-board-listpackage-8 .xans-board-list-8 li { width: calc(50% - 12px) !important; padding: 0;margin: 0 6px 120px;}
+#contents .xans-board-listpackage-8 .xans-board-list-8 li .img_box {position: relative; margin-bottom:40px;}
+#contents .xans-board-listpackage-8 .xans-board-list-8 li .img_box .detail_view {position: absolute; top:-16px; right:-16px;transition: all 0.3s;-webkit-transition: all 0.3s;-o-transition: all 0.3s;-moz-transition: all 0.3s;-ms-transition: all 0.3s; opacity:0;}
+#contents .xans-board-listpackage-8 .xans-board-list-8 li:hover .img_box .detail_view {top:0; right:0px;     transition: all 0.3s;-webkit-transition: all 0.3s;-o-transition: all 0.3s;-moz-transition: all 0.3s;-ms-transition: all 0.3s; opacity:1;}
+#contents .xans-board-listpackage-8 .xans-board-list-8 li .more {margin-top:32px;border: 1px solid #dfdfdf;height: 38px;border-radius: 5px;background-color: #fff;transition: all 0.35s;width: 142px;}
+#contents .xans-board-listpackage-8 .xans-board-list-8 li .more span {font-size:16px !important; margin:0 !important; display:flex !important;}
+#contents .xans-board-listpackage-8 .xans-board-list-8 li .more a {padding:8px 12px 8px 24px;font-size:16px; color: #1f1f1f; line-height:40px; font-weight:500; display:flex; height:100%; align-items:center; align-content:center;box-sizing: border-box; font-size:16px !important; transition:all 0.3s;}
+#contents .xans-board-listpackage-8 .xans-board-list-8 li .more img {margin-left:8px;}
+#contents .xans-board-listpackage-8 .xans-board-list-8 li .more a:hover {background-color:#F6F6F6; border-color:#DFDFDF; }
+

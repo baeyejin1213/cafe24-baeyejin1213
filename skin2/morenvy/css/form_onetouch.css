@@ -1,0 +1,34 @@
+/* morenvy.com 220315 서정환 */
+
+/* 주문서 페이지 */
+#userStyle #header .titleArea h1 {background-color: #1f1f1f; font-weight:700; font-size:18px;}
+
+#userStyle #mCafe24Order .txtEm,
+#userStyle #mCafe24Order .txtStrong,
+#mCafe24Order .discountDetail .control .inputTypeText{color: #f7624a;}
+
+#userStyle #mCafe24Order .payMethod > li.selected > label,
+#mCafe24Order .payMethod > li.selected > .inner {border-color: #1f1f1f;}
+
+/* 주문버튼 */
+#userStyle #mCafe24Order .ec-base-button.gFull [class*="btn"] {background-color: #1f1f1f;}
+
+/* 할인내역 팝업 */
+#userStyle #mCafe24Order .autoDiscountLayer > h1 {background-color: #1f1f1f;}
+
+/* 주문완료 */
+#userStyle #mCafe24Order .btnSubmit {border-color: #1f1f1f; background-color: #1f1f1f;}
+
+/* 인풋 */
+#userStyle #mCafe24Order input[type="text"], #mCafe24Order input[type="password"], #mCafe24Order input[type="number"], #mCafe24Order input[type="tel"] {border-radius:8px;}
+
+/* 버튼 */
+#userStyle #mCafe24Order .btnNormal, #mCafe24Order .btnStrong, #mCafe24Order .btnBasic, #mCafe24Order .btnBase {border-radius:8px;}
+
+/* 체크박스 스타일 */
+#userStyle #mCafe24Order input[type=checkbox]:not(old) {background: url('/morenvyimg/checkbox.png') no-repeat;width:20px !important;height:20px !important;-webkit-appearance:none;border:0 !important;background-size:20px 20px;}
+#userStyle #mCafe24Order input[type=checkbox]:not(old):checked {background: url('/morenvyimg/checkbox_on.png') no-repeat;width:20px !important;height:20px !important;background-size:20px 20px;}
+
+/* 라디오 스타일 */
+#userStyle #mCafe24Order input[type=radio]:not(old) {background: url('/morenvyimg/radio_none.png') no-repeat;background-size:20px 20px;width:20px !important;height:20px !important;-webkit-appearance:none;border:0 !important;margin-right:4px !important;}
+#userStyle #mCafe24Order input[type=radio]:not(old):checked {background: url('/morenvyimg/radio_on.png') no-repeat;background-size:20px 20px;width:20px !important;height:20px !important;}

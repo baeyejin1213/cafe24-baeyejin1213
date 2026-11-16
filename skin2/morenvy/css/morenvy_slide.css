@@ -1,0 +1,85 @@
+@charset "UTF-8";
+body.side #dimmedSlider {visibility: visible; opacity: 1; z-index: 1004;}
+body.side #aside {visibility: visible;}
+
+/* 사이드바 */
+#aside {position: fixed; top: 1.6rem; left: -50rem; z-index: 2000; width:100%; height:100%;max-width: 44rem;max-height:calc(100% - 3.2rem); box-sizing: border-box; border-radius: 1.2rem; background-color: rgba(255, 255, 255, 0.5); transition: all 0.3s;opacity: 0;}
+#aside.active {left:1.6rem; opacity: 1;}
+#aside .nav {height:100%; border-radius: 1.2rem; background-color: var(--white); overflow:scroll; -ms-overflow-style: none;}
+#aside .nav::-webkit-scrollbar{display: none;}
+
+
+#aside .side_slide {overflow:hidden;}
+#aside .side_slide .swiper-slide{}
+#aside .side_slide .swiper-slide a{position: relative; display: block;}
+#aside .side_slide .swiper-slide .img{display: block; width:100%;}
+#aside .side_slide .swiper-slide .img img{display: block; width:100%;}
+#aside .side_slide .swiper-slide .txt {position: absolute; padding:1.6rem 2.0rem; width:100%; left:0; bottom:0; background: linear-gradient(180deg, rgba(26, 32, 44, 0) 0%, rgba(26, 32, 44, 0.4) 100%);}
+#aside .side_slide .swiper-slide .txt h2 {font-size: 1.4rem; font-weight: 700; line-height: 2.0rem; margin-bottom: 0.4rem;}
+#aside .side_slide .swiper-slide .txt p {font-size: 1.3rem; font-weight: 400; line-height: 1.8rem;}
+#aside .side_slide .swiper-pagination{position: absolute; width:auto; left:initial;bottom:initial;top:1.6rem;right:1.6rem;font-size: 1.2rem;font-weight: normal;line-height: 1.33;color: #fff;display: flex;gap:0.4rem;}
+
+
+
+
+
+
+/* 사이드바 : 상단 */
+#aside .side_top {border-bottom: 0.1rem solid var(--grey03); padding-bottom: 2.4rem; margin: 0rem 2rem 0; position: sticky; top: 0; background: #fff; z-index: 1; padding-top: 2.4rem;}
+#aside .side_top .sec01{display: flex; justify-content: space-between; align-items: center;}
+#aside .side_top .sec02{margin-top:1.6rem;}
+#aside .side_top .sec02 > div{display: flex;gap:2.5rem;}
+#aside .side_top .sec02 > div a {position: relative; font-size: 1.2rem; font-weight: 400; line-height: 2.4rem; color: var(--balck01); display:flex; gap:0.4rem;}
+#aside .side_top .sec02 > div a:before{content: "";position: absolute; top:0.6rem; left:-1.2rem; width:0.1rem; height: 1.0rem; background: var(--grey05);}
+#aside .side_top .sec02 > div a:first-child:before{display: none;}
+#aside .side_top .h_logo {font-size: 1.5rem; line-height: 2.0rem;}
+#aside .side_top .side_login ul{display: flex; gap: 1.6rem; align-items: center;}
+#aside .side_top .side_login .cart-button{}
+#aside .side_top .side_login .cart-button a{position: relative;padding-right: 1.3rem; font-size: 1.2rem;font-weight: 400;line-height: 1.33;color:var(--black01);text-decoration: none;}
+#aside .side_top .side_login .cart-button .xans-layout-orderbasketcount{position: absolute;right:0;top:0;}
+#aside .side_top .side_login .login_icon {width: 2.4rem; height: 2.4rem; border-radius: 2.4rem; background-color: var(--grey07);}
+#aside .side_top .side_login .login_icon svg {width: 2.4rem; height: 2.4rem;}
+#aside .side_top .side_login .xans-layout {display: flex; align-items: center; gap: 1.2rem;}
+#aside .side_top .side_login .xans-layout .line {width: .1rem; height: 1rem; background-color: var(--grey05);}
+
+
+
+/* 사이드바 : 중간 */
+#aside .side_middle {margin:  2.4rem 2rem 0;  -ms-overflow-style: none; padding-bottom:12rem;}
+#aside .side_middle::-webkit-scrollbar{display: none;}
+#aside .side_middle > ul {}
+#aside .side_middle > ul > li {}
+#aside .side_middle > ul > li > a{position: relative;display:block; font-size: 1.5rem; line-height: 2.0rem; color:var(--black01); padding:0.8rem 2.4rem 0.8rem 0;}
+#aside .side_middle > ul > li > a .open{position: absolute; right:0; width:2.0rem; height: 2.0rem; background: url(/morenvyimg/icon/fill_arrow_down_16.svg) center center; background-repeat: no-repeat; z-index: 1;}
+#aside .side_middle > ul > li.selected > a .open{transform: rotate(180deg);}
+#aside .side_middle > ul > li.noChild > a .open{display: none;}
+#aside .side_middle > ul > li .depth2{display: none;}
+
+#aside .side_middle > ul > li .depth2 > ul {margin: 0.8rem 0 1.6rem;}
+#aside .side_middle > ul > li .depth2 > ul > li {border-bottom: 0 solid var(--grey03); margin-bottom: 0.4rem;}
+#aside .side_middle > ul > li .depth2 > ul > li > a {background-color: var(--grey23); position: relative; display:block; padding:0.8rem 2.4rem 0.8rem 1.6rem; font-size: 1.3rem; font-weight: 400; line-height: 2.0rem; color: var(--black01);}
+#aside .side_middle > ul > li .depth2 > ul > li.hasChild > a .open{content: ""; position: absolute; right:0.8rem; width:2.0rem; height: 2.0rem; background: url(/morenvyimg/icon/fill_arrow_down_16.svg) center center; background-repeat: no-repeat;}
+#aside .side_middle > ul > li .depth2 > ul > li.selected > a .open{transform: rotate(180deg);}
+#aside .side_middle > ul > li .depth2 > ul > li.noChild > a .open{display: none;}
+
+#aside .side_middle > ul > li .depth3 {display: none;}
+#aside .side_middle > ul > li .depth3 > ul {margin: 0.4rem 0 1.5rem;}
+#aside .side_middle > ul > li .depth3 > ul > li {margin-bottom: 0.4rem;}
+#aside .side_middle > ul > li .depth3 > ul > li > a {background-color: var(--grey23); position: relative; display:block; padding:0.8rem 2.4rem 0.8rem 1.6rem; font-size: 1.3rem; font-weight: 400; line-height: 2.0rem; color: var(--black01);}
+#aside .side_middle .side_cummu{margin-top:1.6rem;padding-top:1.6rem;border-top: 0.1rem solid var(--grey03);}
+#aside .side_middle .side_cummu > li .depth2 > ul > li > a:after{display: none;}
+
+
+/* 사이드바 : 하단 */
+#aside .side_bottom {position: absolute; bottom: 1.6rem; left: 1.6rem; width: calc(100% - 3.2rem); z-index: 1;}
+#aside .side_bottom ul {display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 4rem 4rem; gap: .4rem;}
+#aside .side_bottom ul li {background-color: var(--white); border: 1px solid var(--grey03); border-radius: .4rem; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 400; line-height: 2.4rem;}
+
+
+/* -------------------------------
+    반응형 767px
+------------------------------- */
+@media all and (max-width:767px) {
+    #aside{top:0.8rem;left:-100%;max-width:calc(100% - 1.6rem);max-height: calc(100% - 1.6rem);}
+    #aside.active{left:0.8rem;}
+}

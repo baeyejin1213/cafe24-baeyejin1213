@@ -1,0 +1,89 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/board/brand/brand_write.js)-->
+<!--@css(/board/brand/brand.css)-->
+<div module="board_ModifyPackage_1002" class="brandlist_write">
+    <div module="board_title_1002">
+        <div class="path">
+            <span>현재 위치</span>
+            <ol>
+                <li><a href="/">홈</a></li>
+                <li title="현재 위치"><strong>{$board_name}</strong></li>
+            </ol>
+        </div>
+
+        <div class="titleArea">
+            <h2>브랜드 수정페이지 입니다.</h2>
+        </div>
+    </div>
+
+    <div module="board_modify_1002">
+        <div class="ec-base-table typeWrite">
+            <table border="1" summary="">
+            <caption>글 수정 폼</caption>
+            <colgroup>
+                <col style="width:200px;" />
+                <col style="width:auto;" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th scope="row">브랜드 영문명</th>
+                    <td><input id="brand_en" name="brand_en" class="inputTypeText" value="" type="text"></td>
+                </tr>
+                <tr>
+                    <th scope="row">브랜드 한글명</th>
+                    <td><input id="brand_kr" name="brand_kr" class="inputTypeText" value="" type="text"></td>
+                </tr>
+                <tr>
+                    <th scope="row">클릭시 카테고리번호(숫자만)<br>http://를 포함한 주소URL</th>
+                    <td><input id="brand_cate_no" name="brand_cate_no" class="inputTypeText" value="" type="text"></td>
+                </tr>
+                <tr class="displaynone">
+                    <th scope="row">제목</th>
+                    <td>{$form.subject}</td>
+                </tr>
+            </tbody>
+
+            <tbody class="{$config.use_attach|display} m_off">
+                <tr>
+                    <th scope="row">브랜드 로고 이미지</th>
+                    <td class="attach_file">{$attached_file1}<br>{$form.attach_file}</td>
+                </tr>
+            </tbody>
+
+            <tbody>
+                <tr class="{$config.use_password|display} displaynone">
+                    <th scope="row">비밀번호</th>
+                    <td>{$form.password}</td>
+                </tr>
+                <tr class="{$config.use_secret|display} displaynone">
+                    <th scope="row">비밀글설정</th>
+                    <td>{$form.secure}</td>
+                </tr>
+                <tr class="captcha {$config.use_captcha_write|display} displaynone">
+                    <th scope="row">보안문자</th>
+                    <td>
+                        {$captcha_image} {$captcha_refresh}
+                        <p class="gBlank5">{$form.captcha} <span class="ec-base-help txtInfo">영문, 숫자 조합을 공백없이 입력하세요(대소문자구분)</span></p>
+                    </td>
+                </tr>
+                <tr class="agree {$config.is_login|display} displaynone">
+                    <th scope="row">개인정보 수집 및 <br />이용 동의</th>
+                    <td>
+                        {$form.privacy_agreement}<br />
+                        개인정보 수집 및 이용에 동의하십니까? {$form.privacy_agreement_radio}
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+        <div class="cboth brand_button">
+			<a href="#none" id="action_go" class="move">브랜드 수정</a>
+			<a href="#none" onclick="{$action_modify}" id="action_go2" class="displaynone">등록등록</a>
+			<a href="/board/brand/list.html?board_no=3001" class="move">취소</a>
+			<a href="#none" module="board_read_8" onclick="{$action_delete}" class="move">삭제</a>
+        </div>
+    </div>
+</div>
+
+<div module="board_ReadPackage_8"><div module="board_read_8"></div></div><!-- 브랜드 삭제하기 위한 소스 -->

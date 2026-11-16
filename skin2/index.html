@@ -1,0 +1,240 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/morenvy/css/main.css)-->
+<!--@css(/morenvy/css/mpopup.css)-->
+<!--@js(/morenvy/js/jquery.bpopup.min.js)-->
+<!--@js(/morenvy/js/main.js)-->
+<!--@js(/morenvy/js/main_pop.js)-->
+<!--@js(/morenvy/js/lenis.min.js)-->
+<!--@js(/morenvy/js/product_hover.js)-->
+
+<!---------------------------------------------------------------------------------------------------------------------------------------
+
+	- 디자인 수정을 하시려면 현재페이지 좌측(←)의 메뉴에서 [전체화면보기 탭] 을 선택하신후 스크롤을 내리셔서 link.html을 클릭해 주세요.
+	- 좌측의 메뉴에서 link.html 페이지를 [★자주쓰는화면]으로 선택하시면 좀더 편안하게 접근이 가능합니다.
+	- link.html 페이지에서 손쉽게 디자인 수정이 가능합니다. (FTP : /sde_design/디자인스킨번호/link.html)
+
+	- https://morenvy.com // 02-812-3881 // 고객센터
+	- https://serviceguide.cafe24.com/ko_KR // 온라인매뉴얼
+	- EMAIL : morenvy@hanmail.net
+
+----------------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-- 메인 : 팝업 -->
+<!-- 앱스토어 - 배너관리자 - [메인 : 팝업] 에서 수정가능합니다 -->
+<div class="main_popup">
+	<div class="popup">
+		<div class="top">
+			<div class="swiper popup-swiper morenvy-banner-area" area_id="bb12">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide morenvy-banner">
+						<a href="{#link_1}" target="{#target_1}">
+							<div class="img">
+								{#imgTag_1}
+							</div>
+							<div class="txt">
+								<h2 style="color: {#text_2}">{#title}</h2>
+								<p style="color: {#text_2}">{#text_1}</p>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="btn_wrap">
+				<a href="#none" class="notToday">오늘 하루 보지 않기</a>
+				<div class="btn_close">닫기</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 메인 01 : 키비주얼 -->
+<!-- 앱스토어 - 배너관리자 - [메인 : 키비주얼] 에서 수정가능합니다 -->
+<section class="main_visual">
+    <div class="swiper_wrap">
+        <div class="swiper swiper_visual morenvy-banner-area" area_id="c185">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide morenvy-banner m_ban">
+                    <a href="{#link_1}" target="{#target_1}">
+                        <div class="bg">
+                            <picture>
+                                <source srcset="{#imgSrc_2}" media="(max-width: 1024px)">
+                                {#imgTag_1}
+                            </picture>
+                        </div>
+                        <!-- 원본 텍스트 데이터 (스크립트로 가져오기 위해 숨김 처리됨) -->
+                        <div class="txt origin_txt">
+                            <h2>{#title}</h2>
+                            <p>{#text_1}</p>
+                            <button type="button">{#text_2}</button>
+                            <span class="slide_link">{#link_1}</span>
+                            <span class="slide_target">{#target_1}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="fixed_txt_box">
+                <div class="swiper-pagination swiper-pagination-visual"></div>
+                <a href="#" class="fixed_link">
+                    <div class="txt">
+                        <h2 class="fixed_title"></h2>
+                        <p class="fixed_desc"></p>
+                        <button type="button" class="fixed_btn"></button>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="swiper_btn_wrap swiper_btn_wrap_visual pc_only">
+            <div class="swiper-button swiper-button-prev swiper-button-prev-main"><!--@import(/morenvyimg/icon/wh_arr_l.svg)--></div>
+            <div class="swiper-button swiper-button-next swiper-button-next-main"><!--@import(/morenvyimg/icon/wh_arr_l.svg)--></div>
+        </div>
+    </div>
+</section>
+
+<!-- 메인 02 : 2단 배너 -->
+<!-- 앱스토어 - 배너관리자 - [메인 : 카테고리 배너 01] 에서 수정가능합니다 -->
+<section class="m_sec02">
+	<div class="box">
+		<div class="morenvy-banner-area" area_id="b217">
+			<div class="morenvy-banner">
+				<a href="{#link_1}" target="{#target_1}">
+					<picture>
+							<source srcset="{#imgSrc_2}" media="(max-width: 1024px)">{#imgTag_1}
+							<button type="button" style="color: {#text_1}">{#title}</button>
+					</picture>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="m_sec03">
+<div class="box1">
+		<div class="left">
+			<!--
+				모렌비 배너관리자
+				배너영역명 : 메인 : 카테고리 배너 02
+			-->
+			<div class="morenvy-banner-area" area_id="c8f5">
+				<div class="morenvy-banner">
+					<a href="{#link_1}" target="{#target_1}">
+					<picture>
+						<source srcset="{#imgSrc_2}" media="(max-width: 1024px)">{#imgTag_1}
+						<button type="button" style="color: {#text_1}">{#title}</button>
+					</picture>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="right">
+			<div class="top_flash_deal_bar">
+				<!-- 메인 03 타이틀 -->
+				<!--@import(/section/m_sec03_title.html)-->
+				<div class="main_timesale_box_shell">
+					<div class="main_timesale_box"></div>
+				</div>
+			</div>
+			<div class="slide-box">
+				<div module="product_listmain_1" class="prdArea prdBest2">
+					<div class="ec-base-product swiper single-swiper">
+						<!--
+                            $count = 4
+                        -->
+						<ul class="prdList swiper-wrapper">
+							<!--@import(/product/product_list2.html)-->
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-pagination swiper-pagination-single"></div>
+			<div class="swiper_btn_wrap swiper_btn_wrap_single pc_only">
+				<div class="swiper-button swiper-button-prev swiper-button-prev-single"><!--@import(/morenvyimg/icon/wh_arr_l.svg)--></div>
+				<div class="swiper-button swiper-button-next swiper-button-next-single"><!--@import(/morenvyimg/icon/wh_arr_l.svg)--></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- 메인 04 : New Arrivals -->
+<section class="m_sec04">
+	<!-- 메인 04 타이틀 -->
+	<!--@import(/section/m_sec04_title.html)-->
+	<div module="product_listmain_2" class="prdArea scroll_product">
+		<div class="ec-base-product ">
+			<!--
+                $count = 4
+            -->
+			<ul class="prdList">
+				<!--@import(/product/product_list.html)-->
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- 메인 05 : 컬렉션 배너 -->
+<section class="m_sec05">
+	<div class="morenvy-banner-area" area_id="dc60">
+			<div class="morenvy-banner">
+				<a href="{#link_1}" target="{#target_1}">
+					<picture>
+							<source srcset="{#imgSrc_2}" media="(max-width: 1024px)">{#imgTag_1}
+							<button type="button">{#title}</button>
+					</picture>
+				</a>
+				<div class="txt">{#text_1}</div>
+			</div>
+		</div>
+</section>
+
+<!-- 메인 06 : Best Sellers -->
+<section class="m_sec06">
+	<!-- 메인 06 타이틀 -->
+	<!--@import(/section/m_sec06_title.html)-->
+	<div module="product_listmain_3" class="prdArea scroll_product">
+		<div class="ec-base-product">
+			<!--
+                $count = 4
+            -->
+			<ul class="prdList">
+				<!--@import(/product/product_list.html)-->
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!-- 메인 07 : 컬렉션 배너 -->
+<section class="m_sec07">
+	<div class="morenvy-banner-area" area_id="430b">
+			<div class="morenvy-banner">
+				<a href="{#link_1}" target="{#target_1}">
+					<picture>
+							<source srcset="{#imgSrc_2}" media="(max-width: 1024px)">{#imgTag_1}
+							<button type="button">{#title}</button>
+					</picture>
+				</a>
+			</div>
+		</div>
+</section>
+
+<!-- 메인 08 : 진열03 -->
+<section class="m_sec08">
+	<!-- 메인 08 타이틀 -->
+	<!--@import(/section/m_sec08_title.html)-->
+	<div module="product_listmain_4" class="prdArea scroll_product">
+		<div class="ec-base-product">
+			<!--
+                $count = 4
+            -->
+			<ul class="prdList">
+				<!--@import(/product/product_list.html)-->
+			</ul>
+		</div>
+	</div>
+</section>
+
+<!--@define(cmc_log)-->

@@ -1,0 +1,19 @@
+.xans-product-basketadd .content p { font-weight:bold; color:#2e2e2e; }
+.ec-base-layer-area {z-index: 9999 !important;}
+.xans-product-basketadd a,
+.xans-product-basketadd img,
+.xans-product-basketadd span {display: inline-block;}
+/* 250723 지인 추가 */
+.xans-product-basketadd .ec-base-layer.gAlert {max-height: 92vh; width: 88.89vw; max-width: 368px; border-radius: 8px; border: 0 !important;}
+.xans-product-basketadd .ec-base-layer.gAlert .header {display: flex; align-items: center; justify-content: space-between; position: static; text-indent: 0; width: calc(100% - 48px); padding: 20px 0 19px; margin: 0 auto; border-bottom: 1px solid #1a1a1a;}
+.xans-product-basketadd .ec-base-layer.gAlert .header h3 {font-size: 18px; line-height: 24px; font-weight: 500; color: #1a1a1a;}
+.xans-product-basketadd .ec-base-layer.gAlert .header .btnClose {padding: 0; margin: 0; transform: none; position: static; width: 24px; height: 24px;}
+.xans-product-basketadd .ec-base-layer.gAlert .header .btnClose::after,
+.xans-product-basketadd .ec-base-layer.gAlert .header .btnClose::before {content: none;}
+.xans-product-basketadd .ec-base-layer.gAlert .header .btnClose svg {width: 100%; height: 100%;}
+.xans-product-basketadd .content {padding: 48px 24px !important; text-align: center;}
+.xans-product-basketadd .content p {font-size: 16px; line-height: 24px; font-weight: 400; color: #1a1a1a;}
+.xans-product-basketadd .ec-base-button {display: flex; gap: 8px; margin: 0; padding: 0 24px 24px;}
+.xans-product-basketadd .ec-base-button::after {content: none;}
+.xans-product-basketadd .ec-base-button a {flex: 1; display: flex; align-items: center; justify-content: center; margin: 0; height: 48px !important; font-size: 15px !important; line-height: 20px; font-weight: 400; color: #1a1a1a; border: 1px solid #ddd !important; transition: background-color .4s, border-color .4s, color .4s  !important; border-radius: 4px !important;}
+.xans-product-basketadd .ec-base-button a.btnSubmit {font-weight: 700; background-color: #1a1a1a; border-color: #1a1a1a !important; color: #fff;}

@@ -1,0 +1,136 @@
+	
+<!-- 상단 : 텍스트 띠배너 루프형 -->
+<!-- 앱스토어 - 배너관리자 - [상단 : 텍스트 띠배너 루프형] 에서 수정가능합니다 -->
+<div class="txt_ban morenvy-banner-area" area_id="300c">
+	<div class="morenvy-banner inner">
+		 <div class="marquee-track2">
+		 	 <a href="{#link_1}">
+			 <span>{#title}</span>
+			 <span>{#text_1}</span>
+			 <span>{#title}</span>
+			 <span>{#text_1}</span>
+			 <span>{#title}</span>
+			 <span>{#text_1}</span>
+			 <span>{#title}</span>
+			 <span>{#text_1}</span>
+			  </a>
+		 </div>
+		 <div class="marquee-track2">
+		 	 <a href="{#link_1}">
+			 <span>{#title}</span>
+			 <span>{#text_1}</span>
+			 <span>{#title}</span>
+			 <span>{#text_1}</span>
+			 <span>{#title}</span>
+			 <span>{#text_1}</span>
+			 <span>{#title}</span>
+			 <span>{#text_1}</span>
+			</a>
+		 </div>
+		<span class="btn_close"><!--@import(/morenvyimg/icon/text_ban_close_24.svg)--></span>
+	</div>
+</div>
+
+
+<!-- 상단 : 텍스트 띠배너 고정형 -->
+<!-- 앱스토어 - 배너관리자 - [상단 : 텍스트 띠배너 고정형] 에서 수정가능합니다 -->
+<div class="txt_ban2 morenvy-banner-area" area_id="cf00">
+	<div class="morenvy-banner inner">
+		<a href="{#link_1}"><span>{#title}</span></a>
+		<span class="btn_close"><!--@import(/morenvyimg/icon/text_ban_close_24.svg)--></span>
+	</div>
+</div>
+
+
+<header id="header">
+    <div class="h_inner">
+		<!-- 상단 : 영역 01 -->
+		<div class="h_sec01">
+			<ul>
+				<!-- 상단 : 슬라이드 메뉴 텍스트 수정 -->
+				<!--@import(/section/h_slide_menu.html)-->
+
+				<!-- 상단 : 추가 메뉴 텍스트 수정 -->
+				<!--@import(/section/h_add_menu.html)-->
+
+				<!-- 상단 : 커뮤니티 텍스트 수정 -->
+				<!--@import(/section/h_community.html)-->
+			</ul>
+		</div>
+
+        <!-- 상단 : 영역 02 -->
+        <!-- 앱스토어 - 배너관리자 - [상단 : 로고] 에서 수정가능합니다 -->
+        <div class="h_sec02 morenvy-banner-area" area_id="8626">
+            <!-- 상단 : 로고 -->
+            <div class="h_logo morenvy-banner">
+                <a href="{#link_1}">{#title}</a>
+            </div>
+        </div>
+
+        <!-- 상단 : 영역 03 -->
+        <div class="h_sec03">
+            <!-- 상단 : 메뉴 -->
+            <ul class="h_menu">
+				<li class="pc_only" module="Layout_statelogoff"><a href="/member/login.html">LOGIN</a></li>  
+				<li class="pc_only" module="Layout_statelogon"><a href="{$action_logout}">LOGOUT</a></li>  
+				<li class="pc_only login_h" module="Layout_statelogoff">
+                    <a href="/member/login.html">MY SHOP</a>
+                    <div class="login_menu">
+                        <ul>
+                            <li><a href="/member/login.html">LOGIN</a></li>
+                            <li><a href="/member/join.html">JOIN</a></li>
+                            <li><a href="/myshop/index.html">MY PAGE</a></li>
+                            <li><a href="/myshop/order/list.html">ORDER</a></li>
+                            <li><a href="/product/recent_view_product.html">RECENT VIEW</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="pc_only login_h" module="Layout_statelogon">
+                    <a href="/myshop/index.html">MY SHOP</a>
+                    <div class="login_menu">
+                        <ul>
+                            <li><a href="{$action_logout}">LOGOUT</a></li>
+							<li><a href="/myshop/index.html">MY PAGE</a></li>
+							<li><a href="/myshop/order/list.html">ORDER</a></li>
+							<li><a href="/myshop/wish_list.html">WISHLIST</a></li>
+                            <li><a href="/product/recent_view_product.html">RECENT VIEW</a></li>
+                        </ul>
+                    </div>
+                </li>
+				<li class="search pc_only "><a href="#none">SEARCH<!--@import(/morenvyimg/icon/fill_arrow_down_16.svg)--></a></li>
+                <li class="cart-button"><a href="/order/basket.html">BAG<div module="Layout_orderBasketcount"><span>({$basket_count})</span></div></a></li>
+            </ul>
+        </div>
+    </div><!-- //h_inner -->
+</header>
+
+<!-- 상단 : 검색창 -->
+<div class="search_box" module="Layout_SearchHeader">
+    <!--
+        $product_page=/product/detail.html
+        $category_page=/product/list.html
+    -->
+    <div class="search_area">
+        <div class="top">
+            <!-- 검색창 : 문구 수정 -->
+            <!--@import(/section/h_search.html)-->
+            <legend>검색</legend>
+            {$form.keyword}<input type="image" src="/morenvyimg/icon/search.svg" onclick="{$action_search_submit}" /><div class="line"></div><!--@import(/morenvyimg/blk_close.svg)-->
+            </fieldset>
+        </div>
+
+        <div class="bottom">
+            <div class="recent_keyword">
+                <h3>최근 검색어<span>전체삭제</span></h3>
+                <ul></ul>
+            </div>
+            <div class="hot_keyword">
+                <h3>추천 검색어</h3>
+                <ul class="keyword_list" module="search_hotkeyword">
+                    <li><a href="{$hot_keyword_url}"><!--@import(/morenvyimg/hotkeyword_search.svg)--><span>#{$hot_keyword_name}</span></a></li>
+                    <li><a href="{$hot_keyword_url}"><!--@import(/morenvyimg/hotkeyword_search.svg)--><span>#{$hot_keyword_name}</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div><!-- //search_box -->

@@ -1,0 +1,79 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/morenvy/js/search.js)-->
+<!--@js(/morenvy/js/product_hover.js)-->
+
+<style>
+	#container #contents {max-width: 100%; padding: 0;}
+	.footer-wrap {padding-top:0 !important; margin-top: -0.1rem;}
+	#contents .titleArea {margin-bottom: 2.4rem;}
+</style>
+
+
+<div class="path">
+    <span>현재 위치</span>
+    <ol>
+        <li><a href="/">홈</a></li>
+        <li title="현재 위치"><strong>SEARCH</strong></li>
+    </ol>
+</div>
+
+
+<div class="titleArea search_title list_inner">
+    <h2 class="t01">SEARCH</h2>
+    <div module="Layout_MobileAction">
+        <a href="#none" onclick="{$go_back}"><img src="/morenvyimg/blk_arr_d.svg" alt="뒤로가기"></a>
+    </div>
+</div>
+
+<!--@import(/product/shoppQ/searchForm_typeTop.html)-->
+
+<div class="search-prd-wrap">
+    <div module="Search_Result" class="ec-base-product list_inner">
+        <!--
+            $count = 12
+        -->
+        <ul class="prdList prdList_normal">
+            <!--@import(/product/search_list.html)-->
+        </ul>
+    </div>
+
+    <div module="search_paging" class="ec-base-paginate typeList">
+        <a href="{$param_first}" class="first">첫 페이지</a>
+        <a href="{$param_before}" class="prev">이전 페이지</a>
+        <ol>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        </ol>
+        <a href="{$param_next}" class="next">다음 페이지</a>
+        <a href="{$param_last}" class="last">마지막 페이지</a>
+    </div>
+</div>
+
+
+<script>
+    (function () {
+        function changeOrderText() {
+            var orderSelect = document.querySelector('.searchOrder select#order_by');
+
+            if (!orderSelect) return;
+
+            var firstOption = orderSelect.querySelector('option[value=""]');
+
+            if (firstOption) {
+                firstOption.textContent = '상품정렬';
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', changeOrderText);
+        } else {
+            changeOrderText();
+        }
+
+        setTimeout(changeOrderText, 300);
+        setTimeout(changeOrderText, 1000);
+    })();
+</script>

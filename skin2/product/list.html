@@ -1,0 +1,269 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/morenvy/js/jquery.plugin.min.js)-->
+<!--@js(/morenvy/js/jquery.countdown.min.js)-->
+<!--@js(/morenvy/js/countdown_start.js)-->
+<!--@js(/js/module/product/menucategory.js)-->
+<!--@css(/css/module/product/menupackage.css)-->
+
+<!--@js(/morenvy/js/product_list.js)-->
+<!--@js(/morenvy/js/product_hover.js)-->
+
+<style>
+	#container #contents {max-width: 100%; padding: 0;}
+	.footer-wrap {padding-top:0 !important; margin-top:-0.1rem;}
+</style>
+
+<div class="list_title" module="product_headcategory">
+    <div class="title_wrap">
+        <div module="Layout_MobileAction">
+            <a href="#none" onclick="{$go_back}"><img src="/morenvyimg/blk_arr_d.svg" alt="뒤로가기"></a>
+        </div>
+        <div class="title_top">
+            <h2>
+                {$title_text_or_image}
+            </h2>
+            <div class="path">
+                <span>현재 위치</span>
+                <ol>
+                    <li><a href="/">홈</a></li>
+                    <li class="{$disp_cate_1|display}"><a href="{$link_product_list_1}">{$name_1}</a></li>
+                    <li class="{$disp_cate_2|display}"><a href="{$link_product_list_2}">{$name_2}</a></li>
+                    <li class="{$disp_cate_3|display}"><a href="{$link_product_list_3}">{$name_3}</a></li>
+                    <li class="{$disp_cate_4|display}"><strong><a href="{$link_product_list_4}">{$name_4}</a></strong></li>
+                </ol>
+            </div>
+        </div>
+        <span class="likeButton {$disp_likecate_class}">LIKE IT !
+            <button type="button">{$disp_likecate_icon}{$disp_likecate_count}</button>
+        </span>
+    </div>
+</div>
+
+<div class="swiper swiper_title_tab">
+    <ul class="title_tab swiper-wrapper">
+        <li module="product_displaycategory" style="display:{$display};" class="{$selected} swiper-slide">
+            <a href="{$link_product_list_sub}" class="t02">{$category_name} <span class="count {$product_count_display|display}">({$product_count})</span></a>
+        </li>
+    </ul>
+</div>
+
+<div class="list_ban">
+    <div module="product_headcategory" class="product_top_image">{$top_image1_tag}{$top_image2_tag}{$top_image3_tag}</div>
+</div>
+
+<div module="product_listrecommend" class="ec-base-product product_listrecommend">
+    <!--@css(/css/module/product/listrecommend_swipe.css)-->
+    <!--
+		$count = 8
+	-->
+    <div class="title_box">
+        <!-- 분류 : 추천상품 타이틀 -->
+        <!--@import(/section/list_recmd_title.html)-->
+        <div class="swiper_btn_wrap swiper_btn_wrap_recmd">
+            <div class="swiper-button swiper-button-prev swiper-button-prev-recmd"><!--@import(/morenvyimg/icon/swiper_btn.svg)--></div>
+            <div class="swiper-button swiper-button-next swiper-button-next-recmd"><!--@import(/morenvyimg/icon/swiper_btn.svg)--></div>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="swiper swiper_recmd">
+            <ul class="prdList swiper-wrapper">
+                <!--@import(/product/product_list.html)-->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div module="product_listnew" class="ec-base-product">
+    <!--@css(/css/module/product/listrecommend_swipe.css)-->
+    <!--
+		$count = 8
+	-->
+    <div class="title_box">
+        <!-- 분류 : 신상품 타이틀 -->
+        <!--@import(/section/list_new_title.html)-->
+        <div class="swiper_btn_wrap swiper_btn_wrap_new">
+            <div class="swiper-button swiper-button-prev swiper-button-prev-new"><!--@import(/morenvyimg/icon/swiper_btn.svg)--></div>
+            <div class="swiper-button swiper-button-next swiper-button-next-new"><!--@import(/morenvyimg/icon/swiper_btn.svg)--></div>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="swiper swiper_new">
+            <ul class="prdList swiper-wrapper">
+                <!--@import(/product/product_list.html)-->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="list_prd">
+    <!--@import(/product/shoppQ/searchContent.html)-->
+    <div module="product_normalpackage">
+        <!--@css(/css/module/product/listnormal.css)-->
+        <!--@js(/js/module/product/normalmenu.js)-->
+        <div module="product_normalmenu">
+            <!--
+			    $compare_page = /product/compare.html
+		    -->
+            <div class="function" id="{$listmenu_position}">
+                <p class="prdCount"><span class="prd_count">{$total_count}</span>items</p>
+                <div class="sort">
+                    <select id="selArray" name="selArray" module="product_Orderby">
+                        <option value>상품 정렬</option>
+                        <option value="{$param}">{$sort_name}</option>
+                        <option value="{$param}">{$sort_name}</option>
+                    </select>
+                    <ul id="type" module="product_Orderby" class="m_off">
+                        <li><a href="{$param}" {$style}>{$sort_name}</a></li>
+                        <li><a href="{$param}" {$style}>{$sort_name}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <fieldset class="condition {$select_search_display|display}">
+                <legend>조건별 검색</legend>
+                <p>
+                    <!--@js(/js/module/product/product_selectsearch.js)-->
+                    <select class="FirstSelect" module="product_FirstSelect">
+                        <option value>-조건선택-</option>
+                        <option value="{$value}" {$selected}>{$title}</option>
+                        <option value="{$value}" {$selected}>{$title}</option>
+                    </select>
+                    <select class="SecondSelect" module="product_SecondSelect">
+                        <option value>-조건선택-</option>
+                        <option value="{$value}" {$selected}>{$title}</option>
+                        <option value="{$value}" {$selected}>{$title}</option>
+                    </select>
+                    <a href="#SelectSearch" class="btnSubmitFix">검색</a>
+                </p>
+            </fieldset>
+        </div>
+        <div module="product_listnormal" class="ec-base-product">
+            <!--
+			    $count = 16
+                $cache =  no
+                $moreview = yes
+			    ※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+			    ※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+            
+			    $basket_result = /product/add_basket.html
+			    $basket_option = /product/basket_option.html
+		    -->
+            <ul class="prdList prdList_normal">
+                <!--@import(/product/product_list.html)-->
+            </ul>
+        </div>
+    </div>
+
+    <div module="product_listmore" class="more">
+		<a href="#none" onclick="{$more_action}" class="">
+            <div class="txt">
+                <span>더보기 (<span id="more_current_page">{$current_page}</span>/<span id="more_total_page">{$total_page}</span>)</span>
+                <span><!--@import(/morenvyimg/icon/fill_arrow_down_16.svg)--></span>
+            </div>
+		</a>
+	</div>
+
+    <!-- <div module="product_normalpaging" class="ec-base-paginate">
+        <a href="{$param_first}" class="first"><img src="/morenvyimg/page_arr.svg" alt="첫 페이지" /></a>
+        <a href="{$param_before}" class="prev"><img src="/morenvyimg/page_arr.svg" alt="이전 페이지" /></a>
+        <ol>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+            <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        </ol>
+        <a href="{$param_next}" class="next"><img src="/morenvyimg/page_arr.svg" alt="다음 페이지" /></a>
+        <a href="{$param_last}" class="last"><img src="/morenvyimg/page_arr.svg" alt="마지막 페이지" /></a>
+    </div> -->
+</div>
+
+
+
+<script>
+    (function () {
+        function checkEmptyProductList() {
+            var listWrap = document.querySelector('.list_prd');
+            if (!listWrap) return;
+
+            var normalPackage = listWrap.querySelector('.xans-product-normalpackage');
+            var prdList = listWrap.querySelector('.prdList_normal');
+            var moreButton = listWrap.querySelector('.more');
+            var emptyMessage = listWrap.querySelector('.js-empty-product-message');
+
+            var hasProduct = false;
+
+            if (prdList) {
+                hasProduct = !!prdList.querySelector(
+                    'li[id^="anchorBoxId_"] a[href*="/product/"], ' +
+                    'li.xans-record- a[href*="/product/"], ' +
+                    '.thumbnail a[href*="/product/"]'
+                );
+            }
+
+            if (!hasProduct) {
+                if (!emptyMessage) {
+                    emptyMessage = document.createElement('p');
+                    emptyMessage.className = 'message js-empty-product-message';
+                    emptyMessage.textContent = '등록된 상품이 없습니다.';
+
+                    if (prdList) {
+                        prdList.insertAdjacentElement('afterend', emptyMessage);
+                    } else if (normalPackage) {
+                        normalPackage.appendChild(emptyMessage);
+                    } else {
+                        listWrap.appendChild(emptyMessage);
+                    }
+                }
+
+                if (prdList) {
+                    prdList.style.display = 'none';
+                }
+
+                if (moreButton) {
+                    moreButton.style.display = 'none';
+                }
+            } else {
+                if (emptyMessage) {
+                    emptyMessage.remove();
+                }
+
+                if (prdList) {
+                    prdList.style.display = '';
+                }
+				/*
+                if (moreButton) {
+                    moreButton.style.display = '';
+                }
+				*/
+            }
+        }
+
+        function initEmptyProductList() {
+            checkEmptyProductList();
+
+            var listWrap = document.querySelector('.list_prd');
+            if (!listWrap) return;
+
+            var observer = new MutationObserver(function () {
+                checkEmptyProductList();
+            });
+
+            observer.observe(listWrap, {
+                childList: true,
+                subtree: true
+            });
+
+            setTimeout(checkEmptyProductList, 300);
+            setTimeout(checkEmptyProductList, 1000);
+            setTimeout(checkEmptyProductList, 2000);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initEmptyProductList);
+        } else {
+            initEmptyProductList();
+        }
+
+        window.addEventListener('load', checkEmptyProductList);
+    })();
+</script>

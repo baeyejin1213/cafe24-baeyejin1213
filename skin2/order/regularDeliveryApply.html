@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="//www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>사은품 선택</title>
+        <!--@js(/js/common.js)-->
+        <!--@js(/layout/basic/js/popup.js)-->
+    </head>
+
+    <body id="layer" class="v2">
+        <div class="dimmed"></div>
+        <div class="ec-base-layer large">
+            <!--@css(/css/module/order/ec_orderform/form_onetouch_layer.css)-->
+            <div class="header">
+                <h1>정기배송 변경 동의</h1>
+            </div>
+            <div class="wrap gap0">
+                <div class="subTitle txtNormal">본 상품은 <strong class="txtStrong">[$변경 적용일]</strong>자로 아래와 같이 변경될 예정입니다.</div>
+
+                <div class="infoBox themeR4">
+                    <ul class="ec-base-help typeDot">
+                        <li>상품명 : <strong class="txtStrong">$상품명</strong></li>
+                        <li>변경내용 : <strong class="txtStrong">$변경내용</strong></li>
+                    </ul>
+                </div>
+                <div class="description">
+                    <div class="txtNormal"><strong class="txtStrong">[$첫변경 적용일(변경적용일이후 첫 결제일)]</strong>에는 변경내용이 적용되어 자동 결제됩니다.<br>
+                    이에 동의하시겠습니까?</div>
+                    <div class="txtNormal gSingle">(미동의 시: 1회 구매만 가능하며, 정기배송 신청은 진행되지 않습니다.)</div>
+                </div>
+            </div>
+            <div class="ec-base-button">
+                <a href="#none" class="btnSubmit sizeS" onclick="$('.regularDeliveryApply').hide();">미동의</a>
+                <a href="#none" class="btnSubmit sizeS" onclick="alert('정상적으로 적용되었습니다'); $('.regularDeliveryApply').hide();">동의</a>
+            </div>
+            <a href="#none" class="btnClose" onclick="{$action_gift_close}">닫기</a>
+        </div>
+    </body>
+</html>

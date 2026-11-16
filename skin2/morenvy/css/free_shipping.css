@@ -1,0 +1,14 @@
+/*
+* 상세페이지 무료배송 진행표시줄 ver1.0
+* morenvy.com 서정환 수정 24.03.15
+*/
+
+.free_shipping { text-align: center; display: none; margin: 24px 0 0; padding: 0; }
+.free_shipping .free_shipping_txt01 {font-size:14px; font-weight:400; line-height:1.5;color:#1a1a1a;display:none;}
+.free_shipping .free_shipping_txt01 span {font-weight:700; color:#174FFF;}
+.free_shipping .free_shipping_txt02 {font-size:14px; font-weight:400; line-height:1.5;color:#1a1a1a;display:none;}
+.free_shipping .free_shipping_txt02 span {font-weight:700;color:#174FFF;}
+.free_shipping #shipping_bar {margin:8px 0;}
+.free_shipping #shipping_bar .progressbar .proggress {background-color:#174FFF !important;}
+.free_shipping .delivery_price {display:flex;align-items:center;justify-content:space-between;}
+.free_shipping .delivery_price span {font-size:13px; font-weight:700; line-height:1.5; color:#1a1a1a;}
