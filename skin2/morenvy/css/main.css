@@ -99,7 +99,7 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
     02 : 카테고리 아이콘
 ------------------------------- */
 .gg_cate {margin-top: 12rem; padding: 0 4rem;}
-.gg_cate_list {display: flex; justify-content: space-between; gap: 2rem;}
+.gg_cate_list {display: flex; justify-content: center; gap: 2.6rem;}  /* 배너가 적으면 가운데로 모임 */
 .gg_cate_list .morenvy-banner {flex: 0 1 16rem; min-width: 0;}
 .gg_cate_list a {display: flex; flex-direction: column; align-items: center; gap: 1.6rem;}
 .gg_cate_list .ico {display: block; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 25%; background-color: #f9f9f9;}
@@ -147,7 +147,7 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
 .gg_long .txt {position: absolute; left: 50%; top: 50%; z-index: 1; display: flex; flex-direction: column; align-items: center; width: calc(100% - 8rem); transform: translate(-50%, -50%); text-align: center; color: #fff;}
 .gg_long .txt h2 {font-family: var(--gg-en); font-weight: 700; font-size: 5rem; line-height: 6.4rem; letter-spacing: .05rem; text-transform: capitalize;}
 .gg_long .txt p {margin-top: 2.4rem; font-size: 2rem; line-height: 2.8rem; font-weight: 500;}
-.gg_long .gg_btn {width: auto; margin-top: 6.4rem; padding: .8rem 2.4rem; border-color: #fff; color: #fff;}
+.gg_long .gg_btn {width: auto; margin-top: 6.4rem; padding: .8rem 2.4rem; border-color: currentColor; color: inherit;}
 
 
 /* -------------------------------
@@ -168,7 +168,7 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
 .gg_two .left .txt {position: absolute; left: 8rem; right: 4rem; bottom: 6.4rem; z-index: 1; color: #fff;}
 .gg_two .left .txt h2 {font-family: var(--gg-en); font-weight: 700; font-size: 5rem; line-height: 6.4rem; letter-spacing: .05rem; text-transform: capitalize;}
 .gg_two .left .txt p {margin-top: 2.4rem; font-size: 2rem; line-height: 2.8rem; font-weight: 500;}
-.gg_two .left .gg_btn {width: auto; gap: 2.4rem; margin-top: 6.4rem; padding: .8rem 2.4rem; border-color: #fff; font-size: 1.4rem; color: #fff;}
+.gg_two .left .gg_btn {width: auto; gap: 2.4rem; margin-top: 6.4rem; padding: .8rem 2.4rem; border-color: currentColor; font-size: 1.4rem; color: inherit;}
 
 .gg_two .right {position: relative; flex: 0 0 50%; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4rem; overflow: hidden; background-color: #000;}
 .gg_two .right .blur {position: absolute; inset: -4rem; background: no-repeat center / cover; filter: blur(20px); opacity: .8; transition: background-image .6s;}
@@ -194,7 +194,7 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
 .gg_promo_list .txt {position: absolute; left: 0; bottom: 0; z-index: 1; display: flex; flex-direction: column; width: 100%; padding: 0 4rem 4rem; color: #fff;}
 .gg_promo_list strong {font-family: var(--gg-en); font-weight: 700; font-size: 3.6rem; line-height: 4.8rem; letter-spacing: .036rem; text-transform: capitalize;}
 .gg_promo_list .txt > em {margin-top: 1.6rem; font-style: normal; font-size: 1.6rem; line-height: 2.4rem;}
-.gg_promo_list .gg_btn {width: 100%; margin-top: 4rem; border-color: #fff; color: #fff;}
+.gg_promo_list .gg_btn {width: 100%; margin-top: 4rem; border-color: currentColor; color: inherit;}
 
 
 /* -------------------------------
@@ -255,6 +255,8 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
     .gg_cate_list {justify-content: flex-start; gap: 1.2rem; padding: 0 2rem; overflow-x: auto; scrollbar-width: none;}
     .gg_cate_list::-webkit-scrollbar {display: none;}
     .gg_cate_list .morenvy-banner {flex: 0 0 8rem;}
+    .gg_cate_list .morenvy-banner:first-child {margin-left: auto;}  /* 넘치면 왼쪽부터 가로 스크롤, 적으면 가운데 */
+    .gg_cate_list .morenvy-banner:last-child {margin-right: auto;}
     .gg_cate_list a {gap: 1.2rem;}
     .gg_cate_list .ico {border-radius: 2rem;}
     .gg_cate_list .name {font-size: 1.3rem; line-height: 2rem;}
@@ -308,7 +310,7 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
     .gg_promo_list .morenvy-banner {flex: 0 0 30rem;}
     .gg_promo_list a {aspect-ratio: auto; overflow: visible; background: none;}
     .gg_promo_list .img {position: relative; display: block; height: 40.5rem; overflow: hidden; background-color: #d9d9d9;}
-    .gg_promo_list .txt {position: static; margin-top: 1.6rem; padding: 0; color: var(--gg-black);}
+    .gg_promo_list .txt {position: static; margin-top: 1.6rem; padding: 0; color: var(--gg-black) !important;}  /* 모바일은 글자가 사진 아래라 배너관리자 글자색(텍스트 2) 대신 검정 */
     .gg_promo_list strong {font-size: 2rem; line-height: 3.2rem; letter-spacing: .02rem;}
     .gg_promo_list .txt > em {font-size: 1.2rem; line-height: 1.6rem; color: var(--gg-grey);}
     .gg_promo_list .gg_btn {margin-top: 2.4rem; border-color: var(--gg-black); color: var(--gg-black);}

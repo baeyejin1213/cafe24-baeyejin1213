@@ -12,17 +12,7 @@ jQuery(document).ready(function () {
     ---------------------------------------------------- */
 
 
-	/*  텍스트 띠배너 01 */
-    if (!getCookiefss("notToday_txtBan")) {
-        jQuery(".txt_ban").show();
-    };
-    jQuery(".txt_ban .btn_close").on("click", function () {
-        jQuery(this).hide().parents(".txt_ban").slideUp();
-        setCookieCpa("notToday_txtBan", "yes", 1);
-    });
-
-
-	/*  텍스트 띠배너 02 */
+	/*  텍스트 띠배너 */
     if (!getCookiefss("notToday_txtBan2")) {
         jQuery(".txt_ban2").show();
     };

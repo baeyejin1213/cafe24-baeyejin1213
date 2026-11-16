@@ -72,16 +72,34 @@ jQuery(function ($) {
     });
 
 
-    /* ④ Hot Deal : 오늘 자정까지 남은 시간 */
+    /* ④ Hot Deal : 배너관리자 [메인 : 핫딜 종료 시간] 타이틀의 시간까지 카운트다운
+          (배너가 없거나 형식이 틀리면 매일 자정까지) */
     var $timer = $('.gg_hotdeal .gg_timer');
-    if ($timer.length) {
+    function parseEnd(txt) {
+        var m = $.trim(txt || '').match(/^(\d{4})[-.\/](\d{1,2})[-.\/](\d{1,2})(?:\s+(\d{1,2}):(\d{2})(?::(\d{2}))?)?$/);
+        if (!m) return null;
+        return new Date(+m[1], m[2] - 1, +m[3], m[4] ? +m[4] : 23, m[5] ? +m[5] : 59, m[6] ? +m[6] : (m[4] ? 0 : 59));
+    }
+    function startTimer(fixedEnd) {
         (function tick() {
             var now = new Date();
-            var end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+            var end = fixedEnd || new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
             var s = Math.max(0, Math.floor((end - now) / 1000));
-            $timer.text(pad(Math.floor(s / 3600)) + ':' + pad(Math.floor(s % 3600 / 60)) + ':' + pad(s % 60));
+            var d = Math.floor(s / 86400);
+            s %= 86400;
+            $timer.text((d > 0 ? d + '일 ' : '') + pad(Math.floor(s / 3600)) + ':' + pad(Math.floor(s % 3600 / 60)) + ':' + pad(s % 60));
+            if (fixedEnd && end <= now) return;  // 끝나면 00:00:00 에서 멈춤
             setTimeout(tick, 1000 - now.getMilliseconds());
         })();
+    }
+    if ($timer.length) {
+        if ($('.gg_deal_end').length) {
+            whenBanner('.gg_deal_end', function ($area) {
+                startTimer(parseEnd($area.find('.end').first().text()));
+            });
+        } else {
+            startTimer(null);
+        }
     }
 
 
