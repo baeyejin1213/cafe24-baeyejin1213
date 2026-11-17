@@ -29,8 +29,6 @@ jQuery(function ($) {
         if (total < 2) { $count.hide(); $('.m_sec01 .kv_btn').hide(); }
         new Swiper($area[0], {
             loop: total > 1,
-            effect: 'fade',
-            fadeEffect: {crossFade: true},
             speed: 1000,
             autoplay: total > 1 ? {delay: 6000, disableOnInteraction: false} : false,
             navigation: {prevEl: '.m_sec01 .kv_btn.prev', nextEl: '.m_sec01 .kv_btn.next'},
@@ -42,19 +40,36 @@ jQuery(function ($) {
     });
 
 
+    /* ①-2 카테고리 아이콘 : 적으면 가운데, 넘치면 끌어서 넘김 */
+    whenBanner('.cate_list', function ($area) {
+        new Swiper($area[0], {
+            slidesPerView: 'auto',
+            spaceBetween: 12,
+            centerInsufficientSlides: true,
+            grabCursor: true,
+            breakpoints: {1025: {spaceBetween: 26}}
+        });
+    });
+
+
     /* ② 상품 가로 슬라이드 (마우스로 끌어서 넘김) */
     var prdSwipers = [];
     $('.main_wrap .prd_slide').each(function () {
         if (!$(this).find('.prdList > li').length) { $(this).closest('.tab_panel, .prd_slide').addClass('empty'); return; }
         var inBanner = $(this).closest('.m_sec04').length;
+        /* 한 줄에 보이는 상품 수(slidesPerView)로 카드 폭을 정함. 소수점 = 다음 상품이 살짝 보이게 */
+        var views = inBanner
+            ? {0: [2.2, 12], 600: [3.2, 12], 768: [4.2, 12], 1025: [1.6, 24], 1440: [2.3, 24]}
+            : {0: [1.6, 12], 600: [2.6, 12], 900: [3.4, 20], 1440: [4.4, 20]};
+        var bp = {};
+        $.each(views, function (w, v) { bp[w] = {slidesPerView: v[0], spaceBetween: v[1]}; });
         prdSwipers.push(new Swiper(this, {
-            slidesPerView: 'auto',
-            spaceBetween: 12,
-            freeMode: {enabled: true, momentum: true},
+            slidesPerView: bp[0].slidesPerView,
+            spaceBetween: bp[0].spaceBetween,
             grabCursor: true,
             observer: true,
             observeParents: true,
-            breakpoints: {768: {spaceBetween: inBanner ? 24 : 20}}
+            breakpoints: bp
         }));
     });
 
@@ -121,14 +136,15 @@ jQuery(function ($) {
     });
 
 
-    /* ⑥ 프로모션 배너 : PC 3개씩, 모바일 30rem 너비로 끌어서 넘김 */
+    /* ⑥ 프로모션 배너 : PC 3개씩, 모바일은 다음 배너가 살짝 보이게 */
     whenBanner('.promo_list', function ($area) {
         new Swiper($area[0], {
-            slidesPerView: 'auto',
+            slidesPerView: 1.1,
             spaceBetween: 16,
             grabCursor: true,
             breakpoints: {
-                768: {slidesPerView: 3, spaceBetween: 16},
+                600: {slidesPerView: 2.1, spaceBetween: 16},
+                1025: {slidesPerView: 3, spaceBetween: 16},
                 1281: {slidesPerView: 3, spaceBetween: 32}
             }
         });

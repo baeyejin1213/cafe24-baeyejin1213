@@ -439,154 +439,55 @@ jQuery(function ($) {
 
 
     /* ① 스크롤하면 흰 헤더 */
-    var megaOpen = false;
     function setWhite() {
-        $header.toggleClass('h_white', megaOpen || window.pageYOffset > 10);
+        $header.toggleClass('h_white', window.pageYOffset > 10);
     }
     $(window).on('scroll', setWhite);
     setWhite();
 
 
-    /* ② 분류 데이터 → 메가메뉴 · 모바일 전체메뉴 */
-    function cateNo(href) {
-        var m = String(href || '').match(/cate_no=(\d+)/) || String(href || '').match(/\/category\/[^/]*\/(\d+)\//) || String(href || '').match(/\/(\d+)\/?(?:\?|$)/);
-        return m ? m[1] : '';
+    /* ② 사이드 메뉴 카테고리 (하위 분류는 opencate2.js 가 채움)
+          왼쪽 대분류를 누르면 오른쪽에 중분류, 중분류를 누르면 소분류가 펼쳐짐 */
+    var $side = $('#aside');
+    function sideSelect($li) {
+        $li.addClass('on').siblings().removeClass('on');
+        $side.find('.d1 > ul > li').not($li).removeClass('on');
     }
-    var curCate = cateNo(location.href);
-
-    $.ajax({url: '/exec/front/Product/SubCategory', dataType: 'json'}).done(function (list) {
-        var byParent = {}, byNo = {};
-        $.each(list || [], function (i, c) {
-            (byParent[c.parent_cate_no] = byParent[c.parent_cate_no] || []).push(c);
-            byNo[c.cate_no] = c;
-        });
-        function link(c) {
-            return c.link_product_list || ('/product/list.html?cate_no=' + c.cate_no);
-        }
-        function isUnder(no, top) { // no 가 top 분류 아래에 있는지
-            var guard = 0;
-            while (no && byNo[no] && guard++ < 10) {
-                if (String(no) === String(top)) return true;
-                no = byNo[no].parent_cate_no;
-            }
-            return String(no) === String(top);
-        }
-
-        buildMega(byParent, link, isUnder);
-        buildSide(byParent, link);
-    }).fail(function () {
-        buildSide({}, function () { return '#none'; });
+    $side.on('click', '.d1 > ul > li > a.cate', function (e) {
+        var $li = $(this).parent();
+        if (!$li.children('.depth2').length) return;
+        e.preventDefault();
+        sideSelect($li);
+    });
+    $side.on('click', '.depth2 > ul > li > a.cate', function (e) {
+        var $li = $(this).parent();
+        if (!$li.children('.depth3').length) return;
+        e.preventDefault();
+        $li.toggleClass('active').children('.depth3').stop().slideToggle(300);
+        $li.siblings('.active').removeClass('active').children('.depth3').stop().slideUp(300);
     });
 
+    $side.on('click', '.depth3 > ul > li > a.cate', function (e) {  /* 상세분류 펼침 */
+        var $li = $(this).parent();
+        if (!$li.children('.depth4').length) return;
+        e.preventDefault();
+        $li.toggleClass('active').children('.depth4').stop().slideToggle(300);
+        $li.siblings('.active').removeClass('active').children('.depth4').stop().slideUp(300);
+    });
 
-    /* PC 메가메뉴 */
-    function buildMega(byParent, link, isUnder) {
-        var $mega = $header.find('.h_mega');
-        $header.find('.h_cate > li').each(function (i) {
-            var $li = $(this);
-            var no = cateNo($li.children('a').attr('cate')) || cateNo($li.children('a').attr('href'));
-            $li.attr('data-cate', no);
-            if (curCate && isUnder(curCate, no)) $li.addClass('on');
+    /* 다국어 선택 */
+    $side.find('.side_lang .code').text(function (i, t) { return $.trim(t).split(/[_-]/).pop().toUpperCase(); });
+    $side.on('click', '.side_lang .toggle', function () { $(this).parent().toggleClass('open'); });
+    $(document).on('click', function (e) { if (!$(e.target).closest('.side_lang').length) $('.side_lang').removeClass('open'); });
 
-            var kids = byParent[no];
-            if (!kids || !kids.length) return;
-            var html = '<div class="panel" data-cate="' + no + '">';
-            $.each(kids, function (k, c2) {
-                html += '<div class="col"><a href="' + link(c2) + '">' + c2.name + '</a>';
-                var gkids = byParent[c2.cate_no];
-                if (gkids && gkids.length) {
-                    html += '<ul>';
-                    $.each(gkids, function (g, c3) { html += '<li><a href="' + link(c3) + '">' + c3.name + '</a></li>'; });
-                    html += '</ul>';
-                }
-                html += '</div>';
-            });
-            html += '</div>';
-            $mega.append(html);
-            $li.addClass('has_sub');
-        });
-
-        var closeTimer;
-        function open(no) {
-            clearTimeout(closeTimer);
-            var $panel = $mega.children('.panel[data-cate="' + no + '"]');
-            $mega.children('.panel').removeClass('on');
-            if ($panel.length) {
-                $panel.addClass('on');
-                $mega.addClass('open');
-                megaOpen = true;
-            } else {
-                $mega.removeClass('open');
-                megaOpen = false;
-            }
-            setWhite();
-        }
-        function close() {
-            closeTimer = setTimeout(function () {
-                $mega.removeClass('open').children('.panel').removeClass('on');
-                megaOpen = false;
-                setWhite();
-            }, 120);
-        }
-        $header.on('mouseenter', '.h_cate > li', function () { open($(this).attr('data-cate')); });
-        $header.on('mouseenter', '.h_add > li, .h_logo, .h_util', function () { open(''); });
-        $header.on('mouseenter', '.h_mega', function () { clearTimeout(closeTimer); });
-        $header.on('mouseleave', function () { close(); });
+    function sideOpen() {
+        $body.addClass('sideOn');
+        if (!$side.find('.d1 li.on').length) sideSelect($side.find('.d1 > ul > li').has('.depth2').first());
     }
-
-
-    /* 모바일 전체메뉴 : 왼쪽 대분류 / 오른쪽 중분류(+소분류 펼침) */
-    function buildSide(byParent, link) {
-        var $side = $('#aside_menu');
-        if (!$side.length) return;
-        var $d1 = $side.find('.d1'), $d2 = $side.find('.d2');
-        var first = -1;
-        var items = [];
-        $header.find('.h_cate > li > a, .h_add > li > a').each(function () {
-            items.push({name: $.trim($(this).text()), href: $(this).attr('href'), no: cateNo($(this).attr('cate')) || cateNo($(this).attr('href'))});
-        });
-
-        $.each(items, function (i, it) {
-            var en = /^[A-Z0-9\s&]+$/.test(it.name) ? ' en' : '';
-            var kids = it.no ? byParent[it.no] : null;
-            if (kids && kids.length) {
-                if (first < 0) first = i;
-                $d1.append('<li data-idx="' + i + '"><button type="button" class="row' + en + '">' + it.name + '<i></i></button></li>');
-                var html = '<ul data-idx="' + i + '">';
-                $.each(kids, function (k, c2) {
-                    var gkids = byParent[c2.cate_no];
-                    if (gkids && gkids.length) {
-                        html += '<li><button type="button" class="row">' + c2.name + '<i></i></button><div class="d3">';
-                        $.each(gkids, function (g, c3) { html += '<a href="' + link(c3) + '">' + c3.name + '</a>'; });
-                        html += '</div></li>';
-                    } else {
-                        html += '<li><a href="' + link(c2) + '" class="row">' + c2.name + '</a></li>';
-                    }
-                });
-                $d2.append(html + '</ul>');
-            } else {
-                $d1.append('<li><a href="' + it.href + '" class="row' + en + '">' + it.name + '</a></li>');
-            }
-        });
-
-        function select(idx) {
-            $d1.children('li').removeClass('on').filter('[data-idx="' + idx + '"]').addClass('on');
-            $d2.children('ul').removeClass('on').filter('[data-idx="' + idx + '"]').addClass('on');
-            $d2.scrollTop(0);
-        }
-        if (first > -1) select(first);
-        $d1.on('click', 'button.row', function () { select($(this).parent().attr('data-idx')); });
-        $d2.on('click', 'button.row', function () {
-            var $li = $(this).parent();
-            $li.toggleClass('open on').siblings().removeClass('open on');
-        });
-    }
-
-    function sideOpen() { $body.addClass('sideOn'); }
     function sideClose() { $body.removeClass('sideOn'); }
     $header.on('click', '.h_util .menu a', function (e) { e.preventDefault(); sideOpen(); });
     $(document).on('click', '.f_nav .side_open', sideOpen);
-    $(document).on('click', '#aside_menu .side_close', sideClose);
+    $(document).on('click', '#aside .side_close', sideClose);
 
 
     /* ③ 검색 패널 */
@@ -596,7 +497,7 @@ jQuery(function ($) {
         $body.addClass('searchOn');
         var $recent = $('.sch_recent .swiper');  /* 최근 본 상품 : 마우스로 끌어서 넘김 */
         if (!recentSwiper && $recent.length && window.Swiper) {
-            recentSwiper = new Swiper($recent[0], {slidesPerView: 'auto', spaceBetween: 12, freeMode: true, grabCursor: true, observer: true, observeParents: true});
+            recentSwiper = new Swiper($recent[0], {slidesPerView: 'auto', spaceBetween: 12, grabCursor: true, observer: true, observeParents: true});
         }
         setTimeout(function () { $('#searchBarForm #keyword').trigger('focus'); }, 400);
     }
@@ -611,7 +512,10 @@ jQuery(function ($) {
 
 
     /* ④ 푸터 : 사업자 정보 접기 */
-    $(document).on('click', '#footer .f_biz_btn', function () { $(this).closest('.f_info_wrap').toggleClass('close'); });
+    $(document).on('click', '#footer .f_biz_btn', function () {
+        var $wrap = $(this).closest('.f_info_wrap');
+        $wrap.toggleClass('close').find('.f_info').stop().slideToggle(300);
+    });
 
 
     /* ⑤ 퀵 메뉴(PC) : 조금 내리면 표시, 맨 위로 / 모바일 하단바 : 내릴 때 숨김 */
@@ -622,6 +526,14 @@ jQuery(function ($) {
         var atBottom = y + window.innerHeight >= document.documentElement.scrollHeight - 4;
         $('.f_nav').toggleClass('down', y > lastY && y > 56 && !atBottom);
         $('#quick').toggleClass('on', y > 200);
+        /* 퀵 버튼 : 푸터에 닿으면 푸터 위에서 멈춤 */
+        var $q = $('#quick'), ft = $('#footer')[0];
+        if ($q.length && ft) {
+            $q.css('bottom', '');
+            var base = parseFloat($q.css('bottom'));
+            var over = window.innerHeight - ft.getBoundingClientRect().top;
+            if (over > 0) $q.css('bottom', (over + base) + 'px');
+        }
         lastY = y;
     });
 });

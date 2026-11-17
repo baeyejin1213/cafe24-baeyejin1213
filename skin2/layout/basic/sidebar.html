@@ -1,25 +1,43 @@
 <!-- 사이드 메뉴 -->
-<aside id="aside_menu">
+<aside id="aside">
 	<div class="side_top">
-		<div module="Layout_statelogoff">
-			<p class="msg">로그인이 필요합니다</p>
-			<div class="btns">
-				<a href="/member/login.html">로그인</a>
-				<a href="/member/join.html" class="fill">회원가입</a>
+		<div class="side_info">
+			<!-- 사이드 메뉴 : 다국어 (멀티쇼핑몰) -->
+			<div module="Layout_multishopList" class="side_lang">
+				<button type="button" class="toggle"><span class="code">{$current_language_code}</span><i></i></button>
+				<ul module="Layout_multishopListitem">
+					<li class="{$selected_class}"><a href="//{$shop_domain}/">{$locale_language}</a></li>
+					<li class="{$selected_class}"><a href="//{$shop_domain}/">{$locale_language}</a></li>
+				</ul>
 			</div>
-		</div>
-		<div module="Layout_statelogon">
-			<p class="msg">반갑습니다</p>
-			<div class="btns">
-				<a href="/myshop/index.html">마이페이지</a>
-				<a href="{$action_logout}" class="fill">로그아웃</a>
-			</div>
+			<!-- 사이드 메뉴 : 로그인 멘트 -->
+			<p class="msg" module="Layout_statelogoff">로그인이 필요합니다</p>
+			<p class="msg" module="Layout_statelogon"><span class="xans-member-var-name"></span>님</p>
 		</div>
 		<button type="button" class="side_close" title="닫기"><!--@import(/morenvyimg/side_close.svg)--></button>
+
+		<!-- 사이드 메뉴 : 로그인 메뉴 -->
+		<div class="btns" module="Layout_statelogoff">
+			<a href="/member/login.html">로그인</a>
+			<a href="/member/join.html" class="fill">회원가입</a>
+		</div>
+		<div class="btns" module="Layout_statelogon">
+			<a href="/myshop/index.html">마이페이지</a>
+			<a href="{$action_logout}" class="fill">로그아웃</a>
+		</div>
 	</div>
 
+	<!-- 사이드 메뉴 : 카테고리 (하위 분류는 /morenvy/js/opencate2.js) -->
 	<div class="side_cate">
-		<ul class="d1"></ul>
-		<div class="d2"></div>
+		<div class="d1">
+			<ul module="Layout_category">
+				<li><a href="{$link_product_list}" class="cate" cate="{$param}">{$name}<span class="open"></span></a></li>
+				<li><a href="{$link_product_list}" class="cate" cate="{$param}">{$name}<span class="open"></span></a></li>
+			</ul>
+			<ul class="side_add">
+				<!-- 사이드 메뉴 : 수동 카테고리 -->
+				<!--@import(/section/h_add_menu.html)-->
+			</ul>
+		</div>
 	</div>
 </aside>

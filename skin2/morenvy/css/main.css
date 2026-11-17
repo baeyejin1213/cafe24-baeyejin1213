@@ -5,7 +5,7 @@
 /* 메인 공통 */
 #container #contents:has(> .main_wrap),
 body.is_main #container #contents {max-width: none !important; margin: 0 auto; padding: 0 !important;}
-.main_wrap {font-family: var(--font-kr); color: var(--c-black); overflow: hidden; word-break: keep-all;}
+.main_wrap {font-family: var(--font-kr); color: var(--c-black); overflow: hidden;}
 .main_wrap h2,
 .main_wrap p {margin: 0;}
 .main_wrap a {color: inherit;}
@@ -36,7 +36,7 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
 ------------------------------- */
 .main_wrap .prd_slide.swiper {padding: 0 4rem; overflow: hidden;}
 .prd_slide .prdList {display: flex; margin: 0; padding: 0; border: 0;}
-.prd_slide .prdList > li {flex-shrink: 0; width: 40rem; height: auto; margin: 0; border: 0;}
+.prd_slide .prdList > li {flex-shrink: 0; height: auto; margin: 0; border: 0;}  /* 폭은 main.js 의 slidesPerView 가 정함 */
 .prd_box .thumb {position: relative; aspect-ratio: 1 / 1; overflow: hidden; background-color: var(--c-bg);}
 .prd_box .thumb .img {display: block; width: 100%; height: 100%;}
 .prd_box .thumb .img > img {width: 100%; height: 100%; object-fit: cover;}
@@ -88,6 +88,11 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
 .m_sec01 .txt {position: absolute; left: 50%; bottom: 16.8rem; z-index: 3; width: calc(100% - 8rem); transform: translateX(-50%); text-align: center; color: #fff;}
 .m_sec01 .txt h2 {font-family: var(--font-en); font-weight: 700; font-size: 5rem; line-height: 6.4rem; letter-spacing: .05rem; text-transform: capitalize;}
 .m_sec01 .txt p {margin-top: 2.4rem; font-size: 2rem; line-height: 2.8rem; font-weight: 500;}
+.m_sec01 .txt h2,
+.m_sec01 .txt p {opacity: 0; transform: translateY(4rem); transition: opacity .8s ease, transform .8s ease;}  /* 보이는 슬라이드의 글자 : 페이드인 + 위로 */
+.m_sec01 .swiper-slide-active .txt h2,
+.m_sec01 .swiper-slide-active .txt p {opacity: 1; transform: none; transition-delay: .3s;}
+.m_sec01 .swiper-slide-active .txt p {transition-delay: .5s;}
 .m_sec01 .kv_count {position: absolute; left: 50%; bottom: 6.4rem; z-index: 3; transform: translateX(-50%);}
 .m_sec01 .kv_btn {position: absolute; top: 50%; z-index: 3; display: flex; width: 6.4rem; height: 6.4rem; padding: 0; transform: translateY(-50%); color: #fff; cursor: pointer;}
 .m_sec01 .kv_btn.prev {left: 4rem;}
@@ -99,9 +104,9 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
 /* -------------------------------
     02 : 카테고리 아이콘
 ------------------------------- */
-.m_sec02 {margin-top: 12rem; padding: 0 4rem;}
-.cate_list {display: flex; justify-content: center; gap: 2.6rem;}  /* 배너가 적으면 가운데로 모임 */
-.cate_list .morenvy-banner {flex: 0 1 16rem; min-width: 0;}
+.m_sec02 {margin-top: 12rem;}
+.main_wrap .cate_list.swiper {padding: 0 4rem;}  /* 배너가 적으면 가운데(centerInsufficientSlides) */
+.cate_list .swiper-slide {width: 16rem;}
 .cate_list a {display: flex; flex-direction: column; align-items: center; gap: 1.6rem;}
 .cate_list .ico {display: block; width: 100%; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 25%; background-color: #f9f9f9;}
 .cate_list .ico img {width: 100%; height: 100%; object-fit: cover; mix-blend-mode: darken;}
@@ -133,7 +138,6 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
 .m_sec04 .txt p {margin-top: 1.6rem; font-size: 1.6rem; line-height: 2.4rem; color: var(--c-grey);}
 .m_sec04 .txt .more_btn {margin-top: 4rem;}
 .main_wrap .m_sec04 .prd_slide.swiper {width: 100%; margin: 0; padding: 0;}  /* swiper 기본 margin:auto 때문에 상품 줄 길이만큼 늘어나 끌리지 않던 문제 */
-.m_sec04 .prd_slide .prdList > li {width: 34rem;}
 .m_sec04 .col02 .txt {order: 1;}
 .m_sec04 .col02 .prd_slide {order: 2;}
 .m_sec04 .col02 .img {order: 3;}
@@ -216,9 +220,9 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
 
 
 /* -------------------------------
-    반응형 : 767px (모바일, 시안 360)
+    반응형 : 1024px (모바일)
 ------------------------------- */
-@media all and (max-width:767px) {
+@media all and (max-width:1024px) {
     .main_wrap .m_sec {margin-top: 6.4rem;}
     .main_wrap > section:last-child {margin-bottom: 4rem;}
 
@@ -230,7 +234,6 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
 
     /* 카드 */
     .main_wrap .prd_slide.swiper {padding: 0 2rem;}
-    .prd_slide .prdList > li {width: 20rem;}
     .prd_box .thumb .prdIcon {inset: .8rem; background-size: 4rem auto;}
     .prd_box .thumb .wish {top: 1.2rem; right: 1.2rem; width: 2rem; height: 2rem;}
     .prd_box .info .name a,
@@ -254,12 +257,9 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
     .m_sec01 .kv_btn {display: none;}
 
     /* 02 카테고리 */
-    .m_sec02 {margin-top: 4rem; padding: 0;}
-    .cate_list {justify-content: flex-start; gap: 1.2rem; padding: 0 2rem; overflow-x: auto; scrollbar-width: none;}
-    .cate_list::-webkit-scrollbar {display: none;}
-    .cate_list .morenvy-banner {flex: 0 0 8rem;}
-    .cate_list .morenvy-banner:first-child {margin-left: auto;}  /* 넘치면 왼쪽부터 가로 스크롤, 적으면 가운데 */
-    .cate_list .morenvy-banner:last-child {margin-right: auto;}
+    .m_sec02 {margin-top: 4rem;}
+    .main_wrap .cate_list.swiper {padding: 0 2rem;}
+    .cate_list .swiper-slide {width: 8rem;}
     .cate_list a {gap: 1.2rem;}
     .cate_list .ico {border-radius: 2rem;}
     .cate_list .name {font-size: 1.3rem; line-height: 2rem;}
@@ -277,7 +277,6 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
     .m_sec04 .txt h2 {font-size: 2.4rem; line-height: 3.6rem; letter-spacing: .024rem;}
     .m_sec04 .txt p {font-size: 1.4rem; line-height: 2rem;}
     .m_sec04 .txt .more_btn {margin-top: 2.4rem;}
-    .m_sec04 .prd_slide .prdList > li {width: 14rem;}
 
     /* 05 롱배너 */
     .m_sec05 a {height: 133.33vw; min-height: 0; max-height: none;}
@@ -309,9 +308,8 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
 
     /* 08 Promotion */
     .main_wrap .promo_list.swiper {padding: 0 2rem;}
-    .promo_list .swiper-slide {width: 30rem;}
     .promo_list a {aspect-ratio: auto; overflow: visible; background: none;}
-    .promo_list .img {position: relative; display: block; height: 40.5rem; overflow: hidden; background-color: #d9d9d9;}
+    .promo_list .img {position: relative; display: block; aspect-ratio: 300 / 405; overflow: hidden; background-color: #d9d9d9;}
     .promo_list .txt {position: static; margin-top: 1.6rem; padding: 0; color: var(--c-black) !important;}  /* 모바일은 글자가 사진 아래라 배너관리자 글자색(텍스트 2) 대신 검정 */
     .promo_list strong {font-size: 2rem; line-height: 3.2rem; letter-spacing: .02rem;}
     .promo_list .txt > em {font-size: 1.2rem; line-height: 1.6rem; color: var(--c-grey);}

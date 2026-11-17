@@ -463,7 +463,6 @@ body.searchOn #dimmedSlider {visibility: visible; opacity: 1;}
 .page_about p {font-size:1.3rem; line-height:2.2rem; font-weight:400; margin-bottom:2.4rem; color: var(--grey06);} 
 
 @media all and (max-width:1024px) {
-    #quick {display: none;}
 	.page_about {max-width:100%; }
 	.page_about .txt {margin-top:2.4rem;}
 	.page_about h2 {font-size:1.4rem; line-height:2.0rem; margin-bottom:1.6rem;}
@@ -601,7 +600,7 @@ body.searchOn #dimmedSlider {visibility: visible; opacity: 1;}
     --font-en: "Montserrat", "SUIT", sans-serif;
     --head-h: 8.8rem;
 }
-@media all and (max-width:1024px) {
+@media all and (max-width:1280px) {
     :root {--head-h: 5.6rem;}
 }
 
@@ -634,12 +633,15 @@ body.is_main #container {margin-top: calc(var(--head-h) * -1);}
 #header.h_type01 .h_logo img {max-height: 4rem; width: auto;}
 
 /* 가운데 메뉴 */
-#header.h_type01 .h_gnb {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 3.2rem;}
-#header.h_type01 .h_gnb ul {display: flex; align-items: center; gap: 3.2rem;}
+#header.h_type01 .h_gnb {position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 3.2rem; pointer-events: none;}
+#header.h_type01 .h_gnb > * {pointer-events: auto;}
+#header.h_type01 .h_gnb > ul {display: flex; align-items: center; gap: 3.2rem;}  /* 하위 분류 목록에는 걸리지 않게 > 로 한정 */
+#header.h_type01 .h_gnb .h_category {align-self: stretch; align-items: stretch;}
+#header.h_type01 .h_gnb .h_category > li {display: flex; align-items: center;}
 #header.h_type01 .h_gnb li a {display: block; font-size: 1.6rem; line-height: 2.4rem; font-weight: 500; white-space: nowrap; transition: color .2s;}
 #header.h_type01 .h_gnb .h_add li a {font-family: var(--font-en);}
 #header.h_type01 .h_gnb li a:hover,
-#header.h_type01 .h_gnb li.on > a {color: var(--c-point);}
+#header.h_type01 .h_gnb .h_category > li.selected > a {color: var(--c-point);}
 #header.h_type01 .h_gnb .bar {display: block; width: 1px; height: .8rem; background-color: #ddd;}
 body.is_main #header.h_type01:not(.h_white):not(:hover) .h_gnb .bar {background-color: rgba(255,255,255,.8);}
 
@@ -649,17 +651,19 @@ body.is_main #header.h_type01:not(.h_white):not(:hover) .h_gnb .bar {background-
 #header.h_type01 .h_util li svg {display: block; max-width: none;}
 #header.h_type01 .h_util .menu {display: none;}
 
-/* 메가메뉴 (PC_상단메뉴 : 대분류에 마우스 → 중분류·소분류) */
-#header.h_type01 .h_mega {position: absolute; left: 0; top: 100%; width: 100%; background-color: #fff; border-bottom: 1px solid var(--c-line); display: none;}
-#header.h_type01 .h_mega.open {display: block;}
-#header.h_type01 .h_mega .panel {display: none; justify-content: center; padding: 4rem 4rem 8rem;}
-#header.h_type01 .h_mega .panel.on {display: flex;}
-#header.h_type01 .h_mega .col {width: 18rem; display: flex; flex-direction: column; gap: 1.6rem;}
-#header.h_type01 .h_mega .col > a {font-size: 1.5rem; line-height: 2.4rem; font-weight: 500; color: var(--c-black);}
-#header.h_type01 .h_mega .col ul {display: flex; flex-direction: column; gap: 1.2rem;}
-#header.h_type01 .h_mega .col ul a {display: block; font-size: 1.4rem; line-height: 2rem; color: var(--c-grey2); transition: color .2s;}
-#header.h_type01 .h_mega a:hover {color: var(--c-point);}
-
+/* 하위 분류 (opencate.js : .slideSubMenu.depth2 > ul > li > a + .depth3) */
+#header.h_type01 .h_category .slideSubMenu {position: absolute; left: 0; top: 100%; display: none; width: 100%; padding: 4rem 4rem 8rem; background-color: #fff; border-top: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line);}
+#header.h_type01 .h_category > li.selected > .slideSubMenu {display: block;}
+#header.h_type01 .h_category .slideSubMenu > ul {display: flex; justify-content: center; gap: 0;}
+#header.h_type01 .h_category .slideSubMenu > ul > li {width: 18rem; display: flex; flex-direction: column; gap: 1.6rem;}
+#header.h_type01 .h_category .slideSubMenu > ul > li > a {font-size: 1.5rem; line-height: 2.4rem; font-weight: 500; color: var(--c-black);}
+#header.h_type01 .h_category .slideSubMenu .depth3 ul {display: flex; flex-direction: column; align-items: flex-start; gap: 1.2rem;}
+#header.h_type01 .h_category .slideSubMenu .depth3 a {font-size: 1.4rem; line-height: 2rem; font-weight: 400; color: var(--c-grey2);}
+#header.h_type01 .h_category .slideSubMenu a:hover {color: var(--c-point);}
+#header.h_type01 .h_category .slideSubMenu .open_arr {display: none;}
+#header.h_type01 .h_category .slideSubMenu .depth4 ul {display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; margin-top: .8rem; padding-left: 1.2rem; border-left: 1px solid var(--c-line);}  /* 상세분류 */
+#header.h_type01 .h_category .slideSubMenu .depth4 a {font-size: 1.3rem; line-height: 1.8rem; color: var(--c-grey);}
+#header.h_type01 .h_category .slideSubMenu .depth4 a:hover {color: var(--c-point);}
 
 /* -------------------------------
     상단 : 검색 (오른쪽 사이드 480px)
@@ -698,7 +702,9 @@ body.sideOn {overflow: hidden;}
 body.searchOn .sch_recent {right: 0; visibility: visible;}
 .sch_recent h3 {display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.4rem; font-size: 1.6rem; line-height: 2.4rem; font-weight: 400; color: var(--c-black);}
 .sch_recent h3 a {font-size: 1.3rem; line-height: 2rem; color: var(--c-grey);}
-.sch_recent .swiper {margin: 0;}
+.sch_recent .swiper {margin: 0 -4rem; padding: 0 4rem;}  /* 목록이 좌우 여백에서 잘리지 않고 화면 끝까지 */
+.sch_recent li a {display: flex; flex-direction: column; gap: 1.2rem;}
+.sch_recent li .name {display: block; overflow: hidden; font-size: 1.3rem; line-height: 2rem; color: var(--c-black); white-space: nowrap; text-overflow: ellipsis;}
 .sch_recent li {width: 12rem;}
 .sch_recent li.displaynone {display: none;}
 .sch_recent li img {width: 12rem; height: 12rem; object-fit: cover; background-color: #eeeae4;}
@@ -706,35 +712,53 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 
 
 /* -------------------------------
-    모바일 전체메뉴 (M_전체)
+    사이드 메뉴 (M_전체)
 ------------------------------- */
-#aside_menu {position: fixed; top: 0; left: 0; z-index: 3000; display: flex; flex-direction: column; width: 100%; max-width: 48rem; height: 100%; background-color: #fff; font-family: var(--font-kr); transform: translateX(-100%); visibility: hidden; transition: transform .4s, visibility .4s;}
-body.sideOn #aside_menu {transform: translateX(0); visibility: visible;}
-#aside_menu a {color: inherit;}
-#aside_menu .side_top {position: relative; display: flex; flex-direction: column; gap: 1.6rem; padding: 1.6rem 2rem 2.3rem;}
-#aside_menu .side_top .msg {display: flex; align-items: center; min-height: 2.4rem; padding-right: 4rem; font-size: 1.4rem; line-height: 1.5; color: var(--c-black);}
-#aside_menu .side_top .btns {display: flex; gap: 1.6rem; margin-top: 1.6rem;}
-#aside_menu .side_top .btns a {flex: 1; display: flex; align-items: center; justify-content: center; height: 3.6rem; border: 1px solid var(--c-line); border-radius: .8rem; background-color: #fff; font-size: 1.3rem; line-height: 1.5; color: var(--c-black);}
-#aside_menu .side_top .btns a.fill {border-color: #000; background-color: #000; color: #fff;}
-#aside_menu .side_close {position: absolute; top: 1.6rem; right: 2rem; display: flex; width: 2.4rem; height: 2.4rem; padding: 0; cursor: pointer;}
-#aside_menu .side_cate {flex: 1; display: flex; min-height: 0; border-top: 1px solid var(--c-line);}
-#aside_menu .side_cate .d1,
-#aside_menu .side_cate .d2 {flex: 1 0 0; min-width: 0; overflow-y: auto; scrollbar-width: none;}
-#aside_menu .side_cate .d1 {border-right: 1px solid var(--c-line);}
-#aside_menu .side_cate .d1::-webkit-scrollbar,
-#aside_menu .side_cate .d2::-webkit-scrollbar {display: none;}
-#aside_menu .side_cate .row {display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 1.6rem; font-size: 1.4rem; line-height: 2.4rem; color: var(--c-grey3); text-align: left; cursor: pointer;}
-#aside_menu .side_cate .row.en {font-family: var(--font-en);}
-#aside_menu .side_cate .row i {flex: 0 0 1.6rem; width: 1.6rem; height: 1.6rem; background: url(/morenvyimg/side_arr_off.svg) no-repeat center / contain;}
-#aside_menu .side_cate .on > .row {font-weight: 500; color: var(--c-black);}
-#aside_menu .side_cate .on > .row i {background-image: url(/morenvyimg/side_arr_on.svg);}
-#aside_menu .side_cate .d2 .open > .row {border-bottom: 1px solid var(--c-line);}
-#aside_menu .side_cate .d2 .open > .row i {background-image: url(/morenvyimg/side_arr_on.svg); transform: rotate(90deg);}
-#aside_menu .side_cate .d3 {display: none;}
-#aside_menu .side_cate .open > .d3 {display: block;}
-#aside_menu .side_cate .d3 a {display: block; padding: 1.6rem; border-bottom: 1px solid var(--c-line); background-color: var(--c-bg); font-size: 1.4rem; line-height: 2.4rem; color: var(--c-grey3);}
-#aside_menu .side_cate .d2 > ul {display: none;}
-#aside_menu .side_cate .d2 > ul.on {display: block;}
+#aside {position: fixed; top: 0; left: 0; z-index: 3000; display: flex; flex-direction: column; width: 100%; max-width: 48rem; height: 100%; background-color: #fff; font-family: var(--font-kr); transform: translateX(-100%); visibility: hidden; transition: transform .4s, visibility .4s;}
+body.sideOn #aside {transform: translateX(0); visibility: visible;}
+#aside a {color: inherit;}
+#aside .side_top {position: relative; display: flex; flex-direction: column; gap: 1.6rem; padding: 1.6rem 2rem 2.3rem;}
+#aside .side_info {display: flex; align-items: center; gap: .8rem; min-height: 2.4rem; padding-right: 4rem;}
+#aside .side_top .msg {font-size: 1.4rem; line-height: 1.5; color: var(--c-black);}
+#aside .side_top .btns {display: flex; gap: 1.6rem;}
+#aside .side_top .btns a {flex: 1; display: flex; align-items: center; justify-content: center; height: 3.6rem; border: 1px solid var(--c-line); border-radius: .8rem; background-color: #fff; font-size: 1.3rem; line-height: 1.5; color: var(--c-black);}
+#aside .side_top .btns a.fill {border-color: #000; background-color: #000; color: #fff;}
+#aside .side_close {position: absolute; top: 1.6rem; right: 2rem; display: flex; width: 2.4rem; height: 2.4rem; padding: 0; cursor: pointer;}
+
+/* 다국어 (멀티쇼핑몰) */
+#aside .side_lang {position: relative; flex-shrink: 0;}
+#aside .side_lang .toggle {display: flex; align-items: center; gap: .4rem; height: 2.4rem; padding: 0 1.2rem; border: 1px solid var(--c-line); border-radius: .8rem; background-color: #fff; font-family: var(--font-en); font-size: 1.1rem; line-height: 1; color: var(--c-grey); cursor: pointer;}
+#aside .side_lang .toggle i {display: block; width: .8rem; height: .8rem; background: url(/morenvyimg/side_arr_off.svg) no-repeat center / contain; transform: rotate(90deg); transition: transform .2s;}
+#aside .side_lang.open .toggle i {transform: rotate(-90deg);}
+#aside .side_lang ul {position: absolute; left: 0; top: calc(100% + .4rem); z-index: 2; display: none; min-width: 12rem; padding: .8rem 0; border: 1px solid var(--c-line); border-radius: .8rem; background-color: #fff;}
+#aside .side_lang.open ul {display: block;}
+#aside .side_lang li a {display: block; padding: .6rem 1.2rem; font-size: 1.3rem; line-height: 2rem; color: var(--c-grey3);}
+#aside .side_lang li.selected a {font-weight: 500; color: var(--c-black);}
+
+/* 카테고리 : 왼쪽 대분류 / 오른쪽 중분류(opencate2.js 의 .depth2) */
+#aside .side_cate {position: relative; flex: 1; min-height: 0; border-top: 1px solid var(--c-line);}
+#aside .side_cate .d1 {width: 50%; height: 100%; overflow-y: auto; border-right: 1px solid var(--c-line); scrollbar-width: none;}
+#aside .side_cate .d1::-webkit-scrollbar {display: none;}
+#aside .side_cate a.cate,
+#aside .side_cate .side_add a {display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 1.6rem; font-size: 1.4rem; line-height: 2.4rem; color: var(--c-grey3);}
+#aside .side_cate .side_add a {font-family: var(--font-en);}
+#aside .side_cate span.open {flex: 0 0 1.6rem; width: 1.6rem; height: 1.6rem; background: url(/morenvyimg/side_arr_off.svg) no-repeat center / contain;}
+#aside .side_cate .noChild > a span.open {display: none;}
+#aside .side_cate .d1 > ul > li.on > a.cate {font-weight: 500; color: var(--c-black);}
+#aside .side_cate .d1 > ul > li.on > a span.open {background-image: url(/morenvyimg/side_arr_on.svg);}
+
+#aside .side_cate .depth2 {position: absolute; left: 50%; top: 0; display: none; width: 50%; height: 100%; overflow-y: auto; scrollbar-width: none;}
+#aside .side_cate .depth2::-webkit-scrollbar {display: none;}
+#aside .side_cate li.on > .depth2 {display: block;}
+#aside .side_cate .depth2 > ul > li.active > a.cate {border-bottom: 1px solid var(--c-line); font-weight: 500; color: var(--c-black);}
+#aside .side_cate .depth2 > ul > li.active > a span.open {background-image: url(/morenvyimg/side_arr_on.svg);}  /* 펼쳐도 화살표는 회전하지 않음 */
+#aside .side_cate .depth3 {display: none;}
+#aside .side_cate .depth3 a.cate {border-bottom: 1px solid var(--c-line); background-color: var(--c-bg);}
+#aside .side_cate .depth3 > ul > li.active > a.cate {font-weight: 500; color: var(--c-black);}
+#aside .side_cate .depth3 > ul > li.active > a span.open {background-image: url(/morenvyimg/side_arr_on.svg);}
+#aside .side_cate .depth4 {display: none;}  /* 상세분류 : 소분류를 누르면 펼침 */
+#aside .side_cate .depth4 a.cate {background-color: #f1f1f1; font-size: 1.3rem; color: var(--c-grey2);}
+#aside .side_cate .depth4 a span.open {display: none;}
 
 
 /* -------------------------------
@@ -743,11 +767,11 @@ body.sideOn #aside_menu {transform: translateX(0); visibility: visible;}
 .footer-wrap {padding-top: 0 !important;}
 #footer.f_type01 {border: 0; background-color: var(--c-bg); font-family: var(--font-kr);}
 #footer.f_type01 a {color: inherit;}
-#footer.f_type01 .f_inner {display: flex; align-items: flex-start; justify-content: space-between; max-width: none; padding: 8rem 4rem;}
+#footer.f_type01 .f_inner {display: flex; align-items: flex-start; justify-content: space-between; gap: 4rem; max-width: none; padding: 8rem 4rem;}
 #footer.f_type01 .f_left,
 #footer.f_type01 .f_right {flex: none; max-width: none; order: 0; padding: 0; border: 0;}  /* 위쪽 예전 푸터 규칙(50%·25%·순서) 해제 */
-#footer.f_type01 .f_left {display: flex; flex-direction: column; gap: 2rem;}
-#footer.f_type01 .f_right {display: flex; flex-direction: column; align-items: flex-end; gap: 2rem;}
+#footer.f_type01 .f_left {flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2rem;}
+#footer.f_type01 .f_right {flex: 0 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 2rem;}
 
 /* 구분선이 들어간 가로 목록 */
 #footer.f_type01 .f_line {display: flex; flex-wrap: wrap; align-items: center; gap: 1.2rem;}
@@ -763,8 +787,7 @@ body.sideOn #aside_menu {transform: translateX(0); visibility: visible;}
 #footer.f_type01 .f_biz_btn svg {transform: rotate(-90deg); transition: transform .3s;}
 #footer.f_type01 .f_info_wrap.close .f_biz_btn svg {transform: rotate(90deg);}
 #footer.f_type01 .f_info_wrap {display: flex; flex-direction: column; gap: .8rem;}
-#footer.f_type01 .f_info {display: flex; flex-wrap: nowrap; gap: 0 .8rem;}
-#footer.f_type01 .f_info_wrap.close .f_info {display: none;}
+#footer.f_type01 .f_info {display: flex; flex-wrap: wrap; gap: 0 .8rem;}  /* 좁아지면 항목 단위로 줄바꿈 */
 #footer.f_type01 .f_info p {font-size: 1.2rem; line-height: 1.8rem; color: var(--c-grey); white-space: nowrap;}
 #footer.f_type01 .f_info .com_regno_btn a {margin-left: .4rem; color: var(--c-grey); text-decoration: none;}
 
@@ -773,7 +796,7 @@ body.sideOn #aside_menu {transform: translateX(0); visibility: visible;}
 #footer.f_type01 .f_sns a {display: flex; align-items: center; justify-content: center; width: 2.4rem; height: 2.4rem; border-radius: 50%; color: #ddd;}
 #footer.f_type01 .f_sns a.insta {background-color: #ddd;}
 #footer.f_type01 .f_sns svg {display: block;}
-#footer.f_type01 .copy {font-size: 1.2rem; line-height: 2rem; color: var(--c-grey); text-transform: uppercase;}
+#footer.f_type01 .copy {font-size: 1.2rem; line-height: 2rem; color: var(--c-grey); text-transform: uppercase; text-align: right;}
 #footer.f_type01 .copy br {display: none;}
 #footer.f_type01 .f_terms_m {display: none;}
 
@@ -787,6 +810,26 @@ body.sideOn #aside_menu {transform: translateX(0); visibility: visible;}
 #quick a:hover {background-color: #000;}
 #quick svg {display: block; width: 2.4rem; height: 2.4rem;}
 .f_nav {display: none;}
+@media all and (max-width:1024px) {
+    #quick {right: .8rem; bottom: 8rem;}
+    #quick a {width: 4rem; height: 4rem;}
+}
+
+
+/* -------------------------------
+    반응형 : 1280px (헤더만 — 가운데 메뉴가 로고·아이콘과 겹치기 전에 모바일 헤더로)
+------------------------------- */
+@media all and (max-width:1280px) {
+    /* 헤더 */
+    #header.h_type01 .h_inner {padding: 0 2rem;}
+    #header.h_type01 .h_logo a {font-size: 2rem; line-height: 2.4rem;}
+    #header.h_type01 .h_logo img {max-height: 2.4rem;}
+    #header.h_type01 .h_gnb,
+    #header.h_type01 .h_util {gap: 1.2rem;}
+    #header.h_type01 .h_gnb {display: none;}
+    #header.h_type01 .h_util .user {display: none;}
+    #header.h_type01 .h_util .menu {display: block; order: -1;}
+}
 
 
 /* -------------------------------
@@ -794,21 +837,13 @@ body.sideOn #aside_menu {transform: translateX(0); visibility: visible;}
 ------------------------------- */
 @media all and (max-width:1024px) {
 
-    /* 헤더 */
-    #header.h_type01 .h_inner {padding: 0 2rem;}
-    #header.h_type01 .h_logo a {font-size: 2rem; line-height: 2.4rem;}
-    #header.h_type01 .h_logo img {max-height: 2.4rem;}
-    #header.h_type01 .h_gnb,
-    #header.h_type01 .h_mega {display: none !important;}
-    #header.h_type01 .h_util {gap: 1.2rem;}
-    #header.h_type01 .h_util .user {display: none;}
-    #header.h_type01 .h_util .menu {display: block; order: -1;}
-
     /* 검색 */
     #searchBarForm {width: 100%; right: -100%;}
+    #searchBarForm.active {max-width: 100%;}  /* 위쪽 예전 규칙(100% - 3.2rem) 해제 : 사이드 메뉴처럼 화면 꽉 차게 */
     .search_box.type01 .sch_head {height: 5.6rem; padding: 0 2rem;}
     .search_box.type01 .sch_body {gap: 3.2rem; padding: 2.4rem 2rem 22rem;}
     .sch_recent {width: 100%; right: -100%; padding: 0 2rem 2.4rem;}
+    .sch_recent .swiper {margin: 0 -2rem; padding: 0 2rem;}
     .sch_recent li {width: 9.6rem;}
     .sch_recent li img {width: 9.6rem; height: 9.6rem;}
 
@@ -831,7 +866,7 @@ body.sideOn #aside_menu {transform: translateX(0); visibility: visible;}
     #footer.f_type01 .f_info p {white-space: normal;}
     #footer.f_type01 .f_right {align-items: flex-start; gap: 2.4rem;}
     #footer.f_type01 .f_sns {gap: .8rem;}
-    #footer.f_type01 .copy {margin-top: -.8rem;}
+    #footer.f_type01 .copy {margin-top: -.8rem; text-align: left;}
     #footer.f_type01 .copy br {display: block;}
     #footer.f_type01 .f_terms_m {display: flex;}
     #footer.f_type01 .f_terms_m li a {font-size: 1.2rem; line-height: 2rem; color: var(--c-black);}
