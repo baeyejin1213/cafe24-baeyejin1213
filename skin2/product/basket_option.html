@@ -5,7 +5,7 @@
 
     <div class="header">
         <h2>옵션 선택</h2>
-        <a class="btnClose close" onclick='#'><!--@import(/morenvyimg/blk_close.svg)-->닫기</a>
+        <a class="btnClose close" onclick='#'><!--@import(/morenvyimg/list_close24.svg)-->닫기</a>
     </div>
 
     <div class="content">
@@ -331,14 +331,14 @@
             </div>
             <div id="{$total.total_price_id}" class="totalPrice">
                 <p class="ec-base-help txtWarn txt11 {$exclusive_purchase_olny|display}"> 단독구매상품</p>
-                <strong class="title">총 상품금액 <span class="qty">(수량)</span></strong><span class="{$total.total_cnt}"><strong><em>0원</em></strong> (0개)</span>
+                <strong class="title">TOTAL <span class="qty">(QUANTITY)</span></strong><span class="{$total.total_cnt}"><strong><em>0원</em></strong> (0개)</span>
             </div>
         </div>
     </div>
     <div class="ec-base-button gColumn" module="product_action">
-        <a href="#none" class="btnNormal sizeM {$basket_display|display}" onclick="{$action_basket}">ADD TO CART</a>
+        <a href="#none" class="btnNormal sizeM {$basket_display|display}" onclick="{$action_basket}">장바구니</a>
         <a href="#none" class="btnSubmit sizeM {$buy_display|display}" onclick="{$action_buy}">
-            <span id="{$btn_buy_id}">BUY IT NOW</span>
+            <span id="{$btn_buy_id}">구매하기</span>
             <span id="{$btn_reserve_id}" class="{$btn_reserve_class|display}">예약주문하기</span>
 			<span id="{$btn_regular_delivery_id}" class="{$btn_regular_delivery|display}">정기배송 신청하기</span>
         </a>

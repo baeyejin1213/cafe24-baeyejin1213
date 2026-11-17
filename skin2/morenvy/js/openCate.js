@@ -117,8 +117,8 @@ $(document).ready(function(){
                 var iCateNo = Number(methods.getParam($(this).attr('cate'), 'cate_no'));
                 var result = methods.aSubCategory[iCateNo];
                 if (result == undefined) {
-                    var sHref = '/product/list.html'+$(this).attr('cate'); // 중분류 없는 대분류
-                    $(this).attr('href', sHref);
+                    // 중분류 없는 대분류 : 주소는 모듈이 준 {$link_product_list} 그대로 둠
+                    // (예전엔 /product/list.html 로 덮어써서 화면 경로 설정·분류 디자인 페이지가 링크에 반영되지 않았음)
                     $(this).parent().attr('class', 'noChild');
                 }
             });

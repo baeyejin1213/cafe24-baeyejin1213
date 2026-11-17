@@ -375,71 +375,7 @@ body.searchOn #dimmedSlider {visibility: visible; opacity: 1;}
 
 
 
-/* -------------------------------
-    상품 : 목록
-------------------------------- */
-
-/* 목록 : 상단 */
-.list_title .title_top {margin: 4rem 0 4rem;}
-.list_title .title_wrap {position: relative;}
-.xans-layout-mobileaction {top: 50%; transform: translateY(-50%); left: 1.6rem; display: none;}
-.xans-layout-mobileaction img {transform: rotate(90deg);}
-
-.list_title h2 {font-size: 1.6rem; line-height: 2.4rem; font-weight: 400; color: var(--black01); text-align: center;}
-.prd_count {display: flex; align-items: center; justify-content: center;  color: var(--black01) ;font-size:1.2rem;}
-
-.list_ban {margin: 4rem auto 0;}
-.list_ban .product_top_image {width: 100%; overflow: hidden; display: flex;}
-.list_ban .product_top_image img {width: 100%; object-fit: cover; }
-
-
-
-
-.swiper_title_tab.default {margin-top: -1.6rem; margin-bottom:4rem;}
-.swiper_title_tab ul {display: flex; justify-content: center; gap:0.4rem;}
-.swiper_title_tab ul li {width:auto; }
-.swiper_title_tab ul li a {display: flex; align-items: center; gap: 0.4rem; padding: 0.6rem 1.6rem; border: solid 1px var(--grey03); background-color: var(--white); font-size: 1.2rem; line-height: 1.6rem; font-weight: 400; color: var(--grey16);}
-.swiper_title_tab ul li a .count {font-size: 1.0rem; line-height:1;}
-.swiper_title_tab ul li.selected a{background-color: var(--white); color: var(--black01); border-color: var(--black01);}
-
-.noData svg{display: none;}
-.noData,
-.js-empty-product-message{background-color: transparent; text-align: center; padding: 12rem 0; font-size: 1.4rem; line-height: 1.43; color: var(--grey04); border-bottom: 0.1rem solid var(--grey21);}
-
-
-/* 목록 : 추천 상품, 신상품 */
-:is(.xans-product-listrecommend, .xans-product-listnew) .title_box {border-top: 0.1rem solid var(--grey03); position:relative; padding: 2.4rem 4rem; display: flex; align-items: center; justify-content: space-between;}
-:is(.xans-product-listrecommend, .xans-product-listnew) .title_box h2{font-size: 1.6rem; line-height: 2.4rem; font-weight: normal; color: var(--black01); padding:0;}
-:is(.xans-product-listrecommend, .xans-product-listnew) .title_box .swiper_btn_wrap {position: relative; top:0; left:0; transform: none; width:auto; display: flex; gap:0.1rem;}
-:is(.xans-product-listrecommend, .xans-product-listnew) .title_box .swiper_btn_wrap .swiper-button {width:4rem; height: 2.4rem; background: transparent; backdrop-filter:initial;-webkit-backdrop-filter:initial; opacity: 1;}
-:is(.xans-product-listrecommend, .xans-product-listnew) .title_box .swiper_btn_wrap .swiper-button-next.swiper-button-disabled,
-:is(.xans-product-listrecommend, .xans-product-listnew) .title_box .swiper_btn_wrap .swiper-button-prev.swiper-button-disabled{opacity: 1;}
-:is(.xans-product-listrecommend, .xans-product-listnew) .inner {position: relative;}
-:is(.xans-product-listrecommend,.xans-product-listnew) + .list_prd .xans-product-normalmenu {margin-top:2.4rem;}
-
-:is(.xans-product-listrecommend, .xans-product-listnew) .prdList {flex-wrap:nowrap; border-top:0;}
-:is(.xans-product-listrecommend, .xans-product-listnew) .prdList > li {display: flex; height: auto;}
-.xans-product-listrecommend + .xans-product-listnew {margin-top:-0.1rem;}
-.xans-product-listnew + .xans-product-listrecommend {margin-top:-0.1rem;}
-
-
-
-
-/* 목록 : 상품 진열 */
-.list_prd .xans-product-normalmenu {border: none; padding: 0; margin-top: 4rem;}
-.list_ban + .list_prd .xans-product-normalmenu {margin-top: 2.4rem;}
-.list_prd .xans-product-normalmenu .function {display: flex; align-items: center; justify-content: space-between; padding:0 4rem; height: 2.0rem;}
-.list_prd .xans-product-normalmenu .function .prdCount {display: flex; gap: .4rem; align-items: center; color: var(--grey20); font-size: 1.2rem; line-height: 2.0rem;}
-#wrap .xans-product-normalmenu .function select {font-size: 1.2rem; font-weight: normal; line-height: 2.0rem; height: 2.0rem; background: url(/morenvyimg/icon/select_icon.svg) no-repeat right center / 2rem 2rem; border: none; padding: 0rem 2.4rem 0rem 0; }
-
-.list_prd .xans-product-listnormal {margin-top: 2.4rem;}
-.list_prd .xans-product-listmore {margin: 3.2rem 0; display: flex; justify-content: center;}
-.list_prd .xans-product-listmore a {display:inline-block; border: none; font-size: 1.4rem; ont-weight: normal; line-height: 2.0rem; text-align: center;color:var(--black01);}
-.list_prd .xans-product-listmore .txt {display:flex; align-items: center; justify-content: center; gap: 0.4rem; } 
-.list_prd .xans-product-listmore .txt img{display: block;}
-/* -------------------------------
-    상품 : 목록 종료
-------------------------------- */
+/* 상품 : 목록 → 파일 아래 "상품 : 목록 (분류·랭킹)"으로 옮겨 새로 씀 */
 
 
 
@@ -516,41 +452,6 @@ body.searchOn #dimmedSlider {visibility: visible; opacity: 1;}
     #footer .f_logo_text {margin-bottom: 2.4rem; font-size:1.5rem; line-height:2.0rem;}
     #footer .terms ul {flex-wrap: wrap; gap: 1.2rem; margin-bottom: 1.6rem;}
 
-	/*상품 : 목록*/
-	.xans-layout-mobileaction {display: block;}
-    .list_title .title_top {margin: 2.4rem 0; padding:0 1.6rem;}
-    .list_title h2 {font-size: 1.5rem; line-height:2.0rem; }
-
-    .list_prd .xans-product-listmore {margin:2.0rem 0;}
-    .list_prd .xans-product-listmore .txt {flex-direction: row; align-items: center; gap: 0.4rem;}
-    .list_prd .xans-product-listmore a {font-size:1.2rem; line-height: 1.6rem;}
-
-    .ec-base-product .prdList_normal > li{width:calc((100% / 3) - 0rem)}
-    .xans-product-listrecommend.ec-base-product{margin:0rem 0 0;}
-	:is(.xans-product-listrecommend,.xans-product-listnew) {margin-top:0rem;}
-    :is(.xans-product-listrecommend,.xans-product-listnew) .title_box {padding: 1.6rem 1.6rem;}
-    :is(.xans-product-listrecommend,.xans-product-listnew) .title_box h2 {font-size: 1.4rem; line-height: 2.0rem;}
-    :is(.xans-product-listrecommend,.xans-product-listnew) .title_box .swiper_btn_wrap .swiper-button{width:3.2rem;height: 2.4rem;}
-
-    .ec-base-product:is(.xans-product-listrecommend,.xans-product-listnew) {overflow: hidden;}
-    :is(.xans-product-listrecommend,.xans-product-listnew) .inner{overflow: hidden;}
-	:is(.xans-product-listrecommend,.xans-product-listnew) + .list_prd .xans-product-normalmenu {margin-top:2.4rem;}
-	
-
-    /* 스와이퍼 */
-    .swiper {overflow: hidden;}
-    .swiper_title_tab {padding:0 1.6rem;}
-	.swiper_title_tab.default {margin-top: 0rem; margin-bottom:2.4rem;}
-    .swiper_title_tab ul {justify-content: flex-start; gap:0;}
-    .swiper_title_tab ul li a { padding: 0.8rem 1.2rem;}
-
-	.list_prd .xans-product-normalmenu .function {padding: 0 1.6rem;}
-    .list_ban + .list_prd .xans-product-normalmenu {margin-top: 2.4rem;}
-	.list_ban {margin: 2.4rem auto 0;}
-
-    .noData,
-    .js-empty-product-message{padding: 8rem 0 10rem;font-size: 1.4rem;line-height: 2rem;}
-
 	/* 상품 : 공통 */
 	.ec-base-product .prdList > li .description {padding: 1.6rem;}
 	.ec-base-product .prdList > li .description .name {text-align: left;}
@@ -579,10 +480,7 @@ body.searchOn #dimmedSlider {visibility: visible; opacity: 1;}
 
 
 
-@media all and (max-width:768px) {
-    /* 상품 : 공통 */
-    .ec-base-product .prdList_normal > li {width: calc(50% - 0rem);}
-}
+
 
 
 /* -------------------------------------------------------------------
@@ -881,4 +779,224 @@ body.sideOn #aside {transform: translateX(0); visibility: visible;}
     .f_nav .lines {display: flex; flex-direction: column; gap: .6rem; width: 1.8rem;}
     .f_nav .lines i {display: block; height: 1px; background-color: var(--c-black);}
     .f_nav svg {display: block; max-width: none;}
+}
+
+
+/* -------------------------------------------------------------------
+    공통 : 상품 카드 (메인 product/product_list2.html · 목록 product/product_list.html)
+    메인 main.css 에 있던 것을 목록에서도 쓰려고 옮김
+------------------------------------------------------------------- */
+.prd_box .thumb {position: relative; aspect-ratio: 1 / 1; overflow: hidden; background-color: var(--c-bg);}
+.prd_box .thumb .img {display: block; width: 100%; height: 100%;}
+.prd_box .thumb .img > img {width: 100%; height: 100%; object-fit: cover;}
+.prd_box .thumb .prdIcon {position: absolute; inset: 1.6rem; background-repeat: no-repeat; background-size: 5.8rem auto; pointer-events: none;}
+.prd_box .thumb .wish {position: absolute; top: 1.6rem; right: 1.6rem; z-index: 2; width: 2.4rem; height: 2.4rem; background: url(/morenvyimg/heart.svg) no-repeat center / contain;}
+.prd_box .thumb .wish:has(img[icon_status="on"]) {background-image: url(/morenvyimg/heart_on.svg);}
+.prd_box .thumb .wish img {width: 100%; height: 100%; opacity: 0; cursor: pointer;}
+.prd_box .thumb .soldout {position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; background-color: rgba(255,255,255,.6); font-family: var(--font-en); font-size: 1.4rem; font-weight: 600; letter-spacing: .1em; pointer-events: none;}
+.prd_box .thumb .soldout.displaynone {display: none;}
+
+.prd_box .info {display: flex; flex-direction: column; gap: .6rem; margin-top: 1.6rem;}
+.prd_box .info .icon {display: flex; align-items: center; gap: 0; margin: 0;}
+.prd_box .info .icon:not(:has(img)) {display: none;}
+.prd_box .info .icon img {height: 1.6rem; width: auto;}
+.prd_box .info .name a,
+.prd_box .info .name a span {display: block; overflow: hidden; font-family: var(--font-kr) !important; font-size: 1.4rem !important; line-height: 2rem; font-weight: 400 !important; color: var(--c-black) !important; white-space: nowrap; text-overflow: ellipsis;}
+.prd_box .info .spec {display: flex; flex-wrap: wrap; align-items: center; gap: .6rem .8rem; margin: 0;}
+.prd_box .info .spec li {margin: 0; line-height: 2rem;}
+.prd_box .info .spec li[rel="판매가"],
+.prd_box .info .spec li[rel="할인판매가"] {display: flex; align-items: center;}  /* 글꼴이 섞여 줄 높이가 25px로 늘어나 할인율과 어긋나던 것 */
+.prd_box .info .spec li .title {display: none;}
+.prd_box .info .spec li[rel="상품요약정보"],
+.prd_box .info .spec li[rel="상품 요약설명"],
+.prd_box .info .spec li[rel="상품간략설명"] {order: -1; width: 100%; overflow: hidden;}
+.prd_box .info .spec li[rel="상품요약정보"] span,
+.prd_box .info .spec li[rel="상품 요약설명"] span,
+.prd_box .info .spec li[rel="상품간략설명"] span {display: block; overflow: hidden; font-family: var(--font-kr) !important; font-size: 1.3rem !important; line-height: 2rem; font-weight: 400 !important; color: var(--c-grey) !important; white-space: nowrap; text-overflow: ellipsis;}
+.prd_box .info .spec .sale_box {font-family: var(--font-en); font-size: 1.4rem; line-height: 2rem; font-weight: 600; color: var(--c-point);}
+.prd_box .info .spec .sale_box:empty {display: none !important;}
+.prd_box .info .spec li[rel="판매가"] span,
+.prd_box .info .spec li[rel="할인판매가"] span {font-family: var(--font-en) !important; font-size: 1.4rem !important; line-height: 2rem; font-weight: 600 !important; color: var(--c-black) !important;}
+.prd_box .info .spec li[rel="판매가"] #span_product_tax_type_text {display: none;}
+.prd_box .info .spec li[rel="소비자가"],
+.prd_box .info .spec li[rel="브랜드"],
+.prd_box .info .spec li[rel="할인 기간"],
+.prd_box .info .spec li.through {display: none !important;}
+@media all and (max-width:1024px) {
+    .prd_box .thumb .prdIcon {inset: .8rem; background-size: 4rem auto;}
+    .prd_box .thumb .wish {top: 1.2rem; right: 1.2rem; width: 2rem; height: 2rem;}
+    .prd_box .info .name a,
+    .prd_box .info .name a span {font-size: 1.3rem !important; line-height: 1.8rem;}
+    .prd_box .info .spec li {line-height: 1.8rem;}
+    .prd_box .info .spec li[rel="상품요약정보"] span,
+    .prd_box .info .spec li[rel="상품 요약설명"] span,
+    .prd_box .info .spec li[rel="상품간략설명"] span {display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; font-size: 1.2rem !important; line-height: 1.6rem;}
+    .prd_box .info .spec .sale_box,
+    .prd_box .info .spec li[rel="판매가"] span,
+    .prd_box .info .spec li[rel="할인판매가"] span {font-size: 1.3rem !important; line-height: 1.8rem;}
+}
+
+/* 목록 카드에만 있는 것 : 추가 이미지 호버 · CART 버튼 · 순위 번호 */
+.prd_box .thumb .img_hover {position: absolute; inset: 0; opacity: 0; transition: opacity .3s;}
+.prd_box .thumb:hover .img_hover {opacity: 1;}
+.prd_box .thumb .prdIcon {transition: opacity .3s;}
+.prd_box .thumb .rank {display: none;}
+.prd_box .thumb > .cart {position: absolute; right: 0; bottom: 0; z-index: 3; display: flex; width: auto; height: auto; align-items: center; gap: 1.2rem; padding: .8rem 1.2rem; background-color: #000; font-family: var(--font-en); font-size: 1.2rem; line-height: 1.4rem; font-weight: 600; color: #fff; opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s;}
+.prd_box .thumb > .cart.displaynone {display: none;}
+.prd_box .thumb > .cart svg {display: block; width: 1.2rem; height: 1.2rem; max-width: none;}
+.prd_box .thumb > .cart > img {position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;}
+.prd_box .thumb:hover > .cart {opacity: 1; visibility: visible;}
+.prd_box .thumb:has(> .cart:not(.displaynone)):hover .prdIcon {opacity: 0;}  /* 빠른배송 배지와 자리가 겹쳐 호버 땐 배지를 숨김 */
+
+@media all and (max-width:1024px) {
+    /* 모바일은 시안대로 CART 버튼을 숨김(호버가 없음) */
+    .prd_box .thumb > .cart {display: none;}
+    .prd_box .thumb:has(> .cart:not(.displaynone)):hover .prdIcon {opacity: 1;}
+}
+
+
+/* -------------------------------------------------------------------
+    상품 : 목록 (분류·랭킹) product/list.html · product/list_ranking.html
+------------------------------------------------------------------- */
+#container #contents:has(.list_wrap) {max-width: none !important; padding: 0 !important;}
+.list_wrap {padding-bottom: 16rem; font-family: var(--font-kr); color: var(--c-black);}
+.list_wrap h2,
+.list_wrap p {margin: 0;}
+
+/* 목록 01 : 타이틀 */
+.list_title {padding: 8rem 4rem 0;}
+.list_title .title_wrap {position: relative;}
+.list_title h2 {font-family: var(--font-kr); font-size: 2.4rem; line-height: 3.2rem; font-weight: 600; color: var(--c-black); text-align: center;}
+.list_title .xans-layout-mobileaction {display: none; position: absolute; left: 0; top: 50%; transform: translateY(-50%);}
+.list_title .xans-layout-mobileaction a {display: block; width: 2.8rem; height: 2.8rem;}
+.list_title .xans-layout-mobileaction svg {display: block;}
+.list_title .xans-layout-mobileaction span {display: none;}
+
+/* 목록 02 : 하위 분류 탭 */
+.list_wrap .swiper_title_tab {display: none; margin: 4rem 0 0; padding: 0 4rem;}
+.list_wrap .swiper_title_tab.default {display: block;}
+.list_wrap .swiper_title_tab ul {display: flex; justify-content: center; gap: 2.4rem;}
+.list_wrap .swiper_title_tab ul li {width: auto; flex-shrink: 0;}
+.list_wrap .swiper_title_tab ul li a {display: block; padding: 0; border: 0; background: none; font-size: 1.6rem; line-height: 2.4rem; font-weight: 400; color: var(--c-grey); white-space: nowrap; transition: color .3s;}
+.list_wrap .swiper_title_tab ul li.selected a,
+.list_wrap .swiper_title_tab ul li a:hover {color: var(--c-black);}
+
+/* 목록 03 : 상단 이미지 */
+.list_ban {margin: 4rem 4rem 0;}
+.list_ban .product_top_image img {display: block; width: 100%; height: auto;}
+.list_ban .product_top_image img:nth-of-type(n+2) {display: none;}  /* 상단 이미지 1 = PC, 2 = 모바일(등록했을 때만), 3은 안 씀 */
+
+/* 목록 04·05 : 추천상품 · 신상품 슬라이드 */
+.list_wrap .list_slide.ec-base-product {margin: 4rem 0 0; overflow: visible;}  /* 카페24 기본 .xans-product-listrecommend 좌우 margin 풀기 */
+.list_wrap .list_slide + .list_slide {margin-top: 8rem;}
+.list_slide .l_title {margin-bottom: 2.4rem; padding: 0 4rem;}
+.list_wrap .list_slide .l_title h2 {margin: 0; padding: 0; font-family: var(--font-en); font-size: 2.4rem; line-height: 3.2rem; font-weight: 700; letter-spacing: .024rem; text-transform: capitalize; color: var(--c-black);}
+.list_recmd .l_title {display: none;}  /* PC 시안은 타이틀 없이 순위 배지만 */
+.list_wrap .list_slide .swiper {padding: 0 4rem; overflow: hidden;}
+.list_wrap .ec-base-product .prdList {border: 0; background: none;}
+.list_wrap .ec-base-product .prdList > li {width: auto; height: auto; margin: 0; border: 0;}
+.list_wrap .list_slide .prdList {display: flex; flex-wrap: nowrap; margin: 0; padding: 0;}
+.list_wrap .list_slide .prdList > li {flex-shrink: 0;}  /* 폭은 product_list.js 의 slidesPerView 가 정함 */
+
+/* 추천상품 순위 배지 01~ (1~3위 포인트색, 4위부터 검정) */
+.list_recmd .prdList {counter-reset: rank;}
+.list_recmd .prdList > li {counter-increment: rank;}
+.list_recmd .prd_box .thumb .rank {position: absolute; left: 0; top: 0; z-index: 2; display: flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; background-color: var(--c-point); font-family: var(--font-en); font-size: 1.6rem; line-height: 1.6rem; font-weight: 600; color: #fff;}
+.list_recmd .prd_box .thumb .rank::before {content: counter(rank, decimal-leading-zero);}
+.list_recmd .prdList > li:nth-child(n+4) .rank {background-color: #000;}
+
+/* 목록 06 : 상품 목록 */
+.list_prd {margin-top: 4rem;}
+.list_wrap:has(.list_slide .prdList > li) .list_prd {margin-top: 16rem;}
+.list_wrap .xans-product-normalmenu {margin: 0; padding: 0 4rem; border: 0;}
+.list_wrap .xans-product-normalmenu .function {display: flex; padding: 0; align-items: center; justify-content: space-between; height: 2rem; overflow: visible; line-height: 2rem; text-align: left;}
+.list_wrap .xans-product-normalmenu .prdCount {float: none; font-size: 1.3rem; line-height: 2rem; color: var(--c-black);}
+.list_wrap .xans-product-normalmenu .prdCount strong {margin: 0; font-weight: 400;}
+.list_wrap .xans-product-normalmenu .prdCount .mo_only {display: none;}
+#wrap .list_wrap .xans-product-normalmenu .sort select {width: auto; min-width: 8rem; height: 2rem; padding: 0 2.4rem 0 0; border: 0; border-radius: 0; background: url(/morenvyimg/list_arr_d.svg) no-repeat right center / 1.6rem; font-family: var(--font-kr); font-size: 1.3rem; line-height: 2rem; color: var(--c-black); -webkit-appearance: none; appearance: none; cursor: pointer;}
+.list_wrap .xans-product-listnormal {margin-top: 2.4rem; padding: 0 4rem;}
+.list_wrap .list_prd .prdList_normal {display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6.4rem 2rem; margin: 0; padding: 0;}
+
+/* 목록 07 : 페이지 번호 */
+.list_paging {display: flex; align-items: center; justify-content: center; margin: 0; padding-top: 10.4rem;}
+.list_paging > a {display: flex; align-items: center; justify-content: center; width: 3.2rem; height: 3.2rem; color: var(--c-line); transition: color .3s;}
+.list_paging > a:hover {color: var(--c-black);}
+.list_paging > a svg {display: block; width: 100%; height: 100%;}
+.list_paging > a span {position: absolute; overflow: hidden; width: 1px; height: 1px; clip: rect(0 0 0 0);}
+.list_paging .first,
+.list_paging .prev {transform: rotate(180deg);}
+.list_paging ol {display: flex; align-items: center; gap: .8rem; margin: 0 1.6rem;}
+.list_paging ol li {margin: 0;}
+.list_paging ol li a {display: flex; align-items: center; justify-content: center; width: 3.2rem; height: 3.2rem; border-radius: .8rem; font-family: var(--font-en); font-size: 1.3rem; line-height: 2.2rem; letter-spacing: -.026rem; color: var(--c-grey2);}
+.list_paging ol li a.this {background-color: #f9f9f9; color: var(--c-black);}
+
+/* 상품이 없을 때 */
+.list_wrap .js-empty-product-message {padding: 12rem 0; font-size: 1.4rem; line-height: 2rem; color: var(--c-grey); text-align: center;}
+
+/* 랭킹 : 외곽선 순위 숫자 */
+.list_ranking .list_title h2 {font-family: var(--font-en); font-size: 3.6rem; line-height: 4.8rem; font-weight: 700; letter-spacing: .036rem;}
+.list_ranking .list_prd {margin-top: 12rem;}
+.list_ranking .list_prd .prdList_normal {row-gap: 8rem;}
+.prdList_rank {counter-reset: rank;}
+.prdList_rank > li {counter-increment: rank;}
+.prdList_rank .prd_box .thumb {overflow: visible;}
+.prdList_rank .prd_box .thumb .rank {position: absolute; left: 0; top: -5rem; z-index: 2; display: flex; align-items: center; justify-content: center; width: 10rem; height: 10rem; font-family: var(--font-en); font-size: 8rem; line-height: 8rem; font-weight: 700; letter-spacing: .08rem; color: transparent; pointer-events: none;}
+/* 외곽선만 그리면 가변 글꼴의 겹친 획(4·1 안쪽 선)이 보여서, 아래(::before)는 2px 외곽선, 위(::after)는 바탕색(위 흰색·아래 썸네일 회색)으로 채운 같은 숫자를 덮어 바깥 1px 선만 남김 */
+.prdList_rank .prd_box .thumb .rank::before {content: counter(rank); -webkit-text-stroke: 2px var(--c-black);}
+.prdList_rank .prd_box .thumb .rank::after {content: counter(rank); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(to bottom, #fff 50%, var(--c-bg) 50%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-stroke: 0;}
+
+@media all and (max-width:1439px) {
+    .list_wrap .list_prd .prdList_normal {grid-template-columns: repeat(4, minmax(0, 1fr));}
+}
+
+@media all and (max-width:1024px) {
+    .list_wrap {padding-bottom: 4rem;}
+
+    .list_title {padding: 3.2rem 2rem 0;}
+    .list_title h2 {font-size: 2.4rem; line-height: 2.8rem; font-weight: 700; letter-spacing: .024rem;}
+    .list_title .xans-layout-mobileaction {display: block;}
+
+    .list_wrap .swiper_title_tab {margin: 2.4rem 0 0; padding: 0 2rem;}
+    .list_wrap .swiper_title_tab ul {justify-content: flex-start; gap: 0;}
+    .list_wrap .swiper_title_tab ul li a {font-size: 1.4rem; line-height: 2rem;}
+
+    .list_ban {margin: 3.2rem 2rem 0;}
+    .list_ban .product_top_image:has(img:nth-of-type(2)) img:nth-of-type(1) {display: none;}
+    .list_ban .product_top_image img:nth-of-type(2) {display: block;}
+
+    .list_slide .l_title {padding: 0 2rem;}
+    .list_wrap .list_slide .l_title h2 {line-height: 2.8rem;}
+    .list_recmd .l_title {display: block;}
+    .list_wrap .list_slide + .list_slide {margin-top: 5.6rem;}
+    .list_wrap .list_slide .swiper {padding: 0 2rem;}
+    .list_recmd .prd_box .thumb .rank {display: none;}  /* 모바일 Best Item 은 배지 없음 */
+
+    .list_wrap:has(.list_slide .prdList > li) .list_prd {margin-top: 5.6rem;}
+    .list_wrap .xans-product-normalmenu {padding: 0 2rem;}
+    .list_wrap .xans-product-normalmenu .prdCount {font-size: 1.2rem; color: #8a8a8a;}
+    .list_wrap .xans-product-normalmenu .prdCount strong {font-family: var(--font-en); font-weight: 600; color: var(--c-black);}
+    .list_wrap .xans-product-normalmenu .prdCount .pc_only {display: none;}
+    .list_wrap .xans-product-normalmenu .prdCount .mo_only {display: inline;}
+    #wrap .list_wrap .xans-product-normalmenu .sort select {min-width: 0; padding-right: 2rem; font-size: 1.2rem;}
+    .list_wrap .xans-product-listnormal {padding: 0 2rem;}
+    .list_wrap .list_prd .prdList_normal {grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3.2rem .8rem;}
+
+    .list_paging {padding-top: 4rem;}
+    .list_paging > a {width: 2.8rem; height: 2.8rem;}
+    .list_paging ol li a {width: 2.8rem; height: 2.8rem; font-size: 1.2rem; letter-spacing: -.024rem;}
+
+    .list_ranking .list_title h2 {font-size: 2.4rem; line-height: 2.8rem; letter-spacing: .024rem;}
+    .list_ranking .list_prd {margin-top: 4rem;}
+    .list_ranking .list_prd .prdList_normal {row-gap: 6.4rem;}
+    .prdList_rank .prd_box .thumb .rank {top: -2.4rem; width: 4.8rem; height: 4.8rem; font-size: 3.2rem; line-height: 3.2rem; letter-spacing: .032rem;}
+}
+
+@media all and (max-width:600px) {
+    .list_wrap .list_prd .prdList_normal {grid-template-columns: repeat(2, minmax(0, 1fr));}
+}
+
+/* 옵션 선택 레이어(목록 CART) 바깥 틀 : 시안 PC 480px · 딤 rgba(0,0,0,.7) */
+#capp-shop-new-product-optionselect-layer:after {background: rgba(0,0,0,.7);}
+@media all and (min-width:1025px) {
+    #capp-shop-new-product-optionselect-layer {width: 48rem !important;}
 }

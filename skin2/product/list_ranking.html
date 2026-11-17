@@ -1,0 +1,43 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@js(/morenvy/js/product_list.js)-->
+<!--@js(/morenvy/js/product_hover.js)-->
+
+<!--
+    랭킹 분류 페이지
+    상품 > 분류 관리 > RANKING 분류 > 분류 디자인 페이지를 /product/list_ranking.html 로 바꾸면 이 화면이 나온다.
+    순위는 분류에 진열된 순서 그대로(분류 관리 > 상품 진열 순서) 1위부터 숫자가 찍힌다.
+-->
+<div class="list_wrap list_ranking">
+
+    <!-- 랭킹 01 : 타이틀 -->
+    <div class="list_title" module="product_headcategory">
+        <div class="title_wrap">
+            <div module="Layout_MobileAction">
+                <a href="#none" onclick="{$go_back}"><!--@import(/morenvyimg/list_back.svg)--><span>뒤로가기</span></a>
+            </div>
+            <h2>Ranking</h2>
+        </div>
+    </div>
+
+    <!-- 랭킹 02 : 상품 목록 -->
+    <div class="list_prd">
+        <div module="product_normalpackage">
+            <!--@css(/css/module/product/listnormal.css)-->
+            <div module="product_listnormal" class="ec-base-product">
+                <!--
+                    $count = 20
+                    $cache = no
+                    ※ 순위로 보여줄 상품 수입니다.
+
+                    $basket_result = /product/add_basket.html
+                    $basket_option = /product/basket_option.html
+                -->
+                <ul class="prdList prdList_normal prdList_rank">
+                    <!--@import(/product/product_list.html)-->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- //list_wrap -->

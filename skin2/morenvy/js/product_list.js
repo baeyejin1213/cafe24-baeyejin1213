@@ -1,73 +1,50 @@
 $(document).ready(function () { // 시작 코드블럭
-    /* 추천 & 신상품 */
-    var swiper_recmd, swiper_new;
-    const swiperVars = [swiper_recmd, swiper_new];
-    const swiperClasses = [".swiper_recmd", ".swiper_new"];
-    const swiperPrev = [".swiper-button-prev-recmd", ".swiper-button-prev-new"];
-    const swiperNext = [".swiper-button-next-recmd", ".swiper-button-next-new"];
-    jQuery.each(swiperVars, function (index, swiperVar) {
-        jQuery.each(swiperClasses, function (i, swiperClass) {
-            if (index === i) {
-                swiperVar = new Swiper(swiperClass, {
-                    observer: true,
-                    observeParents: true,
-                    watchOverflow: true,
-                    slidesPerView: 1.2,
-                    spaceBetween: 0,
-                    breakpoints: {
-                        1024: {
-                            spaceBetween: 0,
-                            slidesPerView: 4,
-                        },
-                        768: {
-                            spaceBetween: 0,
-                            slidesPerView: 2,
-                        },
-                    },
-                    navigation: {
-                        prevEl: swiperPrev[index],
-                        nextEl: swiperNext[index],
-                    },
-                });
+
+    /* 추천상품 · 신상품 가로 슬라이드 (마우스로 끌어서 넘김)
+       한 줄에 보이는 상품 수(slidesPerView)로 카드 폭을 정함. 소수점 = 다음 상품이 살짝 보이게
+       시안 : PC 1920 카드 400 · 간격 20 (1840+20)/420 ≈ 4.4 / 모바일 360 카드 200 · 간격 12 (320+12)/212 ≈ 1.6 */
+    $('.list_slide .swiper').each(function () {
+        var $box = $(this).closest('.list_slide');
+        if (!$(this).find('.prdList > li').length) { $box.addClass('displaynone'); return; }
+        new Swiper(this, {
+            slidesPerView: 1.6,
+            spaceBetween: 12,
+            grabCursor: true,
+            observer: true,
+            observeParents: true,
+            breakpoints: {
+                600: {slidesPerView: 2.6, spaceBetween: 12},
+                900: {slidesPerView: 3.4, spaceBetween: 20},
+                1440: {slidesPerView: 4.4, spaceBetween: 20}
             }
-        })
-    })
+        });
+    });
 
 
-    /* 배너 이미지 없으면 list_ban 숨기기 */
+    /* 상단 이미지 없으면 list_ban 숨기기 */
     if (jQuery(".list_ban .product_top_image img").length === 0) {
         jQuery(".list_ban").addClass("displaynone");
-    };
+    }
 
+
+    /* 하위 분류 탭 : 1024px 이하에서 가로로 끌어서 넘김 */
     var swiperTitleTab = null;
 
     function initOrDestroySwiper() {
-        var windowWidth = $(window).width();
         var $swiperContainer = $('.swiper_title_tab');
-
         if ($swiperContainer.length === 0) return;
 
-        // 1400 이하: 초기화
-        if (windowWidth <= 1024) {
+        if (window.innerWidth < 1025) {
             if (!swiperTitleTab) {
                 swiperTitleTab = new Swiper('.swiper_title_tab', {
                     slidesPerView: 'auto',
-                    watchOverflow: true,
-                    spaceBetween: 4,
-                    breakpoints: {
-                        768: {
-                            spaceBetween: 4
-                        }
-                    }
+                    spaceBetween: 16,
+                    watchOverflow: true
                 });
             }
-        }
-        // 1400 초과: 제거
-        else {
-            if (swiperTitleTab) {
-                swiperTitleTab.destroy(true, true);
-                swiperTitleTab = null;
-            }
+        } else if (swiperTitleTab) {
+            swiperTitleTab.destroy(true, true);
+            swiperTitleTab = null;
         }
     }
 
@@ -75,44 +52,7 @@ $(document).ready(function () { // 시작 코드블럭
         jQuery('.swiper_title_tab').addClass('default');
     }
 
-    initOrDestroySwiper(); // 상품 목록 탭 반응형
-
-
-    $(window).on('resize', function () {
-        initOrDestroySwiper();  // 상품 목록 탭 반응형
-    });
-
-
-
-    /* 더보기 버튼 눌렀을 때 */
-    $(".list_prd .more").on("click", function () {
-        /* 할인율, 타임세일박스 */
-        setTimeout(function () {
-            addTimeSaleBox();
-
-            jQuery(".spec").each(function () {
-                /* 브랜드 */
-                if (jQuery(this).siblings(".brand").length === 0) {
-                    jQuery(this).siblings(".name").before("<div class='brand'></div>");
-                    jQuery(this).siblings(".brand").each(function () {
-                        jQuery(this).text(jQuery(this).siblings(".spec").find("li[rel='브랜드']").children(".m_item").children("span").text());
-                    });
-                };
-
-                if (jQuery(this).find(".review").length === 0) {
-                    /* 리뷰 */
-                    jQuery(this).find("li[rel='리뷰']").each(function () {
-                        jQuery(this).wrapInner("<div class='review'></div>");
-                    });
-                };
-            });
-
-            /* 장바구니 버튼 */
-            jQuery(".ec-base-product .thumbnail .button .cart img.ec-admin-icon.cart").each(function () {
-                jQuery(this).siblings(".cart_icon").attr("src", jQuery(this).attr("src"));
-            });
-        }, 500);
-    });
-
+    initOrDestroySwiper();
+    $(window).on('resize', initOrDestroySwiper);
 
 }); // 시작 코드블럭 종료

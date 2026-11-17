@@ -37,40 +37,7 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
 .main_wrap .prd_slide.swiper {padding: 0 4rem; overflow: hidden;}
 .prd_slide .prdList {display: flex; margin: 0; padding: 0; border: 0;}
 .prd_slide .prdList > li {flex-shrink: 0; height: auto; margin: 0; border: 0;}  /* 폭은 main.js 의 slidesPerView 가 정함 */
-.prd_box .thumb {position: relative; aspect-ratio: 1 / 1; overflow: hidden; background-color: var(--c-bg);}
-.prd_box .thumb .img {display: block; width: 100%; height: 100%;}
-.prd_box .thumb .img > img {width: 100%; height: 100%; object-fit: cover;}
-.prd_box .thumb .prdIcon {position: absolute; inset: 1.6rem; background-repeat: no-repeat; background-size: 5.8rem auto; pointer-events: none;}
-.prd_box .thumb .wish {position: absolute; top: 1.6rem; right: 1.6rem; z-index: 2; width: 2.4rem; height: 2.4rem; background: url(/morenvyimg/heart.svg) no-repeat center / contain;}
-.prd_box .thumb .wish:has(img[icon_status="on"]) {background-image: url(/morenvyimg/heart_on.svg);}
-.prd_box .thumb .wish img {width: 100%; height: 100%; opacity: 0; cursor: pointer;}
-.prd_box .thumb .soldout {position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; background-color: rgba(255,255,255,.6); font-family: var(--font-en); font-size: 1.4rem; font-weight: 600; letter-spacing: .1em; pointer-events: none;}
-.prd_box .thumb .soldout.displaynone {display: none;}
-
-.prd_box .info {display: flex; flex-direction: column; gap: .6rem; margin-top: 1.6rem;}
-.prd_box .info .icon {display: flex; align-items: center; gap: 0; margin: 0;}
-.prd_box .info .icon:not(:has(img)) {display: none;}
-.prd_box .info .icon img {height: 1.6rem; width: auto;}
-.prd_box .info .name a,
-.prd_box .info .name a span {display: block; overflow: hidden; font-family: var(--font-kr) !important; font-size: 1.4rem !important; line-height: 2rem; font-weight: 400 !important; color: var(--c-black) !important; white-space: nowrap; text-overflow: ellipsis;}
-.prd_box .info .spec {display: flex; flex-wrap: wrap; align-items: center; gap: .6rem .8rem; margin: 0;}
-.prd_box .info .spec li {margin: 0; line-height: 2rem;}
-.prd_box .info .spec li .title {display: none;}
-.prd_box .info .spec li[rel="상품요약정보"],
-.prd_box .info .spec li[rel="상품 요약설명"],
-.prd_box .info .spec li[rel="상품간략설명"] {order: -1; width: 100%; overflow: hidden;}
-.prd_box .info .spec li[rel="상품요약정보"] span,
-.prd_box .info .spec li[rel="상품 요약설명"] span,
-.prd_box .info .spec li[rel="상품간략설명"] span {display: block; overflow: hidden; font-family: var(--font-kr) !important; font-size: 1.3rem !important; line-height: 2rem; font-weight: 400 !important; color: var(--c-grey) !important; white-space: nowrap; text-overflow: ellipsis;}
-.prd_box .info .spec .sale_box {font-family: var(--font-en); font-size: 1.4rem; line-height: 2rem; font-weight: 600; color: var(--c-point);}
-.prd_box .info .spec .sale_box:empty {display: none !important;}
-.prd_box .info .spec li[rel="판매가"] span,
-.prd_box .info .spec li[rel="할인판매가"] span {font-family: var(--font-en) !important; font-size: 1.4rem !important; line-height: 2rem; font-weight: 600 !important; color: var(--c-black) !important;}
-.prd_box .info .spec li[rel="판매가"] #span_product_tax_type_text {display: none;}
-.prd_box .info .spec li[rel="소비자가"],
-.prd_box .info .spec li[rel="브랜드"],
-.prd_box .info .spec li[rel="할인 기간"],
-.prd_box .info .spec li.through {display: none !important;}
+/* 카드 모양(.prd_box)은 목록 페이지와 같이 쓰려고 mcss.css "공통 : 상품 카드"로 옮김 */
 
 
 /* -------------------------------
@@ -234,17 +201,6 @@ body.is_main #container #contents {max-width: none !important; margin: 0 auto; p
 
     /* 카드 */
     .main_wrap .prd_slide.swiper {padding: 0 2rem;}
-    .prd_box .thumb .prdIcon {inset: .8rem; background-size: 4rem auto;}
-    .prd_box .thumb .wish {top: 1.2rem; right: 1.2rem; width: 2rem; height: 2rem;}
-    .prd_box .info .name a,
-    .prd_box .info .name a span {font-size: 1.3rem !important; line-height: 1.8rem;}
-    .prd_box .info .spec li {line-height: 1.8rem;}
-    .prd_box .info .spec li[rel="상품요약정보"] span,
-    .prd_box .info .spec li[rel="상품 요약설명"] span,
-    .prd_box .info .spec li[rel="상품간략설명"] span {display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; font-size: 1.2rem !important; line-height: 1.6rem;}
-    .prd_box .info .spec .sale_box,
-    .prd_box .info .spec li[rel="판매가"] span,
-    .prd_box .info .spec li[rel="할인판매가"] span {font-size: 1.3rem !important; line-height: 1.8rem;}
 
     /* 01 키비주얼 */
     .m_sec01 {height: 166.67vw; min-height: 0; max-height: 100svh;}
