@@ -595,7 +595,7 @@ body.sideOn {overflow: hidden;}
 .search_box.type01 .recent_keyword li .del img {width: 1.6rem; height: 1.6rem;}
 .search_box.type01 .recent_keyword .blank {font-size: 1.4rem; line-height: 2rem; color: var(--c-grey);}
 
-/* 검색 : 최근 본 상품 (Layout_productRecent, 검색 패널 아래에 고정) */
+/* 검색 : 최근 본 상품 (product_recentlist, 검색 패널 아래에 고정) */
 .sch_recent {position: fixed; right: -48rem; bottom: 0; z-index: 2001; width: 48rem; max-width: 100%; padding: 0 4rem 4rem; background-color: #fff; font-family: var(--font-kr); visibility: hidden; transition: right .4s, visibility .4s;}
 body.searchOn .sch_recent {right: 0; visibility: visible;}
 .sch_recent h3 {display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.4rem; font-size: 1.6rem; line-height: 2.4rem; font-weight: 400; color: var(--c-black);}
@@ -606,7 +606,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 .sch_recent li {width: 12rem;}
 .sch_recent li.displaynone {display: none;}
 .sch_recent li img {width: 12rem; height: 12rem; object-fit: cover; background-color: #eeeae4;}
-.sch_recent .xans-layout-productrecent:not(:has(li:not(.displaynone))) {display: none;}
+.sch_recent:not(:has(.xans-product-recentlist li)) {display: none;}
 
 
 /* -------------------------------

@@ -455,13 +455,13 @@ jQuery(function ($) {
     }
     $side.on('click', '.d1 > ul > li > a.cate', function (e) {
         var $li = $(this).parent();
-        if (!$li.children('.depth2').length) return;
+        if (!$li.children('.depth2').length || $li.hasClass('on')) return;
         e.preventDefault();
         sideSelect($li);
     });
     $side.on('click', '.depth2 > ul > li > a.cate', function (e) {
         var $li = $(this).parent();
-        if (!$li.children('.depth3').length) return;
+        if (!$li.children('.depth3').length || $li.hasClass('active')) return;
         e.preventDefault();
         $li.toggleClass('active').children('.depth3').stop().slideToggle(300);
         $li.siblings('.active').removeClass('active').children('.depth3').stop().slideUp(300);
@@ -469,7 +469,7 @@ jQuery(function ($) {
 
     $side.on('click', '.depth3 > ul > li > a.cate', function (e) {  /* 상세분류 펼침 */
         var $li = $(this).parent();
-        if (!$li.children('.depth4').length) return;
+        if (!$li.children('.depth4').length || $li.hasClass('active')) return;
         e.preventDefault();
         $li.toggleClass('active').children('.depth4').stop().slideToggle(300);
         $li.siblings('.active').removeClass('active').children('.depth4').stop().slideUp(300);

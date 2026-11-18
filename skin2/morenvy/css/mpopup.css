@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* 메인 : 팝업 (PC 오른쪽 아래 / 모바일 하단 시트) */
-.main_popup {position: fixed; right: 4rem; bottom: 4rem; z-index: 9999; visibility: hidden; opacity: 0; transition: opacity .6s, visibility .6s;}
+.main_popup {position: fixed; right: 4rem; bottom: 4rem; z-index: 1998; visibility: hidden; opacity: 0; transition: opacity .6s, visibility .6s;}
 .main_popup.on {visibility: visible; opacity: 1;}
 .main_popup .popup {width: 32rem; overflow: hidden; background-color: #fff; font-family: var(--font-kr); box-shadow: 0 .8rem 3.2rem rgba(0,0,0,.12); transform: translateY(4rem); opacity: 0; transition: transform .6s ease, opacity .6s ease;}
 .main_popup.on .popup.up {transform: translateY(0); opacity: 1;}
