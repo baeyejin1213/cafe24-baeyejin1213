@@ -1,120 +1,51 @@
-jQuery(document).ready(function () { // 시작 코드블럭
+/* 사이드 메뉴 (M_전체) */
+jQuery(function ($) {
 
-    /* 사이드바 열기 */
-    jQuery("#header .open-gnb").on("click", function () {
-        jQuery("#aside").addClass("active");
-        jQuery("#layoutDimmed").addClass("active");
+    var $body = $('body');
+    var $header = $('#header.h_type01');
+
+    /* 사이드 메뉴 카테고리 (하위 분류는 opencate2.js 가 채움)
+          왼쪽 대분류를 누르면 오른쪽에 중분류, 중분류를 누르면 소분류가 펼쳐짐 */
+    var $side = $('#aside');
+    function sideSelect($li) {
+        $li.addClass('on').siblings().removeClass('on');
+        $side.find('.d1 > ul > li').not($li).removeClass('on');
+    }
+    $side.on('click', '.d1 > ul > li > a.cate', function (e) {
+        var $li = $(this).parent();
+        if (!$li.children('.depth2').length || $li.hasClass('on')) return;
+        e.preventDefault();
+        sideSelect($li);
+    });
+    $side.on('click', '.depth2 > ul > li > a.cate', function (e) {
+        var $li = $(this).parent();
+        if (!$li.children('.depth3').length || $li.hasClass('active')) return;
+        e.preventDefault();
+        $li.toggleClass('active').children('.depth3').stop().slideToggle(300);
+        $li.siblings('.active').removeClass('active').children('.depth3').stop().slideUp(300);
     });
 
-    /* 사이드바 닫기 */
-    jQuery(".side_close").on("click", function () {
-        jQuery("#aside").removeClass("active");
-        jQuery("#layoutDimmed").removeClass("active");
+    $side.on('click', '.depth3 > ul > li > a.cate', function (e) {  /* 상세분류 펼침 */
+        var $li = $(this).parent();
+        if (!$li.children('.depth4').length || $li.hasClass('active')) return;
+        e.preventDefault();
+        $li.toggleClass('active').children('.depth4').stop().slideToggle(300);
+        $li.siblings('.active').removeClass('active').children('.depth4').stop().slideUp(300);
     });
 
+    /* 다국어 선택 */
+    $side.find('.side_lang .code').text(function (i, t) { return $.trim(t).split(/[_-]/).pop().toUpperCase(); });
+    $side.on('click', '.side_lang .toggle', function () { $(this).parent().toggleClass('open'); });
+    $(document).on('click', function (e) { if (!$(e.target).closest('.side_lang').length) $('.side_lang').removeClass('open'); });
 
-
-    var swiper_visual = new Swiper(".aside-swiper", {
-        observer: true,
-        observerParents: true,
-        watchOverflow: true,
-        slidesPerView: 1,
-        spaceBetween: -0.5,
-        loop: true,
-        autoplay: {
-            delay: 7000,
-            disableOnInteraction: false,
-        },
-        speed: 1000,
-        pagination: {
-            el: ".aside-swiper .swiper-pagination",
-            type: "fraction",
-        },
-    });
-
-
-
-    /* 사이드바 카테고리 */
-    (function () {
-        var speed = 300;
-        function getSubMenu($li) {
-            return $li.children(".depth2, .depth3, .depth4").first();
-        }
-        function initSideCategory() {
-            jQuery("#aside .side_middle li").each(function () {
-                var $li = jQuery(this);
-                var $subMenu = getSubMenu($li);
-
-                if ($subMenu.length && !$li.hasClass("noChild")) {
-                    $li.addClass("hasChild");
-
-                    if ($li.hasClass("selected")) {
-                        $subMenu.show();
-                    } else {
-                        $subMenu.hide();
-                    }
-                }
-            });
-        }
-        function closeDescendants($li) {
-            $li.find("li.hasChild").removeClass("selected");
-            $li.find(".depth2, .depth3, .depth4").hide();
-        }
-        function closeSiblingMenus($li) {
-            $li.siblings("li.hasChild.selected").each(function () {
-                var $sibling = jQuery(this);
-                var $subMenu = getSubMenu($sibling);
-
-                $sibling.removeClass("selected");
-
-                $subMenu.stop(true, true).slideUp(speed, function () {
-                    closeDescendants($sibling);
-                });
-            });
-        }
-
-        jQuery(document).on("click", "#aside .side_middle li.hasChild > a .open", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            var $li = jQuery(this).closest("li");
-            var $subMenu = getSubMenu($li);
-
-            if (!$subMenu.length || $li.hasClass("noChild")) return;
-
-            closeSiblingMenus($li);
-
-            $li.toggleClass("selected");
-            $subMenu.stop(true, true).slideToggle(speed, function () {
-                if (!$li.hasClass("selected")) {
-                    closeDescendants($li);
-                }
-            });
-        });
-
-        initSideCategory();
-
-        if (window.MutationObserver) {
-            var sideMiddle = document.querySelector("#aside .side_middle");
-
-            if (sideMiddle) {
-                var observer = new MutationObserver(function () {
-                    initSideCategory();
-                });
-
-                observer.observe(sideMiddle, {
-                    childList: true,
-                    subtree: true
-                });
-            }
-        }
-    })();
-
-
-    /* 사이드바 검색 클릭 */
-    jQuery("#aside .side_icon .side_search").on("click", function () {
-        jQuery("body").removeClass("side").addClass("searchOn");
-        jQuery("#aside .side_cate li").removeClass("selected").css("margin-bottom", 0);
-    });
-
-});/* 시작 코드블럭 종료 */
+    function sideOpen() {
+        $body.addClass('sideOn');
+        if (!$side.find('.d1 li.on').length) sideSelect($side.find('.d1 > ul > li').has('.depth2').first());
+    }
+    function sideClose() { $body.removeClass('sideOn'); }
+    $header.on('click', '.h_util .menu a', function (e) { e.preventDefault(); sideOpen(); });
+    $(document).on('click', '.f_nav .side_open', sideOpen);
+    $(document).on('click', '#aside .side_close', sideClose);
+    $(document).on('click', '.h_dim', sideClose);
+    $(document).on('keydown', function (e) { if (e.key === 'Escape') sideClose(); });
+});

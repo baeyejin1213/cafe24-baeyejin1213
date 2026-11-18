@@ -446,51 +446,8 @@ jQuery(function ($) {
     setWhite();
 
 
-    /* ② 사이드 메뉴 카테고리 (하위 분류는 opencate2.js 가 채움)
-          왼쪽 대분류를 누르면 오른쪽에 중분류, 중분류를 누르면 소분류가 펼쳐짐 */
-    var $side = $('#aside');
-    function sideSelect($li) {
-        $li.addClass('on').siblings().removeClass('on');
-        $side.find('.d1 > ul > li').not($li).removeClass('on');
-    }
-    $side.on('click', '.d1 > ul > li > a.cate', function (e) {
-        var $li = $(this).parent();
-        if (!$li.children('.depth2').length || $li.hasClass('on')) return;
-        e.preventDefault();
-        sideSelect($li);
-    });
-    $side.on('click', '.depth2 > ul > li > a.cate', function (e) {
-        var $li = $(this).parent();
-        if (!$li.children('.depth3').length || $li.hasClass('active')) return;
-        e.preventDefault();
-        $li.toggleClass('active').children('.depth3').stop().slideToggle(300);
-        $li.siblings('.active').removeClass('active').children('.depth3').stop().slideUp(300);
-    });
 
-    $side.on('click', '.depth3 > ul > li > a.cate', function (e) {  /* 상세분류 펼침 */
-        var $li = $(this).parent();
-        if (!$li.children('.depth4').length || $li.hasClass('active')) return;
-        e.preventDefault();
-        $li.toggleClass('active').children('.depth4').stop().slideToggle(300);
-        $li.siblings('.active').removeClass('active').children('.depth4').stop().slideUp(300);
-    });
-
-    /* 다국어 선택 */
-    $side.find('.side_lang .code').text(function (i, t) { return $.trim(t).split(/[_-]/).pop().toUpperCase(); });
-    $side.on('click', '.side_lang .toggle', function () { $(this).parent().toggleClass('open'); });
-    $(document).on('click', function (e) { if (!$(e.target).closest('.side_lang').length) $('.side_lang').removeClass('open'); });
-
-    function sideOpen() {
-        $body.addClass('sideOn');
-        if (!$side.find('.d1 li.on').length) sideSelect($side.find('.d1 > ul > li').has('.depth2').first());
-    }
-    function sideClose() { $body.removeClass('sideOn'); }
-    $header.on('click', '.h_util .menu a', function (e) { e.preventDefault(); sideOpen(); });
-    $(document).on('click', '.f_nav .side_open', sideOpen);
-    $(document).on('click', '#aside .side_close', sideClose);
-
-
-    /* ③ 검색 패널 */
+    /* ② 검색 패널 */
     var recentSwiper = null;
     function searchOpen() {
         $('#searchBarForm').addClass('active');
@@ -507,18 +464,18 @@ jQuery(function ($) {
     }
     $header.on('click', '.h_util .search a', function (e) { e.preventDefault(); searchOpen(); });
     $(document).on('click', '.search_box.type01 .sch_close', searchClose);
-    $(document).on('click', '.h_dim', function () { searchClose(); sideClose(); });
-    $(document).on('keydown', function (e) { if (e.key === 'Escape') { searchClose(); sideClose(); } });
+    $(document).on('click', '.h_dim', searchClose);
+    $(document).on('keydown', function (e) { if (e.key === 'Escape') searchClose(); });
 
 
-    /* ④ 푸터 : 사업자 정보 접기 */
+    /* ③ 푸터 : 사업자 정보 접기 */
     $(document).on('click', '#footer .f_biz_btn', function () {
         var $wrap = $(this).closest('.f_info_wrap');
         $wrap.toggleClass('close').find('.f_info').stop().slideToggle(300);
     });
 
 
-    /* ⑤ 퀵 메뉴(PC) : 조금 내리면 표시, 맨 위로 / 모바일 하단바 : 내릴 때 숨김 */
+    /* ④ 퀵 메뉴(PC) : 조금 내리면 표시, 맨 위로 / 모바일 하단바 : 내릴 때 숨김 */
     $(document).on('click', '#quick .upBtn', function (e) { e.preventDefault(); $('html, body').animate({scrollTop: 0}, 600); });
     var lastY = window.pageYOffset;
     $(window).on('scroll', function () {
