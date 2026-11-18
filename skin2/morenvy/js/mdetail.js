@@ -1,366 +1,282 @@
-/* morenvy.com 250811 지인 */
-jQuery(document).ready(function () {
+/* 에이가구 : 상품 상세 (product/detail.html) */
+jQuery(function ($) {
 
-	detail_slide ();
-	jQuery(window).resize(function(){
-		detail_slide ();
-	});
-
-	var swiper_addimg = null;
-	/* morenvy.com 추가이미지 썸네일 리사이즈 */
-	function detail_slide() {
-		var all_size = window.innerWidth;
-		if (all_size < 768) {
-			if (!swiper_addimg) { // swiper_addimg가 없을 때만 생성
-				swiper_addimg = new Swiper('.swiper_addimg', {
-					slidesPerView: '1',
-					watchOverflow: true,
-					pagination: {
-						el: ".swiper-pagination-addimg",
-						type: "fraction",
-					},
-				});
-			}
-		} else {
-			if (swiper_addimg) { // swiper_addimg가 있을 때만 삭제
-				swiper_addimg.destroy(true, true);
-				swiper_addimg = null; // 제거 후 null 처리
-			}
-		}
-	}
+    var isMo = function () { return window.innerWidth < 1025; };
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
 
 
-    /* 브랜드 추가 */
-    jQuery('.infoArea .mainArea').prepend('<div class="brand_name">' + jQuery('[rel="브랜드"] .m_item').text() + '</div>')
-
-    if (jQuery('.brand_name').text().trim().length < 1) {
-        jQuery('.brand_name').hide();
-    }
-
-    /* 상품 요약 설명 없으면 삭제 */
-    if (jQuery('.summary_desc').text().trim().length < 1) {
-        jQuery('.summary_desc').hide();
-    }
-
-    /* 상세페이지 : 구매하기 */
-	jQuery('.infoArea .layer_open').click(function(){
-		jQuery('#wrap').addClass('layer_option');
-	});
-	jQuery('.infoArea .layer_close , #layoutDimmed').click(function(){
-		jQuery('#wrap').removeClass('layer_option');
-	});
-
-    jQuery('.toggle-title button').click(function(){
-        jQuery(this).toggleClass('on');
-        jQuery('.toggle-table').slideToggle('fast');
-    });
-
-
-    $('.detail_menu a').on('click', function (e) {
-        e.preventDefault();
-        var targetId = $(this).attr('href');
-        var $target = $(targetId);
-        if ($target.length) {
-            // 상단 Header + Sticky Menu의 전체 높이 계산 (여유값 20px 추가)
-            var headerHeight = $("#header").length ? $("#header").outerHeight() : 0;
-            var menuHeight = $(".detail_pc_fix_menu").outerHeight() || 0;
-            var totalOffset = headerHeight + menuHeight + 20;
-            var targetPosition = $target.offset().top - totalOffset;
-            $('html, body').stop().animate({
-                scrollTop: targetPosition
-            }, 400);
-        }
-    });
-
-
-    // 2. 스크롤 감지 및 활성화 상태 변경
-    $(window).on("scroll", function () {
-        var scrollTop = $(window).scrollTop();
-        var headerHeight = $("#header").length ? $("#header").outerHeight() : 0;
-        var menuHeight = $(".detail_pc_fix_menu").outerHeight() || 0;
-        // 감지 여유 기준점 (메뉴 높이 + 여유 offset)
-        var offsetOffset = headerHeight + menuHeight + 50; 
-        var current = "";
-        // 각 섹션 감지
-        $(".xans-product-additional > div").each(function () {
-            var id = $(this).attr("id");
-            if (!id) return;
-            var targetId = "#" + id;
-            var offsetTop = $(this).offset().top - offsetOffset;
-            if (scrollTop >= offsetTop) {
-                current = targetId;
-            }
-        });
-
-        // 탭 active 처리 및 data-bar 갱신
-        if (current) {
-            $('.detail_menu a[href="' + current + '"]')
-                .parent("li")
-                .addClass("select")
-                .siblings()
-                .removeClass("select");
-        } else {
-            $(".detail_menu li").removeClass("select");
-            $('.detail_menu a[href="#prdDetail"]').parent("li").addClass("select");
-        }
-        var selectIndex = $(".detail_menu li.select").index();
-        if (selectIndex !== -1) {
-            $(".detail_menu").attr("data-bar", selectIndex + 1);
-        }
-    });
-
-
-
-
-
-    /* 상품 상세페이지 탭 스크롤에 따라 클래스 추가 */
-    $(window).on("scroll", function () {
-        var scrollTop = $(window).scrollTop();
-        var current = "";
-        if ($(".xans-product-additional .detail_fix_menu").offset().top - scrollTop - $("#header").outerHeight() === 0) {
-            $(".xans-product-additional .detail_fix_menu").addClass("fixed");
-        } else {
-            $(".xans-product-additional .detail_fix_menu").removeClass("fixed");
-        };
-        $(".xans-product-additional > div").each(function () {
-            var id = "#" + $(this).attr("id");
-            var offsetTop = $(this).offset().top - 180;
-            if (scrollTop >= offsetTop) {
-                current = id;
-                $('.detail_menu a[href="' + current + '"]').parent("li").addClass("select").siblings().removeClass('select');
-            }
-            if (!current) {
-                $(".detail_menu li").removeClass("select");
-
-                $('.detail_menu a[href="#prdDetail"]')
-                    .parent("li")
-                    .addClass("select");
-            }
-        });
-        jQuery('.detail_menu').attr('data-bar', jQuery('.detail_menu .select').index() + 1);
-    });
-
-    // jQuery('.detail_menu a').on('click',f')
-
-
-
-
-    /* 쿠폰 팝업 ============================================================ */
-    jQuery('div.coupon_btn').bind('click', function (e) {
-        e.preventDefault();
-        jQuery('#coupon_pop').bPopup({
-            follow: [true, true],
-            position: ['50%', '50%'],
-            modalClose: true,
-            opacity: 0.4,
-            positionStyle: 'fixed',
-            onOpen: function () {
-                $("body").css("overflow", "hidden"); // 스크롤 막기
-            },
-            onClose: function () {
-                $("body").css("overflow", "auto"); // 스크롤 다시 허용
-            }
-        });
-    });
-    jQuery('.btn_share').bind('click', function (e) {
-        e.preventDefault();
-        jQuery('.detail_sns').bPopup({
-            follow: [true, true],
-            position: ['50%', '50%'],
-            modalClose: true,
-            opacity: 0.4,
-            positionStyle: 'fixed'
-        });
-    });
-    jQuery('.sns_popup .close').click(function () {
-        jQuery('.detail_sns').bPopup().close(); // bPopup 닫기 메서드 호출
-    });
-
-    /* 쿠폰 팝업 종료 ============================================================ */
-
-
-
-    /* URL 복사 ================================================================= */
-    $('#copyButton').on('click', function () {
-        const url = $(location).attr('href'); // 복사할 URL
-        const $hiddenTextarea = $('#hiddenTextarea');
-
-        // Clipboard API 지원 여부 확인
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(url).then(function () {
-                alert('URL이 복사되었습니다! :)');
-            }).catch(function (err) {
-                console.error('Clipboard API 사용 실패:', err);
-            });
-        } else {
-            // 구형 브라우저 대응 (텍스트 영역 사용)
-            $hiddenTextarea.val(url).select();
-            try {
-                const successful = document.execCommand('copy');
-                if (successful) {
-                    alert('URL이 복사되었습니다! :)');
-                } else {
-                    alert('복사에 실패했습니다. 수동으로 복사해주세요.');
+    /* ① 대표 이미지 슬라이드 : 01 / 05 */
+    var $keyImg = $('.swiper_keyimg');
+    if ($keyImg.find('.swiper-slide').length) {
+        new Swiper($keyImg[0], {
+            slidesPerView: 1,
+            watchOverflow: true,
+            grabCursor: true,
+            pagination: {
+                el: '.swiper-pagination-keyimg',
+                type: 'custom',
+                renderCustom: function (swiper, cur, total) {
+                    return total > 1 ? '<span class="cur">' + pad(cur) + '</span><span class="bar"></span><span>' + pad(total) + '</span>' : '';
                 }
-            } catch (err) {
-                console.error('execCommand 사용 실패:', err);
             }
-            $hiddenTextarea.blur(); // 텍스트 영역 비활성화
-        }
-    });
-
-    /* URL 복사 종료 ================================================================= */
-
-
-    /* 관련상품 */
-    var swiper_rel = new Swiper('.swiper_rel', {
-        observer: true,
-        observeParents: true,
-        watchOverflow: true,
-        slidesPerView: 1.2,
-        spaceBetween: 0,
-        breakpoints: {
-            1024: {
-                spaceBetween: 0,
-                slidesPerView: 4,
-            },
-            768: {
-                spaceBetween: 0,
-                slidesPerView: 2,
-            },
-        },
-        navigation: {
-            prevEl: ".swiper-button-prev-rel",
-            nextEl: ".swiper-button-next-rel",
-        },
-    });
-
-  
-
-    /* 옵션 없으면 클래스 추가 */
-    jQuery('#totalProducts tbody:not(.option_products) tr').each(function () {
-        if (jQuery(this).length > 0) {
-            jQuery(this).parent().addClass('noOption');
-        }
-    });
-
-    /* 추가 구성 상품 토글 */
-    jQuery('.add_item_box > .title').on('click', function () {
-        var scrollTop = jQuery(window).scrollTop(); // 현재 스크롤 위치 저장
-
-        jQuery('.add_item_box').toggleClass('active');
-        jQuery('.add_item_box .product').slideToggle(400, function () {
-            // 애니메이션 종료 후 스크롤 위치 복구
-            jQuery(window).scrollTop(scrollTop);
         });
-    });
+    }
 
+    if (!$.trim($('.infoArea .summary_desc').text())) $('.infoArea .summary_desc').hide();
 
-    /* 구매안내 토글 */
-    jQuery('#prdInfo .info_t_title').on('click', function () {
-
-        jQuery('html,body').animate({
-            scrollTop: jQuery('#prdInfo').offset().top - 120
-        }, 400);
-
-        jQuery(this).parent().toggleClass('active')
-            .siblings().removeClass('active')
-            .find('.prdInfo_text').stop().slideUp(400);
-
-        jQuery(this).siblings('.prdInfo_text').stop().slideToggle(400);
-    });
-
-
-
-    // /* 상세 타임세일 */
-    // var periodText = $('[rel="할인 기간"] .m_item .period').text().trim();
-    // var $outputBox = $('.detail_time_box');
-
-    // if (!periodText.includes('~')) return;
-
-    // var timeArr = periodText.split('~');
-    // var startStr = $.trim(timeArr[0]);
-    // var endStr = $.trim(timeArr[1]);
-
-    // var startDate = new Date(startStr.replace(/-/g, '/'));
-    // var endDate = new Date(endStr.replace(/-/g, '/'));
-
-    // function getTimeParts(ms) {
-    //     var totalSec = Math.floor(ms / 1000);
-    //     var days = Math.floor(totalSec / 86400);
-    //     var hours = Math.floor((totalSec % 86400) / 3600);
-    //     var minutes = Math.floor((totalSec % 3600) / 60);
-    //     var seconds = totalSec % 60;
-    //     return { days: days, hours: hours, minutes: minutes, seconds: seconds };
-    // }
-
-    // function renderCountdown(label, remainMs) {
-    //     var time = getTimeParts(remainMs);
-
-    //     var html = '';
-    //     html += '<div class="countdown_box">';
-    //     html += '<span class="cd_label">' + label + ' </span>';
-    //     html += '<span class="cd_time">';
-    //     html += '<div class="time_icon"></div>';
-    //     html += '<span class="num">' + time.days + 'd</span> : ';
-    //     html += '<span class="num">' + String(time.hours).padStart(2, '0') + '</span> : ';
-    //     html += '<span class="num">' + String(time.minutes).padStart(2, '0') + '</span> : ';
-    //     html += '<span class="num">' + String(time.seconds).padStart(2, '0') + '</span> ';
-    //     html += '<span class="unit">남음</span>';
-    //     html += '</span>';
-    //     html += '</div>';
-
-    //     $outputBox.html(html);
-    // }
-
-    // function updateCountdown() {
-    //     var now = new Date();
-
-    //     if (now < startDate) {
-    //         renderCountdown('시작 전', startDate - now);
-    //     } else if (now >= startDate && now <= endDate) {
-    //         renderCountdown('타임세일', endDate - now);
-    //     } else {
-    //         $outputBox.html(
-    //             '<div class="countdown_box end">' +
-    //             '<span class="cd_label">할인 종료</span>' +
-    //             '</div>'
-    //         );
-    //         clearInterval(interval);
-    //     }
-    // }
-
-    // updateCountdown(); // 최초 실행
-    // var interval = setInterval(updateCountdown, 1000); // 1초마다 갱신
-
-
-    /* 쿠폰 텍스트 형식 변경 */
-    jQuery('#coupon_pop .discount').each(function () {
-        var $this = jQuery(this);
-        var text = $this.text().trim();
-
-        // % 할인 처리
-        if (text.includes('%')) {
-            text = text.replace(/(\d+)\.0%(.*)/, '$1%$2');  // "77.0% 할인" → "77% 할인"
+    /* 세트상품 가격 : 상품정보 표에 판매가 줄이 없으면 공통 할인율 계산(cal_percent)이 돌지 않으므로 직접 계산 */
+    function setPrice() {
+        var $p = $('.infoArea > .mainArea .prd_price');
+        if (!$('.xans-product-setproduct').length || !$p.length || $('.xans-product-detaildesign tr[rel="판매가"]').length) return;
+        var num = function (s) { return Number(String(s).split('(')[0].replace(/[^0-9]/g, '')) || 0; };
+        var won = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원'; };
+        var $price = $p.find('.price'), $sale = $p.find('.sale'), $rate = $p.find('.sale_box');
+        var price = num($price.text());
+        var sale = $sale.hasClass('displaynone') ? 0 : num($sale.text());
+        if (sale && sale < price) {
+            $price.text(won(price)).addClass('through').css('display', '');
+            $sale.removeClass('displaynone').text(won(sale)).css('display', '');
+            $rate.text(Math.round((price - sale) / price * 100) + '%').css('display', '');
+        } else {
+            $price.text(won(price)).removeClass('through').css('display', '');
+            $sale.hide();
+            $rate.text('').css('display', '');
         }
+    }
+    setPrice();
+    $(window).on('load', setPrice);
 
-        // 원 할인 처리
-        if (text.includes('원')) {
-            text = text.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');  // 숫자에 천단위 콤마 추가
-        }
 
-        $this.text(text);
+    /* ② 팝업 : 쿠폰받기 · 공유하기 */
+    var $dim = $('<div class="pop_dim"></div>').appendTo('body');
+    function openPop($pop) {
+        $('body > .layer_pop').removeClass('on');
+        $pop.addClass('on');
+        $dim.addClass('on');
+        $('html').css('overflow', 'hidden');
+    }
+    function closePop() {
+        $('body > .layer_pop').removeClass('on');
+        $dim.removeClass('on');
+        $('html').css('overflow', '');
+    }
+    function movePop(sel) {
+        var $pop = $(sel).first();
+        if ($pop.length && !$pop.parent().is('body')) $pop.appendTo('body');
+        return $('body > ' + sel);
+    }
+    $(document).on('click', '.coupon_btn', function (e) {
+        e.preventDefault();
+        openPop(movePop('#coupon_pop'));
     });
+    $(document).on('click', '.share_icon', function (e) {
+        e.preventDefault();
+        openPop(movePop('.sns_popup'));
+    });
+    $(document).on('click', '.layer_pop .pop_close, .pop_dim', closePop);
+    $(document).on('keydown', function (e) { if (e.key === 'Escape') closePop(); });
+
+    /* 쿠폰 문구 : 77.0% → 77%, 원 단위 콤마 */
+    function formatCoupon() {
+        $('#coupon_pop .discount').each(function () {
+            var text = $.trim($(this).text()).replace(/(\d+)\.0%/, '$1%');
+            if (text.indexOf('원') > -1) text = text.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+            $(this).text(text);
+        });
+    }
+    formatCoupon();
+    $(window).on('load', formatCoupon);
+
+    /* 공유 */
+    var pageUrl = function () {
+        var c = document.querySelector('link[rel=canonical]');
+        return (c && c.href) || (location.origin + location.pathname + location.search);
+    };
+    $(document).on('click', '.share_kakao', function () {
+        if (typeof sendLink === 'function') sendLink();
+    });
+    $(document).on('click', '.share_facebook', function () { shareFacebook(); });
+    $(document).on('click', '.share_x', function () {
+        var url = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(pageUrl()) + '&text=' + encodeURIComponent($.trim($('.infoArea .prd_name').first().text()));
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) location.href = url;
+        else window.open(url, 'xsharedialog', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');
+    });
+    $(document).on('click', '.share_url', function () {
+        var url = pageUrl();
+        var done = function () { alert('URL이 복사되었습니다.'); };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(done);
+        } else {
+            var $t = $('<textarea>').val(url).css({position: 'fixed', opacity: 0}).appendTo('body').select();
+            document.execCommand('copy');
+            $t.remove();
+            done();
+        }
+    });
+
+
+    /* ③ 추가구성상품 펼치기 */
+    $(document).on('click', '.add_item_box > .title', function () {
+        $(this).parent().toggleClass('active').children('.product').stop().slideToggle(300);
+    });
+
+
+    /* ④ 무료배송 바 : 옵션 상품은 고른 옵션이 하나도 없으면 숨김 */
+    var $freeShip = $('.xans-product-detail .free_shipping');
+    function checkFreeShip() {
+        var hasRow = $('#totalProducts tr.option_product, #totalProducts tr.add_product').length > 0
+            || $('#totalProducts > table > tbody:not(.displaynone, .option_products, .add_products) > tr:first-child').length > 0;
+        $freeShip.toggleClass('off', !hasRow);
+    }
+    if ($freeShip.length && $('#totalProducts').length) {
+        checkFreeShip();
+        if (window.MutationObserver) new MutationObserver(checkFreeShip).observe($('#totalProducts')[0], {childList: true, subtree: true});
+    }
+
+
+    /* ⑤ 상세정보 · 후기 · 문의 이동 */
+    $('.xans-product-additional .detail_menu a').on('click', function (e) {
+        var $target = $($(this).attr('href'));
+        if (!$target.length) return;
+        e.preventDefault();
+        $('html, body').stop().animate({scrollTop: $target.offset().top - ($('#header').outerHeight() || 0)}, 400);
+    });
+
+    /* 구매안내 펼침 */
+    $('#prdInfo .info_t').each(function () {
+        if (!$.trim($(this).find('.prdInfo_text').text())) $(this).addClass('empty');
+    });
+    $('#prdInfo .info_t_title').on('click', function () {
+        $(this).parent().toggleClass('active').children('.prdInfo_text').stop().slideToggle(300);
+    });
+
+
+    /* ⑥ 관련상품 */
+    var $rel = $('.product_relation');
+    if (!$rel.find('.prdList > li').length) {
+        $rel.hide();
+    } else {
+        new Swiper($rel.find('.prd_slide')[0], {
+            slidesPerView: 2.5,
+            spaceBetween: 12,
+            grabCursor: true,
+            observer: true,
+            observeParents: true,
+            breakpoints: {
+                600: {slidesPerView: 3.5, spaceBetween: 12},
+                1025: {slidesPerView: 3.4, spaceBetween: 20},
+                1440: {slidesPerView: 4.4, spaceBetween: 20}
+            }
+        });
+    }
+
+
+    /* ⑦ 아래 고정 구매 버튼(#orderFixArea)
+       본문 구매 버튼이 화면 위로 지나가면 나타남. 누르면 옵션 레이어(#pop_option_box)를 먼저 열고,
+       열린 상태에서 누르면 원래대로 장바구니·구매 진행 */
+    var $fix = $('#orderFixArea');
+    var $box = $('#pop_option_box');
+    var $holder = $('.option_holder');
+    var $inBtn = $('.infoArea > .productAction');
+
+    function setFixH() {
+        document.body.style.setProperty('--fix-h', $fix.outerHeight() + 'px');
+    }
+    function openOption() {
+        if (!isMo()) {
+            var $top = $('.infoArea > .mainArea').clone();
+            $top.find('.coupon_box, .hit_count, .topLogo, .layer_pop').remove();
+            var $spec = $('.infoArea > .spec_box').clone();
+            var $info = $box.find('.pop_layer_info').empty().append($top, $spec);
+            $info.find('[id]').removeAttr('id');
+        }
+        $holder.css('min-height', $holder.outerHeight());
+        $box.addClass('is_open');
+        $('body').addClass('fix_option_open');
+    }
+    function closeOption() {
+        if (!$box.hasClass('is_open')) return;
+        $box.removeClass('is_open').find('.pop_layer_info').empty();
+        $holder.css('min-height', '');
+        $('body').removeClass('fix_option_open');
+    }
+    function checkFix() {
+        if (!$fix.length || !$inBtn.length) return;
+        var past = $inBtn[0].getBoundingClientRect().bottom < 0;
+        if (past === $fix.hasClass('on')) return;
+        if (past) {
+            $fix.addClass('on');
+            $('body').addClass('fix_buy_on');
+            setFixH();
+        } else {
+            closeOption();
+            $fix.removeClass('on');
+            $('body').removeClass('fix_buy_on');
+        }
+    }
+    if ($fix.length && $box.length) {
+        document.addEventListener('click', function (e) {
+            if ($box.hasClass('is_open')) return;
+            var btn = e.target.closest('#orderFixArea .action_button > a, #orderFixArea .action_button > button');
+            if (!btn) return;
+            e.preventDefault();
+            e.stopImmediatePropagation();
+            openOption();
+        }, true);
+
+        $(document).on('click', function (e) {
+            if (!$box.hasClass('is_open')) return;
+            if ($(e.target).closest('#pop_option_box .pop_layer_wrap, #orderFixArea, .layer_pop, .pop_dim, [id^="ec-"], .ec-base-layer').length) return;
+            closeOption();
+        });
+
+        $(window).on('scroll', checkFix);
+        $(window).on('resize', function () { checkFix(); if ($fix.hasClass('on')) setFixH(); });
+        checkFix();
+    }
 });
 
+
+/* 카카오톡 공유 : 카카오 앱 키를 넣고 주석을 풀면 공유 버튼에서 바로 씀 */
+// Kakao.init('');
+// function sendLink() {
+//     var newURL = window.location.protocol + "//" + window.location.host + window.location.pathname;
+//     var sharetitle = jQuery(".xans-product-detail .infoArea .prd_name").first().text();
+//     var summary = jQuery(".xans-product-detail .infoArea .summary_desc").first().text();
+//     var shareimg = jQuery(".xans-product-detail .imgArea .swiper_keyimg .swiper-slide:first-child img").attr('src');
+//     Kakao.Link.sendDefault({
+//     objectType: 'feed',
+//     content: {
+//       title: sharetitle,
+//       description: summary,
+//       imageUrl: 'https:'+shareimg,
+//       link: {
+//         mobileWebUrl: newURL,
+//         webUrl: newURL
+//       }
+//     },
+//     buttons: [
+//       {
+//         title: '웹으로 보기',
+//         link: {
+//           mobileWebUrl: newURL,
+//           webUrl: newURL
+//         }
+//       },
+//     ]
+//   });
+// }
 
 /* 페이스북 공유 */
 function shareFacebook() {
     var c = document.querySelector('link[rel=canonical]');
     var url = encodeURIComponent((c && c.href) || (location.origin + location.pathname));
+
     var shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+
     // 모바일 브라우저 감지
     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
     if (isMobile) {
         // 모바일은 직접 이동 (팝업 차단 방지)
         location.href = shareUrl;
@@ -371,48 +287,3 @@ function shareFacebook() {
         );
     }
 }
-
-var displaystatus = "none";
-    jQuery(".infoArea .layer_open").click(function() {
-        if (jQuery(window).width() > 768) return;
-        if (displaystatus == "none") {
-            jQuery("div#pop_option_box.on").slideDown(300);
-            jQuery("div#pop_option_box").addClass("on");
-            displaystatus = "display";
-        } else {
-            jQuery("div#pop_option_box.on").slideUp(300);
-            jQuery("div#pop_option_box").removeClass("on");
-            displaystatus = "none";
-        }
-    });
-    jQuery('.infoArea .layer_close , #layoutDimmed').click(function() {
-        if (jQuery(window).width() > 768) return;
-        jQuery("div#pop_option_box.on").slideUp(300);
-        jQuery("div#pop_option_box").removeClass("on");
-        setTimeout(function() {
-            displaystatus = "none";
-        }, 300);
-    });
-
-jQuery(window).scroll(function() {
-    if (jQuery(window).width() <= 768) {
-        var $fixMenu = $('div.xans-product-additional .detail_fix_menu');
-        if (!$fixMenu.length) return;
-        var buttonstart_height = $fixMenu.offset();
-        var layerHeight = jQuery('#pop_option_box').innerHeight();
-        if (jQuery(this).scrollTop() + 56 >= buttonstart_height.top) {
-            jQuery("div#pop_option_box").addClass("on");
-            jQuery('.xans-product-detaildesign').css('padding-bottom', layerHeight + 'px');
-            if (displaystatus == "none") {
-                jQuery("div#pop_option_box").css("display", "none");
-            }
-        } else {
-            jQuery("div#pop_option_box").removeClass("on");
-            jQuery('.xans-product-detaildesign').css('padding-bottom', ''); 
-            if (displaystatus == "none") {
-                jQuery("div#pop_option_box").css("display", "block");
-            }
-            jQuery('.infoArea .layer_close').trigger('click');
-        }
-    }
-});
