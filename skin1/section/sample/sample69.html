@@ -1,0 +1,1113 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- 아래 코드부터 복사하기 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+
+<div id="promotion_box" class="promotion_box">
+    <!-- 기획전 키비주얼 -->
+    <div class="p_keyvisual">
+        <div class="inner">
+            <div class="timer_bar outfit">
+                <p class="state">ENDS IN</p>
+                <p class="timer"><span class="dd">0D</span><span class="hh">00</span><i class="colon"></i><span class="mm">00</span><i class="colon"></i><span class="ss">00</span></p>
+            </div>
+
+            <div class="txt">
+                <h2 class="title outfit"><span class="line">THE BIG <span class="badge">UP TO 75%</span></span><span class="line"><em>PLAY</em> WEEK</span></h2>
+                <p class="date outfit">11.20 FRI — 11.30 MON</p>
+                <div class="row">
+                    <p class="t01">취향껏 담고, 혜택은 더 크게.<br>최대 75% 할인부터 랜덤 50% 쿠폰까지.<br>레고트의 블랙프라이데이를 11일간 만나보세요.</p>
+                    <div class="btns">
+                        <button type="button" class="btn_dark" data-target=".p_sec02">랜덤 쿠폰 확인하기</button>
+                        <button type="button" class="btn_white" data-target=".p_sec07">할인 상품 둘러보기</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visual">
+                <div class="video">
+                    <video class="pc" data-src="https://player-api.charlla.io/mp4/yy00udut7nv" autoplay muted loop playsinline preload="auto"></video>
+                    <video class="mo" data-src="https://player-api.charlla.io/mp4/phfw1j7p6tc" autoplay muted loop playsinline preload="auto"></video>
+                </div>
+
+                <div class="sticker st_friday outfit"><span class="st_in">BLACK<br>FRIDAY</span></div>
+                <div class="sticker st_coupon outfit"><span class="st_in">50% COUPON</span></div>
+                <div class="sticker st_lucky outfit">
+                    <span class="st_in">
+                        <svg viewBox="0 0 181 181" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M100.196 2.29975C122.128 -5.25211 146.03 6.40546 153.582 28.3377C159.049 44.214 154.447 61.1204 143.171 72.1119C158.824 73.8311 172.858 84.3207 178.325 100.197C185.877 122.129 174.219 146.031 152.287 153.583C136.411 159.049 119.504 154.448 108.513 143.172C106.794 158.825 96.304 172.859 80.4277 178.326C58.4955 185.878 34.5939 174.22 27.042 152.288C21.5755 136.412 26.1761 119.506 37.4515 108.514C21.7993 106.795 7.76543 96.3046 2.29886 80.4286C-5.253 58.4964 6.40457 34.5948 28.3368 27.0429C44.2128 21.5764 61.1191 26.1769 72.1106 37.4524C73.8302 21.8002 84.3201 7.76632 100.196 2.29975Z" fill="#D3C615"></path></svg>
+                        <span>LUCKY<br>BOX<br>49,000</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 01 -->
+    <div class="p_sec01">
+        <div class="inner">
+            <div class="sec_head fadeEl">
+                <div class="head_l">
+                    <p class="pill outfit fadeCh fadeInUp">5 WAYS TO PLAY</p>
+                    <h3 class="tit fadeCh fadeInUp" style="animation-delay: .1s;">레고트가 준비한<br>다섯 가지 혜택</h3>
+                </div>
+                <p class="desc fadeCh fadeInUp" style="animation-delay: .2s;">눈여겨본 아이템을 특별한 가격에 만나고,<br>랜덤 쿠폰부터 선물까지 하나씩 챙겨보세요.</p>
+            </div>
+
+            <div class="benefit fadeEl">
+                <button type="button" class="card fadeCh fadeInUp" data-target=".p_sec07">
+                    <span class="top outfit"><span class="no" style="color: #FF6FB5;">01 · SALE</span><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 12.5L12.5 3.5M5 3.5H12.5V11" stroke="#fff" stroke-width="1.5"></path></svg></span>
+                    <strong class="big outfit">UP TO 75%</strong>
+                    <span class="txt_box"><span class="name">블랙프라이데이 세일</span><span class="sub">좋아하는 아이템을<br class="pc"> 특별한 가격에</span></span>
+                </button>
+                <button type="button" class="card fadeCh fadeInUp" style="animation-delay: .1s;" data-target=".p_sec02">
+                    <span class="top outfit"><span class="no" style="color: #FFD23F;">02 · COUPON</span><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 12.5L12.5 3.5M5 3.5H12.5V11" stroke="#fff" stroke-width="1.5"></path></svg></span>
+                    <strong class="big outfit">50%</strong>
+                    <span class="txt_box"><span class="name">카테고리 랜덤 쿠폰</span><span class="sub">1인 1매<br class="mo"> 최대<br class="pc"> 5만원 할인</span></span>
+                </button>
+                <button type="button" class="card fadeCh fadeInUp" style="animation-delay: .2s;" data-target=".p_sec03">
+                    <span class="top outfit"><span class="no" style="color: #C9A8FF;">03 · LUCKY BOX</span><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 12.5L12.5 3.5M5 3.5H12.5V11" stroke="#fff" stroke-width="1.5"></path></svg></span>
+                    <strong class="big outfit">49,000원</strong>
+                    <span class="txt_box"><span class="name">열어보는 재미, 럭키박스</span><span class="sub">최대 195,000원<br class="pc"> 상당<br class="mo"> 6종 구성</span></span>
+                </button>
+                <button type="button" class="card fadeCh fadeInUp" style="animation-delay: .3s;" data-target=".p_sec05">
+                    <span class="top outfit"><span class="no" style="color: #5EC8F7;">04 · GIFTS FOR YOU</span><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 12.5L12.5 3.5M5 3.5H12.5V11" stroke="#fff" stroke-width="1.5"></path></svg></span>
+                    <strong class="big outfit">GIFT</strong>
+                    <span class="txt_box"><span class="name">구매할수록 더해지는 선물</span><span class="sub">5만원 이상부터<br>금액별 사은품</span></span>
+                </button>
+                <button type="button" class="card fadeCh fadeInUp" style="animation-delay: .4s;" data-target=".p_sec06">
+                    <span class="top outfit"><span class="no" style="color: #FF4040;">05 · LUCKY DRAW</span><svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 12.5L12.5 3.5M5 3.5H12.5V11" stroke="#fff" stroke-width="1.5"></path></svg></span>
+                    <strong class="big outfit">1+1</strong>
+                    <span class="txt_box"><span class="name">영화 한 편의 행운</span><span class="sub">CGV 2D 영화<br>1+1 쿠폰</span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="p_navi outfit">
+        <div class="navi_in">
+            <button type="button" class="on" data-target=".p_sec02">50% COUPON</button>
+            <button type="button" data-target=".p_sec03">LUCKY BOX 49,000</button>
+            <button type="button" data-target=".p_sec05">GIFTS FOR YOU</button>
+            <button type="button" data-target=".p_sec06">LUCKY DRAW</button>
+            <button type="button" data-target=".p_sec07">BLACK FRIDAY UP TO 75%</button>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 02 -->
+    <div class="p_sec02">
+        <div class="inner">
+            <div class="sec_head fadeEl">
+                <div class="head_l">
+                    <p class="label outfit fadeCh fadeInUp" style="color: #FFD23F;">RANDOM COUPON</p>
+                    <h3 class="tit fadeCh fadeInUp" style="animation-delay: .1s;">나의 50% 쿠폰은<br>어느 카테고리?</h3>
+                </div>
+                <p class="desc fadeCh fadeInUp" style="animation-delay: .2s;">텀블러부터 트래블까지, 다섯 카테고리 중 하나!<br>할인 상품에도 한 번 더 쓸 수 있는 50% 쿠폰을 확인해보세요.</p>
+            </div>
+        </div>
+
+        <div class="kiki_coupon fadeEl">
+            <div class="fadeCh fadeIn">
+                <div class="ekiki-live" id="ekiki-live-MGMAI_31w7c9N4" data-ekiki-live="MGMAI_31w7c9N4" data-ekiki-plugintype="C24">
+                    <div style="padding-top:187.5%;height:0;overflow:hidden;background:url('https://stg.eventkiki.com/eventkiki/ekiki_image/ekiki_loading2.gif') no-repeat;background-size:120px;background-size:min(120px,30%) auto;background-position:center;background-position:center min(50%,240px)">
+                    </div>
+                </div>
+                <script type="module" src="https://eventkiki.com/cms_new/template-editor/embed-live.js"></script>
+
+                <div class="kiki_map">
+                    <a href="#" data-cate="0" aria-label="텀블러 쿠폰 상품 보기"></a>
+                    <a href="#" data-cate="1" aria-label="키친 쿠폰 상품 보기"></a>
+                    <a href="#" data-cate="2" aria-label="가방 쿠폰 상품 보기"></a>
+                    <a href="#" data-cate="3" aria-label="트래블 쿠폰 상품 보기"></a>
+                    <a href="#" data-cate="4" aria-label="홈데코 쿠폰 상품 보기"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 03 -->
+    <div class="p_sec03">
+        <div class="inner lucky fadeEl">
+            <div class="head_l fadeCh fadeInUp">
+                <p class="label outfit" style="color: #C9A8FF;">LUCKY BOX</p>
+                <h3 class="tit">열어보는 재미까지,<br>럭키박스</h3>
+            </div>
+
+            <div class="buy fadeCh fadeInUp" style="animation-delay: .1s;">
+                <div class="price_box">
+                    <strong class="won outfit">49,000원</strong>
+                    <p class="ref"><span>정상가 기준 상당</span><del class="outfit">164,000 – 195,000원</del></p>
+                </div>
+                <a href="/product/detail.html?product_no=588" class="btn_buy">럭키박스 구매하기</a>
+            </div>
+
+            <div class="box_img fadeCh fadeIn">
+                <picture>
+                    <source srcset="/morenvyimg/promotion/261120_TheBigPlayWeek/box_m.webp" media="(max-width: 1024px)">
+                    <img src="/morenvyimg/promotion/261120_TheBigPlayWeek/box_pc.webp" alt="물음표가 그려진 럭키박스">
+                </picture>
+            </div>
+
+            <div class="box_info fadeCh fadeInUp" style="animation-delay: .2s;">
+                <ul class="chips">
+                    <li><span class="n outfit" style="background-color: #FFD23F;">1</span>매트 또는 조명</li>
+                    <li><span class="n outfit" style="background-color: #FF6FB5;">2</span>글라스</li>
+                    <li><span class="n outfit" style="background-color: #C9A8FF;">3</span>텀블러</li>
+                    <li><span class="n outfit" style="background-color: #5EC8F7;">4</span>스트로우 캡 세트</li>
+                    <li><span class="n outfit" style="background-color: #FF4040;">5</span>스티커</li>
+                    <li><span class="n outfit" style="background-color: #D3C615;">6</span>파우치</li>
+                </ul>
+
+                <div class="guide">
+                    <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13.5288 3.72388C11.3075 3.88721 9.18418 5.12855 7.97551 7.21921L0.952176 19.3712C-0.975157 22.7359 0.102843 26.9499 3.46751 28.8772L15.6195 35.8679C16.1095 36.1619 16.6322 36.4885 17.1548 36.6519V24.4019C17.1548 18.6525 21.8915 13.8832 27.6408 13.8832H31.9202C31.3322 13.0339 30.5808 12.2499 29.6335 11.6945L17.4815 4.70388C16.2075 3.98521 14.8682 3.62588 13.5288 3.72388ZM14.6068 6.20655C16.5668 6.20655 18.2655 7.54588 18.7882 9.44055C19.4088 11.7925 18.0368 14.1772 15.6848 14.7979C13.3655 15.4185 10.9808 14.0465 10.3275 11.7272C9.70684 9.37521 11.1115 6.99055 13.4308 6.36988C13.8228 6.23921 14.2148 6.20655 14.6068 6.20655ZM7.19151 19.0772C9.15151 19.0772 10.8502 20.4165 11.3728 22.3112C11.9935 24.6305 10.5888 27.0479 8.26951 27.6685C5.95018 28.2892 3.53284 26.8845 2.91218 24.5652C2.29151 22.2459 3.66351 19.8285 6.01551 19.2079C6.37484 19.1099 6.79951 19.0445 7.19151 19.0772ZM27.6408 17.3785C23.7862 17.3785 20.6502 20.5145 20.6502 24.4019V38.3832C20.6502 42.2705 23.7862 45.4065 27.6408 45.4065H41.6548C45.5422 45.4065 48.6455 42.2705 48.6455 38.3832V24.4019C48.6455 20.5145 45.5422 17.3785 41.6548 17.3785H27.6408ZM41.6548 20.0245C42.7982 20.0245 43.9088 20.4819 44.7582 21.2985C45.5741 22.1188 46.032 23.2286 46.032 24.3855C46.032 25.5425 45.5741 26.6523 44.7582 27.4725C43.9088 28.3219 42.7982 28.7792 41.6548 28.7792C40.4939 28.7792 39.3805 28.318 38.5596 27.4971C37.7387 26.6762 37.2775 25.5628 37.2775 24.4019C37.2775 23.2409 37.7387 22.1275 38.5596 21.3066C39.3805 20.4857 40.4939 20.0245 41.6548 20.0245ZM27.6408 34.0059C28.8168 34.0059 29.9275 34.4632 30.7442 35.3125C31.5608 36.1292 32.0182 37.2399 32.0182 38.3832C32.0182 39.5442 31.557 40.6575 30.7361 41.4785C29.9152 42.2994 28.8018 42.7605 27.6408 42.7605C26.4799 42.7605 25.3665 42.2994 24.5456 41.4785C23.7247 40.6575 23.2635 39.5442 23.2635 38.3832C23.2635 37.2399 23.7208 36.1292 24.5702 35.3125C25.3868 34.4632 26.4975 34.0059 27.6408 34.0059Z" fill="white"></path></svg>
+                    <p>각 구성에서 하나씩 랜덤으로 담아 보내드려요.<br>어떤 상품과 컬러를 만날지는 택배를 열어 확인해보세요.</p>
+                </div>
+
+                <dl class="spec">
+                    <div><dt>구매 제한</dt><dd>1인 1개</dd></div>
+                    <div><dt>쿠폰 적용</dt><dd>불가</dd></div>
+                    <div><dt>상품·컬러 선택</dt><dd>불가</dd></div>
+                    <div><dt>구매 금액별 사은품</dt><dd>적용 가능</dd></div>
+                </dl>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 04 -->
+    <div class="p_sec04">
+        <div class="inner">
+            <div class="sec_head fadeEl">
+                <h3 class="tit fadeCh fadeInUp">이 아이템들이 박스에 쏙!</h3>
+                <p class="desc fadeCh fadeInUp" style="animation-delay: .1s;">아래 구성에서 하나씩, 총 6종을 보내드려요.</p>
+            </div>
+        </div>
+
+        <div class="goods_wrap fadeEl">
+            <div class="swiper swiper01 fadeCh fadeInUp">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card_top">
+                                <span class="n outfit" style="background-color: #FFD23F;">1</span>
+                                <p class="name"><strong>매트 또는 조명</strong><span>총 7종</span></p>
+                                <span class="tag">랜덤 1종</span>
+                            </div>
+                            <ul class="goods">
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item1_1.webp" alt="" loading="lazy"></div><p>스트라이프 매트<br>50*70 (브라운)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item1_2.webp" alt="" loading="lazy"></div><p>스트라이프 매트<br>50*70 (블루)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item1_3.webp" alt="" loading="lazy"></div><p>스트라이프 매트<br>50*70 (화이트)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item1_4.webp" alt="" loading="lazy"></div><p>포터블 조명<br>(라이트그레이)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item1_5.webp" alt="" loading="lazy"></div><p>포터블 조명<br>(라임)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item1_6.webp" alt="" loading="lazy"></div><p>포터블 조명<br>(오렌지)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item1_7.webp" alt="" loading="lazy"></div><p>푸퍼 매트 40*70<br>(브라운)</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card_top">
+                                <span class="n outfit" style="background-color: #FF6FB5;">2</span>
+                                <p class="name"><strong>글라스 세트</strong><span>총 2종</span></p>
+                                <span class="tag">랜덤 1종</span>
+                            </div>
+                            <ul class="goods">
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item2_1.webp" alt="" loading="lazy"></div><p>레터링 글라스 와인잔<br>2p 세트</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item2_2.webp" alt="" loading="lazy"></div><p>컬러와인잔 2p 세트<br>(멀티 블루)</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card_top">
+                                <span class="n outfit" style="background-color: #C9A8FF;">3</span>
+                                <p class="name"><strong>텀블러</strong><span>총 8종</span></p>
+                                <span class="tag">랜덤 1종</span>
+                            </div>
+                            <ul class="goods">
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item3_1.webp" alt="" loading="lazy"></div><p>세라믹 텀블러 540ml<br>(그린)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item3_2.webp" alt="" loading="lazy"></div><p>세라믹 텀블러 540ml<br>(라벤더)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item3_3.webp" alt="" loading="lazy"></div><p>세라믹 텀블러 540ml<br>(라이트그레이)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item3_4.webp" alt="" loading="lazy"></div><p>세라믹 텀블러 540ml<br>(블루)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item3_5.webp" alt="" loading="lazy"></div><p>세라믹 텀블러 540ml<br>(코랄)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item3_6.webp" alt="" loading="lazy"></div><p>스트로우 텀블러<br>700ml (라벤더)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item3_7.webp" alt="" loading="lazy"></div><p>스트로우 텀블러<br>700ml (블루)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item3_8.webp" alt="" loading="lazy"></div><p>스트로우 텀블러<br>700ml (코랄)</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card_top">
+                                <span class="n outfit" style="background-color: #5EC8F7;">4</span>
+                                <p class="name"><strong>스트로우 캡 세트</strong><span>총 3종</span></p>
+                                <span class="tag">랜덤 1종</span>
+                            </div>
+                            <ul class="goods">
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item4_1.webp" alt="" loading="lazy"></div><p>스트로우 캡 2p 세트<br>(라벤더)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item4_2.webp" alt="" loading="lazy"></div><p>스트로우 캡 2p 세트<br>(블루)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item4_3.webp" alt="" loading="lazy"></div><p>스트로우 캡 2p 세트<br>(핑크)</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card_top">
+                                <span class="n outfit" style="background-color: #FF4040;">5</span>
+                                <p class="name"><strong>스티커</strong><span>총 5종</span></p>
+                                <span class="tag">랜덤 1종</span>
+                            </div>
+                            <ul class="goods">
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item5_1.webp" alt="" loading="lazy"></div><p>스티커 10p (네온사인)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item5_2.webp" alt="" loading="lazy"></div><p>스티커 10p (핑크)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item5_3.webp" alt="" loading="lazy"></div><p>스티커 10p (스마일)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item5_4.webp" alt="" loading="lazy"></div><p>스티커 10p (프리티)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item5_5.webp" alt="" loading="lazy"></div><p>스티커 10p (홀로그램)</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="card_top">
+                                <span class="n outfit" style="background-color: #D3C615;">6</span>
+                                <p class="name"><strong>핸디 큐브 파우치</strong><span>총 7종</span></p>
+                                <span class="tag">랜덤 1종</span>
+                            </div>
+                            <ul class="goods">
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item6_1.webp" alt="" loading="lazy"></div><p>핸디 큐브 파우치 S<br>(그린)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item6_2.webp" alt="" loading="lazy"></div><p>핸디 큐브 파우치 S<br>(네이비)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item6_3.webp" alt="" loading="lazy"></div><p>핸디 큐브 파우치 S<br>(블루)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item6_4.webp" alt="" loading="lazy"></div><p>핸디 큐브 파우치 S<br>(오렌지)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item6_5.webp" alt="" loading="lazy"></div><p>핸디 큐브 파우치 S<br>(핑크)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item6_6.webp" alt="" loading="lazy"></div><p>핸디 큐브 파우치 L<br>(블루)</p></li>
+                                <li><div class="img"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/item6_7.webp" alt="" loading="lazy"></div><p>핸디 큐브 파우치 L<br>(오렌지)</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination pagination01 fadeCh fadeIn"></div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 05 -->
+    <div class="p_sec05">
+        <div class="inner">
+            <div class="sec_head fadeEl">
+                <div class="head_l">
+                    <p class="label outfit fadeCh fadeInUp" style="color: #5EC8F7;">GIFTS FOR YOU</p>
+                    <h3 class="tit fadeCh fadeInUp" style="animation-delay: .1s;">담을수록<br>따라오는 선물</h3>
+                </div>
+                <p class="desc fadeCh fadeInUp" style="animation-delay: .2s;">실결제 금액 5만원 이상부터 선물을 더해드려요.<br>장바구니를 채우고, 금액별 사은품도 챙겨보세요.</p>
+            </div>
+
+            <div class="gift_wrap fadeEl">
+                <div class="gift gift01 fadeCh fadeInUp">
+                    <div class="g_head">
+                        <p class="amount"><strong class="outfit">50,000</strong><span>원 이상</span></p>
+                        <span class="g_no outfit">GIFT 01</span>
+                    </div>
+                    <div class="g_list">
+                        <div class="g_item">
+                            <div class="g_img">
+                                <picture>
+                                    <source srcset="/morenvyimg/promotion/261120_TheBigPlayWeek/gift01_m.webp" media="(max-width: 1024px)">
+                                    <img src="/morenvyimg/promotion/261120_TheBigPlayWeek/gift01_pc.webp" alt="하트 아이스트레이" loading="lazy">
+                                </picture>
+                            </div>
+                            <p class="g_name">하트 아이스트레이</p>
+                            <p class="g_desc">음료에 하트 한 조각!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gift gift02 fadeCh fadeInUp" style="animation-delay: .1s;">
+                    <div class="g_head">
+                        <p class="amount"><strong class="outfit">50,000</strong><span>원 이상</span></p>
+                        <span class="g_no outfit">GIFT 02</span>
+                    </div>
+                    <div class="g_list">
+                        <div class="g_item">
+                            <div class="g_img keyring">
+                                <span class="kr kr_g"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/keyring_g.webp" alt="치키 키링 그린" loading="lazy"></span>
+                                <span class="kr kr_p"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/keyring_p.webp" alt="치키 키링 핑크" loading="lazy"></span>
+                                <span class="kr kr_y"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/keyring_y.webp" alt="치키 키링 옐로" loading="lazy"></span>
+                                <img class="kr_box" src="/morenvyimg/promotion/261120_TheBigPlayWeek/keyring_box.webp" alt="치키 랜덤박스" loading="lazy">
+                            </div>
+                            <p class="g_name">치키 키링 · 3종 중 랜덤</p>
+                        </div>
+                        <span class="plus" aria-hidden="true"></span>
+                        <div class="g_item">
+                            <div class="g_img bag">
+                                <picture>
+                                    <source srcset="/morenvyimg/promotion/261120_TheBigPlayWeek/bag01_m.webp" media="(max-width: 1024px)">
+                                    <img src="/morenvyimg/promotion/261120_TheBigPlayWeek/bag01_pc.webp" alt="리유저블백 L 블루" loading="lazy">
+                                </picture>
+                                <picture>
+                                    <source srcset="/morenvyimg/promotion/261120_TheBigPlayWeek/bag02_m.webp" media="(max-width: 1024px)">
+                                    <img src="/morenvyimg/promotion/261120_TheBigPlayWeek/bag02_pc.webp" alt="리유저블백 L 민트" loading="lazy">
+                                </picture>
+                                <picture>
+                                    <source srcset="/morenvyimg/promotion/261120_TheBigPlayWeek/bag03_m.webp" media="(max-width: 1024px)">
+                                    <img src="/morenvyimg/promotion/261120_TheBigPlayWeek/bag03_pc.webp" alt="리유저블백 L 옐로" loading="lazy">
+                                </picture>
+                            </div>
+                            <p class="g_name">리유저블백 L</p>
+                            <p class="g_desc mo">가방에는 치키를, 좋아하는 것들은 리유저블백에.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 06 -->
+    <div class="p_sec06">
+        <div class="inner">
+            <div class="sec_head fadeEl">
+                <div class="head_l">
+                    <p class="label outfit fadeCh fadeInUp" style="color: #FF4040;">LUCKY DRAW</p>
+                    <h3 class="tit fadeCh fadeInUp" style="animation-delay: .1s;">영화 한 편의 행운,<br>지금 도전해요</h3>
+                </div>
+                <p class="desc fadeCh fadeInUp" style="animation-delay: .2s;">구매하거나 친구에게 링크를 공유하고 응모권을 받아보세요.<br>CGV 2D 영화 1+1 쿠폰 당첨 여부를 바로 확인할 수 있어요.</p>
+            </div>
+
+            <div class="kiki_draw fadeEl">
+                <div class="fadeCh fadeIn">
+                    <div class="eventkiki" id="ME_13c2tolgpj"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 유의사항 -->
+    <div class="p_notice">
+        <div class="inner fadeEl">
+            <p class="n_tit fadeCh fadeInUp">유의사항</p>
+            <div class="n_list fadeCh fadeInUp" style="animation-delay: .1s;">
+                <div class="n_item full">
+                    <button type="button" class="notice_toggle"><span>공통</span><i></i></button>
+                    <ul>
+                        <li><span></span>프로모션 기간은 2026년 11월 20일(금)부터 11월 30일(월)까지입니다.</li>
+                        <li><span></span>프로모션 내용은 내부 사정에 따라 사전 고지 없이 변경 또는 조기 종료될 수 있습니다.</li>
+                    </ul>
+                </div>
+                <div class="n_item">
+                    <button type="button" class="notice_toggle"><span>카테고리 랜덤 50% 쿠폰</span><i></i></button>
+                    <ul>
+                        <li><span></span>사용 기간 : 11.20 - 11.30</li>
+                        <li><span></span>쿠폰은 상품 적용 쿠폰으로 ID당 1회 발급, 최대 50,000원까지 할인됩니다.</li>
+                        <li><span></span>트래블(양산 포함) / 텀블러 / 키친 / 가방 / 홈데코 중 1개 카테고리 쿠폰이 랜덤으로 지급됩니다.</li>
+                        <li><span></span>발급된 카테고리 내 상품에 제한 없이 사용 가능하며, 할인 상품과 중복 적용됩니다.</li>
+                        <li><span></span>럭키박스에는 쿠폰을 적용할 수 없습니다.</li>
+                        <li><span></span>발행된 쿠폰은 마이 쇼핑 &gt; 쿠폰에서 확인 가능합니다.</li>
+                        <li><span></span>주문 취소와 상품의 품절 및 반품 시 사용한 쿠폰의 유효기간이 만료된 경우 재발급되지 않습니다.</li>
+                        <li><span></span>기간내 미사용 시 자동 소멸되며 재발급되지 않습니다.</li>
+                    </ul>
+                </div>
+                <div class="n_item">
+                    <button type="button" class="notice_toggle"><span>럭키박스</span><i></i></button>
+                    <ul>
+                        <li><span></span>판매가 49,000원, 구성 상품 정상가 합계 164,000~195,000원 상당의 6pcs 구성입니다.</li>
+                        <li><span></span>본 제품은 한정 수량으로 진행되며, 재고 소진 시 판매 종료될 수 있습니다.</li>
+                        <li><span></span>1인 1개 구매 가능하며 세부 상품 및 컬러는 선택할 수 없습니다.</li>
+                        <li><span></span>구성별 후보 상품 중 1개씩 랜덤으로 패킹되어 발송되며, 박스마다 구성 및 정상가 합계가 다를 수 있습니다.</li>
+                        <li><span></span>쿠폰 적용은 불가하며, 실결제 금액이 기준을 충족하면 구매 금액별 사은품이 증정됩니다.</li>
+                        <li><span></span>상품 불량 시 교환 가능하나, 품절 시 동일 금액대의 다른 상품으로 변경되거나 전체 환불로 진행될 수 있습니다.</li>
+                        <li><span></span>구매 전 상품 구성 및 유의사항을 충분히 확인한 후 신중한 구매 부탁드립니다.</li>
+                    </ul>
+                </div>
+                <div class="n_item">
+                    <button type="button" class="notice_toggle"><span>구매 금액별 사은품</span><i></i></button>
+                    <ul>
+                        <li><span></span>쿠폰과 마일리지를 적용한 실결제금액 기준으로 사은품이 증정됩니다.</li>
+                        <li><span></span>주문번호 1건당 해당 금액 구간의 사은품을 품목별 1개씩 증정합니다.</li>
+                        <li><span></span>사은품 조기 품절 시 사전 공지 없이 이벤트가 종료될 수 있습니다.</li>
+                        <li><span></span>사은품 증정 대상 주문의 경우, 주문서 페이지에서 선택할 수 있으며, 사은품을 체크해주셔야 정상 참여가 진행됩니다.</li>
+                        <li><span></span>사은품이 표시되지 않는다면 증정 대상이 아니거나 재고가 소진된 상태이므로 참고 부탁드립니다.</li>
+                        <li><span></span>사은품은 교환 및 환불이 불가하며, 주문 건 반품 시 사은품도 함께 반품해주셔야 합니다.</li>
+                    </ul>
+                </div>
+                <div class="n_item">
+                    <button type="button" class="notice_toggle"><span>럭키드로우</span><i></i></button>
+                    <ul>
+                        <li><span></span>경품: CGV 2D 영화 1+1 쿠폰 총 100매</li>
+                        <li><span></span>구매 시 또는 링크 공유 후 공유 받은 사람이 로그인 시 응모권이 지급되며, 당첨 여부는 응모 즉시 확인 가능합니다.</li>
+                        <li><span></span>CGV 2D영화 1+1관람권은 구매확정 된 주문정보를 기준으로 12월 7일(월) 별도 안내 없이 티켓이 일괄발송 예정입니다.</li>
+                        <li><span></span>CGV 2D영화 1+1관람권은 안심번호 기재 시 증정이 제한됩니다.</li>
+                        <li><span></span>CGV 2D영화 1+1관람권 사용 조건은 개별 안내 예정입니다.</li>
+                        <li><span></span>개인정보 오기재로 인한 발송 오류는 책임지지 않으니 정확히 입력해 주세요.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기획전 섹션 07 -->
+    <div class="p_sec07 sec_wrap">
+        <div class="inner">
+            <div class="sec_head fadeEl">
+                <div class="head_l">
+                    <p class="label outfit fadeCh fadeInUp" style="color: #FF6FB5;">BLACK FRIDAY PICKS</p>
+                    <h3 class="tit fadeCh fadeInUp" style="animation-delay: .1s;"><span class="en">UP TO 75%</span><br>눈여겨본 아이템,<br class="mo"> 지금 담아볼까요?</h3>
+                </div>
+                <p class="desc fadeCh fadeInUp" style="animation-delay: .2s;">매일 쓰는 텀블러부터 집 안을 채우는 소품까지.<br>좋아하는 아이템을 최대 75% 할인으로 만나보세요.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* 공통 */
+    html {overflow-x: clip;}
+    #container #contents {max-width: 100%; width: 100%; padding: 0;}
+    #promotion_box *,
+    #promotion_box *::before,
+    #promotion_box *::after {box-sizing: border-box;}
+    #promotion_box {color: #fff; background-color: #0B0B0C; font-family: "SUIT Variable", sans-serif; word-break: keep-all; overflow-x: clip;}
+    #promotion_box .outfit {font-family: "Outfit", "SUIT Variable", sans-serif;}
+    #promotion_box p, #promotion_box h2, #promotion_box h3, #promotion_box dl, #promotion_box dd {margin: 0;}
+    #promotion_box img {display: block; width: 100%; max-width: none;}
+    #promotion_box picture {display: block; height: auto; overflow: visible;}
+    #promotion_box button {margin: 0; padding: 0; border: 0; background: none; font-family: inherit; color: inherit; text-align: inherit; cursor: pointer;}
+    #promotion_box a {color: inherit; text-decoration: none;}
+    #promotion_box ul {margin: 0; padding: 0; list-style: none;}
+    #promotion_box em {font-style: normal;}
+    #promotion_box .mo {display: none;}
+    #promotion_box .swiper {width: 100%; margin: 0; padding: 0; overflow: hidden;}
+    #promotion_box .inner {width: 75.521vw; max-width: 145rem; margin: 0 auto;}
+
+    /* 기획전 상품 진열 모듈 */
+    .xans-project-package .xans-project-list {max-width: none; margin: 0; padding: 0;}
+    .xans-project-package .xans-project-list h3 {padding: 0; font-size: inherit; line-height: inherit; font-weight: inherit; color: inherit; text-align: inherit;}
+    .xans-project-package .xans-project-list h3 span {display: block; z-index: auto;}
+    .xans-project-package .xans-project-list .xans-project-productlist {max-width: 168rem; margin: 0 auto; padding: 0 2.5%;}
+
+    /* 유의사항 */
+    #promotion_box .p_notice {padding-top: clamp(10rem, 10.417vw, 20rem);}
+    #promotion_box .p_notice .n_tit {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.4; font-weight: 800; letter-spacing: -0.03em; text-align: center;}
+    #promotion_box .p_notice .n_list {display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: clamp(1rem, 1.042vw, 2rem) clamp(2rem, 2.083vw, 4rem); margin-top: clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .p_notice .n_item {border-bottom: 1px solid #292929;}
+    #promotion_box .p_notice .n_item.full {grid-column: 1 / -1;}
+    #promotion_box .notice_toggle {display: flex; align-items: center; justify-content: space-between; gap: clamp(1rem, 1.042vw, 2rem); width: 100%; padding: clamp(1rem, 1.042vw, 2rem) clamp(1.5rem, 1.563vw, 3rem); font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.2; font-weight: 700; letter-spacing: -0.03em; color: #C8C8C8;}
+    #promotion_box .notice_toggle i {position: relative; flex: none; width: clamp(0.5rem, 0.521vw, 1rem); height: clamp(0.5rem, 0.521vw, 1rem); transition: transform .4s;}
+    #promotion_box .notice_toggle i::before,
+    #promotion_box .notice_toggle i::after {content: ""; position: absolute; top: 50%; left: 0; width: 100%; height: 1.5px; margin-top: -0.75px; background-color: #C8C8C8; transition: transform .4s;}
+    #promotion_box .notice_toggle i::after {transform: rotate(90deg);}
+    #promotion_box .notice_toggle.on i {transform: rotate(180deg);}
+    #promotion_box .notice_toggle.on i::after {transform: rotate(0);}
+    #promotion_box .p_notice ul {display: none; padding: 0 clamp(1.5rem, 1.563vw, 3rem) clamp(1.2rem, 1.25vw, 2.4rem);}
+    #promotion_box .p_notice ul li {display: flex; font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.6; font-weight: 400; letter-spacing: -0.03em; color: #B0B0B0;}
+    #promotion_box .p_notice ul li + li {margin-top: clamp(0.2rem, 0.208vw, 0.4rem);}
+    #promotion_box .p_notice ul li span {display: flex; align-items: center; justify-content: center; flex: none; width: clamp(0.7rem, 0.729vw, 1.4rem); height: 1.6em;}
+    #promotion_box .p_notice ul li span::before {content: ""; display: block; width: 3px; height: 3px; border-radius: 100%; background-color: #B0B0B0;}
+
+    /* 섹션 공통 */
+    #promotion_box .sec_head {display: flex; align-items: flex-end; justify-content: space-between; gap: clamp(2rem, 2.083vw, 4rem);}
+    #promotion_box .sec_head .head_l {display: flex; flex-direction: column; align-items: flex-start; gap: clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .sec_head .label {display: flex; align-items: center; gap: clamp(0.3rem, 0.313vw, 0.6rem); font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.2; font-weight: 700; letter-spacing: -0.01em;}
+    #promotion_box .sec_head .label::before {content: ""; flex: none; width: clamp(0.6rem, 0.625vw, 1.2rem); height: clamp(0.6rem, 0.625vw, 1.2rem); border-radius: 100%; background-color: currentColor;}
+    #promotion_box .sec_head .tit {font-size: clamp(3.36rem, 2.917vw, 5.6rem); line-height: 1.3; font-weight: 800; letter-spacing: -0.03em;}
+    #promotion_box .sec_head .desc {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.7; font-weight: 400; letter-spacing: -0.03em;}
+
+
+    /* 기획전 키비주얼 */
+    #promotion_box .p_keyvisual {padding: clamp(5rem, 5.208vw, 10rem) 0 clamp(10rem, 10.417vw, 20rem);}
+    #promotion_box .p_keyvisual .timer_bar {display: flex; align-items: center; justify-content: space-between; gap: clamp(1rem, 1.042vw, 2rem); font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.4; font-weight: 600; letter-spacing: -0.01em;}
+    #promotion_box .p_keyvisual .timer {display: flex; align-items: center; gap: clamp(0.2rem, 0.208vw, 0.4rem); padding: clamp(0.4rem, 0.417vw, 0.8rem) clamp(1.3rem, 1.354vw, 2.6rem); border: 1px solid #fff; border-radius: 100px; font-variant-numeric: tabular-nums;}
+    #promotion_box .p_keyvisual .colon {display: flex; flex-direction: column; align-items: center; justify-content: center; gap: clamp(0.1rem, 0.104vw, 0.2rem); width: clamp(0.3rem, 0.313vw, 0.6rem); height: 1.4em;}
+    #promotion_box .p_keyvisual .colon::before,
+    #promotion_box .p_keyvisual .colon::after {content: ""; display: block; width: 2px; height: 2px; border-radius: 100%; background-color: #fff;}
+    #promotion_box .p_keyvisual .txt {margin-top: clamp(5rem, 5.208vw, 10rem);}
+    #promotion_box .p_keyvisual .txt > * {animation: fadeInUp 1.2s ease both;}
+    #promotion_box .p_keyvisual .title {display: flex; flex-direction: column; gap: clamp(1rem, 1.042vw, 2rem); font-size: clamp(7.2rem, 6.25vw, 12rem); line-height: 1; font-weight: 800; letter-spacing: -0.03em;}
+    #promotion_box .p_keyvisual .title .line {display: flex; align-items: center; gap: clamp(1rem, 1.042vw, 2rem); white-space: nowrap;}
+    #promotion_box .p_keyvisual .title .line + .line {display: block;}
+    #promotion_box .p_keyvisual .title em {color: #FF6FB5;}
+    #promotion_box .p_keyvisual .title .badge {padding: clamp(0.4rem, 0.417vw, 0.8rem) clamp(0.8rem, 0.833vw, 1.6rem); border-radius: 100px; background-color: #FFD23F; font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.4; font-weight: 600; letter-spacing: -0.01em; color: #1A1A1A;}
+    #promotion_box .p_keyvisual .date {margin-top: clamp(2rem, 2.083vw, 4rem); font-size: clamp(1.68rem, 1.458vw, 2.8rem); line-height: 1.35; font-weight: 500; letter-spacing: -0.01em; color: #C8C8C8; animation-delay: .1s;}
+    #promotion_box .p_keyvisual .row {display: flex; align-items: flex-end; justify-content: space-between; gap: clamp(2rem, 2.083vw, 4rem); margin-top: clamp(2rem, 2.083vw, 4rem); animation-delay: .2s;}
+    #promotion_box .p_keyvisual .t01 {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.5; font-weight: 400; letter-spacing: -0.03em;}
+    #promotion_box .p_keyvisual .btns {display: flex; gap: clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .p_keyvisual .btns button {padding: clamp(0.6rem, 0.625vw, 1.2rem) clamp(1.5rem, 1.563vw, 3rem); border-radius: 100px; font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.4; font-weight: 700; letter-spacing: -0.03em; white-space: nowrap; transition: opacity .3s;}
+    #promotion_box .p_keyvisual .btn_dark {background-color: #333;}
+    #promotion_box .p_keyvisual .btn_white {background-color: #fff; color: #1A1A1A;}
+    #promotion_box .p_keyvisual .visual {position: relative; margin-top: clamp(7rem, 7.292vw, 14rem); animation: fadeIn 1.2s .3s ease both;}
+    #promotion_box .p_keyvisual .video {position: relative; aspect-ratio: 1450 / 816; border-radius: clamp(1.2rem, 1.25vw, 2.4rem); overflow: hidden; background: #1A1A1A url("/morenvyimg/promotion/261120_TheBigPlayWeek/kv_pc.webp") center / cover no-repeat;}
+    #promotion_box .p_keyvisual video {position: absolute; inset: 0; display: none; width: 100%; height: 100%; object-fit: cover;}
+    #promotion_box .p_keyvisual video.is-on {display: block;}
+    #promotion_box .p_keyvisual .sticker {position: absolute; z-index: 2; transform: translate(-50%, -50%); cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none;}
+    #promotion_box .p_keyvisual .sticker.drag {z-index: 3; cursor: grabbing;}
+    #promotion_box .p_keyvisual .st_in {display: flex; align-items: center; justify-content: center; text-align: center; transition: transform .2s, filter .2s;}
+    #promotion_box .p_keyvisual .sticker.drag .st_in {filter: drop-shadow(0 8px 12px rgba(0, 0, 0, .35));}
+    #promotion_box .p_keyvisual .st_friday {left: 3.758%; top: 7.29%;}
+    #promotion_box .p_keyvisual .st_friday .st_in {width: clamp(9.4rem, 9.792vw, 18.8rem); height: clamp(9.4rem, 9.792vw, 18.8rem); border-radius: 100%; background-color: #FF6FB5; font-size: clamp(1.6rem, 1.667vw, 3.2rem); line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; color: #0B0B0C; transform: rotate(-12deg);}
+    #promotion_box .p_keyvisual .st_coupon {left: 95.709%; top: 13.801%;}
+    #promotion_box .p_keyvisual .st_coupon .st_in {padding: clamp(0.6rem, 0.625vw, 1.2rem) clamp(2rem, 2.083vw, 4rem); border-radius: 100px; background-color: #5EC8F7; font-size: clamp(1.2rem, 1.25vw, 2.4rem); line-height: 1.4; font-weight: 600; letter-spacing: -0.01em; color: #1A1A1A; white-space: nowrap; transform: rotate(10deg);}
+    #promotion_box .p_keyvisual .st_lucky {left: 97.22%; top: 93.344%;}
+    #promotion_box .p_keyvisual .st_lucky .st_in {position: relative; width: clamp(8rem, 8.333vw, 16rem); height: clamp(8rem, 8.333vw, 16rem); font-size: clamp(1.2rem, 1.25vw, 2.4rem); line-height: 1.2; font-weight: 700; transform: rotate(-19deg);}
+    #promotion_box .p_keyvisual .st_lucky svg {position: absolute; inset: 0; width: 100%; height: 100%;}
+    #promotion_box .p_keyvisual .st_lucky .st_in span {position: relative;}
+
+
+    /* 기획전 섹션 01 */
+    #promotion_box .p_sec01 {padding-bottom: clamp(9rem, 9.375vw, 18rem);}
+    #promotion_box .p_sec01 .sec_head .pill {padding: clamp(0.3rem, 0.313vw, 0.6rem) clamp(1.2rem, 1.25vw, 2.4rem); border-radius: 50px; background-color: #FFD23F; font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.5; font-weight: 700; letter-spacing: -0.01em; color: #1A1A1A;}
+    #promotion_box .p_sec01 .benefit {display: grid; grid-template-columns: repeat(5, 1fr); gap: clamp(1rem, 1.042vw, 2rem); margin-top: clamp(5rem, 5.208vw, 10rem);}
+    #promotion_box .p_sec01 .card {display: flex; flex-direction: column; gap: clamp(2rem, 2.083vw, 4rem); padding: clamp(2rem, 2.083vw, 4rem) clamp(1.5rem, 1.563vw, 3rem); border-radius: clamp(1.2rem, 1.25vw, 2.4rem); background-color: #202020; transition: background-color .3s;}
+    #promotion_box .p_sec01 .card .top {display: flex; align-items: center; justify-content: space-between; gap: clamp(0.4rem, 0.417vw, 0.8rem); font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.2; font-weight: 500; letter-spacing: -0.01em;}
+    #promotion_box .p_sec01 .card .top svg {flex: none; width: clamp(0.8rem, 0.833vw, 1.6rem); height: clamp(0.8rem, 0.833vw, 1.6rem); transition: transform .3s;}
+    #promotion_box .p_sec01 .card .big {display: block; margin-top: clamp(-2rem, -1.042vw, -1rem); font-size: clamp(2.4rem, 2.083vw, 4rem); line-height: 1; font-weight: 700; letter-spacing: -0.03em; white-space: nowrap;}
+    #promotion_box .p_sec01 .card .txt_box {display: flex; flex-direction: column; gap: clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .p_sec01 .card .name {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1; font-weight: 700; letter-spacing: -0.03em; color: #F0F0F0; white-space: nowrap;}
+    #promotion_box .p_sec01 .card .sub {font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.35; font-weight: 400; letter-spacing: -0.03em; color: #B0B0B0;}
+    @media (hover: hover) {
+        #promotion_box .p_sec01 .card:hover {background-color: #2A2A2A;}
+        #promotion_box .p_sec01 .card:hover .top svg {transform: translate(2px, -2px);}
+    }
+
+    #promotion_box .p_navi {position: sticky; top: 0; z-index: 50; padding: clamp(1rem, 1.042vw, 2rem) 0; background-color: #0B0B0C;}
+    #promotion_box .p_navi .navi_in {display: flex; justify-content: center; gap: clamp(0.5rem, 0.521vw, 1rem); padding: 0 clamp(1rem, 1.042vw, 2rem) 0 clamp(0.8rem, 0.833vw, 1.6rem);}
+    #promotion_box .p_navi button {flex: none; padding: clamp(0.3rem, 0.313vw, 0.6rem) clamp(1.2rem, 1.25vw, 2.4rem); border-radius: 50px; background-color: #151517; font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.5; font-weight: 400; letter-spacing: -0.011em; color: #4F4F4F; white-space: nowrap; transition: background-color .3s, color .3s;}
+    #promotion_box .p_navi button.on {background-color: #fff; font-weight: 700; color: #1A1A1A;}
+
+
+    /* 기획전 섹션 02 */
+    #promotion_box .p_sec02 {padding-top: clamp(9rem, 9.375vw, 18rem);}
+    #promotion_box .p_sec02 .kiki_coupon {width: clamp(32.5rem, 33.854vw, 65rem); margin: clamp(5rem, 5.208vw, 10rem) auto 0;}
+    #promotion_box .p_sec02 .kiki_coupon > div {position: relative;}
+    #promotion_box .p_sec02 .kiki_map {position: absolute; top: 0; left: 4.444%; z-index: 2; width: 91.111%;}
+    #promotion_box .p_sec02 .kiki_map a {display: block; aspect-ratio: 328 / 82;}
+    #promotion_box .p_sec02 .kiki_map a + a {margin-top: 3.049%;}
+
+
+    /* 기획전 섹션 03 */
+    #promotion_box .p_sec03 {padding: clamp(10rem, 10.417vw, 20rem) 0 clamp(5rem, 5.208vw, 10rem);}
+    #promotion_box .p_sec03 .lucky {display: grid; grid-template-columns: 44.828% 49.655%; grid-template-areas: "head buy" "img info"; justify-content: space-between; align-items: end; row-gap: clamp(5rem, 5.208vw, 10rem);}
+    #promotion_box .p_sec03 .head_l {grid-area: head; display: flex; flex-direction: column; align-items: flex-start; gap: clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .p_sec03 .label {display: flex; align-items: center; gap: clamp(0.3rem, 0.313vw, 0.6rem); font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.2; font-weight: 700; letter-spacing: -0.01em;}
+    #promotion_box .p_sec03 .label::before {content: ""; flex: none; width: clamp(0.6rem, 0.625vw, 1.2rem); height: clamp(0.6rem, 0.625vw, 1.2rem); border-radius: 100%; background-color: currentColor;}
+    #promotion_box .p_sec03 .tit {font-size: clamp(3.36rem, 2.917vw, 5.6rem); line-height: 1.3; font-weight: 800; letter-spacing: -0.03em;}
+    #promotion_box .p_sec03 .buy {grid-area: buy; justify-self: end; display: flex; flex-direction: column; gap: clamp(1rem, 1.042vw, 2rem); width: 72.222%;}
+    #promotion_box .p_sec03 .price_box {display: flex; align-items: center; gap: clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .p_sec03 .won {font-size: clamp(3.36rem, 2.917vw, 5.6rem); line-height: 1.3; font-weight: 800; white-space: nowrap;}
+    #promotion_box .p_sec03 .ref {display: flex; flex-direction: column; gap: clamp(0.4rem, 0.417vw, 0.8rem);}
+    #promotion_box .p_sec03 .ref span {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1; font-weight: 400; letter-spacing: -0.03em;}
+    #promotion_box .p_sec03 .ref del {font-size: clamp(1.68rem, 1.458vw, 2.8rem); line-height: 1; font-weight: 400; letter-spacing: -0.01em; color: #C8C8C8; white-space: nowrap;}
+    #promotion_box .p_sec03 .btn_buy {display: flex; align-items: center; justify-content: center; height: clamp(3.2rem, 3.333vw, 6.4rem); border-radius: 100px; background-color: #C9A8FF; font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1; font-weight: 800; letter-spacing: -0.03em; color: #0B0B0C; transition: background-color .3s;}
+    #promotion_box .p_sec03 .box_img {grid-area: img; align-self: stretch;}
+    #promotion_box .p_sec03 .box_img img {animation: boxShake 3.6s ease-in-out infinite; transform-origin: 50% 90%;}
+    #promotion_box .p_sec03 .box_info {grid-area: info; align-self: center; display: flex; flex-direction: column; gap: clamp(2rem, 2.083vw, 4rem);}
+    #promotion_box .p_sec03 .chips {display: flex; flex-wrap: wrap; gap: clamp(1rem, 1.042vw, 2rem); max-width: clamp(32.2rem, 33.542vw, 64.4rem);}
+    #promotion_box .p_sec03 .chips li {display: flex; align-items: center; gap: clamp(0.4rem, 0.417vw, 0.8rem); padding: clamp(0.5rem, 0.521vw, 1rem) clamp(1.2rem, 1.25vw, 2.4rem); border-radius: 50px; background-color: #1A1A1A; font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; font-weight: 700; letter-spacing: -0.03em;}
+    #promotion_box .p_sec03 .chips .n {display: flex; align-items: center; justify-content: center; flex: none; width: clamp(1.1rem, 1.146vw, 2.2rem); height: clamp(1.1rem, 1.146vw, 2.2rem); border-radius: 100%; font-size: clamp(1.2rem, 0.625vw, 1.2rem); line-height: 1; font-weight: 700; color: #1A1A1A;}
+    #promotion_box .p_sec03 .guide {display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 1.042vw, 2rem); padding: clamp(1.5rem, 1.563vw, 3rem) clamp(1rem, 1.042vw, 2rem); border-radius: clamp(1.2rem, 1.25vw, 2.4rem); background-color: #1A1A1A;}
+    #promotion_box .p_sec03 .guide svg {flex: none; width: clamp(2.45rem, 2.552vw, 4.9rem); height: clamp(2.45rem, 2.552vw, 4.9rem);}
+    #promotion_box .p_sec03 .guide p {font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.7; font-weight: 500; letter-spacing: -0.03em;}
+    #promotion_box .p_sec03 .spec {display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 1.042vw, 2rem) clamp(1rem, 1.042vw, 2rem); margin-top: clamp(-3rem, -1.563vw, -1.5rem);}
+    #promotion_box .p_sec03 .spec div {display: flex; align-items: center; justify-content: space-between; gap: clamp(1rem, 1.042vw, 2rem); padding: clamp(0.7rem, 0.729vw, 1.4rem) 0; border-bottom: 1px solid #1A1A1A; font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; letter-spacing: -0.03em;}
+    #promotion_box .p_sec03 .spec dt {font-weight: 700;}
+    #promotion_box .p_sec03 .spec dd {font-weight: 400; color: #B0B0B0; text-align: right;}
+    @media (hover: hover) {
+        #promotion_box .p_sec03 .btn_buy:hover {background-color: #D9C2FF;}
+    }
+
+
+    /* 기획전 섹션 04 */
+    #promotion_box .p_sec04 {padding-bottom: clamp(10rem, 10.417vw, 20rem);}
+    #promotion_box .p_sec04 .sec_head .tit {font-size: clamp(2.4rem, 2.083vw, 4rem);}
+    #promotion_box .p_sec04 .goods_wrap {margin-top: clamp(2rem, 2.083vw, 4rem); overflow: hidden;}
+    #promotion_box .p_sec04 .swiper01 {width: 75.521vw; max-width: 145rem; margin: 0 auto; overflow: visible;}
+    #promotion_box .p_sec04 .swiper-wrapper {align-items: stretch;}
+    #promotion_box .p_sec04 .swiper-slide {width: clamp(23.5rem, 24.479vw, 47rem); height: auto;}
+    #promotion_box .p_sec04 .card {height: 100%; padding: clamp(1.5rem, 1.563vw, 3rem) clamp(1.25rem, 1.302vw, 2.5rem); border-radius: clamp(0.75rem, 0.781vw, 1.5rem); background-color: #1A1A1A;}
+    #promotion_box .p_sec04 .card_top {display: flex; align-items: center; gap: clamp(0.6rem, 0.625vw, 1.2rem);}
+    #promotion_box .p_sec04 .card_top .n {display: flex; align-items: center; justify-content: center; flex: none; width: clamp(2.1rem, 2.188vw, 4.2rem); height: clamp(2.1rem, 2.188vw, 4.2rem); border-radius: clamp(0.45rem, 0.469vw, 0.9rem); font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1; font-weight: 700; color: #1A1A1A;}
+    #promotion_box .p_sec04 .card_top .name {display: flex; flex-direction: column; gap: clamp(0.3rem, 0.313vw, 0.6rem); flex: 1; min-width: 0;}
+    #promotion_box .p_sec04 .card_top .name strong {font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1; font-weight: 700; letter-spacing: -0.03em;}
+    #promotion_box .p_sec04 .card_top .name span {font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1; font-weight: 600; letter-spacing: -0.03em; color: #C8C8C8;}
+    #promotion_box .p_sec04 .card_top .tag {flex: none; padding: clamp(0.4rem, 0.417vw, 0.8rem) clamp(1rem, 1.042vw, 2rem); border-radius: 100px; background-color: #0B0B0C; font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; font-weight: 700; letter-spacing: -0.03em;}
+    #promotion_box .p_sec04 .goods {display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1rem, 1.042vw, 2rem) clamp(0.75rem, 0.781vw, 1.5rem); margin-top: clamp(2rem, 2.083vw, 4rem);}
+    #promotion_box .p_sec04 .goods li {cursor: default; -webkit-tap-highlight-color: transparent;}
+    #promotion_box .p_sec04 .goods .img {aspect-ratio: 1 / 1; border-radius: clamp(1rem, 1.042vw, 2rem); overflow: hidden; background-color: #fff; transition: transform .35s ease, box-shadow .35s ease;}
+    #promotion_box .p_sec04 .goods p {margin-top: clamp(0.5rem, 0.521vw, 1rem); font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.35; font-weight: 400; letter-spacing: -0.03em;}
+    #promotion_box .p_sec04 .goods li.lift .img {transform: translateY(clamp(-0.8rem, -0.417vw, -0.4rem)); box-shadow: 0 clamp(0.5rem, 0.521vw, 1rem) clamp(1rem, 1.042vw, 2rem) rgba(0, 0, 0, .4);}
+    @media (hover: hover) {
+        #promotion_box .p_sec04 .goods li:hover .img {transform: translateY(clamp(-0.8rem, -0.417vw, -0.4rem)); box-shadow: 0 clamp(0.5rem, 0.521vw, 1rem) clamp(1rem, 1.042vw, 2rem) rgba(0, 0, 0, .4);}
+    }
+    #promotion_box .p_sec04 .pagination {display: flex; justify-content: center; gap: clamp(0.8rem, 0.833vw, 1.6rem); margin-top: clamp(2rem, 2.083vw, 4rem);}
+    #promotion_box .p_sec04 .pagination .swiper-pagination-bullet {display: block; width: clamp(0.8rem, 0.833vw, 1.6rem); height: clamp(0.8rem, 0.833vw, 1.6rem); margin: 0; border-radius: 10px; background-color: #fff; opacity: .2; transition: width .3s, opacity .3s;}
+    #promotion_box .p_sec04 .pagination .swiper-pagination-bullet-active {width: clamp(3.2rem, 3.333vw, 6.4rem); opacity: 1;}
+
+
+    /* 기획전 섹션 05 */
+    #promotion_box .p_sec05 {padding-bottom: clamp(10rem, 10.417vw, 20rem);}
+    #promotion_box .p_sec05 .gift_wrap {display: flex; align-items: flex-start; gap: clamp(1rem, 1.042vw, 2rem); margin-top: clamp(5rem, 5.208vw, 10rem);}
+    #promotion_box .p_sec05 .gift {display: flex; flex-direction: column; gap: clamp(2rem, 2.083vw, 4rem); padding: clamp(1.6rem, 1.667vw, 3.2rem) clamp(1.5rem, 1.563vw, 3rem); border-radius: clamp(1.2rem, 1.25vw, 2.4rem); background-color: #202020;}
+    #promotion_box .p_sec05 .gift01 {flex: 450;}
+    #promotion_box .p_sec05 .gift02 {flex: 980;}
+    #promotion_box .p_sec05 .g_head {display: flex; align-items: center; justify-content: space-between; gap: clamp(1rem, 1.042vw, 2rem);}
+    #promotion_box .p_sec05 .amount {display: flex; align-items: flex-end; gap: clamp(0.5rem, 0.521vw, 1rem);}
+    #promotion_box .p_sec05 .amount strong {font-size: clamp(2.4rem, 2.083vw, 4rem); line-height: 1; font-weight: 700; letter-spacing: -0.03em;}
+    #promotion_box .p_sec05 .amount span {font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.2; font-weight: 700; letter-spacing: -0.03em;}
+    #promotion_box .p_sec05 .g_no {flex: none; padding: clamp(0.35rem, 0.365vw, 0.7rem) clamp(1rem, 1.042vw, 2rem); border: 1px solid #C8C8C8; border-radius: 100px; font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1.5; font-weight: 700; letter-spacing: -0.03em;}
+    #promotion_box .p_sec05 .g_list {display: flex; align-items: flex-start; gap: clamp(2rem, 2.083vw, 4rem);}
+    #promotion_box .p_sec05 .g_item {flex: 1; min-width: 0;}
+    #promotion_box .p_sec05 .g_img {position: relative; aspect-ratio: 400 / 360; border-radius: clamp(1.2rem, 1.25vw, 2.4rem); overflow: hidden; background-color: #fff;}
+    #promotion_box .p_sec05 .gift01 .g_img {aspect-ratio: 390 / 360;}
+    #promotion_box .p_sec05 .g_img picture,
+    #promotion_box .p_sec05 .g_img picture img {height: 100%;}
+    #promotion_box .p_sec05 .g_img picture img {object-fit: cover;}
+    #promotion_box .p_sec05 .g_name {margin-top: clamp(2rem, 2.083vw, 4rem); font-size: clamp(1.44rem, 1.25vw, 2.4rem); line-height: 1; font-weight: 700; letter-spacing: -0.03em;}
+    #promotion_box .p_sec05 .g_desc {margin-top: clamp(1rem, 1.042vw, 2rem); font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1; font-weight: 400; letter-spacing: -0.03em;}
+    #promotion_box .p_sec05 .plus {position: relative; flex: none; align-self: flex-start; width: clamp(2rem, 2.083vw, 4rem); height: clamp(2rem, 2.083vw, 4rem); margin-top: clamp(8rem, 8.333vw, 16rem); border-radius: 100%; background-color: #5EC8F7;}
+    #promotion_box .p_sec05 .plus::before,
+    #promotion_box .p_sec05 .plus::after {content: ""; position: absolute; top: 50%; left: 50%; width: 40%; height: 2px; background-color: #fff; transform: translate(-50%, -50%);}
+    #promotion_box .p_sec05 .plus::after {transform: translate(-50%, -50%) rotate(90deg);}
+    #promotion_box .p_sec05 .keyring .kr {position: absolute; display: block; transform-origin: 0 0;}
+    #promotion_box .p_sec05 .keyring .kr img {transform-origin: 52% 4%; animation: keyringSwing 2.6s ease-in-out infinite;}
+    #promotion_box .p_sec05 .keyring .kr_g {left: 8.175%; top: 23.611%; width: 49%;}
+    #promotion_box .p_sec05 .keyring .kr_p {left: 29.8%; top: 20.111%; width: 48.75%; transform: rotate(8deg);}
+    #promotion_box .p_sec05 .keyring .kr_p img {animation-delay: -.9s;}
+    #promotion_box .p_sec05 .keyring .kr_y {left: -3.25%; top: 28.389%; width: 36.25%; transform: rotate(-12deg);}
+    #promotion_box .p_sec05 .keyring .kr_y img {animation-delay: -1.7s;}
+    #promotion_box .p_sec05 .keyring .kr_box {position: absolute; left: 57%; top: 33.611%; width: 40.75%;}
+    #promotion_box .p_sec05 .bag picture {position: absolute; inset: 0;}
+    #promotion_box .p_sec05 .bag picture:nth-child(2) {animation: bagFade02 7.5s ease-in-out infinite;}
+    #promotion_box .p_sec05 .bag picture:nth-child(3) {animation: bagFade03 7.5s ease-in-out infinite;}
+
+
+    /* 기획전 섹션 06 */
+    #promotion_box .p_sec06 .kiki_draw {width: clamp(29.6rem, 30.833vw, 59.2rem); margin: clamp(5rem, 5.208vw, 10rem) auto 0;}
+
+
+    /* 기획전 섹션 07 */
+    #promotion_box .sec_wrap {padding: clamp(10rem, 10.417vw, 20rem) 0 clamp(5rem, 5.208vw, 10rem);}
+
+
+    /* animation */
+    #promotion_box .fadeEl {animation-play-state: paused !important;}
+    #promotion_box .fadeEl.on {animation-play-state: running !important;}
+    #promotion_box .fadeEl .fadeCh {animation-play-state: paused !important; opacity: 0;}
+    #promotion_box .fadeEl.on .fadeCh {animation-play-state: running !important;}
+
+    #promotion_box .fadeIn {animation: fadeIn 1.2s ease both;}
+    #promotion_box .fadeInUp {animation: fadeInUp 1.2s ease both;}
+
+    @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+        0% {opacity: 0; transform: translateY(40px);}
+        100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes boxShake {
+        0%, 70%, 100% {transform: rotate(0);}
+        74% {transform: rotate(-2.5deg);}
+        78% {transform: rotate(2.5deg);}
+        82% {transform: rotate(-1.5deg);}
+        86% {transform: rotate(1.5deg);}
+        90% {transform: rotate(0);}
+    }
+
+    @keyframes keyringSwing {
+        0%, 100% {transform: rotate(-6deg);}
+        50% {transform: rotate(6deg);}
+    }
+
+    @keyframes bagFade02 {
+        0%, 27% {opacity: 0;}
+        33%, 94% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+
+    @keyframes bagFade03 {
+        0%, 60% {opacity: 0;}
+        66%, 94% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        #promotion_box .p_sec03 .box_img img,
+        #promotion_box .p_sec05 .keyring .kr img,
+        #promotion_box .p_sec05 .bag picture {animation: none !important;}
+    }
+
+
+    /* 반응형 */
+    @media all and (max-width: 1024px) {
+        /* 공통 */
+        #promotion_box .pc {display: none;}
+        #promotion_box .mo {display: block;}
+        #promotion_box span.mo,
+        #promotion_box br.mo {display: inline;}
+        #promotion_box .inner {width: auto; max-width: none; margin: 0 clamp(1.36rem, 4.444vw, 2.4rem);}
+
+        /* 기획전 상품 진열 모듈 */
+        .xans-project-package .xans-project-list {margin: 0;}
+        .xans-project-package .xans-project-list .xans-project-productlist {max-width: none; margin: 0 4%; padding: 0;}
+
+        /* 유의사항 */
+        #promotion_box .p_notice {padding: clamp(5.1rem, 16.667vw, 9rem) 0;}
+        #promotion_box .p_notice .n_tit {font-size: clamp(1.53rem, 5vw, 2.7rem); text-align: left;}
+        #promotion_box .p_notice .n_list {grid-template-columns: 100%; gap: 0; margin-top: clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .notice_toggle {gap: clamp(1.7rem, 5.556vw, 3rem); padding: clamp(0.85rem, 2.778vw, 1.5rem) 0; font-size: clamp(1.19rem, 3.889vw, 2.1rem); line-height: 1.714;}
+        #promotion_box .notice_toggle i {width: clamp(0.85rem, 2.778vw, 1.5rem); height: clamp(0.85rem, 2.778vw, 1.5rem);}
+        #promotion_box .p_notice ul {padding: 0 0 clamp(1.19rem, 3.889vw, 2.1rem);}
+        #promotion_box .p_notice ul li {font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_notice ul li + li {margin-top: clamp(0.17rem, 0.556vw, 0.3rem);}
+        #promotion_box .p_notice ul li span {width: clamp(0.85rem, 2.778vw, 1.5rem);}
+
+        /* 섹션 공통 */
+        #promotion_box .sec_head {flex-direction: column; align-items: flex-start; gap: clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .sec_head .head_l {gap: clamp(0.85rem, 2.778vw, 1.5rem);}
+        #promotion_box .sec_head .label {gap: clamp(0.51rem, 1.667vw, 0.9rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .sec_head .label::before {width: clamp(0.68rem, 2.222vw, 1.2rem); height: clamp(0.68rem, 2.222vw, 1.2rem);}
+        #promotion_box .sec_head .tit {font-size: clamp(3.06rem, 10vw, 5.4rem);}
+        #promotion_box .sec_head .desc {font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+
+        /* 기획전 키비주얼 */
+        #promotion_box .p_keyvisual {padding: clamp(3.4rem, 11.111vw, 6rem) 0 clamp(5.1rem, 16.667vw, 9rem);}
+        #promotion_box .p_keyvisual .inner {margin: 0;}
+        #promotion_box .p_keyvisual .timer_bar {gap: clamp(0.85rem, 2.778vw, 1.5rem); padding: 0 clamp(1.7rem, 5.556vw, 3rem); font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+        #promotion_box .p_keyvisual .timer {gap: clamp(0.34rem, 1.111vw, 0.6rem); padding: clamp(0.34rem, 1.111vw, 0.6rem) clamp(0.85rem, 2.778vw, 1.5rem);}
+        #promotion_box .p_keyvisual .colon {gap: clamp(0.17rem, 0.556vw, 0.3rem); width: clamp(0.51rem, 1.667vw, 0.9rem);}
+        #promotion_box .p_keyvisual .txt {margin-top: clamp(3.4rem, 11.111vw, 6rem); padding: 0 clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_keyvisual .title {gap: clamp(0.85rem, 2.778vw, 1.5rem); font-size: clamp(4.59rem, 15vw, 8.1rem); line-height: 0.92; letter-spacing: -0.01em;}
+        #promotion_box .p_keyvisual .title .line {gap: clamp(0.765rem, 2.5vw, 1.35rem);}
+        #promotion_box .p_keyvisual .title .badge {padding: clamp(0.68rem, 2.222vw, 1.2rem) clamp(1.36rem, 4.444vw, 2.4rem); font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+        #promotion_box .p_keyvisual .date {margin-top: clamp(1.7rem, 5.556vw, 3rem); font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_keyvisual .row {flex-direction: column; align-items: stretch; gap: clamp(3.4rem, 11.111vw, 6rem); margin-top: clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_keyvisual .t01 {font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+        #promotion_box .p_keyvisual .btns {gap: clamp(1.53rem, 5vw, 2.7rem);}
+        #promotion_box .p_keyvisual .btns button {flex: 1; padding: clamp(1.02rem, 3.333vw, 1.8rem) 0; font-size: clamp(1.19rem, 3.889vw, 2.1rem); text-align: center;}
+        #promotion_box .p_keyvisual .visual {margin: clamp(5.355rem, 17.5vw, 9.45rem) clamp(1.36rem, 4.444vw, 2.4rem) 0;}
+        #promotion_box .p_keyvisual .video {aspect-ratio: 328 / 412; border-radius: clamp(1.02rem, 3.333vw, 1.8rem); background-image: url("/morenvyimg/promotion/261120_TheBigPlayWeek/kv_m.webp");}
+        #promotion_box .p_keyvisual .st_friday {left: 12.129%; top: 5.825%;}
+        #promotion_box .p_keyvisual .st_friday .st_in {width: clamp(7.99rem, 26.111vw, 14.1rem); height: clamp(7.99rem, 26.111vw, 14.1rem); font-size: clamp(1.36rem, 4.444vw, 2.4rem); transform: rotate(-19deg);}
+        #promotion_box .p_keyvisual .st_coupon {left: 83.888%; top: 15.27%;}
+        #promotion_box .p_keyvisual .st_coupon .st_in {padding: clamp(0.68rem, 2.222vw, 1.2rem) clamp(1.7rem, 5.556vw, 3rem); font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+        #promotion_box .p_keyvisual .st_lucky {left: 87.227%; top: 97.598%;}
+        #promotion_box .p_keyvisual .st_lucky .st_in {width: clamp(6.8rem, 22.222vw, 12rem); height: clamp(6.8rem, 22.222vw, 12rem); font-size: clamp(1.19rem, 3.889vw, 2.1rem); transform: rotate(-20deg);}
+
+        /* 기획전 섹션 01 */
+        #promotion_box .p_sec01 {padding-bottom: clamp(4.25rem, 13.889vw, 7.5rem);}
+        #promotion_box .p_sec01 .sec_head .pill {padding: clamp(0.425rem, 1.389vw, 0.75rem) clamp(1.36rem, 4.444vw, 2.4rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec01 .benefit {grid-template-columns: 1fr 1fr; gap: clamp(0.85rem, 2.778vw, 1.5rem); margin-top: clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_sec01 .card {gap: clamp(1.36rem, 4.444vw, 2.4rem); padding: clamp(1.36rem, 4.444vw, 2.4rem) clamp(1.19rem, 3.889vw, 2.1rem); border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec01 .card:first-child {grid-column: 1 / -1; gap: clamp(1.7rem, 5.556vw, 3rem); padding: clamp(1.19rem, 3.889vw, 2.1rem) clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec01 .card .top {gap: clamp(0.34rem, 1.111vw, 0.6rem); font-size: clamp(0.85rem, 2.778vw, 1.5rem);}
+        #promotion_box .p_sec01 .card .top svg {width: clamp(0.68rem, 2.222vw, 1.2rem); height: clamp(0.68rem, 2.222vw, 1.2rem);}
+        #promotion_box .p_sec01 .card .big {margin-top: clamp(-1.5rem, -2.778vw, -0.85rem); font-size: clamp(2.55rem, 8.333vw, 4.5rem);}
+        #promotion_box .p_sec01 .card:first-child .big {margin-top: clamp(-2.1rem, -3.889vw, -1.19rem);}
+        #promotion_box .p_sec01 .card .txt_box {gap: clamp(0.51rem, 1.667vw, 0.9rem);}
+        #promotion_box .p_sec01 .card .name {font-size: clamp(1.02rem, 3.333vw, 1.8rem); line-height: 1.2;}
+        #promotion_box .p_sec01 .card .sub {font-size: clamp(0.935rem, 3.056vw, 1.65rem);}
+
+        #promotion_box .p_navi {padding: clamp(0.85rem, 2.778vw, 1.5rem) 0;}
+        #promotion_box .p_navi .navi_in {justify-content: flex-start; gap: clamp(0.85rem, 2.778vw, 1.5rem); padding: 0 clamp(1.7rem, 5.556vw, 3rem) 0 clamp(1.36rem, 4.444vw, 2.4rem); overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;}
+        #promotion_box .p_navi .navi_in::-webkit-scrollbar {display: none;}
+        #promotion_box .p_navi button {padding: clamp(0.51rem, 1.667vw, 0.9rem) clamp(1.36rem, 4.444vw, 2.4rem); font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+
+        /* 기획전 섹션 02 */
+        #promotion_box .p_sec02 {padding: clamp(2.55rem, 8.333vw, 4.5rem) 0 clamp(4.25rem, 13.889vw, 7.5rem);}
+        #promotion_box .p_sec02 .kiki_coupon {width: 100%; margin-top: clamp(3.4rem, 11.111vw, 6rem);}
+
+        /* 기획전 섹션 03 */
+        #promotion_box .p_sec03 {padding: 0;}
+        #promotion_box .p_sec03 .lucky {grid-template-columns: 100%; grid-template-areas: "img" "head" "buy" "info"; row-gap: 0;}
+        #promotion_box .p_sec03 .head_l {gap: clamp(0.85rem, 2.778vw, 1.5rem); margin-top: clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_sec03 .label {gap: clamp(0.51rem, 1.667vw, 0.9rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec03 .label::before {width: clamp(0.68rem, 2.222vw, 1.2rem); height: clamp(0.68rem, 2.222vw, 1.2rem);}
+        #promotion_box .p_sec03 .tit {font-size: clamp(3.06rem, 10vw, 5.4rem);}
+        #promotion_box .p_sec03 .buy {justify-self: stretch; gap: clamp(3.4rem, 11.111vw, 6rem); width: 100%; margin-top: clamp(0.85rem, 2.778vw, 1.5rem);}
+        #promotion_box .p_sec03 .price_box {flex-direction: column; align-items: flex-start; gap: clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_sec03 .won {font-size: clamp(3.06rem, 10vw, 5.4rem);}
+        #promotion_box .p_sec03 .ref {gap: clamp(0.85rem, 2.778vw, 1.5rem);}
+        #promotion_box .p_sec03 .ref span {font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+        #promotion_box .p_sec03 .ref del {font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec03 .btn_buy {height: clamp(4.25rem, 13.889vw, 7.5rem); font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec03 .box_img {width: 100%; max-width: clamp(27.88rem, 91.111vw, 49.2rem); margin: 0 auto;}
+        #promotion_box .p_sec03 .box_info {gap: clamp(3.4rem, 11.111vw, 6rem); margin-top: clamp(3.4rem, 11.111vw, 6rem);}
+        #promotion_box .p_sec03 .chips {gap: clamp(0.85rem, 2.778vw, 1.5rem); max-width: none;}
+        #promotion_box .p_sec03 .chips li {gap: clamp(0.68rem, 2.222vw, 1.2rem); padding: clamp(0.595rem, 1.944vw, 1.05rem) clamp(0.765rem, 2.5vw, 1.35rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec03 .chips .n {width: clamp(1.7rem, 5.556vw, 3rem); height: clamp(1.7rem, 5.556vw, 3rem); font-size: clamp(0.935rem, 3.056vw, 1.65rem);}
+        #promotion_box .p_sec03 .guide {justify-content: flex-start; gap: clamp(0.85rem, 2.778vw, 1.5rem); padding: clamp(1.53rem, 5vw, 2.7rem) clamp(1.785rem, 5.833vw, 3.15rem); border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec03 .guide svg {width: clamp(2.21rem, 7.222vw, 3.9rem); height: clamp(2.21rem, 7.222vw, 3.9rem);}
+        #promotion_box .p_sec03 .guide p {font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec03 .spec {grid-template-columns: 100%; gap: 0; margin-top: clamp(-3rem, -5.556vw, -1.7rem);}
+        #promotion_box .p_sec03 .spec div {gap: clamp(1.7rem, 5.556vw, 3rem); padding: clamp(0.68rem, 2.222vw, 1.2rem) 0; font-size: clamp(1.105rem, 3.611vw, 1.95rem); line-height: 1.846;}
+
+        /* 기획전 섹션 04 */
+        #promotion_box .p_sec04 {padding-bottom: clamp(5.1rem, 16.667vw, 9rem);}
+        #promotion_box .p_sec04 .sec_head {gap: clamp(0.85rem, 2.778vw, 1.5rem); padding-top: clamp(5.1rem, 16.667vw, 9rem);}
+        #promotion_box .p_sec04 .sec_head .tit {font-size: clamp(1.7rem, 5.556vw, 3rem); line-height: 1;}
+        #promotion_box .p_sec04 .sec_head .desc {line-height: 1;}
+        #promotion_box .p_sec04 .goods_wrap {margin-top: clamp(3.4rem, 11.111vw, 6rem);}
+        #promotion_box .p_sec04 .swiper01 {width: auto; max-width: none; margin: 0 clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec04 .swiper-slide {width: clamp(27.88rem, 91.111vw, 49.2rem);}
+        #promotion_box .p_sec04 .card {padding: clamp(1.87rem, 6.111vw, 3.3rem) clamp(1.7rem, 5.556vw, 3rem) clamp(2.04rem, 6.667vw, 3.6rem); border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec04 .card_top {gap: clamp(0.85rem, 2.778vw, 1.5rem);}
+        #promotion_box .p_sec04 .card_top .n {width: clamp(2.89rem, 9.444vw, 5.1rem); height: clamp(2.89rem, 9.444vw, 5.1rem); border-radius: clamp(0.68rem, 2.222vw, 1.2rem); font-size: clamp(1.445rem, 4.722vw, 2.55rem);}
+        #promotion_box .p_sec04 .card_top .name {gap: clamp(0.51rem, 1.667vw, 0.9rem);}
+        #promotion_box .p_sec04 .card_top .name strong {font-size: clamp(1.19rem, 3.889vw, 2.1rem);}
+        #promotion_box .p_sec04 .card_top .name span {font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec04 .card_top .tag {padding: clamp(0.51rem, 1.667vw, 0.9rem) clamp(1.36rem, 4.444vw, 2.4rem); font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec04 .goods {gap: clamp(1.36rem, 4.444vw, 2.4rem) clamp(1.19rem, 3.889vw, 2.1rem); margin-top: clamp(1.87rem, 6.111vw, 3.3rem);}
+        #promotion_box .p_sec04 .goods .img {border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec04 .goods p {margin-top: clamp(0.425rem, 1.389vw, 0.75rem); font-size: clamp(0.85rem, 2.778vw, 1.5rem);}
+        #promotion_box .p_sec04 .goods li.lift .img {transform: translateY(clamp(-0.9rem, -1.667vw, -0.51rem)); box-shadow: 0 clamp(0.68rem, 2.222vw, 1.2rem) clamp(1.19rem, 3.889vw, 2.1rem) rgba(0, 0, 0, .4);}
+        #promotion_box .p_sec04 .pagination {gap: clamp(0.68rem, 2.222vw, 1.2rem); margin-top: clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_sec04 .pagination .swiper-pagination-bullet {width: clamp(0.68rem, 2.222vw, 1.2rem); height: clamp(0.68rem, 2.222vw, 1.2rem); opacity: .6;}
+        #promotion_box .p_sec04 .pagination .swiper-pagination-bullet-active {width: clamp(2.04rem, 6.667vw, 3.6rem); opacity: 1;}
+
+        /* 기획전 섹션 05 */
+        #promotion_box .p_sec05 {padding-bottom: clamp(5.1rem, 16.667vw, 9rem);}
+        #promotion_box .p_sec05 .gift_wrap {flex-direction: column; align-items: stretch; gap: clamp(1.7rem, 5.556vw, 3rem); margin-top: clamp(3.4rem, 11.111vw, 6rem);}
+        #promotion_box .p_sec05 .gift {gap: clamp(1.7rem, 5.556vw, 3rem); padding: clamp(2.21rem, 7.222vw, 3.9rem) clamp(2.04rem, 6.667vw, 3.6rem); border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec05 .gift02 {background-color: #1A1A1A;}
+        #promotion_box .p_sec05 .g_head {gap: clamp(0.85rem, 2.778vw, 1.5rem);}
+        #promotion_box .p_sec05 .amount {gap: clamp(0.51rem, 1.667vw, 0.9rem);}
+        #promotion_box .p_sec05 .amount strong {font-size: clamp(2.55rem, 8.333vw, 4.5rem);}
+        #promotion_box .p_sec05 .amount span {font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec05 .g_no {padding: clamp(0.34rem, 1.111vw, 0.6rem) clamp(1.02rem, 3.333vw, 1.8rem); border-width: 0.75px; font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec05 .g_list {flex-direction: column; align-items: stretch; gap: clamp(1.7rem, 5.556vw, 3rem);}
+        #promotion_box .p_sec05 .g_img,
+        #promotion_box .p_sec05 .gift01 .g_img {aspect-ratio: 280 / 220; border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
+        #promotion_box .p_sec05 .g_name {margin-top: clamp(1.7rem, 5.556vw, 3rem); font-size: clamp(1.36rem, 4.444vw, 2.4rem);}
+        #promotion_box .p_sec05 .g_desc {margin-top: clamp(0.85rem, 2.778vw, 1.5rem); font-size: clamp(1.105rem, 3.611vw, 1.95rem);}
+        #promotion_box .p_sec05 .plus {align-self: center; width: clamp(2.04rem, 6.667vw, 3.6rem); height: clamp(2.04rem, 6.667vw, 3.6rem); margin-top: 0;}
+        #promotion_box .p_sec05 .plus::before,
+        #promotion_box .p_sec05 .plus::after {height: 1.5px;}
+        #promotion_box .p_sec05 .keyring .kr_g {left: 10.75%; top: 23.636%; width: 42.857%;}
+        #promotion_box .p_sec05 .keyring .kr_p {left: 29.893%; top: 20%; width: 42.857%; transform: rotate(9deg);}
+        #promotion_box .p_sec05 .keyring .kr_y {left: 1.107%; top: 28.545%; width: 31.786%;}
+        #promotion_box .p_sec05 .keyring .kr_box {left: 59.286%; top: 33.636%; width: 35.714%;}
+
+        /* 기획전 섹션 06 */
+        #promotion_box .p_sec06 .kiki_draw {width: 100%; margin-top: clamp(3.4rem, 11.111vw, 6rem);}
+
+        /* 기획전 섹션 07 */
+        #promotion_box .sec_wrap {padding: 0 0 clamp(3.4rem, 11.111vw, 6rem);}
+        #promotion_box .sec_wrap .tit .en {font-family: "Outfit", "SUIT Variable", sans-serif; font-weight: 700;}
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        var isMo = function () { return window.matchMedia("(max-width: 1024px)").matches; };
+        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
+        /* 카운트다운 */
+        var START = new Date("2026-11-20T00:00:00+09:00").getTime();
+        var END = new Date("2026-11-30T23:59:59+09:00").getTime();
+        var $timerBar = $("#promotion_box .timer_bar");
+        var pad = function (n) { return String(n).padStart(2, "0"); };
+        var timer = function () {
+            var now = Date.now();
+            var open = now >= START;
+            var remain = Math.max(0, (open ? END : START) - now);
+
+            $timerBar.find(".state").text(open ? "ENDS IN" : "OPEN IN");
+            $timerBar.find(".dd").text(Math.floor(remain / 86400000) + "D");
+            $timerBar.find(".hh").text(pad(Math.floor(remain % 86400000 / 3600000)));
+            $timerBar.find(".mm").text(pad(Math.floor(remain % 3600000 / 60000)));
+            $timerBar.find(".ss").text(pad(Math.floor(remain % 60000 / 1000)));
+        };
+        timer();
+        setInterval(timer, 1000);
+
+
+        /* 키비주얼 영상 : 보이는 쪽만 src */
+        var $video = $("#promotion_box .p_keyvisual video");
+        var videoInView = true;
+        var setVideo = function () {
+            var target = isMo() ? $video.filter(".mo")[0] : $video.filter(".pc")[0];
+
+            $video.each(function () {
+                if (this === target) {
+                    if (!this.getAttribute("src")) this.setAttribute("src", this.getAttribute("data-src"));
+                    $(this).addClass("is-on");
+                    if (videoInView) {
+                        var p = this.play();
+                        if (p && p.catch) p.catch(function () {});
+                    };
+                } else {
+                    $(this).removeClass("is-on");
+                    this.pause();
+                };
+            });
+        };
+        setVideo();
+        window.matchMedia("(max-width: 1024px)").addEventListener("change", setVideo);
+
+        if ("IntersectionObserver" in window) {
+            new IntersectionObserver(function (entries) {
+                videoInView = entries[0].isIntersecting;
+                var on = $video.filter(".is-on")[0];
+                if (!on) return;
+                if (videoInView) {
+                    var p = on.play();
+                    if (p && p.catch) p.catch(function () {});
+                } else on.pause();
+            }, {threshold: 0.25}).observe($("#promotion_box .p_keyvisual .video")[0]);
+        };
+
+
+        /* 스티커 드래그 */
+        $("#promotion_box .p_keyvisual .sticker").each(function () {
+            var el = this;
+            var start = null;
+
+            $(el).on("pointerdown", function (e) {
+                var oe = e.originalEvent;
+                var r = el.getBoundingClientRect();
+
+                if (oe.button !== undefined && oe.button !== 0) return;
+                oe.preventDefault();
+                el.setPointerCapture(oe.pointerId);
+                start = {dx: oe.clientX - (r.left + r.width / 2), dy: oe.clientY - (r.top + r.height / 2)};
+                $(el).addClass("drag");
+            });
+
+            $(el).on("pointermove", function (e) {
+                if (!start) return;
+                var oe = e.originalEvent;
+                var box = $(el).parent()[0].getBoundingClientRect();
+                var x = (oe.clientX - start.dx - box.left) / box.width * 100;
+                var y = (oe.clientY - start.dy - box.top) / box.height * 100;
+
+                el.style.left = Math.min(Math.max(x, 0), 100) + "%";
+                el.style.top = Math.min(Math.max(y, 0), 100) + "%";
+            });
+
+            $(el).on("pointerup pointercancel", function () {
+                start = null;
+                $(el).removeClass("drag");
+            });
+
+            el.addEventListener("touchmove", function (e) { if (start) e.preventDefault(); }, {passive: false});
+        });
+
+        window.matchMedia("(max-width: 1024px)").addEventListener("change", function () {
+            $("#promotion_box .p_keyvisual .sticker").css({left: "", top: ""});
+        });
+
+
+        /* 앵커 이동 · 상단 탭 */
+        var $navi = $("#promotion_box .p_navi");
+        var $naviBtn = $navi.find("button");
+        var headerH = function () {
+            var $h = $("#header");
+            if (!$h.length) return 0;
+            var pos = $h.css("position");
+            if (pos !== "fixed" && pos !== "sticky") return 0;
+            return Math.max(0, $h[0].getBoundingClientRect().bottom);
+        };
+        var offsetH = function () { return headerH() + $navi.outerHeight(); };
+        var targetTop = function ($t) { return Math.max(0, $t.offset().top - offsetH() + 1); };
+        var moveTo = function ($t) {
+            if (!$t.length) return;
+            $("html, body").stop().animate({scrollTop: targetTop($t)}, 700, function () {
+                var t2 = targetTop($t);
+                if (Math.abs(t2 - $(window).scrollTop()) > 2) $("html, body").stop().animate({scrollTop: t2}, 200);
+            });
+        };
+
+        $("#promotion_box [data-target]").on("click", function (e) {
+            e.preventDefault();
+            moveTo($($(this).attr("data-target")).first());
+        });
+
+        $("#promotion_box .kiki_map a").on("click", function (e) {
+            var $list = $(".xans-project-package .xans-project-list");
+            var idx = Number($(this).attr("data-cate"));
+
+            e.preventDefault();
+            moveTo($list.length > idx ? $list.eq(idx) : $("#promotion_box .p_sec07"));
+        });
+
+        var naviTick = false;
+        var naviUpdate = function () {
+            var line = $(window).scrollTop() + offsetH() + 10;
+            var $on = $naviBtn.first();
+
+            naviTick = false;
+            $navi.css("top", headerH() + "px");
+            $naviBtn.each(function () {
+                var $t = $($(this).attr("data-target")).first();
+                if ($t.length && $t.offset().top <= line) $on = $(this);
+            });
+            if ($on.hasClass("on")) return;
+            $naviBtn.removeClass("on");
+            $on.addClass("on");
+
+            var $in = $navi.find(".navi_in");
+            if ($in[0].scrollWidth > $in[0].clientWidth) {
+                var left = $on[0].offsetLeft - ($in[0].clientWidth - $on.outerWidth()) / 2;
+                $in.stop().animate({scrollLeft: left}, 300);
+            };
+        };
+        $(window).on("load scroll resize", function () {
+            if (naviTick) return;
+            naviTick = true;
+            requestAnimationFrame(naviUpdate);
+        });
+        naviUpdate();
+
+
+        /* 유의사항 */
+        $("#promotion_box .notice_toggle").on("click", function () {
+            $(this).toggleClass("on");
+            $(this).next("ul").stop().slideToggle();
+        });
+
+
+        /* swiper */
+        var slideGap = function () {
+            var w = window.innerWidth;
+            return isMo() ? Math.min(Math.max(w * 10 / 360, 8.5), 15) : Math.min(Math.max(w * 20 / 1920, 10), 20);
+        };
+        var swiper01 = null;
+
+        if (typeof Swiper !== "undefined") {
+            swiper01 = new Swiper("#promotion_box .swiper01", {
+                slidesPerView: "auto",
+                spaceBetween: slideGap(),
+                speed: 600,
+                pagination: {el: "#promotion_box .pagination01", clickable: true},
+            });
+
+            $(window).on("resize", function () {
+                swiper01.params.spaceBetween = slideGap();
+                swiper01.update();
+            });
+        };
+
+        $("#promotion_box .p_sec04 .goods li").on("touchstart", function () {
+            var $li = $(this);
+            $li.addClass("lift");
+            clearTimeout($li.data("liftTimer"));
+            $li.data("liftTimer", setTimeout(function () { $li.removeClass("lift"); }, 600));
+        });
+
+
+        /* animation */
+        $(window).on("load scroll", function () {
+            var offset = isMo() ? 200 : 300;
+
+            $("#promotion_box .fadeEl").each(function () {
+                if (!$(this).hasClass("on") && $(window).scrollTop() + $(window).innerHeight() - offset >= $(this).offset().top) {
+                    $(this).addClass("on");
+                };
+            });
+        });
+    });
+</script>
