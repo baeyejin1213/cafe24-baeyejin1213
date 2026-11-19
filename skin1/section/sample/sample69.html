@@ -112,18 +112,35 @@
 
         <div class="kiki_coupon fadeEl">
             <div class="fadeCh fadeIn">
-                <div class="ekiki-live" id="ekiki-live-MGMAI_31w7c9N4" data-ekiki-live="MGMAI_31w7c9N4" data-ekiki-plugintype="C24">
-                    <div style="padding-top:187.5%;height:0;overflow:hidden;background:url('https://stg.eventkiki.com/eventkiki/ekiki_image/ekiki_loading2.gif') no-repeat;background-size:120px;background-size:min(120px,30%) auto;background-position:center;background-position:center min(50%,240px)">
-                    </div>
-                </div>
-                <script type="module" src="https://eventkiki.com/cms_new/template-editor/embed-live.js"></script>
+                <ul class="kiki_cate">
+                    <li>
+                        <a href="#cate_302" data-cate="#cate_302">
+                            <span class="ic"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/cate_tumbler.webp" alt=""></span>
+                            <span class="t_box"><span class="nm"><span class="outfit">TUMBLER</span>텀블러</span><span class="ds">루프·모듈·세라믹·텀꾸 ACC</span></span>
+                            <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 5H9.3M4.8 0.5L9.3 5L4.8 9.5" stroke="#fff"></path></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#cate_303" data-cate="#cate_303">
+                            <span class="ic"><img src="/morenvyimg/promotion/261120_TheBigPlayWeek/cate_kitchen.webp" alt=""></span>
+                            <span class="t_box"><span class="nm"><span class="outfit">KITCHEN</span>키친</span><span class="ds">런치박스·커트러리·레이지선데이</span></span>
+                            <svg viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 5H9.3M4.8 0.5L9.3 5L4.8 9.5" stroke="#fff"></path></svg>
+                        </a>
+                    </li>
+                </ul>
 
-                <div class="kiki_map">
-                    <a href="#" data-cate="0" aria-label="텀블러 쿠폰 상품 보기"></a>
-                    <a href="#" data-cate="1" aria-label="키친 쿠폰 상품 보기"></a>
-                    <a href="#" data-cate="2" aria-label="가방 쿠폰 상품 보기"></a>
-                    <a href="#" data-cate="3" aria-label="트래블 쿠폰 상품 보기"></a>
-                    <a href="#" data-cate="4" aria-label="홈데코 쿠폰 상품 보기"></a>
+                <div class="kiki_box">
+                    <div class="ekiki-live" id="ekiki-live-MGMAI_31w7c9N4" data-ekiki-live="MGMAI_31w7c9N4" data-ekiki-plugintype="C24">
+                        <div style="padding-top:187.5%;height:0;overflow:hidden;background:url('https://stg.eventkiki.com/eventkiki/ekiki_image/ekiki_loading2.gif') no-repeat;background-size:120px;background-size:min(120px,30%) auto;background-position:center;background-position:center min(50%,240px)">
+                        </div>
+                    </div>
+                    <script type="module" src="https://eventkiki.com/cms_new/template-editor/embed-live.js"></script>
+
+                    <div class="kiki_map">
+                        <a href="#cate_304" data-cate="#cate_304" aria-label="가방 상품 보기"></a>
+                        <a href="#cate_305" data-cate="#cate_305" aria-label="트래블 상품 보기"></a>
+                        <a href="#cate_306" data-cate="#cate_306" aria-label="홈데코 상품 보기"></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -482,9 +499,23 @@
 
     /* 기획전 상품 진열 모듈 */
     .xans-project-package .xans-project-list {max-width: none; margin: 0; padding: 0;}
-    .xans-project-package .xans-project-list h3 {padding: 0; font-size: inherit; line-height: inherit; font-weight: inherit; color: inherit; text-align: inherit;}
+    .xans-project-package .xans-project-list h3 {padding: 0; font-size: inherit; line-height: inherit; font-weight: inherit; color: #fff; text-align: inherit;}
     .xans-project-package .xans-project-list h3 span {display: block; z-index: auto;}
     .xans-project-package .xans-project-list .xans-project-productlist {max-width: 168rem; margin: 0 auto; padding: 0 2.5%;}
+
+    /* 블랙 배경 */
+    #container, #contents, .xans-project-package {background-color: #0B0B0C;}
+    body .xans-project-package .project_menu {background-color: #0B0B0C; border-bottom-color: #292929;}
+    body .xans-project-package .project_menu .project_category_slide .swiper-slide a {border-color: #fff; background-color: transparent; color: #fff;}
+    body .xans-project-package .project_menu .project_category_slide .swiper-slide.on a {background-color: #fff; color: #1A1A1A;}
+    body .xans-project-package .ec-base-product .prdList > li {color: #B0B0B0;}
+    body .xans-project-package .ec-base-product .prdList .description .name span,
+    body .xans-project-package .ec-base-product .prdList .description [rel="모델"] span,
+    body .xans-project-package .ec-base-product .spec > li.msale span,
+    body .xans-project-package .ec-base-product .spec > li[rel="쿠폰적용 최적할인가"] .title span,
+    body .xans-project-package .ec-base-product .spec > li[rel="쿠폰적용 최적할인가"] .m_item span span {color: #fff !important;}
+    body .xans-project-package .ec-base-product .spec > li.through span {color: #8A8A8A !important;}
+    body .xans-project-package .ec-base-product .prdList .cart:not(:hover)::after {color: #fff;}
 
     /* 유의사항 */
     #promotion_box .p_notice {padding-top: clamp(10rem, 10.417vw, 20rem);}
@@ -569,7 +600,7 @@
         #promotion_box .p_sec01 .card:hover .top svg {transform: translate(2px, -2px);}
     }
 
-    #promotion_box .p_navi {position: sticky; top: 0; z-index: 50; padding: clamp(1rem, 1.042vw, 2rem) 0; background-color: #0B0B0C;}
+    #promotion_box .p_navi {position: sticky; top: 0; z-index: 50; padding: clamp(1rem, 1.042vw, 2rem) 0; background-color: rgba(11, 11, 12, .8);}
     #promotion_box .p_navi .navi_in {display: flex; justify-content: center; gap: clamp(0.5rem, 0.521vw, 1rem); padding: 0 clamp(1rem, 1.042vw, 2rem) 0 clamp(0.8rem, 0.833vw, 1.6rem);}
     #promotion_box .p_navi button {flex: none; padding: clamp(0.3rem, 0.313vw, 0.6rem) clamp(1.2rem, 1.25vw, 2.4rem); border-radius: 50px; background-color: #151517; font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.5; font-weight: 400; letter-spacing: -0.011em; color: #4F4F4F; white-space: nowrap; transition: background-color .3s, color .3s;}
     #promotion_box .p_navi button.on {background-color: #fff; font-weight: 700; color: #1A1A1A;}
@@ -578,10 +609,23 @@
     /* 기획전 섹션 02 */
     #promotion_box .p_sec02 {padding-top: clamp(9rem, 9.375vw, 18rem);}
     #promotion_box .p_sec02 .kiki_coupon {width: clamp(32.5rem, 33.854vw, 65rem); margin: clamp(5rem, 5.208vw, 10rem) auto 0;}
-    #promotion_box .p_sec02 .kiki_coupon > div {position: relative;}
-    #promotion_box .p_sec02 .kiki_map {position: absolute; top: 0; left: 4.444%; z-index: 2; width: 91.111%;}
-    #promotion_box .p_sec02 .kiki_map a {display: block; aspect-ratio: 328 / 82;}
+    #promotion_box .p_sec02 .kiki_cate {display: flex; flex-direction: column; gap: clamp(0.903rem, 0.941vw, 1.806rem); padding: 0 4.444% clamp(0.271rem, 0.282vw, 0.542rem);}
+    #promotion_box .p_sec02 .kiki_cate a {display: flex; align-items: center; gap: clamp(1.264rem, 1.317vw, 2.528rem); height: clamp(7.403rem, 7.711vw, 14.806rem); padding: 0 clamp(1.264rem, 1.317vw, 2.528rem); border-radius: clamp(1.084rem, 1.129vw, 2.167rem); background-color: #202020; transition: background-color .3s;}
+    #promotion_box .p_sec02 .kiki_cate .ic {flex: none; width: clamp(5.417rem, 5.642vw, 10.833rem); height: clamp(5.417rem, 5.642vw, 10.833rem); border-radius: 100%; overflow: hidden; background-color: #fff;}
+    #promotion_box .p_sec02 .kiki_cate .t_box {display: flex; flex-direction: column; gap: clamp(0.541rem, 0.564vw, 1.083rem); flex: 1; min-width: 0;}
+    #promotion_box .p_sec02 .kiki_cate .nm {display: flex; align-items: center; gap: clamp(0.541rem, 0.564vw, 1.083rem); font-size: clamp(1.264rem, 1.317vw, 2.528rem); line-height: 1; font-weight: 700; letter-spacing: -0.03em;}
+    #promotion_box .p_sec02 .kiki_cate .nm .outfit {font-weight: 600;}
+    #promotion_box .p_sec02 .kiki_cate .ds {font-size: clamp(1.173rem, 1.222vw, 2.347rem); line-height: 1.35; font-weight: 400; letter-spacing: -0.03em; color: #B0B0B0; white-space: nowrap;}
+    #promotion_box .p_sec02 .kiki_cate svg {flex: none; width: clamp(0.903rem, 0.941vw, 1.806rem); height: clamp(0.903rem, 0.941vw, 1.806rem); transition: transform .3s;}
+    #promotion_box .p_sec02 .kiki_box {position: relative;}
+    #promotion_box .p_sec02 .kiki_map {position: absolute; top: 0; left: 4.444%; z-index: 2; width: 91.111%; padding-top: 2.134%; pointer-events: none;}
+    #promotion_box .p_sec02 .kiki_map a {display: block; aspect-ratio: 328 / 82; pointer-events: auto;}
+    #promotion_box .p_sec02 .kiki_map.off a {pointer-events: none;}
     #promotion_box .p_sec02 .kiki_map a + a {margin-top: 3.049%;}
+    @media (hover: hover) {
+        #promotion_box .p_sec02 .kiki_cate a:hover {background-color: #2A2A2A;}
+        #promotion_box .p_sec02 .kiki_cate a:hover svg {transform: translateX(3px);}
+    }
 
 
     /* 기획전 섹션 03 */
@@ -647,8 +691,8 @@
     #promotion_box .p_sec05 {padding-bottom: clamp(10rem, 10.417vw, 20rem);}
     #promotion_box .p_sec05 .gift_wrap {display: flex; align-items: flex-start; gap: clamp(1rem, 1.042vw, 2rem); margin-top: clamp(5rem, 5.208vw, 10rem);}
     #promotion_box .p_sec05 .gift {display: flex; flex-direction: column; gap: clamp(2rem, 2.083vw, 4rem); padding: clamp(1.6rem, 1.667vw, 3.2rem) clamp(1.5rem, 1.563vw, 3rem); border-radius: clamp(1.2rem, 1.25vw, 2.4rem); background-color: #202020;}
-    #promotion_box .p_sec05 .gift01 {flex: 450;}
-    #promotion_box .p_sec05 .gift02 {flex: 980;}
+    #promotion_box .p_sec05 .gift01 {flex: none; width: 31.034%; min-width: 0;}
+    #promotion_box .p_sec05 .gift02 {flex: 1; min-width: 0;}
     #promotion_box .p_sec05 .g_head {display: flex; align-items: center; justify-content: space-between; gap: clamp(1rem, 1.042vw, 2rem);}
     #promotion_box .p_sec05 .amount {display: flex; align-items: flex-end; gap: clamp(0.5rem, 0.521vw, 1rem);}
     #promotion_box .p_sec05 .amount strong {font-size: clamp(2.4rem, 2.083vw, 4rem); line-height: 1; font-weight: 700; letter-spacing: -0.03em;}
@@ -818,6 +862,13 @@
         /* 기획전 섹션 02 */
         #promotion_box .p_sec02 {padding: clamp(2.55rem, 8.333vw, 4.5rem) 0 clamp(4.25rem, 13.889vw, 7.5rem);}
         #promotion_box .p_sec02 .kiki_coupon {width: 100%; margin-top: clamp(3.4rem, 11.111vw, 6rem);}
+        #promotion_box .p_sec02 .kiki_cate {gap: 2.778vw; padding-bottom: 0.833vw;}
+        #promotion_box .p_sec02 .kiki_cate a {gap: 3.889vw; height: 22.778vw; padding: 0 3.889vw; border-radius: 3.333vw;}
+        #promotion_box .p_sec02 .kiki_cate .ic {width: 16.667vw; height: 16.667vw;}
+        #promotion_box .p_sec02 .kiki_cate .t_box {gap: 1.667vw;}
+        #promotion_box .p_sec02 .kiki_cate .nm {gap: 1.667vw; font-size: 3.889vw;}
+        #promotion_box .p_sec02 .kiki_cate .ds {font-size: 3.611vw;}
+        #promotion_box .p_sec02 .kiki_cate svg {width: 2.778vw; height: 2.778vw;}
 
         /* 기획전 섹션 03 */
         #promotion_box .p_sec03 {padding: 0;}
@@ -871,7 +922,8 @@
         #promotion_box .p_sec05 {padding-bottom: clamp(5.1rem, 16.667vw, 9rem);}
         #promotion_box .p_sec05 .gift_wrap {flex-direction: column; align-items: stretch; gap: clamp(1.7rem, 5.556vw, 3rem); margin-top: clamp(3.4rem, 11.111vw, 6rem);}
         #promotion_box .p_sec05 .gift {gap: clamp(1.7rem, 5.556vw, 3rem); padding: clamp(2.21rem, 7.222vw, 3.9rem) clamp(2.04rem, 6.667vw, 3.6rem); border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
-        #promotion_box .p_sec05 .gift02 {background-color: #1A1A1A;}
+        #promotion_box .p_sec05 .gift01 {width: auto;}
+        #promotion_box .p_sec05 .gift02 {flex: none; background-color: #1A1A1A;}
         #promotion_box .p_sec05 .g_head {gap: clamp(0.85rem, 2.778vw, 1.5rem);}
         #promotion_box .p_sec05 .amount {gap: clamp(0.51rem, 1.667vw, 0.9rem);}
         #promotion_box .p_sec05 .amount strong {font-size: clamp(2.55rem, 8.333vw, 4.5rem);}
@@ -1012,8 +1064,15 @@
             if (pos !== "fixed" && pos !== "sticky") return 0;
             return Math.max(0, $h[0].getBoundingClientRect().bottom);
         };
-        var offsetH = function () { return headerH() + $navi.outerHeight(); };
-        var targetTop = function ($t) { return Math.max(0, $t.offset().top - offsetH() + 1); };
+        var offsetH = function ($t) {
+            if ($t && $t.closest(".xans-project-list").length) {
+                var $menu = $(".xans-project-package .project_menu").first();
+                if ($menu.length && /sticky|fixed/.test($menu.css("position"))) return (parseFloat($menu.css("top")) || 0) + $menu.outerHeight();
+                return headerH();
+            };
+            return headerH() + $navi.outerHeight();
+        };
+        var targetTop = function ($t) { return Math.max(0, $t.offset().top - offsetH($t) + 1); };
         var moveTo = function ($t) {
             if (!$t.length) return;
             $("html, body").stop().animate({scrollTop: targetTop($t)}, 700, function () {
@@ -1027,12 +1086,59 @@
             moveTo($($(this).attr("data-target")).first());
         });
 
-        $("#promotion_box .kiki_map a").on("click", function (e) {
-            var $list = $(".xans-project-package .xans-project-list");
-            var idx = Number($(this).attr("data-cate"));
+        /* 이벤트키키 안내창 · 팝업이 떠 있는 동안 위에 얹은 맵 끄기 (닫기 버튼 클릭이 맵에 걸리지 않게) */
+        var kikiEl = $("#promotion_box .ekiki-live")[0];
+        var $kikiMap = $("#promotion_box .kiki_map");
+        var kikiTry = 0;
+        var kikiCheck = function (sr) {
+            $kikiMap.toggleClass("off", !!sr.querySelector(".ek-notice, .ek-popup.on"));
 
+            /* 안내 카드가 상단 고정 헤더·탭 바 밑에 깔리면 그 아래로 내림 (닫기 버튼이 탭 바에 가려 탭이 눌리던 문제) */
+            $(sr.querySelectorAll(".ek-notice > .ek-layer-card, .ek-popup.on > .ek-popbox")).each(function () {
+                var nr = $navi[0].getBoundingClientRect();
+                var barBottom = Math.max(headerH(), nr.top <= headerH() + 2 && nr.bottom > 0 ? nr.bottom : 0);
+                var top = this.getBoundingClientRect().top - (parseFloat(this.style.translate.split(" ")[1]) || 0);
+                var shift = Math.max(0, barBottom + 12 - top);
+
+                this.style.translate = shift ? "0 " + shift + "px" : "";
+            });
+        };
+        var kikiWatch = function () {
+            if (!kikiEl) return;
+            var sr = kikiEl.shadowRoot;
+            if (!sr) {
+                if (++kikiTry < 120) setTimeout(kikiWatch, 500);
+                return;
+            };
+            var tick = false;
+
+            kikiCheck(sr);
+            new MutationObserver(function () { kikiCheck(sr); }).observe(sr, {childList: true, subtree: true, attributes: true, attributeFilter: ["class"]});
+            $(window).on("scroll resize", function () {
+                if (tick || !$kikiMap.hasClass("off")) return;
+                tick = true;
+                requestAnimationFrame(function () { tick = false; kikiCheck(sr); });
+            });
+        };
+        kikiWatch();
+
+        /* 쿠폰 카테고리 → 하위 카테고리 상품 진열 */
+        var cateTarget = function (id) {
+            var $cate = $(id).first();
+            if (!$cate.length) return $("#promotion_box .p_sec07").first();
+
+            var $h3 = $cate.closest("h3");
+            if (!$h3.length) return $cate;
+            if ($h3.find(".sec_wrap").length) {
+                var $prd = $h3.nextAll(".xans-project-productlist").first();
+                if ($prd.length) return $prd;
+            };
+            return $h3;
+        };
+
+        $("#promotion_box .kiki_cate a, #promotion_box .kiki_map a").on("click", function (e) {
             e.preventDefault();
-            moveTo($list.length > idx ? $list.eq(idx) : $("#promotion_box .p_sec07"));
+            moveTo(cateTarget($(this).attr("data-cate")));
         });
 
         var naviTick = false;
@@ -1066,8 +1172,13 @@
 
         /* 유의사항 */
         $("#promotion_box .notice_toggle").on("click", function () {
-            $(this).toggleClass("on");
-            $(this).next("ul").stop().slideToggle();
+            var $btn = $(this);
+            var open = !$btn.hasClass("on");
+
+            $("#promotion_box .notice_toggle.on").not($btn).removeClass("on").next("ul").stop().slideUp();
+            $btn.toggleClass("on", open);
+            if (open) $btn.next("ul").stop().slideDown();
+            else $btn.next("ul").stop().slideUp();
         });
 
 
