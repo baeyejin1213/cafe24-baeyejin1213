@@ -902,7 +902,8 @@
 <script>
     $(document).ready(function () {
         var isMo = function () { return window.matchMedia("(max-width: 1024px)").matches; };
-        var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var mq = window.matchMedia("(max-width: 1024px)");
+        var onMqChange = function (fn) { if (mq.addEventListener) mq.addEventListener("change", fn); else mq.addListener(fn); };
 
 
         /* 카운트다운 */
@@ -946,7 +947,7 @@
             });
         };
         setVideo();
-        window.matchMedia("(max-width: 1024px)").addEventListener("change", setVideo);
+        onMqChange(setVideo);
 
         if ("IntersectionObserver" in window) {
             new IntersectionObserver(function (entries) {
@@ -996,7 +997,7 @@
             el.addEventListener("touchmove", function (e) { if (start) e.preventDefault(); }, {passive: false});
         });
 
-        window.matchMedia("(max-width: 1024px)").addEventListener("change", function () {
+        onMqChange(function () {
             $("#promotion_box .p_keyvisual .sticker").css({left: "", top: ""});
         });
 
