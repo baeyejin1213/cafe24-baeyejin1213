@@ -49,7 +49,7 @@
             <h2 class="t_script fadeInUp" style="animation-delay: 0.1s;"><span>Loop Mug</span></h2>
             <p class="t_tit fadeInUp" style="animation-delay: 0.2s;">루프머그 크리스마스 에디션</p>
             <p class="t_desc fadeInUp" style="animation-delay: 0.3s;">레드와 그린, 그리고 동그란 손잡이<br>크리스마스 패키지에 담아 상자를 여는 순간부터<br>선물이 되는 머그</p>
-            <a href="#" class="btn_more js_cate fadeInUp" data-cate="루프머그" style="animation-delay: 0.4s;">루프머그 선물세트 보기<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5M2.5 1.5h6v6"/></svg></a>
+            <a href="#" class="btn_more js_cate fadeInUp" data-cate="1046" style="animation-delay: 0.4s;">루프머그 선물세트 보기<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5M2.5 1.5h6v6"/></svg></a>
         </div>
         <div class="img_big fadeEl"><img class="fadeIn" src="/web/promotion/project/project_261118/m/loop1.webp" alt="루프머그 크리스마스 에디션"></div>
         <div class="img_two fadeEl">
@@ -75,7 +75,7 @@
             <h2 class="t_script fadeInUp" style="animation-delay: 0.1s;"><span>Daze Days</span></h2>
             <p class="t_tit fadeInUp" style="animation-delay: 0.2s;">오덴세 × 데이즈데이즈</p>
             <p class="t_desc fadeInUp" style="animation-delay: 0.3s;">야자수, 레몬, 불가사리<br>손으로 그린 듯한 그림이 식탁 위에 휴가의 기분을<br>올려두는 콜라보 테이블웨어</p>
-            <a href="#" class="btn_more js_cate fadeInUp" data-cate="데이즈데이즈 콜라보" style="animation-delay: 0.4s;">콜라보 선물세트 보기<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5M2.5 1.5h6v6"/></svg></a>
+            <a href="#" class="btn_more js_cate fadeInUp" data-cate="1046" style="animation-delay: 0.4s;">콜라보 선물세트 보기<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5M2.5 1.5h6v6"/></svg></a>
         </div>
         <div class="img_big fadeEl"><img class="fadeIn" src="/web/promotion/project/project_261118/m/days1.webp" alt="오덴세 × 데이즈데이즈"></div>
         <div class="img_two fadeEl">
@@ -91,7 +91,7 @@
             <h2 class="t_script fadeInUp" style="animation-delay: 0.1s;"><span>Sissonne</span></h2>
             <p class="t_tit fadeInUp" style="animation-delay: 0.2s;">시손느 1인 세트</p>
             <p class="t_desc fadeInUp" style="animation-delay: 0.3s;">혼자의 식탁도 근사하게<br>새로운 시작을 앞둔 사람에게 건네기 좋은<br>한 사람을 위한 세트.</p>
-            <a href="#" class="btn_more js_cate fadeInUp" data-cate="시손느" style="animation-delay: 0.4s;">시손느 선물세트 보기<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5M2.5 1.5h6v6"/></svg></a>
+            <a href="#" class="btn_more js_cate fadeInUp" data-cate="1046" style="animation-delay: 0.4s;">시손느 선물세트 보기<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5M2.5 1.5h6v6"/></svg></a>
         </div>
         <ul class="set_list fadeEl">
             <li class="fadeIn">
@@ -195,9 +195,8 @@
     #project_wrap .p_kv .stamp02 {top: 339px; left: 292px; width: 48px;}
 
     /* 기획전 네비 */
-    #project_wrap .p_tab {height: 64px;}
-    #project_wrap .p_tab .tab_in {top: 0; left: 0; right: 0; z-index: 99; height: 64px; border-bottom: 1px solid #e7e2dc; background-color: #f6f3eb; transition: top 0.3s;}
-    #project_wrap .p_tab .tab_in.fix {position: fixed;}
+    #project_wrap .p_tab {position: sticky; top: 0; z-index: 99; height: 64px; transition: top 0.3s;}
+    #project_wrap .p_tab .tab_in {height: 100%; border-bottom: 1px solid #e7e2dc; background-color: #f6f3eb;}
     #project_wrap .p_tab ul {display: flex; align-items: center; gap: 10px; height: 100%; padding: 0 16px; overflow-x: auto; scrollbar-width: none;}
     #project_wrap .p_tab ul::-webkit-scrollbar {display: none;}
     #project_wrap .p_tab li {flex: none;}
@@ -321,21 +320,8 @@
             return Math.max(0, $header[0].getBoundingClientRect().bottom);
         };
 
-        /* 사이트 기획전 메뉴(.menuCategory_cont)가 고정돼 있으면 그 아래에 붙음 */
+        /* 사이트 기획전 메뉴(.menuCategory_cont) — 상품 진열 위에 있음 */
         const menuSelector = ".xans-project-package .menuCategory, .xans-project-package .menuCategory_cont";
-
-        function fixedTop() {
-            let top = headerHeight();
-            $(menuSelector).each(function () {
-                if (!this.offsetHeight) return;
-                const pos = $(this).css("position");
-                if (pos !== "fixed" && pos !== "sticky") return;
-                const rect = this.getBoundingClientRect();
-                if (pos === "sticky" && rect.top > parseFloat($(this).css("top")) + 1) return;
-                top = Math.max(top, rect.bottom);
-            });
-            return top;
-        };
 
         /* 이동할 위치에서 고정될 메뉴 높이 (메뉴는 기획전 본문 끝에 있음) */
         function menuHeightAt(targetTop) {
@@ -352,15 +338,9 @@
             return $("#project_wrap " + target).first();
         };
 
-        /* 상품 진열의 분류 이름(h3)으로 찾고, 없으면 선물세트 전체보기 영역 */
-        function getCate(name) {
-            let $target = $();
-            $(".xans-project-list h3").each(function () {
-                if ($.trim($(this).text()) === name) {
-                    $target = $(this).closest(".xans-project-list");
-                    return false;
-                };
-            });
+        /* 하위 분류(#cate_분류번호) 상품 진열로, 없으면 선물세트 전체보기 영역 */
+        function getCate(cateNo) {
+            const $target = $("#cate_" + cateNo).closest(".xans-project-list");
             return $target.length ? $target : getTarget(".p_sec06");
         };
 
@@ -369,15 +349,14 @@
             if (!$target.length) return;
             const targetTop = $target.offset().top;
             $("html, body").stop().animate({
-                scrollTop: targetTop - headerHeight() - menuHeightAt(targetTop) - $tabIn.outerHeight()
+                scrollTop: targetTop - headerHeight() - ($target.closest("#project_wrap").length ? $tab.outerHeight() : menuHeightAt(targetTop))
             }, 0);
         };
 
         function setTab() {
-            const topH = fixedTop();
-            const fix = $tab[0].getBoundingClientRect().top <= topH;
-            $tabIn.toggleClass("fix", fix).css("top", fix ? topH : "");
-            const line = topH + $tabIn.outerHeight() + 2;
+            const topH = headerHeight();
+            $tab.css("top", topH);
+            const line = topH + $tab.outerHeight() + 2;
             let current = 0;
             $tabLi.each(function (i) {
                 const $target = getTarget($(this).find("a").data("target"));
