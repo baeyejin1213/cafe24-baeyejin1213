@@ -116,29 +116,5 @@
             var p = video.play();
             if (p && p.catch) p.catch(function () { video.setAttribute("controls", ""); });
         });
-
-        /* 이미지맵 */
-        var mapImgs = document.querySelectorAll(".project_box img[usemap]");
-
-        function mapResize(img) {
-            if (!img.naturalWidth) return;
-            var ratio = img.clientWidth / img.naturalWidth;
-            document.querySelectorAll('map[name="' + img.getAttribute("usemap").slice(1) + '"] area').forEach(function (area) {
-                if (!area.dataset.coords) area.dataset.coords = area.getAttribute("coords");
-                area.setAttribute("coords", area.dataset.coords.split(",").map(function (v) { return Math.round(v * ratio); }).join(","));
-            });
-        };
-
-        function imageMapResize() {
-            mapImgs.forEach(mapResize);
-        };
-
-        mapImgs.forEach(function (img) {
-            if (img.complete) mapResize(img);
-            img.addEventListener("load", function () { mapResize(img); });
-        });
-
-        window.addEventListener("load", imageMapResize);
-        window.addEventListener("resize", imageMapResize);
     });
 </script>
