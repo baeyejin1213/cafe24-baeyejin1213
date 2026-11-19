@@ -741,7 +741,8 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 .prd_box .thumb .wish {position: absolute; top: 1.6rem; right: 1.6rem; z-index: 2; width: 2.4rem; height: 2.4rem; background: url(/morenvyimg/heart.svg) no-repeat center / contain;}
 .prd_box .thumb .wish:has(img[icon_status="on"]) {background-image: url(/morenvyimg/heart_on.svg);}
 .prd_box .thumb .wish img {width: 100%; height: 100%; opacity: 0; cursor: pointer;}
-.prd_box .thumb .soldout {position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; background-color: rgba(255,255,255,.6); font-family: var(--font-en); font-size: 1.4rem; font-weight: 600; letter-spacing: .1em; pointer-events: none;}
+.prd_box .thumb .soldout {position: absolute; left: 50%; top: 50%; z-index: 1; display: flex; align-items: center; justify-content: center; width: 50%; aspect-ratio: 1 / 1; border-radius: 50%; background-color: rgba(26,26,26,.05); -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); transform: translate(-50%, -50%); container-type: inline-size; pointer-events: none;}
+.prd_box .thumb .soldout span {font-family: "Jost", var(--font-en); font-size: 2.4rem; font-size: clamp(1.1rem, 12cqw, 2.4rem); line-height: 1.33; font-weight: 700; color: #fff; white-space: nowrap;}
 .prd_box .thumb .soldout.displaynone {display: none;}
 
 .prd_box .info {display: flex; flex-direction: column; gap: .6rem; margin-top: 1.6rem;}

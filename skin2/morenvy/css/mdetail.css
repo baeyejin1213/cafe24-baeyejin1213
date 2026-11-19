@@ -379,6 +379,25 @@ body.fix_buy_on #quick {margin-bottom: var(--fix-h, 0);}
 .xans-product-additional .board_list td.point {flex: none; width: 12rem;}
 .xans-product-additional .board_list td.date {font-family: var(--font-en);}
 .xans-product-additional .board_list td.writer img {display: none;}
+
+/* 후기·문의 제목을 누르면 아래에 펼쳐지는 본문 줄 (카페24가 tr > td[colspan] 로 끼워 넣음) */
+.xans-product-additional .board_list tr:has(> td[colspan]) {display: block; height: auto; border-top: 0;}
+.xans-product-additional .board_list tr:has(> td[colspan]) > td {display: block; width: 100%; padding: 0 0 2.4rem; text-align: left; color: var(--c-black);}
+.xans-product-additional .board_list .view {margin: 0; padding: 3.2rem 8rem; background-color: var(--c-bg); font-size: 1.4rem; line-height: 2.4rem; color: var(--c-black);}
+.xans-product-additional .board_list .view p {margin: 0;}
+.xans-product-additional .board_list .view img {max-width: 100%; height: auto;}
+.xans-product-additional .board_list .view .attach {margin-bottom: 1.6rem;}
+.xans-product-additional .board_list .view .attach img {max-width: 40rem;}
+.xans-product-additional .board_list .view .ec-base-button {display: flex; justify-content: space-between; gap: .8rem; margin: 2.4rem 0 0; padding: 0;}
+.xans-product-additional .board_list .view .ec-base-button > div {display: flex; flex-wrap: wrap; gap: .8rem;}
+.xans-product-additional .board_list .view .btnNormal {display: inline-flex; align-items: center; gap: .4rem; height: 3.2rem; margin: 0; padding: 0 1.2rem; border: 1px solid var(--c-line); border-radius: .4rem; background-color: #fff; font-size: 1.2rem; line-height: 1.6rem; color: var(--c-black);}
+.xans-product-additional .board_list .view .btnNormal em {font-style: normal; font-family: var(--font-en);}
+.xans-product-additional .board_list .view .btnNormal .icon {display: none;}
+.xans-product-additional .board_list .boardComment,
+.xans-product-additional .board_list .memoCont {margin-top: 0; padding: 2rem 8rem; background-color: var(--c-bg); text-align: left;}
+.xans-product-additional .board_list .memoCont textarea,
+.xans-product-additional .board_list .memoCont input[type="text"],
+.xans-product-additional .board_list .memoCont input[type="password"] {border: 1px solid var(--c-line); border-radius: .4rem; background-color: #fff; box-sizing: border-box;}
 .xans-product-additional .star {position: relative; display: inline-block; width: 7.4rem; height: 1.4rem; background: url(/morenvyimg/detail_star_off.svg) repeat-x 0 0 / 1.5rem 1.4rem; vertical-align: middle;}
 .xans-product-additional .star::before {content: ""; position: absolute; left: 0; top: 0; width: calc(var(--point, 0) * 1.5rem); max-width: 100%; height: 100%; background: url(/morenvyimg/detail_star_on.svg) repeat-x 0 0 / 1.5rem 1.4rem;}
 .xans-product-additional .list_paging {padding-top: 4rem;}
@@ -507,6 +526,12 @@ body > .layer_pop button {padding: 0; border: 0; background: none; font-family: 
     .xans-product-additional .board_list td.subject {flex: none; width: 100% !important; font-size: 1.4rem; line-height: 2rem; white-space: normal;}
     .xans-product-additional .board_list td.subject .comment {font-size: 1.4rem;}
     .xans-product-additional .board_list td.point {display: flex;}
+    .xans-product-additional .board_list tr:has(> td[colspan]) {padding: 0; border-bottom: 1px solid var(--c-line);}
+    .xans-product-additional .board_list tr:has(> td[colspan]) > td {width: 100% !important; padding: 0 0 2rem; font-size: 1.3rem;}
+    .xans-product-additional .board_list .view {padding: 2rem 1.6rem; font-size: 1.3rem; line-height: 2rem;}
+    .xans-product-additional .board_list .view .attach img {max-width: 100%;}
+    .xans-product-additional .board_list .boardComment,
+    .xans-product-additional .board_list .memoCont {padding: 1.6rem;}
     #contents .xans-product-additional .nodata {height: 14rem; background-color: #f9f9f9;}
     #contents .xans-product-additional .nodata::before {font-size: 1.2rem; line-height: 1.6rem;}
     .xans-product-additional .list_paging {padding: 2.4rem 0;}
