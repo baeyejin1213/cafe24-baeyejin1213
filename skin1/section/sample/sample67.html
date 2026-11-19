@@ -49,7 +49,7 @@
             <h2 class="t_script fadeInUp" style="animation-delay: 0.1s;"><span>Loop Mug</span></h2>
             <p class="t_tit fadeInUp" style="animation-delay: 0.2s;">루프머그 크리스마스 에디션</p>
             <p class="t_desc fadeInUp" style="animation-delay: 0.3s;">레드와 그린, 그리고 동그란 손잡이<br>크리스마스 패키지에 담아 상자를 여는 순간부터<br>선물이 되는 머그</p>
-            <a href="#" class="btn_more js_cate fadeInUp" data-cate="1046" style="animation-delay: 0.4s;">루프머그 선물세트 보기<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5M2.5 1.5h6v6"/></svg></a>
+            <a href="#" class="btn_more js_anchor fadeInUp" data-target=".p_sec06" style="animation-delay: 0.4s;">루프머그 선물세트 보기<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5M2.5 1.5h6v6"/></svg></a>
         </div>
         <div class="img_big fadeEl"><img class="fadeIn" src="/web/promotion/project/project_261118/m/loop1.webp" alt="루프머그 크리스마스 에디션"></div>
         <div class="img_two fadeEl">
@@ -75,7 +75,7 @@
             <h2 class="t_script fadeInUp" style="animation-delay: 0.1s;"><span>Daze Days</span></h2>
             <p class="t_tit fadeInUp" style="animation-delay: 0.2s;">오덴세 × 데이즈데이즈</p>
             <p class="t_desc fadeInUp" style="animation-delay: 0.3s;">야자수, 레몬, 불가사리<br>손으로 그린 듯한 그림이 식탁 위에 휴가의 기분을<br>올려두는 콜라보 테이블웨어</p>
-            <a href="#" class="btn_more js_cate fadeInUp" data-cate="1046" style="animation-delay: 0.4s;">콜라보 선물세트 보기<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5M2.5 1.5h6v6"/></svg></a>
+            <a href="#" class="btn_more js_anchor fadeInUp" data-target=".p_sec06" style="animation-delay: 0.4s;">콜라보 선물세트 보기<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5M2.5 1.5h6v6"/></svg></a>
         </div>
         <div class="img_big fadeEl"><img class="fadeIn" src="/web/promotion/project/project_261118/m/days1.webp" alt="오덴세 × 데이즈데이즈"></div>
         <div class="img_two fadeEl">
@@ -91,7 +91,7 @@
             <h2 class="t_script fadeInUp" style="animation-delay: 0.1s;"><span>Sissonne</span></h2>
             <p class="t_tit fadeInUp" style="animation-delay: 0.2s;">시손느 1인 세트</p>
             <p class="t_desc fadeInUp" style="animation-delay: 0.3s;">혼자의 식탁도 근사하게<br>새로운 시작을 앞둔 사람에게 건네기 좋은<br>한 사람을 위한 세트.</p>
-            <a href="#" class="btn_more js_cate fadeInUp" data-cate="1046" style="animation-delay: 0.4s;">시손느 선물세트 보기<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5M2.5 1.5h6v6"/></svg></a>
+            <a href="#" class="btn_more js_anchor fadeInUp" data-target=".p_sec06" style="animation-delay: 0.4s;">시손느 선물세트 보기<svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 8.5 8.5 1.5M2.5 1.5h6v6"/></svg></a>
         </div>
         <ul class="set_list fadeEl">
             <li class="fadeIn">
@@ -267,6 +267,17 @@
     #project_wrap .p_sec06 h2 {margin-top: 16px; font-size: 40px; line-height: 48px; font-weight: 700;}
     #project_wrap .p_sec06 .t_desc {margin-top: 16px; font-size: 14px; line-height: 20px; letter-spacing: -0.01em; color: #6a6a6a;}
 
+    /* 기획전 모듈 탭 */
+    .xans-project-package .menuCategory_cont {height: 56px; padding: 0 16px; border-top: 1px solid #e4e4e2; border-bottom: 1px solid #e4e4e2;}
+    .xans-project-package .menuCategory_cont .swiper-button-prev,
+    .xans-project-package .menuCategory_cont .swiper-button-next {display: none;}
+    .xans-project-package .menuCategory_cont ul.menuCategory {height: 100%;}
+    .xans-project-package ul.menuCategory > li.xans-record- {height: 100%; margin: 0 12px 0 0 !important;}
+    .xans-project-package ul.menuCategory > li.xans-record-:last-child {margin-right: 0 !important;}
+    .xans-project-package ul.menuCategory > li.xans-record- > a {position: relative; display: flex; align-items: center; height: 100%; padding: 0; border: 0; font-family: "Spoqa Han Sans Neo", sans-serif; font-size: 14px; line-height: 20px; font-weight: 400; letter-spacing: -0.01em; color: #8a8a8a;}
+    .xans-project-package ul.menuCategory > li.xans-record-.pj_on > a {font-weight: 500; color: #3a0e12;}
+    .xans-project-package ul.menuCategory > li.xans-record-.pj_on > a::after {content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background-color: #3a0e12;}
+
     /* 눈 */
     #project_wrap .p_snow {display: none; position: fixed; inset: 0; z-index: 90; width: 100%; height: 100%; pointer-events: none;}
     #project_wrap .p_snow.on {display: block;}
@@ -320,36 +331,15 @@
             return Math.max(0, $header[0].getBoundingClientRect().bottom);
         };
 
-        /* 사이트 기획전 메뉴(.menuCategory_cont) — 상품 진열 위에 있음 */
-        const menuSelector = ".xans-project-package .menuCategory, .xans-project-package .menuCategory_cont";
-
-        /* 이동할 위치에서 고정될 메뉴 높이 (메뉴는 기획전 본문 끝에 있음) */
-        function menuHeightAt(targetTop) {
-            let height = 0;
-            $(menuSelector).each(function () {
-                if (!this.offsetHeight) return;
-                const $package = $(this).closest(".xans-project-package");
-                if (targetTop >= $package.offset().top + $package.outerHeight() - this.offsetHeight) height = Math.max(height, this.offsetHeight);
-            });
-            return height;
-        };
-
         function getTarget(target) {
             return $("#project_wrap " + target).first();
-        };
-
-        /* 하위 분류(#cate_분류번호) 상품 진열로, 없으면 선물세트 전체보기 영역 */
-        function getCate(cateNo) {
-            const $target = $("#cate_" + cateNo).closest(".xans-project-list");
-            return $target.length ? $target : getTarget(".p_sec06");
         };
 
         /* 오덴세 MO 스킨에 스무스 스크롤이 있어 이동 시간은 0 */
         function moveTo($target) {
             if (!$target.length) return;
-            const targetTop = $target.offset().top;
             $("html, body").stop().animate({
-                scrollTop: targetTop - headerHeight() - ($target.closest("#project_wrap").length ? $tab.outerHeight() : menuHeightAt(targetTop))
+                scrollTop: $target.offset().top - headerHeight() - $tab.outerHeight()
             }, 0);
         };
 
@@ -378,10 +368,24 @@
             moveTo(getTarget($(this).data("target")));
         });
 
-        $("#project_wrap .js_cate").on("click", function (e) {
-            e.preventDefault();
-            moveTo(getCate($(this).data("cate")));
-        });
+        /* 기획전 모듈 탭 활성 표시 (스크롤 위치의 분류) */
+        const $cateMenu = $(".xans-project-package .menuCategory_cont").first();
+        const $cateLi = $(".xans-project-package .menuCategory > li");
+
+        function setCateMenu() {
+            if (!$cateMenu.length || !$cateLi.length) return;
+            const line = $cateMenu[0].getBoundingClientRect().bottom + 2;
+            let current = 0;
+            $(".xans-project-list > h3").each(function (i) {
+                if (this.getBoundingClientRect().top <= line) current = i;
+            });
+            if ($cateLi.eq(current).hasClass("pj_on")) return;
+            $cateLi.removeClass("pj_on").eq(current).addClass("pj_on");
+            if (window.menuCategory_cont && window.menuCategory_cont.slideTo) window.menuCategory_cont.slideTo(current);
+        };
+
+        $(window).on("scroll resize load", setCateMenu);
+        setCateMenu();
 
         /* 유의사항 */
         const $notice = $("#project_wrap .notice_layer");
