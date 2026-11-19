@@ -1,0 +1,696 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- 여기부터 복사 -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Noto+Serif+KR:wght@400;600&display=swap">
+
+<div id="pj_lezhin" class="lz_wrap">
+    <h1 class="lz_sr">2027 레진 시즌그리팅 — Oath of Lezhinium</h1>
+
+    <!-- 인트로 : 액자가 걸린 전시실 → 가운데 액자 속으로 들어가 섹션 01 시작 -->
+    <div class="lz_intro" id="lz_intro" aria-label="인트로: 액자가 걸린 전시실">
+        <div class="lz_i_stage" id="lz_i_stage">
+            <div class="lz_i_world" id="lz_i_world">
+                <img class="lz_i_bg" id="lz_i_bg" src="/morenvyimg/2027_lezhinSG/intro_bg.webp" alt="액자가 걸린 어두운 전시실 벽" width="1800" height="1811">
+                <div class="lz_i_portal" id="lz_i_portal"><img src="/morenvyimg/2027_lezhinSG/hall1_poster.webp" alt="" width="1920" height="1080"></div>
+            </div>
+            <img class="lz_i_blur" id="lz_i_blur" src="/morenvyimg/2027_lezhinSG/intro_bg.webp" alt="">
+            <div class="lz_i_candle" id="lz_i_candle"></div>
+            <canvas class="lz_i_dust" id="lz_i_dust"></canvas>
+            <img class="lz_i_walker" id="lz_iw1" src="/morenvyimg/2027_lezhinSG/intro_walker1.webp" alt="" width="485" height="1172">
+            <img class="lz_i_walker" id="lz_iw2" src="/morenvyimg/2027_lezhinSG/intro_walker2.webp" alt="" width="458" height="1172">
+            <img class="lz_i_walker lz_iw3" id="lz_iw3" src="/morenvyimg/2027_lezhinSG/intro_walker3.webp" alt="" width="483" height="1188">
+            <div class="lz_i_shade"></div>
+            <button type="button" class="lz_i_hint" id="lz_i_hint"><span>Scroll to Enter</span><svg viewBox="0 0 22 12" fill="none" stroke="#CFC6B6" stroke-width="1.2" aria-hidden="true"><path d="M1 1l10 10L21 1"/></svg></button>
+        </div>
+    </div>
+
+    <div class="lz_pg" id="lz_pg">
+        <!-- 기획전 섹션 01 : 회랑 영상 + 타이틀 -->
+        <section class="lz_sec lz_s1" id="lz_s1" aria-label="Oath of Lezhinium">
+            <div class="lz_hall" id="lz_hall">
+                <video class="lz_hs lz_hs1 is_on" data-src="hall1.mp4" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" aria-hidden="true"></video>
+                <video class="lz_hs lz_hs2" data-src="hall2.mp4" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" aria-hidden="true"></video>
+            </div>
+            <img class="lz_ab lz_title" id="lz_title" src="/morenvyimg/2027_lezhinSG/title.webp" alt="2027 Lezhin Season’s Greetings, Oath of Lezhinium, 2026.12.04. 12:00 PM" width="1003" height="1601" style="left: 15.1389%; top: min(25.8333vw, 206.67px); width: 69.6528%;">
+        </section>
+
+        <!-- 기획전 섹션 02 : 지도 두 장이 내려옴 -->
+        <section class="lz_sec lz_s2" id="lz_s2" aria-label="Map of Lezhinium">
+            <div class="lz_w2clip" aria-hidden="true"><div class="lz_w2" id="lz_w2"></div></div>
+            <img class="lz_ab" src="/morenvyimg/2027_lezhinSG/map_cloth.webp" alt="" width="1440" height="2196" loading="lazy" style="left: 0; top: 0; width: 100%;">
+            <img class="lz_ab lz_p2" src="/morenvyimg/2027_lezhinSG/map_crest.webp" alt="열두 가문의 문장이 그려진 종이" width="1440" height="1920" loading="lazy" style="left: 0; top: min(8.6111vw, 68.89px); width: 100%;">
+            <img class="lz_ab lz_p1" src="/morenvyimg/2027_lezhinSG/map_paper.webp" alt="Map of Lezhinium 지도" width="1367" height="1801" loading="lazy" style="left: 0; top: min(13.6111vw, 108.89px); width: 94.9306%;">
+            <canvas class="lz_embers" id="lz_embers" aria-hidden="true"></canvas>
+            <img class="lz_ab lz_pen" src="/morenvyimg/2027_lezhinSG/map_pen.webp" alt="" width="521" height="316" loading="lazy" style="left: 63.8889%; top: min(131.6667vw, 1053.33px); width: 36.1806%;">
+        </section>
+
+        <!-- 기획전 섹션 03 : 열두 공작 + 구성품 -->
+        <section class="lz_sec lz_s34" id="lz_s34" aria-label="The Twelve Dukes와 구성품">
+            <div class="lz_w3move" id="lz_w3move" aria-hidden="true"></div>
+            <div class="lz_mold" id="lz_mold" aria-hidden="true"></div>
+            <div class="lz_dk_track" id="lz_dk_track" tabindex="0" aria-roledescription="carousel" aria-label="열두 공작의 초상, 좌우로 넘겨 보기">
+                <div class="lz_dk_rail" id="lz_dk_rail">
+                    <div class="lz_dk_slide" role="group" aria-label="1 / 12, 재신"><div class="lz_dk_card"><img class="lz_dk_pl" src="/morenvyimg/2027_lezhinSG/plaque.webp" alt="" width="329" height="186" draggable="false"><img class="lz_dk_pt" src="/morenvyimg/2027_lezhinSG/duke_01.webp" alt="재신" width="1043" height="1357" loading="lazy" draggable="false"><img class="lz_dk_cap" src="/morenvyimg/2027_lezhinSG/cap_01.webp" alt="재신 작품 라벨" width="332" height="160" loading="lazy" draggable="false"></div></div>
+                    <div class="lz_dk_slide" role="group" aria-label="2 / 12, 권희서"><div class="lz_dk_card"><img class="lz_dk_pl" src="/morenvyimg/2027_lezhinSG/plaque.webp" alt="" width="329" height="186" draggable="false"><img class="lz_dk_pt" src="/morenvyimg/2027_lezhinSG/duke_02.webp" alt="권희서" width="1043" height="1357" loading="lazy" draggable="false"><img class="lz_dk_cap" src="/morenvyimg/2027_lezhinSG/cap_02.webp" alt="권희서 작품 라벨" width="332" height="160" loading="lazy" draggable="false"></div></div>
+                    <div class="lz_dk_slide" role="group" aria-label="3 / 12, 주남우"><div class="lz_dk_card"><img class="lz_dk_pl" src="/morenvyimg/2027_lezhinSG/plaque.webp" alt="" width="329" height="186" draggable="false"><img class="lz_dk_pt" src="/morenvyimg/2027_lezhinSG/duke_03.webp" alt="주남우" width="1043" height="1357" loading="lazy" draggable="false"><img class="lz_dk_cap" src="/morenvyimg/2027_lezhinSG/cap_03.webp" alt="주남우 작품 라벨" width="332" height="160" loading="lazy" draggable="false"></div></div>
+                    <div class="lz_dk_slide" role="group" aria-label="4 / 12, 구도훈"><div class="lz_dk_card"><img class="lz_dk_pl" src="/morenvyimg/2027_lezhinSG/plaque.webp" alt="" width="329" height="186" draggable="false"><img class="lz_dk_pt" src="/morenvyimg/2027_lezhinSG/duke_04.webp" alt="구도훈" width="1043" height="1357" loading="lazy" draggable="false"><img class="lz_dk_cap" src="/morenvyimg/2027_lezhinSG/cap_04.webp" alt="구도훈 작품 라벨" width="332" height="160" loading="lazy" draggable="false"></div></div>
+                    <div class="lz_dk_slide" role="group" aria-label="5 / 12, 정태오"><div class="lz_dk_card"><img class="lz_dk_pl" src="/morenvyimg/2027_lezhinSG/plaque.webp" alt="" width="329" height="186" draggable="false"><img class="lz_dk_pt" src="/morenvyimg/2027_lezhinSG/duke_05.webp" alt="정태오" width="1043" height="1357" loading="lazy" draggable="false"><img class="lz_dk_cap" src="/morenvyimg/2027_lezhinSG/cap_05.webp" alt="정태오 작품 라벨" width="332" height="160" loading="lazy" draggable="false"></div></div>
+                    <div class="lz_dk_slide" role="group" aria-label="6 / 12, 민호연"><div class="lz_dk_card"><img class="lz_dk_pl" src="/morenvyimg/2027_lezhinSG/plaque.webp" alt="" width="329" height="186" draggable="false"><img class="lz_dk_pt" src="/morenvyimg/2027_lezhinSG/duke_06.webp" alt="민호연" width="1043" height="1357" loading="lazy" draggable="false"><img class="lz_dk_cap" src="/morenvyimg/2027_lezhinSG/cap_06.webp" alt="민호연 작품 라벨" width="332" height="160" loading="lazy" draggable="false"></div></div>
+                    <div class="lz_dk_slide" role="group" aria-label="7 / 12, 이해온"><div class="lz_dk_card"><img class="lz_dk_pl" src="/morenvyimg/2027_lezhinSG/plaque.webp" alt="" width="329" height="186" draggable="false"><img class="lz_dk_pt" src="/morenvyimg/2027_lezhinSG/duke_07.webp" alt="이해온" width="1043" height="1357" loading="lazy" draggable="false"><img class="lz_dk_cap" src="/morenvyimg/2027_lezhinSG/cap_07.webp" alt="이해온 작품 라벨" width="332" height="160" loading="lazy" draggable="false"></div></div>
+                    <div class="lz_dk_slide" role="group" aria-label="8 / 12, 애런"><div class="lz_dk_card"><img class="lz_dk_pl" src="/morenvyimg/2027_lezhinSG/plaque.webp" alt="" width="329" height="186" draggable="false"><img class="lz_dk_pt" src="/morenvyimg/2027_lezhinSG/duke_08.webp" alt="애런" width="1043" height="1357" loading="lazy" draggable="false"><img class="lz_dk_cap" src="/morenvyimg/2027_lezhinSG/cap_08.webp" alt="애런 작품 라벨" width="332" height="160" loading="lazy" draggable="false"></div></div>
+                    <div class="lz_dk_slide" role="group" aria-label="9 / 12, 유영"><div class="lz_dk_card"><img class="lz_dk_pl" src="/morenvyimg/2027_lezhinSG/plaque.webp" alt="" width="329" height="186" draggable="false"><img class="lz_dk_pt" src="/morenvyimg/2027_lezhinSG/duke_09.webp" alt="유영" width="1043" height="1357" loading="lazy" draggable="false"><img class="lz_dk_cap" src="/morenvyimg/2027_lezhinSG/cap_09.webp" alt="유영 작품 라벨" width="332" height="160" loading="lazy" draggable="false"></div></div>
+                    <div class="lz_dk_slide" role="group" aria-label="10 / 12, 결"><div class="lz_dk_card"><img class="lz_dk_pl" src="/morenvyimg/2027_lezhinSG/plaque.webp" alt="" width="329" height="186" draggable="false"><img class="lz_dk_pt" src="/morenvyimg/2027_lezhinSG/duke_10.webp" alt="결" width="1043" height="1357" loading="lazy" draggable="false"><img class="lz_dk_cap" src="/morenvyimg/2027_lezhinSG/cap_10.webp" alt="결 작품 라벨" width="332" height="160" loading="lazy" draggable="false"></div></div>
+                    <div class="lz_dk_slide" role="group" aria-label="11 / 12, 서태오"><div class="lz_dk_card"><img class="lz_dk_pl" src="/morenvyimg/2027_lezhinSG/plaque.webp" alt="" width="329" height="186" draggable="false"><img class="lz_dk_pt" src="/morenvyimg/2027_lezhinSG/duke_11.webp" alt="서태오" width="1043" height="1357" loading="lazy" draggable="false"><img class="lz_dk_cap" src="/morenvyimg/2027_lezhinSG/cap_11.webp" alt="서태오 작품 라벨" width="332" height="160" loading="lazy" draggable="false"></div></div>
+                    <div class="lz_dk_slide" role="group" aria-label="12 / 12, 신위"><div class="lz_dk_card"><img class="lz_dk_pl" src="/morenvyimg/2027_lezhinSG/plaque.webp" alt="" width="329" height="186" draggable="false"><img class="lz_dk_pt" src="/morenvyimg/2027_lezhinSG/duke_12.webp" alt="신위" width="1043" height="1357" loading="lazy" draggable="false"><img class="lz_dk_cap" src="/morenvyimg/2027_lezhinSG/cap_12.webp" alt="신위 작품 라벨" width="332" height="160" loading="lazy" draggable="false"></div></div>
+                </div>
+            </div>
+            <div class="lz_dk_nav">
+                <button type="button" class="lz_dk_arr" id="lz_dk_prev" aria-label="이전 초상"><svg viewBox="0 0 12 24" aria-hidden="true"><path d="M10 2 L2 12 L10 22"/></svg></button>
+                <input type="range" class="lz_dk_range" id="lz_dk_range" min="0" max="11" step="0.001" value="0" aria-label="초상 넘기기">
+                <button type="button" class="lz_dk_arr" id="lz_dk_next" aria-label="다음 초상"><svg viewBox="0 0 12 24" aria-hidden="true"><path d="M2 2 L10 12 L2 22"/></svg></button>
+            </div>
+            <p class="lz_dk_count" id="lz_dk_count" aria-live="polite">1 / 12</p>
+            <div class="lz_lrail" id="lz_lrail" aria-hidden="true"></div>
+            <div class="lz_shclip" aria-hidden="true"><img class="lz_ab" src="/morenvyimg/2027_lezhinSG/shadow.webp" alt="" width="807" height="3704" loading="lazy" style="left: 43.9583%; top: min(86.25vw, 690px); width: 56.0417%;"></div>
+            <img class="lz_ab lz_land lz_txt" src="/morenvyimg/2027_lezhinSG/comp_txt.webp" alt="구성품: 2027 Calendar 2027 달력 1pc 148×278mm, Prologue Novel &amp; Postcard Set 프롤로그 소설 28 pages 128×180mm·엽서집 13pcs 128×180mm, Photocards of Dukes 공작 포토카드 12pcs 55×85mm, Portrait Photocards (AR) 초상화 포토카드 12pcs 55×85mm, Photocard Holder 포토카드 홀더 1pc 85×124mm, Fabric Poster 패브릭 포스터 1pc 400×820mm" width="583" height="954" loading="lazy" style="left: 51.3194%; top: min(223.3333vw, 1786.67px); width: 40.4861%;">
+            <img class="lz_ab lz_box" src="/morenvyimg/2027_lezhinSG/comp_box.webp" alt="Oath of Lezhinium 시즌그리팅 패키지 박스" width="1440" height="1755" loading="lazy" style="left: 0; top: min(265.4167vw, 2123.33px); width: 100%;">
+            <img class="lz_ab lz_curtain" src="/morenvyimg/2027_lezhinSG/curtain.webp" alt="" width="289" height="1145" loading="lazy" style="left: 0; top: min(160.5556vw, 1284.44px); width: 20.0694%;">
+        </section>
+
+        <!-- 유의사항 -->
+        <section class="lz_sec lz_notice" aria-labelledby="lz_nt_title">
+            <span class="lz_nt_eyebrow">Notice</span>
+            <h2 class="lz_nt_title" id="lz_nt_title">유의사항</h2>
+            <div class="lz_nt_group">
+                <h3>판매 정보</h3>
+                <dl>
+                    <dt>상품명</dt><dd>[2027 레진 시즌그리팅] OATH OF LEZHINIUM</dd>
+                    <dt>판매 시작</dt><dd>2026. 12. 04. 12PM (KST)</dd>
+                    <dt>배송</dt><dd>12월 중 순차 발송</dd>
+                </dl>
+            </div>
+            <div class="lz_nt_group">
+                <h3>상품 정보</h3>
+                <ul>
+                    <li>달력 - 1개 (148*278mm)</li>
+                    <li>패브릭 포스터 - 1개 (400*820mm)</li>
+                    <li>포토카드 - 12종 (55*85mm)</li>
+                    <li>후가공 포토카드 - 12종 (55*85mm)</li>
+                    <li>포토카드 홀더 - 1개 (85*124mm)</li>
+                    <li>소설책 - 1개 (128*180mm / 28 pages)</li>
+                    <li>엽서집 - 1개 (128*180mm / 13 pcs)</li>
+                    <li>외부 패키지 박스 - 1개 (171*291*50mm)</li>
+                    <li class="lz_nt_note">※ 패키지는 상품을 보호하기 위한 포장재로, 포장 및 배송 과정에서 스크래치, 눌림, 뜯어짐 등이 발생할 수 있으며, 교환 및 반품 대상이 아닙니다.</li>
+                </ul>
+            </div>
+            <div class="lz_nt_group">
+                <h3>상품 구매 안내</h3>
+                <ul>
+                    <li>본 상품은 단독 구매 전용 상품입니다. 다른 상품과 함께 주문이 불가합니다.</li>
+                    <li>12월 4일(금) 오후 1시까지는 한 ID당 1회 주문(최대 5개)으로 제한됩니다.
+                        <ul>
+                            <li>구매 이력이 있을 경우 5개 미만으로 구매하셨더라도 재구매가 불가능하며, 주문 취소 후 5개까지 구매하실 수 있습니다.</li>
+                            <li>판매 시작 1시간 이후에는 주문 수량과 무관하게 재주문이 가능합니다.</li>
+                        </ul>
+                    </li>
+                    <li>본 상품은 재고 소진 시 판매가 종료됩니다.</li>
+                </ul>
+            </div>
+            <div class="lz_nt_group">
+                <h3>배송 및 교환·반품</h3>
+                <ul>
+                    <li>12월 중 배송 예정 상품으로, 주문 순서에 따라 순차 발송됩니다. 제작 일정에 따라 발송이 지연될 수 있습니다.</li>
+                    <li>단순 변심 반품: 상품 수령일로부터 7일 이내 신청 가능합니다.</li>
+                    <li>표시·광고와 다르거나 하자 있는 경우: 상품 수령 후 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 신청 가능합니다.</li>
+                    <li>상품 분실 및 누락 방지를 위해 모든 출고 과정(바코드 스캔 포함)을 영상으로 기록하고 있습니다. 누락 문의 시 해당 영상을 대조하여 신속히 처리해 드립니다.</li>
+                    <li>고객님의 언박싱 영상 촬영은 필수는 아니나, 촬영본을 함께 전달해 주시면 더욱 빠른 처리가 가능합니다.</li>
+                    <li>하기 사유로 교환 처리가 거부될 경우 청약 철회(반품/환불) 접수로 전환되며, 이 경우 단순 변심 반품에 해당하여 왕복 배송비가 발생합니다.
+                        <ul>
+                            <li>교환을 위한 고의적 훼손: 교환을 위해 반송된 상품 확인 시, 최초 배송 상태보다 훼손이 심화된 경우 교환이 불가할 수 있습니다.</li>
+                            <li>고객 책임 사유: 고객의 부주의로 상품이 멸실 또는 훼손된 경우 (단, 상품 확인을 위한 포장 훼손 제외)</li>
+                            <li>가치 감소: 사용 또는 일부 소비에 의해 상품 가치가 현저히 감소한 경우 (예시: 상품 사용 흔적 등)</li>
+                        </ul>
+                    </li>
+                    <li>교환 및 반품 시 모든 구성품이 반송되어야 하며, 구성품이 누락될 경우 추가 발송을 요청드릴 수 있습니다.(추가 운임비 주문자 부담)</li>
+                    <li>교환 시 상품 상태나 구성에 따라 일부 구성품만 교환될 수 있습니다.</li>
+                </ul>
+            </div>
+            <div class="lz_nt_group">
+                <h3>상품 유의사항</h3>
+                <ul>
+                    <li>상품 이미지는 이해를 돕기 위한 예시이며, 실제 상품의 색상·크기·디자인은 제작 과정에서 일부 달라질 수 있습니다.</li>
+                    <li>모니터 및 기기 환경에 따라 실제 상품과 색상 차이가 있을 수 있습니다.</li>
+                    <li>제작 시 제품마다 색감 및 재단 편차가 있을 수 있습니다.</li>
+                    <li>직사광선에 장시간 노출될 경우 색감 및 형태가 변질될 수 있습니다.</li>
+                    <li>대량 생산으로 인한 다소의 인쇄 밀림, 재단 오류, 작은 먼지, 흠집 등이 발생할 수 있습니다.</li>
+                    <li>지류 제품의 경우 (포토카드, 엽서 등) 소재 특성상 공정 과정에서 스크래치와 흠집, 점 등이 있을 수 있습니다.</li>
+                    <li>빛 반사로 확인되는 미세한 스크래치, 찍힘 등은 하자가 아닙니다.</li>
+                    <li>실제 치수는 측정 방법에 따라 오차가 발생할 수 있습니다.</li>
+                    <li>제품에 표시된 혼용률, 치수 및 세탁 방법을 사용 전 반드시 확인해 주십시오.</li>
+                    <li>표백제 및 강력 효소 세제는 사용하지 마십시오.</li>
+                    <li>진한색과 밝은색은 분리하여 단독 세탁해 주십시오.</li>
+                    <li>젖은 상태로 장시간 방치할 경우 제품 손상의 우려가 있습니다.</li>
+                    <li>소재 특성상 약간의 먼지, 원단 구김이 발생할 수 있으며 눌리거나 찍힌 자국이 있을 수 있습니다.</li>
+                    <li>후가공 용지(홀로그램, 에폭시 등)의 특성상 공정 과정에서 미세한 찍힘, 스크래치, 까짐, 눌림 등이 발생할 수 있습니다.</li>
+                    <li>후가공 용지(홀로그램, 에폭시 등)의 특성상 날카로운 표면과 접촉하거나 힘을 가하면 스크래치, 눌림 등이 발생할 수 있기에 유의 부탁드립니다.</li>
+                    <li>각 패키지 박스와 OPP 봉투, 띠지는 상품을 보호하기 위한 포장재로, 포장 및 배송 과정에서 스크래치, 눌림, 뜯어짐 등이 발생할 수 있으며, 교환 및 반품 대상이 아닙니다.</li>
+                </ul>
+            </div>
+            <div class="lz_nt_group">
+                <h3>제조국</h3>
+                <ul class="lz_plain">
+                    <li>Made in KOREA (포토카드 홀더: Made in China)</li>
+                </ul>
+            </div>
+            <div class="lz_nt_group">
+                <h3>저작권</h3>
+                <ul class="lz_plain">
+                    <li>상품에 사용된 일러스트, 로고의 저작권은 권리자에게 있습니다.</li>
+                    <li>무단 복제, 배포, 2차 가공 및 상업적 이용을 금지합니다.</li>
+                </ul>
+            </div>
+            <p class="lz_copy">OATH OF LEZHINIUM © 2027 LEZHIN ENTERTAINMENT Inc. All rights reserved.</p>
+        </section>
+    </div>
+
+    <!-- 구매 버튼 : 구매 페이지·유튜브 URL 확정 후 href 교체 -->
+    <nav class="lz_buybar" id="lz_buybar" aria-label="구매하기">
+        <a class="lz_buy" data-region="kr" href="#" target="_blank" rel="noopener"><small>KR</small>구매하기</a>
+        <a class="lz_buy" data-region="global" href="#" target="_blank" rel="noopener" lang="en"><small>GLOBAL</small>Buy Now</a>
+        <a class="lz_yt" id="lz_yt" href="#" target="_blank" rel="noopener" aria-label="유튜브 바로가기"><img src="/morenvyimg/2027_lezhinSG/icon_youtube.webp" alt="" width="96" height="96"></a>
+    </nav>
+
+    <div class="lz_pop" id="lz_pop" role="dialog" aria-modal="true" aria-labelledby="lz_pop_msg" hidden>
+        <div class="lz_pop_card">
+            <span class="lz_pop_eyebrow">Coming Soon</span>
+            <p class="lz_pop_msg" id="lz_pop_msg"></p>
+            <button type="button" class="lz_pop_ok" id="lz_pop_ok">확인</button>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* 공통 */
+    body {margin: 0; padding: 0;}
+    #container #contents {width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; min-height: 0;}
+    #container #contents .xans-layout-mobileaction {display: none !important;}
+    #pj_lezhin {position: relative; width: 100%; overflow-x: clip; background: #000; color: #E6DDD0; font-family: "Noto Serif KR", "Apple SD Gothic Neo", serif; font-size: 14px; line-height: normal; word-break: keep-all; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%;}
+    #pj_lezhin *, #pj_lezhin *::before, #pj_lezhin *::after {box-sizing: border-box;}
+    #pj_lezhin img {display: block; max-width: none; user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none;}
+    #pj_lezhin video, #pj_lezhin canvas {max-width: none;}
+    #pj_lezhin h1, #pj_lezhin h2, #pj_lezhin h3, #pj_lezhin p, #pj_lezhin ul, #pj_lezhin li, #pj_lezhin dl, #pj_lezhin dt, #pj_lezhin dd {margin: 0; padding: 0;}
+    #pj_lezhin li {list-style: none;}
+    #pj_lezhin a, #pj_lezhin a:hover {text-decoration: none;}
+    #pj_lezhin button {margin: 0; padding: 0; border: 0; background: none; font-family: inherit; color: inherit; cursor: pointer; overflow: visible;}
+    #pj_lezhin [hidden] {display: none !important;}
+    #pj_lezhin .lz_sr {position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;}
+    #pj_lezhin .lz_pg {position: relative; width: min(100vw, 800px); margin: 0 auto; overflow: hidden; background: #000;}
+    #pj_lezhin .lz_sec {position: relative; width: 100%;}
+    #pj_lezhin .lz_ab {position: absolute; height: auto; pointer-events: none;}
+
+    /* 인트로 */
+    #pj_lezhin .lz_intro {position: fixed; inset: 0; z-index: 1100; background: #000;}
+    #pj_lezhin .lz_intro.is_gone {display: none;}
+    #pj_lezhin .lz_i_stage {position: absolute; top: 0; left: 50%; width: min(100vw, 800px); height: 100vh; height: 100svh; overflow: hidden; background: #0B0807; transform: translateX(-50%);}
+    #pj_lezhin .lz_i_world {position: absolute; left: 0; top: 0; will-change: transform;}
+    #pj_lezhin .lz_i_bg {position: absolute; inset: 0; width: 100%; height: 100%;}
+    #pj_lezhin .lz_i_portal {position: absolute; overflow: hidden; opacity: 0; background: #12151A;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 0%, #000 100%, transparent), linear-gradient(180deg, transparent, #000 0%, #000 100%, transparent); -webkit-mask-composite: source-in;
+        mask-image: linear-gradient(90deg, transparent, #000 0%, #000 100%, transparent), linear-gradient(180deg, transparent, #000 0%, #000 100%, transparent); mask-composite: intersect;}
+    #pj_lezhin .lz_i_portal img {width: 100%; height: 100%; object-fit: cover; object-position: 30% 50%;}
+    #pj_lezhin .lz_i_blur {position: absolute; left: -3%; top: -3%; width: 106%; height: 106%; object-fit: cover; object-position: 50% 22%; filter: blur(7px);
+        -webkit-mask-image: radial-gradient(ellipse 52% 46% at 50% 36%, transparent 40%, #000 100%); mask-image: radial-gradient(ellipse 52% 46% at 50% 36%, transparent 40%, #000 100%);}
+    #pj_lezhin .lz_i_candle {position: absolute; left: -25%; top: -20%; width: 90%; height: 75%; border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 206, 140, .22), rgba(255, 206, 140, 0)); mix-blend-mode: screen; pointer-events: none;}
+    #pj_lezhin .lz_i_dust {position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;}
+    #pj_lezhin .lz_i_walker {position: absolute; left: 0; top: 0; width: auto; will-change: transform; transform-origin: 50% 30%; pointer-events: none;}
+    #pj_lezhin .lz_iw3 {z-index: 2;}
+    #pj_lezhin .lz_i_shade {position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(180deg, rgba(8, 6, 5, 0) 38%, rgba(8, 6, 5, .55) 70%, rgba(8, 6, 5, .92) 92%);}
+    #pj_lezhin .lz_i_hint {position: absolute; left: 50%; bottom: calc(4.5% + env(safe-area-inset-bottom, 0px)); z-index: 4; padding: 8px 12px; text-align: center; color: #CFC6B6; font-family: "adobe-jenson-pro", "Adobe Jenson Pro", "Cormorant Garamond", Georgia, "Noto Serif KR", serif; font-size: clamp(15.2px, 2.4vw, 18.4px); letter-spacing: .02em; transform: translateX(-50%);}
+    #pj_lezhin .lz_i_hint span {border-bottom: 1px solid rgba(207, 198, 182, .6); padding-bottom: 1px;}
+    #pj_lezhin .lz_i_hint svg {display: block; margin: 10px auto 0; width: 22px; height: 12px; animation: lz_nudge 2.6s ease-in-out infinite;}
+    @keyframes lz_nudge {50% {transform: translateY(4px); opacity: .6;}}
+
+    /* 기획전 섹션 01 */
+    #pj_lezhin .lz_s1 {height: min(177.0833vw, 1416.67px); overflow: visible; z-index: 1;}
+    #pj_lezhin .lz_hall {position: absolute; left: 0; top: 0; width: 100%; height: min(204.8611vw, 1638.89px); overflow: hidden; background: #000;}
+    #pj_lezhin .lz_hs {position: absolute; top: 0; left: 50%; width: min(364.1972vw, 2913.58px); height: 100%; object-fit: cover; opacity: 0; background: #000 50% 50% / cover no-repeat; transform: translateX(-50%);}
+    #pj_lezhin .lz_hs1 {background-image: url("/morenvyimg/2027_lezhinSG/hall1_poster.webp");}
+    #pj_lezhin .lz_hs2 {background-image: url("/morenvyimg/2027_lezhinSG/hall2_poster.webp");}
+    #pj_lezhin .lz_hs.is_on {opacity: 1;}
+    #pj_lezhin .lz_hs::-webkit-media-controls-start-playback-button {display: none !important; -webkit-appearance: none;}
+    @keyframes lz_pan {from {transform: translateX(calc(-50% + min(23.6111vw, 188.89px)));} to {transform: translateX(calc(-50% - min(23.6111vw, 188.89px)));}}
+    #pj_lezhin .lz_hall::after {content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(180deg, #000 0%, #000 9%, rgba(0, 0, 0, .8) 17%, rgba(0, 0, 0, .45) 25%, rgba(0, 0, 0, .15) 33%, rgba(0, 0, 0, 0) 41%);}
+    #pj_lezhin .lz_title {z-index: 6; opacity: 0; transform: translateY(max(-1.6667vw, -13.33px)); transition: opacity 1.8s ease, transform 1.8s ease;}
+    #pj_lezhin .lz_title.is_in {opacity: 1; transform: none;}
+
+    /* 기획전 섹션 02 */
+    #pj_lezhin .lz_s2 {height: min(147.7778vw, 1182.22px); z-index: 3;}
+    #pj_lezhin .lz_w2clip {position: absolute; left: 0; right: 0; top: min(24.3056vw, 194.44px); bottom: -3px; overflow: hidden;}
+    #pj_lezhin .lz_w2 {position: absolute; left: 0; bottom: 0; width: 100%; height: min(207.0833vw, 1656.67px); transform: scaleY(-1);}
+    #pj_lezhin .lz_w2, #pj_lezhin .lz_w3move {background: url("/morenvyimg/2027_lezhinSG/wall_tile.webp") 0 0 / min(200vw, 1600px) 100% repeat-x;}
+    #pj_lezhin .lz_s2 > img {z-index: 2;}
+    #pj_lezhin .lz_p2 {transform: translateY(max(-4.8611vw, -38.89px)) rotate(-1.2deg); transition: transform .4s ease;}
+    #pj_lezhin .lz_p1 {opacity: 0; transform: translateY(max(-13.1944vw, -105.56px)) rotate(1.6deg); transition: opacity .4s ease, transform .4s ease;}
+    #pj_lezhin .lz_pen {transform: translateY(max(-1.8056vw, -14.44px)); transition: transform .4s ease;}
+    #pj_lezhin .lz_s2.is_on .lz_p2 {transform: none; transition: transform 1.6s cubic-bezier(.22, .61, .36, 1) .05s;}
+    #pj_lezhin .lz_s2.is_on .lz_p1 {opacity: 1; transform: none; transition: opacity 1.3s ease .75s, transform 2s cubic-bezier(.22, .61, .36, 1) .75s;}
+    #pj_lezhin .lz_s2.is_on .lz_pen {transform: none; transition: transform 1.6s cubic-bezier(.22, .61, .36, 1) 1.9s;}
+    #pj_lezhin .lz_embers {position: absolute; inset: 0; z-index: 4; width: 100%; height: 100%; pointer-events: none;}
+
+    /* 기획전 섹션 03 */
+    #pj_lezhin .lz_s34 {height: min(390.625vw, 3125px); z-index: 2; background: #3A3226 url("/morenvyimg/2027_lezhinSG/wall.webp") 50% 0 / 100% auto no-repeat;}
+    #pj_lezhin .lz_w3move {position: absolute; left: 0; top: 0; z-index: 0; width: 100%; height: min(207.0833vw, 1656.67px);}
+    #pj_lezhin .lz_mold {position: absolute; left: 0; top: min(168.125vw, 1345px); z-index: 1; width: 100%; height: min(246.0417vw, 1968.33px); background: url("/morenvyimg/2027_lezhinSG/mold.webp") 0 0 / min(278.0556vw, 2224.44px) 100% repeat-x;}
+    #pj_lezhin .lz_lrail {position: absolute; left: 0; top: 0; z-index: 2; width: 100%; height: min(207.0833vw, 1656.67px); overflow: hidden; pointer-events: none; mix-blend-mode: screen;}
+    #pj_lezhin .lz_lt {position: absolute; left: 0; top: 0; width: min(104.1667vw, 833.33px); height: min(104.1667vw, 833.33px); will-change: transform; background: radial-gradient(circle closest-side, rgba(255, 226, 180, .34) 0%, rgba(255, 226, 180, .16) 38%, rgba(255, 226, 180, .05) 70%, rgba(255, 226, 180, 0) 100%);}
+    #pj_lezhin .lz_dk_track {position: absolute; left: 0; top: min(14.8611vw, 118.89px); z-index: 3; width: 100%; height: min(125.2778vw, 1002.22px); overflow: hidden; outline: none; cursor: grab; touch-action: pan-y;}
+    #pj_lezhin .lz_dk_track.is_dragging {cursor: grabbing;}
+    #pj_lezhin .lz_dk_rail {display: flex; gap: min(11.8056vw, 94.44px); width: max-content; height: 100%; will-change: transform;}
+    #pj_lezhin .lz_dk_slide {position: relative; flex: 0 0 min(72.4306vw, 579.44px); width: min(72.4306vw, 579.44px); height: 100%;}
+    #pj_lezhin .lz_dk_card {position: absolute; inset: 0; will-change: filter;}
+    #pj_lezhin .lz_dk_pl {position: absolute; left: min(24.7222vw, 197.78px); top: 0; width: min(22.8472vw, 182.78px); height: auto;}
+    #pj_lezhin .lz_dk_pt {position: absolute; left: 0; top: min(17.5vw, 140px); width: 100%; height: auto;}
+    #pj_lezhin .lz_dk_cap {position: absolute; left: min(48.9583vw, 391.67px); top: min(114.7222vw, 917.78px); width: min(23.0556vw, 184.44px); height: auto;}
+    #pj_lezhin .lz_dk_nav {position: absolute; left: min(13.7847vw, 110.28px); top: min(146.5278vw, 1172.22px); z-index: 4; display: flex; align-items: center; gap: min(1.9444vw, 15.56px); width: min(72.4306vw, 579.44px); height: min(4.1667vw, 33.33px);}
+    #pj_lezhin .lz_dk_arr {flex: 0 0 auto; padding: min(0.6944vw, 5.56px) 0; color: #D8CFBF; opacity: .85;}
+    #pj_lezhin .lz_dk_arr svg {display: block; width: min(1.25vw, 10px); height: min(2.5vw, 20px); fill: none; stroke: currentColor; stroke-width: 1.4;}
+    #pj_lezhin .lz_dk_arr:disabled {opacity: .25; cursor: default;}
+    #pj_lezhin .lz_dk_range {flex: 1; height: min(2.7778vw, 22.22px); margin: 0; padding: 0; border: 0; background: none; cursor: pointer; -webkit-appearance: none; appearance: none;}
+    #pj_lezhin .lz_dk_range::-webkit-slider-runnable-track {height: 1px; background: rgba(216, 207, 191, .45);}
+    #pj_lezhin .lz_dk_range::-moz-range-track {height: 1px; background: rgba(216, 207, 191, .45);}
+    #pj_lezhin .lz_dk_range::-webkit-slider-thumb {width: min(4.1667vw, 33.33px); height: min(0.3472vw, 2.78px); margin-top: max(-0.1389vw, -1.11px); border: 0; border-radius: 2px; background: #EDE6DA; -webkit-appearance: none; appearance: none;}
+    #pj_lezhin .lz_dk_range::-moz-range-thumb {width: min(4.1667vw, 33.33px); height: min(0.3472vw, 2.78px); border: 0; border-radius: 2px; background: #EDE6DA;}
+    #pj_lezhin .lz_dk_count {position: absolute; left: 0; right: 0; top: min(152.0833vw, 1216.67px); z-index: 4; margin: 0; text-align: center; color: #D8CFBF; font-family: "adobe-jenson-pro", "Adobe Jenson Pro", "Cormorant Garamond", Georgia, "Noto Serif KR", serif; font-size: max(13px, min(3.0556vw, 24.44px)); letter-spacing: .14em;}
+    #pj_lezhin .lz_shclip {position: absolute; left: 0; top: 0; z-index: 5; width: 100%; height: 100%; overflow: hidden; pointer-events: none; mix-blend-mode: multiply;}
+    #pj_lezhin .lz_txt {z-index: 6;}
+    #pj_lezhin .lz_box {z-index: 7;}
+    #pj_lezhin .lz_curtain {z-index: 20;}
+    #pj_lezhin .lz_land {opacity: 0; transform: translateY(max(-3.4722vw, -27.78px)); transition: opacity .4s ease, transform .4s ease;}
+    #pj_lezhin .lz_s34.is_on .lz_land {opacity: 1; transform: none; transition: opacity 1.4s ease .1s, transform 1.6s cubic-bezier(.22, .61, .36, 1) .1s;}
+
+    /* 유의사항 */
+    #pj_lezhin .lz_notice {z-index: 10; min-height: min(66.0417vw, 528.33px); margin-top: max(-7.3611vw, -58.89px); padding: max(60px, min(13.8889vw, 111.11px)) max(20px, min(7.6389vw, 61.11px)) max(120px, min(18.0556vw, 144.44px)); background: #111;}
+    #pj_lezhin .lz_nt_eyebrow {display: block; text-align: center; color: #A79F92; font-family: "adobe-jenson-pro", "Adobe Jenson Pro", "Cormorant Garamond", Georgia, "Noto Serif KR", serif; font-size: max(11px, min(1.9444vw, 15.56px)); letter-spacing: .3em; text-transform: uppercase;}
+    #pj_lezhin .lz_nt_title {margin: 6px 0 max(22px, min(4.1667vw, 33.33px)); text-align: center; color: #E6DDD0; font-size: max(15px, min(2.9167vw, 23.33px)); font-weight: 600;}
+    #pj_lezhin .lz_nt_group {margin-bottom: max(18px, min(3.3333vw, 26.67px));}
+    #pj_lezhin .lz_nt_group h3 {margin: 0 0 8px; padding-bottom: 6px; border-bottom: 1px solid rgba(212, 202, 189, .2); color: #E6DDD0; font-size: max(12px, min(2.0833vw, 16.67px)); font-weight: 600;}
+    #pj_lezhin .lz_nt_group ul {color: #B3A894; font-size: max(11px, min(1.8056vw, 14.44px)); line-height: 1.75;}
+    #pj_lezhin .lz_nt_group li {position: relative; padding-left: 1.1em;}
+    #pj_lezhin .lz_nt_group li::before {content: ""; position: absolute; left: .35em; top: calc(.875em - 1.5px); width: 3px; height: 3px; border-radius: 50%; background: currentColor;}
+    #pj_lezhin .lz_nt_group li ul {font-size: 1em;}
+    #pj_lezhin .lz_nt_group li li {padding-left: .9em;}
+    #pj_lezhin .lz_nt_group li li::before {content: "-"; left: 0; top: 0; width: auto; height: auto; border-radius: 0; background: none;}
+    #pj_lezhin .lz_nt_group .lz_nt_note {margin-top: 6px; padding-left: 0; color: #8F8574;}
+    #pj_lezhin .lz_nt_group .lz_plain li {padding-left: 0;}
+    #pj_lezhin .lz_nt_group .lz_nt_note::before, #pj_lezhin .lz_nt_group .lz_plain li::before {display: none;}
+    #pj_lezhin .lz_nt_group dl {display: grid; grid-template-columns: 6.5em 1fr; font-size: max(11px, min(1.8056vw, 14.44px));}
+    #pj_lezhin .lz_nt_group dt, #pj_lezhin .lz_nt_group dd {padding: 6px 0; border-bottom: 1px solid rgba(212, 202, 189, .12);}
+    #pj_lezhin .lz_nt_group dt {color: #B3A894;}
+    #pj_lezhin .lz_copy {margin-top: max(30px, min(5.5556vw, 44.44px)); text-align: center; color: #8F8574; font-family: "adobe-jenson-pro", "Adobe Jenson Pro", "Cormorant Garamond", Georgia, "Noto Serif KR", serif; font-size: max(10px, min(1.6667vw, 13.33px)); letter-spacing: .04em;}
+
+    /* 구매 버튼 */
+    #pj_lezhin .lz_buybar {position: fixed; left: 50%; bottom: 0; z-index: 50; display: flex; justify-content: center; align-items: center; gap: 8px; width: min(100vw, 800px); padding: 0 14px calc(14px + env(safe-area-inset-bottom, 0px)); pointer-events: none; transform: translate(-50%, 130%); transition: transform .4s ease;}
+    #pj_lezhin .lz_buybar.is_show {transform: translate(-50%, 0);}
+    #pj_lezhin .lz_buy {display: flex; flex: 1; align-items: center; gap: 10px; max-width: 240px; padding: 13px 16px; border: 1px solid rgba(237, 230, 218, .5); background: #0B0807; color: #EDE6DA; font-family: "adobe-jenson-pro", "Adobe Jenson Pro", "Cormorant Garamond", Georgia, "Noto Serif KR", serif; font-size: 16px; line-height: 1.2; letter-spacing: .02em; white-space: nowrap; box-shadow: 0 6px 20px rgba(0, 0, 0, .35); pointer-events: auto; transition: background .2s, color .2s;}
+    #pj_lezhin .lz_buy::after {content: "→"; margin-left: auto; opacity: .8;}
+    #pj_lezhin .lz_buy small {color: #A79F92; font-size: .68em; letter-spacing: .18em;}
+    #pj_lezhin .lz_buy:hover {background: #EDE6DA; color: #0B0807;}
+    #pj_lezhin .lz_yt {flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 1px solid rgba(237, 230, 218, .5); background: #0B0807; box-shadow: 0 6px 20px rgba(0, 0, 0, .35); pointer-events: auto; transition: background .2s;}
+    #pj_lezhin .lz_yt img {width: 46%; height: auto;}
+    #pj_lezhin .lz_yt:hover {background: #2a211c;}
+
+    /* 판매 전 안내 팝업 */
+    #pj_lezhin .lz_pop {position: fixed; inset: 0; z-index: 1200; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(0, 0, 0, .55); opacity: 0; transition: opacity .3s ease;}
+    #pj_lezhin .lz_pop.is_open {opacity: 1;}
+    #pj_lezhin .lz_pop_card {width: min(86vw, 340px); padding: 30px 24px 22px; text-align: center; border: 1px solid rgba(196, 164, 101, .55); background: #16110E; box-shadow: 0 18px 50px rgba(0, 0, 0, .6), inset 0 0 0 4px #16110E, inset 0 0 0 5px rgba(196, 164, 101, .25); transform: translateY(10px) scale(.98); transition: transform .35s cubic-bezier(.22, .61, .36, 1);}
+    #pj_lezhin .lz_pop.is_open .lz_pop_card {transform: none;}
+    #pj_lezhin .lz_pop_eyebrow {display: block; margin-bottom: 12px; color: #B39463; font-family: "adobe-jenson-pro", "Adobe Jenson Pro", "Cormorant Garamond", Georgia, "Noto Serif KR", serif; font-size: 11.52px; letter-spacing: .32em; text-transform: uppercase;}
+    #pj_lezhin .lz_pop_msg {margin: 0; color: #EDE6DA; font-size: 16.32px; line-height: 1.6; text-align: center; white-space: pre-line; word-break: keep-all;}
+    #pj_lezhin .lz_pop_ok {min-width: 120px; margin-top: 22px; padding: 10px 20px; border: 1px solid rgba(237, 230, 218, .5); color: #EDE6DA; font-family: "Noto Serif KR", serif; font-size: 13.76px; transition: background .2s, color .2s;}
+    #pj_lezhin .lz_pop_ok:hover {background: #EDE6DA; color: #0B0807;}
+
+    /* 반응형 */
+    @media (max-width: 440px) {
+        #pj_lezhin .lz_buy {gap: 8px; padding: 12px; font-size: 15.2px;}
+        #pj_lezhin .lz_buy small {letter-spacing: .12em;}
+        #pj_lezhin .lz_buy::after {font-size: 13.6px;}
+    }
+    @media (max-width: 360px) {
+        #pj_lezhin .lz_buy::after {display: none;}
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #pj_lezhin .lz_title, #pj_lezhin .lz_p1, #pj_lezhin .lz_p2, #pj_lezhin .lz_pen, #pj_lezhin .lz_land {transition: none !important;}
+        #pj_lezhin .lz_i_hint svg {animation: none;}
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        const byId = function (id) { return document.getElementById(id); };
+        const wrap = byId("pj_lezhin");
+        if (!wrap) return;
+        const clamp = function (v, a, b) { return Math.min(b === undefined ? 1 : b, Math.max(a || 0, v)); };
+        const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const IMG = byId("lz_title").src.replace(/[^/]*$/, "");
+
+        /* 섹션 01 회랑 영상 */
+        const hall = (function () {
+            const box = byId("lz_hall"), vids = Array.prototype.slice.call(box.querySelectorAll(".lz_hs"));
+            const HOLD = 6000, T = 1800, PAN = HOLD + T * 2;
+            let cur = 0, busy = false, entered = false, inView = true, timer = 0;
+            const load = function (v) { if (!v.getAttribute("src") && v.dataset.src) { v.preload = "auto"; v.src = IMG + v.dataset.src; } };
+            const play = function (v) { if (reduce) return; load(v); const p = v.play(); if (p && p.catch) p.catch(function () {}); };
+            const pan = function (v) { if (reduce) return; v.style.animation = "none"; void v.offsetWidth; v.style.animation = "lz_pan " + PAN + "ms linear forwards"; };
+            function sync() { const v = vids[cur]; if (entered && inView && !reduce) play(v); else v.pause(); }
+            function go() {
+                if (busy || reduce) return;
+                if (!inView) { timer = setTimeout(go, HOLD); return; }
+                busy = true;
+                const a = vids[cur], b = vids[(cur + 1) % vids.length];
+                cur = (cur + 1) % vids.length;
+                try { b.currentTime = 0; } catch (e) {}
+                play(b); pan(b);
+                b.classList.add("is_on"); b.style.zIndex = 1;
+                const done = function () { a.classList.remove("is_on"); a.pause(); b.style.zIndex = ""; busy = false; timer = setTimeout(go, HOLD); };
+                if (b.animate) b.animate([{opacity: 0}, {opacity: 1}], {duration: T, easing: "ease-in-out"}).onfinish = done; else done();
+            }
+            load(vids[0]);
+            vids[0].addEventListener("playing", function () { load(vids[1]); }, {once: true});
+            if ("IntersectionObserver" in window) {
+                new IntersectionObserver(function (e) { inView = e[0].isIntersecting; sync(); }, {threshold: 0}).observe(box);
+            }
+            return {
+                enter: function () { if (entered) return; entered = true; pan(vids[cur]); sync(); clearTimeout(timer); timer = setTimeout(go, HOLD); },
+                leave: function () { entered = false; clearTimeout(timer); sync(); }
+            };
+        })();
+
+        const showTitle = function () { setTimeout(function () { byId("lz_title").classList.add("is_in"); }, 250); };
+
+        /* 인트로 : 스크롤 한 번이면 가운데 액자 속 회랑으로 들어가 섹션 01 시작 */
+        (function () {
+            const intro = byId("lz_intro"), stage = byId("lz_i_stage"), world = byId("lz_i_world"), bg = byId("lz_i_bg"), portal = byId("lz_i_portal"), pimg = portal.querySelector("img"),
+                blurI = byId("lz_i_blur"), candle = byId("lz_i_candle"), hint = byId("lz_i_hint"), cv = byId("lz_i_dust"), ctx = cv.getContext("2d");
+            const range = function (p, a, b) { return clamp((p - a) / (b - a)); }, ease = function (t) { return t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }, rnd = function (a, b) { return a + Math.random() * (b - a); };
+            const IMG_W = 1800, IMG_H = 1811, FR = [793, 495, 226, 325];
+            const WK = [{el: byId("lz_iw1"), x: .13, top: .27, h: 1.75, dir: -1, T: 44}, {el: byId("lz_iw2"), x: .76, top: .15, h: 1.5, dir: 1, T: 52}, {el: byId("lz_iw3"), x: .40, top: .37, h: 1.6, dir: -1, T: 40}];
+            let W = 0, H = 0, R = 0, WL = {}, P = 0, state = 0, anim = false, settle = 0, CW = 0, CH = 0, last = 0, looping = false;
+            WK.forEach(function (w) { w.phase = rnd(0, 6); w.wait = 0; w.vr = rnd(0, 6); });
+            const motes = Array.from({length: 46}, function () { return {x: Math.random(), y: Math.random(), r: .6 + Math.random() * 1.6, s: .00008 + Math.random() * .00022, ph: Math.random() * 6.28}; });
+            function mask(f) {
+                const g = "linear-gradient(90deg,transparent,#000 " + f + "%,#000 " + (100 - f) + "%,transparent),linear-gradient(180deg,transparent,#000 " + f + "%,#000 " + (100 - f) + "%,transparent)";
+                portal.style.webkitMaskImage = g; portal.style.maskImage = g;
+            }
+            function size() { const d = Math.min(2, window.devicePixelRatio || 1); CW = cv.clientWidth; CH = cv.clientHeight; cv.width = CW * d; cv.height = CH * d; ctx.setTransform(d, 0, 0, d, 0, 0); }
+            function layout() {
+                W = stage.clientWidth; H = stage.clientHeight; R = Math.min(H, W * 1.6);
+                const c = Math.max(W / IMG_W, H / IMG_H), ww = IMG_W * c, wh = IMG_H * c;
+                WL = {left: (W - ww) * .5, top: (H - wh) * .22, fx: (FR[0] + FR[2] / 2) * c, fy: (FR[1] + FR[3] / 2) * c, Z: Math.max(W / (FR[2] * c), H / (FR[3] * c)) * 1.04};
+                world.style.width = ww + "px"; world.style.height = wh + "px"; world.style.transformOrigin = WL.fx + "px " + WL.fy + "px";
+                portal.style.left = (FR[0] / IMG_W * 100) + "%"; portal.style.top = (FR[1] / IMG_H * 100) + "%"; portal.style.width = (FR[2] / IMG_W * 100) + "%"; portal.style.height = (FR[3] / IMG_H * 100) + "%";
+                WK.forEach(function (w) { w.px = w.h * R; w.el.style.height = w.px + "px"; w.ar = (w.el.naturalWidth || 1) / (w.el.naturalHeight || 1); });
+                size();
+            }
+            function render() {
+                const p = P, e = ease(range(p, .05, .85)), sc = Math.pow(WL.Z, e);
+                world.style.transform = "translate(" + (WL.left + (W / 2 - (WL.left + WL.fx)) * e) + "px," + (WL.top + (H / 2 - (WL.top + WL.fy)) * e) + "px) scale(" + sc + ")";
+                bg.style.filter = "blur(" + (range(p, .06, .6) * .35) + "px)";
+                portal.style.opacity = range(p, .03, .26); mask(range(p, .08, .6) * 3);
+                pimg.style.filter = "blur(" + ((1 - range(p, .04, .62)) * .8) + "px)";
+                const near = 1 - range(p, .08, .32);
+                blurI.style.opacity = near; candle.style.visibility = near > 0 ? "visible" : "hidden"; cv.style.opacity = near;
+                hint.style.opacity = 1 - range(p, 0, .14);
+                intro.style.opacity = 1 - range(p, .86, 1);
+            }
+            /* 지나가는 그림자 : 아주 느리게 한 방향으로 */
+            function walk(dt, t) {
+                const e = ease(range(P, .12, .85)), fade = 1 - ease(range(P, .01, .3));
+                WK.forEach(function (w, i) {
+                    const wd = w.px * w.ar, half = wd / 2 / W;
+                    if (w.wait > 0) w.wait -= dt;
+                    else {
+                        w.x += w.dir * (1 + 2 * half) / w.T * (1 + .06 * Math.sin(t * .27 + w.vr)) * dt;
+                        if (w.dir < 0 && w.x < -half - .02) { w.x = 1 + half + .02; w.wait = rnd(3, 8); }
+                        if (w.dir > 0 && w.x > 1 + half + .02) { w.x = -half - .02; w.wait = rnd(3, 8); }
+                    }
+                    w.phase += dt * Math.PI;
+                    const bob = -(1 - Math.cos(w.phase * 2)) / 2 * .0022 * R;
+                    let x = w.x * W - wd / 2, y = (H - R) * .55 + w.top * R + bob, s = 1;
+                    if (i === 0) x -= e * .4 * W; else if (i === 1) x += e * .4 * W; else { y += e * .12 * H; s = 1 + e * .22; }
+                    w.el.style.transform = "translate(" + x + "px," + y + "px) rotate(" + (Math.sin(w.phase) * .12) + "deg) scale(" + s + ")";
+                    w.el.style.opacity = fade;
+                });
+            }
+            function loop(t) {
+                if (intro.classList.contains("is_gone")) { looping = false; return; }
+                const dt = Math.min(.05, (t - last) / 1000); last = t;
+                walk(dt, t / 1000);
+                candle.style.opacity = .78 + .12 * Math.sin(t * .0031) + .07 * Math.sin(t * .0113 + 1.3) + .04 * Math.sin(t * .027);
+                ctx.clearRect(0, 0, CW, CH);
+                motes.forEach(function (m) {
+                    m.y -= m.s * 16; m.x += Math.sin(t * .0004 + m.ph) * .00012;
+                    if (m.y < -.02) { m.y = 1.02; m.x = Math.random(); }
+                    const lit = clamp(1 - Math.hypot(m.x - .25, m.y - .25) * 1.4, .08, 1);
+                    ctx.fillStyle = "rgba(255,226,170," + ((.25 + .35 * Math.pow(Math.sin(t * .002 + m.ph), 2)) * lit) + ")";
+                    ctx.beginPath(); ctx.arc(m.x * CW, m.y * CH, m.r, 0, 6.283); ctx.fill();
+                });
+                requestAnimationFrame(loop);
+            }
+            function startLoop() { if (reduce || looping) return; looping = true; last = performance.now(); requestAnimationFrame(loop); }
+            const lock = function (on) { document.documentElement.style.overflow = on ? "hidden" : ""; document.body.style.overflow = on ? "hidden" : ""; };
+            function play(to) {
+                if (anim || to === state) return;
+                anim = true;
+                if (to === 0) { intro.classList.remove("is_gone"); lock(true); layout(); startLoop(); hall.leave(); }
+                const from = P, dur = to > from ? 2600 : 1800, t0 = performance.now();
+                (function f(t) {
+                    const k = Math.min(1, (t - t0) / dur), e = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+                    P = from + (to - from) * e; render();
+                    if (k < 1) { requestAnimationFrame(f); return; }
+                    anim = false; state = to; settle = performance.now() + 600;
+                    if (to === 1) { intro.classList.add("is_gone"); lock(false); window.scrollTo(0, 0); showTitle(); hall.enter(); }
+                })(t0);
+            }
+            function take(dir) {
+                if (anim) return true;
+                if (state === 0) { if (dir > 0) play(1); return true; }
+                if (window.scrollY <= 2) { if (dir < 0) { play(0); return true; } if (performance.now() < settle) return true; }
+                return false;
+            }
+            window.addEventListener("wheel", function (e) { const d = Math.sign(e.deltaY); if (d && take(d)) e.preventDefault(); }, {passive: false});
+            let ty0 = null;
+            window.addEventListener("touchstart", function (e) { ty0 = e.touches[0].clientY; }, {passive: true});
+            window.addEventListener("touchmove", function (e) {
+                if (ty0 === null) return;
+                const dy = ty0 - e.touches[0].clientY;
+                if (Math.abs(dy) < 6) { if (state === 0 || anim) e.preventDefault(); return; }
+                if (take(Math.sign(dy))) e.preventDefault();
+            }, {passive: false});
+            window.addEventListener("touchend", function () { ty0 = null; }, {passive: true});
+            window.addEventListener("keydown", function (e) {
+                if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName) || e.target.isContentEditable) return;
+                const dn = ["ArrowDown", "PageDown", " ", "Spacebar"].indexOf(e.key) > -1, up = ["ArrowUp", "PageUp"].indexOf(e.key) > -1;
+                if ((dn || up) && take(dn ? 1 : -1)) e.preventDefault();
+            });
+            hint.addEventListener("click", function () { play(1); });
+            window.addEventListener("resize", function () { if (!intro.classList.contains("is_gone")) { layout(); render(); } });
+            lock(true); layout(); render(); startLoop();
+            WK.forEach(function (w) { if (!w.el.complete) w.el.addEventListener("load", layout, {once: true}); });
+        })();
+
+        /* 섹션에 들어올 때마다 다시 내려앉는 연출 (완전히 벗어나면 초기화) */
+        const s1 = byId("lz_s1"), s2 = byId("lz_s2"), s34 = byId("lz_s34"), buybar = byId("lz_buybar");
+        function reveal() {
+            [s2, s34].forEach(function (g) {
+                let r = g.getBoundingClientRect();
+                if (g === s34) r = {top: r.top + r.height * (2982 / 5625), bottom: r.bottom};
+                if (r.top < innerHeight * .72 && r.bottom > innerHeight * .25) g.classList.add("is_on");
+                else if (r.top > innerHeight || r.bottom < 0) g.classList.remove("is_on");
+            });
+            const r1 = s1.getBoundingClientRect();
+            buybar.classList.toggle("is_show", r1.top < -r1.height * .25);
+        }
+        window.addEventListener("scroll", reveal, {passive: true});
+        window.addEventListener("resize", reveal);
+        reveal();
+
+        /* 열두 공작 : 정가운데 스냅, 가운데만 밝게. lx·ly = 그림에서 밝은 쪽 뒤, 빛이 놓일 자리 (액자 기준 비율) */
+        (function () {
+            const LIGHT = [[.95, .34], [.05, .73], [.95, .61], [.17, .05], [.95, .77], [.29, .95], [.95, .65], [.05, .31], [.65, .95], [.05, .46], [.85, .05], [.05, .38]];
+            const track = byId("lz_dk_track"), rail = byId("lz_dk_rail"), count = byId("lz_dk_count"), prev = byId("lz_dk_prev"), next = byId("lz_dk_next"), rng = byId("lz_dk_range");
+            const mold = byId("lz_mold"), w3move = byId("lz_w3move"), w2 = byId("lz_w2"), lrail = byId("lz_lrail");
+            const slides = Array.prototype.slice.call(rail.querySelectorAll(".lz_dk_slide")).map(function (s) { return [s, s.firstElementChild]; }), N = slides.length;
+            const lights = slides.map(function () { const l = document.createElement("div"); l.className = "lz_lt"; lrail.appendChild(l); return l; });
+            let pos = 0, target = 0, anim = 0, moving = false, dragging = false, rangeDrag = false, lt = 0;
+            function metrics() { const r0 = slides[0][0].getBoundingClientRect(), r1 = slides[1][0].getBoundingClientRect(); return {sw: r0.width, st: (r1.left - r0.left) || r0.width}; }
+            function render() {
+                const m = metrics(), sw = m.sw, st = m.st, X = track.clientWidth / 2 - sw / 2 - pos * st;
+                rail.style.transform = "translate3d(" + X + "px,0,0)";
+                /* 몰딩·윗벽·섹션 02 아래 벽도 같은 거리만큼 함께 이동 */
+                mold.style.backgroundPosition = (-1002 * sw / 1043 - pos * st).toFixed(1) + "px 0";
+                w3move.style.backgroundPosition = (-pos * st).toFixed(1) + "px 0";
+                w2.style.backgroundPosition = (-pos * st).toFixed(1) + "px 0";
+                /* 그림 속 밝은 쪽 뒤의 벽에 빛 */
+                const ltW = lights[0].offsetWidth, uu = sw / 1043, ty = track.offsetTop;
+                lights.forEach(function (l, i) {
+                    const cx = X + i * st + LIGHT[i][0] * sw, cy = ty + 252 * uu + LIGHT[i][1] * 1357 * uu;
+                    l.style.transform = "translate3d(" + (cx - ltW / 2).toFixed(1) + "px," + (cy - ltW / 2).toFixed(1) + "px,0)";
+                });
+                const tr = track.getBoundingClientRect(), mid = tr.left + tr.width / 2;
+                slides.forEach(function (s) {
+                    const r = s[0].getBoundingClientRect(), k = Math.min(1, Math.abs(r.left + r.width / 2 - mid) / st);
+                    s[1].style.filter = k < .002 ? "none" : "brightness(" + (1 - .6 * k).toFixed(3) + ") saturate(" + (1 - .35 * k).toFixed(3) + ")";
+                });
+                count.textContent = (Math.round(pos) + 1) + " / " + N;
+                prev.disabled = target <= 0; next.disabled = target >= N - 1;
+                if (!rangeDrag) rng.value = pos.toFixed(3);
+            }
+            /* 끌다 놓을 때는 놓은 속도를 이어받는 감속(easeOut), 버튼·키보드·휠은 천천히 출발해 부드럽게 멈춤(easeInOut) */
+            const easeOut = function (k) { return 1 - Math.pow(1 - k, 3); };
+            const easeInOut = function (k) { return k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2; };
+            function animateTo(i, dur, ez) {
+                target = Math.max(0, Math.min(N - 1, Math.round(i)));
+                const from = pos, t0 = performance.now();
+                dur = dur || 480; ez = ez || easeOut; cancelAnimationFrame(anim); moving = true;
+                (function f(t) { const k = Math.min(1, (t - t0) / dur), e = ez(k); pos = k >= 1 ? target : from + (target - from) * e; render(); if (k < 1) anim = requestAnimationFrame(f); else moving = false; })(t0);
+            }
+            const go = function (i) { animateTo(i, 620, easeInOut); };
+            let sx = 0, sy = 0, sp = 0, lx = 0, vel = 0, moved = false, horiz = null;
+            function down(x, y) { dragging = true; moved = false; horiz = null; sx = lx = x; sy = y; lt = performance.now(); sp = pos; vel = 0; cancelAnimationFrame(anim); moving = false; }
+            function move(x, y, ev) {
+                if (!dragging) return;
+                const dx = x - sx, dy = y - sy;
+                if (horiz === null && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) horiz = Math.abs(dx) > Math.abs(dy);
+                if (!horiz) return;
+                if (ev && ev.cancelable) ev.preventDefault();
+                moved = true; track.classList.add("is_dragging");
+                const now = performance.now(); vel = (x - lx) / Math.max(1, now - lt); lx = x; lt = now;
+                let p = sp - dx / metrics().st;
+                if (p < 0) p *= .3;
+                if (p > N - 1) p = N - 1 + (p - (N - 1)) * .3;
+                pos = Math.max(sp - 1, Math.min(sp + 1, p)); render();
+            }
+            function up() {
+                if (!dragging) return;
+                dragging = false; track.classList.remove("is_dragging"); lt = performance.now();
+                const base = Math.round(sp), d = pos - sp;
+                let t = base;
+                if (moved) { if (d > .15 || vel < -.3) t = base + 1; else if (d < -.15 || vel > .3) t = base - 1; }
+                animateTo(t);
+            }
+            if (window.PointerEvent) {
+                track.addEventListener("pointerdown", function (e) { if (e.pointerType !== "mouse" || e.button === 0) down(e.clientX, e.clientY); });
+                window.addEventListener("pointermove", function (e) { move(e.clientX, e.clientY, null); }, {passive: true});
+                window.addEventListener("pointerup", up); window.addEventListener("pointercancel", up);
+            } else {
+                track.addEventListener("mousedown", function (e) { down(e.clientX, e.clientY); });
+                window.addEventListener("mousemove", function (e) { move(e.clientX, e.clientY, null); });
+                window.addEventListener("mouseup", up);
+            }
+            track.addEventListener("touchstart", function (e) { const t = e.touches[0]; down(t.clientX, t.clientY); }, {passive: true});
+            track.addEventListener("touchmove", function (e) { const t = e.touches[0]; move(t.clientX, t.clientY, e); }, {passive: false});
+            track.addEventListener("touchend", up); track.addEventListener("touchcancel", up);
+            track.addEventListener("dragstart", function (e) { e.preventDefault(); });
+            track.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+            /* 어중간한 위치에 멈춘 경우만 바로잡기 (넘어가는 애니메이션 중에는 건드리지 않음) */
+            setInterval(function () { if (!moving && !dragging && !rangeDrag && Math.abs(pos - Math.round(pos)) > .001 && performance.now() - lt > 400) animateTo(pos, 300); }, 500);
+            slides.forEach(function (s, i) { s[0].addEventListener("click", function () { if (!moved && i !== target) go(i); }); });
+            prev.addEventListener("click", function () { go(target - 1); });
+            next.addEventListener("click", function () { go(target + 1); });
+            track.addEventListener("keydown", function (e) {
+                if (e.key === "ArrowRight") { e.preventDefault(); go(target + 1); }
+                if (e.key === "ArrowLeft") { e.preventDefault(); go(target - 1); }
+            });
+            let wx = 0, wlock = 0;
+            track.addEventListener("wheel", function (e) {
+                if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+                e.preventDefault();
+                if (performance.now() < wlock) return;
+                wx += e.deltaX;
+                if (Math.abs(wx) > 40) { go(target + (wx > 0 ? 1 : -1)); wx = 0; wlock = performance.now() + 450; }
+            }, {passive: false});
+            rng.addEventListener("input", function () { rangeDrag = true; cancelAnimationFrame(anim); moving = false; pos = parseFloat(rng.value); render(); });
+            const rangeEnd = function () { if (!rangeDrag) return; rangeDrag = false; lt = performance.now(); animateTo(parseFloat(rng.value), 360); };
+            rng.addEventListener("change", rangeEnd);
+            ["pointerup", "mouseup", "touchend"].forEach(function (n) { window.addEventListener(n, rangeEnd); });
+            window.addEventListener("resize", render);
+            if (window.ResizeObserver) new ResizeObserver(function () { render(); }).observe(track);
+            window.addEventListener("load", render);
+            render(); requestAnimationFrame(render);
+            /* 옆으로 밀려 있는 초상도 섹션에 가까워지면 한꺼번에 불러오기 */
+            const imgs = rail.querySelectorAll("img[loading='lazy']");
+            const eager = function () { Array.prototype.forEach.call(imgs, function (im) { im.loading = "eager"; }); };
+            if ("IntersectionObserver" in window) {
+                const io = new IntersectionObserver(function (e) { if (e[0].isIntersecting) { eager(); io.disconnect(); } }, {rootMargin: "100% 0px"});
+                io.observe(track);
+            } else eager();
+        })();
+
+        /* 불씨 : 지도 위를 이리저리 떠다님 */
+        (function () {
+            const cv = byId("lz_embers");
+            if (!cv || reduce) return;
+            const ctx = cv.getContext("2d");
+            let W = 0, H = 0, on = false;
+            const size = function () { const d = Math.min(2, window.devicePixelRatio || 1); W = cv.clientWidth; H = cv.clientHeight; cv.width = W * d; cv.height = H * d; ctx.setTransform(d, 0, 0, d, 0, 0); };
+            const ms = Array.from({length: 36}, function () { return {x: Math.random(), y: Math.random(), r: .6 + Math.random() * 1.7, ph: Math.random() * 6.28, hx: Math.random() * 6.28, warm: Math.random()}; });
+            function f(t) {
+                if (!on) return;
+                ctx.clearRect(0, 0, W, H);
+                ms.forEach(function (m) {
+                    m.x += Math.sin(t * .00025 + m.hx) * .00045; m.y += Math.cos(t * .0002 + m.ph) * .00035 - .00008;
+                    if (m.y < -.02) m.y = 1.02; if (m.y > 1.02) m.y = -.02; if (m.x < -.02) m.x = 1.02; if (m.x > 1.02) m.x = -.02;
+                    const tw = .35 + .5 * Math.pow(Math.sin(t * .002 + m.ph), 2), x = m.x * W, y = m.y * H, g = m.warm > .55 ? "255,196,120" : "255,226,170";
+                    ctx.fillStyle = "rgba(" + g + "," + (.09 * tw).toFixed(3) + ")"; ctx.beginPath(); ctx.arc(x, y, m.r * 3.2, 0, 6.283); ctx.fill();
+                    ctx.fillStyle = "rgba(" + g + "," + (.4 * tw).toFixed(3) + ")"; ctx.beginPath(); ctx.arc(x, y, m.r, 0, 6.283); ctx.fill();
+                });
+                requestAnimationFrame(f);
+            }
+            window.addEventListener("resize", function () { if (on) size(); });
+            if ("IntersectionObserver" in window) {
+                new IntersectionObserver(function (e) { const was = on; on = e[0].isIntersecting; if (on && !was) { size(); requestAnimationFrame(f); } }, {threshold: 0}).observe(cv);
+            }
+        })();
+
+        /* 유튜브 버튼 : 구매 버튼과 같은 높이의 정사각형 */
+        (function () {
+            const yt = byId("lz_yt"), buy = buybar.querySelector(".lz_buy");
+            const fit = function () { const h = buy.offsetHeight; if (h) { yt.style.width = h + "px"; yt.style.height = h + "px"; } };
+            fit();
+            window.addEventListener("resize", fit);
+            if (window.ResizeObserver) new ResizeObserver(fit).observe(buy);
+            yt.addEventListener("click", function (e) { if (yt.getAttribute("href") === "#") e.preventDefault(); });
+        })();
+
+        /* 판매 오픈 전 안내 팝업 (KR은 한국어, GLOBAL은 영어) : 오픈 시각 전에는 주소가 있어도 팝업 */
+        (function () {
+            const OPEN = new Date("2026-12-04T12:00:00+09:00").getTime();
+            const pop = byId("lz_pop"), msg = byId("lz_pop_msg"), ok = byId("lz_pop_ok");
+            const MSG = {kr: "12월 4일 오후 12시(정오)에 만나요", global: "See you on December 4,\n12:00 PM (KST)"};
+            let lastBtn = null;
+            function openPop(region) {
+                msg.textContent = MSG[region] || MSG.kr;
+                ok.textContent = region === "global" ? "OK" : "확인";
+                pop.hidden = false;
+                requestAnimationFrame(function () { pop.classList.add("is_open"); });
+                ok.focus();
+            }
+            function closePop() { pop.classList.remove("is_open"); setTimeout(function () { pop.hidden = true; if (lastBtn) lastBtn.focus(); }, 300); }
+            Array.prototype.forEach.call(buybar.querySelectorAll(".lz_buy"), function (a) {
+                a.addEventListener("click", function (e) {
+                    if (Date.now() >= OPEN && a.getAttribute("href") !== "#") return;
+                    e.preventDefault(); lastBtn = a; openPop(a.dataset.region);
+                });
+            });
+            ok.addEventListener("click", closePop);
+            pop.addEventListener("click", function (e) { if (e.target === pop) closePop(); });
+            window.addEventListener("keydown", function (e) { if (e.key === "Escape" && !pop.hidden) closePop(); });
+        })();
+    });
+</script>
+<!-- 여기까지 복사 -->
