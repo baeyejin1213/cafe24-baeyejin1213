@@ -652,12 +652,14 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 ------------------------------- */
 #quick {position: fixed; right: 4rem; bottom: 4rem; z-index: 900; display: flex; flex-direction: column; gap: 1rem; visibility: hidden; opacity: 0; transform: translateY(1.6rem); transition: opacity .3s, visibility .3s, transform .3s;}
 #quick.on {visibility: visible; opacity: 1; transform: none;}
+#quick.stop {position: absolute; bottom: auto;}
 #quick a {display: flex; align-items: center; justify-content: center; width: 6.4rem; height: 6.4rem; border-radius: 50%; background-color: rgba(0,0,0,.8); font-size: 0; transition: background-color .3s;}
 #quick a:hover {background-color: #000;}
 #quick svg {display: block; width: 2.4rem; height: 2.4rem;}
 .f_nav {display: none;}
 @media all and (max-width:1024px) {
-    #quick {right: .8rem; bottom: 8rem;}
+    #quick {right: .8rem; bottom: 8rem; transition: opacity .3s, visibility .3s, transform .3s, translate .4s;}
+    #quick.down {translate: 0 7.2rem;}
     #quick a {width: 4rem; height: 4rem;}
 }
 
@@ -708,7 +710,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
     #footer.f_type01 .f_menu li.event {order: 3;}
     #footer.f_type01 .f_sub > li:not(:first-child) {display: none;}
     #footer.f_type01 .f_biz_btn {gap: .4rem;}
-    #footer.f_type01 .f_info {flex-direction: column; gap: .4rem;}
+    #footer.f_type01 .f_info {flex-direction: column; flex-wrap: nowrap; gap: .4rem;}
     #footer.f_type01 .f_info p {white-space: normal;}
     #footer.f_type01 .f_right {align-items: flex-start; gap: 2.4rem;}
     #footer.f_type01 .f_sns {gap: .8rem;}
@@ -840,7 +842,6 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 .list_wrap .list_slide + .list_slide {margin-top: 8rem;}
 .list_slide .l_title {margin-bottom: 2.4rem; padding: 0 4rem;}
 .list_wrap .list_slide .l_title h2 {margin: 0; padding: 0; font-family: var(--font-en); font-size: 2.4rem; line-height: 3.2rem; font-weight: 700; letter-spacing: .024rem; text-transform: capitalize; color: var(--c-black);}
-.list_recmd .l_title {display: none;}  /* PC 시안은 타이틀 없이 순위 배지만 */
 .list_wrap .list_slide .swiper {padding: 0 4rem; overflow: hidden;}
 .list_wrap .ec-base-product .prdList {border: 0; background: none;}
 .list_wrap .ec-base-product .prdList > li {width: auto; height: auto; margin: 0; border: 0;}
@@ -858,6 +859,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 .list_prd {margin-top: 4rem;}
 .list_wrap:has(.list_slide .prdList > li) .list_prd {margin-top: 16rem;}
 .list_wrap .xans-product-normalmenu {margin: 0; padding: 0 4rem; border: 0;}
+#Product_ListMenu {scroll-margin-top: var(--head-h);}  /* 정렬 바꾸면 카페24가 #Product_ListMenu 로 이동 → 고정 헤더 높이만큼 아래에 멈춤 */
 .list_wrap .xans-product-normalmenu .function {display: flex; padding: 0; align-items: center; justify-content: space-between; height: 2rem; overflow: visible; line-height: 2rem; text-align: left;}
 .list_wrap .xans-product-normalmenu .prdCount {float: none; font-size: 1.3rem; line-height: 2rem; color: var(--c-black);}
 .list_wrap .xans-product-normalmenu .prdCount strong {margin: 0; font-weight: 400;}
@@ -932,7 +934,6 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 
     .list_slide .l_title {padding: 0 2rem;}
     .list_wrap .list_slide .l_title h2 {line-height: 2.8rem;}
-    .list_recmd .l_title {display: block;}
     .list_wrap .list_slide + .list_slide {margin-top: 5.6rem;}
     .list_wrap .list_slide .swiper {padding: 0 2rem;}
     .list_recmd .prd_box .thumb .rank {display: none;}  /* 모바일 Best Item 은 배지 없음 */

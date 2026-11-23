@@ -115,8 +115,8 @@ jQuery(function ($) {
     });
 
 
-    /* ③ 추가구성상품 펼치기 */
-    $(document).on('click', '.add_item_box > .title', function () {
+    /* ③ 세트상품 · 추가구성상품 접기 (처음엔 펼침) */
+    $(document).on('click', '.productSet > .title, .add_item_box > .title', function () {
         $(this).parent().toggleClass('active').children('.product').stop().slideToggle(300);
     });
 
@@ -139,7 +139,8 @@ jQuery(function ($) {
         var $target = $($(this).attr('href'));
         if (!$target.length) return;
         e.preventDefault();
-        $('html, body').stop().animate({scrollTop: $target.offset().top - ($('#header').outerHeight() || 0)}, 400);
+        var gap = window.innerWidth > 1024 ? 24 : 16;  /* 탭 위 여유 */
+        $('html, body').stop().animate({scrollTop: $target.offset().top - ($('#header').outerHeight() || 0) - gap}, 400);
     });
 
     /* 구매안내 펼침 */

@@ -481,16 +481,18 @@ jQuery(function ($) {
     $(window).on('scroll', function () {
         var y = window.pageYOffset;
         var atBottom = y + window.innerHeight >= document.documentElement.scrollHeight - 4;
-        $('.f_nav').toggleClass('down', y > lastY && y > 56 && !atBottom);
+        $('.f_nav, #quick').toggleClass('down', y > lastY && y > 56 && !atBottom);
         $('#quick').toggleClass('on', y > 200);
-        /* 퀵 버튼 : 푸터에 닿으면 푸터 위에서 멈춤 */
+        /* 퀵 버튼 : 푸터에 닿으면 푸터 위에 멈춤 (fixed ↔ absolute) */
         var $q = $('#quick'), ft = $('#footer')[0];
         if ($q.length && ft) {
-            $q.css('bottom', '');
-            var base = parseFloat($q.css('bottom'));
-            var over = window.innerHeight - ft.getBoundingClientRect().top;
-            if (over > 0) $q.css('bottom', (over + base) + 'px');
+            var stop = ft.getBoundingClientRect().top <= window.innerHeight;
+            if (stop && !$q.hasClass('stop')) $q.data('base', parseFloat($q.css('bottom')));
+            if (stop) $q.css('top', ft.offsetTop - $q.data('base') - $q.outerHeight());
+            $q.toggleClass('stop', stop);
+            if (!stop) $q.css('top', '');
         }
         lastY = y;
     });
+    $(window).on('resize', function () { $('#quick').removeClass('stop').css('top', ''); $(window).trigger('scroll'); });
 });
