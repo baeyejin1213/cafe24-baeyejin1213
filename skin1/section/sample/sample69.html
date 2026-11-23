@@ -184,7 +184,7 @@
                     <p>각 구성에서 하나씩 랜덤으로 담아 보내드려요.<br>어떤 상품과 컬러를 만날지는 택배를 열어 확인해보세요.</p>
                 </div>
 
-                <dl class="spec">
+                <dl class="spec_list">
                     <div><dt>구매 제한</dt><dd>1인 1개</dd></div>
                     <div><dt>쿠폰 적용</dt><dd>불가</dd></div>
                     <div><dt>상품·컬러 선택</dt><dd>불가</dd></div>
@@ -501,6 +501,7 @@
     .xans-project-package .xans-project-list {max-width: none; margin: 0; padding: 0;}
     .xans-project-package .xans-project-list h3 {padding: 0; font-size: inherit; line-height: inherit; font-weight: inherit; color: #fff; text-align: inherit;}
     .xans-project-package .xans-project-list h3 span {display: block; z-index: auto;}
+    .xans-project-package .xans-project-list h3 span.morenvy-exhibition-cate-rw {font-size: 0; line-height: 0;}
     .xans-project-package .xans-project-list .xans-project-productlist {max-width: 168rem; margin: 0 auto; padding: 0 2.5%;}
 
     /* 블랙 배경 */
@@ -600,7 +601,7 @@
         #promotion_box .p_sec01 .card:hover .top svg {transform: translate(2px, -2px);}
     }
 
-    #promotion_box .p_navi {position: sticky; top: 0; z-index: 50; padding: clamp(1rem, 1.042vw, 2rem) 0; background-color: rgba(11, 11, 12, .8);}
+    #promotion_box .p_navi {position: sticky; top: 0; z-index: 10; padding: clamp(1rem, 1.042vw, 2rem) 0; background-color: rgba(11, 11, 12, .8);}
     #promotion_box .p_navi .navi_in {display: flex; justify-content: center; gap: clamp(0.5rem, 0.521vw, 1rem); padding: 0 clamp(1rem, 1.042vw, 2rem) 0 clamp(0.8rem, 0.833vw, 1.6rem);}
     #promotion_box .p_navi button {flex: none; padding: clamp(0.3rem, 0.313vw, 0.6rem) clamp(1.2rem, 1.25vw, 2.4rem); border-radius: 50px; background-color: #151517; font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.5; font-weight: 400; letter-spacing: -0.011em; color: #4F4F4F; white-space: nowrap; transition: background-color .3s, color .3s;}
     #promotion_box .p_navi button.on {background-color: #fff; font-weight: 700; color: #1A1A1A;}
@@ -651,10 +652,10 @@
     #promotion_box .p_sec03 .guide {display: flex; align-items: center; justify-content: center; gap: clamp(1rem, 1.042vw, 2rem); padding: clamp(1.5rem, 1.563vw, 3rem) clamp(1rem, 1.042vw, 2rem); border-radius: clamp(1.2rem, 1.25vw, 2.4rem); background-color: #1A1A1A;}
     #promotion_box .p_sec03 .guide svg {flex: none; width: clamp(2.45rem, 2.552vw, 4.9rem); height: clamp(2.45rem, 2.552vw, 4.9rem);}
     #promotion_box .p_sec03 .guide p {font-size: clamp(1.2rem, 1.042vw, 2rem); line-height: 1.7; font-weight: 500; letter-spacing: -0.03em;}
-    #promotion_box .p_sec03 .spec {display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 1.042vw, 2rem) clamp(1rem, 1.042vw, 2rem); margin-top: clamp(-3rem, -1.563vw, -1.5rem);}
-    #promotion_box .p_sec03 .spec div {display: flex; align-items: center; justify-content: space-between; gap: clamp(1rem, 1.042vw, 2rem); padding: clamp(0.7rem, 0.729vw, 1.4rem) 0; border-bottom: 1px solid #1A1A1A; font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; letter-spacing: -0.03em;}
-    #promotion_box .p_sec03 .spec dt {font-weight: 700;}
-    #promotion_box .p_sec03 .spec dd {font-weight: 400; color: #B0B0B0; text-align: right;}
+    #promotion_box .p_sec03 .spec_list {display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 1.042vw, 2rem) clamp(1rem, 1.042vw, 2rem); margin-top: clamp(-3rem, -1.563vw, -1.5rem);}
+    #promotion_box .p_sec03 .spec_list div {display: flex; align-items: center; justify-content: space-between; gap: clamp(1rem, 1.042vw, 2rem); padding: clamp(0.7rem, 0.729vw, 1.4rem) 0; border-bottom: 1px solid #1A1A1A; font-size: clamp(1.2rem, 0.833vw, 1.6rem); line-height: 1.5; letter-spacing: -0.03em;}
+    #promotion_box .p_sec03 .spec_list dt {font-weight: 700;}
+    #promotion_box .p_sec03 .spec_list dd {font-weight: 400; color: #B0B0B0; text-align: right;}
     @media (hover: hover) {
         #promotion_box .p_sec03 .btn_buy:hover {background-color: #D9C2FF;}
     }
@@ -892,8 +893,8 @@
         #promotion_box .p_sec03 .guide {justify-content: flex-start; gap: clamp(0.85rem, 2.778vw, 1.5rem); padding: clamp(1.53rem, 5vw, 2.7rem) clamp(1.785rem, 5.833vw, 3.15rem); border-radius: clamp(1.02rem, 3.333vw, 1.8rem);}
         #promotion_box .p_sec03 .guide svg {width: clamp(2.21rem, 7.222vw, 3.9rem); height: clamp(2.21rem, 7.222vw, 3.9rem);}
         #promotion_box .p_sec03 .guide p {font-size: clamp(1.02rem, 3.333vw, 1.8rem);}
-        #promotion_box .p_sec03 .spec {grid-template-columns: 100%; gap: 0; margin-top: clamp(-3rem, -5.556vw, -1.7rem);}
-        #promotion_box .p_sec03 .spec div {gap: clamp(1.7rem, 5.556vw, 3rem); padding: clamp(0.68rem, 2.222vw, 1.2rem) 0; font-size: clamp(1.105rem, 3.611vw, 1.95rem); line-height: 1.846;}
+        #promotion_box .p_sec03 .spec_list {grid-template-columns: 100%; gap: 0; margin-top: clamp(-3rem, -5.556vw, -1.7rem);}
+        #promotion_box .p_sec03 .spec_list div {gap: clamp(1.7rem, 5.556vw, 3rem); padding: clamp(0.68rem, 2.222vw, 1.2rem) 0; font-size: clamp(1.105rem, 3.611vw, 1.95rem); line-height: 1.846;}
 
         /* 기획전 섹션 04 */
         #promotion_box .p_sec04 {padding-bottom: clamp(5.1rem, 16.667vw, 9rem);}
@@ -1058,11 +1059,12 @@
         var $navi = $("#promotion_box .p_navi");
         var $naviBtn = $navi.find("button");
         var headerH = function () {
-            var $h = $("#header");
-            if (!$h.length) return 0;
-            var pos = $h.css("position");
-            if (pos !== "fixed" && pos !== "sticky") return 0;
-            return Math.max(0, $h[0].getBoundingClientRect().bottom);
+            var h = 0;
+            $("#header, #header .fixed_inner, .fixed_inner").each(function () {
+                var pos = $(this).css("position");
+                if (pos === "fixed" || pos === "sticky") h = Math.max(h, this.getBoundingClientRect().bottom);
+            });
+            return Math.max(0, h);
         };
         var offsetH = function ($t) {
             if ($t && $t.closest(".xans-project-list").length) {
