@@ -33,8 +33,8 @@
         <!-- 기획전 섹션 01 : 회랑 영상 + 타이틀 -->
         <section class="lz_sec lz_s1" id="lz_s1" aria-label="Oath of Lezhinium">
             <div class="lz_hall" id="lz_hall">
-                <video class="lz_hs lz_hs1 is_on" data-src="hall1.mp4" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" aria-hidden="true"></video>
-                <video class="lz_hs lz_hs2" data-src="hall2.mp4" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" aria-hidden="true"></video>
+                <video class="lz_hs lz_hs1 is_on" data-src="https://player-api.charlla.io/mp4/sbun591vg0b" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="auto" aria-hidden="true"></video>
+                <video class="lz_hs lz_hs2" muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback preload="none" aria-hidden="true"></video>
             </div>
             <img class="lz_ab lz_title" id="lz_title" src="/morenvyimg/2027_lezhinSG/title.webp" alt="2027 Lezhin Season’s Greetings, Oath of Lezhinium, 2026.12.04. 12:00 PM" width="1003" height="1601" style="left: 15.1389%; top: min(25.8333vw, 206.67px); width: 69.6528%;">
         </section>
@@ -97,14 +97,14 @@
             <div class="lz_nt_group">
                 <h3>상품 정보</h3>
                 <ul>
-                    <li>달력 - 1개 (148*278mm)</li>
-                    <li>패브릭 포스터 - 1개 (400*820mm)</li>
-                    <li>포토카드 - 12종 (55*85mm)</li>
-                    <li>후가공 포토카드 - 12종 (55*85mm)</li>
-                    <li>포토카드 홀더 - 1개 (85*124mm)</li>
-                    <li>소설책 - 1개 (128*180mm / 28 pages)</li>
-                    <li>엽서집 - 1개 (128*180mm / 13 pcs)</li>
-                    <li>외부 패키지 박스 - 1개 (171*291*50mm)</li>
+                    <li><b>달력</b> - 1개 (148*278mm)</li>
+                    <li><b>패브릭 포스터</b> - 1개 (400*820mm)</li>
+                    <li><b>포토카드</b> - 12종 (55*85mm)</li>
+                    <li><b>후가공 포토카드</b> - 12종 (55*85mm)</li>
+                    <li><b>포토카드 홀더</b> - 1개 (85*124mm)</li>
+                    <li><b>소설책</b> - 1개 (128*180mm / 28 pages)</li>
+                    <li><b>엽서집</b> - 1개 (128*180mm / 13 pcs)</li>
+                    <li><b>외부 패키지 박스</b> - 1개 (171*291*50mm)</li>
                     <li class="lz_nt_note">※ 패키지는 상품을 보호하기 위한 포장재로, 포장 및 배송 과정에서 스크래치, 눌림, 뜯어짐 등이 발생할 수 있으며, 교환 및 반품 대상이 아닙니다.</li>
                 </ul>
             </div>
@@ -301,11 +301,12 @@
     #pj_lezhin .lz_nt_group h3 {margin: 0 0 8px; padding-bottom: 6px; border-bottom: 1px solid rgba(212, 202, 189, .2); color: #E6DDD0; font-size: max(12px, min(2.0833vw, 16.67px)); font-weight: 600;}
     #pj_lezhin .lz_nt_group ul {color: #B3A894; font-size: max(11px, min(1.8056vw, 14.44px)); line-height: 1.75;}
     #pj_lezhin .lz_nt_group li {position: relative; padding-left: 1.1em;}
+    #pj_lezhin .lz_nt_group li b {color: #E6DDD0; font-weight: 600;}
     #pj_lezhin .lz_nt_group li::before {content: ""; position: absolute; left: .35em; top: calc(.875em - 1.5px); width: 3px; height: 3px; border-radius: 50%; background: currentColor;}
     #pj_lezhin .lz_nt_group li ul {font-size: 1em;}
     #pj_lezhin .lz_nt_group li li {padding-left: .9em;}
     #pj_lezhin .lz_nt_group li li::before {content: "-"; left: 0; top: 0; width: auto; height: auto; border-radius: 0; background: none;}
-    #pj_lezhin .lz_nt_group .lz_nt_note {margin-top: 6px; padding-left: 0; color: #8F8574;}
+    #pj_lezhin .lz_nt_group .lz_nt_note {margin-top: 10px; padding-left: 0; color: #B3A894;}
     #pj_lezhin .lz_nt_group .lz_plain li {padding-left: 0;}
     #pj_lezhin .lz_nt_group .lz_nt_note::before, #pj_lezhin .lz_nt_group .lz_plain li::before {display: none;}
     #pj_lezhin .lz_nt_group dl {display: grid; grid-template-columns: 6.5em 1fr; font-size: max(11px, min(1.8056vw, 14.44px));}
@@ -320,9 +321,10 @@
     #pj_lezhin .lz_buy::after {content: "→"; margin-left: auto; opacity: .8;}
     #pj_lezhin .lz_buy small {color: #A79F92; font-size: .68em; letter-spacing: .18em;}
     #pj_lezhin .lz_buy:hover {background: #EDE6DA; color: #0B0807;}
-    #pj_lezhin .lz_yt {flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 1px solid rgba(237, 230, 218, .5); background: #0B0807; box-shadow: 0 6px 20px rgba(0, 0, 0, .35); pointer-events: auto; transition: background .2s;}
-    #pj_lezhin .lz_yt img {width: 46%; height: auto;}
-    #pj_lezhin .lz_yt:hover {background: #2a211c;}
+    #pj_lezhin .lz_yt {flex: 0 0 auto; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 1px solid rgba(237, 230, 218, .5); background: #0B0807; box-shadow: 0 6px 20px rgba(0, 0, 0, .35); pointer-events: auto; transition: background .2s, color .2s;}
+    #pj_lezhin .lz_yt img {width: 46%; height: auto; transition: filter .2s;}
+    #pj_lezhin .lz_yt:hover {background: #EDE6DA;}
+    #pj_lezhin .lz_yt:hover img {filter: brightness(0);}
 
     /* 판매 전 안내 팝업 */
     #pj_lezhin .lz_pop {position: fixed; inset: 0; z-index: 1200; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(0, 0, 0, .55); opacity: 0; transition: opacity .3s ease;}
@@ -363,7 +365,7 @@
             const box = byId("lz_hall"), vids = Array.prototype.slice.call(box.querySelectorAll(".lz_hs"));
             const HOLD = 6000, T = 1800, PAN = HOLD + T * 2;
             let cur = 0, busy = false, entered = false, inView = true, timer = 0;
-            const load = function (v) { if (!v.getAttribute("src") && v.dataset.src) { v.preload = "auto"; v.src = IMG + v.dataset.src; } };
+            const load = function (v) { if (!v.getAttribute("src") && v.dataset.src) { v.preload = "auto"; v.src = /^https?:/.test(v.dataset.src) ? v.dataset.src : IMG + v.dataset.src; } };
             const play = function (v) { if (reduce) return; load(v); const p = v.play(); if (p && p.catch) p.catch(function () {}); };
             const pan = function (v) { if (reduce) return; v.style.animation = "none"; void v.offsetWidth; v.style.animation = "lz_pan " + PAN + "ms linear forwards"; };
             function sync() { const v = vids[cur]; if (entered && inView && !reduce) play(v); else v.pause(); }

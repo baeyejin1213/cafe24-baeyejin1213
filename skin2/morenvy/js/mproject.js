@@ -1,82 +1,54 @@
-/* morenvy.com 250825 지인 */
-jQuery(document).ready(function () {
+jQuery(document).ready(function ($) {
 
-    /* 탭 스와이퍼 */
-    var swiper_project = new Swiper('.swiper_project', {
-        slidesPerView: 'auto',
-        spaceBetween: 4,
-        watchOverflow: true,
-        observer: true,
-        observeParents: true,
-    });
+    /* 탭 : 1024px 이하에서 가로로 끌어서 넘김 */
+    var swiper_project = null;
+    function initOrDestroySwiper() {
+        if (!$('.swiper_project').length) return;
+        if (window.innerWidth < 1025) {
+            if (!swiper_project) {
+                swiper_project = new Swiper('.swiper_project', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 16,
+                    watchOverflow: true
+                });
+            }
+        } else if (swiper_project) {
+            swiper_project.destroy(true, true);
+            swiper_project = null;
+        }
+    }
+    initOrDestroySwiper();
+    $(window).on('resize', initOrDestroySwiper);
 
     function getSectionRange($anchor) {
-        var targetId = $anchor.attr('href');
-        var $start = $(targetId);
+        var $start = $($anchor.attr('href'));
+        if (!$start.length) return null;
         var $end = $start.next('.ec-base-product');
-
-        if ($start.length && $end.length) {
-            var startTop = $start.offset().top - 200;
-            var endBottom = $end.offset().top + $end.outerHeight() - 200;
-            return { start: startTop, end: endBottom };
-        } else if ($start.length) {
-            var startTop = $start.offset().top  - 200;
-            var endBottom = startTop + $start.outerHeight() - 200;
-            return { start: startTop, end: endBottom };
-        }
-        return null;
+        var startTop = $start.offset().top - 200;
+        var endBottom = $end.length ? $end.offset().top + $end.outerHeight() - 200 : startTop + $start.outerHeight();
+        return {start: startTop, end: endBottom};
     }
 
-    // 스크롤 시 active 토글
+    /* 스크롤 위치의 탭 표시 */
     $(window).on('scroll load', function () {
         var scrollTop = $(window).scrollTop();
-        var found = false;
-
-        $('.swiper_project a').each(function () {
+        var $tabs = $('.swiper_project a');
+        $tabs.parent().removeClass('selected');
+        $tabs.each(function () {
             var range = getSectionRange($(this));
-            if (!range) return;
-
-            if (scrollTop >= range.start && scrollTop < range.end) {
-                $('.swiper_project a').removeClass('active');
-                $(this).addClass('active');
-                // 👉 현재 위치한 슬라이드로 스와이프 이동
-                var slideIndex = $(this).closest('.swiper-slide').index();
-                swiper_project.slideTo(slideIndex);
-                found = true;
-                return false; // 첫 번째 해당 영역만 처리
+            if (range && scrollTop >= range.start && scrollTop < range.end) {
+                var $li = $(this).parent().addClass('selected');
+                if (swiper_project) swiper_project.slideTo($li.index());
+                return false;
             }
         });
-
-        if (!found) {
-            $('.swiper_project a').removeClass('active');
-            $(".swiper_project .bar_under").hide();
-        } else {
-            $(".swiper_project .bar_under").show();
-        }
-        
-        const activeLi = $(".swiper_project li:has(.active)");
-        if (activeLi.length > 0) {
-            console.log(activeLi.offsetParent())
-            $(".swiper_project .bar_under").css({width: activeLi.css("width"), left: activeLi.position().left});
-        };
     });
 
-    // 클릭 시 스크롤 이동 + active 처리
+    /* 탭 누르면 그 구역으로 이동 */
     $('.swiper_project a').on('click', function (e) {
         e.preventDefault();
-        var targetId = $(this).attr('href');
-        var $target = $(targetId);
-
-        if ($target.length) {
-            $('html, body').animate({
-                scrollTop: $target.offset().top - 120
-            }, 500);
-
-            $('.swiper_project a').removeClass('active');
-            $(this).addClass('active');
-        }
-        
-        const activeLi = $(".swiper_project li:has(.active)");
-        $(".swiper_project .bar_under").css({width: activeLi.css("width"), left: activeLi.position().left});
+        var $target = $($(this).attr('href'));
+        var gap = $('#header').outerHeight() + $('.fixTab').outerHeight() + 24;
+        if ($target.length) $('html, body').animate({scrollTop: $target.offset().top - gap}, 500);
     });
 });

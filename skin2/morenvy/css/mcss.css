@@ -863,8 +863,25 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 .list_wrap .xans-product-normalmenu .prdCount strong {margin: 0; font-weight: 400;}
 .list_wrap .xans-product-normalmenu .prdCount .mo_only {display: none;}
 #wrap .list_wrap .xans-product-normalmenu .sort select {width: auto; min-width: 8rem; height: 2rem; padding: 0 2.4rem 0 0; border: 0; border-radius: 0; background: url(/morenvyimg/list_arr_d.svg) no-repeat right center / 1.6rem; font-family: var(--font-kr); font-size: 1.3rem; line-height: 2rem; color: var(--c-black); -webkit-appearance: none; appearance: none; cursor: pointer;}
-.list_wrap .xans-product-listnormal {margin-top: 2.4rem; padding: 0 4rem;}
+.list_wrap .xans-product-listnormal,
+.list_wrap .xans-search-result,
+.list_wrap .xans-project-productlist {margin-top: 2.4rem; padding: 0 4rem;}
 .list_wrap .list_prd .prdList_normal {display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6.4rem 2rem; margin: 0; padding: 0;}
+
+/* 검색 : product/search.html */
+#contents .list_search .search_top {padding-top: 4rem;}
+#contents .list_search .xans-product-searchdata .searchResult {margin-top: 4rem; padding: 0 4rem;}
+.list_search .search_top .xans-product-normalmenu .function {margin: 0; padding: 0;}
+.list_search .search_top .xans-product-normalmenu .function .prdCount {display: block;}
+.list_search .list_prd {margin-top: 0;}
+
+/* 기획전 : product/project.html */
+.list_ban:not(:has(img)) {display: none;}
+.list_project .fixTab {margin-top: 2.4rem;}
+.list_wrap.list_project .swiper_title_tab {margin: 0; padding: 1.6rem 4rem;}
+.list_project .xans-project-list {margin-top: 4rem;}
+.list_project .xans-project-list + .xans-project-list {margin-top: 12rem;}
+.list_project .xans-project-list h3 {margin: 0; padding: 0 4rem; border: 0; font-family: var(--font-kr); font-size: 2.4rem; line-height: 3.2rem; font-weight: 600; color: var(--c-black); text-align: left;}
 
 /* 목록 07 : 페이지 번호 */
 .list_paging {display: flex; align-items: center; justify-content: center; margin: 0; padding-top: 10.4rem;}
@@ -927,7 +944,17 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
     .list_wrap .xans-product-normalmenu .prdCount .pc_only {display: none;}
     .list_wrap .xans-product-normalmenu .prdCount .mo_only {display: inline;}
     #wrap .list_wrap .xans-product-normalmenu .sort select {min-width: 0; padding-right: 2rem; font-size: 1.2rem;}
-    .list_wrap .xans-product-listnormal {padding: 0 2rem;}
+    .list_wrap .xans-product-listnormal,
+    .list_wrap .xans-search-result,
+    .list_wrap .xans-project-productlist {padding: 0 2rem;}
+
+    #contents .list_search .search_top {padding-top: 2.4rem;}
+    #contents .list_search .xans-product-searchdata .searchResult {margin-top: 3.2rem; padding: 0 2rem; border: 0;}
+    .list_project .fixTab {margin-top: .8rem;}
+    .list_wrap.list_project .swiper_title_tab {padding: 1.6rem 2rem;}
+    .list_project .xans-project-list {margin-top: 4rem;}
+    .list_project .xans-project-list + .xans-project-list {margin-top: 5.6rem;}
+    .list_project .xans-project-list h3 {padding: 0 2rem; font-size: 1.8rem; line-height: 2.8rem;}
     .list_wrap .list_prd .prdList_normal {grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3.2rem .8rem;}
 
     .list_paging {padding-top: 4rem;}

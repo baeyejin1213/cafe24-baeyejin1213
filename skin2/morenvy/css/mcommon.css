@@ -1289,16 +1289,14 @@ p.txtList,ul.txtList {margin: 1.6rem 0 0;}
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .info_box > * {margin: 0; padding: 0;}
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .optionGroup {margin: 0; padding: 1.2rem 1.6rem; background-color: var(--c-bg); font-size: 1.2rem; line-height: 1.8rem; color: var(--c-grey3);}
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .info_box .name span {font-size: 1.2rem; color: var(--c-grey3);}
-#wrap #contents .xans-order-basketpackage .ec-base-prdInfo .info_box .btnText,
-#wrap #contents .xans-order-basketpackage .ec-base-prdInfo .info_box .optionGroup + a,
-#wrap #contents .xans-order-basketpackage .ec-base-prdInfo .info_box a[class^='btn'][onclick*="Option"] {display: flex; align-items: center; justify-content: center; height: 3.6rem; margin: 0; border: 1px solid var(--c-line); border-radius: .8rem; background: #fff; font-size: 1.2rem !important; color: var(--c-black); text-decoration: none;}
+#wrap #contents .xans-order-basketpackage .ec-base-prdInfo .info_box a.btnText[onclick*="showOptionChangeLayer"] {display: flex; align-items: center; justify-content: center; height: 3.6rem; margin: 0; border: 1px solid var(--c-line); border-radius: .8rem; background: #fff; font-size: 1.2rem !important; color: var(--c-black); text-decoration: none;}
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .quantity {display: flex; align-items: center; justify-content: space-between;}
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .quantity .label,
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .sumPrice .label {display: block; font-size: 1.3rem; line-height: 2rem; color: var(--c-grey2);}
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .quantity > div {display: flex; align-items: center; gap: .8rem;}
-#wrap #contents .xans-order-basketpackage .ec-base-prdInfo .quantity .ec-base-qty {position: relative; display: flex; align-items: center; gap: .4rem; width: auto; height: 3.2rem; margin: 0; padding: 0 .4rem; border: 1px solid var(--c-line); border-radius: .8rem;}
-#wrap #contents .xans-order-basketpackage .ec-base-prdInfo .quantity .ec-base-qty input {order: 1; width: 3.2rem; height: 3rem; padding: 0; border: 0; border-radius: 0; background: none; font-family: var(--font-en); font-size: 1.3rem; text-align: center; color: var(--c-black);}
-#wrap #contents .xans-order-basketpackage .ec-base-prdInfo .quantity .ec-base-qty a {position: static; display: block; width: 2.4rem; height: 2.4rem; margin: 0; padding: 0; border: 0; background: no-repeat center / 1.2rem; font-size: 0; text-indent: -999rem; overflow: hidden;}
+#wrap #contents .xans-order-basketpackage .ec-base-prdInfo .quantity .ec-base-qty {position: relative; display: flex; align-items: center; justify-content: space-between; width: 8.8rem; height: 2.4rem; margin: 0; padding: 0; border: 0; border-radius: 0; background: none;}
+#wrap #contents .xans-order-basketpackage .ec-base-prdInfo .quantity .ec-base-qty input {order: 1; width: 4rem; height: 2.4rem; padding: 0; border: 0; border-radius: 0; background: none; font-family: var(--font-en); font-size: 1.3rem; text-align: center; color: var(--c-black);}
+#wrap #contents .xans-order-basketpackage .ec-base-prdInfo .quantity .ec-base-qty a {position: static; display: block; width: 2.4rem; height: 2.4rem; margin: 0; padding: 0; border: 1px solid var(--c-line); border-radius: 50%; background: #fff no-repeat center / 1.2rem; box-sizing: border-box; font-size: 0; text-indent: -999rem; overflow: hidden;}
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .quantity .ec-base-qty a.down {order: 0; background-image: url(/morenvyimg/list_minus.svg);}
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .quantity .ec-base-qty a.up {order: 2; background-image: url(/morenvyimg/list_plus.svg);}
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .quantity .ec-base-qty a::before,
@@ -1310,6 +1308,16 @@ p.txtList,ul.txtList {margin: 1.6rem 0 0;}
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .buttonGroup {display: flex; gap: .8rem; margin: 0;}
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .buttonGroup a {flex: 1; width: auto; height: 4rem; margin: 0; font-size: 1.3rem !important;}
 #wrap #contents .xans-order-basketpackage .ec-base-prdInfo .buttonGroup a.displaynone {display: none;}
+
+#wrap #contents .xans-order-basketpackage .ec-base-layer {border: 0; border-radius: 0; box-shadow: 0 0 1.6rem rgba(0,0,0,.1); font-family: var(--font-kr);}
+#wrap #contents .xans-order-basketpackage .ec-base-layer .header {margin: 0; padding: 1.6rem 6.4rem 1.6rem 2rem; border-bottom: 1px solid var(--c-line);}
+#wrap #contents .xans-order-basketpackage .ec-base-layer .header h5 {margin: 0; font-size: 1.6rem; line-height: 2.4rem; font-weight: 500; color: var(--c-black);}
+#wrap #contents .xans-order-basketpackage .ec-base-layer .content {padding: 2.4rem 2rem;}
+#wrap #contents .xans-order-basketpackage .ec-base-layer > .ec-base-button {display: flex; gap: .8rem; padding: 0 2rem 2.4rem;}
+#wrap #contents .xans-order-basketpackage .ec-base-layer > .ec-base-button [class^='btn'] {flex: 1; height: 4.4rem; margin: 0;}
+#wrap #contents .xans-order-basketpackage .ec-base-layer .btnClose {top: 1.6rem; right: 2rem; width: 2.4rem; height: 2.4rem; padding: 0; border: 0; border-radius: 0; background: url(/morenvyimg/list_close24.svg) no-repeat center / 2.4rem; font-size: 0; transform: none;}
+#wrap #contents .xans-order-basketpackage .ec-base-layer .btnClose::before,
+#wrap #contents .xans-order-basketpackage .ec-base-layer .btnClose::after {display: none;}
 
 #wrap #contents .xans-order-basketpackage .xans-order-selectorder {display: flex; justify-content: space-between; gap: .8rem; margin: 0; padding: 2.4rem 0 0; border: 0;}
 #wrap #contents .xans-order-basketpackage .xans-order-selectorder::after {display: none;}
@@ -1333,7 +1341,7 @@ p.txtList,ul.txtList {margin: 1.6rem 0 0;}
 #wrap #contents .xans-order-basketpackage .totalSummary .paymentPrice span {font-family: var(--font-en); font-size: 1.6rem; color: var(--c-black);}
 #wrap #contents .xans-order-basketpackage #orderFixItem {margin: 0; padding: 0 2.4rem 2.4rem; background-color: var(--c-bg);}
 #wrap #contents .xans-order-basketpackage #orderFixItem .ec-base-button {display: flex; flex-direction: column; gap: .8rem; margin: 0; padding: 0;}
-#wrap #contents .xans-order-basketpackage #orderFixItem .ec-base-button [class^='btn'] {width: 100%; height: 5.6rem; margin: 0; border-radius: 1.6rem; font-size: 1.5rem !important;}
+#wrap #contents .xans-order-basketpackage #orderFixItem .ec-base-button [class^='btn'] {width: 100%; height: 5.6rem; margin: 0; border-radius: .8rem; font-size: 1.5rem !important;}
 #wrap #contents .xans-order-basketpackage #orderFixItem .ec-base-button [class^='btn'].displaynone {display: none;}
 #wrap #contents .xans-order-basketpackage .xans-order-basketpriceinfoguide {margin: 1.6rem 0 0;}
 #wrap #contents .xans-order-basketpackage .xans-order-basketpriceinfoguide .ec-base-help li {padding: 0; background: none; font-size: 1.2rem; line-height: 1.8rem; color: var(--c-grey2);}
@@ -1368,11 +1376,11 @@ p.txtList,ul.txtList {margin: 1.6rem 0 0;}
     #wrap #contents .xans-order-basketpackage .totalSummary .paymentPrice,
     #wrap #contents .xans-order-basketpackage .totalSummary .paymentPrice strong {font-size: 2rem; line-height: 2.8rem;}
     #wrap #contents .xans-order-basketpackage #orderFixItem {padding: 0 2rem 2rem;}
-    #wrap #contents .xans-order-basketpackage #orderFixItem .ec-base-button [class^='btn'] {height: 5.2rem; border-radius: 1.2rem; font-size: 1.4rem !important;}
+    #wrap #contents .xans-order-basketpackage #orderFixItem .ec-base-button [class^='btn'] {height: 5.2rem; border-radius: .8rem; font-size: 1.4rem !important;}
     #wrap #contents .xans-order-basketpackage #orderFixArea {padding: 1.2rem 2rem; border: 0; background-color: #fff; box-shadow: 0 -2px 6.5px rgba(0,0,0,.1);}
     #wrap #contents .xans-order-basketpackage #orderFixArea::after {display: none;}
     #wrap #contents .xans-order-basketpackage #orderFixArea .gColumn {display: flex; gap: .8rem; margin: 0; padding: 0;}
-    #wrap #contents .xans-order-basketpackage #orderFixArea a {flex: 1; height: 5.2rem; margin: 0; border-radius: 1.2rem; font-size: 1.4rem !important;}
+    #wrap #contents .xans-order-basketpackage #orderFixArea a {flex: 1; height: 5.2rem; margin: 0; border-radius: .8rem; font-size: 1.4rem !important;}
 }
 
 
