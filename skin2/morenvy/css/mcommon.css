@@ -843,10 +843,14 @@ p.txtList,ul.txtList {margin: 1.6rem 0 0;}
 @media all and (max-width:1024px) {
 	#container #contents:has(.myshopArea) {padding-bottom: 6.4rem;}
 	#contents .myshopArea {min-height: 0; margin: 2.4rem auto 0; padding: 0;}
-	#contents .myshopArea .titleArea {position: relative; margin: 0 0 2.4rem !important; padding: 0 4rem;}
-	#contents .myshopArea .titleArea h2 {font-size: 2rem; line-height: 2.8rem; font-weight: 700; text-align: center;}
+	#contents .myshopArea .titleArea,
+	#contents .layout1280:has(> .myshopMain) > .titleArea {position: relative; margin: 0 0 2.4rem !important; padding: 0 4rem;}
+	#contents .layout1280:has(> .myshopMain) > .titleArea {margin-top: 2.4rem !important;}
+	#contents .myshopArea .titleArea h2,
+	#contents .layout1280:has(> .myshopMain) > .titleArea h2 {font-size: 2rem; line-height: 2.8rem; font-weight: 700; text-align: center;}
 	#contents .myshopArea .titleArea h3 {font-size: 1.6rem; line-height: 2.4rem;}
-	#contents .myshopArea .titleArea .xans-layout-mobileaction {display: block; left: 0; top: 50%; bottom: auto; transform: translateY(-50%);}
+	#contents .myshopArea .titleArea .xans-layout-mobileaction,
+	#contents .layout1280:has(> .myshopMain) > .titleArea .xans-layout-mobileaction {display: block; left: 0; top: 50%; bottom: auto; transform: translateY(-50%);}
 	#contents .myshopArea .titleArea.titleArea--middle {margin-bottom: 1.6rem !important; padding: 0;}
 	#contents .myshopArea .ec-base-button.gBottom {flex-wrap: wrap; margin: 2.4rem 0 0;}
 	#contents .myshopArea .ec-base-button.gBottom a {font-size: 1.3rem !important;}
