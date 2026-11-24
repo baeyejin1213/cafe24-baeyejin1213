@@ -751,6 +751,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 .prd_box .info .icon {display: flex; align-items: center; gap: 0; margin: 0;}
 .prd_box .info .icon:not(:has(img)) {display: none;}
 .prd_box .info .icon img {height: 1.6rem; width: auto;}
+.prdList .prd_box .info .icon img {margin: 0;}
 .prd_box .info .name a,
 .prd_box .info .name a span {display: block; overflow: hidden; font-family: var(--font-kr) !important; font-size: 1.4rem !important; line-height: 2rem; font-weight: 400 !important; color: var(--c-black) !important; white-space: nowrap; text-overflow: ellipsis;}
 .prd_box .info .spec {display: flex; flex-wrap: wrap; align-items: center; gap: .6rem .8rem; margin: 0;}
