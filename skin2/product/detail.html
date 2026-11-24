@@ -72,7 +72,7 @@
                 <div class="timesale_box"></div>
             </div>
 
-            <!-- 상품 정보 : 관리자 > 상품정보 표시설정 (상품명·가격 줄은 위에 따로 보여서 숨김, 할인율 계산에는 씀) -->
+            <!-- 상품 정보 -->
             <div module="product_detaildesign" class="spec_box">
                 <!--
                     출력 갯수 지정 변수, 없으면 설정된 전체가 나옵니다.
@@ -93,7 +93,7 @@
                 </table>
             </div>
 
-            <!--- 렌탈서비스 -->
+            <!-- 렌탈서비스 -->
             <table border="1" summary class="{$rental_information_display|display}">
                 <tbody>
                 <tr class="rental">
@@ -148,7 +148,7 @@
                     <div class="pop_layer_content">
                         <table border="1" module="product_option">
                             <!--
-                            $use_per_add_option = yes
+                                $use_per_add_option = yes
                             -->
                             <caption>상품 옵션</caption>
                             <tbody module="product_option">
@@ -482,8 +482,8 @@
                                 </tr>
                                 <tr id="{$total.option_id}" class="option" module="product_option">
                                     <!--
-                                    $use_per_add_option = yes
-                                    $default_option = yes
+                                        $use_per_add_option = yes
+                                        $default_option = yes
                                     -->
                                     <td class="middle" colspan="3">
                                         <table border="1">
@@ -794,7 +794,7 @@
     </div>
 
 
-    <!-- 상세 03 : 관련상품 (관리자 > 상품 > 관련상품) -->
+    <!-- 상세 03 : 관련상품 -->
     <div module="product_relation" class="product_relation">
         <div class="m_title">
             <!-- 상세 : 관련상품 타이틀 -->

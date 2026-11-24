@@ -434,11 +434,11 @@ jQuery(function ($) {
     var $header = $('#header.h_type01');
     if (!$header.length) return;
 
-    /* 메인 여부 : 메인(index.html)에만 .main_wrap 이 있다 */
+    /* 메인 여부 */
     if ($('#contents .main_wrap').length) $body.addClass('is_main');
 
 
-    /* ① 스크롤하면 흰 헤더 */
+    /* 스크롤 */
     function setWhite() {
         $header.toggleClass('h_white', window.pageYOffset > 10);
     }
@@ -447,12 +447,12 @@ jQuery(function ($) {
 
 
 
-    /* ② 검색 패널 */
+    /* 검색 패널 */
     var recentSwiper = null;
     function searchOpen() {
         $('#searchBarForm').addClass('active');
         $body.addClass('searchOn');
-        var $recent = $('.sch_recent .swiper');  /* 최근 본 상품 : 마우스로 끌어서 넘김 */
+        var $recent = $('.sch_recent .swiper');
         if (!recentSwiper && $recent.length && window.Swiper) {
             recentSwiper = new Swiper($recent[0], {slidesPerView: 'auto', spaceBetween: 12, grabCursor: true, observer: true, observeParents: true});
         }
@@ -468,14 +468,14 @@ jQuery(function ($) {
     $(document).on('keydown', function (e) { if (e.key === 'Escape') searchClose(); });
 
 
-    /* ③ 푸터 : 사업자 정보 접기 */
+    /* 푸터 : 사업자 정보 접기 */
     $(document).on('click', '#footer .f_biz_btn', function () {
         var $wrap = $(this).closest('.f_info_wrap');
         $wrap.toggleClass('close').find('.f_info').stop().slideToggle(300);
     });
 
 
-    /* ④ 퀵 메뉴(PC) : 조금 내리면 표시, 맨 위로 / 모바일 하단바 : 내릴 때 숨김 */
+    /* 퀵 메뉴(PC) : 조금 내리면 표시, 맨 위로 / 모바일 하단바 : 내릴 때 숨김 */
     $(document).on('click', '#quick .upBtn', function (e) { e.preventDefault(); $('html, body').animate({scrollTop: 0}, 600); });
     var lastY = window.pageYOffset;
     $(window).on('scroll', function () {
@@ -483,7 +483,7 @@ jQuery(function ($) {
         var atBottom = y + window.innerHeight >= document.documentElement.scrollHeight - 4;
         $('.f_nav, #quick').toggleClass('down', y > lastY && y > 56 && !atBottom);
         $('#quick').toggleClass('on', y > 200);
-        /* 퀵 버튼 : 푸터에 닿으면 푸터 위에 멈춤 (fixed ↔ absolute) */
+        /* 퀵 버튼 : 푸터에 닿으면 푸터 위에 멈춤 */
         var $q = $('#quick'), ft = $('#footer')[0];
         if ($q.length && ft) {
             var stop = ft.getBoundingClientRect().top <= window.innerHeight;

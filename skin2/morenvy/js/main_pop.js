@@ -31,7 +31,7 @@ jQuery(function ($) {
 
     /* 닫기 / 오늘 하루 보지 않기 */
     $pop.on('click', '.btn_close', function () { $pop.removeClass('on'); });
-    $pop.on('click', function (e) { if (e.target === this) $pop.removeClass('on'); });  /* 모바일 딤 누르면 닫기 */
+    $pop.on('click', function (e) { if (e.target === this) $pop.removeClass('on'); });
     $pop.on('click', '.notToday', function (e) {
         e.preventDefault();
         $pop.removeClass('on');

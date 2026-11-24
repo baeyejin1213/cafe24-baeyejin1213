@@ -1,34 +1,34 @@
 /*
-* »ó¼¼ÆäÀÌÁö ¹«·á¹è¼Û ÁøÇàÇ¥½ÃÁÙ ver1.0
-* morenvy.com ¼­Á¤È¯ ¼öÁ¤ 24.03.15
+* ìƒì„¸í˜ì´ì§€ ë¬´ë£Œë°°ì†¡ ì§„í–‰í‘œì‹œì¤„ ver1.0
+* morenvy.com ì„œì •í™˜ ìˆ˜ì • 24.03.15
 */
 jQuery(document).ready(function() {
 
 	jQuery(".free_shipping .delv_price_B").each(function() {
-		/* morenvy.com ¹è¼Ûºñ °¡Á®¿Í¼­ Ãâ·Â */
+		/* morenvy.com ë°°ì†¡ë¹„ ê°€ì ¸ì™€ì„œ ì¶œë ¥ */
 		jQuery('strong', this).remove();
 		var shipping_txt0 = jQuery(this).text().replace(/[()]/g, '');
-		var shipping_txt1 = Number(shipping_txt0.replace(/[^0-9]/g,'')); //¹è¼Ûºñ °¡Á®¿À±â
+		var shipping_txt1 = Number(shipping_txt0.replace(/[^0-9]/g,'')); //ë°°ì†¡ë¹„ ê°€ì ¸ì˜¤ê¸°
 		jQuery(".free_shipping .delivery_price").html('<span class="total_amount"></span><span class="fee_delivery"></span>');
-		jQuery(".free_shipping .delivery_price .fee_delivery").text(shipping_txt0); //¹è¼Ûºñ ¹®±¸
+		jQuery(".free_shipping .delivery_price .fee_delivery").text(shipping_txt0); //ë°°ì†¡ë¹„ ë¬¸êµ¬
 
 
-		/* morenvy.com ÃÑ»óÇ°°¡°İ º¯°æµÇ¸é °¨Áö */
+		/* morenvy.com ì´ìƒí’ˆê°€ê²© ë³€ê²½ë˜ë©´ ê°ì§€ */
 		var targetNode = document.querySelector('#totalPrice .total');
 		var observerCallback = function(mutationsList, observer) {
 			for(var mutation of mutationsList) {
-				if (mutation.type === 'childList' || mutation.type === 'characterData') { // º¯È­°¡ °¨ÁöµÇ¸é
+				if (mutation.type === 'childList' || mutation.type === 'characterData') { // ë³€í™”ê°€ ê°ì§€ë˜ë©´
 					var total_price_won = $(mutation.target).text().trim().split(" ");
 					var total_price = Number(total_price_won[0].replace(/[^0-9]/g,''));
-					jQuery(".free_shipping .delivery_price .total_amount").text(total_price_won[0]); // ÃÑ»óÇ°±İ¾× Ãâ·Â
+					jQuery(".free_shipping .delivery_price .total_amount").text(total_price_won[0]); // ì´ìƒí’ˆê¸ˆì•¡ ì¶œë ¥
 					jQuery(".free_shipping").show();
 
 					var shipping_percentage = Math.round( total_price / shipping_txt1 * 100 );
-					if( shipping_percentage >= 100 ) { // ÆÛ¼¾Æ®°¡ 100% ³ÑÀ¸¸é
+					if( shipping_percentage >= 100 ) { // í¼ì„¼íŠ¸ê°€ 100% ë„˜ìœ¼ë©´
 						var shipping_percentage = 100;
 					};
 
-					jQuery('#shipping_bar').LineProgressbar({ // ÇÁ·Î±×·¹½º¹Ù ½ÇÇà
+					jQuery('#shipping_bar').LineProgressbar({ // í”„ë¡œê·¸ë ˆìŠ¤ë°” ì‹¤í–‰
 						percentage: shipping_percentage,
 						height: '4px',
 						ShowProgressCount: false,
@@ -36,7 +36,7 @@ jQuery(document).ready(function() {
 						fillBackgroundColor: '#1a1a1a',
 					});
 
-					if( shipping_txt1 >= total_price ) { // ÃÑ»óÇ°±İ¾×ÀÌ ¹è¼Ûºñº¸´Ù ÀÛÀ¸¸é
+					if( shipping_txt1 >= total_price ) { // ì´ìƒí’ˆê¸ˆì•¡ì´ ë°°ì†¡ë¹„ë³´ë‹¤ ì‘ìœ¼ë©´
 						jQuery(".free_shipping .free_shipping_txt01").show();
 						jQuery(".free_shipping .free_shipping_txt02").hide();
 					} else {
@@ -49,11 +49,25 @@ jQuery(document).ready(function() {
 
 		var observer = new MutationObserver(observerCallback);
 		var observerConfig = {
-			childList: true, // ÀÚ½Ä ³ëµåÀÇ Ãß°¡ ¶Ç´Â Á¦°Å¸¦ °¨Áö
-			characterData: true, // ÅØ½ºÆ® ³ëµåÀÇ ³»¿ë º¯°æÀ» °¨Áö
-			subtree: true // ´ë»ó ³ëµåÀÇ ¸ğµç ÇÏÀ§ ¿ä¼Ò¿¡ ´ëÇÑ º¯°æµµ °¨Áö
+			childList: true, // ìì‹ ë…¸ë“œì˜ ì¶”ê°€ ë˜ëŠ” ì œê±°ë¥¼ ê°ì§€
+			characterData: true, // í…ìŠ¤íŠ¸ ë…¸ë“œì˜ ë‚´ìš© ë³€ê²½ì„ ê°ì§€
+			subtree: true // ëŒ€ìƒ ë…¸ë“œì˜ ëª¨ë“  í•˜ìœ„ ìš”ì†Œì— ëŒ€í•œ ë³€ê²½ë„ ê°ì§€
 		};
-		observer.observe(targetNode, observerConfig); // º¯°æ°¨Áö ½ÇÇà
+		observer.observe(targetNode, observerConfig); // ë³€ê²½ê°ì§€ ì‹¤í–‰
 	});
 
+});
+
+/* ì˜µì…˜ ìƒí’ˆì€ ê³ ë¥¸ ì˜µì…˜ì´ í•˜ë‚˜ë„ ì—†ìœ¼ë©´ ìˆ¨ê¹€ */
+jQuery(function ($) {
+    var $freeShip = $('.xans-product-detail .free_shipping');
+    function checkFreeShip() {
+        var hasRow = $('#totalProducts tr.option_product, #totalProducts tr.add_product').length > 0
+            || $('#totalProducts > table > tbody:not(.displaynone, .option_products, .add_products) > tr:first-child').length > 0;
+        $freeShip.toggleClass('off', !hasRow);
+    }
+    if ($freeShip.length && $('#totalProducts').length) {
+        checkFreeShip();
+        if (window.MutationObserver) new MutationObserver(checkFreeShip).observe($('#totalProducts')[0], {childList: true, subtree: true});
+    }
 });

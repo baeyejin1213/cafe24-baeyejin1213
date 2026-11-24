@@ -4,7 +4,7 @@ body.sideOn .h_dim {opacity: 1; visibility: visible;}
 body.sideOn {overflow: hidden;}
 
 /* -------------------------------
-    사이드 메뉴 (M_전체)
+    사이드 메뉴
 ------------------------------- */
 #aside {position: fixed; top: 0; left: 0; z-index: 3000; display: flex; flex-direction: column; width: 100%; max-width: 48rem; height: 100%; background-color: #fff; font-family: var(--font-kr); transform: translateX(-100%); visibility: hidden; transition: transform .4s, visibility .4s;}
 body.sideOn #aside {transform: translateX(0); visibility: visible;}
@@ -27,7 +27,7 @@ body.sideOn #aside {transform: translateX(0); visibility: visible;}
 #aside .side_lang li a {display: block; padding: .6rem 1.2rem; font-size: 1.3rem; line-height: 2rem; color: var(--c-grey3);}
 #aside .side_lang li.selected a {font-weight: 500; color: var(--c-black);}
 
-/* 카테고리 : 왼쪽 대분류 / 오른쪽 중분류(opencate2.js 의 .depth2) */
+/* 카테고리 */
 #aside .side_cate {position: relative; flex: 1; min-height: 0; border-top: 1px solid var(--c-line);}
 #aside .side_cate .d1 {width: 50%; height: 100%; overflow-y: auto; border-right: 1px solid var(--c-line); scrollbar-width: none;}
 #aside .side_cate .d1::-webkit-scrollbar {display: none;}
@@ -43,11 +43,11 @@ body.sideOn #aside {transform: translateX(0); visibility: visible;}
 #aside .side_cate .depth2::-webkit-scrollbar {display: none;}
 #aside .side_cate li.on > .depth2 {display: block;}
 #aside .side_cate .depth2 > ul > li.active > a.cate {border-bottom: 1px solid var(--c-line); font-weight: 500; color: var(--c-black);}
-#aside .side_cate .depth2 > ul > li.active > a span.open {background-image: url(/morenvyimg/side_arr_on.svg);}  /* 펼쳐도 화살표는 회전하지 않음 */
+#aside .side_cate .depth2 > ul > li.active > a span.open {background-image: url(/morenvyimg/side_arr_on.svg);}
 #aside .side_cate .depth3 {display: none;}
 #aside .side_cate .depth3 a.cate {border-bottom: 1px solid var(--c-line); background-color: var(--c-bg);}
 #aside .side_cate .depth3 > ul > li.active > a.cate {font-weight: 500; color: var(--c-black);}
 #aside .side_cate .depth3 > ul > li.active > a span.open {background-image: url(/morenvyimg/side_arr_on.svg);}
-#aside .side_cate .depth4 {display: none;}  /* 상세분류 : 소분류를 누르면 펼침 */
+#aside .side_cate .depth4 {display: none;}
 #aside .side_cate .depth4 a.cate {background-color: #f1f1f1; font-size: 1.3rem; color: var(--c-grey2);}
 #aside .side_cate .depth4 a span.open {display: none;}

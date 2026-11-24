@@ -1,11 +1,10 @@
-/* 사이드 메뉴 (M_전체) */
+/* 사이드 메뉴 */
 jQuery(function ($) {
 
     var $body = $('body');
     var $header = $('#header.h_type01');
 
-    /* 사이드 메뉴 카테고리 (하위 분류는 opencate2.js 가 채움)
-          왼쪽 대분류를 누르면 오른쪽에 중분류, 중분류를 누르면 소분류가 펼쳐짐 */
+    /* 사이드 메뉴 카테고리 */
     var $side = $('#aside');
     function sideSelect($li) {
         $li.addClass('on').siblings().removeClass('on');
@@ -25,7 +24,7 @@ jQuery(function ($) {
         $li.siblings('.active').removeClass('active').children('.depth3').stop().slideUp(300);
     });
 
-    $side.on('click', '.depth3 > ul > li > a.cate', function (e) {  /* 상세분류 펼침 */
+    $side.on('click', '.depth3 > ul > li > a.cate', function (e) {
         var $li = $(this).parent();
         if (!$li.children('.depth4').length || $li.hasClass('active')) return;
         e.preventDefault();

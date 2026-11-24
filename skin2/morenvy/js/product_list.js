@@ -1,8 +1,6 @@
 $(document).ready(function () { // 시작 코드블럭
 
-    /* 추천상품 · 신상품 가로 슬라이드 (마우스로 끌어서 넘김)
-       한 줄에 보이는 상품 수(slidesPerView)로 카드 폭을 정함. 소수점 = 다음 상품이 살짝 보이게
-       시안 : PC 1920 카드 400 · 간격 20 (1840+20)/420 ≈ 4.4 / 모바일 360 카드 200 · 간격 12 (320+12)/212 ≈ 1.6 */
+    /* 추천상품 · 신상품 */
     $('.list_slide .swiper').each(function () {
         var $box = $(this).closest('.list_slide');
         if (!$(this).find('.prdList > li').length) { $box.addClass('displaynone'); return; }
@@ -27,7 +25,7 @@ $(document).ready(function () { // 시작 코드블럭
     }
 
 
-    /* 하위 분류 탭 : 1024px 이하에서 가로로 끌어서 넘김 */
+    /* 하위 분류 탭 */
     var swiperTitleTab = null;
 
     function initOrDestroySwiper() {

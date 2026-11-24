@@ -1,11 +1,10 @@
-/* 에이가구 : 상품 상세 (product/detail.html) */
 jQuery(function ($) {
 
     var isMo = function () { return window.innerWidth < 1025; };
     var pad = function (n) { return (n < 10 ? '0' : '') + n; };
 
 
-    /* ① 대표 이미지 슬라이드 : 01 / 05 */
+    /* 대표 이미지 슬라이드 */
     var $keyImg = $('.swiper_keyimg');
     if ($keyImg.find('.swiper-slide').length) {
         new Swiper($keyImg[0], {
@@ -47,7 +46,7 @@ jQuery(function ($) {
     $(window).on('load', setPrice);
 
 
-    /* ② 팝업 : 쿠폰받기 · 공유하기 */
+    /* 팝업 : 쿠폰받기 · 공유하기 */
     var $dim = $('<div class="pop_dim"></div>').appendTo('body');
     function openPop($pop) {
         $('body > .layer_pop').removeClass('on');
@@ -115,31 +114,18 @@ jQuery(function ($) {
     });
 
 
-    /* ③ 세트상품 · 추가구성상품 접기 (처음엔 펼침) */
+    /* 세트상품 · 추가구성상품 */
     $(document).on('click', '.productSet > .title, .add_item_box > .title', function () {
         $(this).parent().toggleClass('active').children('.product').stop().slideToggle(300);
     });
 
 
-    /* ④ 무료배송 바 : 옵션 상품은 고른 옵션이 하나도 없으면 숨김 */
-    var $freeShip = $('.xans-product-detail .free_shipping');
-    function checkFreeShip() {
-        var hasRow = $('#totalProducts tr.option_product, #totalProducts tr.add_product').length > 0
-            || $('#totalProducts > table > tbody:not(.displaynone, .option_products, .add_products) > tr:first-child').length > 0;
-        $freeShip.toggleClass('off', !hasRow);
-    }
-    if ($freeShip.length && $('#totalProducts').length) {
-        checkFreeShip();
-        if (window.MutationObserver) new MutationObserver(checkFreeShip).observe($('#totalProducts')[0], {childList: true, subtree: true});
-    }
-
-
-    /* ⑤ 상세정보 · 후기 · 문의 이동 */
+    /* 상세 탭 이동 */
     $('.xans-product-additional .detail_menu a').on('click', function (e) {
         var $target = $($(this).attr('href'));
         if (!$target.length) return;
         e.preventDefault();
-        var gap = window.innerWidth > 1024 ? 24 : 16;  /* 탭 위 여유 */
+        var gap = window.innerWidth > 1024 ? 24 : 16;
         $('html, body').stop().animate({scrollTop: $target.offset().top - ($('#header').outerHeight() || 0) - gap}, 400);
     });
 
@@ -152,7 +138,7 @@ jQuery(function ($) {
     });
 
 
-    /* ⑥ 관련상품 */
+    /* 관련상품 */
     var $rel = $('.product_relation');
     if (!$rel.find('.prdList > li').length) {
         $rel.hide();
@@ -172,9 +158,7 @@ jQuery(function ($) {
     }
 
 
-    /* ⑦ 아래 고정 구매 버튼(#orderFixArea)
-       본문 구매 버튼이 화면 위로 지나가면 나타남. 누르면 옵션 레이어(#pop_option_box)를 먼저 열고,
-       열린 상태에서 누르면 원래대로 장바구니·구매 진행 */
+    /* 아래 고정 구매 버튼(#orderFixArea) */
     var $fix = $('#orderFixArea');
     var $box = $('#pop_option_box');
     var $holder = $('.option_holder');

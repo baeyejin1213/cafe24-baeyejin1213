@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-/* -------------------------------------------------------------------
-    에이가구 : 상품 상세 (product/detail.html)
-    PC 1025px 이상 / 모바일 1024px 이하
-------------------------------------------------------------------- */
 #container #contents:has(.xans-product-detail) {max-width: none !important; padding: 0 !important;}
 #contents .xans-product-detail {padding: 8rem 0 16rem; font-family: var(--font-kr); color: var(--c-black);}
 #contents .xans-product-detail h2,
@@ -19,7 +15,7 @@
 
 /* 상세 01 : 이미지 */
 #contents .xans-product-detail .detailArea {display: flex; align-items: flex-start; font-size: 1.4rem; line-height: 2rem;}
-#contents .xans-product-detail .imgArea {position: sticky; top: calc(var(--head-h) + 2.4rem); display: block; flex: none; width: 50%; margin: 0;}  /* 옵션이 길면 썸네일 고정 */
+#contents .xans-product-detail .imgArea {position: sticky; top: calc(var(--head-h) + 2.4rem); display: block; flex: none; width: 50%; margin: 0;}
 .imgArea .swiper_keyimg {aspect-ratio: 1 / 1; background-color: var(--c-bg);}
 .imgArea .swiper_keyimg .swiper-wrapper {margin: 0; padding: 0;}
 .imgArea .swiper_keyimg .swiper-slide {display: flex; align-items: center; justify-content: center; height: auto;}
@@ -149,7 +145,7 @@
 #contents .xans-product-detail .pop_layer_content .productSet > .title,
 #contents .xans-product-detail .pop_layer_content .add_item_box > .title {position: static; display: flex; align-items: center; justify-content: space-between; gap: 1.6rem; height: 4.2rem; padding: 0 1.6rem; border-bottom: 1px solid var(--c-line); box-sizing: border-box; transition: border-color .3s;}
 #contents .xans-product-detail .pop_layer_content .productSet:not(.active) > .title,
-#contents .xans-product-detail .pop_layer_content .add_item_box:not(.active) > .title {border-bottom-color: transparent;}  /* 접혔을 때 상자 테두리와 겹치지 않게 */
+#contents .xans-product-detail .pop_layer_content .add_item_box:not(.active) > .title {border-bottom-color: transparent;}
 #contents .xans-product-detail .pop_layer_content .productSet > .title h3,
 #contents .xans-product-detail .pop_layer_content .add_item_box > .title {font-size: 1.3rem; line-height: 2rem; font-weight: 400; color: var(--c-black);}
 #contents .xans-product-detail .pop_layer_content .productSet > .title,
@@ -227,7 +223,7 @@
 #contents .xans-product-detail #totalProducts tbody.add_products tr,
 #contents .xans-product-detail #totalProducts tbody:not(.displaynone, .option_products, .add_products) > tr:first-child {position: relative; display: block; min-height: 2.4rem; padding: 1.6rem; border: 0; border-radius: 1.6rem; background-color: #f9f9f9;}
 #contents .xans-product-detail #totalProducts tbody.noOption > tr:not(:first-child) {display: none;}
-#contents .xans-product-detail #totalProducts tbody > tr.option:not(:has(tbody tr)) {display: none;}  /* 옵션 없는 상품 줄 아래 빈 추가입력옵션 줄 */
+#contents .xans-product-detail #totalProducts tbody > tr.option:not(:has(tbody tr)) {display: none;}
 #contents .xans-product-detail #totalProducts tbody td {display: block; padding: 0; border: 0; line-height: 2rem; text-align: left;}
 #contents .xans-product-detail #totalProducts tbody td:first-child {padding-right: 2.4rem; padding-bottom: 1.6rem; font-size: 1.4rem; color: var(--c-black);}
 #contents .xans-product-detail #totalProducts tbody td .product {margin: 0; padding: 0; font-size: 1.4rem; line-height: 2rem; font-weight: 400; color: var(--c-black);}
@@ -245,7 +241,7 @@
 #contents .xans-product-detail #totalProducts td.right {position: absolute; right: 1.6rem; bottom: 1.6rem; padding: 0; text-align: right;}
 #contents .xans-product-detail #totalProducts td.right span {font-family: var(--font-en); font-size: 1.4rem; line-height: 2.4rem; font-weight: 600; color: var(--c-black);}
 #contents .xans-product-detail #totalProducts td.right .mileage {display: none;}
-/* 모바일 기기 마크업 : 수량이 첫 칸 두 번째 p 안(.quantity 없음), 가격 strong.price, 삭제는 넷째 칸 */
+
 #contents .xans-product-detail #totalProducts tbody td:first-child:has(> p > .quantity_opt) {padding-bottom: 0;}
 #contents .xans-product-detail #totalProducts tbody td .product strong {font-weight: inherit;}
 #contents .xans-product-detail #totalProducts td > p:has(> .quantity_opt) {position: relative; display: flex; align-items: center; justify-content: space-between; width: 8.8rem; height: 2.4rem; margin: 1.6rem 0 0; padding: 0; font-size: 0;}
@@ -258,24 +254,11 @@
 #contents .xans-product-detail #totalProducts td > p:has(> .quantity_opt) img {position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0;}
 #contents .xans-product-detail #totalProducts td.right .price {font-weight: inherit;}
 
-/* 무료배송 바 (옵션 상품은 고른 옵션이 있을 때만) */
-#contents .xans-product-detail .free_shipping {margin: 2.4rem 0 0; text-align: left;}
-#contents .xans-product-detail .free_shipping.off {display: none !important;}
-#contents .xans-product-detail .free_shipping .free_shipping_txt01,
-#contents .xans-product-detail .free_shipping .free_shipping_txt02 {font-size: 1.3rem; line-height: 2rem; color: var(--c-black);}
-#contents .xans-product-detail .free_shipping .free_shipping_txt01 span,
-#contents .xans-product-detail .free_shipping .free_shipping_txt02 span {font-weight: 600; color: var(--c-point);}
-#contents .xans-product-detail .free_shipping #shipping_bar {margin: .8rem 0;}
-#contents .xans-product-detail .free_shipping #shipping_bar .progressbar {background-color: var(--c-line) !important;}
-#contents .xans-product-detail .free_shipping #shipping_bar .proggress {background-color: var(--c-black) !important;}
-#contents .xans-product-detail .free_shipping .delivery_price span {font-size: 1.2rem; line-height: 1.6rem; font-weight: 400; color: var(--c-grey);}
-#contents .xans-product-detail .free_shipping .delivery_price .total_amount {font-family: var(--font-en); color: var(--c-black);}
-
 #contents .xans-product-detail .guideArea {margin: 0;}
 #contents .xans-product-detail .guideArea:not(:has(> *:not(.displaynone))) {display: none;}
 #contents .xans-product-detail .guideArea > * {display: block; float: none; margin-top: 1.2rem; font-size: 1.2rem; line-height: 1.6rem; color: var(--c-grey);}
 
-/* 총 상품금액 : 금액만 (카페24가 넣는 "(1개)" 글자는 숨김) */
+/* 총 상품금액 */
 #contents .xans-product-detail #totalPrice {display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin: 4rem 0 0; padding: 0; border: 0;}
 #contents .xans-product-detail #totalPrice .txtWarn {width: 100%; margin-bottom: .8rem; font-size: 1.2rem;}
 #contents .xans-product-detail #totalPrice .title {font-size: 1.4rem; line-height: 2rem; font-weight: 400; color: var(--c-black);}
@@ -284,7 +267,7 @@
 #contents .xans-product-detail #totalPrice .total strong,
 #contents .xans-product-detail #totalPrice .total em {font-family: var(--font-en); font-size: 1.4rem; line-height: 2rem; font-weight: 600; font-style: normal; color: var(--c-black);}
 
-/* 장바구니 · 구매하기 (본문 · 아래 고정 공통) */
+/* 장바구니 · 구매하기 */
 #contents .xans-product-detail .productAction {margin: 2.4rem 0 0;}
 #contents .xans-product-detail .productAction .action_button,
 #wrap #orderFixArea .action_button {display: flex; gap: 1.6rem; margin: 0; padding: 0;}
@@ -303,7 +286,7 @@
 #contents .xans-product-detail .productAction .action_button .btn_sold,
 #wrap #orderFixArea .action_button .btn_sold {border-color: var(--c-line); background-color: var(--c-line); color: var(--c-grey); cursor: default;}
 
-/* 그 밖의 버튼 · 회원 혜택 */
+
 #contents .xans-product-detail .price_help {margin-top: 1.2rem; padding: 0; background: none; font-size: 1.2rem; line-height: 1.6rem; color: var(--c-grey);}
 #contents .xans-product-detail .price_help::before {content: none;}
 #contents .xans-product-detail .etc_btns {margin: 0;}
@@ -336,7 +319,6 @@ body.fix_option_open #wrap #orderFixArea.on {box-shadow: none;}
     #contents .xans-product-detail #pop_option_box.is_open #totalPrice {grid-area: total; margin-top: 2.4rem;}
 }
 
-/* 고정 구매 버튼 때문에 푸터 끝이 가리지 않게 */
 #footer.f_type01 {padding-bottom: 13.6rem;}
 
 
@@ -401,7 +383,6 @@ body.fix_option_open #wrap #orderFixArea.on {box-shadow: none;}
 .xans-product-additional .board_list td.date {font-family: var(--font-en);}
 .xans-product-additional .board_list td.writer img {display: none;}
 
-/* 후기·문의 제목을 누르면 아래에 펼쳐지는 본문 줄 (카페24가 tr > td[colspan] 로 끼워 넣음) */
 .xans-product-additional .board_list tr:has(> td[colspan]) {display: block; height: auto; border-top: 0;}
 .xans-product-additional .board_list tr:has(> td[colspan]) > td {display: block; width: 100%; padding: 0 0 2.4rem; text-align: left; color: var(--c-black);}
 .xans-product-additional .board_list .view {margin: 0; padding: 3.2rem 8rem; background-color: var(--c-bg); font-size: 1.4rem; line-height: 2.4rem; color: var(--c-black);}
@@ -435,7 +416,7 @@ body.fix_option_open #wrap #orderFixArea.on {box-shadow: none;}
 .product_relation .prd_box .thumb .img > img {mix-blend-mode: darken;}
 
 
-/* 팝업 : 쿠폰 · 공유 (JS가 body 로 옮김) */
+/* 팝업 : 쿠폰 · 공유 */
 .pop_dim {position: fixed; inset: 0; z-index: 1500; background-color: rgba(0,0,0,.7); opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s;}
 .pop_dim.on {opacity: 1; visibility: visible;}
 .layer_pop,
@@ -503,8 +484,7 @@ body > .layer_pop button {padding: 0; border: 0; background: none; font-family: 
     #contents .xans-product-detail #pop_option_box .ec-product-button.ec-product-preview li a:not(:has(img)) {height: 2.2rem;}
     #contents .xans-product-detail .pop_layer_content .add_item_box,
     #contents .xans-product-detail .pop_layer_content .productSet,
-    #contents .xans-product-detail #totalProducts,
-    #contents .xans-product-detail .free_shipping {margin-top: 1.6rem;}
+    #contents .xans-product-detail #totalProducts {margin-top: 1.6rem;}
     #contents .xans-product-detail .pop_layer_content .productSet > .title,
     #contents .xans-product-detail .pop_layer_content .add_item_box > .title {height: 4.4rem;}
     #contents .xans-product-detail #totalPrice {margin-top: 3.2rem;}
@@ -554,7 +534,7 @@ body > .layer_pop button {padding: 0; border: 0; background: none; font-family: 
     .xans-product-additional .board_list .view .attach img {max-width: 100%;}
     .xans-product-additional .board_list .boardComment,
     .xans-product-additional .board_list .memoCont {padding: 1.6rem;}
-    .xans-product-additional .board_list .boardComment li {padding-bottom: 2.5rem;}  /* 카페24 기본 모바일 값은 아래 0 */
+    .xans-product-additional .board_list .boardComment li {padding-bottom: 2.5rem;}
     #contents .xans-product-additional .nodata {height: 14rem; background-color: #f9f9f9;}
     #contents .xans-product-additional .nodata::before {font-size: 1.2rem; line-height: 1.6rem;}
     .xans-product-additional .list_paging {padding: 2.4rem 0;}

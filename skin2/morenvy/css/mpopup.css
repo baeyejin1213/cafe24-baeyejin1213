@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/* 메인 : 팝업 (PC 오른쪽 아래 / 모바일 하단 시트) */
+/* 메인 : 팝업 */
 .main_popup {position: fixed; right: 4rem; bottom: 4rem; z-index: 1998; visibility: hidden; opacity: 0; transition: opacity .6s, visibility .6s;}
 .main_popup.on {visibility: visible; opacity: 1;}
 .main_popup .popup {width: 32rem; overflow: hidden; background-color: #fff; font-family: var(--font-kr); box-shadow: 0 .8rem 3.2rem rgba(0,0,0,.12); transform: translateY(4rem); opacity: 0; transition: transform .6s ease, opacity .6s ease;}
@@ -28,8 +28,8 @@
 
 
 @media all and (max-width: 1024px) {
-    .main_popup {inset: 0; display: flex; align-items: flex-end; justify-content: center; background-color: rgba(0,0,0,.4);}  /* 딤 (시안 M_팝업01) */
-    .main_popup .popup {width: 100%; max-width: 48rem; border-radius: 1.6rem 1.6rem 0 0; box-shadow: none;}  /* 넓어져도 48rem 까지, 가운데 */
+    .main_popup {inset: 0; display: flex; align-items: flex-end; justify-content: center; background-color: rgba(0,0,0,.4);}
+    .main_popup .popup {width: 100%; max-width: 48rem; border-radius: 1.6rem 1.6rem 0 0; box-shadow: none;}
     .main_popup .popup_swiper {height: auto; aspect-ratio: 360 / 200;}
     .main_popup .txt {padding: 4rem 2rem 2rem;}
     .main_popup .pop_count {right: 2rem; bottom: 2rem; gap: .4rem; padding: .4rem 1.2rem; border: 1px solid #fff; background: none; font-size: 1.2rem; line-height: 1.6rem;}

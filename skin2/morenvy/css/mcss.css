@@ -375,7 +375,6 @@ body.searchOn #dimmedSlider {visibility: visible; opacity: 1;}
 
 
 
-/* 상품 : 목록 → 파일 아래 "상품 : 목록 (분류·랭킹)"으로 옮겨 새로 씀 */
 
 
 
@@ -510,7 +509,7 @@ body.searchOn #dimmedSlider {visibility: visible; opacity: 1;}
 .txt_ban2 .inner {height: 3.2rem; padding: 0;}
 .txt_ban2 a {display: block;}
 .txt_ban2 span {font-family: var(--font-kr); font-size: 1.3rem; line-height: 2rem;}
-.txt_ban2 span.btn_close {display: none;}  /* 시안에 닫기 버튼 없음 */
+.txt_ban2 span.btn_close {display: none;}
 
 
 /* -------------------------------
@@ -521,11 +520,11 @@ body.searchOn #dimmedSlider {visibility: visible; opacity: 1;}
 #header.h_type01 button {color: inherit; font-family: inherit;}
 #header.h_type01 .h_inner {position: relative; display: flex; align-items: center; justify-content: space-between; height: var(--head-h); padding: 0 4rem; background-color: #fff; border-bottom: 1px solid var(--c-line); color: var(--c-black); transition: background-color .3s, color .3s, border-color .3s;}
 
-/* 메인 : 키비주얼 위에 투명 헤더 (스크롤·메뉴 열림 시 h_white) */
+/* 메인 : 키비주얼 위에 투명 헤더 */
 body.is_main #header.h_type01:not(.h_white):not(:hover) .h_inner {background-color: transparent; border-color: transparent; color: #fff;}
 body.is_main #container {margin-top: calc(var(--head-h) * -1);}
 
-/* 로고 (배너관리자 8626 : 타이틀 = a GaGu) */
+/* 로고 */
 #header.h_type01 .h_logo {position: relative; z-index: 1;}
 #header.h_type01 .h_logo a {display: block; font-family: var(--font-en); font-style: italic; font-weight: 500; font-size: 2.4rem; line-height: 4rem; white-space: nowrap;}
 #header.h_type01 .h_logo img {max-height: 4rem; width: auto;}
@@ -533,7 +532,7 @@ body.is_main #container {margin-top: calc(var(--head-h) * -1);}
 /* 가운데 메뉴 */
 #header.h_type01 .h_gnb {position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 3.2rem; pointer-events: none;}
 #header.h_type01 .h_gnb > * {pointer-events: auto;}
-#header.h_type01 .h_gnb > ul {display: flex; align-items: center; gap: 3.2rem;}  /* 하위 분류 목록에는 걸리지 않게 > 로 한정 */
+#header.h_type01 .h_gnb > ul {display: flex; align-items: center; gap: 3.2rem;}
 #header.h_type01 .h_gnb .h_category {align-self: stretch; align-items: stretch;}
 #header.h_type01 .h_gnb .h_category > li {display: flex; align-items: center;}
 #header.h_type01 .h_gnb li a {display: block; font-size: 1.6rem; line-height: 2.4rem; font-weight: 500; white-space: nowrap; transition: color .2s;}
@@ -549,7 +548,7 @@ body.is_main #header.h_type01:not(.h_white):not(:hover) .h_gnb .bar {background-
 #header.h_type01 .h_util li svg {display: block; max-width: none;}
 #header.h_type01 .h_util .menu {display: none;}
 
-/* 하위 분류 (opencate.js : .slideSubMenu.depth2 > ul > li > a + .depth3) */
+/* 하위 분류 */
 #header.h_type01 .h_category .slideSubMenu {position: absolute; left: 0; top: 100%; display: none; width: 100%; padding: 4rem 4rem 8rem; background-color: #fff; border-top: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line);}
 #header.h_type01 .h_category > li.selected > .slideSubMenu {display: block;}
 #header.h_type01 .h_category .slideSubMenu > ul {display: flex; justify-content: center; gap: 0;}
@@ -564,7 +563,7 @@ body.is_main #header.h_type01:not(.h_white):not(:hover) .h_gnb .bar {background-
 #header.h_type01 .h_category .slideSubMenu .depth4 a:hover {color: var(--c-point);}
 
 /* -------------------------------
-    상단 : 검색 (오른쪽 사이드 480px)
+    상단 : 검색
 ------------------------------- */
 .h_dim {position: fixed; inset: 0; z-index: 1999; background-color: rgba(0,0,0,.4); opacity: 0; visibility: hidden; transition: opacity .3s, visibility .3s;}
 body.searchOn .h_dim {opacity: 1; visibility: visible;}
@@ -593,12 +592,12 @@ body.searchOn {overflow: hidden;}
 .search_box.type01 .recent_keyword li .del img {width: 1.6rem; height: 1.6rem;}
 .search_box.type01 .recent_keyword .blank {font-size: 1.4rem; line-height: 2rem; color: var(--c-grey);}
 
-/* 검색 : 최근 본 상품 (product_recentlist, 검색 패널 아래에 고정) */
+/* 검색 : 최근 본 상품 */
 .sch_recent {position: fixed; right: -48rem; bottom: 0; z-index: 2001; width: 48rem; max-width: 100%; padding: 0 4rem 4rem; background-color: #fff; font-family: var(--font-kr); visibility: hidden; transition: right .4s, visibility .4s;}
 body.searchOn .sch_recent {right: 0; visibility: visible;}
 .sch_recent h3 {display: flex; align-items: center; justify-content: space-between; margin-bottom: 2.4rem; font-size: 1.6rem; line-height: 2.4rem; font-weight: 400; color: var(--c-black);}
 .sch_recent h3 a {font-size: 1.3rem; line-height: 2rem; color: var(--c-grey);}
-.sch_recent .swiper {margin: 0 -4rem; padding: 0 4rem;}  /* 목록이 좌우 여백에서 잘리지 않고 화면 끝까지 */
+.sch_recent .swiper {margin: 0 -4rem; padding: 0 4rem;}
 .sch_recent li a {display: flex; flex-direction: column; gap: 1.2rem;}
 .sch_recent li .name {display: block; overflow: hidden; font-size: 1.3rem; line-height: 2rem; color: var(--c-black); white-space: nowrap; text-overflow: ellipsis;}
 .sch_recent li {width: 12rem;}
@@ -615,7 +614,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 #footer.f_type01 a {color: inherit;}
 #footer.f_type01 .f_inner {display: flex; align-items: flex-start; justify-content: space-between; gap: 4rem; max-width: none; padding: 8rem 4rem;}
 #footer.f_type01 .f_left,
-#footer.f_type01 .f_right {flex: none; max-width: none; order: 0; padding: 0; border: 0;}  /* 위쪽 예전 푸터 규칙(50%·25%·순서) 해제 */
+#footer.f_type01 .f_right {flex: none; max-width: none; order: 0; padding: 0; border: 0;}
 #footer.f_type01 .f_left {flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 2rem;}
 #footer.f_type01 .f_right {flex: 0 1 auto; min-width: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 2rem;}
 
@@ -633,7 +632,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 #footer.f_type01 .f_biz_btn svg {transform: rotate(-90deg); transition: transform .3s;}
 #footer.f_type01 .f_info_wrap.close .f_biz_btn svg {transform: rotate(90deg);}
 #footer.f_type01 .f_info_wrap {display: flex; flex-direction: column; gap: .8rem;}
-#footer.f_type01 .f_info {display: flex; flex-wrap: wrap; gap: 0 .8rem;}  /* 좁아지면 항목 단위로 줄바꿈 */
+#footer.f_type01 .f_info {display: flex; flex-wrap: wrap; gap: 0 .8rem;}
 #footer.f_type01 .f_info p {font-size: 1.2rem; line-height: 1.8rem; color: var(--c-grey); white-space: nowrap;}
 #footer.f_type01 .f_info .com_regno_btn a {margin-left: .4rem; color: var(--c-grey); text-decoration: none;}
 
@@ -648,7 +647,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 
 
 /* -------------------------------
-    하단 : 퀵 메뉴 (PC) · 고정 메뉴 (모바일) — /layout/basic/quick.html
+    하단 : 퀵 메뉴
 ------------------------------- */
 #quick {position: fixed; right: 4rem; bottom: 4rem; z-index: 900; display: flex; flex-direction: column; gap: 1rem; visibility: hidden; opacity: 0; transform: translateY(1.6rem); transition: opacity .3s, visibility .3s, transform .3s;}
 #quick.on {visibility: visible; opacity: 1; transform: none;}
@@ -665,7 +664,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 
 
 /* -------------------------------
-    반응형 : 1280px (헤더만 — 가운데 메뉴가 로고·아이콘과 겹치기 전에 모바일 헤더로)
+    반응형 : 1280px (헤더)
 ------------------------------- */
 @media all and (max-width:1280px) {
     /* 헤더 */
@@ -687,7 +686,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 
     /* 검색 */
     #searchBarForm {width: 100%; right: -100%;}
-    #searchBarForm.active {max-width: 100%;}  /* 위쪽 예전 규칙(100% - 3.2rem) 해제 : 사이드 메뉴처럼 화면 꽉 차게 */
+    #searchBarForm.active {max-width: 100%;}
     .search_box.type01 .sch_head {height: 5.6rem; padding: 0 2rem;}
     .search_box.type01 .sch_body {gap: 3.2rem; padding: 2.4rem 2rem 22rem;}
     .sch_recent {width: 100%; right: -100%; padding: 0 2rem 2.4rem;}
@@ -704,7 +703,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
     #footer.f_type01 .f_menu li a {font-size: 1.2rem; line-height: 1.6rem;}
     #footer.f_type01 .f_menu .pc {display: none;}
     #footer.f_type01 .f_menu .mo {display: inline;}
-    #footer.f_type01 .f_menu li {order: 9;}  /* 모바일 순서 : 브랜드 · 공지사항 · 이벤트 · 리뷰 · FAQ */
+    #footer.f_type01 .f_menu li {order: 9;}
     #footer.f_type01 .f_menu li:nth-child(1) {order: 1;}
     #footer.f_type01 .f_menu li:nth-child(3) {order: 2;}
     #footer.f_type01 .f_menu li.event {order: 3;}
@@ -733,8 +732,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 
 
 /* -------------------------------------------------------------------
-    공통 : 상품 카드 (메인 product/product_list2.html · 목록 product/product_list.html)
-    메인 main.css 에 있던 것을 목록에서도 쓰려고 옮김
+    공통 : 상품
 ------------------------------------------------------------------- */
 .prd_box .thumb {position: relative; aspect-ratio: 1 / 1; overflow: hidden; background-color: var(--c-bg);}
 .prd_box .thumb .img {display: block; width: 100%; height: 100%;}
@@ -757,7 +755,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 .prd_box .info .spec {display: flex; flex-wrap: wrap; align-items: center; gap: .6rem .8rem; margin: 0;}
 .prd_box .info .spec li {margin: 0; line-height: 2rem;}
 .prd_box .info .spec li[rel="판매가"],
-.prd_box .info .spec li[rel="할인판매가"] {display: flex; align-items: center;}  /* 글꼴이 섞여 줄 높이가 25px로 늘어나 할인율과 어긋나던 것 */
+.prd_box .info .spec li[rel="할인판매가"] {display: flex; align-items: center;}
 .prd_box .info .spec li .title {display: none;}
 .prd_box .info .spec li[rel="상품요약정보"],
 .prd_box .info .spec li[rel="상품 요약설명"],
@@ -801,14 +799,13 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 .prd_box .thumb:has(> .cart:not(.displaynone)):hover .prdIcon {opacity: 0;}  /* 빠른배송 배지와 자리가 겹쳐 호버 땐 배지를 숨김 */
 
 @media all and (max-width:1024px) {
-    /* 모바일은 시안대로 CART 버튼을 숨김(호버가 없음) */
     .prd_box .thumb > .cart {display: none;}
     .prd_box .thumb:has(> .cart:not(.displaynone)):hover .prdIcon {opacity: 1;}
 }
 
 
 /* -------------------------------------------------------------------
-    상품 : 목록 (분류·랭킹) product/list.html · product/list_ranking.html
+    상품 : 목록
 ------------------------------------------------------------------- */
 #container #contents:has(.list_wrap) {max-width: none !important; padding: 0 !important;}
 .list_wrap {padding-bottom: 16rem; font-family: var(--font-kr); color: var(--c-black);}
@@ -836,10 +833,10 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 /* 목록 03 : 상단 이미지 */
 .list_ban {margin: 4rem 4rem 0;}
 .list_ban .product_top_image img {display: block; width: 100%; height: auto;}
-.list_ban .product_top_image img:nth-of-type(n+2) {display: none;}  /* 상단 이미지 1 = PC, 2 = 모바일(등록했을 때만), 3은 안 씀 */
+.list_ban .product_top_image img:nth-of-type(n+2) {display: none;}
 
 /* 목록 04·05 : 추천상품 · 신상품 슬라이드 */
-.list_wrap .list_slide.ec-base-product {margin: 4rem 0 0; overflow: visible;}  /* 카페24 기본 .xans-product-listrecommend 좌우 margin 풀기 */
+.list_wrap .list_slide.ec-base-product {margin: 4rem 0 0; overflow: visible;}
 .list_wrap .list_slide + .list_slide {margin-top: 8rem;}
 .list_slide .l_title {margin-bottom: 2.4rem; padding: 0 4rem;}
 .list_wrap .list_slide .l_title h2 {margin: 0; padding: 0; font-family: var(--font-en); font-size: 2.4rem; line-height: 3.2rem; font-weight: 700; letter-spacing: .024rem; text-transform: capitalize; color: var(--c-black);}
@@ -847,9 +844,9 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 .list_wrap .ec-base-product .prdList {border: 0; background: none;}
 .list_wrap .ec-base-product .prdList > li {width: auto; height: auto; margin: 0; border: 0;}
 .list_wrap .list_slide .prdList {display: flex; flex-wrap: nowrap; margin: 0; padding: 0;}
-.list_wrap .list_slide .prdList > li {flex-shrink: 0;}  /* 폭은 product_list.js 의 slidesPerView 가 정함 */
+.list_wrap .list_slide .prdList > li {flex-shrink: 0;}
 
-/* 추천상품 순위 배지 01~ (1~3위 포인트색, 4위부터 검정) */
+/* 추천상품 순위 배지 */
 .list_recmd .prdList {counter-reset: rank;}
 .list_recmd .prdList > li {counter-increment: rank;}
 .list_recmd .prd_box .thumb .rank {position: absolute; left: 0; top: 0; z-index: 2; display: flex; align-items: center; justify-content: center; width: 4rem; height: 4rem; background-color: var(--c-point); font-family: var(--font-en); font-size: 1.6rem; line-height: 1.6rem; font-weight: 600; color: #fff;}
@@ -871,14 +868,14 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 .list_wrap .xans-project-productlist {margin-top: 2.4rem; padding: 0 4rem;}
 .list_wrap .list_prd .prdList_normal {display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6.4rem 2rem; margin: 0; padding: 0;}
 
-/* 검색 : product/search.html */
+/* 검색 */
 #contents .list_search .search_top {padding-top: 4rem;}
 #contents .list_search .xans-product-searchdata .searchResult {margin-top: 4rem; padding: 0 4rem;}
 .list_search .search_top .xans-product-normalmenu .function {margin: 0; padding: 0;}
 .list_search .search_top .xans-product-normalmenu .function .prdCount {display: block;}
 .list_search .list_prd {margin-top: 0;}
 
-/* 기획전 : product/project.html */
+/* 기획전 */
 .list_ban:not(:has(img)) {display: none;}
 .list_project .fixTab {margin-top: 2.4rem;}
 .list_wrap.list_project .swiper_title_tab {margin: 0; padding: 1.6rem 4rem;}
@@ -902,7 +899,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 /* 상품이 없을 때 */
 .list_wrap .js-empty-product-message {padding: 12rem 0; font-size: 1.4rem; line-height: 2rem; color: var(--c-grey); text-align: center;}
 
-/* 랭킹 : 외곽선 순위 숫자 */
+/* 랭킹 */
 .list_ranking .list_title h2 {font-family: var(--font-en); font-size: 3.6rem; line-height: 4.8rem; font-weight: 700; letter-spacing: .036rem;}
 .list_ranking .list_prd {margin-top: 12rem;}
 .list_ranking .list_prd .prdList_normal {row-gap: 8rem;}
@@ -910,7 +907,6 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
 .prdList_rank > li {counter-increment: rank;}
 .prdList_rank .prd_box .thumb {overflow: visible;}
 .prdList_rank .prd_box .thumb .rank {position: absolute; left: 0; top: -5rem; z-index: 2; display: flex; align-items: center; justify-content: center; width: 10rem; height: 10rem; font-family: var(--font-en); font-size: 8rem; line-height: 8rem; font-weight: 700; letter-spacing: .08rem; color: transparent; pointer-events: none;}
-/* 외곽선만 그리면 가변 글꼴의 겹친 획(4·1 안쪽 선)이 보여서, 아래(::before)는 2px 외곽선, 위(::after)는 바탕색(위 흰색·아래 썸네일 회색)으로 채운 같은 숫자를 덮어 바깥 1px 선만 남김 */
 .prdList_rank .prd_box .thumb .rank::before {content: counter(rank); -webkit-text-stroke: 2px var(--c-black);}
 .prdList_rank .prd_box .thumb .rank::after {content: counter(rank); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: linear-gradient(to bottom, #fff 50%, var(--c-bg) 50%); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-stroke: 0;}
 
@@ -937,7 +933,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
     .list_wrap .list_slide .l_title h2 {line-height: 2.8rem;}
     .list_wrap .list_slide + .list_slide {margin-top: 5.6rem;}
     .list_wrap .list_slide .swiper {padding: 0 2rem;}
-    .list_recmd .prd_box .thumb .rank {display: none;}  /* 모바일 Best Item 은 배지 없음 */
+    .list_recmd .prd_box .thumb .rank {display: none;}
 
     .list_wrap:has(.list_slide .prdList > li) .list_prd {margin-top: 5.6rem;}
     .list_wrap .xans-product-normalmenu {padding: 0 2rem;}
@@ -973,7 +969,7 @@ body.searchOn .sch_recent {right: 0; visibility: visible;}
     .list_wrap .list_prd .prdList_normal {grid-template-columns: repeat(2, minmax(0, 1fr));}
 }
 
-/* 옵션 선택 레이어(목록 CART) 바깥 틀 : 시안 PC 480px · 딤 rgba(0,0,0,.7) */
+/* 옵션 선택 레이어 */
 #capp-shop-new-product-optionselect-layer:after {background: rgba(0,0,0,.7);}
 @media all and (min-width:1025px) {
     #capp-shop-new-product-optionselect-layer {width: 48rem !important;}

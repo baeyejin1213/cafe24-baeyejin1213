@@ -1,6 +1,6 @@
 /*
-* »ó¼¼ÆäÀÌÁö ¹«·á¹è¼Û ÁøÇàÇ¥½ÃÁÙ ver1.0
-* morenvy.com ¼­Á¤È¯ ¼öÁ¤ 24.03.15
+* ìƒì„¸í˜ì´ì§€ ë¬´ë£Œë°°ì†¡ ì§„í–‰í‘œì‹œì¤„ ver1.0
+* morenvy.com ì„œì •í™˜ ìˆ˜ì • 24.03.15
 */
 
 .free_shipping { text-align: center; display: none; margin: 24px 0 0; padding: 0; }
@@ -12,3 +12,19 @@
 .free_shipping #shipping_bar .progressbar .proggress {background-color:#174FFF !important;}
 .free_shipping .delivery_price {display:flex;align-items:center;justify-content:space-between;}
 .free_shipping .delivery_price span {font-size:13px; font-weight:700; line-height:1.5; color:#1a1a1a;}
+
+#contents .xans-product-detail .free_shipping {margin: 2.4rem 0 0; text-align: left;}
+#contents .xans-product-detail .free_shipping.off {display: none !important;}
+#contents .xans-product-detail .free_shipping .free_shipping_txt01,
+#contents .xans-product-detail .free_shipping .free_shipping_txt02 {font-size: 1.3rem; line-height: 2rem; color: var(--c-black);}
+#contents .xans-product-detail .free_shipping .free_shipping_txt01 span,
+#contents .xans-product-detail .free_shipping .free_shipping_txt02 span {font-weight: 600; color: var(--c-point);}
+#contents .xans-product-detail .free_shipping #shipping_bar {margin: .8rem 0;}
+#contents .xans-product-detail .free_shipping #shipping_bar .progressbar {background-color: var(--c-line) !important;}
+#contents .xans-product-detail .free_shipping #shipping_bar .proggress {background-color: var(--c-black) !important;}
+#contents .xans-product-detail .free_shipping .delivery_price span {font-size: 1.2rem; line-height: 1.6rem; font-weight: 400; color: var(--c-grey);}
+#contents .xans-product-detail .free_shipping .delivery_price .total_amount {font-family: var(--font-en); color: var(--c-black);}
+
+@media all and (max-width:1024px) {
+    #contents .xans-product-detail .free_shipping {margin-top: 1.6rem;}
+}
