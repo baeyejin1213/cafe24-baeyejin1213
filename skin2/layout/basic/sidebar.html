@@ -11,20 +11,12 @@
 				</ul>
 			</div>
 			<!-- 사이드 메뉴 : 로그인 멘트 -->
-			<p class="msg" module="Layout_statelogoff">로그인이 필요합니다</p>
-			<p class="msg" module="Layout_statelogon"><span class="xans-member-var-name"></span>님</p>
+			<!--@import(/section/side_login_txt.html)-->
 		</div>
 		<button type="button" class="side_close" title="닫기"><!--@import(/morenvyimg/side_close.svg)--></button>
 
 		<!-- 사이드 메뉴 : 로그인 메뉴 -->
-		<div class="btns" module="Layout_statelogoff">
-			<a href="/member/login.html">로그인</a>
-			<a href="/member/join.html" class="fill">회원가입</a>
-		</div>
-		<div class="btns" module="Layout_statelogon">
-			<a href="/myshop/index.html">마이페이지</a>
-			<a href="{$action_logout}" class="fill">로그아웃</a>
-		</div>
+		<!--@import(/section/side_login_menu.html)-->
 	</div>
 
 	<!-- 사이드 메뉴 : 카테고리 -->
