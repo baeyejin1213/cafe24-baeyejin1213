@@ -1,0 +1,535 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<!-- 아래부터 복사 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+
+<div id="project_wrap" class="project_wrap">
+    <!-- 기획전 섹션 01 -->
+    <div class="p_sec01 fadeEl">
+        <div class="swiper swiper01">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/promotion/img/261125_winter_shoes/kv01.webp" alt=""></div>
+                <div class="swiper-slide"><img src="/promotion/img/261125_winter_shoes/kv02.webp" alt=""></div>
+                <div class="swiper-slide"><img src="/promotion/img/261125_winter_shoes/kv03.webp" alt=""></div>
+            </div>
+        </div>
+
+        <div class="txt">
+            <div class="t01 eb fadeCh fadeInUp" style="animation-delay: 0.2s;">The Winter <br><em>Archive</em></div>
+            <div class="t02 fadeCh fadeInUp" style="animation-delay: 0.4s;">겨울을 위한 슈즈 셀렉션</div>
+            <div class="fadeCh fadeInUp" style="animation-delay: 0.6s;"><button type="button" class="kv_btn">20% 쿠폰 받기<svg width="10" height="10" viewBox="0 0 9.5 9.5" fill="none"><path d="M0 4.75H9.5M9.5 4.75L4.75 0M9.5 4.75L4.75 9.5" stroke="currentColor" stroke-width="1.5"></path></svg></button></div>
+        </div>
+        <div class="kv_dot"></div>
+    </div>
+
+    <!-- 기획전 섹션 02 -->
+    <div class="p_sec02 fadeEl">
+        <div class="t01 fadeCh fadeInUp">발목을 포근하게 감싸는 부츠부터 편하게 신는 슬립온까지</div>
+        <div class="t02 fadeCh fadeInUp" style="animation-delay: 0.1s;">찬 바람이 불기 시작할 때면 다시 손이 가는<br>락포트의 윈터 슈즈를 모았습니다.</div>
+        <div class="t03 eb fadeCh fadeInUp" style="animation-delay: 0.2s;">12.01 Tue – 12.13 Sun</div>
+    </div>
+
+    <!-- 기획전 탭 -->
+    <div class="p_tab">
+        <ul>
+            <li class="on">20% 쿠폰</li>
+            <li>부츠</li>
+            <li>로퍼 &amp; 슬립온</li>
+        </ul>
+    </div>
+
+    <!-- 기획전 섹션 03 -->
+    <div class="p_sec03">
+        <canvas class="snow"></canvas>
+
+        <div class="inner">
+            <div class="fadeEl">
+                <div class="t01 eb fadeCh fadeInUp">WINTER COUPON</div>
+                <div class="t02 eb fadeCh fadeInUp" style="animation-delay: 0.1s;">Kept for Winter</div>
+                <div class="t03 fadeCh fadeInUp" style="animation-delay: 0.2s;">윈터 상품 전용 20% 쿠폰</div>
+                <div class="fadeCh fadeInUp" style="animation-delay: 0.3s;">
+                    <a href="/exec/front/newcoupon/IssueDownload?coupon_no=6086850846900000040&is_popup=T" class="coupon">
+                        <div class="cp_left">
+                            <div class="c01 eb">ROCKPORT WINTER COUPON</div>
+                            <div class="c02 eb">20%<span>OFF</span></div>
+                            <div class="c03">윈터 슈즈 할인 쿠폰</div>
+                            <div class="c04 eb">2026.12.01 — 12.13</div>
+                        </div>
+                        <div class="cp_right">
+                            <svg width="22" height="22" viewBox="0 0 22 22" fill="#fff"><path class="arrow" d="M18.5 11.14L17.519 10.194L11.701 15.711V0H10.299V15.711L4.481 10.194L3.5 11.14L11 18.269L18.5 11.14Z"></path><path d="M20.778 16.808V20.752H1.222V16.808H0V22H22V16.808H20.778Z"></path></svg>
+                            <span>쿠폰받기</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="notice">
+                <button type="button" class="notice_toggle" aria-expanded="false">유의사항<svg width="10" height="6" viewBox="-1 -1 10 6" fill="none"><path d="M0 0L4 4L8 0" stroke="#fff"></path></svg></button>
+                <ul>
+                    <li>쿠폰 사용 기간 : 2026.12.01 ~ 12.13</li>
+                    <li>ID당 1회 발급 가능합니다.</li>
+                    <li>타 쿠폰과 중복 사용이 불가합니다.</li>
+                    <li>내부 사정에 따라 사전 안내 없이 변경 또는 종료될 수 있습니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="p_paper">
+        <!-- 기획전 섹션 04 -->
+        <div class="p_sec04">
+            <div class="sec_tit fadeEl">
+                <div class="t01 eb fadeCh fadeInUp">Winter Boots</div>
+                <div class="t02 fadeCh fadeInUp" style="animation-delay: 0.1s;">시어링의 포근한 질감부터 첼시 부츠의 간결한 실루엣까지<br>락포트의 부츠를 소재와 디자인에 따라 만나보세요.</div>
+            </div>
+            <ul class="item_list fadeEl">
+                <li class="fadeCh fadeInUp">
+                    <a href="/product/detail.html?product_no=2392">
+                        <div class="img">
+                            <img src="/promotion/img/261125_winter_shoes/item01.webp" alt="에스텔 퍼 부츠">
+                            <img class="cut" src="/promotion/img/261125_winter_shoes/item01_on.webp" alt="">
+                        </div>
+                        <div class="t01 eb">Shearling Suede Boot</div>
+                        <div class="t02">에스텔 퍼 부츠</div>
+                        <div class="t03">찬 바람이 불면 생각나는 시어링의<br>포근함</div>
+                        <span class="more">쇼핑하기</span>
+                    </a>
+                </li>
+                <li class="fadeCh fadeInUp" style="animation-delay: 0.1s;">
+                    <a href="/product/detail.html?product_no=2275">
+                        <div class="img">
+                            <img src="/promotion/img/261125_winter_shoes/item02.webp" alt="마르코 부츠">
+                        </div>
+                        <div class="t01 eb">Moc Toe Lace-up</div>
+                        <div class="t02">마르코 부츠</div>
+                        <div class="t03">짙은 브라운 위로 앞코를 따라<br>이어지는 스티치</div>
+                        <span class="more">쇼핑하기</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="item_list fadeEl">
+                <li class="fadeCh fadeInUp">
+                    <a href="/product/detail.html?product_no=2274">
+                        <div class="img">
+                            <img src="/promotion/img/261125_winter_shoes/item03.webp" alt="마르첼로 첼시">
+                            <img class="cut" src="/promotion/img/261125_winter_shoes/item03_on.webp" alt="">
+                        </div>
+                        <div class="t01 eb">Suede Chelsea Boot</div>
+                        <div class="t02">마르첼로 첼시</div>
+                        <div class="t03">캐멀 스웨이드에 블랙 밴딩으로<br>선을 잡은 첼시 부츠</div>
+                        <span class="more">쇼핑하기</span>
+                    </a>
+                </li>
+                <li class="fadeCh fadeInUp" style="animation-delay: 0.1s;">
+                    <a href="/product/detail.html?product_no=2227">
+                        <div class="img">
+                            <img src="/promotion/img/261125_winter_shoes/item04.webp" alt="도티스 부츠">
+                            <img class="cut" src="/promotion/img/261125_winter_shoes/item04_on.webp" alt="">
+                        </div>
+                        <div class="t01 eb">Side-zip Ankle Boot</div>
+                        <div class="t02">도티스 부츠</div>
+                        <div class="t03">간결한 실루엣에 신고 벗기 편한 옆지퍼를 더한 부츠</div>
+                        <span class="more">쇼핑하기</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="item_list fadeEl">
+                <li class="fadeCh fadeInUp">
+                    <a href="/product/detail.html?product_no=2177">
+                        <div class="img">
+                            <img src="/promotion/img/261125_winter_shoes/item05.webp" alt="티건 버클 부츠">
+                            <img class="cut" src="/promotion/img/261125_winter_shoes/item05_on.webp" alt="">
+                        </div>
+                        <div class="t01 eb">Buckle Strap Boot</div>
+                        <div class="t02">티건 버클 부츠</div>
+                        <div class="t03">블랙 레더 위로 발목을 감싸는<br>버클 스트랩</div>
+                        <span class="more">쇼핑하기</span>
+                    </a>
+                </li>
+                <li class="fadeCh fadeInUp" style="animation-delay: 0.1s;">
+                    <div class="img note">
+                        <div class="n01 eb">ARCHIVE NOTE</div>
+                        <div class="n02 eb">“Good things stay.”</div>
+                        <div class="n03">좋은 것은 시간이 지나도 곁에 남습니다. 해마다 다시 꺼내 신게 되는 신발처럼</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 기획전 섹션 05 -->
+        <div class="p_sec05">
+            <div class="sec_tit fadeEl">
+                <div class="t01 eb fadeCh fadeInUp">Loafers <span>&amp;</span> Slip-ons</div>
+                <div class="t02 fadeCh fadeInUp" style="animation-delay: 0.1s;">단정한 레더 로퍼와 포근한 퍼 라이닝 슬립온<br>겨울에도 자주 신기 좋은 두 가지 스타일을 소개합니다.</div>
+            </div>
+            <ul class="item_list fadeEl">
+                <li class="fadeCh fadeInUp">
+                    <a href="/product/detail.html?product_no=2285">
+                        <div class="img">
+                            <img src="/promotion/img/261125_winter_shoes/item06.webp" alt="듀오폼 프로워커 다노 페니">
+                            <img class="cut" src="/promotion/img/261125_winter_shoes/item06_on.webp" alt="">
+                        </div>
+                        <div class="t01 eb">The Penny Loafer</div>
+                        <div class="t02">듀오폼 프로워커 다노 페니</div>
+                        <div class="t03">은은한 광택의 브라운 레더가<br>돋보이는 페니 로퍼</div>
+                        <span class="more">쇼핑하기</span>
+                    </a>
+                </li>
+                <li class="fadeCh fadeInUp" style="animation-delay: 0.1s;">
+                    <a href="/product/detail.html?product_no=2395">
+                        <div class="img">
+                            <img src="/promotion/img/261125_winter_shoes/item07.webp" alt="이브이 퍼 블로퍼">
+                        </div>
+                        <div class="t01 eb">Fur-lined Slip-on</div>
+                        <div class="t02">이브이 퍼 블로퍼</div>
+                        <div class="t03">발을 넣는 순간 부드러운 퍼가<br>감싸는 슬립온</div>
+                        <span class="more">쇼핑하기</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* 공통 */
+    #container {overflow: visible;}
+    #container,
+    #contents {max-width: 100%; padding: 0; margin-left: 0;}
+    #container #contents {max-width: 100%; padding: 0;}
+    #project_wrap {background-color: #f2ede6; color: #1e1e1e; overflow-x: clip; word-break: keep-all;}
+    #project_wrap *,
+    #project_wrap *::before,
+    #project_wrap *::after {box-sizing: border-box;}
+    #project_wrap img {width: 100%; max-width: none;}
+    #project_wrap * {font-family: "Pretendard", "Pretendard Variable", sans-serif;}
+    #project_wrap a,
+    #project_wrap a:hover {color: inherit; text-decoration: none;}
+    #project_wrap .eb,
+    #project_wrap .eb * {font-family: "EB Garamond", serif;}
+    #project_wrap em {font-style: italic;}
+    #project_wrap svg {display: block; overflow: visible;}
+    #project_wrap button {padding: 0; border: 0; background: none; cursor: pointer;}
+    #project_wrap .swiper {overflow: hidden;}
+
+    #project_wrap .sec_tit {text-align: center;}
+    #project_wrap .sec_tit .t01 {font-size: 36px; line-height: 1.6; font-weight: 500; color: #311912;}
+    #project_wrap .sec_tit .t01 span {color: #80381b;}
+    #project_wrap .sec_tit .t02 {margin-top: 16px; font-size: 13px; line-height: 1.6; color: #666;}
+    #project_wrap .item_list {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding: 0 19px;}
+    #project_wrap .item_list + .item_list {margin-top: 48px;}
+    #project_wrap .item_list li > a {display: block;}
+    #project_wrap .item_list .img {position: relative; aspect-ratio: 159 / 198; margin: -2px -2px 12px; border: 4px solid #ece3d8; overflow: hidden;}
+    #project_wrap .item_list .img img {position: absolute; top: -2px; left: -2px; width: calc(100% + 4px); height: calc(100% + 4px); object-fit: cover;}
+    #project_wrap .item_list .img .cut {opacity: 0; transition: opacity 0.6s linear;}
+    #project_wrap .item_list .img .cut.on {opacity: 1;}
+    #project_wrap .item_list .t01 {font-size: 13px; line-height: 17px; font-weight: 500; font-style: italic; color: #753a14;}
+    #project_wrap .item_list .t02 {margin-top: 4px; font-size: 14px; line-height: 17px; font-weight: 600; letter-spacing: -0.02em;}
+    #project_wrap .item_list .t03 {min-height: 36px; margin-top: 10px; font-size: 12px; line-height: 1.5; font-weight: 300; letter-spacing: -0.02em; color: #333;}
+    #project_wrap .item_list .more {display: block; width: fit-content; margin-top: 6px; font-size: 13px; line-height: 20px; font-weight: 700; color: #271408; text-decoration: underline; text-underline-offset: 3px;}
+    #project_wrap .item_list .note {display: flex; flex-direction: column; padding: 18px 10px 22px; background: linear-gradient(150deg, #e0d0b8 18%, #a88159 280%);}
+    #project_wrap .item_list .n01 {font-size: 9px; line-height: 12px; font-weight: 500; letter-spacing: 0.02em; color: #753a14;}
+    #project_wrap .item_list .n02 {margin-top: 9px; font-size: 18px; line-height: 1; font-weight: 500; font-style: italic; letter-spacing: -0.02em; white-space: nowrap; color: #462c1d;}
+    #project_wrap .item_list .n03 {margin-top: auto; font-size: 11px; line-height: 1.5; letter-spacing: -0.02em; color: #333;}
+
+    /* 기획전 섹션 01 */
+    #project_wrap .p_sec01 {position: relative; aspect-ratio: 360 / 660; background-color: #c5b097; overflow: hidden;}
+    #project_wrap .p_sec01 .swiper {position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%;}
+    #project_wrap .p_sec01 .swiper-wrapper {display: flex; width: 100%; height: 100%;}
+    #project_wrap .p_sec01 .swiper-slide {flex-shrink: 0; width: 100%; height: 100%; transition-property: opacity;}
+    #project_wrap .p_sec01 .swiper-slide img {display: block; width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); transition: transform 0s 1.2s;}
+    #project_wrap .p_sec01 .swiper-slide-active img {transform: scale(1); transition: transform 5.7s ease-out;}
+    #project_wrap .p_sec01::after {content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(77, 49, 30, 0) 41.37%, rgba(77, 49, 30, 0.4) 99.17%); pointer-events: none;}
+    #project_wrap .p_sec01 .txt {position: absolute; z-index: 2; left: 0; right: 0; bottom: 76px; display: flex; flex-direction: column; align-items: center; text-align: center; color: #fff; pointer-events: none;}
+    #project_wrap .p_sec01 .t01 {font-size: 48px; line-height: 1; font-weight: 500; letter-spacing: -0.02em;}
+    #project_wrap .p_sec01 .t01 em {font-weight: 600;}
+    #project_wrap .p_sec01 .t02 {margin-top: 16px; font-size: 16px; line-height: 17px; font-weight: 500;}
+    #project_wrap .p_sec01 .kv_btn {display: flex; align-items: center; justify-content: center; gap: 8px; width: 163px; height: 46px; margin-top: 24px; border-radius: 6px; background-color: #fff; font-size: 14px; font-weight: 700; color: #462c1d; transition: background-color 0.3s, color 0.3s; pointer-events: auto;}
+    #project_wrap .p_sec01 .kv_btn svg {transition: transform 0.3s;}
+    #project_wrap .p_sec01 .kv_dot {position: absolute; z-index: 2; left: 0; right: 0; bottom: 40px; display: flex; justify-content: center; gap: 6px;}
+    #project_wrap .p_sec01 .dot {display: block; width: 6px; height: 6px; border-radius: 30px; background-color: rgba(255, 255, 255, 0.45); cursor: pointer; transition: width 0.3s, background-color 0.3s;}
+    #project_wrap .p_sec01 .dot.on {width: 18px; background-color: #fff;}
+
+    /* 기획전 섹션 02 */
+    #project_wrap .p_sec02 {padding: 48px 14px; text-align: center; color: #1a1a1a;}
+    #project_wrap .p_sec02 .t01,
+    #project_wrap .p_sec02 .t02 {font-size: 14px; line-height: 1.6;}
+    #project_wrap .p_sec02 .t02 {margin-top: 16px;}
+    #project_wrap .p_sec02 .t03 {margin-top: 36px; font-size: 14px; line-height: 15px; font-weight: 600;}
+
+    /* 기획전 탭 */
+    #project_wrap .p_tab {position: sticky; top: 0; z-index: 10; background-color: #462c1d;}
+    #project_wrap .p_tab ul {display: flex; gap: 16px; padding: 0 20px;}
+    #project_wrap .p_tab li {display: flex; align-items: center; justify-content: center; flex: 1 1 0; min-width: 0; height: 56px; border-top: 2px solid transparent; border-bottom: 2px solid transparent; font-size: 16px; white-space: nowrap; font-weight: 500; color: #6f5f55; cursor: pointer;}
+    #project_wrap .p_tab li.on {border-bottom-color: #fff; font-weight: 700; color: #fff;}
+
+    /* 기획전 섹션 03 */
+    #project_wrap .p_sec03 {position: relative; padding: 60px 20px; background: #261308 url(/promotion/img/261125_winter_shoes/coupon_bg.webp) center top / 100% auto; text-align: center; color: #fff;}
+    #project_wrap .p_sec03 .snow {position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;}
+    #project_wrap .p_sec03 .inner {position: relative; z-index: 1; width: auto; max-width: none; padding: 0;}
+    #project_wrap .p_sec03 .t01 {font-size: 13px; line-height: 17px; font-weight: 500; letter-spacing: 1px; color: #efe5d7;}
+    #project_wrap .p_sec03 .t02 {margin-top: 16px; font-size: 36px; line-height: 58px; font-weight: 600;}
+    #project_wrap .p_sec03 .t03 {margin-top: 10px; font-size: 14px; line-height: 1.6; font-weight: 600;}
+    #project_wrap .p_sec03 .coupon {display: flex; height: 140px; margin-top: 36px; text-align: left; -webkit-mask: radial-gradient(circle at calc(100% - 73.5px) 0, transparent 7px, #000 7.5px) top / 100% 51% no-repeat, radial-gradient(circle at calc(100% - 73.5px) 100%, transparent 7px, #000 7.5px) bottom / 100% 51% no-repeat; mask: radial-gradient(circle at calc(100% - 73.5px) 0, transparent 7px, #000 7.5px) top / 100% 51% no-repeat, radial-gradient(circle at calc(100% - 73.5px) 100%, transparent 7px, #000 7.5px) bottom / 100% 51% no-repeat;}
+    #project_wrap .p_sec03 .cp_left {flex: 1; padding: 19px 16px; background-color: #fff; color: #1e1e1e;}
+    #project_wrap .p_sec03 .cp_right {position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; flex: none; width: 73.5px; background-color: #462c1d; color: #fff;}
+    #project_wrap .p_sec03 .cp_right::before {content: ""; position: absolute; top: 8px; bottom: 8px; left: 0; width: 1px; background: repeating-linear-gradient(180deg, #fff 0 3px, transparent 3px 6px); opacity: 0.6;}
+    #project_wrap .p_sec03 .cp_right span {font-size: 12px; line-height: 19px; font-weight: 300;}
+    #project_wrap .p_sec03 .c01 {font-size: 9px; line-height: 12px; letter-spacing: 0.06em; font-weight: 500; color: #462c1d;}
+    #project_wrap .p_sec03 .c02 {display: flex; align-items: flex-end; gap: 5px; margin-top: 9px; font-size: 40px; line-height: 1; font-weight: 500; letter-spacing: 0.04em;}
+    #project_wrap .p_sec03 .c02 span {margin-bottom: 3px; font-size: 24px; letter-spacing: 0;}
+    #project_wrap .p_sec03 .c03 {margin-top: 6px; font-size: 14px; line-height: 17px; font-weight: 600; letter-spacing: -0.02em;}
+    #project_wrap .p_sec03 .c04 {margin-top: 4px; font-size: 11px; line-height: 14px; color: #462c1d;}
+
+    /* 유의사항 */
+    #project_wrap .notice {margin: 36px 10px 0; padding: 0; border: 0;}
+    #project_wrap .notice_toggle {display: flex; align-items: center; justify-content: center; gap: 5px; margin: 0 auto; font-size: 14px; line-height: 24px; font-weight: 400; letter-spacing: -0.02em; color: #fff;}
+    #project_wrap .notice_toggle svg {transition: transform 0.3s;}
+    #project_wrap .notice_toggle.on svg {transform: rotate(180deg);}
+    #project_wrap .notice ul {display: none; padding-top: 16px; text-align: left; font-size: 12px; line-height: 16px; letter-spacing: -0.01em; opacity: 0.6;}
+    #project_wrap .notice li {position: relative; padding-left: 8px;}
+    #project_wrap .notice li + li {margin-top: 4px;}
+    #project_wrap .notice li::before {content: ""; position: absolute; top: 7px; left: 0; width: 2px; height: 2px; border-radius: 50%; background-color: #d9d9d9;}
+
+    /* 기획전 섹션 04, 05 */
+    #project_wrap .p_paper {background: #f2ede6 url(/promotion/img/261125_winter_shoes/paper.webp) center top / 100% auto;}
+    #project_wrap .p_sec04 {padding-top: 60px;}
+    #project_wrap .p_sec05 {padding: 60px 0;}
+    #project_wrap .p_sec04 .sec_tit {margin-bottom: 41px;}
+    #project_wrap .p_sec05 .sec_tit {margin-bottom: 41px;}
+
+    /* animation */
+    #project_wrap .fadeEl {opacity: 0;}
+    #project_wrap .fadeEl.animated {opacity: 1;}
+    #project_wrap .fadeEl.animated .fadeCh {animation: 1.5s ease both;}
+    #project_wrap .fadeEl.animated .fadeInUp {animation-name: m_fadeInUp;}
+
+    @keyframes m_fadeInUp {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes m_down {
+        0%, 100% {transform: translateY(-3px);}
+        50% {transform: translateY(1px);}
+    }
+    @media (hover: hover) {
+        #project_wrap .p_sec01 .kv_btn:hover {background-color: #462c1d; color: #fff;}
+        #project_wrap .p_sec01 .kv_btn:hover svg {transform: translateX(5px);}
+        #project_wrap .p_sec03 .coupon:hover .arrow {animation: m_down 0.9s ease-in-out infinite;}
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #project_wrap .fadeEl {opacity: 1;}
+        #project_wrap .fadeEl.animated .fadeCh,
+        #project_wrap .p_sec03 .coupon:hover .arrow {animation: none;}
+        #project_wrap .p_sec01 .swiper-slide img {transform: none;}
+        #project_wrap * {transition: none !important;}
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        /* 화면에 보일 때만 재생 */
+        function inView(el, onEnter, onLeave) {
+            if (!("IntersectionObserver" in window)) {
+                onEnter();
+                return;
+            };
+
+            new IntersectionObserver(function (entries) {
+                $.each(entries, function (i, entry) {
+                    entry.isIntersecting ? onEnter() : onLeave();
+                });
+            }, {threshold: 0.1}).observe(el);
+        };
+
+        /* 기획전 탭 */
+        const $tab = $("#project_wrap .p_tab");
+        const tabDest = [$("#project_wrap .p_sec03"), $("#project_wrap .p_sec04"), $("#project_wrap .p_sec05")];
+
+        function headerHeight() {
+            const $header = $("#header");
+            return $header.css("position") === "fixed" ? $header.outerHeight() : 0;
+        };
+
+        function moveTo($dest) {
+            $("html, body").stop().animate({
+                scrollTop: $dest.offset().top - headerHeight() - $tab.outerHeight() + 1
+            }, reduceMotion ? 0 : 600);
+        };
+
+        $tab.find("li").on("click", function () {
+            moveTo(tabDest[$(this).index()]);
+        });
+
+        $("#project_wrap .kv_btn").on("click", function () {
+            moveTo(tabDest[0]);
+        });
+
+        $(window).on("scroll load resize", function () {
+            $tab.css("top", headerHeight());
+
+            const scrollPos = $(window).scrollTop() + headerHeight() + $tab.outerHeight();
+            let index = 0;
+
+            $.each(tabDest, function (i) {
+                if (scrollPos >= $(this).offset().top) index = i;
+            });
+
+            $tab.find("li").eq(index).addClass("on").siblings().removeClass("on");
+        });
+
+        /* swiper (4.5초 간격 = 정지 3.3초 + 전환 1.2초) */
+        const swiper01 = new Swiper("#project_wrap .swiper01", {
+            effect: "fade",
+            fadeEffect: {crossFade: true},
+            speed: reduceMotion ? 0 : 1200,
+            allowTouchMove: true,
+            autoplay: {delay: 3300, disableOnInteraction: false},
+            pagination: {
+                el: "#project_wrap .kv_dot",
+                clickable: true,
+                bulletClass: "dot",
+                bulletActiveClass: "on",
+            },
+        });
+        swiper01.autoplay.stop();
+
+        if (!reduceMotion) {
+            inView($("#project_wrap .swiper01")[0], function () {
+                if (!swiper01.autoplay.running) swiper01.autoplay.start();
+            }, function () {
+                swiper01.autoplay.stop();
+            });
+        };
+
+        /* 눈 내리는 모션 */
+        const snow = $("#project_wrap .snow")[0];
+        const ctx = snow.getContext("2d");
+        const flakes = [];
+        let snowFrame = null;
+        let snowTime = 0;
+
+        for (let i = 0; i < 50; i++) {
+            flakes.push({
+                x: Math.random(),
+                y: Math.random(),
+                size: 0.8 + Math.random() * 1.6,
+                speed: 18 + Math.random() * 30,
+                sway: Math.random() * Math.PI * 2,
+                alpha: 0.25 + Math.random() * 0.55,
+            });
+        };
+
+        function drawSnow(time) {
+            const ratio = Math.min(window.devicePixelRatio || 1, 2);
+            const width = snow.clientWidth;
+            const height = snow.clientHeight;
+            const gap = Math.min(time - (snowTime || time), 50) / 1000;
+
+            snowTime = time;
+
+            if (snow.width !== Math.round(width * ratio) || snow.height !== Math.round(height * ratio)) {
+                snow.width = Math.round(width * ratio);
+                snow.height = Math.round(height * ratio);
+            };
+
+            ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = "#fff";
+
+            $.each(flakes, function (i, flake) {
+                flake.y += flake.speed * gap / height;
+                flake.sway += gap * 0.8;
+
+                if (flake.y > 1.02) {
+                    flake.y = -0.02;
+                    flake.x = Math.random();
+                };
+
+                ctx.globalAlpha = flake.alpha;
+                ctx.beginPath();
+                ctx.arc(flake.x * width + Math.sin(flake.sway) * 14, flake.y * height, flake.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            snowFrame = requestAnimationFrame(drawSnow);
+        };
+
+        if (!reduceMotion) {
+            inView($("#project_wrap .p_sec03")[0], function () {
+                if (snowFrame === null) {
+                    snowTime = 0;
+                    snowFrame = requestAnimationFrame(drawSnow);
+                };
+            }, function () {
+                cancelAnimationFrame(snowFrame);
+                snowFrame = null;
+            });
+        };
+
+        /* 연출컷 자동 전환 (2초 노출 + 0.6초 전환 반복, 카드마다 0.35초씩 늦게 시작) */
+        if (!reduceMotion) {
+            $("#project_wrap .item_list .cut").each(function (i) {
+                const $cut = $(this);
+                let cutTimer = null;
+
+                function cutChange(delay) {
+                    cutTimer = setTimeout(function () {
+                        $cut.toggleClass("on");
+                        cutChange(2600);
+                    }, delay);
+                };
+
+                inView($cut.parent()[0], function () {
+                    if (cutTimer === null) cutChange(2000 + i * 350);
+                }, function () {
+                    clearTimeout(cutTimer);
+                    cutTimer = null;
+                    $cut.removeClass("on");
+                });
+            });
+        };
+
+        /* 쿠폰 */
+        $("#project_wrap a.coupon").on("click", function (e) {
+            e.preventDefault();
+
+            if ($(".xans-layout-statelogon").length > 0) {
+                window.open($(this).attr("href"), "_blank");
+            } else {
+                alert("쿠폰 다운로드는 로그인 후 이용하실 수 있습니다.");
+                window.location.href = "/member/login.html?returnUrl=" + encodeURIComponent(location.pathname + location.search);
+            };
+        });
+
+        /* 유의사항 */
+        $("#project_wrap .notice_toggle").on("click", function () {
+            const isOpen = !$(this).hasClass("on");
+
+            $(this).toggleClass("on", isOpen).attr("aria-expanded", isOpen);
+            $(this).next("ul").stop(true, true).slideToggle(reduceMotion ? 0 : 300);
+        });
+
+        /* animation */
+        $("#project_wrap .fadeEl").each(function () {
+            const $this = $(this);
+            const thisOffset = $(this).hasClass("p_sec01") ? 0 : 150;
+
+            $(window).on("scroll load", function () {
+                if ($(this).scrollTop() + $(this).innerHeight() <= $this.offset().top) {
+                    $this.removeClass("animated");
+                } else if ($(this).scrollTop() + $(this).innerHeight() - thisOffset >= $this.offset().top) {
+                    $this.addClass("animated");
+                };
+            });
+        });
+
+        $(window).trigger("scroll");
+    });
+</script>
