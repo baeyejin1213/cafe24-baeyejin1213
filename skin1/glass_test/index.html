@@ -1,0 +1,117 @@
+<!--@layout(/layout/basic/layout.html)-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,600;1,600&display=swap">
+
+<style>
+    #container #contents {max-width: 100%; padding: 0;}
+
+    #glass_list {container-type: inline-size; padding: 40px 16px; background-color: #000; color: #fff; font-family: "Pretendard Variable", Pretendard, sans-serif;}
+    #glass_list * {box-sizing: border-box;}
+    #glass_list a {color: inherit; text-decoration: none;}
+    #glass_list .prdList {display: grid; min-width: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 12px; max-width: 1280px; margin: 0 auto; padding: 0; list-style: none; font-size: 14px;}
+    #glass_list .prdList::before, #glass_list .prdList::after {display: none;}
+    #glass_list .prdList > li {width: auto; min-width: 0; margin: 0; text-align: left; vertical-align: top;}
+
+    /* 글래스 카드: 아래 값으로 조절 */
+    #glass_list .glass_card {
+        --glass-bg: rgba(46, 46, 46, 0.2);  /* 면 */
+        --glass-blur: 4px;                  /* 뒤 배경 블러 */
+        --edge-w: 1px;                      /* 테두리 두께 */
+        --edge-tl: rgba(255, 255, 255, 0.26);      /* 왼쪽·위 변 */
+        --edge-br: rgba(255, 255, 255, 0.18);      /* 오른쪽·아래 변 */
+        --edge-shine: rgba(255, 255, 255, 0.45);   /* 왼쪽 위·오른쪽 아래 모서리 반짝임 */
+        --hover-scale: 1.02;                /* 호버할 때 카드 크기 */
+        position: relative; display: flex; flex-direction: column; gap: 16px; padding: 12px; border-radius: 8px;
+        background-color: var(--glass-bg);
+        -webkit-backdrop-filter: blur(var(--glass-blur)); backdrop-filter: blur(var(--glass-blur));
+        box-shadow: inset -10px -10px 10px -10px rgba(255, 255, 255, 0.04);
+        transition: transform 0.3s cubic-bezier(0, 0, 0.5, 1);
+    }
+    @media (hover: hover) {
+        #glass_list .glass_card:hover {z-index: 1; transform: scale(var(--hover-scale));}
+    }
+    #glass_list .glass_card::before {
+        content: ""; position: absolute; inset: 0; padding: var(--edge-w); border-radius: inherit; pointer-events: none;
+        background:
+            radial-gradient(circle at 100% 0, #0a0a0a 5px, transparent 12px),
+            radial-gradient(circle at 0 100%, #0a0a0a 5px, transparent 12px),
+            radial-gradient(circle at 0 0, var(--edge-shine) 3px, transparent 10px),
+            radial-gradient(circle at 100% 100%, var(--edge-shine) 3px, transparent 10px),
+            linear-gradient(to bottom right, var(--edge-tl) 50%, var(--edge-br) 50%);
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+        mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+    }
+
+    #glass_list .ec-base-product {margin: 0;}
+    #glass_list .thumb {position: relative; margin: 0; aspect-ratio: 1; border-radius: 8px; overflow: hidden; background-color: #fff;}
+    #glass_list .thumb a {position: relative; display: block; height: 100%;}
+    #glass_list .thumb img {display: block; width: 100%; height: 100%; object-fit: cover; border: 0;}
+    /* 상품 이미지 꾸미기 아이콘 */
+    #glass_list .thumb .prdIcon {position: absolute; inset: 0; background-repeat: no-repeat; background-position: 0 0;}
+    #glass_list .thumb .sold {position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.4); font: 600 16px/1 Saira, sans-serif; pointer-events: none;}
+
+    #glass_list .info {display: flex; flex-direction: column;}
+    #glass_list .name {margin: 0; font-size: 14px; line-height: 20px;}
+    #glass_list .name a, #glass_list .name a span {color: #fff !important; font-size: 14px !important; font-weight: 400 !important;}
+
+    /* 상품정보 표시설정 항목 : 브랜드·판매가·할인판매가만 노출 (브랜드는 상품명 위로) */
+    #glass_list .spec {display: contents; list-style: none;}
+    #glass_list .spec .sale_box {display: none !important;}
+    #glass_list .spec li {display: none; margin: 0; padding: 0;}
+    #glass_list .spec li[rel="브랜드"] {display: block; order: -1; margin-bottom: 8px; opacity: 0.8;}
+    #glass_list .spec li[rel="브랜드"] span {color: #fff !important; font: 600 12px/14px Saira, sans-serif !important; letter-spacing: -0.04em;}
+    #glass_list .spec li[rel="브랜드"] .m_item::before {content: "[";}
+    #glass_list .spec li[rel="브랜드"] .m_item::after {content: "]";}
+    #glass_list .spec li[rel="판매가"], #glass_list .spec li[rel="할인판매가"] {display: block; margin-top: 4px;}
+    #glass_list .spec:has(li[rel="할인판매가"]:not(.displaynone)) li[rel="판매가"] {display: none;}
+    #glass_list .spec li[rel="판매가"] span, #glass_list .spec li[rel="할인판매가"] span {color: #fff !important; font: 600 14px/20px Saira, "Pretendard Variable", sans-serif !important; letter-spacing: -0.04em;}
+    #glass_list .spec li[rel="할인판매가"] span span:not([id]) {font-size: 12px !important;}
+
+    /* 상품 아이콘 (관리자에서 등록한 이미지) */
+    #glass_list .badges {display: flex; flex-wrap: wrap; gap: 4px 10px; margin-top: 8px;}
+    #glass_list .badges:not(:has(img)) {display: none;}
+    #glass_list .badges img {height: 24px; width: auto; margin: 0;}
+
+
+    @container (min-width: 800px) {
+        #glass_list .prdList {grid-template-columns: repeat(4, minmax(0, 1fr));}
+    }
+</style>
+
+<div id="glass_list">
+    <div module="product_listmain_17" class="ec-base-product">
+        <!--
+            $count = 100
+        -->
+        <ul class="prdList">
+            <li id="anchorBoxId_{$product_no}" class="glass_card">
+                <div class="thumb">
+                    <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" loading="lazy"><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                    <div class="sold {$soldout_icon|display}">SOLD OUT</div>
+                </div>
+                <div class="info">
+                    <p class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></p>
+                    <ul module="product_ListItem" class="spec">
+                        <li class="{$item_display|display}" rel="{$item_title|striptag}"><span class="m_item">{$item_content}</span></li>
+                        <li class="{$item_display|display}" rel="{$item_title|striptag}"><span class="m_item">{$item_content}</span></li>
+                    </ul>
+                    <div class="badges">{$recommend_icon} {$new_icon} {$product_icons} {$benefit_icons}</div>
+                </div>
+            </li>
+            <li id="anchorBoxId_{$product_no}" class="glass_card">
+                <div class="thumb">
+                    <a href="/product/detail.html{$param}" name="anchorBoxName_{$product_no}"><img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" loading="lazy"><span module="product_Imagestyle"><span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span></span></a>
+                    <div class="sold {$soldout_icon|display}">SOLD OUT</div>
+                </div>
+                <div class="info">
+                    <p class="name"><a href="{$link_product_detail}" class="{$product_name_display|display}">{$product_name}</a></p>
+                    <ul module="product_ListItem" class="spec">
+                        <li class="{$item_display|display}" rel="{$item_title|striptag}"><span class="m_item">{$item_content}</span></li>
+                        <li class="{$item_display|display}" rel="{$item_title|striptag}"><span class="m_item">{$item_content}</span></li>
+                    </ul>
+                    <div class="badges">{$recommend_icon} {$new_icon} {$product_icons} {$benefit_icons}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
