@@ -18,9 +18,12 @@
 
     <!-- 기획전 섹션 03 -->
     <div class="p_sec03">
-        <div class="track">
-            <img src="/web/upload/project/project_261124/m/sec03_roll.webp" alt="# Mood 1 섬세한 금속 장식과 포근한 부클 소재로 겨울의 로맨틱한 무드 완성. 두 가지 무드로 만나는 미디 코트와 사랑스러운 겨울 스타일을 준비해보세요."/>
-            <img src="/web/upload/project/project_261124/m/sec03_roll.webp" alt=""/>
+        <div class="swiper-container swiper01">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec03_roll.webp" alt=""/></div>
+                <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec03_roll.webp" alt="# Mood 1 섬세한 금속 장식과 포근한 부클 소재로 겨울의 로맨틱한 무드 완성. 두 가지 무드로 만나는 미디 코트와 사랑스러운 겨울 스타일을 준비해보세요."/></div>
+                <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec03_roll.webp" alt=""/></div>
+            </div>
         </div>
     </div>
 
@@ -28,7 +31,7 @@
     <div class="p_sec04">
         <div class="bg"><img src="/web/upload/project/project_261124/m/sec04_bg.webp" alt="부클 하이넥 미디코트 — 포근한 부클 소재가 어우러진 깔끔한 겨울 코트" usemap="#sec04"/></div>
 
-        <div class="swiper-container swiper01">
+        <div class="swiper-container swiper02">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec04_01.webp" alt="부클 하이넥 미디코트 착용 컷"/></div>
                 <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec04_02.webp" alt="부클 하이넥 미디코트 착용 컷"/></div>
@@ -44,7 +47,7 @@
     <div class="p_sec06">
         <div class="bg"><img src="/web/upload/project/project_261124/m/sec06_bg.webp" alt="금속장식 미디 코트 — 클래식한 금속 장식으로 완성한 겨울의 특별한 한 벌" usemap="#sec06"/></div>
 
-        <div class="swiper-container swiper02">
+        <div class="swiper-container swiper03">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec06_01.webp" alt="금속장식 미디 코트 착용 컷"/></div>
                 <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec06_02.webp" alt="금속장식 미디 코트 착용 컷"/></div>
@@ -61,7 +64,7 @@
 
     <!-- 기획전 섹션 09 -->
     <div class="p_sec09">
-        <div class="swiper-container swiper03">
+        <div class="swiper-container swiper04">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec09_01.webp" alt="올데이 칼라리스 울자켓 착용 컷"/></div>
                 <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec09_02.webp" alt="올데이 칼라리스 울자켓 착용 컷"/></div>
@@ -80,7 +83,7 @@
     <div class="p_sec11">
         <div class="bg"><img src="/web/upload/project/project_261124/m/sec11_bg.webp" alt="# Mood 3 겨울의 차분한 분위기를 온전히 담아낸 롱 코트 — 숄 세트 롱코트, MATCHING ITEMS 브이넥 레이어드 풀오버, 올데이 기모 와이드 데님 팬츠 기본 VER." usemap="#sec11"/></div>
 
-        <div class="swiper-container swiper04">
+        <div class="swiper-container swiper05">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec11_01.webp" alt="숄 세트 롱코트 착용 컷"/></div>
                 <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec11_02.webp" alt="숄 세트 롱코트 착용 컷"/></div>
@@ -93,7 +96,7 @@
 
     <!-- 기획전 섹션 12 -->
     <div class="p_sec12">
-        <div class="swiper-container swiper05">
+        <div class="swiper-container swiper06">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec12_01.webp" alt="토글 퍼 자켓 착용 컷"/></div>
                 <div class="swiper-slide"><img src="/web/upload/project/project_261124/m/sec12_02.webp" alt="토글 퍼 자켓 착용 컷"/></div>
@@ -159,25 +162,19 @@
     .project_box .obj.on {opacity: 1; transform: translateY(0);}
 
     /* 기획전 섹션 03 */
-    .project_box .p_sec03 {overflow: hidden;}
-    .project_box .p_sec03 .track {display: flex; width: 382.963%; animation: p_roll 24s linear infinite;}
-    .project_box .p_sec03 .track img {flex-shrink: 0;}
-    @keyframes p_roll {
-        from {transform: translateX(0);}
-        to {transform: translateX(-100%);}
-    }
+    .project_box .p_sec03 .swiper01 .swiper-slide {width: 382.963%;}
 
     /* 기획전 섹션 04 */
-    .project_box .p_sec04 .swiper01 {top: 9.8285%; left: 6.1556%; width: 52.9167%;}
+    .project_box .p_sec04 .swiper02 {top: 9.8285%; left: 6.1556%; width: 52.9167%;}
 
     /* 기획전 섹션 06 */
-    .project_box .p_sec06 .swiper02 {top: 10.1146%; left: 40.45%; width: 52.9167%;}
+    .project_box .p_sec06 .swiper03 {top: 10.1146%; left: 40.45%; width: 52.9167%;}
 
     /* 기획전 섹션 10 */
     .project_box .p_sec10 .obj {top: 21.6921%; left: 3.8153%; width: 44.6296%;}
 
     /* 기획전 섹션 11 */
-    .project_box .p_sec11 .swiper04 {top: 36.3108%; left: 6.4542%; width: 30.9514%;}
+    .project_box .p_sec11 .swiper05 {top: 36.3108%; left: 6.4542%; width: 30.9514%;}
     .project_box .p_sec11 .obj {top: 65.5959%; left: 0; width: 53.1481%;}
 
     /* 기획전 섹션 13 */
@@ -211,11 +208,11 @@
 
         if (typeof Swiper !== "undefined") {
             var swipers = [
-                swiperCreator({container: ".project_box .swiper01"}),
                 swiperCreator({container: ".project_box .swiper02"}),
                 swiperCreator({container: ".project_box .swiper03"}),
                 swiperCreator({container: ".project_box .swiper04"}),
                 swiperCreator({container: ".project_box .swiper05"}),
+                swiperCreator({container: ".project_box .swiper06"}),
             ];
 
             window.addEventListener("resize", function () {
@@ -224,6 +221,44 @@
                     swiper.update();
                 });
             });
+
+            /* 마퀴 */
+            var swiper01 = new Swiper(".project_box .swiper01", {
+                slidesPerView: "auto",
+                freeMode: {
+                    enabled: true,
+                    momentum: false,
+                },
+                resistanceRatio: 0,
+            });
+
+            var marqueeDrag = false;
+            var marqueeTime = null;
+
+            swiper01.on("touchStart", function () {
+                marqueeDrag = true;
+            });
+
+            swiper01.on("touchEnd", function () {
+                marqueeDrag = false;
+            });
+
+            function marquee(now) {
+                var w = swiper01.slides[1].getBoundingClientRect().width;
+                var t = swiper01.getTranslate();
+
+                if (!marqueeDrag && w) {
+                    if (marqueeTime !== null) t -= w / 24000 * (now - marqueeTime);
+                    while (t > -w) t -= w;
+                    while (t <= -w * 2) t += w;
+                    swiper01.setTranslate(t);
+                };
+
+                marqueeTime = now;
+                requestAnimationFrame(marquee);
+            };
+
+            requestAnimationFrame(marquee);
         }
 
         /* 이미지 줌인, 이미지 등장 */
